@@ -27,6 +27,10 @@
       "Schilär",
       "Schilhaw"
     ],
+    "historical_classifications": [
+      "meisterhau",
+      "master strike"
+    ],
     "historical_name_note": "Atra uses the normalized modern spelling Schielhau. The witness directly links the named cut to denying an attempted change-through below."
   },
   "game_implementation": {
@@ -34,13 +38,47 @@
     "secondary_skill_prerequisites": null,
     "weapon_requirements": null,
     "off_hand_requirement": null,
-    "provisional_tier": "Intermediate",
+    "provisional_tier": null,
     "tactical_tags": [],
     "timing": {
-      "category": null,
-      "type": "Master strike"
+      "category": "Reaction / Remedy",
+      "type": "Remedy"
     },
     "tactical_lesson": "Against the descending cut, strike long with the short edge; if the opponent tries to change through below, keep the point shooting forward to deny it.",
+    "tactical_identity": [
+      "meisterhau / master strike (historical category)",
+      "single-time counter",
+      "long-point opposition"
+    ],
+    "allowed_exchange_roles": [
+      "remedy"
+    ],
+    "prototype_interaction": {
+      "status": "PROVISIONAL",
+      "vocabulary_status": "PROTOTYPE / SIMULATION",
+      "phases": [
+        {
+          "phase": "successful single-time Schielhau before consequences resolve",
+          "contact": "none",
+          "seeks_or_contacts_opponent_blade": true,
+          "weapon_engagement_intent": "blade_seeking",
+          "point_threat": "unknown",
+          "durchwechseln_under_generalized_trigger": "uncertain",
+          "support_basis": "uncertain",
+          "notes": "The experiment permits the sourced attempted change-through to be declared in this transient window and delays Schielhau's successful defensive and offensive consequences. This staging is PROVISIONAL and does not imply that an already established threatening point is legally changeable-through."
+        },
+        {
+          "phase": "intrinsic long-point branch",
+          "contact": "none",
+          "seeks_or_contacts_opponent_blade": false,
+          "weapon_engagement_intent": "body_threat",
+          "point_threat": "threatening",
+          "durchwechseln_under_generalized_trigger": "unavailable",
+          "support_basis": "directly-supported",
+          "notes": "Schielhau maintains or shoots the long point into the opening to deny or endanger the attempted change-through. This is intrinsic to Schielhau, not another action, learned Play, or generic Counter-Feint."
+        }
+      ]
+    },
     "candidate_status": "research-candidate",
     "suspected_duplicates": [],
     "related_plays": [],

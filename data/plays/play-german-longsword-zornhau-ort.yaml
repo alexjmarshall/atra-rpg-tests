@@ -43,6 +43,32 @@
       "type": "Counter-attack"
     },
     "tactical_lesson": "Meet a committed descending cut with the counter-cut; only continue with the point when the resulting bind permits it.",
+    "prototype_interaction": {
+      "status": "PROVISIONAL",
+      "vocabulary_status": "PROTOTYPE / SIMULATION",
+      "phases": [
+        {
+          "phase": "counter-cut before contact",
+          "contact": "none",
+          "seeks_or_contacts_opponent_blade": true,
+          "weapon_engagement_intent": "blade_seeking",
+          "point_threat": "unknown",
+          "durchwechseln_under_generalized_trigger": "uncertain",
+          "support_basis": "uncertain",
+          "notes": "The text directs the cut onto the opposing sword, but whether its point is an immediate threat before the bind is not explicit enough for the generalized trigger. The simulator therefore does not grant a Durchwechseln opportunity from this phase."
+        },
+        {
+          "phase": "point continuation from a soft bind",
+          "contact": "bind-crossing",
+          "seeks_or_contacts_opponent_blade": true,
+          "weapon_engagement_intent": "not_applicable",
+          "point_threat": "threatening",
+          "durchwechseln_under_generalized_trigger": "unavailable",
+          "support_basis": "directly-supported",
+          "notes": "The point threatens face or chest, and a crossing has already formed."
+        }
+      ]
+    },
     "candidate_status": "research-candidate",
     "suspected_duplicates": [
       "play-german-sword-in-one-hand-zornhau-ort"

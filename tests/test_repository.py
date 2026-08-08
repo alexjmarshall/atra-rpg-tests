@@ -181,6 +181,37 @@ class RepositoryValidationTests(unittest.TestCase):
         without_schiel = results["cells"]["without:play-german-longsword-schielhau"]
         self.assertEqual(without_schiel["rejoinder_attempts_per_fight"], 0)
 
+    def test_state_model_schema_and_smoke_matrix(self) -> None:
+        model_path = ROOT / "data" / "prototypes" / "longsword-durchwechseln-schielhau-state-model-v0.3.yaml"
+        schema_path = ROOT / "schemas" / "mechanical-prototype-state-model.schema.json"
+        model = json.loads(model_path.read_text(encoding="utf-8"))
+        schema = json.loads(schema_path.read_text(encoding="utf-8"))
+        validator_path = ROOT / "scripts" / "validate_repository.py"
+        spec = importlib.util.spec_from_file_location("repository_validator_state", validator_path)
+        validator = importlib.util.module_from_spec(spec)
+        assert spec.loader is not None
+        sys.modules[spec.name] = validator
+        spec.loader.exec_module(validator)
+        self.assertEqual(validator.validate_schema(model, schema), [])
+        self.assertEqual(model["prototype_states"]["durchwechseln_generalized_trigger"]["opponent_point_threat"], "not_threatening")
+        plays = {item["play_id"]: item for item in model["plays"]}
+        self.assertEqual(plays["play-german-longsword-durchwechseln"]["allowed_exchange_roles"], ["continuation", "rejoinder", "remedy"])
+        self.assertFalse(model["rules"]["schielhau_long_point_counts_as_play"])
+        module_path = ROOT / "simulations" / "longsword_prototype_v0_2" / "state_model_simulate.py"
+        sim_spec = importlib.util.spec_from_file_location("longsword_state_sim", module_path)
+        module = importlib.util.module_from_spec(sim_spec)
+        assert sim_spec.loader is not None
+        sys.modules[sim_spec.name] = module
+        sim_spec.loader.exec_module(module)
+        results = module.run_all(main_trials=80, secondary_trials=40, seed=818181, write=False)
+        self.assertEqual(set(results["main"]), {"naive", "adaptive_revelation", "perfect_information"})
+        self.assertTrue(all(set(cells) == {"S1", "S2", "S3"} for cells in results["main"].values()))
+        full = results["main"]["adaptive_revelation"]["S2"]
+        self.assertEqual(full["precondition_violations"], 0)
+        self.assertGreater(full["durch_opportunities"], 0)
+        self.assertGreater(full["schiel_long_point_activations"], 0)
+        self.assertEqual(full["actions_preserved"], 0)
+
 
 if __name__ == "__main__":
     unittest.main()

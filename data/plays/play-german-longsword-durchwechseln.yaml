@@ -33,13 +33,39 @@
     "secondary_skill_prerequisites": null,
     "weapon_requirements": null,
     "off_hand_requirement": null,
-    "provisional_tier": "Intermediate",
+    "provisional_tier": null,
     "tactical_tags": [],
     "timing": {
       "category": null,
       "type": "Deception"
     },
-    "tactical_lesson": "When an opponent seeks the blade before firm contact, change the point under the attempted defence and thrust on the other line.",
+    "tactical_lesson": "Before a firm bind, when an opponent commits toward your weapon while their point does not remain threatening, pass your point beneath the attempted engagement and thrust to the opposite opening.",
+    "tactical_identity": [
+      "deception",
+      "change-through",
+      "disengagement before bind"
+    ],
+    "allowed_exchange_roles": [
+      "continuation",
+      "rejoinder",
+      "remedy"
+    ],
+    "prototype_interaction": {
+      "status": "PROVISIONAL",
+      "vocabulary_status": "PROTOTYPE / SIMULATION",
+      "phases": [
+        {
+          "phase": "change-through before firm bind",
+          "contact": "none",
+          "seeks_or_contacts_opponent_blade": false,
+          "weapon_engagement_intent": "body_threat",
+          "point_threat": "threatening",
+          "durchwechseln_under_generalized_trigger": "not_applicable",
+          "support_basis": "directly-supported",
+          "notes": "The user evades the attempted engagement and sends the point to the opposite opening. The trigger may arise from a cut, thrust, point-forward threat, or another compatible state; it is not keyed to a descending cut or to a Play name."
+        }
+      ]
+    },
     "candidate_status": "research-candidate",
     "suspected_duplicates": [
       "play-german-sword-in-one-hand-durchwechseln"
@@ -101,10 +127,11 @@
         "bind-and-winding-branches"
       ],
       "assessment": "match",
-      "notes": "The change-through cluster is supported. The source is more specific than a generic feint: it exploits a blade-seeking parry and avoids contact before the bind."
+      "notes": "The change-through cluster is supported. The source is more specific than a generic feint or a generic ability to defeat Parry: before firm contact it exploits commitment toward the weapon when the opposing point is not an immediate threat."
     },
     "review_notes": [
-      "Historical locator/name correction promoted; prototype mechanics remain separate and PROVISIONAL."
+      "Historical locator/name correction promoted; prototype mechanics remain separate and PROVISIONAL.",
+      "Applying the sourced tactical principle to a proactive beat or similar action outside the exact audited example is a PROVISIONAL ATRA GENERALIZATION FROM SOURCED PRINCIPLE; this does not claim every defensive use as a directly attested named sequence."
     ]
   }
 }

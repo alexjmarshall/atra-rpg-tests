@@ -42,6 +42,20 @@
       "type": "Defence/attack"
     },
     "tactical_lesson": "Against an incoming thrust, set the blade aside from right Pflug while placing the point into the opponent.",
+    "prototype_interaction": {
+      "status": "PROVISIONAL",
+      "vocabulary_status": "PROTOTYPE / SIMULATION",
+      "phases": [{
+        "phase": "joined set-aside and thrust",
+        "contact": "none",
+        "seeks_or_contacts_opponent_blade": true,
+        "weapon_engagement_intent": "blade_seeking",
+        "point_threat": "threatening",
+        "durchwechseln_under_generalized_trigger": "unavailable",
+        "support_basis": "directly-supported",
+        "notes": "The witness joins contact with the incoming blade and an immediate thrust to face or chest; its point threat fails the generalized Durchwechseln trigger."
+      }]
+    },
     "candidate_status": "research-candidate",
     "suspected_duplicates": [],
     "related_plays": [],

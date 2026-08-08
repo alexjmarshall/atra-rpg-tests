@@ -1,0 +1,101 @@
+{
+  "id": "longsword-durchwechseln-schielhau-state-model-v0.3",
+  "status": "PROVISIONAL",
+  "governing_packet": "atra-melee-design-packet-v0-4",
+  "scope": {
+    "selected_play_ids": [
+      "play-german-longsword-absetzen",
+      "play-german-longsword-zornhau-ort",
+      "play-german-longsword-durchwechseln",
+      "play-italian-longsword-scambiar-di-punta",
+      "play-german-longsword-nachreisen",
+      "play-italian-longsword-pommel-strike",
+      "play-german-longsword-schielhau"
+    ],
+    "mirrored_repertoire": true,
+    "supersedes_balance_interpretation": "The v0.1/v0.2 result that attributed roughly half of prototype damage to Durchwechseln is superseded for balance purposes by this state-model experiment.",
+    "canonical_status": "No state, role, policy, cost, tier, wording, or mechanic in this file is canonical."
+  },
+  "prototype_states": {
+    "status": "PROTOTYPE / SIMULATION",
+    "contact": ["none", "bind-crossing", "close-crossing"],
+    "weapon_engagement_intent": ["body_threat", "blade_seeking", "unknown", "not_applicable"],
+    "point_threat": ["threatening", "not_threatening", "unknown"],
+    "durchwechseln_generalized_trigger": {
+      "contact": "none",
+      "opponent_commits_toward_users_weapon": true,
+      "opponent_weapon_engagement_intent": "blade_seeking",
+      "opponent_point_threat": "not_threatening",
+      "not_keyed_to_play_names": true
+    }
+  },
+  "rules": {
+    "combined_variant": "A",
+    "action_preservation": false,
+    "ordinary_damage": "d6+1 (OPEN profile; experiment only)",
+    "exchange_play_cap": 3,
+    "fourth_play": "record exact attempted sequence and suppress the fourth learned Play",
+    "schielhau_long_point_counts_as_play": false,
+    "schielhau_resolution_variants": {
+      "S1": "A successful established long point automatically denies attempted Durchwechseln.",
+      "S2": "Reuse the successful Schielhau d20 result and oppose it against a fresh Durchwechseln d20 roll; lower successful roll wins, ties favor Schielhau's established opposition, one success beats a failure, and two failures leave the original Strike unresolved through Schielhau so it damages the defender.",
+      "S3": "Durchwechseln remains legal but rolls with one Bane: roll 2d20 and keep the higher result; no stacked penalty."
+    }
+  },
+  "plays": [
+    {
+      "play_id": "play-german-longsword-absetzen", "status": "PROVISIONAL", "spiritus_cost": null, "tier_requirement": null,
+      "tactical_identity": ["single-time set-aside and thrust"], "allowed_exchange_roles": ["remedy"],
+      "state_phases": [{"phase": "joined set-aside and thrust", "contact": "none", "weapon_engagement_intent": "blade_seeking", "point_threat": "threatening", "durchwechseln": "unavailable", "basis": "directly-supported"}]
+    },
+    {
+      "play_id": "play-german-longsword-zornhau-ort", "status": "PROVISIONAL", "spiritus_cost": null, "tier_requirement": null,
+      "tactical_identity": ["counter-cut", "conditional point continuation"], "allowed_exchange_roles": ["remedy"],
+      "state_phases": [{"phase": "counter-cut", "contact": "none", "weapon_engagement_intent": "blade_seeking", "point_threat": "unknown", "durchwechseln": "uncertain and suppressed", "basis": "uncertain"}, {"phase": "soft-bind point", "contact": "bind-crossing", "weapon_engagement_intent": "not_applicable", "point_threat": "threatening", "durchwechseln": "unavailable", "basis": "directly-supported"}]
+    },
+    {
+      "play_id": "play-german-longsword-durchwechseln", "status": "PROVISIONAL", "spiritus_cost": null, "tier_requirement": null,
+      "tactical_identity": ["deception", "change-through", "disengagement before bind"], "allowed_exchange_roles": ["continuation", "rejoinder", "remedy"],
+      "prototype_baseline": {"trigger": "contact none; opponent commits toward the user's weapon; opponent point is not threatening", "not_limited_to": ["descending cuts", "Parry", "offensive use"], "unsafe_when": "the opponent's point remains an immediate threat", "role_is_contextual": true},
+      "state_phases": [{"phase": "change beneath attempted engagement", "contact": "none", "weapon_engagement_intent": "body_threat", "point_threat": "threatening", "durchwechseln": "executing", "basis": "directly-supported"}]
+    },
+    {
+      "play_id": "play-italian-longsword-scambiar-di-punta", "status": "PROVISIONAL", "spiritus_cost": null, "tier_requirement": null,
+      "tactical_identity": ["single-time crossing counter-thrust"], "allowed_exchange_roles": ["remedy"],
+      "state_phases": [{"phase": "crossing counter-thrust", "contact": "none", "weapon_engagement_intent": "blade_seeking", "point_threat": "threatening", "durchwechseln": "unavailable", "basis": "directly-supported"}]
+    },
+    {
+      "play_id": "play-german-longsword-nachreisen", "status": "PROVISIONAL", "spiritus_cost": null, "tier_requirement": null,
+      "tactical_identity": ["recovery pursuit"], "allowed_exchange_roles": ["initiation"],
+      "state_phases": [{"phase": "pursuit strike", "contact": "none", "weapon_engagement_intent": "body_threat", "point_threat": "not_threatening", "durchwechseln": "unavailable", "basis": "directly-supported"}]
+    },
+    {
+      "play_id": "play-italian-longsword-pommel-strike", "status": "PROVISIONAL", "spiritus_cost": null, "tier_requirement": null,
+      "tactical_identity": ["close play"], "allowed_exchange_roles": ["initiation"],
+      "state_phases": [{"phase": "pommel strike", "contact": "close-crossing", "weapon_engagement_intent": "not_applicable", "point_threat": "not_threatening", "durchwechseln": "unavailable", "basis": "directly-supported"}]
+    },
+    {
+      "play_id": "play-german-longsword-schielhau", "status": "PROVISIONAL", "spiritus_cost": null, "tier_requirement": null,
+      "historical_classification": ["meisterhau", "master strike"],
+      "tactical_identity": ["single-time counter", "long-point opposition"], "allowed_exchange_roles": ["remedy"],
+      "prototype_baseline": {"trigger": "historically appropriate descending high-line attack", "action": "spend normal action", "roll": "one Longsword roll", "success": "defeat incoming Strike and deal ordinary prototype weapon damage", "action_preserved": false, "durchwechseln_timing": "if declared before contact, delay successful Schielhau consequences until the interaction resolves", "long_point_branch": "intrinsic; no additional action or learned Play"},
+      "state_phases": [{"phase": "declaration window before delayed consequences", "contact": "none", "weapon_engagement_intent": "blade_seeking", "point_threat": "unknown", "durchwechseln": "uncertain but admitted for sourced branch test", "basis": "uncertain"}, {"phase": "intrinsic long-point branch", "contact": "none", "weapon_engagement_intent": "body_threat", "point_threat": "threatening", "durchwechseln": "denied or endangered by selected S variant", "basis": "directly-supported"}]
+    }
+  ],
+  "simulation_model": {
+    "seed": 240823,
+    "policy_seed": 90210,
+    "trials_per_main_cell": 12000,
+    "trials_per_secondary_cell": 6000,
+    "skill": 10,
+    "hp": 8,
+    "information_conditions": ["naive", "adaptive_revelation", "perfect_information"],
+    "decision_policy": "Expected-value softmax over legal choices with temperature 0.32; estimates use known repertoire only, with small seeded random utility jitter for mixed behavior.",
+    "basic_parry_policies": ["documented_subset", "legacy_random_half"],
+    "soft_bind_probability": 0.5,
+    "close_crossing_probability": 0.25
+  },
+  "open_questions": [
+    "Spiritus costs", "final tiers", "final card text", "universal Parry taxonomy", "bind mechanics", "engagement geometry", "weapon damage profiles", "final Play-chain architecture"
+  ]
+}

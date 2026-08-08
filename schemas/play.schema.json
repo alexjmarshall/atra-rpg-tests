@@ -109,6 +109,7 @@
         "historical_confidence": {"type": ["string", "null"], "enum": ["A", "B", "C", "D", null]},
         "source_inclusion_basis": {"enum": ["DIRECT", "CONTINUITY", "EARLIER", "PRESERVATION", "RECONSTRUCTION", "IMPORTED"]},
         "historical_names": {"type": "array", "minItems": 1, "items": {"type": "string"}, "uniqueItems": true},
+        "historical_classifications": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
         "historical_name_note": {"type": "string", "minLength": 1},
         "packet_source_note": {"type": ["string", "null"]}
       }
@@ -134,6 +135,44 @@
           }
         },
         "tactical_lesson": {"type": ["string", "null"]},
+        "tactical_identity": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1},
+          "uniqueItems": true
+        },
+        "allowed_exchange_roles": {
+          "type": "array",
+          "items": {"enum": ["initiation", "continuation", "rejoinder", "remedy"]},
+          "uniqueItems": true
+        },
+        "prototype_interaction": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["status", "vocabulary_status", "phases"],
+          "properties": {
+            "status": {"const": "PROVISIONAL"},
+            "vocabulary_status": {"const": "PROTOTYPE / SIMULATION"},
+            "phases": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["phase", "contact", "seeks_or_contacts_opponent_blade", "weapon_engagement_intent", "point_threat", "durchwechseln_under_generalized_trigger", "support_basis", "notes"],
+                "properties": {
+                  "phase": {"type": "string", "minLength": 1},
+                  "contact": {"enum": ["none", "bind-crossing", "close-crossing"]},
+                  "seeks_or_contacts_opponent_blade": {"type": ["boolean", "null"]},
+                  "weapon_engagement_intent": {"enum": ["body_threat", "blade_seeking", "unknown", "not_applicable"]},
+                  "point_threat": {"enum": ["threatening", "not_threatening", "unknown"]},
+                  "durchwechseln_under_generalized_trigger": {"enum": ["legal", "unavailable", "uncertain", "not_applicable"]},
+                  "support_basis": {"enum": ["directly-supported", "inferred-from-geometry", "uncertain"]},
+                  "notes": {"type": "string", "minLength": 1}
+                }
+              }
+            }
+          }
+        },
         "candidate_status": {"enum": ["research-candidate", "restoration-slot", "rejected", "consolidated", "final"]},
         "suspected_duplicates": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
         "related_plays": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},

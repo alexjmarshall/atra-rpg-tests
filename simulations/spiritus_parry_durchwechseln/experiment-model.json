@@ -1,0 +1,40 @@
+{
+  "id": "spiritus-parry-durchwechseln-v0.1",
+  "status": "PROVISIONAL EXPERIMENT",
+  "maximum_spiritus": 8,
+  "hp": 8,
+  "damage": "d6+1",
+  "parry_models": {
+    "P0": "neutral Basic Parry; no Durchwechseln opportunity",
+    "P1": "blade-seeking, point-off-line Basic Parry; Durchwechseln decision before the Parry roll"
+  },
+  "durchwechseln_costs": [0, 1, 2],
+  "compound_costs": [0, 1],
+  "compound_plays": ["Absetzen", "Scambiar di Punta", "Schielhau"],
+  "schielhau_interaction": "S2 opposed rolls; lower successful roll wins and ties favor Schielhau",
+  "starting_spiritus": [8, 5, 3, 1],
+  "edge_starting_spiritus": 0,
+  "skills": [10, 14, 18],
+  "recovery_policies": {
+    "R0": 0,
+    "R2": 2,
+    "RFULL": "restore to 8"
+  },
+  "policy": {
+    "choice": "seeded softmax over one-step expected hit utility",
+    "temperature": 0.18,
+    "spiritus_value": "V(s,n,r)=0.78*sqrt(s)+sum(j=1..n, 0.82^j*0.48*sqrt(project(s,j,r)))",
+    "project": "R0 holds s; R2 adds 2 per later fight capped at 8; RFULL projects 8",
+    "cost_charge": "V(current)-V(after spending); always positive for positive cost",
+    "opponent_spiritus_factor": "multiply the cost charge by 0.9+0.2*(opponent Spiritus/8), preserving more against a well-resourced opponent",
+    "future_horizon": "number of fights remaining in the three-fight sequence",
+    "knowledge": "adaptive revelation is primary; perfect information is reduced"
+  },
+  "calibration_flags": {
+    "soft_bind_probability": 0.5,
+    "close_crossing_probability": 0.25,
+    "attack_mix": {"thrust": 0.3, "descending_cut": 0.35, "other_cut": 0.35},
+    "committed_descending_cut_probability": 0.75
+  },
+  "canonical_effect": "none"
+}

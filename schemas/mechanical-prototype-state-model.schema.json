@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Atra Longsword Durchwechseln-Schielhau state-model prototype",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "status", "governing_packet", "scope", "prototype_states", "rules", "plays", "simulation_model", "open_questions"],
+  "properties": {
+    "id": {"const": "longsword-durchwechseln-schielhau-state-model-v0.3"},
+    "status": {"const": "PROVISIONAL"},
+    "governing_packet": {"const": "atra-melee-design-packet-v0-4"},
+    "scope": {"type": "object"},
+    "prototype_states": {"type": "object"},
+    "rules": {"type": "object"},
+    "plays": {
+      "type": "array",
+      "minItems": 7,
+      "maxItems": 7,
+      "items": {
+        "type": "object",
+        "required": ["play_id", "status", "spiritus_cost", "tier_requirement", "tactical_identity", "allowed_exchange_roles", "state_phases"]
+      }
+    },
+    "simulation_model": {"type": "object"},
+    "open_questions": {"type": "array", "items": {"type": "string"}}
+  }
+}

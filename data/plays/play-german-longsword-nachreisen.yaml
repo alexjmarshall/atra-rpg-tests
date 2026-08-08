@@ -40,6 +40,20 @@
       "type": "Pursuit"
     },
     "tactical_lesson": "Pursue a committed descending cut that has missed, striking before the opponent recovers.",
+    "prototype_interaction": {
+      "status": "PROVISIONAL",
+      "vocabulary_status": "PROTOTYPE / SIMULATION",
+      "phases": [{
+        "phase": "pursuit strike during recovery",
+        "contact": "none",
+        "seeks_or_contacts_opponent_blade": false,
+        "weapon_engagement_intent": "body_threat",
+        "point_threat": "not_threatening",
+        "durchwechseln_under_generalized_trigger": "unavailable",
+        "support_basis": "directly-supported",
+        "notes": "The core witness pursues the opponent's exposed body or head rather than committing toward the opponent's weapon, so the generalized trigger is absent despite no point threat."
+      }]
+    },
     "candidate_status": "research-candidate",
     "suspected_duplicates": [],
     "related_plays": [],

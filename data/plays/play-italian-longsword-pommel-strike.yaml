@@ -40,6 +40,20 @@
       "type": "Close play"
     },
     "tactical_lesson": "From an established close crossing, control the opponent's arm as the source variant permits and strike the exposed face with the pommel.",
+    "prototype_interaction": {
+      "status": "PROVISIONAL",
+      "vocabulary_status": "PROTOTYPE / SIMULATION",
+      "phases": [{
+        "phase": "pommel strike from close crossing",
+        "contact": "close-crossing",
+        "seeks_or_contacts_opponent_blade": null,
+        "weapon_engagement_intent": "not_applicable",
+        "point_threat": "not_threatening",
+        "durchwechseln_under_generalized_trigger": "unavailable",
+        "support_basis": "directly-supported",
+        "notes": "The play begins after close contact and arm access; Durchwechseln requires contact none before a firm bind."
+      }]
+    },
     "candidate_status": "research-candidate",
     "suspected_duplicates": [],
     "related_plays": [],
