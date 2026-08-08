@@ -1,0 +1,61 @@
+{
+  "id": "compound-spiritus-c1-c2-v0.1",
+  "status": "PROVISIONAL EXPERIMENT",
+  "canonical_effect": "none",
+  "governing_inputs": [
+    "Atra Melee Design Packet v0.4",
+    "Prototype Longsword Evidence Audit",
+    "Longsword Mechanical Prototype Results",
+    "Durchwechseln-Schielhau State-Model Results",
+    "Spiritus, Basic Parry, and Durchwechseln Results"
+  ],
+  "held_constant": {
+    "basic_parry": "P1: free, blade-seeking, point not threatening, action-spending, success cancels the incoming attack",
+    "durchwechseln": "D1: spend on pre-Parry-roll declaration, no refund, original Basic Parry not rolled, state trigger retained",
+    "schielhau_durchwechseln": "S2 opposed resolution",
+    "maximum_spiritus": 8,
+    "spiritus_information": "public",
+    "combat_start_refresh": false,
+    "compound_chassis": "Variant A: normal action, one Longsword roll, success defends and damages, no action preservation, intrinsic branches free",
+    "learned_play_chain_cap": 3,
+    "damage": "generic d6+1",
+    "hp": 8
+  },
+  "tested_alternatives": {
+    "C1": {"Absetzen": 1, "Scambiar di Punta": 1, "Schielhau": 1},
+    "C2": {"Absetzen": 2, "Scambiar di Punta": 2, "Schielhau": 2}
+  },
+  "primary_matrix": {
+    "skills": [10, 14, 18],
+    "starting_spiritus": [8, 3],
+    "compound_costs": [1, 2],
+    "information": ["adaptive_revelation", "perfect_information"],
+    "mirrored": true
+  },
+  "asymmetric_check": {
+    "skill_pairs": [[10, 14], [14, 10], [14, 18], [18, 14]],
+    "starting_spiritus": 8,
+    "information": "perfect_information"
+  },
+  "three_fight_sequence": {
+    "skills": [10, 14, 18],
+    "compound_costs": [1, 2],
+    "recovery": "R0",
+    "focal_fight_1_spiritus": 8,
+    "fresh_opponent_spiritus": 8,
+    "only_spiritus_carries": true
+  },
+  "policy": {
+    "choice": "seeded softmax over the prior experiment's one-step expected-hit utilities",
+    "temperature": 0.18,
+    "reserve_value": "V(s,n,r)=0.78*sqrt(s)+sum(j=1..n,0.82^j*0.48*sqrt(project(s,j,r)))",
+    "note": "Policy utilities are diagnostic artifacts, not solved equilibrium or psychological claims."
+  },
+  "unmodeled": [
+    "Power Strike competition",
+    "resolved Guards",
+    "engagement geometry",
+    "weapon profiles",
+    "final bind calibration"
+  ]
+}

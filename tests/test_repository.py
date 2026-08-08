@@ -212,6 +212,33 @@ class RepositoryValidationTests(unittest.TestCase):
         self.assertGreater(full["schiel_long_point_activations"], 0)
         self.assertEqual(full["actions_preserved"], 0)
 
+    def test_compound_spiritus_c1_c2_smoke_matrix(self) -> None:
+        module_path = ROOT / "simulations" / "compound_spiritus_c1_c2" / "simulate.py"
+        spec = importlib.util.spec_from_file_location("compound_spiritus_c1_c2", module_path)
+        module = importlib.util.module_from_spec(spec)
+        assert spec.loader is not None
+        sys.modules[spec.name] = module
+        spec.loader.exec_module(module)
+        results = module.run_all(
+            primary_trials=30,
+            asymmetric_trials=20,
+            sequence_trials=20,
+            seed=919191,
+            write=False,
+        )
+        self.assertEqual(len(results["primary_matrix"]), 24)
+        self.assertEqual(len(results["asymmetric_check"]), 8)
+        self.assertEqual(len(results["sequences"]), 6)
+        for item in results["primary_matrix"].values():
+            metrics = item["metrics"]
+            self.assertEqual(metrics["precondition_violations"], 0)
+            self.assertEqual(metrics["attempted_fourth_plays"], 0)
+            cost = item["cell"]["compound_cost"]
+            for stats in metrics["compounds"].values():
+                self.assertEqual(stats["spiritus_spent"], stats["declarations"] * cost)
+                if cost == 2:
+                    self.assertEqual(stats["declaration_rate_by_spiritus"]["1"], 0)
+
 
 if __name__ == "__main__":
     unittest.main()
