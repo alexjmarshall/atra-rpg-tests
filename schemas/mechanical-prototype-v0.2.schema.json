@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Atra mirrored Longsword mechanical prototype v0.2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "status", "governing_packet", "scope", "combat_state", "rules", "plays", "simulation_model", "calibration_flags"],
+  "properties": {
+    "id": {"const": "longsword-mechanical-prototype-v0.2"},
+    "status": {"const": "PROVISIONAL"},
+    "governing_packet": {"const": "atra-melee-design-packet-v0-4"},
+    "scope": {"type": "object", "required": ["selected_play_ids", "mirrored_repertoire", "isolation_rule"]},
+    "combat_state": {"type": "object", "required": ["incoming_attack_type", "incoming_attack_line", "blade_contact", "recovery_commitment", "bind_pressure"]},
+    "rules": {"type": "object", "required": ["combined_variant", "action_preservation", "exchange_play_cap", "fourth_play"]},
+    "plays": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"type": "object", "required": ["play_id", "status", "spiritus_cost", "tier_requirement", "trigger", "resolution"]}},
+    "simulation_model": {"type": "object", "required": ["seed", "trials_per_ablation", "scenario", "ablations"]},
+    "calibration_flags": {"type": "object", "required": ["soft_bind_probability", "close_crossing_probability", "policy"]}
+  }
+}

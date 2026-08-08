@@ -1,0 +1,195 @@
+{
+  "id": "longsword-mechanical-prototype-v0.1",
+  "status": "PROVISIONAL",
+  "governing_packet": "atra-melee-design-packet-v0-4",
+  "scope": {
+    "selected_play_ids": [
+      "play-german-longsword-absetzen",
+      "play-german-longsword-zornhau-ort",
+      "play-german-longsword-durchwechseln",
+      "play-italian-longsword-scambiar-di-punta",
+      "play-german-longsword-nachreisen",
+      "play-italian-longsword-pommel-strike"
+    ],
+    "isolation_rule": "This branch supplies experimental mechanics only for the six listed records. Canonical Play mechanics remain null and all other Play records are out of scope."
+  },
+  "combat_state": {
+    "status": "PROVISIONAL",
+    "incoming_attack_type": ["thrust", "descending-cut", "other-cut", "pommel"],
+    "incoming_attack_line": ["high", "center", "low", "inside", "outside"],
+    "blade_contact": ["none", "bind-crossing", "close-crossing"],
+    "recovery_commitment": ["ready", "committed", "recovering-from-missed-committed-cut"],
+    "bind_pressure": ["unknown", "soft", "hard"]
+  },
+  "variants": {
+    "A": {
+      "status": "PROVISIONAL",
+      "label": "combined-one-roll-action-spent",
+      "applies_to": ["play-german-longsword-absetzen", "play-italian-longsword-scambiar-di-punta"],
+      "rolls": "one Longsword roll resolves both defence and attack",
+      "action": "spend the defender's action on declaration",
+      "success": "cancel incoming damage and deal baseline damage",
+      "failure": "incoming damage resolves"
+    },
+    "B": {
+      "status": "PROVISIONAL",
+      "label": "combined-one-roll-action-preserved-on-success",
+      "applies_to": ["play-german-longsword-absetzen", "play-italian-longsword-scambiar-di-punta"],
+      "rolls": "one Longsword roll resolves both defence and attack",
+      "action": "preserve the defender's action on success; spend it on failure or if the defence is bypassed",
+      "success": "cancel incoming damage, deal baseline damage, and retain the action",
+      "failure": "incoming damage resolves and the action is spent"
+    },
+    "C": {
+      "status": "PROVISIONAL",
+      "label": "sequential-defence-then-attack-action-spent",
+      "applies_to": ["play-german-longsword-absetzen", "play-italian-longsword-scambiar-di-punta"],
+      "rolls": "first roll Longsword for defence; only after defensive success roll Longsword again for the attack",
+      "action": "spend the defender's action on declaration",
+      "success": "the first success cancels incoming damage; damage requires the second success",
+      "failure": "a failed first roll allows incoming damage; a failed second roll leaves the defence successful but deals no damage"
+    }
+  },
+  "plays": [
+    {
+      "play_id": "play-german-longsword-absetzen",
+      "status": "PROVISIONAL",
+      "test_skill": "longsword",
+      "spiritus_cost": null,
+      "tier_requirement": null,
+      "final_wording": null,
+      "trigger": {
+        "timing": "remedy",
+        "incoming_attack_type": ["thrust"],
+        "incoming_attack_line": ["center", "high"],
+        "blade_contact": "none",
+        "action_required": true
+      },
+      "resolution": {
+        "variant_driven": true,
+        "on_defensive_success_contact": "bind-crossing",
+        "historical_constraint": "The prototype is restricted to the exactly witnessed incoming-thrust case."
+      }
+    },
+    {
+      "play_id": "play-italian-longsword-scambiar-di-punta",
+      "status": "PROVISIONAL",
+      "test_skill": "longsword",
+      "spiritus_cost": null,
+      "tier_requirement": null,
+      "final_wording": null,
+      "trigger": {
+        "timing": "remedy",
+        "incoming_attack_type": ["thrust"],
+        "incoming_attack_line": ["center", "high"],
+        "blade_contact": "none",
+        "action_required": true
+      },
+      "resolution": {
+        "variant_driven": true,
+        "on_defensive_success_contact": "bind-crossing",
+        "historical_constraint": "The crossing and offline exchange are represented as an incoming-thrust remedy only."
+      }
+    },
+    {
+      "play_id": "play-german-longsword-zornhau-ort",
+      "status": "PROVISIONAL",
+      "test_skill": "longsword",
+      "spiritus_cost": null,
+      "tier_requirement": null,
+      "final_wording": null,
+      "trigger": {
+        "timing": "remedy",
+        "incoming_attack_type": ["descending-cut"],
+        "incoming_attack_line": ["high"],
+        "blade_contact": "none",
+        "recovery_commitment": "committed",
+        "action_required": true
+      },
+      "resolution": {
+        "steps": [
+          {"name": "counter-cut", "roll": "Longsword", "success": "cancel incoming damage and create bind-crossing", "damage": false},
+          {"name": "conditional-point", "condition": "counter-cut succeeded and bind pressure is soft", "roll": "Longsword", "action": "no additional action", "success": "deal baseline damage"}
+        ],
+        "historical_constraint": "The point is not folded into the counter-cut and is never automatic."
+      }
+    },
+    {
+      "play_id": "play-german-longsword-durchwechseln",
+      "status": "PROVISIONAL",
+      "test_skill": "longsword",
+      "spiritus_cost": null,
+      "tier_requirement": null,
+      "final_wording": null,
+      "trigger": {
+        "timing": "attacker-continuation",
+        "opponent_defence": "blade-seeking",
+        "blade_contact": "none-before-firm-contact",
+        "action_required": false
+      },
+      "resolution": {
+        "roll": "Longsword",
+        "success": "change under the attempted defence and resolve the initiating attack on the other line",
+        "failure": "the declared defence continues to resolution",
+        "historical_constraint": "It cannot be invoked from an established bind or against a non-blade-seeking response."
+      }
+    },
+    {
+      "play_id": "play-german-longsword-nachreisen",
+      "status": "PROVISIONAL",
+      "test_skill": "longsword",
+      "spiritus_cost": null,
+      "tier_requirement": null,
+      "final_wording": null,
+      "trigger": {
+        "timing": "initiation",
+        "target_recovery_commitment": "recovering-from-missed-committed-cut",
+        "blade_contact": "none",
+        "action_required": true
+      },
+      "resolution": {
+        "roll": "Longsword",
+        "success": "deal baseline damage before recovery",
+        "failure": "deal no damage",
+        "historical_constraint": "Only the exactly evidenced missed committed descending-cut recovery window is enabled; preparation and generic withdrawal are excluded."
+      }
+    },
+    {
+      "play_id": "play-italian-longsword-pommel-strike",
+      "status": "PROVISIONAL",
+      "test_skill": "longsword",
+      "secondary_skill_prerequisites": null,
+      "spiritus_cost": null,
+      "tier_requirement": null,
+      "final_wording": null,
+      "trigger": {
+        "timing": "initiation",
+        "blade_contact": "close-crossing",
+        "action_required": true
+      },
+      "resolution": {
+        "roll": "Longsword",
+        "success": "deal baseline test damage and end the crossing",
+        "failure": "deal no damage and end the crossing",
+        "historical_constraint": "A close crossing is mandatory. No Wrestling prerequisite is assumed."
+      }
+    }
+  ],
+  "simulation_model": {
+    "status": "PROVISIONAL",
+    "seed": 240807,
+    "trials_per_cell": 30000,
+    "hit_points": 8,
+    "damage": "d6+1 working baseline for every damaging success, including pommel damage solely to avoid inventing a weapon profile",
+    "exchange_play_cap": 3,
+    "scenarios": {
+      "duel": "one Skill-10 fighter per side; only the focal fighter receives the prototype package so win-rate effect is measurable",
+      "one-versus-two": "three Skill-10 fighters; only the lone fighter receives the prototype package; unrestricted engagement"
+    },
+    "experimental_probabilities": {
+      "basic_parry_creates_close_crossing": 0.25,
+      "successful_zornhau_bind_is_soft": 0.5,
+      "eligible_absetzen_vs_scambiar_selection": 0.5
+    }
+  }
+}

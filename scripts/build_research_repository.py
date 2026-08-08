@@ -325,6 +325,8 @@ def main() -> None:
     apply_audit(write_report=True)
     from apply_selected_longsword_corrections import apply_selected_corrections
     apply_selected_corrections()
+    from apply_schielhau_rejoinder_evidence import apply_schielhau_evidence
+    apply_schielhau_evidence()
     print(f"Generated Markdown packet, {len(plays)} Play records, and {len(SOURCE_RECORDS)} source records.")
 
 

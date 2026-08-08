@@ -33,12 +33,11 @@ These are lexical/tactical research clusters derived from packet names, provisio
 
 ## Provisional chassis clusters
 
-### beats-and-displacements (11)
+### beats-and-displacements (10)
 
 Beats, break-downs, set-asides, and weapon-line displacements.
 
 - Shield Separation — German Axe & Mace (`play-german-axe-and-mace-shield-separation`) — Control
-- Absetzen — German Longsword (`play-german-longsword-absetzen`) — Defence/attack
 - Beat Down and Thrust — German Polearms / Poleaxe & Halberd (`play-german-polearms-poleaxe-and-halberd-beat-down-and-thrust`) — Defence/attack
 - Counter-Thrust to the Heart — German Polearms / Poleaxe & Halberd (`play-german-polearms-poleaxe-and-halberd-counter-thrust-to-the-heart`) — Counter-attack
 - Change-Strike Sequence — German Sword & Buckler (`play-german-sword-and-buckler-change-strike-sequence`) — Combination
@@ -128,9 +127,9 @@ Human throws and takedowns; ranged weapon casts are excluded unless the lesson a
 Binds, windings, Crown/Corona crossings, and named bind branches.
 
 - Duplieren / Mutieren — German Longsword (`play-german-longsword-duplieren-mutieren`) — Bind branches
-- Durchwechseln — German Longsword (`play-german-longsword-durchwechseln`) — Deception
 - Kron / Crown Crossing — German Longsword (`play-german-longsword-kron-crown-crossing`) — Bind state
 - Winden — German Longsword (`play-german-longsword-winden`) — Bind system
+- Zornhau-Ort — German Longsword (`play-german-longsword-zornhau-ort`) — Counter-attack
 - Longpoint Bind — German Sword & Buckler (`play-german-sword-and-buckler-longpoint-bind`) — Bind
 - Wind and Snap Over — German Sword & Buckler (`play-german-sword-and-buckler-wind-and-snap-over`) — Bind attack
 - Duplieren / Mutieren — German Sword in One Hand (`play-german-sword-in-one-hand-duplieren-mutieren`) — Bind branch

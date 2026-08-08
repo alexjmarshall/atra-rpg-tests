@@ -271,8 +271,6 @@ play-german-dagger-upper-shield,Upper Shield,game_implementation.mechanics.succe
 play-german-dagger-upper-shield,Upper Shield,game_implementation.mechanics.failure
 play-german-dagger-upper-shield,Upper Shield,game_implementation.mechanics.aftermath
 play-german-dagger-upper-shield,Upper Shield,game_implementation.mechanics.limits
-play-german-longsword-absetzen,Absetzen,historical_identity.historical_confidence
-play-german-longsword-absetzen,Absetzen,historical_identity.source_citations.exact_historical_location
 play-german-longsword-absetzen,Absetzen,game_implementation.character_sheet_test_skill
 play-german-longsword-absetzen,Absetzen,game_implementation.secondary_skill_prerequisites
 play-german-longsword-absetzen,Absetzen,game_implementation.weapon_requirements
@@ -322,8 +320,6 @@ play-german-longsword-durchlaufen,Durchlaufen,game_implementation.mechanics.succ
 play-german-longsword-durchlaufen,Durchlaufen,game_implementation.mechanics.failure
 play-german-longsword-durchlaufen,Durchlaufen,game_implementation.mechanics.aftermath
 play-german-longsword-durchlaufen,Durchlaufen,game_implementation.mechanics.limits
-play-german-longsword-durchwechseln,Durchwechseln,historical_identity.historical_confidence
-play-german-longsword-durchwechseln,Durchwechseln,historical_identity.source_citations.exact_historical_location
 play-german-longsword-durchwechseln,Durchwechseln,game_implementation.character_sheet_test_skill
 play-german-longsword-durchwechseln,Durchwechseln,game_implementation.secondary_skill_prerequisites
 play-german-longsword-durchwechseln,Durchwechseln,game_implementation.weapon_requirements
@@ -373,8 +369,6 @@ play-german-longsword-krumphau,Krumphau,game_implementation.mechanics.success
 play-german-longsword-krumphau,Krumphau,game_implementation.mechanics.failure
 play-german-longsword-krumphau,Krumphau,game_implementation.mechanics.aftermath
 play-german-longsword-krumphau,Krumphau,game_implementation.mechanics.limits
-play-german-longsword-nachreisen,Nachreisen,historical_identity.historical_confidence
-play-german-longsword-nachreisen,Nachreisen,historical_identity.source_citations.exact_historical_location
 play-german-longsword-nachreisen,Nachreisen,game_implementation.character_sheet_test_skill
 play-german-longsword-nachreisen,Nachreisen,game_implementation.secondary_skill_prerequisites
 play-german-longsword-nachreisen,Nachreisen,game_implementation.weapon_requirements
@@ -407,8 +401,6 @@ play-german-longsword-scheitelhau,Scheitelhau,game_implementation.mechanics.succ
 play-german-longsword-scheitelhau,Scheitelhau,game_implementation.mechanics.failure
 play-german-longsword-scheitelhau,Scheitelhau,game_implementation.mechanics.aftermath
 play-german-longsword-scheitelhau,Scheitelhau,game_implementation.mechanics.limits
-play-german-longsword-schielhau,Schielhau,historical_identity.historical_confidence
-play-german-longsword-schielhau,Schielhau,historical_identity.source_citations.exact_historical_location
 play-german-longsword-schielhau,Schielhau,game_implementation.character_sheet_test_skill
 play-german-longsword-schielhau,Schielhau,game_implementation.secondary_skill_prerequisites
 play-german-longsword-schielhau,Schielhau,game_implementation.weapon_requirements
@@ -441,8 +433,6 @@ play-german-longsword-winden,Winden,game_implementation.mechanics.success
 play-german-longsword-winden,Winden,game_implementation.mechanics.failure
 play-german-longsword-winden,Winden,game_implementation.mechanics.aftermath
 play-german-longsword-winden,Winden,game_implementation.mechanics.limits
-play-german-longsword-zornhau-ort,Zornhau-Ort,historical_identity.historical_confidence
-play-german-longsword-zornhau-ort,Zornhau-Ort,historical_identity.source_citations.exact_historical_location
 play-german-longsword-zornhau-ort,Zornhau-Ort,game_implementation.character_sheet_test_skill
 play-german-longsword-zornhau-ort,Zornhau-Ort,game_implementation.secondary_skill_prerequisites
 play-german-longsword-zornhau-ort,Zornhau-Ort,game_implementation.weapon_requirements
@@ -1410,8 +1400,6 @@ play-italian-longsword-half-sword-thrust,Half-Sword Thrust,game_implementation.m
 play-italian-longsword-half-sword-thrust,Half-Sword Thrust,game_implementation.mechanics.failure
 play-italian-longsword-half-sword-thrust,Half-Sword Thrust,game_implementation.mechanics.aftermath
 play-italian-longsword-half-sword-thrust,Half-Sword Thrust,game_implementation.mechanics.limits
-play-italian-longsword-pommel-strike,Pommel Strike,historical_identity.historical_confidence
-play-italian-longsword-pommel-strike,Pommel Strike,historical_identity.source_citations.exact_historical_location
 play-italian-longsword-pommel-strike,Pommel Strike,game_implementation.character_sheet_test_skill
 play-italian-longsword-pommel-strike,Pommel Strike,game_implementation.secondary_skill_prerequisites
 play-italian-longsword-pommel-strike,Pommel Strike,game_implementation.weapon_requirements
@@ -1444,8 +1432,6 @@ play-italian-longsword-rompere-di-punta,Rompere di Punta,game_implementation.mec
 play-italian-longsword-rompere-di-punta,Rompere di Punta,game_implementation.mechanics.failure
 play-italian-longsword-rompere-di-punta,Rompere di Punta,game_implementation.mechanics.aftermath
 play-italian-longsword-rompere-di-punta,Rompere di Punta,game_implementation.mechanics.limits
-play-italian-longsword-scambiar-di-punta,Scambiar di Punta,historical_identity.historical_confidence
-play-italian-longsword-scambiar-di-punta,Scambiar di Punta,historical_identity.source_citations.exact_historical_location
 play-italian-longsword-scambiar-di-punta,Scambiar di Punta,game_implementation.character_sheet_test_skill
 play-italian-longsword-scambiar-di-punta,Scambiar di Punta,game_implementation.secondary_skill_prerequisites
 play-italian-longsword-scambiar-di-punta,Scambiar di Punta,game_implementation.weapon_requirements

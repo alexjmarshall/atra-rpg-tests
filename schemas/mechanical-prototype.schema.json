@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Atra provisional mechanical prototype branch",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "status", "governing_packet", "scope", "combat_state", "variants", "plays", "simulation_model"],
+  "properties": {
+    "id": {"const": "longsword-mechanical-prototype-v0.1"},
+    "status": {"const": "PROVISIONAL"},
+    "governing_packet": {"const": "atra-melee-design-packet-v0-4"},
+    "scope": {
+      "type": "object", "additionalProperties": false,
+      "required": ["selected_play_ids", "isolation_rule"],
+      "properties": {
+        "selected_play_ids": {"type": "array", "minItems": 6, "maxItems": 6, "uniqueItems": true, "items": {"type": "string"}},
+        "isolation_rule": {"type": "string", "minLength": 1}
+      }
+    },
+    "combat_state": {
+      "type": "object", "additionalProperties": false,
+      "required": ["status", "incoming_attack_type", "incoming_attack_line", "blade_contact", "recovery_commitment", "bind_pressure"],
+      "properties": {
+        "status": {"const": "PROVISIONAL"},
+        "incoming_attack_type": {"type": "array", "items": {"enum": ["thrust", "descending-cut", "other-cut", "pommel"]}, "uniqueItems": true},
+        "incoming_attack_line": {"type": "array", "items": {"enum": ["high", "center", "low", "inside", "outside"]}, "uniqueItems": true},
+        "blade_contact": {"type": "array", "items": {"enum": ["none", "bind-crossing", "close-crossing"]}, "minItems": 3, "maxItems": 3, "uniqueItems": true},
+        "recovery_commitment": {"type": "array", "items": {"enum": ["ready", "committed", "recovering-from-missed-committed-cut"]}, "uniqueItems": true},
+        "bind_pressure": {"type": "array", "items": {"enum": ["unknown", "soft", "hard"]}, "uniqueItems": true}
+      }
+    },
+    "variants": {"type": "object", "required": ["A", "B", "C"]},
+    "plays": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"type": "object", "required": ["play_id", "status", "test_skill", "spiritus_cost", "tier_requirement", "final_wording", "trigger", "resolution"]}},
+    "simulation_model": {"type": "object", "required": ["status", "seed", "trials_per_cell", "hit_points", "damage", "exchange_play_cap", "scenarios", "experimental_probabilities"]}
+  }
+}

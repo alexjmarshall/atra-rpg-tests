@@ -7,7 +7,7 @@
     "display_name_in_packet": "Pommel Strike",
     "game_facing_or_reconstruction_marker": false,
     "anti_number_marker": false,
-    "source_status": "needs-item-level-audit",
+    "source_status": "exact-locator-verified",
     "source_citations": [
       {
         "source_id": "atra-melee-design-packet-v0-4",
@@ -16,17 +16,17 @@
       },
       {
         "source_id": "fiore-dei-liberi",
-        "location": null,
-        "citation_status": "source-family-only"
-      },
-      {
-        "source_id": "philippo-di-vadi",
-        "location": null,
-        "citation_status": "source-family-only"
+        "location": "Fiore dei Liberi, Fior di Battaglia, J. Paul Getty Museum MS Ludwig XV 13; Morgan MS M.383 and Pisani Dossi concordances where listed; early 15th century (commonly c. 1404-1409); Getty MS Ludwig XV 13, 28r-c and 28r-d; concordant Morgan 16r-c/d and Pisani Dossi 22a-c/d; Wiktenauer digital concordance: Getty transcription by Michael Chidester; English translation by Colin Hatcher",
+        "citation_status": "exact-historical-location"
       }
     ],
-    "historical_confidence": null,
-    "packet_source_note": "Strong period fit through Vadi (1482-87), with Fiore as earlier fifteenth-century contemporary tradition."
+    "historical_confidence": "A",
+    "packet_source_note": "Item-level witness reviewed in the Prototype Longsword Evidence Audit; historical identity and locator promoted. Mechanical interpretation remains provisional.",
+    "source_inclusion_basis": "EARLIER",
+    "historical_names": [
+      "Ferir cum lo pomo (descriptive wording)"
+    ],
+    "historical_name_note": "Atra supplies a normalized English game-facing title for an explicitly described pommel action rather than preserving a formal play title."
   },
   "game_implementation": {
     "character_sheet_test_skill": null,
@@ -39,7 +39,7 @@
       "category": null,
       "type": "Close play"
     },
-    "tactical_lesson": "Enter from the close crossing and strike with the pommel.",
+    "tactical_lesson": "From an established close crossing, control the opponent's arm as the source variant permits and strike the exposed face with the pommel.",
     "candidate_status": "research-candidate",
     "suspected_duplicates": [],
     "related_plays": [],
@@ -100,6 +100,8 @@
       "assessment": "match",
       "notes": "The close-play chassis is supported. Review should keep the elbow-control variant distinct from the adjacent pommel variant instead of assuming one mandatory hand sequence."
     },
-    "review_notes": []
+    "review_notes": [
+      "Historical locator/name correction promoted; prototype mechanics remain separate and PROVISIONAL."
+    ]
   }
 }

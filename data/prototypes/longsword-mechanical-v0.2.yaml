@@ -1,0 +1,101 @@
+{
+  "id": "longsword-mechanical-prototype-v0.2",
+  "status": "PROVISIONAL",
+  "governing_packet": "atra-melee-design-packet-v0-4",
+  "scope": {
+    "selected_play_ids": [
+      "play-german-longsword-absetzen",
+      "play-german-longsword-zornhau-ort",
+      "play-german-longsword-durchwechseln",
+      "play-italian-longsword-scambiar-di-punta",
+      "play-german-longsword-nachreisen",
+      "play-italian-longsword-pommel-strike",
+      "play-german-longsword-schielhau"
+    ],
+    "mirrored_repertoire": true,
+    "isolation_rule": "Both equal-skill duelists possess the same available prototype Plays. Each ablation removes the same one Play from both duelists. Canonical mechanics remain null."
+  },
+  "combat_state": {
+    "incoming_attack_type": ["thrust", "descending-cut", "other-cut", "pommel"],
+    "incoming_attack_line": ["high", "center", "low", "inside", "outside"],
+    "blade_contact": ["none", "bind-crossing", "close-crossing"],
+    "recovery_commitment": ["ready", "committed", "recovering-from-missed-committed-cut"],
+    "bind_pressure": ["unknown", "soft", "hard"]
+  },
+  "rules": {
+    "combined_variant": "A",
+    "action_preservation": false,
+    "exchange_play_cap": 3,
+    "fourth_play": "record the attempted sequence and suppress the fourth Play"
+  },
+  "plays": [
+    {
+      "play_id": "play-german-longsword-absetzen",
+      "status": "PROVISIONAL",
+      "spiritus_cost": null,
+      "tier_requirement": null,
+      "trigger": "Remedy against a center/high thrust before contact.",
+      "resolution": "Variant A: one Longsword roll combines defence and attack and spends the action. A successful blade-seeking result may be changed through before firm contact."
+    },
+    {
+      "play_id": "play-italian-longsword-scambiar-di-punta",
+      "status": "PROVISIONAL",
+      "spiritus_cost": null,
+      "tier_requirement": null,
+      "trigger": "Remedy against a center/high thrust before contact.",
+      "resolution": "Variant A: one Longsword roll combines defence and attack and spends the action. A successful blade-seeking result may be changed through before firm contact."
+    },
+    {
+      "play_id": "play-german-longsword-zornhau-ort",
+      "status": "PROVISIONAL",
+      "spiritus_cost": null,
+      "tier_requirement": null,
+      "trigger": "Remedy against a committed high descending cut before contact.",
+      "resolution": "Roll the counter-cut first. Only if it succeeds, is not defeated by Durchwechseln, and produces a soft bind may the separate point continuation be rolled."
+    },
+    {
+      "play_id": "play-german-longsword-durchwechseln",
+      "status": "PROVISIONAL",
+      "spiritus_cost": null,
+      "tier_requirement": null,
+      "trigger": "Attacker continuation after a successful blade-seeking defence while contact remains none-before-firm-contact.",
+      "resolution": "A Longsword success changes below the defence and restores the initiating attack on the other line."
+    },
+    {
+      "play_id": "play-german-longsword-nachreisen",
+      "status": "PROVISIONAL",
+      "spiritus_cost": null,
+      "tier_requirement": null,
+      "trigger": "Initiation only against recovering-from-missed-committed-cut.",
+      "resolution": "Spend the action and roll Longsword before the target's recovery activation."
+    },
+    {
+      "play_id": "play-italian-longsword-pommel-strike",
+      "status": "PROVISIONAL",
+      "spiritus_cost": null,
+      "tier_requirement": null,
+      "trigger": "Initiation only from close-crossing.",
+      "resolution": "Spend the action and roll Longsword. No Wrestling prerequisite is assumed."
+    },
+    {
+      "play_id": "play-german-longsword-schielhau",
+      "status": "PROVISIONAL",
+      "spiritus_cost": null,
+      "tier_requirement": null,
+      "source": "Pseudo-Peter von Danzig, Starhemberg Fechtbuch Cod.44.A.8, 1452, ff. 23v.1-23v.2; Hagedorn transcription, Chidester draft translation.",
+      "trigger": "Remedy against a high descending cut; its rejoinder is available only when that same opponent attempts Durchwechseln below this Schielhau before contact.",
+      "resolution": "Roll the Schielhau Remedy. If successful and answered by Durchwechseln, roll the historically specific long-point extension as an internal rejoinder; success defeats the change-through and deals baseline test damage. It is not a generic Counter-Feint."
+    }
+  ],
+  "simulation_model": {
+    "seed": 240823,
+    "trials_per_ablation": 40000,
+    "scenario": "Equal Skill 10, 8 HP duel; both fighters possess the same repertoire; Variant A; action preservation disabled.",
+    "ablations": "Full repertoire plus seven cells removing exactly one Play from both fighters."
+  },
+  "calibration_flags": {
+    "soft_bind_probability": 0.5,
+    "close_crossing_probability": 0.25,
+    "policy": "These are artificial exercise rates, held fixed across every ablation. Do not tune Zornhau-Ort or Pommel Strike to outcomes produced by them."
+  }
+}
