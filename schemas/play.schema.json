@@ -1,0 +1,161 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://atra.example/schemas/play.schema.json",
+  "title": "Atra melee Play research record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "name", "historical_identity", "game_implementation"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^play-[a-z0-9]+(?:-[a-z0-9]+)*$"},
+    "name": {"type": "string", "minLength": 1},
+    "prototype_evidence_audit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "audit_scope", "historical_name_assessment", "proposed_inclusion_basis", "proposed_historical_confidence", "witnesses", "physical_requirements", "recommended_test_skill", "chassis_comparison", "review_notes"],
+      "properties": {
+        "status": {"const": "PROPOSED"},
+        "audit_scope": {"const": "longsword-evidence-prototype-v0.4"},
+        "historical_name_assessment": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["atra_game_facing_name", "historical_names", "relationship"],
+          "properties": {
+            "atra_game_facing_name": {"type": "string", "minLength": 1},
+            "historical_names": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+            "relationship": {"type": "string", "minLength": 1}
+          }
+        },
+        "proposed_inclusion_basis": {"enum": ["DIRECT", "EARLIER", "RECONSTRUCTION"]},
+        "proposed_historical_confidence": {"enum": ["A", "B", "C", "D"]},
+        "witnesses": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["source_id", "manuscript_or_treatise", "approximate_date", "location", "edition_or_translator", "url", "instruction_paraphrase"],
+            "properties": {
+              "source_id": {"type": "string", "minLength": 1},
+              "manuscript_or_treatise": {"type": "string", "minLength": 1},
+              "approximate_date": {"type": "string", "minLength": 1},
+              "location": {"type": "string", "minLength": 1},
+              "edition_or_translator": {"type": "string", "minLength": 1},
+              "url": {"type": "string", "pattern": "^https://"},
+              "instruction_paraphrase": {"type": "string", "minLength": 1}
+            }
+          }
+        },
+        "physical_requirements": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["weapon_type", "hand_requirement", "contact_or_bind_state", "measure", "guard_or_posture"],
+          "properties": {
+            "weapon_type": {"type": "string", "minLength": 1},
+            "hand_requirement": {"type": "string", "minLength": 1},
+            "contact_or_bind_state": {"type": "string", "minLength": 1},
+            "measure": {"type": "string", "minLength": 1},
+            "guard_or_posture": {"type": "string", "minLength": 1}
+          }
+        },
+        "recommended_test_skill": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["status", "skill", "rationale"],
+          "properties": {
+            "status": {"const": "PROPOSED"},
+            "skill": {"type": "string", "minLength": 1},
+            "rationale": {"type": "string", "minLength": 1}
+          }
+        },
+        "chassis_comparison": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["current_timing_type", "current_provisional_clusters", "assessment", "notes"],
+          "properties": {
+            "current_timing_type": {"type": ["string", "null"]},
+            "current_provisional_clusters": {"type": "array", "items": {"type": "string"}},
+            "assessment": {"enum": ["match", "partial", "mismatch"]},
+            "notes": {"type": "string", "minLength": 1}
+          }
+        },
+        "review_notes": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "historical_identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tradition", "curriculum", "display_name_in_packet", "game_facing_or_reconstruction_marker", "anti_number_marker", "source_status", "source_citations", "historical_confidence", "packet_source_note"],
+      "properties": {
+        "tradition": {"enum": ["German", "Italian"]},
+        "curriculum": {"type": "string", "minLength": 1},
+        "display_name_in_packet": {"type": "string", "minLength": 1},
+        "game_facing_or_reconstruction_marker": {"type": "boolean"},
+        "anti_number_marker": {"type": "boolean"},
+        "source_status": {"enum": ["needs-item-level-audit", "source-family-identified", "exact-locator-verified", "reconstruction-basis-verified", "imported"]},
+        "source_citations": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["source_id", "location", "citation_status"],
+            "properties": {
+              "source_id": {"type": "string", "minLength": 1},
+              "location": {"type": ["string", "null"]},
+              "citation_status": {"enum": ["exact-packet-location", "source-family-only", "exact-historical-location"]}
+            }
+          }
+        },
+        "historical_confidence": {"type": ["string", "null"], "enum": ["A", "B", "C", "D", null]},
+        "source_inclusion_basis": {"enum": ["DIRECT", "CONTINUITY", "EARLIER", "PRESERVATION", "RECONSTRUCTION", "IMPORTED"]},
+        "historical_names": {"type": "array", "minItems": 1, "items": {"type": "string"}, "uniqueItems": true},
+        "historical_name_note": {"type": "string", "minLength": 1},
+        "packet_source_note": {"type": ["string", "null"]}
+      }
+    },
+    "game_implementation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["character_sheet_test_skill", "secondary_skill_prerequisites", "weapon_requirements", "off_hand_requirement", "provisional_tier", "tactical_tags", "timing", "tactical_lesson", "candidate_status", "suspected_duplicates", "related_plays", "mechanics_status", "mechanics"],
+      "properties": {
+        "character_sheet_test_skill": {"type": ["string", "null"]},
+        "secondary_skill_prerequisites": {"type": ["array", "null"], "items": {"type": "object"}},
+        "weapon_requirements": {"type": ["array", "null"], "items": {"type": "string"}},
+        "off_hand_requirement": {"type": ["string", "null"]},
+        "provisional_tier": {"type": ["string", "null"]},
+        "tactical_tags": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+        "timing": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["category", "type"],
+          "properties": {
+            "category": {"type": ["string", "null"]},
+            "type": {"type": ["string", "null"]}
+          }
+        },
+        "tactical_lesson": {"type": ["string", "null"]},
+        "candidate_status": {"enum": ["research-candidate", "restoration-slot", "rejected", "consolidated", "final"]},
+        "suspected_duplicates": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+        "related_plays": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+        "mechanics_status": {"enum": ["unimplemented", "prototype", "tested", "adopted", "rejected", "blocked-by-open-question"]},
+        "mechanics": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["learn_requirements", "use_conditions", "action_relationship", "spiritus_cost", "test_resolution", "defence", "success", "failure", "aftermath", "limits"],
+          "properties": {
+            "learn_requirements": {"type": ["object", "null"]},
+            "use_conditions": {"type": ["object", "null"]},
+            "action_relationship": {"type": ["string", "null"]},
+            "spiritus_cost": {"type": ["integer", "null"], "minimum": 0},
+            "test_resolution": {"type": ["object", "null"]},
+            "defence": {"type": ["object", "null"]},
+            "success": {"type": ["object", "null"]},
+            "failure": {"type": ["object", "null"]},
+            "aftermath": {"type": ["object", "null"]},
+            "limits": {"type": ["object", "null"]}
+          }
+        }
+      }
+    }
+  }
+}

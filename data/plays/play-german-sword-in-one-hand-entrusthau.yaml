@@ -1,0 +1,57 @@
+{
+  "id": "play-german-sword-in-one-hand-entrusthau",
+  "name": "Entrüsthau",
+  "historical_identity": {
+    "tradition": "German",
+    "curriculum": "Sword in One Hand",
+    "display_name_in_packet": "Entrüsthau†",
+    "game_facing_or_reconstruction_marker": false,
+    "anti_number_marker": true,
+    "source_status": "needs-item-level-audit",
+    "source_citations": [
+      {
+        "source_id": "atra-melee-design-packet-v0-4",
+        "location": "Section 7 > Sword in One Hand > German > Entrüsthau†",
+        "citation_status": "exact-packet-location"
+      },
+      {
+        "source_id": "johannes-leckuechner",
+        "location": null,
+        "citation_status": "source-family-only"
+      }
+    ],
+    "historical_confidence": null,
+    "packet_source_note": "Strong period fit when sourced to Leckuchner. Flag plays that depend on the Messer's single edge, asymmetrical hilt or Nagel."
+  },
+  "game_implementation": {
+    "character_sheet_test_skill": null,
+    "secondary_skill_prerequisites": null,
+    "weapon_requirements": null,
+    "off_hand_requirement": null,
+    "provisional_tier": "Foundation",
+    "tactical_tags": [
+      "anti-number-candidate"
+    ],
+    "timing": {
+      "category": null,
+      "type": "Counter-cut"
+    },
+    "tactical_lesson": "Leap offline and overturn the weapon against a high guard or descending cut.",
+    "candidate_status": "research-candidate",
+    "suspected_duplicates": [],
+    "related_plays": [],
+    "mechanics_status": "unimplemented",
+    "mechanics": {
+      "learn_requirements": null,
+      "use_conditions": null,
+      "action_relationship": null,
+      "spiritus_cost": null,
+      "test_resolution": null,
+      "defence": null,
+      "success": null,
+      "failure": null,
+      "aftermath": null,
+      "limits": null
+    }
+  }
+}

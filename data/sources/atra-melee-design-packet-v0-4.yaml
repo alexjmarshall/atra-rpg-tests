@@ -1,0 +1,9 @@
+{
+  "id": "atra-melee-design-packet-v0-4",
+  "name": "Atra Melee Design Packet v0.4",
+  "kind": "governing-design-document",
+  "citation": "Atra RPG, Atra Melee Design Packet, Version 0.4, updated 2026-08-07.",
+  "date": "2026-08-07",
+  "exact_location": null,
+  "notes": "Canonical for this repository. Later decisions supersede earlier experiments only where the record supports a decision."
+}

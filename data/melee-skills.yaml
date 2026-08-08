@@ -1,0 +1,15 @@
+{
+  "status": "ADOPTED",
+  "governing_source": "atra-melee-design-packet-v0-4",
+  "location": "Sections 2.1 and 5.2",
+  "skills": [
+    {"id": "wrestling", "name": "Wrestling", "canonical_scope": "Unarmed grips, throws, locks, pins and close control; also the natural test for genuinely unarmed parts of armed close play."},
+    {"id": "dagger", "name": "Dagger", "canonical_scope": "Dagger attacks, dagger Parries and dagger-on-dagger work, regardless of which hand holds the dagger."},
+    {"id": "one-handed-sword", "name": "One-Handed Sword", "canonical_scope": "Arming sword, Messer, falchion and early cut-thrust sword handling. The skill is independent of off-hand loadout."},
+    {"id": "axe-and-mace", "name": "Axe & Mace", "canonical_scope": "One-handed axes, maces, hammers and clubs; equipment traits and Shield may gate specialized Plays."},
+    {"id": "longsword", "name": "Longsword", "canonical_scope": "Two-handed sword fencing; richest source base and expected mechanical centerpiece."},
+    {"id": "shield", "name": "Shield", "canonical_scope": "Buckler and larger-shield Parries, active covers, shield strikes, binds, rushes and weapon manipulation."},
+    {"id": "spear-and-staff", "name": "Spear & Staff", "canonical_scope": "Spears, staves and similar simple long hafted weapons centered on shaft, line, reach, point/end control, beating, sliding and shortening."},
+    {"id": "poleaxe-and-halberd", "name": "Poleaxe & Halberd", "canonical_scope": "Complex-headed long weapons centered on differentiated striking surfaces, hooks, wrenching, rear spikes and close weapon control."}
+  ]
+}

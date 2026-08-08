@@ -1,0 +1,55 @@
+{
+  "id": "play-german-dagger-dagger-wrap-throw",
+  "name": "Dagger-Wrap Throw",
+  "historical_identity": {
+    "tradition": "German",
+    "curriculum": "Dagger",
+    "display_name_in_packet": "Dagger-Wrap Throw*",
+    "game_facing_or_reconstruction_marker": true,
+    "anti_number_marker": false,
+    "source_status": "needs-item-level-audit",
+    "source_citations": [
+      {
+        "source_id": "atra-melee-design-packet-v0-4",
+        "location": "Section 7 > Dagger > German > Dagger-Wrap Throw*",
+        "citation_status": "exact-packet-location"
+      },
+      {
+        "source_id": "joachim-meyer",
+        "location": null,
+        "citation_status": "source-family-only"
+      }
+    ],
+    "historical_confidence": null,
+    "packet_source_note": "Period-compatible in principle. Re-source or remove anything supported only by Meyer; the thrown-dagger sequence is specifically source-sensitive."
+  },
+  "game_implementation": {
+    "character_sheet_test_skill": null,
+    "secondary_skill_prerequisites": null,
+    "weapon_requirements": null,
+    "off_hand_requirement": null,
+    "provisional_tier": "Intermediate",
+    "tactical_tags": [],
+    "timing": {
+      "category": null,
+      "type": "Throw"
+    },
+    "tactical_lesson": "Wind your dagger around the opponent’s arm and use it as a lever.",
+    "candidate_status": "research-candidate",
+    "suspected_duplicates": [],
+    "related_plays": [],
+    "mechanics_status": "unimplemented",
+    "mechanics": {
+      "learn_requirements": null,
+      "use_conditions": null,
+      "action_relationship": null,
+      "spiritus_cost": null,
+      "test_resolution": null,
+      "defence": null,
+      "success": null,
+      "failure": null,
+      "aftermath": null,
+      "limits": null
+    }
+  }
+}

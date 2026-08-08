@@ -1,0 +1,108 @@
+{
+  "id": "play-italian-longsword-false-point",
+  "name": "False Point",
+  "historical_identity": {
+    "tradition": "Italian",
+    "curriculum": "Longsword",
+    "display_name_in_packet": "False Point*",
+    "game_facing_or_reconstruction_marker": true,
+    "anti_number_marker": false,
+    "source_status": "needs-item-level-audit",
+    "source_citations": [
+      {
+        "source_id": "atra-melee-design-packet-v0-4",
+        "location": "Section 7 > Longsword > Italian > False Point*",
+        "citation_status": "exact-packet-location"
+      },
+      {
+        "source_id": "fiore-dei-liberi",
+        "location": null,
+        "citation_status": "source-family-only"
+      },
+      {
+        "source_id": "philippo-di-vadi",
+        "location": null,
+        "citation_status": "source-family-only"
+      }
+    ],
+    "historical_confidence": null,
+    "packet_source_note": "Strong period fit through Vadi (1482-87), with Fiore as earlier fifteenth-century contemporary tradition."
+  },
+  "game_implementation": {
+    "character_sheet_test_skill": null,
+    "secondary_skill_prerequisites": null,
+    "weapon_requirements": null,
+    "off_hand_requirement": null,
+    "provisional_tier": "Intermediate",
+    "tactical_tags": [],
+    "timing": {
+      "category": null,
+      "type": "Deception"
+    },
+    "tactical_lesson": "Threaten one thrust after breaking or crossing, then change to another opening.",
+    "candidate_status": "research-candidate",
+    "suspected_duplicates": [],
+    "related_plays": [],
+    "mechanics_status": "unimplemented",
+    "mechanics": {
+      "learn_requirements": null,
+      "use_conditions": null,
+      "action_relationship": null,
+      "spiritus_cost": null,
+      "test_resolution": null,
+      "defence": null,
+      "success": null,
+      "failure": null,
+      "aftermath": null,
+      "limits": null
+    }
+  },
+  "prototype_evidence_audit": {
+    "status": "PROPOSED",
+    "audit_scope": "longsword-evidence-prototype-v0.4",
+    "historical_name_assessment": {
+      "atra_game_facing_name": "False Point",
+      "historical_names": [
+        "Punta falsa",
+        "Punta curta"
+      ],
+      "relationship": "Atra translates and normalizes Fiore's historical labels into an English game-facing name."
+    },
+    "proposed_inclusion_basis": "EARLIER",
+    "proposed_historical_confidence": "A",
+    "witnesses": [
+      {
+        "source_id": "fiore-dei-liberi",
+        "manuscript_or_treatise": "Fiore dei Liberi, Fior di Battaglia, J. Paul Getty Museum MS Ludwig XV 13; Morgan MS M.383 and Pisani Dossi concordances where listed",
+        "approximate_date": "early 15th century (commonly c. 1404-1409)",
+        "location": "Getty MS Ludwig XV 13, 27v-a; concordant Pisani Dossi 21b-c",
+        "edition_or_translator": "Wiktenauer digital concordance: Getty transcription by Michael Chidester; English translation by Colin Hatcher",
+        "url": "https://wiktenauer.com/wiki/Fiore_de%27i_Liberi/Sword_in_Two_Hands/Wide_Play",
+        "instruction_paraphrase": "Show a forceful middle cut toward the head; when the opponent covers and the swords touch, make only light contact, turn to the other side, seize the middle of your own blade with the left hand, and thrust to throat or chest. Fiore says it works better in armor."
+      }
+    ],
+    "physical_requirements": {
+      "weapon_type": "Two-handed sword/longsword; the final thrust uses a half-sword grip.",
+      "hand_requirement": "Both hands begin on the hilt; the left hand then releases the hilt and grips the middle of the blade.",
+      "contact_or_bind_state": "Requires the opponent to cover the apparent cut and create light blade contact before the change.",
+      "measure": "Begins at cutting measure and closes to half-sword thrusting measure.",
+      "guard_or_posture": "No named starting guard is explicit; armor is expressly preferred."
+    },
+    "recommended_test_skill": {
+      "status": "PROPOSED",
+      "skill": "Longsword",
+      "rationale": "The entire sequence is organized through longsword cutting, contact, and a half-sword thrust."
+    },
+    "chassis_comparison": {
+      "current_timing_type": "Deception",
+      "current_provisional_clusters": [
+        "changes-through-and-deceptions"
+      ],
+      "assessment": "partial",
+      "notes": "The deception cluster fits, but the current tactical lesson says to threaten one thrust and change to another. The witness instead begins with a false middle cut and changes into a half-sword thrust."
+    },
+    "review_notes": [
+      "The current tactical lesson is the clearest evidence/chassis wording mismatch in the Italian sample."
+    ]
+  }
+}

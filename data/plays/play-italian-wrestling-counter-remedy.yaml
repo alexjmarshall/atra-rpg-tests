@@ -1,0 +1,55 @@
+{
+  "id": "play-italian-wrestling-counter-remedy",
+  "name": "Counter-Remedy",
+  "historical_identity": {
+    "tradition": "Italian",
+    "curriculum": "Wrestling",
+    "display_name_in_packet": "Counter-Remedy*",
+    "game_facing_or_reconstruction_marker": true,
+    "anti_number_marker": false,
+    "source_status": "needs-item-level-audit",
+    "source_citations": [
+      {
+        "source_id": "atra-melee-design-packet-v0-4",
+        "location": "Section 7 > Wrestling > Italian > Counter-Remedy*",
+        "citation_status": "exact-packet-location"
+      },
+      {
+        "source_id": "fiore-dei-liberi",
+        "location": null,
+        "citation_status": "source-family-only"
+      }
+    ],
+    "historical_confidence": null,
+    "packet_source_note": "Period-compatible. Fiore's Abrazare is early fifteenth century and remains a contemporary-tradition source for the 1490s."
+  },
+  "game_implementation": {
+    "character_sheet_test_skill": null,
+    "secondary_skill_prerequisites": null,
+    "weapon_requirements": null,
+    "off_hand_requirement": null,
+    "provisional_tier": "Master",
+    "tactical_tags": [],
+    "timing": {
+      "category": null,
+      "type": "Counter"
+    },
+    "tactical_lesson": "Defeat an established hold by changing the controlled hand, elbow or leg.",
+    "candidate_status": "research-candidate",
+    "suspected_duplicates": [],
+    "related_plays": [],
+    "mechanics_status": "unimplemented",
+    "mechanics": {
+      "learn_requirements": null,
+      "use_conditions": null,
+      "action_relationship": null,
+      "spiritus_cost": null,
+      "test_resolution": null,
+      "defence": null,
+      "success": null,
+      "failure": null,
+      "aftermath": null,
+      "limits": null
+    }
+  }
+}

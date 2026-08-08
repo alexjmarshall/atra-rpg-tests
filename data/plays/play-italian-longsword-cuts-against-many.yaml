@@ -1,0 +1,116 @@
+{
+  "id": "play-italian-longsword-cuts-against-many",
+  "name": "Cuts Against Many",
+  "historical_identity": {
+    "tradition": "Italian",
+    "curriculum": "Longsword",
+    "display_name_in_packet": "Cuts Against Many*†",
+    "game_facing_or_reconstruction_marker": true,
+    "anti_number_marker": true,
+    "source_status": "needs-item-level-audit",
+    "source_citations": [
+      {
+        "source_id": "atra-melee-design-packet-v0-4",
+        "location": "Section 7 > Longsword > Italian > Cuts Against Many*†",
+        "citation_status": "exact-packet-location"
+      },
+      {
+        "source_id": "philippo-di-vadi",
+        "location": null,
+        "citation_status": "source-family-only"
+      }
+    ],
+    "historical_confidence": null,
+    "packet_source_note": "Strong period fit through Vadi (1482-87), with Fiore as earlier fifteenth-century contemporary tradition."
+  },
+  "game_implementation": {
+    "character_sheet_test_skill": null,
+    "secondary_skill_prerequisites": null,
+    "weapon_requirements": null,
+    "off_hand_requirement": null,
+    "provisional_tier": "Master",
+    "tactical_tags": [
+      "anti-number-candidate",
+      "against-many",
+      "clearing",
+      "recovery"
+    ],
+    "timing": {
+      "category": null,
+      "type": "Clearing / recovery"
+    },
+    "tactical_lesson": "Against several opponents, keep the two-handed sword light and mobile, favor recoverable cutting actions over a thrust that can leave the weapon committed while another enemy attacks. Transparent game-facing synthesis of Vadi’s explicit advice.",
+    "candidate_status": "research-candidate",
+    "suspected_duplicates": [],
+    "related_plays": [],
+    "mechanics_status": "unimplemented",
+    "mechanics": {
+      "learn_requirements": null,
+      "use_conditions": null,
+      "action_relationship": null,
+      "spiritus_cost": null,
+      "test_resolution": null,
+      "defence": null,
+      "success": null,
+      "failure": null,
+      "aftermath": null,
+      "limits": null
+    }
+  },
+  "prototype_evidence_audit": {
+    "status": "PROPOSED",
+    "audit_scope": "longsword-evidence-prototype-v0.4",
+    "historical_name_assessment": {
+      "atra_game_facing_name": "Cuts Against Many",
+      "historical_names": [
+        "No historical named play; Vadi gives tactical advice about fighting more than one"
+      ],
+      "relationship": "Atra transparently synthesizes a game-facing candidate from Vadi's period principles."
+    },
+    "proposed_inclusion_basis": "RECONSTRUCTION",
+    "proposed_historical_confidence": "C",
+    "witnesses": [
+      {
+        "source_id": "philippo-di-vadi",
+        "manuscript_or_treatise": "Philippo di Vadi, De Arte Gladiatoria Dimicandi, Biblioteca Nazionale Centrale di Roma MS Vitt. Em. 1324",
+        "approximate_date": "1482-1487",
+        "location": "Chapter 4, ff. 7v.2-8r",
+        "edition_or_translator": "Wiktenauer digital edition: transcription by Marco Rubboli and Luca Cesari; English translation by Guy Windsor",
+        "url": "https://wiktenauer.com/wiki/Philippo_di_Vadi",
+        "instruction_paraphrase": "Vadi advises avoiding a fight against more than one; if forced, use a sword that can be handled lightly rather than a heavy weapon, abandon the thrust, and use other blows."
+      },
+      {
+        "source_id": "philippo-di-vadi",
+        "manuscript_or_treatise": "Philippo di Vadi, De Arte Gladiatoria Dimicandi, Biblioteca Nazionale Centrale di Roma MS Vitt. Em. 1324",
+        "approximate_date": "1482-1487",
+        "location": "Chapter 8, ff. 10r-10v.1",
+        "edition_or_translator": "Wiktenauer digital edition: transcription by Marco Rubboli and Luca Cesari; English translation by Guy Windsor",
+        "url": "https://wiktenauer.com/wiki/Philippo_di_Vadi",
+        "instruction_paraphrase": "Vadi explains that a thrust may serve against one opponent but is dangerous against several because a companion can strike while the point is committed; a lighter weapon can leave and recover quickly."
+      }
+    ],
+    "physical_requirements": {
+      "weapon_type": "A light, manageable two-handed sword; Vadi expressly contrasts it with a heavy weapon.",
+      "hand_requirement": "Two-handed sword use is the curriculum context; no free-hand action is described.",
+      "contact_or_bind_state": "No bind is required; this is general advice for engagement against multiple opponents, not a discrete crossed-blade play.",
+      "measure": "Variable engagement measure against more than one opponent; rapid weapon recovery is the explicit concern.",
+      "guard_or_posture": "No guard or starting posture is specified."
+    },
+    "recommended_test_skill": {
+      "status": "PROPOSED",
+      "skill": "Longsword",
+      "rationale": "The evidence is explicitly about managing a two-handed sword against several opponents, making Longsword the least-assumptive proposed Test Skill."
+    },
+    "chassis_comparison": {
+      "current_timing_type": "Clearing / recovery",
+      "current_provisional_clusters": [
+        "pursuit-recovery"
+      ],
+      "assessment": "partial",
+      "notes": "The recovery emphasis is supported, but the witness gives tactical and equipment advice rather than a discrete clearing technique. The candidate should remain a transparent reconstruction and not imply a witnessed named play."
+    },
+    "review_notes": [
+      "The reconstruction grade follows the packet's confidence rubric even though the underlying Vadi passages have exact locators."
+    ]
+  }
+}

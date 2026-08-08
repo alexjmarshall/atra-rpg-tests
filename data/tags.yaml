@@ -1,0 +1,23 @@
+{
+  "governing_source": "atra-melee-design-packet-v0-4",
+  "tags": [
+    {"id": "anti-number-candidate", "kind": "research-role", "meaning": "Packet dagger marker: likely utility through tempo compression, engagement control, recovery or line denial; never an automatic bonus."},
+    {"id": "against-many", "kind": "research-role", "meaning": "Indexes an explicit against-many candidate; never grants a mechanic by itself."},
+    {"id": "tempo-compression", "kind": "research-role", "meaning": "One technique combines work that would ordinarily consume separate offensive/defensive tempo."},
+    {"id": "engagement-control", "kind": "research-role", "meaning": "Positioning or line control limits how many opponents can act."},
+    {"id": "clearing", "kind": "research-role", "meaning": "Preserves or restores space after an action."},
+    {"id": "recovery", "kind": "research-role", "meaning": "Avoids remaining committed and restores readiness."},
+    {"id": "line-denial", "kind": "research-role", "meaning": "Controls a line so opponents cannot freely enter or attack."}
+  ],
+  "controlled_vocabularies": {
+    "decision_status": ["ADOPTED", "PROVISIONAL", "REJECTED", "SUPERSEDED", "OPEN", "DEFERRED"],
+    "source_inclusion_basis": ["DIRECT", "CONTINUITY", "EARLIER", "PRESERVATION", "RECONSTRUCTION", "IMPORTED"],
+    "historical_confidence": ["A", "B", "C", "D"],
+    "canonical_learning_tier": ["Foundation", "Trained", "Expert", "Master"],
+    "longlist_tier_as_recorded": ["Foundation", "Intermediate", "Master"],
+    "timing_category": ["Guard", "Action", "Reaction / Remedy", "Continuation", "Aftermath"],
+    "off_hand_requirement": ["Any", "Free", "Buckler", "Shield", "Companion weapon", "Two hands free"],
+    "candidate_status": ["research-candidate", "restoration-slot", "rejected", "consolidated", "final"],
+    "mechanics_status": ["unimplemented", "prototype", "tested", "adopted", "rejected", "blocked-by-open-question"]
+  }
+}

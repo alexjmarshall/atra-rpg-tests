@@ -1,0 +1,67 @@
+{
+  "id": "play-italian-polearms-poleaxe-and-halberd-boars-tooth-rising-counter",
+  "name": "Boar’s Tooth Rising Counter",
+  "historical_identity": {
+    "tradition": "Italian",
+    "curriculum": "Polearms / Poleaxe & Halberd",
+    "display_name_in_packet": "Boar’s Tooth Rising Counter*†",
+    "game_facing_or_reconstruction_marker": true,
+    "anti_number_marker": true,
+    "source_status": "needs-item-level-audit",
+    "source_citations": [
+      {
+        "source_id": "atra-melee-design-packet-v0-4",
+        "location": "Section 7 > Polearms / Poleaxe & Halberd > Italian > Boar’s Tooth Rising Counter*†",
+        "citation_status": "exact-packet-location"
+      },
+      {
+        "source_id": "fiore-dei-liberi",
+        "location": null,
+        "citation_status": "source-family-only"
+      },
+      {
+        "source_id": "philippo-di-vadi",
+        "location": null,
+        "citation_status": "source-family-only"
+      },
+      {
+        "source_id": "achille-marozzo",
+        "location": null,
+        "citation_status": "source-family-only"
+      }
+    ],
+    "historical_confidence": null,
+    "packet_source_note": "Fiore/Vadi remain primary. Marozzo may now be used as a continuity witness for established Italian traditions, but source-unique 1530s actions still require an explicit continuity judgment rather than automatic backdating."
+  },
+  "game_implementation": {
+    "character_sheet_test_skill": null,
+    "secondary_skill_prerequisites": null,
+    "weapon_requirements": null,
+    "off_hand_requirement": null,
+    "provisional_tier": "Intermediate",
+    "tactical_tags": [
+      "anti-number-candidate"
+    ],
+    "timing": {
+      "category": null,
+      "type": "Counter-attack"
+    },
+    "tactical_lesson": "Enter beneath the descending axe and rise with point or head.",
+    "candidate_status": "research-candidate",
+    "suspected_duplicates": [],
+    "related_plays": [],
+    "mechanics_status": "unimplemented",
+    "mechanics": {
+      "learn_requirements": null,
+      "use_conditions": null,
+      "action_relationship": null,
+      "spiritus_cost": null,
+      "test_resolution": null,
+      "defence": null,
+      "success": null,
+      "failure": null,
+      "aftermath": null,
+      "limits": null
+    }
+  }
+}

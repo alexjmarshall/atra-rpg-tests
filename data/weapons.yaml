@@ -1,0 +1,25 @@
+{
+  "status": "research-inventory",
+  "governing_source": "atra-melee-design-packet-v0-4",
+  "location": "Sections 5.2, 5.3 and OPEN base-weapon/shield questions",
+  "warning": "The packet leaves base weapon differentiation and shield equipment profiles OPEN. Mechanical profiles are intentionally null.",
+  "weapons": [
+    {"id": "dagger", "name": "Dagger", "skill": "dagger", "mechanical_profile": null},
+    {"id": "arming-sword", "name": "Arming sword", "skill": "one-handed-sword", "mechanical_profile": null},
+    {"id": "messer", "name": "Messer", "skill": "one-handed-sword", "mechanical_profile": null},
+    {"id": "falchion", "name": "Falchion", "skill": "one-handed-sword", "mechanical_profile": null},
+    {"id": "early-cut-thrust-sword", "name": "Early cut-thrust sword", "skill": "one-handed-sword", "mechanical_profile": null},
+    {"id": "one-handed-axe", "name": "One-handed axe", "skill": "axe-and-mace", "mechanical_profile": null},
+    {"id": "mace", "name": "Mace", "skill": "axe-and-mace", "mechanical_profile": null},
+    {"id": "hammer", "name": "Hammer", "skill": "axe-and-mace", "mechanical_profile": null},
+    {"id": "club", "name": "Club", "skill": "axe-and-mace", "mechanical_profile": null},
+    {"id": "longsword", "name": "Longsword", "skill": "longsword", "mechanical_profile": null},
+    {"id": "buckler", "name": "Buckler", "skill": "shield", "mechanical_profile": null},
+    {"id": "large-shield", "name": "Larger shield", "skill": "shield", "mechanical_profile": null},
+    {"id": "spear", "name": "Spear", "skill": "spear-and-staff", "mechanical_profile": null},
+    {"id": "staff", "name": "Staff", "skill": "spear-and-staff", "mechanical_profile": null},
+    {"id": "poleaxe", "name": "Poleaxe", "skill": "poleaxe-and-halberd", "mechanical_profile": null},
+    {"id": "halberd", "name": "Halberd", "skill": "poleaxe-and-halberd", "mechanical_profile": null},
+    {"id": "bill", "name": "Bill", "skill": "poleaxe-and-halberd", "mechanical_profile": null}
+  ]
+}
