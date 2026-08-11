@@ -86,12 +86,21 @@
         "edition_or_translator": "Wiktenauer digital edition: transcription by Dierk Hagedorn; draft English translation by Michael Chidester",
         "url": "https://wiktenauer.com/wiki/Pseudo-Peter_von_Danzig",
         "instruction_paraphrase": "From the sword at the right shoulder, act before an opponent in high Vom Tag completes the descending cut: spring to the right, turn the hilt in front of the head with the thumb under, and strike the opponent's left head with the short edge."
+      },
+      {
+        "source_id": "pseudo-peter-von-danzig",
+        "manuscript_or_treatise": "Starhemberg Fechtbuch, Rome, Biblioteca dell'Accademia Nazionale dei Lincei e Corsiniana, Cod.44.A.8 (MS Cors.1449), anonymous Pseudo-Peter von Danzig gloss",
+        "approximate_date": "1452",
+        "location": "Longsword, ff. 20r.2-20v.1",
+        "edition_or_translator": "Wiktenauer digital edition: transcription by Dierk Hagedorn; draft English translation by Michael Chidester",
+        "url": "https://wiktenauer.com/wiki/Pseudo-Peter_von_Danzig",
+        "instruction_paraphrase": "In the separately headed Zwerch-with-the-Strong bind-work instruction, strike the Zwerch with the strength of the body and bind on the opponent's sword with the Strong of the acting sword; if the opponent binds strongly in the parry, continue with the sourced bind-work."
       }
     ],
     "physical_requirements": {
       "weapon_type": "Two-handed longsword.",
       "hand_requirement": "Both hands remain on the sword; no free hand is described.",
-      "contact_or_bind_state": "Begins without blade contact and intercepts or preempts the opponent's high-line attack.",
+      "contact_or_bind_state": "The initial interception begins without blade contact and intercepts or preempts the opponent's high-line attack. A separately attested Zwerch-with-the-Strong phase explicitly binds on the opponent's sword with the Strong of the acting sword. These are distinct phases; the later bind-work must not be generalized to every Zwerchhau execution.",
       "measure": "Cutting/engagement measure with an offline spring.",
       "guard_or_posture": "Attacker's sword at the right shoulder; opponent explicitly in high Vom Tag with arms raised."
     },
@@ -106,6 +115,10 @@
       "assessment": "mismatch",
       "notes": "'Master strike' is a historical category, not a procedural chassis. The witness more usefully supports a guard-breaking, preemptive defence/attack or single-time-counter comparison."
     },
-    "review_notes": []
+    "review_notes": [
+      "Phase-level evidence correction: the earlier audit covered the initial interception but omitted the separately attested Zwerch with the Strong bind-work instruction at Cod.44.A.8, ff. 20r.2-20v.1.",
+      "For that specific bind-work phase, the actor's Strong supports hiltward actor contact while the opponent's contact zone and both fighters' pressure remain unknown. No generic leverage modifier follows.",
+      "The record-wide historical_identity.source_status remains needs-item-level-audit; adding one scoped witness does not mark the entire candidate fully audited."
+    ]
   }
 }

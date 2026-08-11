@@ -1,0 +1,108 @@
+{
+  "id": "longsword-bind-continuations-v0.1",
+  "status": "PROVISIONAL",
+  "governing_baseline": "longsword-crossing-bind-state-model-v0.1",
+  "scope": {
+    "harness_only": true,
+    "active_mirrored_repertoire_changed": false,
+    "excluded": [
+      "Guard effects",
+      "generic Strong-vs-Weak modifiers",
+      "generic Hard/Soft player menu",
+      "random Soft or Close generation",
+      "Spiritus or damage rebalance",
+      "main melee design packet update",
+      "mass Play-catalog edits"
+    ]
+  },
+  "fixtures": [
+    {
+      "id": "diagnostic-yield-give-way",
+      "label": "Yield / Give Way — DIAGNOSTIC STATE CREATOR — NOT PLAYER-FACING PLAY",
+      "source_status": "HISTORICALLY SUPPORTED CONCEPT; ITEM-LEVEL LOCATOR NOT AUDITED IN REPOSITORY",
+      "source_inclusion_basis": "EARLIER",
+      "historical_confidence": "MISSING — phase-level confidence not graded in existing repository evidence",
+      "exact_locator": null,
+      "mechanics_status": "PROVISIONAL",
+      "classification": "forced-sequence diagnostic action; cost, action, attack, and Play-chain treatment OPEN",
+      "before": {"contact": "crossing", "actor_pressure": "hard-or-unknown", "opponent_pressure": "hard"},
+      "after": {"contact": "crossing", "actor_pressure": "soft", "opponent_pressure": "hard"},
+      "notes": "Creates no damage, attack, action preservation, Spiritus cost, defence modifier, escape, or separation. The complete learned yielding technique remains historically and mechanically incomplete."
+    },
+    {
+      "id": "rompere-close-control",
+      "label": "Rompere retained Wide Crossing to Close control",
+      "source_status": "PROPOSED item-level evidence audit",
+      "source_inclusion_basis": "EARLIER",
+      "historical_confidence": "A (proposed)",
+      "exact_locator": "Fiore dei Liberi, Getty MS Ludwig XV 13, 26v-c; immediate continuations 26v-d-27r-b",
+      "mechanics_status": "PROVISIONAL",
+      "classification": "test-harness continuation; PLAY-CHAIN / ACTION-ECONOMY CLASSIFICATION OPEN",
+      "before": {"contact": "crossing", "measure": "wide", "opponent_contact_zone": "middle", "displacement_event": true, "retained": true},
+      "after": {"contact": "crossing", "measure": "close"},
+      "notes": "Explicit authored transition only; not a generic closing rule and not part of the mirrored combat repertoire."
+    },
+    {
+      "id": "zwerch-with-the-strong",
+      "label": "Zwerch with the Strong bind-work phase",
+      "source_status": "phase-level exact locator verified; whole Zwerchhau record remains needs-item-level-audit",
+      "source_inclusion_basis": "EARLIER",
+      "historical_confidence": "A (proposed phase-level audit)",
+      "exact_locator": "Pseudo-Peter von Danzig, Cod.44.A.8 (1452), Longsword, ff. 20r.2-20v.1",
+      "mechanics_status": "PROVISIONAL",
+      "classification": "reference fixture for the separately attested bind-work phase",
+      "before": {"phase": "Zwerch with the Strong bind-work; not the initial interception"},
+      "after": {"contact": "crossing", "measure": "wide", "actor_contact_zone": "hiltward", "opponent_contact_zone": "unknown", "actor_pressure": "unknown", "opponent_pressure": "unknown"},
+      "notes": "Does not make every Zwerchhau a Crossing and creates no generic leverage modifier."
+    },
+    {
+      "id": "fiore-point-crossing-reference",
+      "label": "Italian pointward/pointward Wide Crossing representation reference",
+      "source_status": "HISTORICALLY SUPPORTED CONTACT-DEPTH CONCEPT; bilateral-zone locator missing from existing repository audit",
+      "source_inclusion_basis": "EARLIER",
+      "historical_confidence": "MISSING — bilateral pointward mapping not item-level audited",
+      "exact_locator": null,
+      "mechanics_status": "PROVISIONAL",
+      "classification": "schema/reference fixture; not a generic player action",
+      "before": {},
+      "after": {"contact": "crossing", "measure": "wide", "actor_contact_zone": "pointward", "opponent_contact_zone": "pointward"},
+      "notes": "Representation proof only. No source claim beyond the repository's accepted contact-depth concept and no combat modifier."
+    },
+    {
+      "id": "fiore-mid-sword-crossing-reference",
+      "label": "Italian middle/middle Wide Crossing representation reference",
+      "source_status": "HISTORICALLY SUPPORTED CONTACT-DEPTH CONCEPT; bilateral-zone locator missing from existing repository audit",
+      "source_inclusion_basis": "EARLIER",
+      "historical_confidence": "MISSING — bilateral middle mapping not item-level audited",
+      "exact_locator": null,
+      "mechanics_status": "PROVISIONAL",
+      "classification": "schema/reference fixture; not a generic player action",
+      "before": {},
+      "after": {"contact": "crossing", "measure": "wide", "actor_contact_zone": "middle", "opponent_contact_zone": "middle"},
+      "notes": "Representation proof only; explicitly demonstrates that middle contact is not Close measure and creates no combat modifier."
+    },
+    {
+      "id": "pommel-close-consumer",
+      "label": "Pommel Strike from explicit Close Crossing",
+      "source_status": "exact-locator-verified",
+      "source_inclusion_basis": "EARLIER",
+      "historical_confidence": "A",
+      "exact_locator": "Fiore dei Liberi, Getty MS Ludwig XV 13, 28r-c and 28r-d; concordant Morgan 16r-c/d and Pisani Dossi 22a-c/d",
+      "mechanics_status": "PROVISIONAL",
+      "classification": "existing Close-Crossing consumer used only in the forced integration sequence",
+      "before": {"contact": "crossing", "measure": "close"},
+      "after": {"consumer": "Pommel Strike legal"},
+      "notes": "The fixture does not rebalance Pommel Strike or add Rompere to normal mirrored combat."
+    }
+  ],
+  "open_questions": [
+    "complete player-facing Yield effect and source-specific follow-up",
+    "Yield action, Spiritus, and learned-Play-chain classification",
+    "Rompere close continuation action and Play-chain classification",
+    "generic closing rules",
+    "generic Strong-vs-Weak leverage effects",
+    "how long complex continuations may retain Crossing",
+    "all Guard effects",
+    "item-level bilateral locators for Italian point and mid-sword crossings"
+  ]
+}

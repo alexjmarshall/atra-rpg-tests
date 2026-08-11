@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://atra.example/schemas/mechanical-prototype-bind-continuations-v0.1.schema.json",
+  "title": "Atra Bind Continuations prototype v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "status", "governing_baseline", "scope", "fixtures", "open_questions"],
+  "properties": {
+    "id": {"const": "longsword-bind-continuations-v0.1"},
+    "status": {"const": "PROVISIONAL"},
+    "governing_baseline": {"const": "longsword-crossing-bind-state-model-v0.1"},
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["harness_only", "active_mirrored_repertoire_changed", "excluded"],
+      "properties": {
+        "harness_only": {"const": true},
+        "active_mirrored_repertoire_changed": {"const": false},
+        "excluded": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "fixtures": {
+      "type": "array",
+      "minItems": 6,
+      "items": {"$ref": "#/$defs/fixture"}
+    },
+    "open_questions": {"type": "array", "items": {"type": "string"}}
+  },
+  "$defs": {
+    "fixture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "label", "source_status", "source_inclusion_basis", "historical_confidence", "exact_locator", "mechanics_status", "classification", "before", "after", "notes"],
+      "properties": {
+        "id": {"type": "string"},
+        "label": {"type": "string"},
+        "source_status": {"type": "string"},
+        "source_inclusion_basis": {"type": ["string", "null"]},
+        "historical_confidence": {"type": ["string", "null"]},
+        "exact_locator": {"type": ["string", "null"]},
+        "mechanics_status": {"const": "PROVISIONAL"},
+        "classification": {"type": "string"},
+        "before": {"type": "object"},
+        "after": {"type": "object"},
+        "notes": {"type": "string"}
+      }
+    }
+  }
+}

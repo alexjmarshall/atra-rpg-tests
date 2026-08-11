@@ -1,0 +1,496 @@
+{
+  "experiment": "BIND CONTINUATIONS v0.1",
+  "status": "PROVISIONAL",
+  "seed": 11082026,
+  "trials_per_cell": 2000,
+  "model": {
+    "id": "longsword-bind-continuations-v0.1",
+    "status": "PROVISIONAL",
+    "governing_baseline": "longsword-crossing-bind-state-model-v0.1",
+    "scope": {
+      "harness_only": true,
+      "active_mirrored_repertoire_changed": false,
+      "excluded": [
+        "Guard effects",
+        "generic Strong-vs-Weak modifiers",
+        "generic Hard/Soft player menu",
+        "random Soft or Close generation",
+        "Spiritus or damage rebalance",
+        "main melee design packet update",
+        "mass Play-catalog edits"
+      ]
+    },
+    "fixtures": [
+      {
+        "id": "diagnostic-yield-give-way",
+        "label": "Yield / Give Way — DIAGNOSTIC STATE CREATOR — NOT PLAYER-FACING PLAY",
+        "source_status": "HISTORICALLY SUPPORTED CONCEPT; ITEM-LEVEL LOCATOR NOT AUDITED IN REPOSITORY",
+        "source_inclusion_basis": "EARLIER",
+        "historical_confidence": "MISSING — phase-level confidence not graded in existing repository evidence",
+        "exact_locator": null,
+        "mechanics_status": "PROVISIONAL",
+        "classification": "forced-sequence diagnostic action; cost, action, attack, and Play-chain treatment OPEN",
+        "before": {
+          "contact": "crossing",
+          "actor_pressure": "hard-or-unknown",
+          "opponent_pressure": "hard"
+        },
+        "after": {
+          "contact": "crossing",
+          "actor_pressure": "soft",
+          "opponent_pressure": "hard"
+        },
+        "notes": "Creates no damage, attack, action preservation, Spiritus cost, defence modifier, escape, or separation. The complete learned yielding technique remains historically and mechanically incomplete."
+      },
+      {
+        "id": "rompere-close-control",
+        "label": "Rompere retained Wide Crossing to Close control",
+        "source_status": "PROPOSED item-level evidence audit",
+        "source_inclusion_basis": "EARLIER",
+        "historical_confidence": "A (proposed)",
+        "exact_locator": "Fiore dei Liberi, Getty MS Ludwig XV 13, 26v-c; immediate continuations 26v-d-27r-b",
+        "mechanics_status": "PROVISIONAL",
+        "classification": "test-harness continuation; PLAY-CHAIN / ACTION-ECONOMY CLASSIFICATION OPEN",
+        "before": {
+          "contact": "crossing",
+          "measure": "wide",
+          "opponent_contact_zone": "middle",
+          "displacement_event": true,
+          "retained": true
+        },
+        "after": {
+          "contact": "crossing",
+          "measure": "close"
+        },
+        "notes": "Explicit authored transition only; not a generic closing rule and not part of the mirrored combat repertoire."
+      },
+      {
+        "id": "zwerch-with-the-strong",
+        "label": "Zwerch with the Strong bind-work phase",
+        "source_status": "phase-level exact locator verified; whole Zwerchhau record remains needs-item-level-audit",
+        "source_inclusion_basis": "EARLIER",
+        "historical_confidence": "A (proposed phase-level audit)",
+        "exact_locator": "Pseudo-Peter von Danzig, Cod.44.A.8 (1452), Longsword, ff. 20r.2-20v.1",
+        "mechanics_status": "PROVISIONAL",
+        "classification": "reference fixture for the separately attested bind-work phase",
+        "before": {
+          "phase": "Zwerch with the Strong bind-work; not the initial interception"
+        },
+        "after": {
+          "contact": "crossing",
+          "measure": "wide",
+          "actor_contact_zone": "hiltward",
+          "opponent_contact_zone": "unknown",
+          "actor_pressure": "unknown",
+          "opponent_pressure": "unknown"
+        },
+        "notes": "Does not make every Zwerchhau a Crossing and creates no generic leverage modifier."
+      },
+      {
+        "id": "fiore-point-crossing-reference",
+        "label": "Italian pointward/pointward Wide Crossing representation reference",
+        "source_status": "HISTORICALLY SUPPORTED CONTACT-DEPTH CONCEPT; bilateral-zone locator missing from existing repository audit",
+        "source_inclusion_basis": "EARLIER",
+        "historical_confidence": "MISSING — bilateral pointward mapping not item-level audited",
+        "exact_locator": null,
+        "mechanics_status": "PROVISIONAL",
+        "classification": "schema/reference fixture; not a generic player action",
+        "before": {},
+        "after": {
+          "contact": "crossing",
+          "measure": "wide",
+          "actor_contact_zone": "pointward",
+          "opponent_contact_zone": "pointward"
+        },
+        "notes": "Representation proof only. No source claim beyond the repository's accepted contact-depth concept and no combat modifier."
+      },
+      {
+        "id": "fiore-mid-sword-crossing-reference",
+        "label": "Italian middle/middle Wide Crossing representation reference",
+        "source_status": "HISTORICALLY SUPPORTED CONTACT-DEPTH CONCEPT; bilateral-zone locator missing from existing repository audit",
+        "source_inclusion_basis": "EARLIER",
+        "historical_confidence": "MISSING — bilateral middle mapping not item-level audited",
+        "exact_locator": null,
+        "mechanics_status": "PROVISIONAL",
+        "classification": "schema/reference fixture; not a generic player action",
+        "before": {},
+        "after": {
+          "contact": "crossing",
+          "measure": "wide",
+          "actor_contact_zone": "middle",
+          "opponent_contact_zone": "middle"
+        },
+        "notes": "Representation proof only; explicitly demonstrates that middle contact is not Close measure and creates no combat modifier."
+      },
+      {
+        "id": "pommel-close-consumer",
+        "label": "Pommel Strike from explicit Close Crossing",
+        "source_status": "exact-locator-verified",
+        "source_inclusion_basis": "EARLIER",
+        "historical_confidence": "A",
+        "exact_locator": "Fiore dei Liberi, Getty MS Ludwig XV 13, 28r-c and 28r-d; concordant Morgan 16r-c/d and Pisani Dossi 22a-c/d",
+        "mechanics_status": "PROVISIONAL",
+        "classification": "existing Close-Crossing consumer used only in the forced integration sequence",
+        "before": {
+          "contact": "crossing",
+          "measure": "close"
+        },
+        "after": {
+          "consumer": "Pommel Strike legal"
+        },
+        "notes": "The fixture does not rebalance Pommel Strike or add Rompere to normal mirrored combat."
+      }
+    ],
+    "open_questions": [
+      "complete player-facing Yield effect and source-specific follow-up",
+      "Yield action, Spiritus, and learned-Play-chain classification",
+      "Rompere close continuation action and Play-chain classification",
+      "generic closing rules",
+      "generic Strong-vs-Weak leverage effects",
+      "how long complex continuations may retain Crossing",
+      "all Guard effects",
+      "item-level bilateral locators for Italian point and mid-sword crossings"
+    ]
+  },
+  "evidence_audit_correction": {
+    "play_id": "play-german-longsword-zwerchhau",
+    "phase": "Zwerch with the Strong bind-work",
+    "locator": "Pseudo-Peter von Danzig, Cod.44.A.8 (1452), ff. 20r.2-20v.1",
+    "record_wide_source_status_promoted": false,
+    "generalize_to_every_zwerchhau": false
+  },
+  "forced_scenarios": {
+    "hard_hard_crossing": {
+      "contact": "crossing",
+      "measure": "wide",
+      "pressure": {
+        "A": "hard",
+        "B": "hard"
+      }
+    },
+    "diagnostic_yield": {
+      "declared": true,
+      "diagnostic_only": true,
+      "contact": "crossing",
+      "pressure": {
+        "A": "hard",
+        "B": "soft"
+      },
+      "spiritus_spent": 0,
+      "damage_created": false,
+      "action_classification": "OPEN"
+    },
+    "zorn_ort_soft_consumer": {
+      "executed": true,
+      "inspected_opponent_pressure": "soft",
+      "contact_during": "crossing",
+      "actor_point_threat": "threatening"
+    },
+    "yield_sequence_cleanup": {
+      "contact": "none",
+      "zones": {
+        "A": "unknown",
+        "B": "unknown"
+      },
+      "pressure": {
+        "A": "unknown",
+        "B": "unknown"
+      }
+    },
+    "rompere_retained_crossing": {
+      "displacement": [
+        {
+          "weapon_owner": "B",
+          "source": "Rompere di Punta",
+          "contact_after": "crossing"
+        }
+      ],
+      "contact": "crossing",
+      "measure": "wide",
+      "zones": {
+        "A": "unknown",
+        "B": "middle"
+      },
+      "retained": true
+    },
+    "rompere_close_control": {
+      "executed": true,
+      "contact": "crossing",
+      "measure": "close",
+      "play_chain_action_economy": "OPEN",
+      "random": false
+    },
+    "pommel_from_explicit_close": {
+      "prerequisite_satisfied": true,
+      "executed": true,
+      "uses": 1,
+      "contact_after": "none",
+      "zones_after": {
+        "A": "unknown",
+        "B": "unknown"
+      },
+      "pressure_after": {
+        "A": "unknown",
+        "B": "unknown"
+      }
+    },
+    "rompere_retention_survives_cleanup": {
+      "contact": "crossing",
+      "measure": "wide",
+      "retained_crossings": 1
+    },
+    "zwerch_with_strong_geometry": {
+      "contact": "crossing",
+      "measure": "wide",
+      "zones": {
+        "A": "hiltward",
+        "B": "unknown"
+      },
+      "pressure": {
+        "A": "unknown",
+        "B": "unknown"
+      },
+      "generic_modifier": false
+    },
+    "zwerch_geometry_cleanup": {
+      "contact": "none",
+      "zones": {
+        "A": "unknown",
+        "B": "unknown"
+      },
+      "pressure": {
+        "A": "unknown",
+        "B": "unknown"
+      }
+    },
+    "italian_point_crossing_reference": {
+      "contact": "crossing",
+      "measure": "wide",
+      "zones": {
+        "A": "pointward",
+        "B": "pointward"
+      },
+      "generic_modifier": false
+    },
+    "italian_middle_crossing_reference": {
+      "contact": "crossing",
+      "measure": "wide",
+      "zones": {
+        "A": "middle",
+        "B": "middle"
+      },
+      "middle_is_close": false,
+      "generic_modifier": false
+    },
+    "geometry_pressure_independence_a": {
+      "zones": {
+        "A": "hiltward",
+        "B": "pointward"
+      },
+      "pressure": {
+        "A": "soft",
+        "B": "hard"
+      },
+      "modifier": null
+    },
+    "geometry_pressure_independence_b": {
+      "zones": {
+        "A": "pointward",
+        "B": "hiltward"
+      },
+      "pressure": {
+        "A": "hard",
+        "B": "soft"
+      },
+      "modifier": null
+    },
+    "displacement_contact_independence": {
+      "basic_beat": {
+        "displacement": [
+          {
+            "weapon_owner": "A",
+            "source": "Basic Parry: Beat",
+            "contact_after": "none"
+          }
+        ],
+        "contact_after": "none"
+      },
+      "rompere": {
+        "displacement": [
+          {
+            "weapon_owner": "B",
+            "source": "Rompere di Punta",
+            "contact_after": "crossing"
+          }
+        ],
+        "contact_after": "crossing"
+      }
+    }
+  },
+  "smoke_regression": {
+    "skill10_S8_adaptive_revelation": {
+      "seed": 11082026,
+      "trials": 2000,
+      "current": {
+        "win_rate_A": 0.477,
+        "average_rounds": 4.3585,
+        "double_defeat_rate": 0.0315,
+        "basic_cross_declarations_per_fight": 0.4105,
+        "basic_beat_declarations_per_fight": 0.4145,
+        "durch_declarations_per_fight": 0.444,
+        "compound_declarations_per_fight": 0.712,
+        "successful_crossings_per_fight": 0.4135,
+        "close_crossings_per_fight": 0.0,
+        "known_zone_crossings_per_fight": 0.0,
+        "precondition_violations": 0,
+        "three_play_cap_frequency": 0.004397604063992721,
+        "attempted_fourth_plays_per_fight": 0.0,
+        "soft_pressure_crossings_per_fight": 0.0
+      },
+      "crossing_bind_v01_reference": {
+        "win_rate_A": 0.4806,
+        "average_rounds": 4.348,
+        "double_defeat_rate": 0.0342,
+        "basic_cross_declarations_per_fight": 0.4224,
+        "basic_beat_declarations_per_fight": 0.4224,
+        "durch_declarations_per_fight": 0.4412,
+        "compound_declarations_per_fight": 0.7082,
+        "successful_crossings_per_fight": 0.4032,
+        "close_crossings_per_fight": 0.0,
+        "known_zone_crossings_per_fight": 0.0,
+        "precondition_violations": 0,
+        "three_play_cap_frequency": 0.0044277513130572856,
+        "attempted_fourth_plays_per_fight": 0.0,
+        "soft_pressure_crossings_per_fight": 0.0
+      },
+      "delta": {
+        "win_rate_A": -0.0036000000000000476,
+        "average_rounds": 0.010500000000000398,
+        "double_defeat_rate": -0.002700000000000001,
+        "basic_cross_declarations_per_fight": -0.011900000000000022,
+        "basic_beat_declarations_per_fight": -0.007900000000000018,
+        "durch_declarations_per_fight": 0.0028000000000000247,
+        "compound_declarations_per_fight": 0.0037999999999999146,
+        "successful_crossings_per_fight": 0.010299999999999976,
+        "close_crossings_per_fight": 0.0,
+        "known_zone_crossings_per_fight": 0.0,
+        "precondition_violations": 0,
+        "three_play_cap_frequency": -3.0147249064564445e-05,
+        "attempted_fourth_plays_per_fight": 0.0,
+        "soft_pressure_crossings_per_fight": 0.0
+      }
+    },
+    "skill14_S8_adaptive_revelation": {
+      "seed": 11086062,
+      "trials": 2000,
+      "current": {
+        "win_rate_A": 0.464,
+        "average_rounds": 3.185,
+        "double_defeat_rate": 0.0665,
+        "basic_cross_declarations_per_fight": 0.1525,
+        "basic_beat_declarations_per_fight": 0.157,
+        "durch_declarations_per_fight": 0.5655,
+        "compound_declarations_per_fight": 1.0855,
+        "successful_crossings_per_fight": 0.5615,
+        "close_crossings_per_fight": 0.0,
+        "known_zone_crossings_per_fight": 0.0,
+        "precondition_violations": 0,
+        "three_play_cap_frequency": 0.005638872225554889,
+        "attempted_fourth_plays_per_fight": 0.0,
+        "soft_pressure_crossings_per_fight": 0.0
+      },
+      "crossing_bind_v01_reference": {
+        "win_rate_A": 0.4716,
+        "average_rounds": 3.1972,
+        "double_defeat_rate": 0.072,
+        "basic_cross_declarations_per_fight": 0.1552,
+        "basic_beat_declarations_per_fight": 0.1594,
+        "durch_declarations_per_fight": 0.572,
+        "compound_declarations_per_fight": 1.101,
+        "successful_crossings_per_fight": 0.5676,
+        "close_crossings_per_fight": 0.0,
+        "known_zone_crossings_per_fight": 0.0,
+        "precondition_violations": 0,
+        "three_play_cap_frequency": 0.006344628695025234,
+        "attempted_fourth_plays_per_fight": 0.0,
+        "soft_pressure_crossings_per_fight": 0.0
+      },
+      "delta": {
+        "win_rate_A": -0.007599999999999996,
+        "average_rounds": -0.012199999999999989,
+        "double_defeat_rate": -0.005499999999999991,
+        "basic_cross_declarations_per_fight": -0.002700000000000008,
+        "basic_beat_declarations_per_fight": -0.0023999999999999855,
+        "durch_declarations_per_fight": -0.00649999999999995,
+        "compound_declarations_per_fight": -0.01550000000000007,
+        "successful_crossings_per_fight": -0.006099999999999994,
+        "close_crossings_per_fight": 0.0,
+        "known_zone_crossings_per_fight": 0.0,
+        "precondition_violations": 0,
+        "three_play_cap_frequency": -0.0007057564694703455,
+        "attempted_fourth_plays_per_fight": 0.0,
+        "soft_pressure_crossings_per_fight": 0.0
+      }
+    },
+    "skill18_S8_adaptive_revelation": {
+      "seed": 11090098,
+      "trials": 2000,
+      "current": {
+        "win_rate_A": 0.436,
+        "average_rounds": 2.7135,
+        "double_defeat_rate": 0.1415,
+        "basic_cross_declarations_per_fight": 0.0245,
+        "basic_beat_declarations_per_fight": 0.0265,
+        "durch_declarations_per_fight": 0.5445,
+        "compound_declarations_per_fight": 1.311,
+        "successful_crossings_per_fight": 0.8065,
+        "close_crossings_per_fight": 0.0,
+        "known_zone_crossings_per_fight": 0.0,
+        "precondition_violations": 0,
+        "three_play_cap_frequency": 0.001986754966887417,
+        "attempted_fourth_plays_per_fight": 0.0,
+        "soft_pressure_crossings_per_fight": 0.0
+      },
+      "crossing_bind_v01_reference": {
+        "win_rate_A": 0.441,
+        "average_rounds": 2.7038,
+        "double_defeat_rate": 0.1346,
+        "basic_cross_declarations_per_fight": 0.0278,
+        "basic_beat_declarations_per_fight": 0.0286,
+        "durch_declarations_per_fight": 0.5534,
+        "compound_declarations_per_fight": 1.3104,
+        "successful_crossings_per_fight": 0.7938,
+        "close_crossings_per_fight": 0.0,
+        "known_zone_crossings_per_fight": 0.0,
+        "precondition_violations": 0,
+        "three_play_cap_frequency": 0.0014658848614072495,
+        "attempted_fourth_plays_per_fight": 0.0,
+        "soft_pressure_crossings_per_fight": 0.0
+      },
+      "delta": {
+        "win_rate_A": -0.0050000000000000044,
+        "average_rounds": 0.009699999999999598,
+        "double_defeat_rate": 0.0068999999999999895,
+        "basic_cross_declarations_per_fight": -0.0032999999999999974,
+        "basic_beat_declarations_per_fight": -0.002100000000000001,
+        "durch_declarations_per_fight": -0.008900000000000019,
+        "compound_declarations_per_fight": 0.0005999999999999339,
+        "successful_crossings_per_fight": 0.012700000000000045,
+        "close_crossings_per_fight": 0.0,
+        "known_zone_crossings_per_fight": 0.0,
+        "precondition_violations": 0,
+        "three_play_cap_frequency": 0.0005208701054801677,
+        "attempted_fourth_plays_per_fight": 0.0,
+        "soft_pressure_crossings_per_fight": 0.0
+      }
+    }
+  },
+  "normal_combat_structural_result": {
+    "random_soft_creator": false,
+    "random_close_creator": false,
+    "random_known_zone_creator": false,
+    "generic_strong_weak_modifier": false,
+    "generic_hard_soft_menu": false,
+    "active_repertoire_changed": false
+  }
+}

@@ -33,6 +33,11 @@ NACH = "Nachreisen"
 POMMEL = "Pommel Strike"
 SCHIEL = "Schielhau"
 ROMPERE = "Rompere di Punta"
+YIELD_DIAGNOSTIC = "Yield / Give Way — diagnostic only"
+ROMPERE_CLOSE_CONTROL = "Rompere close-control continuation — test harness"
+ZWERCH_STRONG = "Zwerch with the Strong — reference"
+FIORE_POINT_CROSSING = "Fiore point crossing — reference"
+FIORE_MIDDLE_CROSSING = "Fiore mid-sword crossing — reference"
 ACTIVE_PLAYS = (ABSETZEN, ZORN, DURCH, SCIAMBIAR, NACH, POMMEL, SCHIEL)
 
 
@@ -383,6 +388,75 @@ class Duel:
                 self.hurt(attacker, ZORN)
         return "success"
 
+    def diagnostic_yield(self, actor: Fighter, opponent: Fighter) -> bool:
+        """Forced state creator only; not a player-facing Play or cost ruling."""
+        if self.state.contact != "crossing" or self.state.pressure[opponent.name] != "hard":
+            return False
+        self.state.pressure[actor.name] = "soft"
+        return True
+
+    def zorn_ort_continuation(self, actor: Fighter, opponent: Fighter,
+                              forced_roll: bool | None = None) -> bool:
+        """Intrinsic Soft-dependent Ort consumer used by deterministic fixtures."""
+        if self.state.contact != "crossing" or self.state.pressure[opponent.name] != "soft":
+            return False
+        self.metrics["plays"][ZORN]["continuation_opportunities"] += 1
+        self.metrics["plays"][ZORN]["continuation_uses"] += 1
+        self.set_point(actor, "threatening")
+        ok = self.roll(actor)[0] if forced_roll is None else forced_roll
+        if ok:
+            self.hurt(opponent, ZORN)
+        return True
+
+    def rompere_reference(self, actor: Fighter, opponent: Fighter) -> bool:
+        """Reference-only displacement with explicitly retained Wide Crossing."""
+        self.create_crossing(
+            actor, opponent, measure="wide", first_zone="unknown", second_zone="middle",
+            first_pressure="unknown", second_pressure="unknown", retain=True,
+        )
+        self.displace(opponent, ROMPERE, retain_crossing=True)
+        return True
+
+    def rompere_close_control(self, actor: Fighter, opponent: Fighter) -> bool:
+        """Harness-only authored Wide-to-Close transition; classification remains OPEN."""
+        rompere_event = any(
+            event["source"] == ROMPERE and event["contact_after"] == "crossing"
+            for event in self.state.displacement_events
+        )
+        if not (
+            self.state.contact == "crossing"
+            and self.state.measure == "wide"
+            and self.state.retain_crossing
+            and rompere_event
+        ):
+            return False
+        self.state.measure = "close"
+        # The explicit close continuation consumes Rompere's one-window retention.
+        self.state.retain_crossing = False
+        return True
+
+    def zwerch_with_strong_reference(self, actor: Fighter, opponent: Fighter) -> bool:
+        """Only the sourced bind-work phase, not the initial Zwerchhau interception."""
+        self.create_crossing(
+            actor, opponent, measure="wide", first_zone="hiltward", second_zone="unknown",
+            first_pressure="unknown", second_pressure="unknown",
+        )
+        return True
+
+    def point_crossing_reference(self, actor: Fighter, opponent: Fighter) -> bool:
+        self.create_crossing(
+            actor, opponent, measure="wide", first_zone="pointward", second_zone="pointward",
+            first_pressure="unknown", second_pressure="unknown",
+        )
+        return True
+
+    def middle_crossing_reference(self, actor: Fighter, opponent: Fighter) -> bool:
+        self.create_crossing(
+            actor, opponent, measure="wide", first_zone="middle", second_zone="middle",
+            first_pressure="unknown", second_pressure="unknown",
+        )
+        return True
+
     def schiel(self, attacker: Fighter, defender: Fighter, attribution: str | None,
                forced_roll: bool | None = None, force_durch: bool | None = None) -> str:
         if not self.add_play(SCHIEL):
@@ -645,6 +719,133 @@ def transition_harness() -> dict[str, Any]:
     d = arena(); d.state.measure = "close"; d.create_crossing(d.a, d.b, measure="close"); d.a.action_ready = True; executed = d.pommel(d.a, d.b, True)
     out["forced_close_pommel"] = {"executed": executed, "uses": d.metrics["plays"][POMMEL]["uses"], "contact": d.state.contact}
     return out
+
+
+def bind_continuation_harness() -> dict[str, Any]:
+    """Deterministic, harness-only authored state creators for v0.1."""
+    def arena() -> Duel:
+        return Duel(random.Random(17), random.Random(23), Cell(10, 8, "perfect_information"), fresh_metrics())
+
+    out: dict[str, Any] = {}
+
+    # Hard/Hard -> Soft/Hard -> immediate Soft consumer -> ordinary cleanup.
+    d = arena()
+    d.create_crossing(d.a, d.b, first_pressure="hard", second_pressure="hard")
+    out["hard_hard_crossing"] = {
+        "contact": d.state.contact, "measure": d.state.measure,
+        "pressure": dict(d.state.pressure),
+    }
+    yielded = d.diagnostic_yield(d.b, d.a)
+    out["diagnostic_yield"] = {
+        "declared": yielded, "diagnostic_only": True, "contact": d.state.contact,
+        "pressure": dict(d.state.pressure), "spiritus_spent": 0,
+        "damage_created": False, "action_classification": "OPEN",
+    }
+    inspected_pressure = d.state.pressure[d.b.name]
+    consumed = d.zorn_ort_continuation(d.a, d.b, True)
+    out["zorn_ort_soft_consumer"] = {
+        "executed": consumed, "inspected_opponent_pressure": inspected_pressure,
+        "contact_during": d.state.contact, "actor_point_threat": d.state.point_threat[d.a.name],
+    }
+    d.finish_exchange()
+    out["yield_sequence_cleanup"] = {
+        "contact": d.state.contact, "zones": dict(d.state.contact_zone),
+        "pressure": dict(d.state.pressure),
+    }
+
+    # Rompere event retains Wide Crossing; a harness continuation closes explicitly.
+    d = arena()
+    d.rompere_reference(d.a, d.b)
+    out["rompere_retained_crossing"] = {
+        "displacement": list(d.state.displacement_events), "contact": d.state.contact,
+        "measure": d.state.measure, "zones": dict(d.state.contact_zone),
+        "retained": d.state.retain_crossing,
+    }
+    closed = d.rompere_close_control(d.a, d.b)
+    out["rompere_close_control"] = {
+        "executed": closed, "contact": d.state.contact, "measure": d.state.measure,
+        "play_chain_action_economy": "OPEN", "random": False,
+    }
+    pommel_legal_before = d.state.contact == "crossing" and d.state.measure == "close"
+    pommel = d.pommel(d.a, d.b, True)
+    d.finish_exchange()
+    out["pommel_from_explicit_close"] = {
+        "prerequisite_satisfied": pommel_legal_before, "executed": pommel,
+        "uses": d.metrics["plays"][POMMEL]["uses"], "contact_after": d.state.contact,
+        "zones_after": dict(d.state.contact_zone), "pressure_after": dict(d.state.pressure),
+    }
+
+    d = arena()
+    d.rompere_reference(d.a, d.b)
+    d.finish_exchange()
+    out["rompere_retention_survives_cleanup"] = {
+        "contact": d.state.contact, "measure": d.state.measure,
+        "retained_crossings": d.metrics["crossings_persisted"],
+    }
+
+    # Sourced and reference geometry fixtures.
+    d = arena()
+    d.zwerch_with_strong_reference(d.a, d.b)
+    out["zwerch_with_strong_geometry"] = {
+        "contact": d.state.contact, "measure": d.state.measure,
+        "zones": dict(d.state.contact_zone), "pressure": dict(d.state.pressure),
+        "generic_modifier": False,
+    }
+    d.finish_exchange()
+    out["zwerch_geometry_cleanup"] = {
+        "contact": d.state.contact, "zones": dict(d.state.contact_zone),
+        "pressure": dict(d.state.pressure),
+    }
+
+    d = arena()
+    d.point_crossing_reference(d.a, d.b)
+    out["italian_point_crossing_reference"] = {
+        "contact": d.state.contact, "measure": d.state.measure,
+        "zones": dict(d.state.contact_zone), "generic_modifier": False,
+    }
+    d.finish_exchange()
+
+    d = arena()
+    d.middle_crossing_reference(d.a, d.b)
+    out["italian_middle_crossing_reference"] = {
+        "contact": d.state.contact, "measure": d.state.measure,
+        "zones": dict(d.state.contact_zone), "middle_is_close": d.state.measure == "close",
+        "generic_modifier": False,
+    }
+    d.finish_exchange()
+
+    # Pressure and blade geometry are independent axes.
+    d = arena()
+    d.create_crossing(
+        d.a, d.b, first_zone="hiltward", second_zone="pointward",
+        first_pressure="soft", second_pressure="hard",
+    )
+    out["geometry_pressure_independence_a"] = {
+        "zones": dict(d.state.contact_zone), "pressure": dict(d.state.pressure),
+        "modifier": None,
+    }
+    d = arena()
+    d.create_crossing(
+        d.a, d.b, first_zone="pointward", second_zone="hiltward",
+        first_pressure="hard", second_pressure="soft",
+    )
+    out["geometry_pressure_independence_b"] = {
+        "zones": dict(d.state.contact_zone), "pressure": dict(d.state.pressure),
+        "modifier": None,
+    }
+
+    # Displacement and continuing contact are independent axes.
+    d = arena()
+    d.basic_parry("Beat", d.a, d.b, None, True, False)
+    beat_event = list(d.state.displacement_events)
+    d2 = arena()
+    d2.rompere_reference(d2.a, d2.b)
+    out["displacement_contact_independence"] = {
+        "basic_beat": {"displacement": beat_event, "contact_after": d.state.contact},
+        "rompere": {"displacement": list(d2.state.displacement_events), "contact_after": d2.state.contact},
+    }
+
+    return serial(out)
 
 
 def validate_results(results: dict[str, Any]) -> None:

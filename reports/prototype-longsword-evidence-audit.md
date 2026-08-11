@@ -99,12 +99,14 @@ Governing document: Atra Melee Design Packet v0.4. This report audits only the 1
 
   - [Starhemberg Fechtbuch, Rome, Biblioteca dell'Accademia Nazionale dei Lincei e Corsiniana, Cod.44.A.8 (MS Cors.1449), anonymous Pseudo-Peter von Danzig gloss](https://wiktenauer.com/wiki/Pseudo-Peter_von_Danzig); 1452; **Longsword, ff. 18v.2-19r.1**. Wiktenauer digital edition: transcription by Dierk Hagedorn; draft English translation by Michael Chidester.
     - Source instruction, paraphrased: From the sword at the right shoulder, act before an opponent in high Vom Tag completes the descending cut: spring to the right, turn the hilt in front of the head with the thumb under, and strike the opponent's left head with the short edge.
+  - [Starhemberg Fechtbuch, Rome, Biblioteca dell'Accademia Nazionale dei Lincei e Corsiniana, Cod.44.A.8 (MS Cors.1449), anonymous Pseudo-Peter von Danzig gloss](https://wiktenauer.com/wiki/Pseudo-Peter_von_Danzig); 1452; **Longsword, ff. 20r.2-20v.1**. Wiktenauer digital edition: transcription by Dierk Hagedorn; draft English translation by Michael Chidester.
+    - Source instruction, paraphrased: The separately headed Zwerch-with-the-Strong bind-work instruction says to strike the Zwerch with the strength of the body and bind on the opponent's sword with the Strong of the acting sword; if the opponent binds strongly in the parry, continue with the sourced bind-work.
 
 - **Physical requirements:**
 
   - Weapon: Two-handed longsword.
   - Hands: Both hands remain on the sword; no free hand is described.
-  - Contact/bind: Begins without blade contact and intercepts or preempts the opponent's high-line attack.
+  - Contact/bind: The initial interception begins without blade contact and intercepts or preempts the opponent's high-line attack. The separately attested Zwerch-with-the-Strong phase explicitly binds on the opponent's sword with the Strong of the acting sword. The two findings are distinct: Zwerchhau does not automatically create a Crossing, but the specific bind-work phase supports `contact = crossing`, actor contact `hiltward`, opponent contact `unknown`, and pressure `unknown/unknown`.
   - Measure: Cutting/engagement measure with an offline spring.
   - Guard/posture: Attacker's sword at the right shoulder; opponent explicitly in high Vom Tag with arms raised.
 
