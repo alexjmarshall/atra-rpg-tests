@@ -61,5 +61,35 @@
     "learned_classifications": ["Absetzen", "upper/lower Winden", "Nachreisen"],
     "g2_free_absetzen": "REJECTED AS GOVERNING BEHAVIOR; archived stress-test material only",
     "guard_change": "PROVISIONAL HARNESS RULE; GUARD-CHURN WARNING; OPEN"
+  },
+  "guard_evidence_repertoire_acceptance": {
+    "selected_on": "2026-08-11",
+    "status": "PROJECT-ACCEPTED EVIDENCE CLASSIFICATION FOR SUBSEQUENT PROVISIONAL WORK",
+    "historical_mechanics_separation": true,
+    "g1_action_light_preserved": true,
+    "distinct_basic_guard_actions": [],
+    "existing_basic_action_mappings": ["Basic Cut", "Basic Thrust", "Basic Cross", "Basic Beat"],
+    "learned_actions_preserved": ["Absetzen", "upper/lower Winden", "Nachreisen", "joined exchange-thrust techniques", "cover plus close/stretto", "displacement plus return attack", "timing-rich guard breaker entries"],
+    "g2_free_pflug_absetzen": "REJECTED AS GOVERNING BEHAVIOR",
+    "item_level_guard_evidence_preserved": ["Posta di Donna", "Posta Frontale", "Tutta Porta di Ferro", "Mezza Porta di Ferro", "Alber"],
+    "exact_breaker_relationships_preserved": ["Zwerchhau -> Vom Tag", "Krumphau -> Ochs", "Schielhau -> Pflug", "Scheitelhau -> Alber"],
+    "automatic_breaker_effects": "NONE; no Boon, Bane, success, damage increase, or defence cancellation follows from the relationship alone",
+    "donna": "STRONG CONCEPT SUPPORT for powerful/loaded-blow identity; Loaded/P1 remain PROVISIONAL ATRA mechanics; do not infer Loaded for Vom Tag",
+    "frontale": ["high-thrust response maps to Basic Cross", "low-thrust response maps to Basic Beat", "longer retreat/cut/thrust sequence remains learned candidate"],
+    "tutta": ["simple cover maps to Basic Cross", "downward displacement maps to Basic Beat", "Scambiar access remains bounded learned gate", "cover-to-stretto is learned"],
+    "mezza": ["threatening point intrinsic", "Basic Thrust mapping", "minimal upward displacement maps to Basic Beat", "beat plus return fendente remains learned candidate"],
+    "alber": ["low", "point not threatening", "Scheitelhau breaker relationship", "no passive invitation bonus"]
+  },
+  "guard_play_bridge_v0_1": {
+    "status": "PROVISIONAL TECHNICAL RESULT; PRICE SELECTION OPEN",
+    "report": "reports/guard-play-bridge-v01-results.md",
+    "specification": "data/prototypes/longsword-guard-play-bridge-v0.1.yaml",
+    "scheitelhau_alber": "S-C; DEFER UNTIL CROWN CONTINUATION; no Spiritus price; Alber remains partially mechanically inert",
+    "tutta_cover_to_stretto": "learned continuation; successful source-compatible Basic Cross at Wide retains Crossing and enters Close; no second roll or additional action",
+    "promoted_technical_boundaries": ["no universal Close action", "no automatic breaker modifier", "Crown distinct from generic Basic Cross", "Tutta cover-to-stretto remains learned"],
+    "candidate_costs": {"T0": 0, "T1": 1},
+    "governing_cost_selection": "OPEN; T1 recommended for Project review but not promoted",
+    "named_guard_v0_2_ready": false,
+    "remaining_blocker": "narrow Crown continuation or another independently justified Scheitelhau state effect"
   }
 }

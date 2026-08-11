@@ -34,6 +34,32 @@ A guard-described behavior is Basic only when it is a simple direct posture use 
 
 The older OPEN/PROVISIONAL transcription below is retained as historical context. Where it conflicts with this dated selection for simulator work, the dated selection governs. Final transition graph, starting-guard rule, final roster, full Winden system, generic leverage, and final guard bonuses remain OPEN.
 
+### 2026-08-11 Guard Evidence & Repertoire acceptance
+
+The Project accepts the principal evidence/content conclusions of Guard Evidence & Repertoire Completion v0.1 for subsequent **PROVISIONAL** prototype work. Historical acceptance does not promote the associated game mechanics.
+
+- G1/action-light remains governing. No distinct Basic guard action survived; simple source-described behavior maps to existing Basic Cut, Thrust, Cross, or Beat rather than receiving a renamed action.
+- Absetzen, upper/lower Winden, Nachreisen, joined exchange-thrust techniques, cover plus close/stretto, displacement plus return attack, and timing-rich breaker entries remain learned.
+- The item-level audit is preserved for Donna, Frontale, Tutta Porta di Ferro, Mezza Porta di Ferro, and Alber.
+- Exact support is preserved for Zwerchhau -> Vom Tag, Krumphau -> Ochs, Schielhau -> Pflug, and Scheitelhau -> Alber. The sourced relationship alone creates no Boon, Bane, automatic success, bonus damage, or defence cancellation.
+- Donna has STRONG CONCEPT SUPPORT for a powerful/loaded-blow identity. Loaded/P1 remain PROVISIONAL Atra mechanics and are not inferred for Vom Tag.
+- Frontale retains Basic Cross/Beat mappings and a learned longer-sequence candidate. Tutta retains Basic Cross/Beat mappings, bounded learned Scambiar access, and learned cover-to-stretto. Mezza retains threatening point, Basic Thrust/Beat mappings, and a learned beat-return candidate. Alber remains low, not-threatening, without a passive invitation bonus.
+
+### 2026-08-11 Guard Play Bridge v0.1 technical result
+
+Deterministic validation promotes only the boundaries explicitly authorized by the Project:
+
+- Tutta cover-to-stretto is a learned Play.
+- There is no universal Close action and no automatic Close after an ordinary successful Cross at Wide.
+- No breaker relationship receives an automatic modifier.
+- Crown remains distinct from generic Basic Cross.
+
+Scheitelhau's initial Alber entry is classified **S-C / DEFER UNTIL CROWN CONTINUATION**. The initial descending head cut is already represented by Basic Cut, while the distinct source material belongs to the defended Crown/point-sinking/winding/pressing/slicing continuation. No price is assigned to a mechanically inert placeholder, and Alber remains partially mechanically inert.
+
+Tutta cover-to-stretto is technically implementable after a successful Tutta Basic Cross against an ordinary proactive Basic Cut at Wide: retain Crossing, change Wide -> Close, add no second roll or additional action, and count one learned Play. T0 (0 Spiritus) and T1 (1 Spiritus) remain **OPEN** candidates. The bounded experiment recommends T1 for Project review but does not promote it.
+
+Named Guard Rules v0.2 remains blocked by the missing narrow Crown continuation or another independently justified Scheitelhau state effect; guard transitions remain OPEN and unchanged.
+
 ## OPEN
 
 ### Guard architecture

@@ -1,0 +1,116 @@
+{
+  "id": "longsword-guard-play-bridge-v0.1",
+  "status": "PROVISIONAL SPECIFICATION AND BOUNDED EXPERIMENT",
+  "not_canonical": true,
+  "governing_baseline": "data/prototypes/longsword-governing-provisional-v0.1.yaml",
+  "source_scope": {
+    "scheitelhau_alber": {
+      "source_id": "pseudo-peter-von-danzig",
+      "witness": "Starhemberg Fechtbuch, Cod.44.A.8 (MS Cors.1449), anonymous gloss, 1452",
+      "locator": "ff. 24v.3-25r.2; confirming four-guard list f. 26v.3",
+      "inclusion_basis": "EARLIER",
+      "historical_confidence": "A"
+    },
+    "tutta_cover_to_stretto": {
+      "source_id": "fiore-dei-liberi",
+      "witness": "Fior di Battaglia, Getty MS Ludwig XV 13 with Morgan and Pisani Dossi concordances",
+      "locator": "Getty 23v-a; Morgan 12r-a; Pisani Dossi 18a-a",
+      "inclusion_basis": "EARLIER",
+      "historical_confidence": "A"
+    }
+  },
+  "scheitelhau_alber": {
+    "play_id": "play-german-longsword-scheitelhau",
+    "classification": "S-C",
+    "decision": "DEFER UNTIL CROWN CONTINUATION",
+    "mechanics_status": "blocked-by-open-question",
+    "spiritus_cost": null,
+    "initial_entry_implemented": false,
+    "crown_implemented": false,
+    "decomposition": [
+      {
+        "question": "A. What is true before declaration?",
+        "answer": "The opponent is currently in Alber; the actor has a normal action and a longsword.",
+        "classification": "DIRECTLY SOURCE-ANCHORED"
+      },
+      {
+        "question": "B. What historical action is represented by the initial entry?",
+        "answer": "Spring in with a strong descending long-edge cut to the head against Alber.",
+        "classification": "DIRECTLY SOURCE-ANCHORED"
+      },
+      {
+        "question": "C. What is already covered by Basic Cut?",
+        "answer": "The proactive cut declaration, Longsword test, ordinary success/failure, head-line fiction, ordinary damage, defence menu, and action expenditure.",
+        "classification": "ATRA STATE MAPPING"
+      },
+      {
+        "question": "D. What part requires learned technique?",
+        "answer": "Recognition of Alber as the named relationship and the conditional Crown/point-sinking/winding/pressing/slicing tree; the initial cut alone supplies no independently distinct resolution in the current engine.",
+        "classification": "DIRECTLY SOURCE-ANCHORED"
+      },
+      {
+        "question": "E. What existing engine state could express the advantage?",
+        "answer": "None without adding unsupported geometry or a modifier. Ordinary attack line, point threat, damage, and Basic-Cross Crossing do not distinguish this entry.",
+        "classification": "NOT JUSTIFIED"
+      },
+      {
+        "question": "F. Which effects belong to the later continuation?",
+        "answer": "Crown reception, sinking the point, winding, pressing, and slicing belong to the defended continuation and are excluded from the initial entry.",
+        "classification": "DIRECTLY SOURCE-ANCHORED"
+      },
+      {
+        "question": "G. Can the initial entry be meaningful without Crown?",
+        "answer": "No. A separate learned declaration would currently duplicate Basic Cut while consuming a Play slot, unless it received an invented breaker bonus or generic Cross were mislabeled Crown.",
+        "classification": "PROVISIONAL GAME ABSTRACTION"
+      }
+    ],
+    "prohibited_effects": [
+      "automatic Boon",
+      "automatic Bane",
+      "automatic success",
+      "bonus damage",
+      "defence cancellation",
+      "known contact zone without authored evidence",
+      "pressure assignment without authored evidence",
+      "generic Basic Cross treated as Crown"
+    ],
+    "future_hook": "A narrow Crown-continuation experiment may make the Alber-gated entry a learned hook; do not price the hook before that continuation supplies meaningful mechanics."
+  },
+  "tutta_cover_to_stretto": {
+    "play_id": "play-italian-longsword-tutta-cover-to-stretto",
+    "classification": "LEARNED CONTINUATION",
+    "mechanics_status": "prototype",
+    "trigger": {
+      "guard_at_cover_declaration": "tutta-porta-di-ferro",
+      "incoming_attack": "ordinary proactive Basic Cut",
+      "cover": "successful Basic Cross after the normal pre-Parry Durchwechseln window",
+      "contact": "crossing",
+      "measure": "wide",
+      "timing": "immediately after the successful Basic Cross and before exchange cleanup"
+    },
+    "narrowing_note": "The v0.1 trigger uses Fiore's cover-against-blows branch. Thrusts remain with the separately recorded Scambiar or downward-Beat branches; Beat, Power Attack, learned cuts, and generic successful Parries do not trigger this prototype.",
+    "candidates": {
+      "T0": {"spiritus_cost": 0},
+      "T1": {"spiritus_cost": 1}
+    },
+    "action_relationship": "No additional action; the successful Basic Cross has already spent the defender's action and the continuation does not restore it.",
+    "test_resolution": "No second roll.",
+    "effect": {
+      "contact": "crossing remains",
+      "measure_transition": "wide -> close",
+      "retain_crossing": true,
+      "damage": 0,
+      "extra_attack": false,
+      "grapple": false,
+      "pommel_strike": false,
+      "disarm_or_control": false,
+      "action_restoration": false
+    },
+    "chain": {
+      "counts_as_learned_play": true,
+      "maximum_learned_plays_per_exchange": 3,
+      "same_play_limit": "once per exchange"
+    },
+    "downstream_note": "The authored transition creates a Close-Crossing opportunity. Pommel Strike or any other consumer must still satisfy its own timing, action, and Play requirements."
+  }
+}
