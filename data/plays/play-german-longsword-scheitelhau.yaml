@@ -7,7 +7,7 @@
     "display_name_in_packet": "Scheitelhau",
     "game_facing_or_reconstruction_marker": false,
     "anti_number_marker": false,
-    "source_status": "needs-item-level-audit",
+    "source_status": "exact-locator-verified",
     "source_citations": [
       {
         "source_id": "atra-melee-design-packet-v0-4",
@@ -16,8 +16,8 @@
       },
       {
         "source_id": "pseudo-peter-von-danzig",
-        "location": null,
-        "citation_status": "source-family-only"
+        "location": "Starhemberg Fechtbuch, Cod.44.A.8 (MS Cors.1449), anonymous Pseudo-Peter von Danzig gloss, 1452, Scheitelhau text and gloss, ff. 24v.3-25r.2; four-guard breaker list at f. 26v.3; Wiktenauer transcription Dierk Hagedorn, draft English translation Michael Chidester",
+        "citation_status": "exact-historical-location"
       },
       {
         "source_id": "lew",
@@ -30,8 +30,12 @@
         "citation_status": "source-family-only"
       }
     ],
-    "historical_confidence": null,
-    "packet_source_note": "Best-supported package: fifteenth-century Liechtenauer witnesses including Pseudo-Danzig, Lew, Kal and late-century continuators."
+    "historical_confidence": "A",
+    "packet_source_note": "Item-level Pseudo-Peter von Danzig witness reviewed for the Alber breaker relationship and Crown continuation. Other family citations remain unaudited; mechanics remain PROVISIONAL/unimplemented.",
+    "source_inclusion_basis": "EARLIER",
+    "historical_names": ["Schaitlär", "Schaitelhaw"],
+    "historical_classifications": ["meisterhau", "four-guard breaker"],
+    "historical_name_note": "Atra uses the normalized modern spelling Scheitelhau; the witness directly names the cut and its Alber relationship."
   },
   "game_implementation": {
     "character_sheet_test_skill": null,

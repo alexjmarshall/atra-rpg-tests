@@ -18,6 +18,7 @@ SELECTED_PROTOTYPE_IDS = {
     "play-italian-longsword-pommel-strike",
 }
 MIRRORED_PROTOTYPE_IDS = SELECTED_PROTOTYPE_IDS | {"play-german-longsword-schielhau"}
+EXACT_EVIDENCE_IDS = SELECTED_PROTOTYPE_IDS | {"play-german-longsword-zwerchhau"}
 
 
 class RepositoryValidationTests(unittest.TestCase):
@@ -65,7 +66,7 @@ class RepositoryValidationTests(unittest.TestCase):
             audited.append(record)
             self.assertEqual(audit["status"], "PROPOSED")
             self.assertEqual(audit["recommended_test_skill"]["status"], "PROPOSED")
-            if record["id"] in SELECTED_PROTOTYPE_IDS:
+            if record["id"] in EXACT_EVIDENCE_IDS:
                 self.assertEqual(record["historical_identity"]["historical_confidence"], "A")
                 self.assertEqual(record["historical_identity"]["source_status"], "exact-locator-verified")
                 self.assertEqual(record["historical_identity"]["source_inclusion_basis"], "EARLIER")

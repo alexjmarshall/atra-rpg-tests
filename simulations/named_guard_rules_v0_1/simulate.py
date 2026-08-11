@@ -222,6 +222,11 @@ class NamedGuardDuel(SHARED.BaseDuel):
         if self.named_cell.model in ("G1", "G2") and self.current_guard(defender) != "pflug":
             values.pop(BASE.ABSETZEN, None)
         if (
+            self.named_cell.model in ("G1", "G2")
+            and self.current_guard(defender) not in ("posta-di-donna", "tutta-porta-di-ferro")
+        ):
+            values.pop(BASE.SCIAMBIAR, None)
+        if (
             self.named_cell.model == "G2"
             and self.current_guard(defender) == "pflug"
             and attack["type"] == "thrust"
@@ -315,7 +320,7 @@ class NamedGuardDuel(SHARED.BaseDuel):
         if FREE_ABSETZEN in values:
             self.metrics["basic_guard_action_opportunities"] += 1
         if BASE.SCHIEL in values and self.named_cell.model != "G0" and self.current_guard(attacker) == "pflug":
-            self.metrics["sourced_breaker_opportunities"]["Schielhau->Pflug (evidence incomplete)"] += 1
+            self.metrics["sourced_breaker_opportunities"]["Schielhau->Pflug (exact annotation; proactive entry unimplemented)"] += 1
         choice = self.softmax(values)
         self.metrics["choices"][choice] += 1
         self.metrics["responses"][self._response_category(attack)][choice] += 1
@@ -529,6 +534,25 @@ def deterministic_harness() -> dict[str, Any]:
     duel.change_guard(duel.a, "posta-frontale", "before")
     out["Q_no_stale_state"] = duel.public_guard_state(duel.a)
     out["R_breaker_annotation_only"] = {"automatic_boon": False, "automatic_bane": False, "automatic_success": False}
+
+    duel = arena("G1", "Italian", ("mezza-porta-di-ferro", "tutta-porta-di-ferro"))
+    before_change = duel.public_guard_state(duel.a)
+    duel.change_guard(duel.a, "tutta-porta-di-ferro", "before")
+    out["S_mezza_point_state_clears"] = {
+        "before": before_change["point_threat"],
+        "after": duel.public_guard_state(duel.a)["point_threat"],
+    }
+
+    source_guard = arena("G1", "Italian", ("posta-frontale", "tutta-porta-di-ferro"))
+    source_thrust = source_guard.make_attack("basic_thrust")
+    source_values = source_guard.defence_values(source_guard.a, source_guard.b, source_thrust)
+    other_guard = arena("G1", "Italian", ("tutta-porta-di-ferro", "posta-frontale"))
+    other_thrust = other_guard.make_attack("basic_thrust")
+    other_values = other_guard.defence_values(other_guard.a, other_guard.b, other_thrust)
+    out["T_scambiar_guard_access"] = {
+        "tutta": BASE.SCIAMBIAR in source_values,
+        "frontale": BASE.SCIAMBIAR in other_values,
+    }
     return out
 
 
@@ -551,6 +575,8 @@ def validate_harness(cases: dict[str, Any]) -> None:
     assert cases["P_immediate_state"]["guard"] == "ochs"
     assert not cases["Q_no_stale_state"]["loaded"] and not cases["Q_no_stale_state"]["hanging_tags"]
     assert not any(cases["R_breaker_annotation_only"].values())
+    assert cases["S_mezza_point_state_clears"] == {"before": "threatening", "after": "not_threatening"}
+    assert cases["T_scambiar_guard_access"] == {"tutta": True, "frontale": False}
 
 
 def validate_results(results: dict[str, Any]) -> None:

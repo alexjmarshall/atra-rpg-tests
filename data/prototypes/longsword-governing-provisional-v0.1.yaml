@@ -48,5 +48,18 @@
     "counter_first_only_against_power": true,
     "learned_play": false
   },
-  "guard_direction": "source-specific named guards; mirrored Threat/Power/Cover is superseded for current prototype work"
+  "guard_direction": "source-specific named guards; mirrored Threat/Power/Cover is superseded for current prototype work",
+  "named_guard_architecture": {
+    "status": "PROVISIONAL",
+    "selected_variant": "G1 / ACTION-LIGHT",
+    "value_sources": ["intrinsic physical/public state", "existing universal Basic-action mappings", "learned Play access", "sourced breaker relationships", "source-specific continuations"],
+    "basic_vs_learned_rule": {
+      "basic_only_if": ["simple direct posture use", "one principal test", "no distinctive timing or bind-reading lesson", "no substantial combined defence and offence", "does not duplicate a learned Play niche"],
+      "existing_basic_mapping_preferred_for": ["Basic Cut", "Basic Thrust", "Basic Cross", "Basic Beat"],
+      "learned_play_preferred_for": ["distinctive timing", "tactical trigger", "pressure or measure reading", "simultaneous defence and offence", "displacement plus attack", "cover plus close", "redirection or deception", "specialized continuation", "multiple substantial effects"]
+    },
+    "learned_classifications": ["Absetzen", "upper/lower Winden", "Nachreisen"],
+    "g2_free_absetzen": "REJECTED AS GOVERNING BEHAVIOR; archived stress-test material only",
+    "guard_change": "PROVISIONAL HARNESS RULE; GUARD-CHURN WARNING; OPEN"
+  }
 }

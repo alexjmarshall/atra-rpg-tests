@@ -7,7 +7,7 @@
     "display_name_in_packet": "Zwerchhau†",
     "game_facing_or_reconstruction_marker": false,
     "anti_number_marker": true,
-    "source_status": "needs-item-level-audit",
+    "source_status": "exact-locator-verified",
     "source_citations": [
       {
         "source_id": "atra-melee-design-packet-v0-4",
@@ -16,8 +16,8 @@
       },
       {
         "source_id": "pseudo-peter-von-danzig",
-        "location": null,
-        "citation_status": "source-family-only"
+        "location": "Starhemberg Fechtbuch, Cod.44.A.8 (MS Cors.1449), anonymous Pseudo-Peter von Danzig gloss, 1452, Zwerchhau text and gloss, ff. 18v.2-19r.1; four-guard breaker list at f. 26v.1; Wiktenauer transcription Dierk Hagedorn, draft English translation Michael Chidester",
+        "citation_status": "exact-historical-location"
       },
       {
         "source_id": "lew",
@@ -30,8 +30,12 @@
         "citation_status": "source-family-only"
       }
     ],
-    "historical_confidence": null,
-    "packet_source_note": "Best-supported package: fifteenth-century Liechtenauer witnesses including Pseudo-Danzig, Lew, Kal and late-century continuators."
+    "historical_confidence": "A",
+    "packet_source_note": "Item-level Pseudo-Peter von Danzig witness verifies the Vom Tag breaker relationship and separately attested strong bind-work. Other family citations remain unaudited; mechanics remain PROVISIONAL/unimplemented.",
+    "source_inclusion_basis": "EARLIER",
+    "historical_names": ["Twerhau", "Twerhaw"],
+    "historical_classifications": ["meisterhau", "four-guard breaker"],
+    "historical_name_note": "Atra uses the normalized modern spelling Zwerchhau; the witness directly names the cut and its Vom Tag relationship."
   },
   "game_implementation": {
     "character_sheet_test_skill": null,
@@ -118,7 +122,7 @@
     "review_notes": [
       "Phase-level evidence correction: the earlier audit covered the initial interception but omitted the separately attested Zwerch with the Strong bind-work instruction at Cod.44.A.8, ff. 20r.2-20v.1.",
       "For that specific bind-work phase, the actor's Strong supports hiltward actor contact while the opponent's contact zone and both fighters' pressure remain unknown. No generic leverage modifier follows.",
-      "The record-wide historical_identity.source_status remains needs-item-level-audit; adding one scoped witness does not mark the entire candidate fully audited."
+      "This scoped task promotes the Pseudo-Peter von Danzig locator and Vom Tag breaker relationship; other source-family citations remain unaudited."
     ]
   }
 }

@@ -7,7 +7,7 @@
     "display_name_in_packet": "Frontale / Corona Crossing",
     "game_facing_or_reconstruction_marker": false,
     "anti_number_marker": false,
-    "source_status": "needs-item-level-audit",
+    "source_status": "exact-locator-verified",
     "source_citations": [
       {
         "source_id": "atra-melee-design-packet-v0-4",
@@ -16,17 +16,21 @@
       },
       {
         "source_id": "fiore-dei-liberi",
-        "location": null,
-        "citation_status": "source-family-only"
+        "location": "Fiore dei Liberi, Fior di Battaglia, Getty MS Ludwig XV 13, 24v-c; Morgan MS M.383, 12v-b; Pisani Dossi, 18b-b; early 15th century; Wiktenauer transcription and translation columns",
+        "citation_status": "exact-historical-location"
       },
       {
         "source_id": "philippo-di-vadi",
-        "location": null,
-        "citation_status": "source-family-only"
+        "location": "Philippo di Vadi, De Arte Gladiatoria Dimicandi, MS Vitt.Em.1324, c.1482-87, Corona at f. 17r-b and Frontale at f. 17v-a; Wiktenauer transcription Marco Rubboli/Luca Cesari and translation Guy Windsor",
+        "citation_status": "exact-historical-location"
       }
     ],
-    "historical_confidence": null,
-    "packet_source_note": "Strong period fit through Vadi (1482-87), with Fiore as earlier fifteenth-century contemporary tradition."
+    "historical_confidence": "A",
+    "packet_source_note": "Fiore explicitly says some masters call Frontale Corona, while direct-horizon Vadi names and depicts Corona and Frontale separately. The packet's combined label must not be generalized across traditions.",
+    "source_inclusion_basis": "EARLIER",
+    "historical_names": ["Posta frontale", "Posta di corona (Fiore alternate naming only)"],
+    "historical_classifications": ["guard-described crossing", "guard-described thrust displacement"],
+    "historical_name_note": "Fiore supports an internal Frontale/Corona alternate-name relationship. Vadi's separate Corona and Frontale are continuity/context evidence, not evidence that the two names are universally interchangeable."
   },
   "game_implementation": {
     "character_sheet_test_skill": null,

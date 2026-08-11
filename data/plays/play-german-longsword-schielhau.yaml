@@ -16,12 +16,12 @@
       },
       {
         "source_id": "pseudo-peter-von-danzig",
-        "location": "Starhemberg Fechtbuch, Cod.44.A.8 (MS Cors.1449), 1452, longsword Schielhau text and gloss, ff. 23v.1-23v.2; Wiktenauer digital edition, transcription Dierk Hagedorn, draft English translation Michael Chidester",
+        "location": "Starhemberg Fechtbuch, Cod.44.A.8 (MS Cors.1449), anonymous Pseudo-Peter von Danzig gloss, 1452, Schielhau text and gloss, ff. 23r.3-23v.2 (Pflug breaker at 23r.3-23v.1; reactive/change-through form at 23v.1-23v.2); four-guard list at f. 26v.2; Wiktenauer transcription Dierk Hagedorn, draft English translation Michael Chidester",
         "citation_status": "exact-historical-location"
       }
     ],
     "historical_confidence": "A",
-    "packet_source_note": "Item-level witness reviewed for the mirrored Longsword prototype. Historical identity and anti-change-through instruction are promoted; the mechanical rejoinder remains PROVISIONAL.",
+    "packet_source_note": "Item-level witness reviewed for both the Pflug breaker relationship and the reactive anti-change-through form. The current mechanical rejoinder models only the latter and remains PROVISIONAL.",
     "source_inclusion_basis": "EARLIER",
     "historical_names": [
       "Schilär",

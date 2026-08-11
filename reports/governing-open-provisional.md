@@ -17,6 +17,21 @@ Project direction after the listed experiments selects a **GOVERNING PROVISIONAL
 - Power Attack: P1, 1 Spiritus at declaration, normal attack roll, fixed 7 damage for the prototype longsword, Committed, and Counter-first only against Power. Power is a Basic option, not a learned Play.
 - Guard direction: source-specific named guards. The mirrored Threat / Power / Cover family is **SUPERSEDED FOR CURRENT PROTOTYPE WORK**, but its historical record remains below and in the packet.
 
+### 2026-08-11 named-guard architecture selection
+
+The Project explicitly selects **G1 / ACTION-LIGHT** as the governing **PROVISIONAL** named-guard direction. This is not a canonical/final promotion.
+
+A guard should derive value primarily from intrinsic physical/public state, mappings to universal Basic actions, learned Play access, sourced breaker relationships, and source-specific continuations—not compulsory generic bonuses or free compound actions.
+
+A guard-described behavior is Basic only when it is a simple direct posture use with one principal test, contains no distinctive timing or bind-reading lesson, does not combine substantial defence and offence, and does not duplicate a learned Play niche. Ordinary Cut, Thrust, Cross, and Beat descriptions are recorded as **existing Basic-action mappings**, not renamed guard actions. Distinctive timing, tactical triggers, pressure/measure reading, simultaneous defence and offence, displacement plus attack, cover plus close, redirection/deception, specialized continuations, and multiple substantial effects default to **learned Play**. "No mechanic yet" remains valid.
+
+- Absetzen remains a learned Play.
+- Upper/lower Winden remain a learned decision system.
+- Nachreisen remains a learned Play.
+- G2's 0-Spiritus Pflug Absetzen is **REJECTED AS GOVERNING BEHAVIOR** and remains archived experiment material only.
+- Source-specific named guards remain preferred; the symmetric Threat / Power / Cover family remains superseded for current prototype work.
+- Free before-or-after all-to-all guard change remains a **PROVISIONAL HARNESS RULE** with a **GUARD-CHURN WARNING**. Churn remains OPEN.
+
 The older OPEN/PROVISIONAL transcription below is retained as historical context. Where it conflicts with this dated selection for simulator work, the dated selection governs. Final transition graph, starting-guard rule, final roster, full Winden system, generic leverage, and final guard bonuses remain OPEN.
 
 ## OPEN

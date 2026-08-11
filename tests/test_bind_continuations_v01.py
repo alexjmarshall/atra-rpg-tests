@@ -116,7 +116,8 @@ class BindContinuationTransitionTests(unittest.TestCase):
         play = json.loads((ROOT / "data" / "plays" / "play-german-longsword-zwerchhau.yaml").read_text(encoding="utf-8"))
         play_schema = json.loads((ROOT / "schemas" / "play.schema.json").read_text(encoding="utf-8"))
         self.assertEqual(validator.validate_schema(play, play_schema), [])
-        self.assertEqual(play["historical_identity"]["source_status"], "needs-item-level-audit")
+        self.assertEqual(play["historical_identity"]["source_status"], "exact-locator-verified")
+        self.assertEqual(play["historical_identity"]["historical_confidence"], "A")
 
     def test_main_combat_still_has_no_natural_new_state_creators(self) -> None:
         for skill in (10, 14, 18):

@@ -1,0 +1,148 @@
+{
+  "artifact": "GUARD EVIDENCE & REPERTOIRE COMPLETION v0.1",
+  "status": "PROVISIONAL EVIDENCE/CONTENT CLASSIFICATION",
+  "date": "2026-08-11",
+  "not_canonical_rules": true,
+  "g1_decision": {
+    "selected": "G1 / ACTION-LIGHT",
+    "named_source_specific_guards_preferred": true,
+    "symmetric_family_status": "SUPERSEDED FOR CURRENT PROTOTYPE WORK",
+    "distinct_basic_guard_actions_justified": [],
+    "learned": ["Absetzen", "upper/lower Winden", "Nachreisen"],
+    "g2_free_absetzen": "REJECTED AS GOVERNING BEHAVIOR; archive only",
+    "guard_change": "PROVISIONAL HARNESS RULE; GUARD-CHURN WARNING; OPEN"
+  },
+  "editorial_basis": {
+    "italian_transcription_facing_resource": "https://wiktenauer.com/wiki/Fiore_de%27i_Liberi/Sword_in_Two_Hands",
+    "vadi_transcription_facing_resource": "https://wiktenauer.com/wiki/Philippo_di_Vadi",
+    "german_transcription_facing_resource": "https://wiktenauer.com/wiki/Pseudo-Peter_von_Danzig",
+    "separation_rule": "Direct witness statements, witness-image geometry, translation/editorial interpretation, and Atra mechanics are separate layers."
+  },
+  "item_level_audit": [
+    {
+      "guard_name": "Posta di Donna",
+      "tradition": "Italian",
+      "source_family": "Fiore dei Liberi; Vadi continuity",
+      "exact_witness": "Fiore, Getty MS Ludwig XV 13 with Morgan M.383 and Pisani Dossi concordances; Vadi MS Vitt.Em.1324",
+      "date": "Fiore early 15th century (commonly c.1404-09); Vadi c.1482-87",
+      "exact_locator": "Getty 23v-b and 23v-d; Morgan 12r-b and 13r-b; Pisani Dossi 18a-b; Vadi 16r-d",
+      "inclusion_basis": ["EARLIER", "DIRECT"],
+      "historical_confidence": "A",
+      "source_status": "scoped-exact-locator",
+      "concise_paraphrase": "Right Donna can make all seven blows, cover all blows, break guards with great blows, and exchange thrusts; left Donna is ready to cover/strike, makes great blows, breaks thrusts downward, and enters close play.",
+      "directly_stated": ["high/soprana identity", "all seven blows", "broad cover", "great blows", "guard-breaking by great blows", "exchange of thrusts", "left-side thrust break and close entry"],
+      "geometric_inference": ["right-shoulder chamber from the witness image", "point is not presently threatening in the chamber"],
+      "atra_mechanical_interpretation": ["Basic Cut mapping", "Loaded/P1 concept has STRONG CONCEPT SUPPORT", "Loaded numbers and Counter-first remain PROVISIONAL ATRA", "Scambiar access from Donna/Tutta is a scoped prototype gate"],
+      "unresolved_ambiguity": ["mechanical specification for the left-Donna thrust-break/close sequence", "gate is not a historical claim of universal exclusivity"]
+    },
+    {
+      "guard_name": "Posta Frontale",
+      "tradition": "Italian",
+      "source_family": "Fiore dei Liberi; Vadi continuity/context",
+      "exact_witness": "Fiore, Getty MS Ludwig XV 13 with Morgan M.383 and Pisani Dossi; Vadi MS Vitt.Em.1324",
+      "date": "Fiore early 15th century; Vadi c.1482-87",
+      "exact_locator": "Getty 24v-c; Morgan 12v-b; Pisani Dossi 18b-b; Vadi Corona 17r-b and Frontale 17v-a",
+      "inclusion_basis": ["EARLIER", "DIRECT"],
+      "historical_confidence": "A",
+      "source_status": "scoped-exact-locator",
+      "concise_paraphrase": "Fiore's Frontale crosses a high thrust and beats a low thrust down while moving offline; it also describes a longer retreat-cut-thrust-return sequence.",
+      "directly_stated": ["good for crossing", "high-thrust cross", "low-thrust downward beat", "alternate retreat/fendente/thrust sequence", "Fiore says some masters call it Corona", "Vadi separately names Corona and Frontale"],
+      "geometric_inference": ["front-centred, high cross-ready posture", "point not presently threatening"],
+      "atra_mechanical_interpretation": ["high thrust = Basic Cross mapping", "low thrust = Basic Beat mapping", "long sequence = learned Play candidate", "no Frontale bonus or renamed Basic"],
+      "unresolved_ambiguity": ["combined packet Play should be reviewed for split/rename", "Fiore's alternate naming must not be generalized to Vadi"]
+    },
+    {
+      "guard_name": "Tutta Porta di Ferro",
+      "tradition": "Italian",
+      "source_family": "Fiore dei Liberi; Vadi continuity",
+      "exact_witness": "Fiore, Getty MS Ludwig XV 13 with Morgan M.383 and Pisani Dossi; Vadi MS Vitt.Em.1324",
+      "date": "Fiore early 15th century; Vadi c.1482-87",
+      "exact_locator": "Getty 23v-a; Morgan 12r-a; Pisani Dossi 18a-a; Vadi flat-ground Iron Gate 16v-a",
+      "inclusion_basis": ["EARLIER", "DIRECT"],
+      "historical_confidence": "A",
+      "source_status": "scoped-exact-locator",
+      "concise_paraphrase": "A strong low waiting guard that covers broadly, exchanges thrusts, beats thrusts down, and can cover with a pass into stretto.",
+      "directly_stated": ["great strength", "waiting", "cover", "exchange of thrusts", "beat thrust to ground", "cover and enter stretto"],
+      "geometric_inference": ["low/grounded blade and nonthreatening point from text-image combination"],
+      "atra_mechanical_interpretation": ["simple cover = Basic Cross mapping", "simple downward displacement = Basic Beat mapping", "Scambiar = learned and source-gated in harness", "cover-to-stretto = learned candidate", "no Strong Cover bonus"],
+      "unresolved_ambiguity": ["nonexclusive affinity versus hard-gate policy after the bounded prototype", "close-entry mechanics"]
+    },
+    {
+      "guard_name": "Mezza Porta di Ferro",
+      "tradition": "Italian",
+      "source_family": "Fiore dei Liberi; Vadi continuity",
+      "exact_witness": "Fiore, Getty MS Ludwig XV 13 with Morgan M.383; Vadi MS Vitt.Em.1324",
+      "date": "Fiore early 15th century; Vadi c.1482-87",
+      "exact_locator": "Getty 22r-a and 24r-b; Morgan 12r-d; Vadi 16r-c",
+      "inclusion_basis": ["EARLIER", "DIRECT"],
+      "historical_confidence": "A",
+      "source_status": "scoped-exact-locator",
+      "concise_paraphrase": "Mezza stands ready to thrust, throws strong thrusts, beats swords forcefully upward, returns with fendente, and is difficult to break/close against without danger.",
+      "directly_stated": ["stands in point", "strong thrusts", "forceful upward displacement", "return fendente", "return to guard", "difficult/dangerous to break and close"],
+      "geometric_inference": ["threatening point is the Atra state mapping from the direct point-ready statement"],
+      "atra_mechanical_interpretation": ["threatening point intrinsic implemented", "Basic Thrust mapping", "minimal upward displacement = Basic Beat mapping", "beat plus return cut = learned candidate", "no safety bonus"],
+      "unresolved_ambiguity": ["Getty/Morgan wording differs on desired sword extension/length", "compound return-cut mechanics"]
+    },
+    {
+      "guard_name": "Alber",
+      "tradition": "German",
+      "source_family": "Liechtenauer gloss tradition",
+      "exact_witness": "Starhemberg Fechtbuch, Cod.44.A.8 (MS Cors.1449), anonymous Pseudo-Peter von Danzig gloss",
+      "date": "1452",
+      "exact_locator": "f. 26r.2; Scheitelhau at ff. 24v.3-25r.2 and confirming list f. 26v.3",
+      "inclusion_basis": ["EARLIER"],
+      "historical_confidence": "A",
+      "source_status": "scoped-exact-locator",
+      "concise_paraphrase": "Stand right foot forward with arms extended, point on the ground, short edge upward; Scheitelhau is the named cut that breaks Alber.",
+      "directly_stated": ["right foot forward", "arms extended", "point on ground", "short edge upward", "Scheitelhau breaker", "descending head-cut entry"],
+      "geometric_inference": ["low height", "not-threatening point state"],
+      "atra_mechanical_interpretation": ["low/not-threatening state remains active", "Scheitelhau annotation has no modifier", "no invitation bonus"],
+      "unresolved_ambiguity": ["no item-level invitation/deception teaching found", "Scheitelhau/Crown mechanics unimplemented"]
+    }
+  ],
+  "german_breakers": [
+    {"play": "Zwerchhau", "target_guard": "Vom Tag", "locator": "Cod.44.A.8, ff. 18v.2-19r.1; list f. 26v.1", "break_meaning": "preempt high Vom Tag/descending attack with an offline short-edge head strike while the hilt covers", "play_record": "exact-locator-verified", "current_mechanics": "unimplemented", "next": "mechanical specification required; no modifier"},
+    {"play": "Krumphau", "target_guard": "Ochs", "locator": "Cod.44.A.8, ff. 16v.4-17r.1; list f. 26r.5", "break_meaning": "spring offline against left Ochs and strike over the hands with crossed arms and long edge", "play_record": "exact-locator-verified", "current_mechanics": "unimplemented", "next": "mechanical specification required; no modifier"},
+    {"play": "Schielhau", "target_guard": "Pflug", "locator": "Cod.44.A.8, ff. 23r.3-23v.1; list f. 26v.2", "break_meaning": "named inverted-sword hew that breaks Pflug and breaks forcefully into cuts/thrusts", "play_record": "exact-locator-verified", "current_mechanics": "reactive S2 form models descending-cut/change-through denial, not proactive Pflug entry", "next": "later redesign; a gate alone is insufficient"},
+    {"play": "Scheitelhau", "target_guard": "Alber", "locator": "Cod.44.A.8, ff. 24v.3-25r.2; list f. 26v.3", "break_meaning": "strong descending long-edge head cut against Alber, followed by Crown/slice branches if defended", "play_record": "exact-locator-verified", "current_mechanics": "unimplemented", "next": "mechanical specification required; no modifier"}
+  ],
+  "repertoire_status": [
+    {"behavior": "Donna/Tutta exchange of thrusts", "record": "Scambiar di Punta", "status": "B. ACTIVE BUT GUARD GATE MISSING -> IMPLEMENTED IN SCOPED HARNESS"},
+    {"behavior": "Frontale high/low thrust responses", "record": "universal Basic Cross/Beat", "status": "A. ACTIVE AND ADEQUATE"},
+    {"behavior": "Tutta simple cover/downward beat", "record": "universal Basic Cross/Beat", "status": "A. ACTIVE AND ADEQUATE"},
+    {"behavior": "Mezza point/thrust/beat", "record": "intrinsic plus universal Basics", "status": "A. ACTIVE AND ADEQUATE FOR MINIMAL FORMS"},
+    {"behavior": "Frontale retreat-cut-thrust sequence", "record": "Frontale / Corona Crossing", "status": "C. EXISTING CANDIDATE, NEEDS MECHANICAL REVISION"},
+    {"behavior": "Tutta cover-to-stretto", "record": "no narrow candidate isolated", "status": "E. NO PLAY RECORD YET"},
+    {"behavior": "Mezza beat plus return fendente", "record": "no narrow candidate isolated", "status": "E. NO PLAY RECORD YET"},
+    {"behavior": "Scheitelhau against Alber", "record": "Scheitelhau", "status": "D. CATALOG RECORD EXISTS BUT MECHANICS INCOMPLETE"}
+  ],
+  "minimum_active_guard_repertoire_bridge_v01": [
+    {"id": 1, "integration": "Mezza threatening-point intrinsic", "status": "IMPLEMENTED"},
+    {"id": 2, "integration": "Frontale high-thrust Basic Cross and low-thrust Basic Beat mappings", "status": "RECORDED; universal actions already active"},
+    {"id": 3, "integration": "Tutta simple Basic Cross/Beat mappings", "status": "RECORDED; universal actions already active"},
+    {"id": 4, "integration": "Scambiar di Punta access from source-described Donna/Tutta", "status": "IMPLEMENTED IN NAMED-GUARD HARNESS"},
+    {"id": 5, "integration": "Narrow Scheitelhau-vs-Alber entry", "status": "SPECIFICATION REQUIRED; NOT IMPLEMENTED"},
+    {"id": 6, "integration": "Choose one Italian learned identity: Frontale retreat sequence, Tutta cover-to-stretto, or Mezza beat-return", "status": "PROJECT CLASSIFICATION/MECHANICAL SPECIFICATION REQUIRED"}
+  ],
+  "inert_guard_exit": {
+    "Alber": {"posture_audited": true, "source_backed_identity": true, "represented_in_active_mechanics": "partial: point state only", "missing": "Scheitelhau mechanics or another sourced learned access"},
+    "Posta Frontale": {"posture_audited": true, "source_backed_identity": true, "represented_in_active_mechanics": "partial: universal mappings only", "missing": "learned retreat-cut-thrust specification if distinct active identity is required"},
+    "Tutta Porta di Ferro": {"posture_audited": true, "source_backed_identity": true, "represented_in_active_mechanics": "yes: Basic mappings plus scoped Scambiar access", "missing": "cover-to-stretto only for fuller identity"},
+    "Mezza Porta di Ferro": {"posture_audited": true, "source_backed_identity": true, "represented_in_active_mechanics": "yes: threatening point plus Basic mappings", "missing": "beat-return fendente only for fuller identity"}
+  },
+  "ready_for_named_guard_v02": {
+    "evidence_ready": true,
+    "simulation_ready_now": false,
+    "reason": "Alber lacks active breaker mechanics and Frontale has only universal mappings; one German and one Italian learned integration remain needed for all eight guards to have mechanically distinguishable identity.",
+    "next_blocker": "missing Play mechanics/specifications, not missing core evidence, full Winden, or guard transitions"
+  },
+  "simulation_runs": [
+    {
+      "type": "existing named-guard unit-regression smoke",
+      "trials_per_cell": 16,
+      "purpose": "exercise all existing harness cells for errors and state leakage only",
+      "balance_interpretation": "NONE"
+    }
+  ],
+  "balance_interpretation": "NONE; no production balance matrix or Monte Carlo balance study was run"
+}

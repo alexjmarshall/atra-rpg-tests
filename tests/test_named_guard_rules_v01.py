@@ -63,6 +63,15 @@ class NamedGuardDeterministicTests(unittest.TestCase):
     def test_r_breaker_annotation_has_no_automatic_modifier(self) -> None:
         self.assertFalse(any(self.cases["R_breaker_annotation_only"].values()))
 
+    def test_s_source_backed_mezza_point_state_applies_and_clears(self) -> None:
+        self.assertEqual(
+            self.cases["S_mezza_point_state_clears"],
+            {"before": "threatening", "after": "not_threatening"},
+        )
+
+    def test_t_scambiar_is_guard_gated_without_a_modifier(self) -> None:
+        self.assertEqual(self.cases["T_scambiar_guard_access"], {"tutta": True, "frontale": False})
+
     def test_guard_schema_data_shape(self) -> None:
         data = json.loads((ROOT / "data" / "guards" / "longsword-named-v0.1.yaml").read_text(encoding="utf-8"))
         self.assertEqual(len(data["guards"]), 8)
@@ -77,4 +86,3 @@ class NamedGuardDeterministicTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-
