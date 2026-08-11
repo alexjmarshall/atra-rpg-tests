@@ -64,6 +64,17 @@ GOVERNING_BASELINE: dict[str, Any] = {
         "counter_first": True,
         "learned_play": False,
     },
+    "tutta_cover_to_stretto": {
+        "variant": "T1",
+        "status": "GOVERNING PROVISIONAL; NOT CANONICAL",
+        "spiritus_cost": 1,
+        "spend_timing": "declaration",
+        "extra_roll": False,
+        "additional_action": False,
+        "effect": "retain Crossing; Wide to Close",
+        "learned_play": True,
+        "archived_comparison": "T0",
+    },
 }
 
 
@@ -91,4 +102,3 @@ BaseDuel = ENGINE.LoadedPowerDuel
 fresh_metrics = ENGINE.fresh_metrics
 finalize = ENGINE.finalize
 record_fight = ENGINE.BASE.record_fight
-

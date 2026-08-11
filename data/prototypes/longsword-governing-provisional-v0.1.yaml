@@ -81,15 +81,29 @@
     "alber": ["low", "point not threatening", "Scheitelhau breaker relationship", "no passive invitation bonus"]
   },
   "guard_play_bridge_v0_1": {
-    "status": "PROVISIONAL TECHNICAL RESULT; PRICE SELECTION OPEN",
+    "status": "GOVERNING PROVISIONAL T1 SELECTION; NOT CANONICAL",
     "report": "reports/guard-play-bridge-v01-results.md",
     "specification": "data/prototypes/longsword-guard-play-bridge-v0.1.yaml",
     "scheitelhau_alber": "S-C; DEFER UNTIL CROWN CONTINUATION; no Spiritus price; Alber remains partially mechanically inert",
     "tutta_cover_to_stretto": "learned continuation; successful source-compatible Basic Cross at Wide retains Crossing and enters Close; no second roll or additional action",
     "promoted_technical_boundaries": ["no universal Close action", "no automatic breaker modifier", "Crown distinct from generic Basic Cross", "Tutta cover-to-stretto remains learned"],
     "candidate_costs": {"T0": 0, "T1": 1},
-    "governing_cost_selection": "OPEN; T1 recommended for Project review but not promoted",
+    "governing_cost_selection": "T1",
+    "spiritus_cost": 1,
+    "spend_at_declaration": true,
+    "t0_status": "ARCHIVED COMPARISON VARIANT ONLY",
     "named_guard_v0_2_ready": false,
-    "remaining_blocker": "narrow Crown continuation or another independently justified Scheitelhau state effect"
+    "remaining_blocker": "Project review of the scoped C1/B3 Crown-continuation recommendation"
+  },
+  "scheitelhau_crown_v0_1": {
+    "status": "PROVISIONAL EXPERIMENT; RECOMMENDED FOR PROJECT REVIEW; NOT GOVERNING",
+    "report": "reports/scheitelhau-crown-v01-results.md",
+    "specification": "data/prototypes/scheitelhau-crown-v0.1.yaml",
+    "authorized_boundaries": ["Crown is not generic Basic Cross", "no generic breaker modifier"],
+    "standalone_scheitelhau_entry": "DEFERRED; no separate chassis, Spiritus price, or modifier",
+    "recommended_exchange_chassis": "C1 Crossing plus transient Crown context; B3 Basic-chassis entry plus learned Sink Point Under Crown",
+    "recommended_continuation_cost": 1,
+    "automatic_promotion": false,
+    "named_guard_v0_2_ready": "CONDITIONAL ON PROJECT ACCEPTANCE"
   }
 }

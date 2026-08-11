@@ -10,7 +10,7 @@ Tutta cover-to-stretto is cleanly representable as a learned continuation: after
 
 ## Scope and Preserved Baseline
 
-The simulator reuses the current G1 named-guard harness, which imports `simulations/shared/provisional_longsword.py`. D1, C2, S2, P1, Cross/Beat, explicit contact/measure state, free before-or-after guard change, and the three-learned-Play cap are unchanged. Skill is 14; starting Spiritus is 8 or 3; each of the six cells contains 640 mirrored fights balanced across all 16 ordered Italian starting-guard pairs. This is behavioral micro-analysis, not guard balance.
+The simulator reuses the current G1 named-guard harness, which imports `simulations/shared/provisional_longsword.py`. D1, C2, S2, P1, Cross/Beat, explicit contact/measure state, free before-or-after guard change, and the three-learned-Play cap are unchanged. Skill is 14; starting Spiritus is 8 or 3; each of the six cells contains 992 mirrored fights balanced across all 16 ordered Italian starting-guard pairs. This is behavioral micro-analysis, not guard balance.
 
 No full Named Guard v0.2 matrix, guard-transition tuning, Parry DR, or unrelated Play redesign was run.
 
@@ -131,4 +131,3 @@ H. The bounded policy shows no pathological displacement of other learned Plays,
 I. **Not yet ready for a meaningful Named Guard Rules v0.2 run.** The Italian bridge is ready, but Alber remains mechanically under-distinguished.
 
 J. The exact remaining blocker is a narrow, audited Crown continuation (or another independently justified Scheitelhau state effect) that gives the Alber breaker entry mechanical substance without a generic modifier.
-

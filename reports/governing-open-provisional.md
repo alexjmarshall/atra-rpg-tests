@@ -56,9 +56,13 @@ Deterministic validation promotes only the boundaries explicitly authorized by t
 
 Scheitelhau's initial Alber entry is classified **S-C / DEFER UNTIL CROWN CONTINUATION**. The initial descending head cut is already represented by Basic Cut, while the distinct source material belongs to the defended Crown/point-sinking/winding/pressing/slicing continuation. No price is assigned to a mechanically inert placeholder, and Alber remains partially mechanically inert.
 
-Tutta cover-to-stretto is technically implementable after a successful Tutta Basic Cross against an ordinary proactive Basic Cut at Wide: retain Crossing, change Wide -> Close, add no second roll or additional action, and count one learned Play. T0 (0 Spiritus) and T1 (1 Spiritus) remain **OPEN** candidates. The bounded experiment recommends T1 for Project review but does not promote it.
+Tutta cover-to-stretto is technically implementable after a successful Tutta Basic Cross against an ordinary proactive Basic Cut at Wide: spend 1 Spiritus at declaration, retain Crossing, change Wide -> Close, add no second roll or additional action, and count one learned Play. The Project selects **T1 as the GOVERNING PROVISIONAL prototype**; it is not canonical/final. T0 is an archived comparison variant only.
 
-Named Guard Rules v0.2 remains blocked by the missing narrow Crown continuation or another independently justified Scheitelhau state effect; guard transitions remain OPEN and unchanged.
+### 2026-08-11 Scheitelhau / Crown v0.1 recommendation
+
+The bounded Crown experiment supplies a mechanically valid exchange-level candidate but does **not** automatically promote it. The recommended Project-review candidate is C1/B3: ordinary Crossing plus a transient, source-specific Crown context; Crown is an authored response context rather than a defender learned Play; the initial Scheitelhau entry remains Basic in chassis; and `Sink Point Under Crown` is the actual learned continuation at 1 Spiritus with a normal attack roll and normal damage. The standalone Scheitelhau entry remains deferred and unpriced. Crown is not generic Basic Cross, and no generic breaker modifier exists.
+
+Deterministic cases pass, including conservative state fields, normal cleanup, German/Italian separation, and the three-Play cap. Automatic promotion is withheld because the repository audit does not encode enough physical Crown geometry to eliminate all historical ambiguity in final player-facing wording. Alber is mechanically ready for Named Guard Rules v0.2 only if the Project accepts C1/B3 as the provisional input; immediate next action is Project review, not the v0.2 run. Guard transitions remain OPEN and unchanged.
 
 ## OPEN
 

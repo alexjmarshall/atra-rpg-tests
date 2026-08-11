@@ -79,7 +79,7 @@
   "tutta_cover_to_stretto": {
     "play_id": "play-italian-longsword-tutta-cover-to-stretto",
     "classification": "LEARNED CONTINUATION",
-    "mechanics_status": "prototype",
+    "mechanics_status": "GOVERNING PROVISIONAL T1; NOT CANONICAL",
     "trigger": {
       "guard_at_cover_declaration": "tutta-porta-di-ferro",
       "incoming_attack": "ordinary proactive Basic Cut",
@@ -90,9 +90,11 @@
     },
     "narrowing_note": "The v0.1 trigger uses Fiore's cover-against-blows branch. Thrusts remain with the separately recorded Scambiar or downward-Beat branches; Beat, Power Attack, learned cuts, and generic successful Parries do not trigger this prototype.",
     "candidates": {
-      "T0": {"spiritus_cost": 0},
-      "T1": {"spiritus_cost": 1}
+      "T0": {"spiritus_cost": 0, "status": "ARCHIVED COMPARISON VARIANT ONLY"},
+      "T1": {"spiritus_cost": 1, "status": "GOVERNING PROVISIONAL"}
     },
+    "selected_variant": "T1",
+    "spend_at_declaration": true,
     "action_relationship": "No additional action; the successful Basic Cross has already spent the defender's action and the continuation does not restore it.",
     "test_resolution": "No second roll.",
     "effect": {

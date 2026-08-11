@@ -1,0 +1,128 @@
+{
+  "id": "scheitelhau-crown-v0.1",
+  "status": "PROVISIONAL EXPERIMENT; RECOMMENDED FOR PROJECT REVIEW; NOT GOVERNING",
+  "not_canonical": true,
+  "governing_baseline": "data/prototypes/longsword-governing-provisional-v0.1.yaml",
+  "source_scope": {
+    "source_id": "pseudo-peter-von-danzig",
+    "witness": "Starhemberg Fechtbuch, Cod.44.A.8 (MS Cors.1449), anonymous gloss, 1452",
+    "locator": "Scheitelhau / Alber ff. 24v.3-25r.2; confirming four-guard list f. 26v.3",
+    "inclusion_basis": "EARLIER",
+    "historical_confidence": "A",
+    "phase_boundary": [
+      "Phase 1: strong descending long-edge head cut against Alber",
+      "Phase 2: defender receives/responds in German Kron/Crown",
+      "Phase 3+: point sinking, winding, pressing, and slicing continuations"
+    ]
+  },
+  "terminology": {
+    "german_crown": "Kron / Crown in the scoped Pseudo-Peter von Danzig Scheitelhau sequence",
+    "not_equivalent_to": ["Italian Corona", "Fiore Frontale", "generic Basic Cross"]
+  },
+  "historical_crown_decomposition": {
+    "direct": [
+      "the defender receives the Scheitelhau in the named Crown context",
+      "the received attack is the strong descending long-edge head cut made against Alber",
+      "point-sinking and later winding/pressing/slicing teachings follow the Crown reception"
+    ],
+    "geometric_inference": [
+      "the continuing weapon interaction is compatible with retained blade engagement"
+    ],
+    "atra_mapping": [
+      "contact=crossing for the immediate Crown continuation window",
+      "measure preserves the existing value and defaults to wide in the forced entry scenario",
+      "a transient crown_context gates only the scoped continuation"
+    ],
+    "not_justified": [
+      "specific hiltward/middle/pointward contact zones",
+      "hard or soft pressure",
+      "Close measure",
+      "displacement",
+      "a defender point-threat change",
+      "a distinct global contact type",
+      "Boon, Bane, automatic success, bonus damage, or defence cancellation"
+    ]
+  },
+  "crown_candidates": {
+    "C0": {
+      "representation": "transient event/tag only",
+      "assessment": "coherent but inferior: it duplicates contact eligibility outside the governing Crossing state"
+    },
+    "C1": {
+      "representation": "ordinary Crossing plus transient crown_context",
+      "assessment": "recommended: reuses current contact/cleanup while preserving source-specific identity"
+    },
+    "C2": {
+      "representation": "distinct Crown contact state",
+      "assessment": "rejected for v0.1: no scoped need to expand the global contact enum"
+    }
+  },
+  "defender_response": {
+    "classification": "AUTHORED EXCHANGE CONTEXT USING A SPECIFIC BASIC-RESPONSE MAPPING",
+    "learned_play": false,
+    "spiritus_cost": 0,
+    "trigger": [
+      "attacker declared the scoped Scheitelhau entry context",
+      "defender was in Alber when the entry was declared",
+      "the normal descending Basic-Cut-chassis attack roll succeeded",
+      "defender has an action and selects the authored Crown response"
+    ],
+    "test": "one normal Longsword defence roll; no Boon or Bane",
+    "success": {
+      "contact": "crossing",
+      "measure": "preserve current measure",
+      "contact_zones": "unknown/unknown",
+      "pressure": "unknown/unknown",
+      "crown_context": true,
+      "damage": 0
+    },
+    "failure": "the initial attack resolves normally and no Crown context appears",
+    "generic_basic_cross_is_crown": false
+  },
+  "attacker_continuation_candidates": [
+    {
+      "name": "Sink Point Under Crown",
+      "classification": "INITIAL CONTINUATION CANDIDATE",
+      "basis": "first named continuation after Crown in the scoped sequence; existing engine can express a normal attack from authored Crossing"
+    },
+    {"name": "Winding after Crown", "classification": "REQUIRES FULLER SYSTEM"},
+    {"name": "Pressing after Crown", "classification": "LATER BRANCH"},
+    {"name": "Slicing after Crown", "classification": "LATER BRANCH; REQUIRES FULLER SYSTEM FOR FINAL PLAYER-FACING FORM"}
+  ],
+  "recommended_chassis": {
+    "chain_model": "B3",
+    "entry": "the initial descending attack remains Basic in chassis but must be explicitly declared as the scoped Scheitelhau entry by an actor who knows the continuation",
+    "learned_play": "Sink Point Under Crown",
+    "trigger": "active Crown context from the matching response; ordinary Crossing is insufficient",
+    "declaration": "optional, after successful Crown creation and before exchange cleanup",
+    "spiritus_cost": 1,
+    "spend_at_declaration": true,
+    "action_relationship": "no additional action; the original attack action is already spent",
+    "test": "normal Longsword attack roll; no Boon, Bane, or automatic success",
+    "success": "normal prototype longsword damage from retained Crossing",
+    "failure": "no damage; Crown context ends at resolution/cleanup",
+    "contact": "ordinary Crossing remains until normal exchange cleanup; the Play does not create Close, known zone, or pressure",
+    "point_threat": "attacker becomes threatening as the point is presented",
+    "chain": "the continuation counts as one learned Play; the Basic entry and defender Crown context do not count",
+    "same_play_limit": "once per Crown context"
+  },
+  "chain_comparison": {
+    "B1": "inferior: charging the learned slot on the initial entry makes the otherwise Basic-equivalent cut consume progression space even when Crown never occurs",
+    "B2": "inferior: two learned slots overstates the scoped lesson and crowds the three-Play cap",
+    "B3": "recommended: gates the technical continuation as the learned content while preserving the initial attack's Basic chassis"
+  },
+  "promotion": {
+    "automatic_promotion": false,
+    "reason": "C1/B3 is mechanically superior in scope and passes deterministic validation, but the repository audit does not encode enough physical Crown geometry to eliminate all historical ambiguity in a player-facing final mechanic",
+    "already_governing_boundaries": ["Crown is not generic Basic Cross", "no generic breaker modifier"]
+  },
+  "excluded": [
+    "global contact-enum expansion",
+    "generic breaker bonuses",
+    "full Winden",
+    "separate press or slice buttons",
+    "guard transitions",
+    "Named Guard Rules v0.2",
+    "Italian Corona or Frontale interaction"
+  ]
+}
