@@ -148,25 +148,30 @@
         "prototype_interaction": {
           "type": "object",
           "additionalProperties": false,
-          "required": ["status", "vocabulary_status", "phases"],
+          "required": ["status", "vocabulary_status", "scope", "phases"],
           "properties": {
             "status": {"const": "PROVISIONAL"},
-            "vocabulary_status": {"const": "PROTOTYPE / SIMULATION"},
+            "vocabulary_status": {"const": "CROSSING/BIND STATE MODEL v0.1"},
+            "scope": {"enum": ["active-mirrored-prototype", "reference-only"]},
             "phases": {
               "type": "array",
               "minItems": 1,
               "items": {
                 "type": "object",
                 "additionalProperties": false,
-                "required": ["phase", "contact", "seeks_or_contacts_opponent_blade", "weapon_engagement_intent", "point_threat", "durchwechseln_under_generalized_trigger", "support_basis", "notes"],
+                "required": ["phase", "contact", "measure", "actor_contact_zone", "opponent_contact_zone", "actor_pressure", "opponent_pressure", "actor_point_threat", "displacement", "cleanup", "basis", "notes"],
                 "properties": {
                   "phase": {"type": "string", "minLength": 1},
-                  "contact": {"enum": ["none", "bind-crossing", "close-crossing"]},
-                  "seeks_or_contacts_opponent_blade": {"type": ["boolean", "null"]},
-                  "weapon_engagement_intent": {"enum": ["body_threat", "blade_seeking", "unknown", "not_applicable"]},
-                  "point_threat": {"enum": ["threatening", "not_threatening", "unknown"]},
-                  "durchwechseln_under_generalized_trigger": {"enum": ["legal", "unavailable", "uncertain", "not_applicable"]},
-                  "support_basis": {"enum": ["directly-supported", "inferred-from-geometry", "uncertain"]},
+                  "contact": {"enum": ["none", "crossing"]},
+                  "measure": {"enum": ["wide", "close", "preserve"]},
+                  "actor_contact_zone": {"enum": ["hiltward", "middle", "pointward", "unknown", "not_applicable"]},
+                  "opponent_contact_zone": {"enum": ["hiltward", "middle", "pointward", "unknown", "not_applicable"]},
+                  "actor_pressure": {"enum": ["hard", "soft", "unknown", "not_applicable"]},
+                  "opponent_pressure": {"enum": ["hard", "soft", "unknown", "not_applicable"]},
+                  "actor_point_threat": {"enum": ["threatening", "not_threatening"]},
+                  "displacement": {"type": "boolean"},
+                  "cleanup": {"enum": ["exchange_end", "immediate_separation", "explicit_retention", "none"]},
+                  "basis": {"enum": ["historically-supported-concept", "provisional-atra-abstraction", "audited-play-evidence", "uncertain"]},
                   "notes": {"type": "string", "minLength": 1}
                 }
               }

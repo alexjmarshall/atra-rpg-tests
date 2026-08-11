@@ -44,16 +44,15 @@
     "tactical_lesson": "Against an incoming thrust, step offline, cross with the hands low and point high, and exchange with your own point.",
     "prototype_interaction": {
       "status": "PROVISIONAL",
-      "vocabulary_status": "PROTOTYPE / SIMULATION",
+      "vocabulary_status": "CROSSING/BIND STATE MODEL v0.1",
+      "scope": "active-mirrored-prototype",
       "phases": [{
-        "phase": "crossing counter-thrust",
-        "contact": "none",
-        "seeks_or_contacts_opponent_blade": true,
-        "weapon_engagement_intent": "blade_seeking",
-        "point_threat": "threatening",
-        "durchwechseln_under_generalized_trigger": "unavailable",
-        "support_basis": "directly-supported",
-        "notes": "The witness explicitly combines a crossing with point-high counter-thrust to face or chest, preserving an immediate point threat."
+        "phase": "crossing counter-thrust", "contact": "crossing", "measure": "wide",
+        "actor_contact_zone": "unknown", "opponent_contact_zone": "unknown",
+        "actor_pressure": "unknown", "opponent_pressure": "unknown",
+        "actor_point_threat": "threatening", "displacement": false, "cleanup": "exchange_end",
+        "basis": "audited-play-evidence",
+        "notes": "Explicitly crosses/opposes the hostile thrust; persistence defaults to none."
       }]
     },
     "candidate_status": "research-candidate",

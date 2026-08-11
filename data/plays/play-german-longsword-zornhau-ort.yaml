@@ -45,27 +45,24 @@
     "tactical_lesson": "Meet a committed descending cut with the counter-cut; only continue with the point when the resulting bind permits it.",
     "prototype_interaction": {
       "status": "PROVISIONAL",
-      "vocabulary_status": "PROTOTYPE / SIMULATION",
+      "vocabulary_status": "CROSSING/BIND STATE MODEL v0.1",
+      "scope": "active-mirrored-prototype",
       "phases": [
         {
-          "phase": "counter-cut before contact",
-          "contact": "none",
-          "seeks_or_contacts_opponent_blade": true,
-          "weapon_engagement_intent": "blade_seeking",
-          "point_threat": "unknown",
-          "durchwechseln_under_generalized_trigger": "uncertain",
-          "support_basis": "uncertain",
-          "notes": "The text directs the cut onto the opposing sword, but whether its point is an immediate threat before the bind is not explicit enough for the generalized trigger. The simulator therefore does not grant a Durchwechseln opportunity from this phase."
+          "phase": "successful initial counter-cut", "contact": "crossing", "measure": "wide",
+          "actor_contact_zone": "unknown", "opponent_contact_zone": "unknown",
+          "actor_pressure": "unknown", "opponent_pressure": "unknown",
+          "actor_point_threat": "not_threatening", "displacement": false, "cleanup": "exchange_end",
+          "basis": "audited-play-evidence",
+          "notes": "Creates Crossing without synthetic Soft pressure; blade portion and pressure remain separate."
         },
         {
-          "phase": "point continuation from a soft bind",
-          "contact": "bind-crossing",
-          "seeks_or_contacts_opponent_blade": true,
-          "weapon_engagement_intent": "not_applicable",
-          "point_threat": "threatening",
-          "durchwechseln_under_generalized_trigger": "unavailable",
-          "support_basis": "directly-supported",
-          "notes": "The point threatens face or chest, and a crossing has already formed."
+          "phase": "Ort continuation", "contact": "crossing", "measure": "preserve",
+          "actor_contact_zone": "unknown", "opponent_contact_zone": "unknown",
+          "actor_pressure": "unknown", "opponent_pressure": "soft",
+          "actor_point_threat": "threatening", "displacement": false, "cleanup": "exchange_end",
+          "basis": "audited-play-evidence",
+          "notes": "Requires explicit opponent Soft pressure. No active action currently creates this trigger."
         }
       ]
     },

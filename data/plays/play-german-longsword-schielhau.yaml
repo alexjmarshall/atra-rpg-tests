@@ -55,29 +55,16 @@
     ],
     "prototype_interaction": {
       "status": "PROVISIONAL",
-      "vocabulary_status": "PROTOTYPE / SIMULATION",
-      "phases": [
-        {
-          "phase": "successful single-time Schielhau before consequences resolve",
-          "contact": "none",
-          "seeks_or_contacts_opponent_blade": true,
-          "weapon_engagement_intent": "blade_seeking",
-          "point_threat": "unknown",
-          "durchwechseln_under_generalized_trigger": "uncertain",
-          "support_basis": "uncertain",
-          "notes": "The experiment permits the sourced attempted change-through to be declared in this transient window and delays Schielhau's successful defensive and offensive consequences. This staging is PROVISIONAL and does not imply that an already established threatening point is legally changeable-through."
-        },
-        {
-          "phase": "intrinsic long-point branch",
-          "contact": "none",
-          "seeks_or_contacts_opponent_blade": false,
-          "weapon_engagement_intent": "body_threat",
-          "point_threat": "threatening",
-          "durchwechseln_under_generalized_trigger": "unavailable",
-          "support_basis": "directly-supported",
-          "notes": "Schielhau maintains or shoots the long point into the opening to deny or endanger the attempted change-through. This is intrinsic to Schielhau, not another action, learned Play, or generic Counter-Feint."
-        }
-      ]
+      "vocabulary_status": "CROSSING/BIND STATE MODEL v0.1",
+      "scope": "active-mirrored-prototype",
+      "phases": [{
+        "phase": "interception and intrinsic long point", "contact": "none", "measure": "wide",
+        "actor_contact_zone": "not_applicable", "opponent_contact_zone": "not_applicable",
+        "actor_pressure": "not_applicable", "opponent_pressure": "not_applicable",
+        "actor_point_threat": "threatening", "displacement": false, "cleanup": "none",
+        "basis": "audited-play-evidence",
+        "notes": "No automatic Crossing. The intrinsic long-point branch and S2 interaction are retained."
+      }]
     },
     "candidate_status": "research-candidate",
     "suspected_duplicates": [],

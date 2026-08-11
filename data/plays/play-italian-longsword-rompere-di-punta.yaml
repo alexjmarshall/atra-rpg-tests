@@ -42,6 +42,19 @@
       "type": "Defence"
     },
     "tactical_lesson": "Beat the hostile thrust downward and answer from the resulting opening.",
+    "prototype_interaction": {
+      "status": "PROVISIONAL",
+      "vocabulary_status": "CROSSING/BIND STATE MODEL v0.1",
+      "scope": "reference-only",
+      "phases": [{
+        "phase": "reference break of hostile thrust", "contact": "crossing", "measure": "wide",
+        "actor_contact_zone": "unknown", "opponent_contact_zone": "middle",
+        "actor_pressure": "unknown", "opponent_pressure": "unknown",
+        "actor_point_threat": "not_threatening", "displacement": true, "cleanup": "explicit_retention",
+        "basis": "audited-play-evidence",
+        "notes": "Reference only: displacement can retain actionable contact; the source describes crossing the middle of the hostile sword and subsequent closing/control."
+      }]
+    },
     "candidate_status": "research-candidate",
     "suspected_duplicates": [],
     "related_plays": [],

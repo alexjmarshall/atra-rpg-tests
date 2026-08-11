@@ -1,0 +1,99 @@
+{
+  "id": "longsword-crossing-bind-state-model-v0.1",
+  "status": "PROVISIONAL",
+  "governing_packet": "atra-melee-design-packet-v0-4",
+  "scope": {
+    "mirrored_play_ids": [
+      "play-german-longsword-absetzen",
+      "play-german-longsword-zornhau-ort",
+      "play-german-longsword-durchwechseln",
+      "play-italian-longsword-scambiar-di-punta",
+      "play-german-longsword-nachreisen",
+      "play-italian-longsword-pommel-strike",
+      "play-german-longsword-schielhau"
+    ],
+    "reference_play_ids": ["play-italian-longsword-rompere-di-punta"],
+    "excluded": ["Guard effects", "generic leverage modifiers", "generic Hard/Soft choice", "generic closing procedure", "main melee design packet update"]
+  },
+  "state_schema": {
+    "contact": ["none", "crossing"],
+    "measure": ["wide", "close"],
+    "per_fighter_contact_zone": ["hiltward", "middle", "pointward", "unknown"],
+    "per_fighter_pressure": ["hard", "soft", "unknown"],
+    "per_fighter_point_threat": ["threatening", "not_threatening"],
+    "displacement_event": {"persistent_state": false, "required_fields": ["weapon_owner", "source", "contact_after"]}
+  },
+  "rules": {
+    "crossing_definition": "Actionable weapon contact from which immediate blade-work can continue before separation; German Bind and Italian Crossing share one engine state.",
+    "crossing_cleanup": "At exchange end contact becomes none unless a Play explicitly retains or transforms the Crossing.",
+    "contact_zone_has_generic_modifier": false,
+    "pressure_source": "action-or-Play only; never random, margin-, skill-, Guard-, or zone-derived",
+    "durchwechseln_timing": "after Cross/Beat declaration and before the Parry roll; D1 is paid with no refund; the Parry roll is skipped",
+    "combined_variant": "A one-roll single-time defence/offence",
+    "compound_cost": 2,
+    "durchwechseln_cost": 1,
+    "schielhau_resolution": "S2",
+    "maximum_spiritus": 8,
+    "exchange_play_cap": 3
+  },
+  "actions": [
+    {
+      "id": "basic-parry-cross", "status": "PROVISIONAL", "cost": 0,
+      "phases": [{"phase": "successful declared Cross against ordinary committed Strike", "contact": "crossing", "measure": "preserve", "actor_contact_zone": "unknown", "opponent_contact_zone": "unknown", "actor_pressure": "hard", "opponent_pressure": "hard", "actor_point_threat": "not_threatening", "displacement": false, "cleanup": "exchange_end", "basis": "provisional-atra-abstraction", "notes": "Declared before roll; blade-seeking and point-off-line in the pre-contact D1 window; success cancels the Strike and preserves measure."}]
+    },
+    {
+      "id": "basic-parry-beat", "status": "PROVISIONAL", "cost": 0,
+      "phases": [{"phase": "successful declared Beat", "contact": "none", "measure": "preserve", "actor_contact_zone": "not_applicable", "opponent_contact_zone": "not_applicable", "actor_pressure": "not_applicable", "opponent_pressure": "not_applicable", "actor_point_threat": "not_threatening", "displacement": true, "cleanup": "immediate_separation", "basis": "provisional-atra-abstraction", "notes": "Declared before roll; the same pre-contact D1 window applies. No generic follow-on bonus or penalty is created."}]
+    }
+  ],
+  "plays": [
+    {
+      "id": "play-german-longsword-zornhau-ort", "status": "PROVISIONAL", "cost": 0,
+      "phases": [
+        {"phase": "successful initial counter-cut", "contact": "crossing", "measure": "wide", "actor_contact_zone": "unknown", "opponent_contact_zone": "unknown", "actor_pressure": "unknown", "opponent_pressure": "unknown", "actor_point_threat": "not_threatening", "displacement": false, "cleanup": "exchange_end", "basis": "audited-play-evidence", "notes": "Creates Crossing without synthetic Soft pressure; blade portion and pressure remain separate."},
+        {"phase": "Ort continuation", "contact": "crossing", "measure": "preserve", "actor_contact_zone": "unknown", "opponent_contact_zone": "unknown", "actor_pressure": "unknown", "opponent_pressure": "soft", "actor_point_threat": "threatening", "displacement": false, "cleanup": "exchange_end", "basis": "audited-play-evidence", "notes": "Requires explicit opponent Soft pressure. No active action currently creates this trigger."}
+      ]
+    },
+    {
+      "id": "play-german-longsword-absetzen", "status": "PROVISIONAL", "cost": 2,
+      "phases": [{"phase": "joined opposition and thrust", "contact": "crossing", "measure": "wide", "actor_contact_zone": "unknown", "opponent_contact_zone": "unknown", "actor_pressure": "unknown", "opponent_pressure": "unknown", "actor_point_threat": "threatening", "displacement": false, "cleanup": "exchange_end", "basis": "audited-play-evidence", "notes": "Maintained point threat denies the ordinary state-based Durchwechseln trigger."}]
+    },
+    {
+      "id": "play-german-longsword-durchwechseln", "status": "PROVISIONAL", "cost": 1,
+      "phases": [{"phase": "change beneath attempted engagement", "contact": "none", "measure": "preserve", "actor_contact_zone": "not_applicable", "opponent_contact_zone": "not_applicable", "actor_pressure": "not_applicable", "opponent_pressure": "not_applicable", "actor_point_threat": "threatening", "displacement": false, "cleanup": "none", "basis": "audited-play-evidence", "notes": "Occurs before firm/actionable Crossing; avoids blade engagement and creates no bind."}]
+    },
+    {
+      "id": "play-italian-longsword-scambiar-di-punta", "status": "PROVISIONAL", "cost": 2,
+      "phases": [{"phase": "crossing counter-thrust", "contact": "crossing", "measure": "wide", "actor_contact_zone": "unknown", "opponent_contact_zone": "unknown", "actor_pressure": "unknown", "opponent_pressure": "unknown", "actor_point_threat": "threatening", "displacement": false, "cleanup": "exchange_end", "basis": "audited-play-evidence", "notes": "Explicitly crosses/opposes the hostile thrust; persistence defaults to none."}]
+    },
+    {
+      "id": "play-german-longsword-nachreisen", "status": "PROVISIONAL", "cost": 0,
+      "phases": [{"phase": "current recovery-pursuit form", "contact": "none", "measure": "wide", "actor_contact_zone": "not_applicable", "opponent_contact_zone": "not_applicable", "actor_pressure": "not_applicable", "opponent_pressure": "not_applicable", "actor_point_threat": "threatening", "displacement": false, "cleanup": "none", "basis": "audited-play-evidence", "notes": "The target weapon has gone away. This annotation does not generalize to every Nachreisen branch."}]
+    },
+    {
+      "id": "play-italian-longsword-pommel-strike", "status": "PROVISIONAL", "cost": 0,
+      "phases": [{"phase": "pommel strike from established Close Crossing", "contact": "crossing", "measure": "close", "actor_contact_zone": "unknown", "opponent_contact_zone": "unknown", "actor_pressure": "unknown", "opponent_pressure": "unknown", "actor_point_threat": "not_threatening", "displacement": false, "cleanup": "none", "basis": "audited-play-evidence", "notes": "Does not create Crossing; requires one. Main-run opportunities are absent until an explicit close-measure creator exists."}]
+    },
+    {
+      "id": "play-german-longsword-schielhau", "status": "PROVISIONAL", "cost": 2,
+      "phases": [{"phase": "interception and intrinsic long point", "contact": "none", "measure": "wide", "actor_contact_zone": "not_applicable", "opponent_contact_zone": "not_applicable", "actor_pressure": "not_applicable", "opponent_pressure": "not_applicable", "actor_point_threat": "threatening", "displacement": false, "cleanup": "none", "basis": "audited-play-evidence", "notes": "No automatic Crossing. The intrinsic long-point branch and S2 interaction are retained."}]
+    },
+    {
+      "id": "play-italian-longsword-rompere-di-punta", "status": "PROVISIONAL", "cost": null,
+      "phases": [{"phase": "reference break of hostile thrust", "contact": "crossing", "measure": "wide", "actor_contact_zone": "unknown", "opponent_contact_zone": "middle", "actor_pressure": "unknown", "opponent_pressure": "unknown", "actor_point_threat": "not_threatening", "displacement": true, "cleanup": "explicit_retention", "basis": "audited-play-evidence", "notes": "Reference only: displacement can retain actionable contact; the source describes crossing the middle of the hostile sword and subsequent closing/control."}]
+    }
+  ],
+  "simulation_model": {
+    "seed": 11082026,
+    "primary_trials_per_cell": 5000,
+    "legacy_trials_per_cell": 1500,
+    "skills": [10, 14, 18],
+    "starting_spiritus": [8, 3],
+    "information": ["adaptive_revelation", "perfect_information"],
+    "policy": "transparent one-step expected-value softmax",
+    "primary_random_contact_generation": false
+  },
+  "open_questions": [
+    "universal contact-zone mechanics", "generic leverage rewards", "full Hard/Soft action system", "explicit Soft-producing action", "closing mechanics", "all Guard effects", "final bind persistence", "final terminology", "final Play interactions beyond audited prototype set"
+  ]
+}

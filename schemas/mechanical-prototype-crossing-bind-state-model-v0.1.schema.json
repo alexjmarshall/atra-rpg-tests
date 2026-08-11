@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://atra.example/schemas/mechanical-prototype-crossing-bind-state-model-v0.1.schema.json",
+  "title": "Atra Crossing/Bind state-model prototype v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "status", "governing_packet", "scope", "state_schema", "rules", "actions", "plays", "simulation_model", "open_questions"],
+  "properties": {
+    "id": {"const": "longsword-crossing-bind-state-model-v0.1"},
+    "status": {"const": "PROVISIONAL"},
+    "governing_packet": {"const": "atra-melee-design-packet-v0-4"},
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mirrored_play_ids", "reference_play_ids", "excluded"],
+      "properties": {
+        "mirrored_play_ids": {"type": "array", "minItems": 7, "maxItems": 7, "uniqueItems": true, "items": {"type": "string"}},
+        "reference_play_ids": {"const": ["play-italian-longsword-rompere-di-punta"]},
+        "excluded": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "state_schema": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["contact", "measure", "per_fighter_contact_zone", "per_fighter_pressure", "per_fighter_point_threat", "displacement_event"],
+      "properties": {
+        "contact": {"const": ["none", "crossing"]},
+        "measure": {"const": ["wide", "close"]},
+        "per_fighter_contact_zone": {"const": ["hiltward", "middle", "pointward", "unknown"]},
+        "per_fighter_pressure": {"const": ["hard", "soft", "unknown"]},
+        "per_fighter_point_threat": {"const": ["threatening", "not_threatening"]},
+        "displacement_event": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["persistent_state", "required_fields"],
+          "properties": {
+            "persistent_state": {"const": false},
+            "required_fields": {"const": ["weapon_owner", "source", "contact_after"]}
+          }
+        }
+      }
+    },
+    "rules": {"type": "object"},
+    "actions": {
+      "type": "array", "minItems": 2, "maxItems": 2,
+      "items": {"$ref": "#/$defs/annotation"}
+    },
+    "plays": {
+      "type": "array", "minItems": 8, "maxItems": 8,
+      "items": {"$ref": "#/$defs/annotation"}
+    },
+    "simulation_model": {"type": "object"},
+    "open_questions": {"type": "array", "items": {"type": "string"}}
+  },
+  "$defs": {
+    "annotation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "status", "phases"],
+      "properties": {
+        "id": {"type": "string"},
+        "status": {"const": "PROVISIONAL"},
+        "cost": {"type": ["integer", "null"], "minimum": 0},
+        "phases": {
+          "type": "array", "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["phase", "contact", "measure", "actor_contact_zone", "opponent_contact_zone", "actor_pressure", "opponent_pressure", "actor_point_threat", "displacement", "cleanup", "basis", "notes"],
+            "properties": {
+              "phase": {"type": "string"},
+              "contact": {"enum": ["none", "crossing"]},
+              "measure": {"enum": ["wide", "close", "preserve"]},
+              "actor_contact_zone": {"enum": ["hiltward", "middle", "pointward", "unknown", "not_applicable"]},
+              "opponent_contact_zone": {"enum": ["hiltward", "middle", "pointward", "unknown", "not_applicable"]},
+              "actor_pressure": {"enum": ["hard", "soft", "unknown", "not_applicable"]},
+              "opponent_pressure": {"enum": ["hard", "soft", "unknown", "not_applicable"]},
+              "actor_point_threat": {"enum": ["threatening", "not_threatening"]},
+              "displacement": {"type": "boolean"},
+              "cleanup": {"enum": ["exchange_end", "immediate_separation", "explicit_retention", "none"]},
+              "basis": {"enum": ["historically-supported-concept", "provisional-atra-abstraction", "audited-play-evidence", "uncertain"]},
+              "notes": {"type": "string"}
+            }
+          }
+        }
+      }
+    }
+  }
+}

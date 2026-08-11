@@ -42,16 +42,15 @@
     "tactical_lesson": "From an established close crossing, control the opponent's arm as the source variant permits and strike the exposed face with the pommel.",
     "prototype_interaction": {
       "status": "PROVISIONAL",
-      "vocabulary_status": "PROTOTYPE / SIMULATION",
+      "vocabulary_status": "CROSSING/BIND STATE MODEL v0.1",
+      "scope": "active-mirrored-prototype",
       "phases": [{
-        "phase": "pommel strike from close crossing",
-        "contact": "close-crossing",
-        "seeks_or_contacts_opponent_blade": null,
-        "weapon_engagement_intent": "not_applicable",
-        "point_threat": "not_threatening",
-        "durchwechseln_under_generalized_trigger": "unavailable",
-        "support_basis": "directly-supported",
-        "notes": "The play begins after close contact and arm access; Durchwechseln requires contact none before a firm bind."
+        "phase": "pommel strike from established Close Crossing", "contact": "crossing", "measure": "close",
+        "actor_contact_zone": "unknown", "opponent_contact_zone": "unknown",
+        "actor_pressure": "unknown", "opponent_pressure": "unknown",
+        "actor_point_threat": "not_threatening", "displacement": false, "cleanup": "none",
+        "basis": "audited-play-evidence",
+        "notes": "Does not create Crossing; requires one. Main-run opportunities are absent until an explicit close-measure creator exists."
       }]
     },
     "candidate_status": "research-candidate",

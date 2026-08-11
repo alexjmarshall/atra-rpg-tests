@@ -44,16 +44,15 @@
     "tactical_lesson": "Against an incoming thrust, set the blade aside from right Pflug while placing the point into the opponent.",
     "prototype_interaction": {
       "status": "PROVISIONAL",
-      "vocabulary_status": "PROTOTYPE / SIMULATION",
+      "vocabulary_status": "CROSSING/BIND STATE MODEL v0.1",
+      "scope": "active-mirrored-prototype",
       "phases": [{
-        "phase": "joined set-aside and thrust",
-        "contact": "none",
-        "seeks_or_contacts_opponent_blade": true,
-        "weapon_engagement_intent": "blade_seeking",
-        "point_threat": "threatening",
-        "durchwechseln_under_generalized_trigger": "unavailable",
-        "support_basis": "directly-supported",
-        "notes": "The witness joins contact with the incoming blade and an immediate thrust to face or chest; its point threat fails the generalized Durchwechseln trigger."
+        "phase": "joined opposition and thrust", "contact": "crossing", "measure": "wide",
+        "actor_contact_zone": "unknown", "opponent_contact_zone": "unknown",
+        "actor_pressure": "unknown", "opponent_pressure": "unknown",
+        "actor_point_threat": "threatening", "displacement": false, "cleanup": "exchange_end",
+        "basis": "audited-play-evidence",
+        "notes": "Maintained point threat denies the ordinary state-based Durchwechseln trigger."
       }]
     },
     "candidate_status": "research-candidate",
