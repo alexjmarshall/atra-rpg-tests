@@ -2,11 +2,28 @@
 
 Transcribed from Section 2 of Atra Melee Design Packet v0.4. These entries are constraints and unresolved questions; this repository does not decide them.
 
+## 2026-08-11 governing provisional prototype selection
+
+Project direction after the listed experiments selects a **GOVERNING PROVISIONAL PROTOTYPE BASELINE** for subsequent simulator work. It is not a canonical rules promotion and does not edit Atra Melee Design Packet v0.4. The machine-readable selection is `data/prototypes/longsword-governing-provisional-v0.1.yaml`; the shared simulator entry point is `simulations/shared/provisional_longsword.py`.
+
+- Durchwechseln: D1 (1 Spiritus at declaration, no refund, state trigger, pre-Basic-Parry-roll window).
+- Current audited two-effect compounds: C2 (Absetzen, Scambiar di Punta, and Schielhau cost 2 Spiritus). This does not price future compound Plays.
+- Schielhau / Durchwechseln: S2.
+- Contact: explicit Crossing/Bind v0.1 axes; displacement remains an event; no random bind, Soft, Close, or zone generation.
+- Basic Parry: declared Cross or Beat, with the common pre-roll D1 window. Cross creates the authored Crossing result; Beat displaces and normally separates.
+- Crossing: current-exchange duration unless explicitly retained, transformed, or continued.
+- Learned-Play chain: maximum 3; basic options and intrinsic branches do not count.
+- Loaded: Damage Boon only for proactive Basic Cuts from a Loaded guard.
+- Power Attack: P1, 1 Spiritus at declaration, normal attack roll, fixed 7 damage for the prototype longsword, Committed, and Counter-first only against Power. Power is a Basic option, not a learned Play.
+- Guard direction: source-specific named guards. The mirrored Threat / Power / Cover family is **SUPERSEDED FOR CURRENT PROTOTYPE WORK**, but its historical record remains below and in the packet.
+
+The older OPEN/PROVISIONAL transcription below is retained as historical context. Where it conflicts with this dated selection for simulator work, the dated selection governs. Final transition graph, starting-guard rule, final roster, full Winden system, generic leverage, and final guard bonuses remain OPEN.
+
 ## OPEN
 
 ### Guard architecture
 
-Retain the tested mirrored Threat/Power/Cover family structure, or give individual named guards bespoke public effects while preserving height and using tags mainly for indexing, gating and later transitions?
+**SUPERSEDED FOR CURRENT PROTOTYPE WORK by the 2026-08-11 selection.** Historical question: retain the tested mirrored Threat/Power/Cover family structure, or give individual named guards bespoke public effects while preserving height and using tags mainly for indexing, gating and later transitions?
 
 Evidence: [Chat 057-059; Post-v0.1]
 
@@ -128,7 +145,7 @@ Evidence: [Chat 001, 027]
 
 ### Mirrored triangular guard family
 
-High/low Threat checks Power/Chamber and opposite-height attacks by Counter Boon; high/low Cover checks Threat and same-height attacks by Parry Boon; high/low Power/Chamber buys a damage Boon on proactive Strikes for 1 Spiritus. The paired heights are currently mirrors, not bespoke guards.
+**SUPERSEDED FOR CURRENT PROTOTYPE WORK by the 2026-08-11 named-guard direction.** Historical provisional: High/low Threat checks Power/Chamber and opposite-height attacks by Counter Boon; high/low Cover checks Threat and same-height attacks by Parry Boon; high/low Power/Chamber buys a damage Boon on proactive Strikes for 1 Spiritus. The paired heights were mirrors, not bespoke guards.
 
 Evidence: [Chat 044, 054, 056; Post-v0.1]
 

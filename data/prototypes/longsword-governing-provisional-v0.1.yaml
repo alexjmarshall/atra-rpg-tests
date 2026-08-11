@@ -1,0 +1,52 @@
+{
+  "id": "longsword-governing-provisional-v0.1",
+  "status": "GOVERNING PROVISIONAL PROTOTYPE BASELINE",
+  "not_canonical": true,
+  "selected_on": "2026-08-11",
+  "engine_entry_point": "simulations/shared/provisional_longsword.py",
+  "archived_experiment_variants_remain_available": true,
+  "durchwechseln": {
+    "variant": "D1",
+    "spiritus_cost": 1,
+    "spend_at_declaration": true,
+    "refund_on_failure": false,
+    "state_based_trigger": true,
+    "window": "after Cross or Beat declaration and before the Basic Parry roll"
+  },
+  "current_two_effect_compounds": {
+    "variant": "C2",
+    "spiritus_cost": 2,
+    "plays": ["Absetzen", "Scambiar di Punta", "Schielhau"],
+    "does_not_price_future_compounds": true
+  },
+  "schielhau_durchwechseln": {"variant": "S2"},
+  "contact_model": {
+    "contact": ["none", "crossing"],
+    "measure": ["wide", "close"],
+    "per_fighter_contact_zone": ["hiltward", "middle", "pointward", "unknown"],
+    "per_fighter_pressure": ["hard", "soft", "unknown"],
+    "per_fighter_point_threat": ["threatening", "not_threatening"],
+    "displacement_is_event_not_state": true,
+    "random_bind_soft_close_or_zone_generation": false
+  },
+  "basic_parry": {
+    "declared_forms": ["Cross", "Beat"],
+    "cross": "cancel; establish Crossing; preserve measure; ordinary Basic-on-Basic defaults Hard/Hard; zones unknown unless authored",
+    "beat": "cancel; displace; end contact by default"
+  },
+  "crossing_duration": "through the current exchange unless explicitly retained or transformed; otherwise reset contact, zones, and pressure at exchange end",
+  "learned_play_cap": 3,
+  "loaded": "proactive Basic Cut from a Loaded guard receives Damage Boon only",
+  "power_attack": {
+    "variant": "P1",
+    "requirements": ["Loaded", "proactive Cut"],
+    "declaration": "before attack roll",
+    "spiritus_cost": 1,
+    "damage": 7,
+    "loaded_boon_stacks": false,
+    "committed": true,
+    "counter_first_only_against_power": true,
+    "learned_play": false
+  },
+  "guard_direction": "source-specific named guards; mirrored Threat/Power/Cover is superseded for current prototype work"
+}

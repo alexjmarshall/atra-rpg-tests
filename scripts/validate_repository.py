@@ -16,6 +16,8 @@ ROOT = Path(__file__).resolve().parents[1]
 PLAY_DIR = ROOT / "data" / "plays"
 SOURCE_DIR = ROOT / "data" / "sources"
 SCHEMA_PATH = ROOT / "schemas" / "play.schema.json"
+GUARD_SCHEMA_PATH = ROOT / "schemas" / "guard.schema.json"
+GUARD_DATA_PATH = ROOT / "data" / "guards" / "longsword-named-v0.1.yaml"
 
 
 def load_json_yaml(path: Path) -> Any:
@@ -124,6 +126,25 @@ def validate_repository() -> tuple[list[dict[str, Any]], list[str], list[str]]:
     actual = Counter((play["historical_identity"]["curriculum"], play["historical_identity"]["tradition"]) for play in plays)
     if actual != Counter(expected_totals):
         errors.append(f"Curriculum/tradition totals differ from packet: expected {expected_totals}, found {dict(actual)}")
+    if GUARD_SCHEMA_PATH.exists() or GUARD_DATA_PATH.exists():
+        if not GUARD_SCHEMA_PATH.exists() or not GUARD_DATA_PATH.exists():
+            errors.append("Named-guard schema and data must either both exist or both be absent")
+        else:
+            try:
+                guard_schema = load_json_yaml(GUARD_SCHEMA_PATH)
+                guard_data = load_json_yaml(GUARD_DATA_PATH)
+                errors.extend(
+                    f"{GUARD_DATA_PATH.name}: {message}"
+                    for message in validate_schema(guard_data, guard_schema)
+                )
+                guard_ids = [guard.get("id") for guard in guard_data.get("guards", [])]
+                if len(guard_ids) != len(set(guard_ids)):
+                    errors.append(f"{GUARD_DATA_PATH.name}: duplicate guard id")
+                traditions = Counter(guard.get("tradition") for guard in guard_data.get("guards", []))
+                if traditions != Counter({"German": 4, "Italian": 4}):
+                    errors.append(f"{GUARD_DATA_PATH.name}: bounded roster must contain four German and four Italian guards")
+            except Exception as exc:
+                errors.append(f"{GUARD_DATA_PATH.name}: cannot validate named guards: {exc}")
     return plays, errors, warnings
 
 

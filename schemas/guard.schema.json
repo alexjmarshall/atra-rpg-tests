@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Atra bounded named-guard roster",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "status", "curriculum", "guards"],
+  "properties": {
+    "id": {"type": "string", "minLength": 1},
+    "status": {"enum": ["PROVISIONAL", "ADOPTED"]},
+    "curriculum": {"type": "string", "minLength": 1},
+    "guards": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "name", "tradition", "curriculum", "source_status", "source_locator", "historical_confidence", "mechanics_status", "physical_state", "mechanical_access", "behaviors"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "name": {"type": "string", "minLength": 1},
+          "tradition": {"enum": ["German", "Italian"]},
+          "curriculum": {"type": "string", "minLength": 1},
+          "source_status": {"enum": ["scoped-exact-locator", "packet-concept-only", "evidence-incomplete"]},
+          "source_locator": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["source_id", "location", "inclusion_basis", "evidence_scope"],
+              "properties": {
+                "source_id": {"type": "string", "minLength": 1},
+                "location": {"type": ["string", "null"]},
+                "inclusion_basis": {"enum": ["DIRECT", "CONTINUITY", "EARLIER", "PRESERVATION", "RECONSTRUCTION", "IMPORTED", "DESIGN"]},
+                "evidence_scope": {"type": "string", "minLength": 1}
+              }
+            }
+          },
+          "historical_confidence": {"type": ["string", "null"], "enum": ["A", "B", "C", "D", null]},
+          "mechanics_status": {"enum": ["PROVISIONAL", "OPEN", "EVIDENCE INCOMPLETE"]},
+          "physical_state": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "height": {"enum": ["high", "low", "middle", "unknown"]},
+              "point_threat": {"enum": ["threatening", "not_threatening", "unknown"]},
+              "preparation_tags": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+              "hanging_tags": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+              "posture_tags": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+              "loaded": {"type": "boolean"}
+            }
+          },
+          "mechanical_access": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["existing_basic_action_mappings", "basic_guard_actions", "learned_play_gates", "sourced_breakers", "unresolved_source_behaviors"],
+            "properties": {
+              "existing_basic_action_mappings": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+              "basic_guard_actions": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": ["id", "models", "spiritus_cost", "learned_play_chain_count"],
+                  "properties": {
+                    "id": {"type": "string", "minLength": 1},
+                    "models": {"type": "array", "items": {"enum": ["G1", "G2"]}, "uniqueItems": true},
+                    "spiritus_cost": {"type": "integer", "minimum": 0},
+                    "learned_play_chain_count": {"type": "integer", "minimum": 0}
+                  }
+                }
+              },
+              "learned_play_gates": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+              "sourced_breakers": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": ["play", "evidence_status", "mechanical_effect"],
+                  "properties": {
+                    "play": {"type": "string", "minLength": 1},
+                    "evidence_status": {"enum": ["scoped-exact-locator", "evidence-incomplete"]},
+                    "mechanical_effect": {"enum": ["none-annotation-only", "existing-play", "gate-only", "needs-redesign"]}
+                  }
+                }
+              },
+              "unresolved_source_behaviors": {"type": "array", "items": {"type": "string"}, "uniqueItems": true}
+            }
+          },
+          "behaviors": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["source_description", "locator", "historical_confidence", "classification", "implementation_status", "rationale", "compresses_historical_lesson"],
+              "properties": {
+                "source_description": {"type": "string", "minLength": 1},
+                "locator": {"type": ["string", "null"]},
+                "historical_confidence": {"type": ["string", "null"], "enum": ["A", "B", "C", "D", null]},
+                "classification": {"enum": ["INTRINSIC", "EXISTING BASIC MAPPING", "BASIC GUARD ACTION", "LEARNED PLAY", "BREAKER", "NO MECHANIC / OPEN"]},
+                "implementation_status": {"type": "string", "minLength": 1},
+                "rationale": {"type": "string", "minLength": 1},
+                "compresses_historical_lesson": {"type": "boolean"}
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
