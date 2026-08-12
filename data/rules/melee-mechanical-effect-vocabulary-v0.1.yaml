@@ -1,0 +1,383 @@
+{
+  "id": "melee-mechanical-effect-vocabulary-v0.1",
+  "status": "GOVERNING PROVISIONAL RULES-LANGUAGE SPECIFICATION FOR THE CURRENT LONGSWORD VERTICAL SLICE",
+  "version": "0.1",
+  "adjudicated_on": "2026-08-12",
+  "scope": "Finite mechanical grammar for current longsword Basics, governing provisional Plays, incomplete material, and one candidate-only diagnostic.",
+  "not_a_balance_formula": true,
+  "principles": [
+    "Triggers are not effects.",
+    "Costs and commitments are not effects.",
+    "Historical description alone is not a gameplay effect.",
+    "Principal payload and physical/state aftermath are recorded separately.",
+    "Changed fields are not automatically equal-price effects.",
+    "Displacement is event metadata unless another rule consumes it or derives a consequence from it.",
+    "Open is a guard-state value; Strip Guard is the operation that sets guard to Open.",
+    "Contact and measure are independent axes.",
+    "Establish Crossing and Retain Crossing are distinct operations.",
+    "Generic Control is forbidden and must be decomposed."
+  ],
+  "low_level_operators": [
+    {
+      "id": "ATTACK",
+      "meaning": "Resolve one weapon attack using the specified existing attack procedure and modifiers.",
+      "ordinary_primary_payload": true
+    },
+    {
+      "id": "CANCEL",
+      "meaning": "The referenced pending attack does not resolve.",
+      "ordinary_primary_payload": true
+    },
+    {
+      "id": "SET",
+      "meaning": "Assign an approved state axis an explicit approved value.",
+      "ordinary_primary_payload": false
+    },
+    {
+      "id": "CLEAR",
+      "meaning": "Return an approved nullable state axis to its defined empty/default value without changing independent axes.",
+      "ordinary_primary_payload": false
+    },
+    {
+      "id": "RETAIN",
+      "meaning": "Suppress the named state's normal cleanup for the specified bounded window; it does not establish a state that is absent.",
+      "ordinary_primary_payload": false
+    },
+    {
+      "id": "MODIFY_ATTACK",
+      "meaning": "Apply an approved accuracy, damage, timing, or commitment parameter to ATTACK; it does not create a second attack.",
+      "ordinary_primary_payload": false
+    },
+    {
+      "id": "REPLACE_PENDING_ATTACK",
+      "meaning": "Replace the currently pending attack resolution with one newly rolled attack object; the original pending attack and declared defence roll do not also resolve.",
+      "ordinary_primary_payload": false,
+      "exceptional": true,
+      "required_by": ["Durchwechseln D1"],
+      "why_required": "CANCEL plus ATTACK would obscure that D1 substitutes one attack resolution for another rather than creating a second independent attack."
+    },
+    {
+      "id": "RESTRICT_RESPONSE",
+      "meaning": "Remove or narrow an otherwise legal response or response step.",
+      "ordinary_primary_payload": false,
+      "exceptional": true
+    }
+  ],
+  "primary_payload_vocabulary": [
+    {
+      "id": "MAKE_ATTACK",
+      "operator": "ATTACK",
+      "definition": "Resolve one weapon attack using the specified normal attack procedure unless explicitly modified.",
+      "parameters": ["attack_kind", "test_skill", "accuracy_modifier", "damage_mode", "damage_modifier", "timing", "target"]
+    },
+    {
+      "id": "CANCEL_ATTACK",
+      "operator": "CANCEL",
+      "definition": "The pending incoming attack does not resolve."
+    },
+    {
+      "id": "STRIP_GUARD",
+      "operator": "SET",
+      "state": "guard",
+      "value": "open",
+      "definition": "Set the target's guard state to Open; Open is not itself an effect."
+    },
+    {
+      "id": "CHANGE_MEASURE",
+      "operator": "SET",
+      "state": "measure",
+      "definition": "Change measure in an explicit direction with an explicit required prior value."
+    },
+    {
+      "id": "FORCE_MOVEMENT",
+      "status": "RESERVED_SECOND_WAVE",
+      "definition": "Move a fighter in physical space under a future defined movement/engagement procedure.",
+      "current_vertical_slice_required": false
+    },
+    {
+      "id": "MODIFY_RESPONSE_TREE",
+      "operators": ["RESTRICT_RESPONSE", "REPLACE_PENDING_ATTACK"],
+      "status": "EXCEPTIONAL_RED_FLAG",
+      "definition": "Remove, narrow, bypass, replace, or exceptionally reorder a normal response structure; requires explicit justification and later incentive audit."
+    }
+  ],
+  "attack_parameter_vocabulary": {
+    "accuracy": ["normal", "boon", "bane"],
+    "damage_mode": ["normal", "fixed_normal_max"],
+    "damage_modifier": ["none", "damage_boon", "damage_bane"],
+    "commitment": ["ordinary", "committed"],
+    "counter_timing": ["ordinary_simultaneous", "counter_first"],
+    "rule": "Damage Boon, fixed maximum normal damage, attack Boon/Bane, Committed, and Counter-first are ATTACK parameters or commitments, not separate attacks or automatically separate primary payloads."
+  },
+  "state_aftermath_vocabulary": [
+    {"id": "ESTABLISH_CROSSING", "operator": "SET", "state": "contact", "value": "crossing"},
+    {"id": "RETAIN_CROSSING", "operator": "RETAIN", "state": "contact", "value": "crossing"},
+    {"id": "END_CONTACT", "operator": "CLEAR", "state": "contact", "value": "none", "does_not_change": ["measure"]},
+    {"id": "SET_POINT_THREAT", "operator": "SET", "state": "point_threat", "values": ["threatening", "not_threatening"]},
+    {"id": "ESTABLISH_NAMED_GUARD", "operator": "SET", "state": "guard", "value_kind": "named_guard_id", "note": "Action-produced and recovery transitions live here; this creates no voluntary adjacency graph."},
+    {"id": "SET_RECOVERY", "operator": "SET", "state": "recovery", "value": "recovering"},
+    {"id": "CLEAR_RECOVERY", "operator": "SET", "state": "recovery", "value": "ready"},
+    {"id": "SET_BIND_AXIS", "operator": "SET", "states": ["contact_zone", "pressure"], "note": "Values must be authored by an action/Play or exact fixture; never random or inferred from skill/margin."}
+  ],
+  "trigger_vocabulary": [
+    "activation_before_action",
+    "proactive_action",
+    "incoming_cut",
+    "incoming_descending_cut",
+    "incoming_committed_descending_cut",
+    "incoming_thrust",
+    "after_declared_beat_before_defence_roll",
+    "after_successful_cross_before_cleanup",
+    "while_crossing",
+    "while_close_crossing",
+    "opponent_pressure_hard",
+    "opponent_pressure_soft",
+    "contact_zone",
+    "measure_wide",
+    "measure_close",
+    "opponent_recovering",
+    "opponent_in_named_guard",
+    "actor_in_named_guard",
+    "actor_point_threatening",
+    "actor_point_not_threatening",
+    "after_displacement",
+    "after_prior_play_same_exchange",
+    "action_ready",
+    "spiritus_available",
+    "learned_chain_capacity"
+  ],
+  "cost_commitment_vocabulary": [
+    "action",
+    "reaction_action",
+    "no_additional_action",
+    "spiritus",
+    "learned_play_slot",
+    "learned_chain_entry",
+    "guard_prerequisite",
+    "equipment_requirement",
+    "committed",
+    "no_refund",
+    "guard_change_allowance",
+    "chain_cap_consumption"
+  ],
+  "test_vocabulary": [
+    "normal_weapon_attack_roll",
+    "normal_defence_roll",
+    "no_test",
+    "no_additional_roll",
+    "existing_s2_roll_comparison"
+  ],
+  "event_metadata_vocabulary": [
+    {
+      "id": "displacement",
+      "persistent_state": false,
+      "current_consumer": null,
+      "current_reading": "Source-facing event metadata only. Beat also has independent consequences End Contact and Strip Guard; those consequences are not implied by the event itself."
+    },
+    {"id": "historical_timing_label", "persistent_state": false},
+    {"id": "historical_action_label", "persistent_state": false},
+    {"id": "source_facing_transition", "persistent_state": false}
+  ],
+  "forbidden_terms": [
+    {
+      "term": "CONTROL",
+      "classification": "TOO VAGUE / REQUIRES DECOMPOSITION",
+      "replacement_rule": "Name the concrete operation, such as forced movement, retained Close, seizure, prone, immobilization, or response restriction, only after its surrounding rules exist."
+    },
+    {"term": "EXPLOIT_RECOVERY", "reason": "Opponent Recovering is a trigger; the Play still requires a concrete payload."},
+    {"term": "OPEN_AS_EFFECT", "reason": "Open is a guard-state value; use STRIP_GUARD / SET guard=open."},
+    {"term": "INTERCEPT_AS_ATOM", "reason": "Intercept is normally reactive timing plus CANCEL and any other payload/aftermath."}
+  ],
+  "state_registry": [
+    {
+      "id": "guard",
+      "values": ["open", "vom-tag", "ochs", "pflug", "alber", "posta-di-donna", "posta-frontale", "tutta-porta-di-ferro", "mezza-porta-di-ferro"],
+      "visibility": "public",
+      "duration": "persistent",
+      "owner": "fighter",
+      "normal_cleanup": "none; persists until voluntary change, authored action/Play result, or Strip Guard",
+      "legal_writers": ["GC1 voluntary guard change before action", "successful governing CB3 Beat sets target to open", "explicit authored action/Play aftermath", "Open recovery at next own activation"],
+      "legal_readers": ["guard prerequisites", "guard intrinsics", "guard-gated Play access", "breaker relationship triggers"],
+      "derived": false,
+      "notes": "Open is a value on this axis and is not a named guard."
+    },
+    {
+      "id": "contact",
+      "values": ["none", "crossing"],
+      "visibility": "public",
+      "duration": "exchange-persistent unless retained",
+      "owner": "exchange",
+      "normal_cleanup": "crossing -> none at exchange end unless explicitly retained or transformed",
+      "legal_writers": ["successful Cross", "joined opposition/counter Plays", "authored bind entries", "Beat/End Contact", "retention-aware continuations"],
+      "legal_readers": ["T1", "Pommel", "Winden candidates", "bind continuations"],
+      "derived": false
+    },
+    {
+      "id": "measure",
+      "values": ["wide", "close"],
+      "visibility": "public",
+      "duration": "persistent until explicitly changed",
+      "owner": "exchange/fighter pair",
+      "normal_cleanup": "none defined; contact cleanup does not change measure",
+      "legal_writers": ["explicit measure-changing action/Play such as T1", "scenario/setup"],
+      "legal_readers": ["T1", "Pommel", "future measure-gated Plays"],
+      "derived": false
+    },
+    {
+      "id": "contact_zone",
+      "values": ["hiltward", "middle", "pointward", "unknown"],
+      "visibility": "public",
+      "duration": "contact-bound",
+      "owner": "per fighter",
+      "normal_cleanup": "reset to unknown when contact ends",
+      "legal_writers": ["explicit authored action/Play geometry", "deterministic reference fixture"],
+      "legal_readers": ["future bind continuations"],
+      "derived": false,
+      "notes": "No random, skill-, margin-, guard-, or measure-derived assignment."
+    },
+    {
+      "id": "pressure",
+      "values": ["hard", "soft", "unknown"],
+      "visibility": "public",
+      "duration": "contact-bound",
+      "owner": "per fighter",
+      "normal_cleanup": "reset to unknown when contact ends",
+      "legal_writers": ["explicit authored action/Play", "diagnostic fixtures only where identified"],
+      "legal_readers": ["Zornhau-Ort continuation", "future Winden decisions"],
+      "derived": false,
+      "notes": "Ordinary successful Cross currently authors Hard/Hard; no active normal action creates Soft."
+    },
+    {
+      "id": "point_threat",
+      "values": ["threatening", "not_threatening"],
+      "visibility": "public",
+      "duration": "persistent until guard/action/Play changes it",
+      "owner": "per fighter",
+      "normal_cleanup": "guard/Open transitions replace guard-derived threat; contact cleanup alone does not necessarily clear authored threat",
+      "legal_writers": ["named-guard intrinsic mapping", "Open", "explicit attack/Play aftermath"],
+      "legal_readers": ["Durchwechseln D1 prerequisite", "guard identity", "future point-threat Plays"],
+      "derived": "partly derived from guard, partly authorable by explicit mechanics"
+    },
+    {
+      "id": "loaded",
+      "values": [true, false],
+      "visibility": "public through public guard state",
+      "duration": "derived",
+      "owner": "fighter",
+      "normal_cleanup": "recompute whenever guard changes or becomes Open",
+      "legal_writers": ["none directly"],
+      "legal_readers": ["Loaded proactive Basic Cut", "P1 eligibility"],
+      "derived": "derived from the current named guard's intrinsic; governing roster currently grants it to Posta di Donna"
+    },
+    {
+      "id": "recovery",
+      "values": ["ready", "recovering"],
+      "visibility": "unresolved in durable rules; represented by the engine",
+      "duration": "transient but current normal cleanup is under-specified",
+      "owner": "fighter",
+      "normal_cleanup": "OPEN/IMPLEMENTATION GAP; current engine clears it when Nachreisen is selected and otherwise lacks a complete authored recovery procedure",
+      "legal_writers": ["missed committed descending cut sets recovering", "recovery procedure or consuming rule sets ready"],
+      "legal_readers": ["Nachreisen trigger"],
+      "derived": false
+    },
+    {
+      "id": "action_available",
+      "values": [true, false],
+      "visibility": "public by action sequence",
+      "duration": "round",
+      "owner": "fighter",
+      "normal_cleanup": "refresh at round end",
+      "legal_writers": ["action/reaction expenditure", "round refresh", "explicit future action-preservation rule"],
+      "legal_readers": ["all actions and reactions"],
+      "derived": false
+    },
+    {
+      "id": "guard_change_available",
+      "values": [true, false],
+      "visibility": "public by activation sequence",
+      "duration": "activation",
+      "owner": "fighter",
+      "normal_cleanup": "refresh at next own activation",
+      "legal_writers": ["GC1 voluntary change", "Open recovery"],
+      "legal_readers": ["GC1", "Open recovery"],
+      "derived": false
+    },
+    {
+      "id": "spiritus",
+      "values": "integer 0..8 in the current prototype",
+      "visibility": "unresolved in durable rules",
+      "duration": "encounter/resource persistent",
+      "owner": "fighter",
+      "normal_cleanup": "normally refresh after a short rest; not per exchange",
+      "legal_writers": ["Play/Power declaration spend", "rest/refill procedure"],
+      "legal_readers": ["cost legality", "resource-dependent choice"],
+      "derived": false
+    },
+    {
+      "id": "committed",
+      "values": [true, false],
+      "visibility": "public on the declared attack",
+      "duration": "pending attack/exchange",
+      "owner": "attack object",
+      "normal_cleanup": "when the attack/exchange resolves",
+      "legal_writers": ["P1 Power declaration", "existing committed descending-cut chassis"],
+      "legal_readers": ["attacker-continuation legality", "Counter-first for Power", "recovery-on-miss", "Zornhau-Ort trigger"],
+      "derived": false
+    },
+    {
+      "id": "learned_chain_count",
+      "values": "integer 0..3",
+      "visibility": "public declarations; repertoire remains hidden",
+      "duration": "exchange",
+      "owner": "exchange",
+      "normal_cleanup": "reset at exchange end",
+      "legal_writers": ["learned Play declaration"],
+      "legal_readers": ["three-Play cap", "continuation legality"],
+      "derived": false
+    },
+    {
+      "id": "pending_attack",
+      "values": "structured transient attack object",
+      "visibility": "public declaration and roll state",
+      "duration": "exchange transient",
+      "owner": "exchange",
+      "normal_cleanup": "after resolution/cancellation/replacement",
+      "legal_writers": ["attack declaration", "CANCEL", "REPLACE_PENDING_ATTACK"],
+      "legal_readers": ["defence window", "Durchwechseln", "Schielhau S2", "damage resolution"],
+      "derived": false
+    },
+    {
+      "id": "crown_context",
+      "values": [true, false],
+      "visibility": "public",
+      "duration": "candidate exchange transient",
+      "owner": "exchange",
+      "normal_cleanup": "candidate cleanup at continuation resolution/exchange end",
+      "legal_writers": ["candidate-only authored Crown response"],
+      "legal_readers": ["candidate-only Sink Point Under Crown"],
+      "derived": false,
+      "status": "CANDIDATE ONLY; NOT GOVERNING"
+    }
+  ],
+  "effect_budget_review": {
+    "payload_heavy": ["MAKE_ATTACK", "CANCEL_ATTACK", "STRIP_GUARD", "MODIFY_RESPONSE_TREE"],
+    "positional_state": ["ESTABLISH_CROSSING", "RETAIN_CROSSING", "END_CONTACT", "CHANGE_MEASURE", "SET_POINT_THREAT", "ESTABLISH_NAMED_GUARD", "SET_BIND_AXIS"],
+    "permission_tempo": ["RESTRICT_RESPONSE", "REPLACE_PENDING_ATTACK", "action restoration", "unusual timing", "resolution-order change"],
+    "valuation_factors": ["trigger narrowness", "action cost", "Spiritus", "learned-slot cost", "Committed", "failure risk", "state aftermath", "downstream reciprocal risk", "opponent counterplay", "continuation value"],
+    "pricing_rule": "Qualitative review only. No effect-count arithmetic and no Spiritus repricing in v0.1."
+  },
+  "preserved_prices": {
+    "D1": 1,
+    "C2": {"Absetzen": 2, "Scambiar di Punta": 2, "Schielhau": 2},
+    "T1": 1,
+    "P1": 1
+  },
+  "deferred_from_v0.1": [
+    "generic fighter FORCE_MOVEMENT procedure",
+    "throw/prone/immobilization/seizure vocabularies",
+    "generic leverage or Strong-vs-Weak modifiers",
+    "generic Soft creation",
+    "voluntary guard adjacency graph",
+    "automatic numerical pricing formula"
+  ]
+}

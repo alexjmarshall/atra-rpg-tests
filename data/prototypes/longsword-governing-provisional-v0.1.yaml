@@ -3,6 +3,7 @@
   "status": "GOVERNING PROVISIONAL PROTOTYPE BASELINE",
   "not_canonical": true,
   "selected_on": "2026-08-11",
+  "choice_architecture_adjudicated_on": "2026-08-12",
   "engine_entry_point": "simulations/shared/provisional_longsword.py",
   "archived_experiment_variants_remain_available": true,
   "durchwechseln": {
@@ -11,7 +12,9 @@
     "spend_at_declaration": true,
     "refund_on_failure": false,
     "state_based_trigger": true,
-    "window": "after Cross or Beat declaration and before the Basic Parry roll"
+    "window": "after a Beat declaration and before the Basic defence roll; Durchwechseln is not legal against a declared Cross under governing CB3",
+    "legal_against_declared_cross": false,
+    "legal_against_declared_beat": true
   },
   "current_two_effect_compounds": {
     "variant": "C2",
@@ -31,8 +34,27 @@
   },
   "basic_parry": {
     "declared_forms": ["Cross", "Beat"],
-    "cross": "cancel; establish Crossing; preserve measure; ordinary Basic-on-Basic defaults Hard/Hard; zones unknown unless authored",
-    "beat": "cancel; displace; end contact by default"
+    "selected_variant": "CB3",
+    "cross": "universal Basic defensive form; D1-immune at declaration; normal defence roll; on success cancel and establish ordinary Crossing while preserving measure; no generic modifier or offensive benefit",
+    "beat": "universal Basic defensive form; retains the D1 window and prerequisites; on successful non-interrupted resolution cancel, record displacement, end contact/separate, and set the attacker guard to Open",
+    "failed_or_d1_interrupted_beat_creates_open": false,
+    "repertoire_dependent_cross_value_accepted": true
+  },
+  "open_state": {
+    "status": "GOVERNING PROVISIONAL FOR CURRENT LONGSWORD VERTICAL SLICE",
+    "is_named_guard": false,
+    "representation": "guard state value Open",
+    "effects": [
+      "no named-guard intrinsic state",
+      "no guard-derived Loaded",
+      "no guard-derived point threat",
+      "no guard-gated Play access",
+      "no other guard-specific access",
+      "universal Basic attacks remain legal",
+      "universal Basic defensive responses remain legal"
+    ],
+    "generic_modifiers": [],
+    "recovery": "At the fighter's next own activation they may establish any otherwise legal named guard; this consumes that activation's voluntary guard-change allowance; no second voluntary change is legal; remaining Open is legal."
   },
   "crossing_duration": "through the current exchange unless explicitly retained or transformed; otherwise reset contact, zones, and pressure at exchange end",
   "learned_play_cap": 3,
@@ -60,7 +82,29 @@
     },
     "learned_classifications": ["Absetzen", "upper/lower Winden", "Nachreisen"],
     "g2_free_absetzen": "REJECTED AS GOVERNING BEHAVIOR; archived stress-test material only",
-    "guard_change": "PROVISIONAL HARNESS RULE; GUARD-CHURN WARNING; OPEN"
+    "guard_change": {
+      "selected_variant": "GC1",
+      "status": "GOVERNING PROVISIONAL FOR CURRENT LONGSWORD VERTICAL SLICE",
+      "rule": "Once on your activation, before taking your action, you may voluntarily change to any legal named guard.",
+      "post_action_change": false,
+      "voluntary_topology": "all-to-all among otherwise legal named guards",
+      "purpose": "Take the benefit, accept the posture.",
+      "same_activation_offensive_entry_legal": true,
+      "restrictive_voluntary_transition_graph": "REJECTED",
+      "action_produced_and_recovery_transitions": "approved design avenue when source and mechanic justify the resulting guard"
+    }
+  },
+  "choice_architecture_v0_1_adjudication": {
+    "status": "PROJECT-ADJUDICATED; GOVERNING PROVISIONAL FOR CURRENT LONGSWORD VERTICAL SLICE",
+    "report": "reports/melee-choice-architecture-v01-results.md",
+    "results": "reports/melee-choice-architecture-v01-results.json",
+    "cross_beat": "CB3",
+    "open": "adopted provisionally exactly as recorded in open_state; no numeric penalty",
+    "guard_commitment": "GC1",
+    "restrictive_voluntary_transition_graph": "REJECTED",
+    "action_produced_transitions": "PERMITTED WHEN AUTHORED",
+    "crown_c1_b3": "CANDIDATE ONLY; UNRESOLVED; NOT GOVERNING",
+    "named_guard_v0_2": "BLOCKED"
   },
   "guard_evidence_repertoire_acceptance": {
     "selected_on": "2026-08-11",

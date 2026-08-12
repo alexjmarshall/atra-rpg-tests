@@ -2,6 +2,33 @@
 
 Transcribed from Section 2 of Atra Melee Design Packet v0.4. These entries are constraints and unresolved questions; this repository does not decide them.
 
+## 2026-08-12 Choice Architecture v0.1 Project adjudication
+
+The Project explicitly selects the following as **GOVERNING PROVISIONAL FOR THE CURRENT LONGSWORD VERTICAL SLICE**. This is not a canonical/final promotion and does not edit Atra Melee Design Packet v0.4. It supersedes the older prototype harness where the entries conflict.
+
+### Cross / Beat — CB3
+
+- **Basic Cross** is a universal Basic defensive form declared in the normal Basic defence window. Durchwechseln is not legal against a declared Cross. Resolve the normal defence roll. On success, cancel the incoming attack and establish ordinary Crossing. Cross receives no generic Boon, Bane, damage, offensive benefit, or defensive modifier. Its additional tactical value is intentionally repertoire-sensitive through learned Crossing/bind continuations. Beat may therefore be the superior Basic when D1 is irrelevant and the fighter has no useful Crossing repertoire; this is not an unresolved architecture defect.
+- **Basic Beat** is a universal Basic defensive form. It retains the normal Durchwechseln window and all D1 prerequisites. On a successful resolution, cancel the incoming attack, record displacement as appropriate, end contact/separate under the current Beat chassis, and leave the attacker Open. Failed or D1-interrupted Beat does not create Open.
+
+### Open
+
+Open means the fighter currently occupies no named guard. While Open, no named-guard intrinsic, guard-derived Loaded, guard-derived point threat, guard-gated Play access, or other guard-specific access applies. Universal Basic attacks and defensive responses remain legal. Open supplies no automatic attack Boon, Parry Bane, accuracy modifier, damage modifier, or other numeric penalty, and is not a named guard.
+
+At the fighter's next own activation, they may establish any otherwise legal named guard. Doing so consumes that activation's voluntary guard-change allowance, so a second voluntary guard change is illegal. Voluntarily remaining Open is legal.
+
+### Guard commitment — GC1
+
+> Once on your activation, **before taking your action**, you may voluntarily change to any legal named guard.
+
+There is no voluntary post-action guard change and no restrictive adjacency requirement. Same-activation entry into an offensive guard remains legal; the fighter retains that posture through the following opponent opportunity. The governing purpose is **Take the benefit, accept the posture.**
+
+A sparse voluntary transition graph is **REJECTED** for the current longsword architecture: Italian evidence supports broad guard-to-guard movement and German evidence does not support a defensible sparse pairwise topology. Source-supported action-produced and recovery transitions remain an approved design avenue; an action or learned Play may establish a resulting guard where its source and mechanic justify it.
+
+Scheitelhau/Crown C1/B3 remains candidate-only, unresolved, and non-governing. Named Guard v0.2 remains blocked.
+
+Implementation note: the archived engine selected by `simulations/shared/provisional_longsword.py` still embodies the earlier experimental Cross/Beat timing and does not implement Open/GC1. This adjudication updates durable governing records only; simulator behavior was intentionally not changed in this milestone.
+
 ## 2026-08-11 governing provisional prototype selection
 
 Project direction after the listed experiments selects a **GOVERNING PROVISIONAL PROTOTYPE BASELINE** for subsequent simulator work. It is not a canonical rules promotion and does not edit Atra Melee Design Packet v0.4. The machine-readable selection is `data/prototypes/longsword-governing-provisional-v0.1.yaml`; the shared simulator entry point is `simulations/shared/provisional_longsword.py`.

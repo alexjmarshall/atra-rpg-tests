@@ -1,0 +1,87 @@
+{
+  "id": "melee-mechanical-effect-vocabulary-v01-results",
+  "status": "PROVISIONAL RULES-LANGUAGE AND SCHEMA MILESTONE; STOP FOR PROJECT ADJUDICATION",
+  "date": "2026-08-12",
+  "executive_result": {
+    "closed_language": ["ATTACK", "CANCEL", "SET", "CLEAR", "RETAIN", "MODIFY_ATTACK", "REPLACE_PENDING_ATTACK", "RESTRICT_RESPONSE"],
+    "primary_payloads": ["MAKE_ATTACK", "CANCEL_ATTACK", "STRIP_GUARD", "CHANGE_MEASURE", "MODIFY_RESPONSE_TREE (exceptional)"],
+    "reserved": ["FORCE_MOVEMENT"],
+    "forbidden": ["generic CONTROL"],
+    "durchwechseln_closure": "REPLACE_PENDING_ATTACK is required; a generic REDIRECT operator is not.",
+    "displacement": "event metadata only; no current mechanical consumer",
+    "ready_to_constrain_repertoire_repair": true
+  },
+  "phase_0": {
+    "persisted": ["CB3", "Open", "GC1", "rejection of restrictive voluntary transition graph", "permission for authored action-produced/recovery guard transitions"],
+    "durable_files_changed": [
+      "data/prototypes/longsword-governing-provisional-v0.1.yaml",
+      "reports/governing-open-provisional.md",
+      "simulations/shared/provisional_longsword.py (metadata only)"
+    ],
+    "simulator_behavior_changed": false,
+    "design_packet_changed": false,
+    "implementation_lag": "simulations/shared/provisional_longsword.py records CB3/GC1 metadata but still selects an archived engine with pre-CB3/pre-GC1 behavior"
+  },
+  "artifacts": {
+    "vocabulary": "data/rules/melee-mechanical-effect-vocabulary-v0.1.yaml",
+    "schema": "schemas/melee-play-grammar-v0.1.schema.json",
+    "mapping": "data/audits/longsword-vertical-slice-mechanical-mapping-v0.1.yaml",
+    "validator": "scripts/validate_melee_play_grammar.py",
+    "tests": "tests/test_melee_play_grammar_v01.py",
+    "human_report": "reports/melee-mechanical-effect-vocabulary-v01.md"
+  },
+  "classification": {
+    "COMPLETE": ["Basic Cut", "Basic Thrust", "Basic Counter"],
+    "COMPLETE_REPERTOIRE_DEPENDENT": ["Basic Cross (CB3)", "Tutta Cover to Stretto T1", "Pommel Strike conditional on Close Crossing"],
+    "COMPLETE_RESOURCE_STATE_DEPENDENT": ["Basic Beat (CB3)", "Ignore", "Voluntary Guard Change GC1", "Loaded proactive Cut", "P1 Power Attack", "Durchwechseln D1", "Absetzen C2", "Scambiar di Punta C2", "Schielhau S2"],
+    "REDUNDANT_WITH_BASIC": ["Nachreisen current", "Zornhau-Ort initial phase current", "Frontale simple mappings as a learned identity"],
+    "INCOMPLETE_PAYLOAD": ["Nachreisen current", "Zornhau-Ort current", "Winden current material", "Frontale learned sequence candidate"],
+    "GHOST_VALUE": ["Ignore policy", "T1 policy", "Pommel policy", "Nachreisen", "Zornhau-Ort", "Frontale occupancy", "Crown C1/B3"],
+    "EXCEPTIONAL_RESPONSE_MODIFIER": ["Durchwechseln D1", "P1 Counter-first", "Schielhau S2 comparison", "Pommel response bypass", "candidate Crown Sink response bypass"],
+    "CANDIDATE_ONLY": ["Frontale learned sequence", "Scheitelhau/Crown C1/B3"]
+  },
+  "validation": {
+    "grammar_errors": 0,
+    "informative_findings": 22,
+    "grammar_tests": 3,
+    "grammar_tests_passed": 3,
+    "broad_monte_carlo_run": false
+  },
+  "contradictions_or_gaps": [
+    "Durable CB3/GC1 decisions now supersede behavior in the archived engine selected by the shared entry point.",
+    "Recovering exists in code but its public visibility and normal cleanup remain under-specified.",
+    "Spiritus visibility is not settled in the durable rules.",
+    "Measure persists independently in the current state model; contact cleanup must not reset it by inference.",
+    "No active normal-combat writer creates Soft pressure.",
+    "Pommel and candidate Crown Sink bypass normal response calls and must remain exceptional.",
+    "The proactive sourced Pflug-breaking Schielhau relationship is separate from and absent from current S2."
+  ],
+  "next_milestone": {
+    "name": "Melee Repertoire Integrity Repair v0.1",
+    "primary_techniques": ["Nachreisen", "Zornhau-Ort", "Winden upper/lower decision material", "Frontale retreat-fendente-thrust sequence"],
+    "associated_gate_checks": ["Vom Tag -> Nachreisen", "Ochs/Pflug -> Winden", "Frontale owner-side access", "Alber owner-side repertoire remains unresolved and Crown cannot be assumed as its solution"],
+    "forbidden_inventions": ["random or automatic Soft", "generic Control", "generic guard bonuses", "Open numeric penalty", "voluntary transition graph", "automatic breaker modifier", "unsourced Alber solution", "response denial by default", "effect-count Spiritus pricing", "new historical evidence by inference"]
+  },
+  "project_review_answers": {
+    "1": "ATTACK, CANCEL, SET, CLEAR, RETAIN, MODIFY_ATTACK, REPLACE_PENDING_ATTACK, and exceptional RESTRICT_RESPONSE.",
+    "2": "Make Attack, Cancel Attack, Strip Guard, and explicit Change Measure are true ordinary payload purchases; response-tree modification is an exceptional payload class.",
+    "3": "Crossing, retained Crossing, contact ending, point threat, guard, recovery, bind axes, Loaded derivation, and Committed aftermath/parameters are states or aftermath.",
+    "4": "Incoming attack type, declared response, Crossing/pressure/zone/measure, Recovering, guard, point threat, displacement occurrence, and prior Play are triggers when used as declaration conditions.",
+    "5": "No. Displacement currently has no mechanical consumer and is event metadata.",
+    "6": "Yes: D1 needs REPLACE_PENDING_ATTACK. It does not need a broader generic REDIRECT operator.",
+    "7": "Use parameters on ATTACK/MODIFY_ATTACK: accuracy normal/Boon/Bane, damage normal/fixed-normal-max, Damage Boon/Bane, commitment, and counter timing.",
+    "8": "Yes. RETAIN is necessary to distinguish T1 from establishing the original Crossing and to express preserved action availability cleanly.",
+    "9": "Yes. SET guard=<named guard id> is a clean action-aftermath writer and implies no voluntary adjacency.",
+    "10": "Basic Cut, Thrust, Cross, Beat, Counter, Ignore, GC1, Loaded, P1, D1, Absetzen, Scambiar, Schielhau S2, T1, and conditional Pommel are mechanically closed, with the classifications/qualifications recorded.",
+    "11": "Basic Cross, T1, and Pommel are intentionally or conditionally repertoire-dependent.",
+    "12": "Current Nachreisen, current Zornhau-Ort initial phase, and Frontale's simple learned identity reduce to or are worse than their Basic alternative.",
+    "13": "Nachreisen, Zornhau-Ort, Winden, and the learned Frontale sequence have incomplete payloads.",
+    "14": "Ignore policy, T1 policy, Pommel policy, Nachreisen, Zornhau-Ort, Frontale occupancy, and Crown C1/B3 use ghost or proxy utility.",
+    "15": "D1 replacement, P1 Counter-first, S2 resolution comparison, current Pommel bypass, and candidate Crown Sink bypass invoke exceptional structure; only the first three/Pommel are current mechanics, Crown remains candidate.",
+    "16": "Only REPLACE_PENDING_ATTACK was absent from the candidate low-level list but is required by governing D1. No other governing mechanic requires another operator.",
+    "17": "Generic Force Movement, throws/prone/seizure/immobilization, generic leverage, generic Soft creation, and numeric effect pricing are deferred.",
+    "18": "Yes. The schema and validator can now constrain repair while preserving incomplete/candidate statuses.",
+    "19": "Nachreisen, Zornhau-Ort, Winden upper/lower decision material, and Frontale's retreat-fendente-thrust sequence; gate checks for Vom Tag/Ochs/Pflug/Frontale accompany them. Alber remains a flagged repertoire constraint, not a license to promote Crown.",
+    "20": "The next milestone must not invent random Soft, generic Control, guard bonuses, Open penalties, voluntary adjacency, automatic breaker modifiers, an unsourced Alber solution, default response denial, effect-count pricing, or historical evidence."
+  }
+}

@@ -54,6 +54,27 @@ GOVERNING_BASELINE: dict[str, Any] = {
         "displacement_is_event": True,
     },
     "basic_parry_forms": ("Cross", "Beat"),
+    "choice_architecture": {
+        "variant": "CB3",
+        "cross_durchwechseln_immune": True,
+        "cross_success": "cancel; establish ordinary Crossing; no generic modifier",
+        "beat_durchwechseln_window": True,
+        "beat_success": "cancel; displacement event; end contact; set attacker guard to Open",
+        "failed_or_interrupted_beat_creates_open": False,
+        "open_numeric_modifiers": (),
+    },
+    "guard_commitment": {
+        "variant": "GC1",
+        "voluntary_change": "once on activation, before action",
+        "post_action_change": False,
+        "restrictive_voluntary_transition_graph": "REJECTED",
+        "authored_action_produced_transitions": True,
+    },
+    "engine_implementation_status": (
+        "METADATA UPDATED ONLY: the selected archived engine still implements the "
+        "pre-CB3/pre-GC1 harness; governing simulator behavior was not changed by the "
+        "Mechanical Effect Vocabulary v0.1 milestone"
+    ),
     "learned_play_cap": LEARNED_PLAY_CAP,
     "loaded": "proactive Basic Cut receives Damage Boon",
     "power_attack": {
