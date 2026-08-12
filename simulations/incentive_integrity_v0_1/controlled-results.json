@@ -1,0 +1,1131 @@
+{
+  "audit": "ATRA MELEE INCENTIVE INTEGRITY AUDIT v0.1",
+  "kind": "deterministic policy and rules probes; no fight matrix",
+  "cross_beat_rules_vector": {
+    "cross": {
+      "cost": "one action; zero Spiritus; zero learned slots",
+      "success": "cancel; Crossing; preserve measure",
+      "exchange_end_without_authored_continuation": "contact cleaned to none"
+    },
+    "beat": {
+      "cost": "one action; zero Spiritus; zero learned slots",
+      "success": "cancel; displacement event; contact ends",
+      "exchange_end_without_authored_continuation": "contact none"
+    }
+  },
+  "parry_and_compound_policy_surface": [
+    {
+      "skill": 10,
+      "spiritus": 8,
+      "cut_values": {
+        "Ignore": 0.0,
+        "Counter": 0.5,
+        "Basic Cross": 0.6080246913580247,
+        "Basic Beat": 0.6080246913580247,
+        "Schielhau": 0.812453533426875,
+        "Zornhau-Ort": 0.7330246913580247
+      },
+      "cut_argmax": [
+        "Schielhau"
+      ],
+      "thrust_values": {
+        "Ignore": 0.0,
+        "Counter": 0.5,
+        "Basic Cross": 0.5,
+        "Basic Beat": 0.5,
+        "Absetzen": 0.7044288420688503
+      },
+      "thrust_argmax": [
+        "Absetzen"
+      ],
+      "cross_equals_beat_cut": true,
+      "cross_equals_beat_thrust": true
+    },
+    {
+      "skill": 10,
+      "spiritus": 3,
+      "cut_values": {
+        "Ignore": 0.0,
+        "Counter": 0.5,
+        "Basic Cross": 0.6080246913580247,
+        "Basic Beat": 0.6080246913580247,
+        "Schielhau": 0.5370250614543005,
+        "Zornhau-Ort": 0.7330246913580247
+      },
+      "cut_argmax": [
+        "Zornhau-Ort"
+      ],
+      "thrust_values": {
+        "Ignore": 0.0,
+        "Counter": 0.5,
+        "Basic Cross": 0.5,
+        "Basic Beat": 0.5,
+        "Absetzen": 0.4290003700962758
+      },
+      "thrust_argmax": [
+        "Counter",
+        "Basic Cross",
+        "Basic Beat"
+      ],
+      "cross_equals_beat_cut": true,
+      "cross_equals_beat_thrust": true
+    },
+    {
+      "skill": 10,
+      "spiritus": 1,
+      "cut_values": {
+        "Ignore": 0.0,
+        "Counter": 0.5,
+        "Basic Cross": 0.6080246913580247,
+        "Basic Beat": 0.6080246913580247,
+        "Zornhau-Ort": 0.7330246913580247
+      },
+      "cut_argmax": [
+        "Zornhau-Ort"
+      ],
+      "thrust_values": {
+        "Ignore": 0.0,
+        "Counter": 0.5,
+        "Basic Cross": 0.5,
+        "Basic Beat": 0.5
+      },
+      "thrust_argmax": [
+        "Counter",
+        "Basic Cross",
+        "Basic Beat"
+      ],
+      "cross_equals_beat_cut": true,
+      "cross_equals_beat_thrust": true
+    },
+    {
+      "skill": 10,
+      "spiritus": 0,
+      "cut_values": {
+        "Ignore": 0.0,
+        "Counter": 0.5,
+        "Basic Cross": 0.6080246913580247,
+        "Basic Beat": 0.6080246913580247,
+        "Zornhau-Ort": 0.7330246913580247
+      },
+      "cut_argmax": [
+        "Zornhau-Ort"
+      ],
+      "thrust_values": {
+        "Ignore": 0.0,
+        "Counter": 0.5,
+        "Basic Cross": 0.5,
+        "Basic Beat": 0.5
+      },
+      "thrust_argmax": [
+        "Counter",
+        "Basic Cross",
+        "Basic Beat"
+      ],
+      "cross_equals_beat_cut": true,
+      "cross_equals_beat_thrust": true
+    },
+    {
+      "skill": 14,
+      "spiritus": 8,
+      "cut_values": {
+        "Ignore": 0.0,
+        "Counter": 0.7,
+        "Basic Cross": 0.488773358798598,
+        "Basic Beat": 0.488773358798598,
+        "Schielhau": 1.2556634099700847,
+        "Zornhau-Ort": 1.0962345679012344
+      },
+      "cut_argmax": [
+        "Schielhau"
+      ],
+      "thrust_values": {
+        "Ignore": 0.0,
+        "Counter": 0.7,
+        "Basic Cross": 0.7,
+        "Basic Beat": 0.7,
+        "Absetzen": 1.1044288420688502
+      },
+      "thrust_argmax": [
+        "Absetzen"
+      ],
+      "cross_equals_beat_cut": true,
+      "cross_equals_beat_thrust": true
+    },
+    {
+      "skill": 14,
+      "spiritus": 3,
+      "cut_values": {
+        "Ignore": 0.0,
+        "Counter": 0.7,
+        "Basic Cross": 0.5334434294118576,
+        "Basic Beat": 0.5334434294118576,
+        "Schielhau": 0.9802349379975103,
+        "Zornhau-Ort": 1.0962345679012344
+      },
+      "cut_argmax": [
+        "Zornhau-Ort"
+      ],
+      "thrust_values": {
+        "Ignore": 0.0,
+        "Counter": 0.7,
+        "Basic Cross": 0.7,
+        "Basic Beat": 0.7,
+        "Absetzen": 0.8290003700962757
+      },
+      "thrust_argmax": [
+        "Absetzen"
+      ],
+      "cross_equals_beat_cut": true,
+      "cross_equals_beat_thrust": true
+    },
+    {
+      "skill": 14,
+      "spiritus": 1,
+      "cut_values": {
+        "Ignore": 0.0,
+        "Counter": 0.7,
+        "Basic Cross": 0.7683856494497837,
+        "Basic Beat": 0.7683856494497837,
+        "Zornhau-Ort": 1.0962345679012344
+      },
+      "cut_argmax": [
+        "Zornhau-Ort"
+      ],
+      "thrust_values": {
+        "Ignore": 0.0,
+        "Counter": 0.7,
+        "Basic Cross": 0.7,
+        "Basic Beat": 0.7
+      },
+      "thrust_argmax": [
+        "Counter",
+        "Basic Cross",
+        "Basic Beat"
+      ],
+      "cross_equals_beat_cut": true,
+      "cross_equals_beat_thrust": true
+    },
+    {
+      "skill": 14,
+      "spiritus": 0,
+      "cut_values": {
+        "Ignore": 0.0,
+        "Counter": 0.7,
+        "Basic Cross": 0.8512345679012345,
+        "Basic Beat": 0.8512345679012345,
+        "Zornhau-Ort": 1.0962345679012344
+      },
+      "cut_argmax": [
+        "Zornhau-Ort"
+      ],
+      "thrust_values": {
+        "Ignore": 0.0,
+        "Counter": 0.7,
+        "Basic Cross": 0.7,
+        "Basic Beat": 0.7
+      },
+      "thrust_argmax": [
+        "Counter",
+        "Basic Cross",
+        "Basic Beat"
+      ],
+      "cross_equals_beat_cut": true,
+      "cross_equals_beat_thrust": true
+    },
+    {
+      "skill": 18,
+      "spiritus": 8,
+      "cut_values": {
+        "Ignore": 0.0,
+        "Counter": 0.9,
+        "Basic Cross": 0.18063157841553307,
+        "Basic Beat": 0.18063157841553307,
+        "Schielhau": 1.6988732865132947,
+        "Zornhau-Ort": 1.4994444444444446
+      },
+      "cut_argmax": [
+        "Schielhau"
+      ],
+      "thrust_values": {
+        "Ignore": 0.0,
+        "Counter": 0.9,
+        "Basic Cross": 0.9,
+        "Basic Beat": 0.9,
+        "Absetzen": 1.5044288420688503
+      },
+      "thrust_argmax": [
+        "Absetzen"
+      ],
+      "cross_equals_beat_cut": true,
+      "cross_equals_beat_thrust": true
+    },
+    {
+      "skill": 18,
+      "spiritus": 3,
+      "cut_values": {
+        "Ignore": 0.0,
+        "Counter": 0.9,
+        "Basic Cross": 0.2102237695176691,
+        "Basic Beat": 0.2102237695176691,
+        "Schielhau": 1.4234448145407201,
+        "Zornhau-Ort": 1.4994444444444446
+      },
+      "cut_argmax": [
+        "Zornhau-Ort"
+      ],
+      "thrust_values": {
+        "Ignore": 0.0,
+        "Counter": 0.9,
+        "Basic Cross": 0.9,
+        "Basic Beat": 0.9,
+        "Absetzen": 1.229000370096276
+      },
+      "thrust_argmax": [
+        "Absetzen"
+      ],
+      "cross_equals_beat_cut": true,
+      "cross_equals_beat_thrust": true
+    },
+    {
+      "skill": 18,
+      "spiritus": 1,
+      "cut_values": {
+        "Ignore": 0.0,
+        "Counter": 0.9,
+        "Basic Cross": 0.5877689223781217,
+        "Basic Beat": 0.5877689223781217,
+        "Zornhau-Ort": 1.4994444444444446
+      },
+      "cut_argmax": [
+        "Zornhau-Ort"
+      ],
+      "thrust_values": {
+        "Ignore": 0.0,
+        "Counter": 0.9,
+        "Basic Cross": 0.9,
+        "Basic Beat": 0.9
+      },
+      "thrust_argmax": [
+        "Counter",
+        "Basic Cross",
+        "Basic Beat"
+      ],
+      "cross_equals_beat_cut": true,
+      "cross_equals_beat_thrust": true
+    },
+    {
+      "skill": 18,
+      "spiritus": 0,
+      "cut_values": {
+        "Ignore": 0.0,
+        "Counter": 0.9,
+        "Basic Cross": 1.0944444444444446,
+        "Basic Beat": 1.0944444444444446,
+        "Zornhau-Ort": 1.4994444444444446
+      },
+      "cut_argmax": [
+        "Zornhau-Ort"
+      ],
+      "thrust_values": {
+        "Ignore": 0.0,
+        "Counter": 0.9,
+        "Basic Cross": 0.9,
+        "Basic Beat": 0.9
+      },
+      "thrust_argmax": [
+        "Counter",
+        "Basic Cross",
+        "Basic Beat"
+      ],
+      "cross_equals_beat_cut": true,
+      "cross_equals_beat_thrust": true
+    }
+  ],
+  "durch_policy_surface": [
+    {
+      "attacker_skill": 10,
+      "defender_skill": 10,
+      "spiritus": 8,
+      "declare_value": 0.35751286532835236,
+      "decline_value": 0.5,
+      "argmax": "decline"
+    },
+    {
+      "attacker_skill": 10,
+      "defender_skill": 10,
+      "spiritus": 3,
+      "declare_value": 0.25208694874729,
+      "decline_value": 0.5,
+      "argmax": "decline"
+    },
+    {
+      "attacker_skill": 10,
+      "defender_skill": 10,
+      "spiritus": 1,
+      "declare_value": -0.28,
+      "decline_value": 0.5,
+      "argmax": "decline"
+    },
+    {
+      "attacker_skill": 10,
+      "defender_skill": 10,
+      "spiritus": 0,
+      "declare_value": null,
+      "decline_value": 0.5,
+      "argmax": "unavailable"
+    },
+    {
+      "attacker_skill": 10,
+      "defender_skill": 14,
+      "spiritus": 8,
+      "declare_value": 0.35751286532835236,
+      "decline_value": 0.30000000000000004,
+      "argmax": "declare"
+    },
+    {
+      "attacker_skill": 10,
+      "defender_skill": 14,
+      "spiritus": 3,
+      "declare_value": 0.25208694874729,
+      "decline_value": 0.30000000000000004,
+      "argmax": "decline"
+    },
+    {
+      "attacker_skill": 10,
+      "defender_skill": 14,
+      "spiritus": 1,
+      "declare_value": -0.28,
+      "decline_value": 0.30000000000000004,
+      "argmax": "decline"
+    },
+    {
+      "attacker_skill": 10,
+      "defender_skill": 14,
+      "spiritus": 0,
+      "declare_value": null,
+      "decline_value": 0.30000000000000004,
+      "argmax": "unavailable"
+    },
+    {
+      "attacker_skill": 10,
+      "defender_skill": 18,
+      "spiritus": 8,
+      "declare_value": 0.35751286532835236,
+      "decline_value": 0.09999999999999998,
+      "argmax": "declare"
+    },
+    {
+      "attacker_skill": 10,
+      "defender_skill": 18,
+      "spiritus": 3,
+      "declare_value": 0.25208694874729,
+      "decline_value": 0.09999999999999998,
+      "argmax": "declare"
+    },
+    {
+      "attacker_skill": 10,
+      "defender_skill": 18,
+      "spiritus": 1,
+      "declare_value": -0.28,
+      "decline_value": 0.09999999999999998,
+      "argmax": "decline"
+    },
+    {
+      "attacker_skill": 10,
+      "defender_skill": 18,
+      "spiritus": 0,
+      "declare_value": null,
+      "decline_value": 0.09999999999999998,
+      "argmax": "unavailable"
+    },
+    {
+      "attacker_skill": 14,
+      "defender_skill": 10,
+      "spiritus": 8,
+      "declare_value": 0.5575128653283523,
+      "decline_value": 0.5,
+      "argmax": "declare"
+    },
+    {
+      "attacker_skill": 14,
+      "defender_skill": 10,
+      "spiritus": 3,
+      "declare_value": 0.45208694874728994,
+      "decline_value": 0.5,
+      "argmax": "decline"
+    },
+    {
+      "attacker_skill": 14,
+      "defender_skill": 10,
+      "spiritus": 1,
+      "declare_value": -0.08000000000000007,
+      "decline_value": 0.5,
+      "argmax": "decline"
+    },
+    {
+      "attacker_skill": 14,
+      "defender_skill": 10,
+      "spiritus": 0,
+      "declare_value": null,
+      "decline_value": 0.5,
+      "argmax": "unavailable"
+    },
+    {
+      "attacker_skill": 14,
+      "defender_skill": 14,
+      "spiritus": 8,
+      "declare_value": 0.5575128653283523,
+      "decline_value": 0.30000000000000004,
+      "argmax": "declare"
+    },
+    {
+      "attacker_skill": 14,
+      "defender_skill": 14,
+      "spiritus": 3,
+      "declare_value": 0.45208694874728994,
+      "decline_value": 0.30000000000000004,
+      "argmax": "declare"
+    },
+    {
+      "attacker_skill": 14,
+      "defender_skill": 14,
+      "spiritus": 1,
+      "declare_value": -0.08000000000000007,
+      "decline_value": 0.30000000000000004,
+      "argmax": "decline"
+    },
+    {
+      "attacker_skill": 14,
+      "defender_skill": 14,
+      "spiritus": 0,
+      "declare_value": null,
+      "decline_value": 0.30000000000000004,
+      "argmax": "unavailable"
+    },
+    {
+      "attacker_skill": 14,
+      "defender_skill": 18,
+      "spiritus": 8,
+      "declare_value": 0.5575128653283523,
+      "decline_value": 0.09999999999999998,
+      "argmax": "declare"
+    },
+    {
+      "attacker_skill": 14,
+      "defender_skill": 18,
+      "spiritus": 3,
+      "declare_value": 0.45208694874728994,
+      "decline_value": 0.09999999999999998,
+      "argmax": "declare"
+    },
+    {
+      "attacker_skill": 14,
+      "defender_skill": 18,
+      "spiritus": 1,
+      "declare_value": -0.08000000000000007,
+      "decline_value": 0.09999999999999998,
+      "argmax": "decline"
+    },
+    {
+      "attacker_skill": 14,
+      "defender_skill": 18,
+      "spiritus": 0,
+      "declare_value": null,
+      "decline_value": 0.09999999999999998,
+      "argmax": "unavailable"
+    },
+    {
+      "attacker_skill": 18,
+      "defender_skill": 10,
+      "spiritus": 8,
+      "declare_value": 0.7575128653283524,
+      "decline_value": 0.5,
+      "argmax": "declare"
+    },
+    {
+      "attacker_skill": 18,
+      "defender_skill": 10,
+      "spiritus": 3,
+      "declare_value": 0.65208694874729,
+      "decline_value": 0.5,
+      "argmax": "declare"
+    },
+    {
+      "attacker_skill": 18,
+      "defender_skill": 10,
+      "spiritus": 1,
+      "declare_value": 0.12,
+      "decline_value": 0.5,
+      "argmax": "decline"
+    },
+    {
+      "attacker_skill": 18,
+      "defender_skill": 10,
+      "spiritus": 0,
+      "declare_value": null,
+      "decline_value": 0.5,
+      "argmax": "unavailable"
+    },
+    {
+      "attacker_skill": 18,
+      "defender_skill": 14,
+      "spiritus": 8,
+      "declare_value": 0.7575128653283524,
+      "decline_value": 0.30000000000000004,
+      "argmax": "declare"
+    },
+    {
+      "attacker_skill": 18,
+      "defender_skill": 14,
+      "spiritus": 3,
+      "declare_value": 0.65208694874729,
+      "decline_value": 0.30000000000000004,
+      "argmax": "declare"
+    },
+    {
+      "attacker_skill": 18,
+      "defender_skill": 14,
+      "spiritus": 1,
+      "declare_value": 0.12,
+      "decline_value": 0.30000000000000004,
+      "argmax": "decline"
+    },
+    {
+      "attacker_skill": 18,
+      "defender_skill": 14,
+      "spiritus": 0,
+      "declare_value": null,
+      "decline_value": 0.30000000000000004,
+      "argmax": "unavailable"
+    },
+    {
+      "attacker_skill": 18,
+      "defender_skill": 18,
+      "spiritus": 8,
+      "declare_value": 0.7575128653283524,
+      "decline_value": 0.09999999999999998,
+      "argmax": "declare"
+    },
+    {
+      "attacker_skill": 18,
+      "defender_skill": 18,
+      "spiritus": 3,
+      "declare_value": 0.65208694874729,
+      "decline_value": 0.09999999999999998,
+      "argmax": "declare"
+    },
+    {
+      "attacker_skill": 18,
+      "defender_skill": 18,
+      "spiritus": 1,
+      "declare_value": 0.12,
+      "decline_value": 0.09999999999999998,
+      "argmax": "declare"
+    },
+    {
+      "attacker_skill": 18,
+      "defender_skill": 18,
+      "spiritus": 0,
+      "declare_value": null,
+      "decline_value": 0.09999999999999998,
+      "argmax": "unavailable"
+    }
+  ],
+  "power_policy_surface": [
+    {
+      "skill": 10,
+      "spiritus": 8,
+      "attacker_hp": 8,
+      "policy_values": {
+        "Loaded Cut": 0.2808992653741677,
+        "P1 Power": 0.22107648252614662
+      },
+      "policy_argmax": [
+        "Loaded Cut"
+      ],
+      "loaded_expected_damage": 5.472222222222222,
+      "loaded_max_damage": 7,
+      "power_expected_damage": 7.0,
+      "power_max_damage": 7
+    },
+    {
+      "skill": 10,
+      "spiritus": 8,
+      "attacker_hp": 4,
+      "policy_values": {
+        "Loaded Cut": 0.2779528567094776,
+        "P1 Power": 0.2203266036954634
+      },
+      "policy_argmax": [
+        "Loaded Cut"
+      ],
+      "loaded_expected_damage": 5.472222222222222,
+      "loaded_max_damage": 7,
+      "power_expected_damage": 7.0,
+      "power_max_damage": 7
+    },
+    {
+      "skill": 10,
+      "spiritus": 8,
+      "attacker_hp": 2,
+      "policy_values": {
+        "Loaded Cut": 0.2764787614480516,
+        "P1 Power": 0.15620937387971814
+      },
+      "policy_argmax": [
+        "Loaded Cut"
+      ],
+      "loaded_expected_damage": 5.472222222222222,
+      "loaded_max_damage": 7,
+      "power_expected_damage": 7.0,
+      "power_max_damage": 7
+    },
+    {
+      "skill": 10,
+      "spiritus": 3,
+      "attacker_hp": 8,
+      "policy_values": {
+        "Loaded Cut": 0.3106581189620274,
+        "P1 Power": 0.14482416277907656
+      },
+      "policy_argmax": [
+        "Loaded Cut"
+      ],
+      "loaded_expected_damage": 5.472222222222222,
+      "loaded_max_damage": 7,
+      "power_expected_damage": 7.0,
+      "power_max_damage": 7
+    },
+    {
+      "skill": 10,
+      "spiritus": 3,
+      "attacker_hp": 4,
+      "policy_values": {
+        "Loaded Cut": 0.3123536633868265,
+        "P1 Power": 0.13686909364565214
+      },
+      "policy_argmax": [
+        "Loaded Cut"
+      ],
+      "loaded_expected_damage": 5.472222222222222,
+      "loaded_max_damage": 7,
+      "power_expected_damage": 7.0,
+      "power_max_damage": 7
+    },
+    {
+      "skill": 10,
+      "spiritus": 3,
+      "attacker_hp": 2,
+      "policy_values": {
+        "Loaded Cut": 0.3132615461827111,
+        "P1 Power": 0.0539599993234226
+      },
+      "policy_argmax": [
+        "Loaded Cut"
+      ],
+      "loaded_expected_damage": 5.472222222222222,
+      "loaded_max_damage": 7,
+      "power_expected_damage": 7.0,
+      "power_max_damage": 7
+    },
+    {
+      "skill": 10,
+      "spiritus": 1,
+      "attacker_hp": 8,
+      "policy_values": {
+        "Loaded Cut": 0.3363284602610272,
+        "P1 Power": -0.36582214239470645
+      },
+      "policy_argmax": [
+        "Loaded Cut"
+      ],
+      "loaded_expected_damage": 5.472222222222222,
+      "loaded_max_damage": 7,
+      "power_expected_damage": 7.0,
+      "power_max_damage": 7
+    },
+    {
+      "skill": 10,
+      "spiritus": 1,
+      "attacker_hp": 4,
+      "policy_values": {
+        "Loaded Cut": 0.34320588955066783,
+        "P1 Power": -0.3806896625357188
+      },
+      "policy_argmax": [
+        "Loaded Cut"
+      ],
+      "loaded_expected_damage": 5.472222222222222,
+      "loaded_max_damage": 7,
+      "power_expected_damage": 7.0,
+      "power_max_damage": 7
+    },
+    {
+      "skill": 10,
+      "spiritus": 1,
+      "attacker_hp": 2,
+      "policy_values": {
+        "Loaded Cut": 0.3471342975794156,
+        "P1 Power": -0.476319997380787
+      },
+      "policy_argmax": [
+        "Loaded Cut"
+      ],
+      "loaded_expected_damage": 5.472222222222222,
+      "loaded_max_damage": 7,
+      "power_expected_damage": 7.0,
+      "power_max_damage": 7
+    },
+    {
+      "skill": 14,
+      "spiritus": 8,
+      "attacker_hp": 8,
+      "policy_values": {
+        "Loaded Cut": 0.1577985750327087,
+        "P1 Power": 0.08069700703373825
+      },
+      "policy_argmax": [
+        "Loaded Cut"
+      ],
+      "loaded_expected_damage": 5.472222222222222,
+      "loaded_max_damage": 7,
+      "power_expected_damage": 7.0,
+      "power_max_damage": 7
+    },
+    {
+      "skill": 14,
+      "spiritus": 8,
+      "attacker_hp": 4,
+      "policy_values": {
+        "Loaded Cut": 0.14376286759319565,
+        "P1 Power": 0.10270407761062939
+      },
+      "policy_argmax": [
+        "Loaded Cut"
+      ],
+      "loaded_expected_damage": 5.472222222222222,
+      "loaded_max_damage": 7,
+      "power_expected_damage": 7.0,
+      "power_max_damage": 7
+    },
+    {
+      "skill": 14,
+      "spiritus": 8,
+      "attacker_hp": 2,
+      "policy_values": {
+        "Loaded Cut": 0.1375570543488372,
+        "P1 Power": -0.01260980817449997
+      },
+      "policy_argmax": [
+        "Loaded Cut"
+      ],
+      "loaded_expected_damage": 5.472222222222222,
+      "loaded_max_damage": 7,
+      "power_expected_damage": 7.0,
+      "power_max_damage": 7
+    },
+    {
+      "skill": 14,
+      "spiritus": 3,
+      "attacker_hp": 8,
+      "policy_values": {
+        "Loaded Cut": 0.24124709126528762,
+        "P1 Power": 0.039608070456349065
+      },
+      "policy_argmax": [
+        "Loaded Cut"
+      ],
+      "loaded_expected_damage": 5.472222222222222,
+      "loaded_max_damage": 7,
+      "power_expected_damage": 7.0,
+      "power_max_damage": 7
+    },
+    {
+      "skill": 14,
+      "spiritus": 3,
+      "attacker_hp": 4,
+      "policy_values": {
+        "Loaded Cut": 0.2311307835620663,
+        "P1 Power": 0.053083320956385904
+      },
+      "policy_argmax": [
+        "Loaded Cut"
+      ],
+      "loaded_expected_damage": 5.472222222222222,
+      "loaded_max_damage": 7,
+      "power_expected_damage": 7.0,
+      "power_max_damage": 7
+    },
+    {
+      "skill": 14,
+      "spiritus": 3,
+      "attacker_hp": 2,
+      "policy_values": {
+        "Loaded Cut": 0.226309178226758,
+        "P1 Power": -0.11424820400764912
+      },
+      "policy_argmax": [
+        "Loaded Cut"
+      ],
+      "loaded_expected_damage": 5.472222222222222,
+      "loaded_max_damage": 7,
+      "power_expected_damage": 7.0,
+      "power_max_damage": 7
+    },
+    {
+      "skill": 14,
+      "spiritus": 1,
+      "attacker_hp": 8,
+      "policy_values": {
+        "Loaded Cut": 0.3129449674786197,
+        "P1 Power": -0.4301942458836261
+      },
+      "policy_argmax": [
+        "Loaded Cut"
+      ],
+      "loaded_expected_damage": 5.472222222222222,
+      "loaded_max_damage": 7,
+      "power_expected_damage": 7.0,
+      "power_max_damage": 7
+    },
+    {
+      "skill": 14,
+      "spiritus": 1,
+      "attacker_hp": 4,
+      "policy_values": {
+        "Loaded Cut": 0.32501420929172037,
+        "P1 Power": -0.43429619620552185
+      },
+      "policy_argmax": [
+        "Loaded Cut"
+      ],
+      "loaded_expected_damage": 5.472222222222222,
+      "loaded_max_damage": 7,
+      "power_expected_damage": 7.0,
+      "power_max_damage": 7
+    },
+    {
+      "skill": 14,
+      "spiritus": 1,
+      "attacker_hp": 2,
+      "policy_values": {
+        "Loaded Cut": 0.3323471043651749,
+        "P1 Power": -0.6441288924234354
+      },
+      "policy_argmax": [
+        "Loaded Cut"
+      ],
+      "loaded_expected_damage": 5.472222222222222,
+      "loaded_max_damage": 7,
+      "power_expected_damage": 7.0,
+      "power_max_damage": 7
+    },
+    {
+      "skill": 18,
+      "spiritus": 8,
+      "attacker_hp": 8,
+      "policy_values": {
+        "Loaded Cut": -0.12029731441507718,
+        "P1 Power": -0.22352101400730265
+      },
+      "policy_argmax": [
+        "Loaded Cut"
+      ],
+      "loaded_expected_damage": 5.472222222222222,
+      "loaded_max_damage": 7,
+      "power_expected_damage": 7.0,
+      "power_max_damage": 7
+    },
+    {
+      "skill": 18,
+      "spiritus": 8,
+      "attacker_hp": 4,
+      "policy_values": {
+        "Loaded Cut": -0.14123786103075664,
+        "P1 Power": -0.1797431134275479
+      },
+      "policy_argmax": [
+        "Loaded Cut"
+      ],
+      "loaded_expected_damage": 5.472222222222222,
+      "loaded_max_damage": 7,
+      "power_expected_damage": 7.0,
+      "power_max_damage": 7
+    },
+    {
+      "skill": 18,
+      "spiritus": 8,
+      "attacker_hp": 2,
+      "policy_values": {
+        "Loaded Cut": -0.15045238819940554,
+        "P1 Power": -0.34072516573940054
+      },
+      "policy_argmax": [
+        "Loaded Cut"
+      ],
+      "loaded_expected_damage": 5.472222222222222,
+      "loaded_max_damage": 7,
+      "power_expected_damage": 7.0,
+      "power_max_damage": 7
+    },
+    {
+      "skill": 18,
+      "spiritus": 3,
+      "attacker_hp": 8,
+      "policy_values": {
+        "Loaded Cut": -0.003992721454383275,
+        "P1 Power": -0.22301396348181576
+      },
+      "policy_argmax": [
+        "Loaded Cut"
+      ],
+      "loaded_expected_damage": 5.472222222222222,
+      "loaded_max_damage": 7,
+      "power_expected_damage": 7.0,
+      "power_max_damage": 7
+    },
+    {
+      "skill": 18,
+      "spiritus": 3,
+      "attacker_hp": 4,
+      "policy_values": {
+        "Loaded Cut": -0.025975260514738883,
+        "P1 Power": -0.18034240296787163
+      },
+      "policy_argmax": [
+        "Loaded Cut"
+      ],
+      "loaded_expected_damage": 5.472222222222222,
+      "loaded_max_damage": 7,
+      "power_expected_damage": 7.0,
+      "power_max_damage": 7
+    },
+    {
+      "skill": 18,
+      "spiritus": 3,
+      "attacker_hp": 2,
+      "policy_values": {
+        "Loaded Cut": -0.03674005072120452,
+        "P1 Power": -0.4417650694698638
+      },
+      "policy_argmax": [
+        "Loaded Cut"
+      ],
+      "loaded_expected_damage": 5.472222222222222,
+      "loaded_max_damage": 7,
+      "power_expected_damage": 7.0,
+      "power_max_damage": 7
+    },
+    {
+      "skill": 18,
+      "spiritus": 1,
+      "attacker_hp": 8,
+      "policy_values": {
+        "Loaded Cut": 0.1708293945755851,
+        "P1 Power": -0.6247090963223693
+      },
+      "policy_argmax": [
+        "Loaded Cut"
+      ],
+      "loaded_expected_damage": 5.472222222222222,
+      "loaded_max_damage": 7,
+      "power_expected_damage": 7.0,
+      "power_max_damage": 7
+    },
+    {
+      "skill": 18,
+      "spiritus": 1,
+      "attacker_hp": 4,
+      "policy_values": {
+        "Loaded Cut": 0.18235736347196288,
+        "P1 Power": -0.6096455482712149
+      },
+      "policy_argmax": [
+        "Loaded Cut"
+      ],
+      "loaded_expected_damage": 5.472222222222222,
+      "loaded_max_damage": 7,
+      "power_expected_damage": 7.0,
+      "power_max_damage": 7
+    },
+    {
+      "skill": 18,
+      "spiritus": 1,
+      "attacker_hp": 2,
+      "policy_values": {
+        "Loaded Cut": 0.19001078368397606,
+        "P1 Power": -0.9712716905693964
+      },
+      "policy_argmax": [
+        "Loaded Cut"
+      ],
+      "loaded_expected_damage": 5.472222222222222,
+      "loaded_max_damage": 7,
+      "power_expected_damage": 7.0,
+      "power_max_damage": 7
+    }
+  ],
+  "guard_policy_surface": {
+    "German": {
+      "before": {
+        "vom-tag": -0.09,
+        "ochs": -0.09,
+        "pflug": 0.03,
+        "alber": 0.0
+      },
+      "after": {
+        "vom-tag": -0.09,
+        "ochs": 0.07,
+        "pflug": 0.12000000000000002,
+        "alber": 0.0
+      }
+    },
+    "Italian": {
+      "before": {
+        "posta-di-donna": 0.24000000000000002,
+        "posta-frontale": 0.0,
+        "tutta-porta-di-ferro": -0.09,
+        "mezza-porta-di-ferro": -0.09
+      },
+      "after": {
+        "posta-di-donna": -0.09,
+        "posta-frontale": 0.0,
+        "tutta-porta-di-ferro": -0.09,
+        "mezza-porta-di-ferro": 0.07
+      }
+    }
+  },
+  "fixed_policy_constants": {
+    "tutta_continuation_policy": {
+      "value": 0.10751286532835233,
+      "decline": 0.0,
+      "basis": "hand-authored Close-state proxy; no downstream consequence valuation"
+    },
+    "crown_response_policy": {
+      "crown": 0.77,
+      "ordinary_response_aggregate": 0.35,
+      "basis": "hand-authored constants; ordinary legal responses are not compared individually"
+    },
+    "point_sink_policy": {
+      "value": 0.5575128653283523,
+      "decline": 0.0,
+      "basis": "success proxy minus reserve charge"
+    },
+    "nachreisen_policy": {
+      "nachreisen": 0.52,
+      "ordinary": 0.0,
+      "basis": "hand-authored constants in LoadedPowerDuel.activate"
+    },
+    "pommel_policy": {
+      "pommel": 0.42,
+      "ordinary": 0.0,
+      "basis": "hand-authored constants in base Duel.pommel"
+    }
+  },
+  "instrumentation_observations": [
+    "defend records Basic Cross/Beat in choices, then basic_parry also records generic Basic Parry",
+    "B3 Scheitelhau entry uses dedicated declaration metrics and correctly does not enter plays uses",
+    "Crown selection compares against an aggregate ordinary-response constant rather than actual alternatives",
+    "guard occupancy is recorded, but active gate enforcement differs from some data-record access labels"
+  ]
+}
