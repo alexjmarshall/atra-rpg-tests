@@ -1,0 +1,117 @@
+{
+  "id": "longsword-guard-transition-map-v0.1",
+  "status": "CANDIDATE RESEARCH ARTIFACT; NOT CANONICAL",
+  "campaign_horizon": "1490s",
+  "supported_martial_horizon": "c. 1475-1540 under the repository continuity policy",
+  "method_note": "Pairwise voluntary adjacency is not inferred from physical plausibility or from an action that happens to pass through or recover to a posture.",
+  "judgment_vocabulary": ["HISTORICALLY SUPPORTED", "PLAUSIBLE ATRA ABSTRACTION", "NOT SUPPORTABLE"],
+  "edge_type_vocabulary": ["DIRECT VOLUNTARY TRANSITION", "ACTION-PRODUCED TRANSITION", "RETURN / RECOVERY TRANSITION", "GEOMETRIC INFERENCE", "UNSUPPORTED"],
+  "german": {
+    "tradition": "Liechtenauer gloss represented by Pseudo-Peter von Danzig",
+    "nodes": ["vom-tag", "ochs", "pflug", "alber"],
+    "general_evidence": [
+      {
+        "source_witness": "Pseudo-Peter von Danzig, Starhemberg Fechtbuch, Cod.44.A.8 (1452)",
+        "exact_locator": "ff. 37r.2-38v.1",
+        "evidence_summary": "Ochs on both sides are the upper hangings and Pflug on both sides the lower hangings; eight windings and cut/thrust/slice actions are driven from them.",
+        "movement_classification": "demonstrated through named bind actions",
+        "historical_confidence": "A",
+        "graph_implication": "Strong support for action-produced mobility inside winding; no named pairwise voluntary positioning adjacency is stated."
+      }
+    ],
+    "edges": [
+      {
+        "from_guard": "ochs", "to_guard": "pflug", "direction": "directed",
+        "edge_type": "ACTION-PRODUCED TRANSITION", "source_witness": "Pseudo-Peter von Danzig, Cod.44.A.8",
+        "exact_locator": "ff. 37r.2-38v.1", "evidence_summary": "Upper and lower hangings are coordinated through the eight Winden, but the passage does not name a free Ochs-to-Pflug posture change.",
+        "historical_confidence": "A for the hanging/winding relationship; C for this endpoint abstraction",
+        "movement_basis": "demonstrated through a named action", "judgment": "PLAUSIBLE ATRA ABSTRACTION", "safe_voluntary_adjacency": false
+      },
+      {
+        "from_guard": "pflug", "to_guard": "ochs", "direction": "directed",
+        "edge_type": "ACTION-PRODUCED TRANSITION", "source_witness": "Pseudo-Peter von Danzig, Cod.44.A.8",
+        "exact_locator": "ff. 37r.2-38v.1", "evidence_summary": "Lower and upper hangings participate in Winden; the text supports action from the hangings, not a free pairwise edge.",
+        "historical_confidence": "A for the hanging/winding relationship; C for this endpoint abstraction",
+        "movement_basis": "demonstrated through a named action", "judgment": "PLAUSIBLE ATRA ABSTRACTION", "safe_voluntary_adjacency": false
+      },
+      {
+        "from_guard": "alber", "to_guard": "vom-tag", "direction": "directed",
+        "edge_type": "UNSUPPORTED", "source_witness": "none",
+        "exact_locator": null, "evidence_summary": "The Scheitelhau passage places the attacker at the right shoulder against an opponent in Alber; it does not prescribe the Alber fighter freely moving to Vom Tag.",
+        "historical_confidence": "none", "movement_basis": "purely Atra abstraction", "judgment": "NOT SUPPORTABLE", "safe_voluntary_adjacency": false
+      },
+      {
+        "from_guard": "vom-tag", "to_guard": "alber", "direction": "directed",
+        "edge_type": "GEOMETRIC INFERENCE", "source_witness": "none",
+        "exact_locator": null, "evidence_summary": "A descending cut may physically finish low, but no audited passage makes this a free named-guard adjacency.",
+        "historical_confidence": "C", "movement_basis": "geometrically inferred", "judgment": "PLAUSIBLE ATRA ABSTRACTION", "safe_voluntary_adjacency": false
+      }
+    ],
+    "unlisted_pair_policy": "UNSUPPORTED as voluntary adjacency",
+    "safe_voluntary_edges": [],
+    "quality": {"connected": false, "pairwise_safe_edge_count": 0, "possible_directed_pairs": 12, "density": 0.0, "behavior_testable": false, "judgment": "NOT SUPPORTABLE as a finite voluntary adjacency graph"}
+  },
+  "italian": {
+    "tradition": "Fiore dei Liberi with Vadi direct-horizon continuity kept distinct",
+    "nodes": ["posta-di-donna", "posta-frontale", "tutta-porta-di-ferro", "mezza-porta-di-ferro"],
+    "general_evidence": [
+      {
+        "source_witness": "Philippo di Vadi, MS Vitt.Em.1324",
+        "exact_locator": "f. 11r, Chapter X",
+        "evidence_summary": "Vadi states that the fencer may go from guard to guard with a calm hand and ordinary steps.",
+        "movement_classification": "directly stated",
+        "historical_confidence": "A",
+        "graph_implication": "Supports broad voluntary mobility, not a sparse pairwise adjacency topology."
+      },
+      {
+        "source_witness": "Fiore dei Liberi, Getty MS Ludwig XV 13",
+        "exact_locator": "22r-a",
+        "evidence_summary": "Fiore states that each guard can perform the described sword/body turns; this describes movement capacity but does not enumerate named guard-to-guard edges.",
+        "movement_classification": "directly stated general movement",
+        "historical_confidence": "A",
+        "graph_implication": "Does not select neighboring named guards."
+      }
+    ],
+    "edges": [
+      {
+        "from_guard": "posta-frontale", "to_guard": "dente-di-zenghiaro", "direction": "directed",
+        "edge_type": "ACTION-PRODUCED TRANSITION", "source_witness": "Fiore, Getty MS Ludwig XV 13 / Morgan MS M.383",
+        "exact_locator": "Getty 24v-c; Morgan 12v-b", "evidence_summary": "The alternate Frontale response retreats from a thrust, cuts with fendente, and goes to Dente di Zenghiaro before thrusting and returning with fendente.",
+        "historical_confidence": "A", "movement_basis": "demonstrated through a named action", "judgment": "HISTORICALLY SUPPORTED", "safe_voluntary_adjacency": false,
+        "note": "Dente di Zenghiaro is outside the current four-guard reduced roster."
+      },
+      {
+        "from_guard": "mezza-porta-di-ferro", "to_guard": "mezza-porta-di-ferro", "direction": "self-return",
+        "edge_type": "RETURN / RECOVERY TRANSITION", "source_witness": "Fiore, Getty MS Ludwig XV 13 / Morgan MS M.383",
+        "exact_locator": "Getty 24r-b; Morgan 12r-d", "evidence_summary": "Mezza beats upward, returns with fendente to head or arms, and returns to its guard.",
+        "historical_confidence": "A", "movement_basis": "demonstrated as a return/recovery", "judgment": "HISTORICALLY SUPPORTED", "safe_voluntary_adjacency": false
+      },
+      {
+        "from_guard": "tutta-porta-di-ferro", "to_guard": "close-crossing", "direction": "directed",
+        "edge_type": "ACTION-PRODUCED TRANSITION", "source_witness": "Fiore, Getty MS Ludwig XV 13 / Morgan MS M.383",
+        "exact_locator": "Getty 23v-a; Morgan 12r-a", "evidence_summary": "A cover with a pass enters stretto; the destination is an exchange/measure state, not another named guard.",
+        "historical_confidence": "A", "movement_basis": "demonstrated through a named action", "judgment": "HISTORICALLY SUPPORTED", "safe_voluntary_adjacency": false
+      },
+      {
+        "from_guard": "posta-di-donna", "to_guard": "any-low-guard", "direction": "directed family",
+        "edge_type": "ACTION-PRODUCED TRANSITION", "source_witness": "Fiore, Getty MS Ludwig XV 13",
+        "exact_locator": "23r-a to 23r-b (Fendenti description) with Donna capability at 23v-b", "evidence_summary": "Fendenti can finish in low guards and Donna can make all seven blows; combining the passages identifies action-produced mobility but not a unique endpoint edge.",
+        "historical_confidence": "B", "movement_basis": "geometrically and textually inferred across passages", "judgment": "PLAUSIBLE ATRA ABSTRACTION", "safe_voluntary_adjacency": false
+      }
+    ],
+    "pairwise_voluntary_edge_interpretation": {
+      "source_result": "Vadi's general guard-to-guard permission is closer to all-to-all than to a sparse graph.",
+      "if_encoded_all_to_all": {"directed_edges": 12, "possible_directed_pairs": 12, "density": 1.0, "commitment_effect": "none beyond GC0 timing"},
+      "if_restricted_to_named_pairs": "The omissions would be Atra inventions because the witnesses do not identify forbidden neighboring pairs."
+    },
+    "safe_voluntary_edges": "GENERAL ALL-TO-ALL PRINCIPLE ONLY; no historically justified sparse subset",
+    "quality": {"connected": true, "pairwise_density_if_general_rule_expanded": 1.0, "behavior_testable_as_sparse_graph": false, "judgment": "HISTORICALLY SUPPORTED broad movement; NOT SUPPORTABLE as a restrictive finite adjacency graph"}
+  },
+  "project_judgment": {
+    "historically_supported": ["Vadi's broad guard-to-guard movement", "Fiore's action-produced Frontale-to-Dente sequence", "Fiore's Mezza recovery", "Fiore's Tutta cover-to-stretto", "German action through Ochs/Pflug hangings and Winden"],
+    "plausible_atra_abstraction": ["pairwise endpoints inferred from cuts or Winden"],
+    "not_supportable": ["a sparse German voluntary graph", "a sparse Italian graph created by selectively omitting Vadi-permitted movement", "one universal German/Italian topology"],
+    "gc3_behavior_test": "NOT RUN: no defensible restrictive graph exists",
+    "stronger_evidence_direction": "action-produced transitions and recoveries"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "id": "melee-choice-architecture-v0.1",
+  "status": "PROVISIONAL BOUNDED EXPERIMENT; NOT GOVERNING OR CANONICAL",
+  "purpose": "Separate Cross/Beat choice effects from guard-commitment timing and test them without changing the governing prototype.",
+  "governing_engine": "simulations/shared/provisional_longsword.py",
+  "fixed_baseline": {
+    "named_guard_architecture": "G1 / ACTION-LIGHT",
+    "universal_basics": ["Cut", "Thrust", "Cross", "Beat"],
+    "durchwechseln": {"variant": "D1", "cost": 1, "window": "after Basic Parry declaration and before its roll"},
+    "compounds": {"variant": "C2", "cost": 2},
+    "schielhau_durchwechseln": "S2",
+    "learned_play_cap": 3,
+    "loaded": "Damage Boon on proactive Basic Cut",
+    "power": "P1; 1 Spiritus; fixed 7; Committed; Counter-first",
+    "tutta_cover_to_stretto": "T1; governing provisional",
+    "excluded": ["Crown C1/B3", "broken Nachreisen evidence", "Zornhau-Ort frequency", "Winden invention", "Alber/Frontale balance inference"]
+  },
+  "cross_beat_candidates": {
+    "CB0": {"cross_d1_immune": false, "beat_creates_open": false},
+    "CB1": {"cross_d1_immune": true, "beat_creates_open": false},
+    "CB2": {"cross_d1_immune": false, "beat_creates_open": true},
+    "CB3": {"cross_d1_immune": true, "beat_creates_open": true}
+  },
+  "open": {
+    "is_named_guard": false,
+    "created_by": "successful resolved Beat in CB2 or CB3",
+    "not_created_by": ["failed Beat", "D1-interrupted Beat"],
+    "effects": ["no named-guard intrinsic", "no Loaded", "no threatening point", "no guard gate", "universal Basics remain legal"],
+    "generic_modifiers": [],
+    "duration": "through the intervening opponent opportunity until the fighter's next own activation",
+    "recovery": "start-of-activation Open -> any legal named guard; consumes voluntary change allowance; remaining Open is legal"
+  },
+  "guard_commitment_candidates": {
+    "GC0": {"before": true, "after": true, "choose_one": true, "topology": "all-to-all"},
+    "GC1": {"before": true, "after": false, "choose_one": true, "topology": "all-to-all"},
+    "GC2": {"before": false, "after": true, "choose_one": true, "topology": "all-to-all", "open_recovery_exception": true},
+    "GC3": {"before": true, "after": true, "choose_one": true, "topology": "one sourced voluntary edge", "behavior_test_condition": "only if research yields a defensible graph"}
+  },
+  "analysis_policy": {
+    "primary": "rules-derived multidimensional outcome vectors and deterministic argmax",
+    "monte_carlo": "branch-forced verification, 1000 trials per reported Cross/Beat cell",
+    "guard_behavior": "1000 scripted six-activation micro-fights per timing model",
+    "win_rate_primary": false,
+    "softmax_frequency_is_health_evidence": false,
+    "seed": 12082026
+  },
+  "promotion": {"automatic": false, "requires_project_adjudication": true}
+}
