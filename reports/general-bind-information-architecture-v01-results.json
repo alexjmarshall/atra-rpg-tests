@@ -1,0 +1,4954 @@
+{
+  "counter_wind": [
+    {
+      "duplieren_correct": true,
+      "known_counter_wind_defender_0S": {
+        "attack_resolution_success": 0.75,
+        "counter_wind_available": false,
+        "expected_incoming_damage": 3.375
+      },
+      "known_counter_wind_defender_1S_plus_forced_branch": {
+        "attack_resolution_success": 0.375,
+        "chain_entries": 1,
+        "counter_wind_available": true,
+        "duplieren_suppression_fraction": 0.5,
+        "expected_incoming_damage": 1.6875,
+        "initiative_transfer_frequency": 0.5,
+        "retained_crossing_frequency": 0.5,
+        "spiritus_spent": 1
+      },
+      "model": "G",
+      "no_counter_wind": {
+        "attack_resolution_success": 0.75,
+        "expected_incoming_damage": 3.375
+      },
+      "pressure": "hart",
+      "skill": 10
+    },
+    {
+      "duplieren_correct": false,
+      "known_counter_wind_defender_0S": {
+        "attack_resolution_success": 0.25,
+        "counter_wind_available": false,
+        "expected_incoming_damage": 1.125
+      },
+      "known_counter_wind_defender_1S_plus_forced_branch": {
+        "attack_resolution_success": 0.125,
+        "chain_entries": 1,
+        "counter_wind_available": true,
+        "duplieren_suppression_fraction": 0.5,
+        "expected_incoming_damage": 0.5625,
+        "initiative_transfer_frequency": 0.5,
+        "retained_crossing_frequency": 0.5,
+        "spiritus_spent": 1
+      },
+      "model": "G",
+      "no_counter_wind": {
+        "attack_resolution_success": 0.25,
+        "expected_incoming_damage": 1.125
+      },
+      "pressure": "weich",
+      "skill": 10
+    },
+    {
+      "duplieren_correct": true,
+      "known_counter_wind_defender_0S": {
+        "attack_resolution_success": 0.75,
+        "counter_wind_available": false,
+        "expected_incoming_damage": 3.375
+      },
+      "known_counter_wind_defender_1S_plus_forced_branch": {
+        "attack_resolution_success": 0.375,
+        "chain_entries": 1,
+        "counter_wind_available": true,
+        "duplieren_suppression_fraction": 0.5,
+        "expected_incoming_damage": 1.6875,
+        "initiative_transfer_frequency": 0.5,
+        "retained_crossing_frequency": 0.5,
+        "spiritus_spent": 1
+      },
+      "model": "F",
+      "no_counter_wind": {
+        "attack_resolution_success": 0.75,
+        "expected_incoming_damage": 3.375
+      },
+      "pressure": "hart",
+      "skill": 10
+    },
+    {
+      "duplieren_correct": false,
+      "known_counter_wind_defender_0S": {
+        "attack_resolution_success": 0.0,
+        "counter_wind_available": false,
+        "expected_incoming_damage": 0.0
+      },
+      "known_counter_wind_defender_1S_plus_forced_branch": {
+        "attack_resolution_success": 0.0,
+        "chain_entries": 0,
+        "counter_wind_available": false,
+        "duplieren_suppression_fraction": null,
+        "expected_incoming_damage": 0.0,
+        "initiative_transfer_frequency": 0.0,
+        "retained_crossing_frequency": 0.0,
+        "spiritus_spent": 0
+      },
+      "model": "F",
+      "no_counter_wind": {
+        "attack_resolution_success": 0.0,
+        "expected_incoming_damage": 0.0
+      },
+      "pressure": "weich",
+      "skill": 10
+    },
+    {
+      "duplieren_correct": true,
+      "known_counter_wind_defender_0S": {
+        "attack_resolution_success": 0.84,
+        "counter_wind_available": false,
+        "expected_incoming_damage": 3.78
+      },
+      "known_counter_wind_defender_1S_plus_forced_branch": {
+        "attack_resolution_success": 0.336,
+        "chain_entries": 1,
+        "counter_wind_available": true,
+        "duplieren_suppression_fraction": 0.6,
+        "expected_incoming_damage": 1.512,
+        "initiative_transfer_frequency": 0.6,
+        "retained_crossing_frequency": 0.6,
+        "spiritus_spent": 1
+      },
+      "model": "G",
+      "no_counter_wind": {
+        "attack_resolution_success": 0.84,
+        "expected_incoming_damage": 3.78
+      },
+      "pressure": "hart",
+      "skill": 12
+    },
+    {
+      "duplieren_correct": false,
+      "known_counter_wind_defender_0S": {
+        "attack_resolution_success": 0.36,
+        "counter_wind_available": false,
+        "expected_incoming_damage": 1.6199999999999999
+      },
+      "known_counter_wind_defender_1S_plus_forced_branch": {
+        "attack_resolution_success": 0.144,
+        "chain_entries": 1,
+        "counter_wind_available": true,
+        "duplieren_suppression_fraction": 0.6,
+        "expected_incoming_damage": 0.6479999999999999,
+        "initiative_transfer_frequency": 0.6,
+        "retained_crossing_frequency": 0.6,
+        "spiritus_spent": 1
+      },
+      "model": "G",
+      "no_counter_wind": {
+        "attack_resolution_success": 0.36,
+        "expected_incoming_damage": 1.6199999999999999
+      },
+      "pressure": "weich",
+      "skill": 12
+    },
+    {
+      "duplieren_correct": true,
+      "known_counter_wind_defender_0S": {
+        "attack_resolution_success": 0.84,
+        "counter_wind_available": false,
+        "expected_incoming_damage": 3.78
+      },
+      "known_counter_wind_defender_1S_plus_forced_branch": {
+        "attack_resolution_success": 0.336,
+        "chain_entries": 1,
+        "counter_wind_available": true,
+        "duplieren_suppression_fraction": 0.6,
+        "expected_incoming_damage": 1.512,
+        "initiative_transfer_frequency": 0.6,
+        "retained_crossing_frequency": 0.6,
+        "spiritus_spent": 1
+      },
+      "model": "F",
+      "no_counter_wind": {
+        "attack_resolution_success": 0.84,
+        "expected_incoming_damage": 3.78
+      },
+      "pressure": "hart",
+      "skill": 12
+    },
+    {
+      "duplieren_correct": false,
+      "known_counter_wind_defender_0S": {
+        "attack_resolution_success": 0.0,
+        "counter_wind_available": false,
+        "expected_incoming_damage": 0.0
+      },
+      "known_counter_wind_defender_1S_plus_forced_branch": {
+        "attack_resolution_success": 0.0,
+        "chain_entries": 0,
+        "counter_wind_available": false,
+        "duplieren_suppression_fraction": null,
+        "expected_incoming_damage": 0.0,
+        "initiative_transfer_frequency": 0.0,
+        "retained_crossing_frequency": 0.0,
+        "spiritus_spent": 0
+      },
+      "model": "F",
+      "no_counter_wind": {
+        "attack_resolution_success": 0.0,
+        "expected_incoming_damage": 0.0
+      },
+      "pressure": "weich",
+      "skill": 12
+    },
+    {
+      "duplieren_correct": true,
+      "known_counter_wind_defender_0S": {
+        "attack_resolution_success": 0.9099999999999999,
+        "counter_wind_available": false,
+        "expected_incoming_damage": 4.095
+      },
+      "known_counter_wind_defender_1S_plus_forced_branch": {
+        "attack_resolution_success": 0.273,
+        "chain_entries": 1,
+        "counter_wind_available": true,
+        "duplieren_suppression_fraction": 0.7,
+        "expected_incoming_damage": 1.2285000000000001,
+        "initiative_transfer_frequency": 0.7,
+        "retained_crossing_frequency": 0.7,
+        "spiritus_spent": 1
+      },
+      "model": "G",
+      "no_counter_wind": {
+        "attack_resolution_success": 0.9099999999999999,
+        "expected_incoming_damage": 4.095
+      },
+      "pressure": "hart",
+      "skill": 14
+    },
+    {
+      "duplieren_correct": false,
+      "known_counter_wind_defender_0S": {
+        "attack_resolution_success": 0.48999999999999994,
+        "counter_wind_available": false,
+        "expected_incoming_damage": 2.2049999999999996
+      },
+      "known_counter_wind_defender_1S_plus_forced_branch": {
+        "attack_resolution_success": 0.147,
+        "chain_entries": 1,
+        "counter_wind_available": true,
+        "duplieren_suppression_fraction": 0.7,
+        "expected_incoming_damage": 0.6615,
+        "initiative_transfer_frequency": 0.7,
+        "retained_crossing_frequency": 0.7,
+        "spiritus_spent": 1
+      },
+      "model": "G",
+      "no_counter_wind": {
+        "attack_resolution_success": 0.48999999999999994,
+        "expected_incoming_damage": 2.2049999999999996
+      },
+      "pressure": "weich",
+      "skill": 14
+    },
+    {
+      "duplieren_correct": true,
+      "known_counter_wind_defender_0S": {
+        "attack_resolution_success": 0.9099999999999999,
+        "counter_wind_available": false,
+        "expected_incoming_damage": 4.095
+      },
+      "known_counter_wind_defender_1S_plus_forced_branch": {
+        "attack_resolution_success": 0.273,
+        "chain_entries": 1,
+        "counter_wind_available": true,
+        "duplieren_suppression_fraction": 0.7,
+        "expected_incoming_damage": 1.2285000000000001,
+        "initiative_transfer_frequency": 0.7,
+        "retained_crossing_frequency": 0.7,
+        "spiritus_spent": 1
+      },
+      "model": "F",
+      "no_counter_wind": {
+        "attack_resolution_success": 0.9099999999999999,
+        "expected_incoming_damage": 4.095
+      },
+      "pressure": "hart",
+      "skill": 14
+    },
+    {
+      "duplieren_correct": false,
+      "known_counter_wind_defender_0S": {
+        "attack_resolution_success": 0.0,
+        "counter_wind_available": false,
+        "expected_incoming_damage": 0.0
+      },
+      "known_counter_wind_defender_1S_plus_forced_branch": {
+        "attack_resolution_success": 0.0,
+        "chain_entries": 0,
+        "counter_wind_available": false,
+        "duplieren_suppression_fraction": null,
+        "expected_incoming_damage": 0.0,
+        "initiative_transfer_frequency": 0.0,
+        "retained_crossing_frequency": 0.0,
+        "spiritus_spent": 0
+      },
+      "model": "F",
+      "no_counter_wind": {
+        "attack_resolution_success": 0.0,
+        "expected_incoming_damage": 0.0
+      },
+      "pressure": "weich",
+      "skill": 14
+    },
+    {
+      "duplieren_correct": true,
+      "known_counter_wind_defender_0S": {
+        "attack_resolution_success": 0.99,
+        "counter_wind_available": false,
+        "expected_incoming_damage": 4.455
+      },
+      "known_counter_wind_defender_1S_plus_forced_branch": {
+        "attack_resolution_success": 0.09899999999999998,
+        "chain_entries": 1,
+        "counter_wind_available": true,
+        "duplieren_suppression_fraction": 0.9,
+        "expected_incoming_damage": 0.4454999999999999,
+        "initiative_transfer_frequency": 0.9,
+        "retained_crossing_frequency": 0.9,
+        "spiritus_spent": 1
+      },
+      "model": "G",
+      "no_counter_wind": {
+        "attack_resolution_success": 0.99,
+        "expected_incoming_damage": 4.455
+      },
+      "pressure": "hart",
+      "skill": 18
+    },
+    {
+      "duplieren_correct": false,
+      "known_counter_wind_defender_0S": {
+        "attack_resolution_success": 0.81,
+        "counter_wind_available": false,
+        "expected_incoming_damage": 3.6450000000000005
+      },
+      "known_counter_wind_defender_1S_plus_forced_branch": {
+        "attack_resolution_success": 0.08099999999999999,
+        "chain_entries": 1,
+        "counter_wind_available": true,
+        "duplieren_suppression_fraction": 0.9,
+        "expected_incoming_damage": 0.36449999999999994,
+        "initiative_transfer_frequency": 0.9,
+        "retained_crossing_frequency": 0.9,
+        "spiritus_spent": 1
+      },
+      "model": "G",
+      "no_counter_wind": {
+        "attack_resolution_success": 0.81,
+        "expected_incoming_damage": 3.6450000000000005
+      },
+      "pressure": "weich",
+      "skill": 18
+    },
+    {
+      "duplieren_correct": true,
+      "known_counter_wind_defender_0S": {
+        "attack_resolution_success": 0.99,
+        "counter_wind_available": false,
+        "expected_incoming_damage": 4.455
+      },
+      "known_counter_wind_defender_1S_plus_forced_branch": {
+        "attack_resolution_success": 0.09899999999999998,
+        "chain_entries": 1,
+        "counter_wind_available": true,
+        "duplieren_suppression_fraction": 0.9,
+        "expected_incoming_damage": 0.4454999999999999,
+        "initiative_transfer_frequency": 0.9,
+        "retained_crossing_frequency": 0.9,
+        "spiritus_spent": 1
+      },
+      "model": "F",
+      "no_counter_wind": {
+        "attack_resolution_success": 0.99,
+        "expected_incoming_damage": 4.455
+      },
+      "pressure": "hart",
+      "skill": 18
+    },
+    {
+      "duplieren_correct": false,
+      "known_counter_wind_defender_0S": {
+        "attack_resolution_success": 0.0,
+        "counter_wind_available": false,
+        "expected_incoming_damage": 0.0
+      },
+      "known_counter_wind_defender_1S_plus_forced_branch": {
+        "attack_resolution_success": 0.0,
+        "chain_entries": 0,
+        "counter_wind_available": false,
+        "duplieren_suppression_fraction": null,
+        "expected_incoming_damage": 0.0,
+        "initiative_transfer_frequency": 0.0,
+        "retained_crossing_frequency": 0.0,
+        "spiritus_spent": 0
+      },
+      "model": "F",
+      "no_counter_wind": {
+        "attack_resolution_success": 0.0,
+        "expected_incoming_damage": 0.0
+      },
+      "pressure": "weich",
+      "skill": 18
+    }
+  ],
+  "defender_pressure_mixing": {
+    "classification": "DEFENDER PRESSURE MIXING NOT YET EVALUABLE",
+    "reason": "Hart has exact immediate Parry-Boon value; Weich writes Bind Initiative, but the bounded current repertoire supplies no adjudicated defender-side continuation whose actual consequences price that initiative without importing an unpromoted Winden variant or a utility constant."
+  },
+  "deterministic": {
+    "candidate_passed": 75,
+    "candidate_required": 75,
+    "prior_baseline_passed": 81,
+    "prior_baseline_required": 81
+  },
+  "duplieren_mutieren_cost_sensitivity": [
+    {
+      "C2_2S": {
+        "action": 1,
+        "also_cancels_on_success": true,
+        "expected_outgoing_damage": 2.25,
+        "spiritus": 2
+      },
+      "correct_damage_per_spiritus": 3.375,
+      "correct_expected_damage": 3.375,
+      "dm_action_compression": "attack continuation after the actor's initiating normal action is already spent",
+      "dm_cost": 1,
+      "model": "G",
+      "nachreisen_1S": {
+        "action": 1,
+        "expected_damage": 3.375,
+        "spiritus": 1
+      },
+      "ordinary_basic_attack": {
+        "action": 1,
+        "expected_damage": 2.25,
+        "spiritus": 0
+      },
+      "ort_O1_1S_candidate": {
+        "additional_roll": 0,
+        "damage_when_requirement_met": 4.5,
+        "spiritus": 1
+      },
+      "skill": 10,
+      "wrong_damage_per_spiritus": 1.125,
+      "wrong_expected_damage": 1.125
+    },
+    {
+      "C2_2S": {
+        "action": 1,
+        "also_cancels_on_success": true,
+        "expected_outgoing_damage": 2.25,
+        "spiritus": 2
+      },
+      "correct_damage_per_spiritus": 1.6875,
+      "correct_expected_damage": 3.375,
+      "dm_action_compression": "attack continuation after the actor's initiating normal action is already spent",
+      "dm_cost": 2,
+      "model": "G",
+      "nachreisen_1S": {
+        "action": 1,
+        "expected_damage": 3.375,
+        "spiritus": 1
+      },
+      "ordinary_basic_attack": {
+        "action": 1,
+        "expected_damage": 2.25,
+        "spiritus": 0
+      },
+      "ort_O1_1S_candidate": {
+        "additional_roll": 0,
+        "damage_when_requirement_met": 4.5,
+        "spiritus": 1
+      },
+      "skill": 10,
+      "wrong_damage_per_spiritus": 0.5625,
+      "wrong_expected_damage": 1.125
+    },
+    {
+      "C2_2S": {
+        "action": 1,
+        "also_cancels_on_success": true,
+        "expected_outgoing_damage": 2.25,
+        "spiritus": 2
+      },
+      "correct_damage_per_spiritus": 3.375,
+      "correct_expected_damage": 3.375,
+      "dm_action_compression": "attack continuation after the actor's initiating normal action is already spent",
+      "dm_cost": 1,
+      "model": "F",
+      "nachreisen_1S": {
+        "action": 1,
+        "expected_damage": 3.375,
+        "spiritus": 1
+      },
+      "ordinary_basic_attack": {
+        "action": 1,
+        "expected_damage": 2.25,
+        "spiritus": 0
+      },
+      "ort_O1_1S_candidate": {
+        "additional_roll": 0,
+        "damage_when_requirement_met": 4.5,
+        "spiritus": 1
+      },
+      "skill": 10,
+      "wrong_damage_per_spiritus": 0.0,
+      "wrong_expected_damage": 0.0
+    },
+    {
+      "C2_2S": {
+        "action": 1,
+        "also_cancels_on_success": true,
+        "expected_outgoing_damage": 2.25,
+        "spiritus": 2
+      },
+      "correct_damage_per_spiritus": 1.6875,
+      "correct_expected_damage": 3.375,
+      "dm_action_compression": "attack continuation after the actor's initiating normal action is already spent",
+      "dm_cost": 2,
+      "model": "F",
+      "nachreisen_1S": {
+        "action": 1,
+        "expected_damage": 3.375,
+        "spiritus": 1
+      },
+      "ordinary_basic_attack": {
+        "action": 1,
+        "expected_damage": 2.25,
+        "spiritus": 0
+      },
+      "ort_O1_1S_candidate": {
+        "additional_roll": 0,
+        "damage_when_requirement_met": 4.5,
+        "spiritus": 1
+      },
+      "skill": 10,
+      "wrong_damage_per_spiritus": 0.0,
+      "wrong_expected_damage": 0.0
+    },
+    {
+      "C2_2S": {
+        "action": 1,
+        "also_cancels_on_success": true,
+        "expected_outgoing_damage": 2.6999999999999997,
+        "spiritus": 2
+      },
+      "correct_damage_per_spiritus": 3.78,
+      "correct_expected_damage": 3.78,
+      "dm_action_compression": "attack continuation after the actor's initiating normal action is already spent",
+      "dm_cost": 1,
+      "model": "G",
+      "nachreisen_1S": {
+        "action": 1,
+        "expected_damage": 3.78,
+        "spiritus": 1
+      },
+      "ordinary_basic_attack": {
+        "action": 1,
+        "expected_damage": 2.6999999999999997,
+        "spiritus": 0
+      },
+      "ort_O1_1S_candidate": {
+        "additional_roll": 0,
+        "damage_when_requirement_met": 4.5,
+        "spiritus": 1
+      },
+      "skill": 12,
+      "wrong_damage_per_spiritus": 1.6199999999999999,
+      "wrong_expected_damage": 1.6199999999999999
+    },
+    {
+      "C2_2S": {
+        "action": 1,
+        "also_cancels_on_success": true,
+        "expected_outgoing_damage": 2.6999999999999997,
+        "spiritus": 2
+      },
+      "correct_damage_per_spiritus": 1.89,
+      "correct_expected_damage": 3.78,
+      "dm_action_compression": "attack continuation after the actor's initiating normal action is already spent",
+      "dm_cost": 2,
+      "model": "G",
+      "nachreisen_1S": {
+        "action": 1,
+        "expected_damage": 3.78,
+        "spiritus": 1
+      },
+      "ordinary_basic_attack": {
+        "action": 1,
+        "expected_damage": 2.6999999999999997,
+        "spiritus": 0
+      },
+      "ort_O1_1S_candidate": {
+        "additional_roll": 0,
+        "damage_when_requirement_met": 4.5,
+        "spiritus": 1
+      },
+      "skill": 12,
+      "wrong_damage_per_spiritus": 0.8099999999999999,
+      "wrong_expected_damage": 1.6199999999999999
+    },
+    {
+      "C2_2S": {
+        "action": 1,
+        "also_cancels_on_success": true,
+        "expected_outgoing_damage": 2.6999999999999997,
+        "spiritus": 2
+      },
+      "correct_damage_per_spiritus": 3.78,
+      "correct_expected_damage": 3.78,
+      "dm_action_compression": "attack continuation after the actor's initiating normal action is already spent",
+      "dm_cost": 1,
+      "model": "F",
+      "nachreisen_1S": {
+        "action": 1,
+        "expected_damage": 3.78,
+        "spiritus": 1
+      },
+      "ordinary_basic_attack": {
+        "action": 1,
+        "expected_damage": 2.6999999999999997,
+        "spiritus": 0
+      },
+      "ort_O1_1S_candidate": {
+        "additional_roll": 0,
+        "damage_when_requirement_met": 4.5,
+        "spiritus": 1
+      },
+      "skill": 12,
+      "wrong_damage_per_spiritus": 0.0,
+      "wrong_expected_damage": 0.0
+    },
+    {
+      "C2_2S": {
+        "action": 1,
+        "also_cancels_on_success": true,
+        "expected_outgoing_damage": 2.6999999999999997,
+        "spiritus": 2
+      },
+      "correct_damage_per_spiritus": 1.89,
+      "correct_expected_damage": 3.78,
+      "dm_action_compression": "attack continuation after the actor's initiating normal action is already spent",
+      "dm_cost": 2,
+      "model": "F",
+      "nachreisen_1S": {
+        "action": 1,
+        "expected_damage": 3.78,
+        "spiritus": 1
+      },
+      "ordinary_basic_attack": {
+        "action": 1,
+        "expected_damage": 2.6999999999999997,
+        "spiritus": 0
+      },
+      "ort_O1_1S_candidate": {
+        "additional_roll": 0,
+        "damage_when_requirement_met": 4.5,
+        "spiritus": 1
+      },
+      "skill": 12,
+      "wrong_damage_per_spiritus": 0.0,
+      "wrong_expected_damage": 0.0
+    },
+    {
+      "C2_2S": {
+        "action": 1,
+        "also_cancels_on_success": true,
+        "expected_outgoing_damage": 3.15,
+        "spiritus": 2
+      },
+      "correct_damage_per_spiritus": 4.095,
+      "correct_expected_damage": 4.095,
+      "dm_action_compression": "attack continuation after the actor's initiating normal action is already spent",
+      "dm_cost": 1,
+      "model": "G",
+      "nachreisen_1S": {
+        "action": 1,
+        "expected_damage": 4.095,
+        "spiritus": 1
+      },
+      "ordinary_basic_attack": {
+        "action": 1,
+        "expected_damage": 3.15,
+        "spiritus": 0
+      },
+      "ort_O1_1S_candidate": {
+        "additional_roll": 0,
+        "damage_when_requirement_met": 4.5,
+        "spiritus": 1
+      },
+      "skill": 14,
+      "wrong_damage_per_spiritus": 2.2049999999999996,
+      "wrong_expected_damage": 2.2049999999999996
+    },
+    {
+      "C2_2S": {
+        "action": 1,
+        "also_cancels_on_success": true,
+        "expected_outgoing_damage": 3.15,
+        "spiritus": 2
+      },
+      "correct_damage_per_spiritus": 2.0475,
+      "correct_expected_damage": 4.095,
+      "dm_action_compression": "attack continuation after the actor's initiating normal action is already spent",
+      "dm_cost": 2,
+      "model": "G",
+      "nachreisen_1S": {
+        "action": 1,
+        "expected_damage": 4.095,
+        "spiritus": 1
+      },
+      "ordinary_basic_attack": {
+        "action": 1,
+        "expected_damage": 3.15,
+        "spiritus": 0
+      },
+      "ort_O1_1S_candidate": {
+        "additional_roll": 0,
+        "damage_when_requirement_met": 4.5,
+        "spiritus": 1
+      },
+      "skill": 14,
+      "wrong_damage_per_spiritus": 1.1024999999999998,
+      "wrong_expected_damage": 2.2049999999999996
+    },
+    {
+      "C2_2S": {
+        "action": 1,
+        "also_cancels_on_success": true,
+        "expected_outgoing_damage": 3.15,
+        "spiritus": 2
+      },
+      "correct_damage_per_spiritus": 4.095,
+      "correct_expected_damage": 4.095,
+      "dm_action_compression": "attack continuation after the actor's initiating normal action is already spent",
+      "dm_cost": 1,
+      "model": "F",
+      "nachreisen_1S": {
+        "action": 1,
+        "expected_damage": 4.095,
+        "spiritus": 1
+      },
+      "ordinary_basic_attack": {
+        "action": 1,
+        "expected_damage": 3.15,
+        "spiritus": 0
+      },
+      "ort_O1_1S_candidate": {
+        "additional_roll": 0,
+        "damage_when_requirement_met": 4.5,
+        "spiritus": 1
+      },
+      "skill": 14,
+      "wrong_damage_per_spiritus": 0.0,
+      "wrong_expected_damage": 0.0
+    },
+    {
+      "C2_2S": {
+        "action": 1,
+        "also_cancels_on_success": true,
+        "expected_outgoing_damage": 3.15,
+        "spiritus": 2
+      },
+      "correct_damage_per_spiritus": 2.0475,
+      "correct_expected_damage": 4.095,
+      "dm_action_compression": "attack continuation after the actor's initiating normal action is already spent",
+      "dm_cost": 2,
+      "model": "F",
+      "nachreisen_1S": {
+        "action": 1,
+        "expected_damage": 4.095,
+        "spiritus": 1
+      },
+      "ordinary_basic_attack": {
+        "action": 1,
+        "expected_damage": 3.15,
+        "spiritus": 0
+      },
+      "ort_O1_1S_candidate": {
+        "additional_roll": 0,
+        "damage_when_requirement_met": 4.5,
+        "spiritus": 1
+      },
+      "skill": 14,
+      "wrong_damage_per_spiritus": 0.0,
+      "wrong_expected_damage": 0.0
+    },
+    {
+      "C2_2S": {
+        "action": 1,
+        "also_cancels_on_success": true,
+        "expected_outgoing_damage": 4.05,
+        "spiritus": 2
+      },
+      "correct_damage_per_spiritus": 4.455,
+      "correct_expected_damage": 4.455,
+      "dm_action_compression": "attack continuation after the actor's initiating normal action is already spent",
+      "dm_cost": 1,
+      "model": "G",
+      "nachreisen_1S": {
+        "action": 1,
+        "expected_damage": 4.455,
+        "spiritus": 1
+      },
+      "ordinary_basic_attack": {
+        "action": 1,
+        "expected_damage": 4.05,
+        "spiritus": 0
+      },
+      "ort_O1_1S_candidate": {
+        "additional_roll": 0,
+        "damage_when_requirement_met": 4.5,
+        "spiritus": 1
+      },
+      "skill": 18,
+      "wrong_damage_per_spiritus": 3.6450000000000005,
+      "wrong_expected_damage": 3.6450000000000005
+    },
+    {
+      "C2_2S": {
+        "action": 1,
+        "also_cancels_on_success": true,
+        "expected_outgoing_damage": 4.05,
+        "spiritus": 2
+      },
+      "correct_damage_per_spiritus": 2.2275,
+      "correct_expected_damage": 4.455,
+      "dm_action_compression": "attack continuation after the actor's initiating normal action is already spent",
+      "dm_cost": 2,
+      "model": "G",
+      "nachreisen_1S": {
+        "action": 1,
+        "expected_damage": 4.455,
+        "spiritus": 1
+      },
+      "ordinary_basic_attack": {
+        "action": 1,
+        "expected_damage": 4.05,
+        "spiritus": 0
+      },
+      "ort_O1_1S_candidate": {
+        "additional_roll": 0,
+        "damage_when_requirement_met": 4.5,
+        "spiritus": 1
+      },
+      "skill": 18,
+      "wrong_damage_per_spiritus": 1.8225000000000002,
+      "wrong_expected_damage": 3.6450000000000005
+    },
+    {
+      "C2_2S": {
+        "action": 1,
+        "also_cancels_on_success": true,
+        "expected_outgoing_damage": 4.05,
+        "spiritus": 2
+      },
+      "correct_damage_per_spiritus": 4.455,
+      "correct_expected_damage": 4.455,
+      "dm_action_compression": "attack continuation after the actor's initiating normal action is already spent",
+      "dm_cost": 1,
+      "model": "F",
+      "nachreisen_1S": {
+        "action": 1,
+        "expected_damage": 4.455,
+        "spiritus": 1
+      },
+      "ordinary_basic_attack": {
+        "action": 1,
+        "expected_damage": 4.05,
+        "spiritus": 0
+      },
+      "ort_O1_1S_candidate": {
+        "additional_roll": 0,
+        "damage_when_requirement_met": 4.5,
+        "spiritus": 1
+      },
+      "skill": 18,
+      "wrong_damage_per_spiritus": 0.0,
+      "wrong_expected_damage": 0.0
+    },
+    {
+      "C2_2S": {
+        "action": 1,
+        "also_cancels_on_success": true,
+        "expected_outgoing_damage": 4.05,
+        "spiritus": 2
+      },
+      "correct_damage_per_spiritus": 2.2275,
+      "correct_expected_damage": 4.455,
+      "dm_action_compression": "attack continuation after the actor's initiating normal action is already spent",
+      "dm_cost": 2,
+      "model": "F",
+      "nachreisen_1S": {
+        "action": 1,
+        "expected_damage": 4.455,
+        "spiritus": 1
+      },
+      "ordinary_basic_attack": {
+        "action": 1,
+        "expected_damage": 4.05,
+        "spiritus": 0
+      },
+      "ort_O1_1S_candidate": {
+        "additional_roll": 0,
+        "damage_when_requirement_met": 4.5,
+        "spiritus": 1
+      },
+      "skill": 18,
+      "wrong_damage_per_spiritus": 0.0,
+      "wrong_expected_damage": 0.0
+    }
+  ],
+  "fuhlen_price_sensitivity": [
+    {
+      "controlled_priors": [
+        {
+          "best_blind": "blind_mutieren",
+          "break_even_damage_per_extra_spiritus": null,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": true,
+          "expected_damage_gain": 0.4499999999999993,
+          "extra_spiritus": 0,
+          "hart_prior": 0.2
+        },
+        {
+          "best_blind": "blind_mutieren",
+          "break_even_damage_per_extra_spiritus": null,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": true,
+          "expected_damage_gain": 0.9000000000000004,
+          "extra_spiritus": 0,
+          "hart_prior": 0.4
+        },
+        {
+          "best_blind": "blind_duplieren",
+          "break_even_damage_per_extra_spiritus": null,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": true,
+          "expected_damage_gain": 1.125,
+          "extra_spiritus": 0,
+          "hart_prior": 0.5
+        },
+        {
+          "best_blind": "blind_duplieren",
+          "break_even_damage_per_extra_spiritus": null,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": true,
+          "expected_damage_gain": 0.9000000000000004,
+          "extra_spiritus": 0,
+          "hart_prior": 0.6
+        },
+        {
+          "best_blind": "blind_duplieren",
+          "break_even_damage_per_extra_spiritus": null,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": true,
+          "expected_damage_gain": 0.4499999999999993,
+          "extra_spiritus": 0,
+          "hart_prior": 0.8
+        }
+      ],
+      "damage_maximizing_purchase_rate": 1.0,
+      "damage_per_spiritus_purchase_rate": 1.0,
+      "fuhlen_cost": 0,
+      "lambda_definition": "player's unassigned marginal damage-equivalent value of one Spiritus; no value is set here",
+      "model": "G",
+      "skill": 10,
+      "threshold_formula": "pay when min(q,1-q)*4.5*(Pboon-Pbane) > lambda*fuhlen_cost"
+    },
+    {
+      "controlled_priors": [
+        {
+          "best_blind": "blind_mutieren",
+          "break_even_damage_per_extra_spiritus": 0.4499999999999993,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": false,
+          "expected_damage_gain": 0.4499999999999993,
+          "extra_spiritus": 1,
+          "hart_prior": 0.2
+        },
+        {
+          "best_blind": "blind_mutieren",
+          "break_even_damage_per_extra_spiritus": 0.9000000000000004,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": false,
+          "expected_damage_gain": 0.9000000000000004,
+          "extra_spiritus": 1,
+          "hart_prior": 0.4
+        },
+        {
+          "best_blind": "blind_duplieren",
+          "break_even_damage_per_extra_spiritus": 1.125,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": true,
+          "expected_damage_gain": 1.125,
+          "extra_spiritus": 1,
+          "hart_prior": 0.5
+        },
+        {
+          "best_blind": "blind_duplieren",
+          "break_even_damage_per_extra_spiritus": 0.9000000000000004,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": false,
+          "expected_damage_gain": 0.9000000000000004,
+          "extra_spiritus": 1,
+          "hart_prior": 0.6
+        },
+        {
+          "best_blind": "blind_duplieren",
+          "break_even_damage_per_extra_spiritus": 0.4499999999999993,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": false,
+          "expected_damage_gain": 0.4499999999999993,
+          "extra_spiritus": 1,
+          "hart_prior": 0.8
+        }
+      ],
+      "damage_maximizing_purchase_rate": 1.0,
+      "damage_per_spiritus_purchase_rate": 0.2,
+      "fuhlen_cost": 1,
+      "lambda_definition": "player's unassigned marginal damage-equivalent value of one Spiritus; no value is set here",
+      "model": "G",
+      "skill": 10,
+      "threshold_formula": "pay when min(q,1-q)*4.5*(Pboon-Pbane) > lambda*fuhlen_cost"
+    },
+    {
+      "controlled_priors": [
+        {
+          "best_blind": "blind_mutieren",
+          "break_even_damage_per_extra_spiritus": 0.22499999999999964,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": false,
+          "expected_damage_gain": 0.4499999999999993,
+          "extra_spiritus": 2,
+          "hart_prior": 0.2
+        },
+        {
+          "best_blind": "blind_mutieren",
+          "break_even_damage_per_extra_spiritus": 0.4500000000000002,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": false,
+          "expected_damage_gain": 0.9000000000000004,
+          "extra_spiritus": 2,
+          "hart_prior": 0.4
+        },
+        {
+          "best_blind": "blind_duplieren",
+          "break_even_damage_per_extra_spiritus": 0.5625,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": false,
+          "expected_damage_gain": 1.125,
+          "extra_spiritus": 2,
+          "hart_prior": 0.5
+        },
+        {
+          "best_blind": "blind_duplieren",
+          "break_even_damage_per_extra_spiritus": 0.4500000000000002,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": false,
+          "expected_damage_gain": 0.9000000000000004,
+          "extra_spiritus": 2,
+          "hart_prior": 0.6
+        },
+        {
+          "best_blind": "blind_duplieren",
+          "break_even_damage_per_extra_spiritus": 0.22499999999999964,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": false,
+          "expected_damage_gain": 0.4499999999999993,
+          "extra_spiritus": 2,
+          "hart_prior": 0.8
+        }
+      ],
+      "damage_maximizing_purchase_rate": 1.0,
+      "damage_per_spiritus_purchase_rate": 0.0,
+      "fuhlen_cost": 2,
+      "lambda_definition": "player's unassigned marginal damage-equivalent value of one Spiritus; no value is set here",
+      "model": "G",
+      "skill": 10,
+      "threshold_formula": "pay when min(q,1-q)*4.5*(Pboon-Pbane) > lambda*fuhlen_cost"
+    },
+    {
+      "controlled_priors": [
+        {
+          "best_blind": "blind_mutieren",
+          "break_even_damage_per_extra_spiritus": null,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": true,
+          "expected_damage_gain": 0.43199999999999994,
+          "extra_spiritus": 0,
+          "hart_prior": 0.2
+        },
+        {
+          "best_blind": "blind_mutieren",
+          "break_even_damage_per_extra_spiritus": null,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": true,
+          "expected_damage_gain": 0.8639999999999999,
+          "extra_spiritus": 0,
+          "hart_prior": 0.4
+        },
+        {
+          "best_blind": "blind_duplieren",
+          "break_even_damage_per_extra_spiritus": null,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": true,
+          "expected_damage_gain": 1.08,
+          "extra_spiritus": 0,
+          "hart_prior": 0.5
+        },
+        {
+          "best_blind": "blind_duplieren",
+          "break_even_damage_per_extra_spiritus": null,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": true,
+          "expected_damage_gain": 0.8639999999999999,
+          "extra_spiritus": 0,
+          "hart_prior": 0.6
+        },
+        {
+          "best_blind": "blind_duplieren",
+          "break_even_damage_per_extra_spiritus": null,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": true,
+          "expected_damage_gain": 0.43199999999999994,
+          "extra_spiritus": 0,
+          "hart_prior": 0.8
+        }
+      ],
+      "damage_maximizing_purchase_rate": 1.0,
+      "damage_per_spiritus_purchase_rate": 1.0,
+      "fuhlen_cost": 0,
+      "lambda_definition": "player's unassigned marginal damage-equivalent value of one Spiritus; no value is set here",
+      "model": "G",
+      "skill": 12,
+      "threshold_formula": "pay when min(q,1-q)*4.5*(Pboon-Pbane) > lambda*fuhlen_cost"
+    },
+    {
+      "controlled_priors": [
+        {
+          "best_blind": "blind_mutieren",
+          "break_even_damage_per_extra_spiritus": 0.43199999999999994,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": false,
+          "expected_damage_gain": 0.43199999999999994,
+          "extra_spiritus": 1,
+          "hart_prior": 0.2
+        },
+        {
+          "best_blind": "blind_mutieren",
+          "break_even_damage_per_extra_spiritus": 0.8639999999999999,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": false,
+          "expected_damage_gain": 0.8639999999999999,
+          "extra_spiritus": 1,
+          "hart_prior": 0.4
+        },
+        {
+          "best_blind": "blind_duplieren",
+          "break_even_damage_per_extra_spiritus": 1.08,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": false,
+          "expected_damage_gain": 1.08,
+          "extra_spiritus": 1,
+          "hart_prior": 0.5
+        },
+        {
+          "best_blind": "blind_duplieren",
+          "break_even_damage_per_extra_spiritus": 0.8639999999999999,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": false,
+          "expected_damage_gain": 0.8639999999999999,
+          "extra_spiritus": 1,
+          "hart_prior": 0.6
+        },
+        {
+          "best_blind": "blind_duplieren",
+          "break_even_damage_per_extra_spiritus": 0.43199999999999994,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": false,
+          "expected_damage_gain": 0.43199999999999994,
+          "extra_spiritus": 1,
+          "hart_prior": 0.8
+        }
+      ],
+      "damage_maximizing_purchase_rate": 1.0,
+      "damage_per_spiritus_purchase_rate": 0.0,
+      "fuhlen_cost": 1,
+      "lambda_definition": "player's unassigned marginal damage-equivalent value of one Spiritus; no value is set here",
+      "model": "G",
+      "skill": 12,
+      "threshold_formula": "pay when min(q,1-q)*4.5*(Pboon-Pbane) > lambda*fuhlen_cost"
+    },
+    {
+      "controlled_priors": [
+        {
+          "best_blind": "blind_mutieren",
+          "break_even_damage_per_extra_spiritus": 0.21599999999999997,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": false,
+          "expected_damage_gain": 0.43199999999999994,
+          "extra_spiritus": 2,
+          "hart_prior": 0.2
+        },
+        {
+          "best_blind": "blind_mutieren",
+          "break_even_damage_per_extra_spiritus": 0.43199999999999994,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": false,
+          "expected_damage_gain": 0.8639999999999999,
+          "extra_spiritus": 2,
+          "hart_prior": 0.4
+        },
+        {
+          "best_blind": "blind_duplieren",
+          "break_even_damage_per_extra_spiritus": 0.54,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": false,
+          "expected_damage_gain": 1.08,
+          "extra_spiritus": 2,
+          "hart_prior": 0.5
+        },
+        {
+          "best_blind": "blind_duplieren",
+          "break_even_damage_per_extra_spiritus": 0.43199999999999994,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": false,
+          "expected_damage_gain": 0.8639999999999999,
+          "extra_spiritus": 2,
+          "hart_prior": 0.6
+        },
+        {
+          "best_blind": "blind_duplieren",
+          "break_even_damage_per_extra_spiritus": 0.21599999999999997,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": false,
+          "expected_damage_gain": 0.43199999999999994,
+          "extra_spiritus": 2,
+          "hart_prior": 0.8
+        }
+      ],
+      "damage_maximizing_purchase_rate": 1.0,
+      "damage_per_spiritus_purchase_rate": 0.0,
+      "fuhlen_cost": 2,
+      "lambda_definition": "player's unassigned marginal damage-equivalent value of one Spiritus; no value is set here",
+      "model": "G",
+      "skill": 12,
+      "threshold_formula": "pay when min(q,1-q)*4.5*(Pboon-Pbane) > lambda*fuhlen_cost"
+    },
+    {
+      "controlled_priors": [
+        {
+          "best_blind": "blind_mutieren",
+          "break_even_damage_per_extra_spiritus": null,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": true,
+          "expected_damage_gain": 0.3780000000000001,
+          "extra_spiritus": 0,
+          "hart_prior": 0.2
+        },
+        {
+          "best_blind": "blind_mutieren",
+          "break_even_damage_per_extra_spiritus": null,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": true,
+          "expected_damage_gain": 0.7560000000000002,
+          "extra_spiritus": 0,
+          "hart_prior": 0.4
+        },
+        {
+          "best_blind": "blind_duplieren",
+          "break_even_damage_per_extra_spiritus": null,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": true,
+          "expected_damage_gain": 0.9449999999999998,
+          "extra_spiritus": 0,
+          "hart_prior": 0.5
+        },
+        {
+          "best_blind": "blind_duplieren",
+          "break_even_damage_per_extra_spiritus": null,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": true,
+          "expected_damage_gain": 0.7560000000000002,
+          "extra_spiritus": 0,
+          "hart_prior": 0.6
+        },
+        {
+          "best_blind": "blind_duplieren",
+          "break_even_damage_per_extra_spiritus": null,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": true,
+          "expected_damage_gain": 0.3780000000000001,
+          "extra_spiritus": 0,
+          "hart_prior": 0.8
+        }
+      ],
+      "damage_maximizing_purchase_rate": 1.0,
+      "damage_per_spiritus_purchase_rate": 1.0,
+      "fuhlen_cost": 0,
+      "lambda_definition": "player's unassigned marginal damage-equivalent value of one Spiritus; no value is set here",
+      "model": "G",
+      "skill": 14,
+      "threshold_formula": "pay when min(q,1-q)*4.5*(Pboon-Pbane) > lambda*fuhlen_cost"
+    },
+    {
+      "controlled_priors": [
+        {
+          "best_blind": "blind_mutieren",
+          "break_even_damage_per_extra_spiritus": 0.3780000000000001,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": false,
+          "expected_damage_gain": 0.3780000000000001,
+          "extra_spiritus": 1,
+          "hart_prior": 0.2
+        },
+        {
+          "best_blind": "blind_mutieren",
+          "break_even_damage_per_extra_spiritus": 0.7560000000000002,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": false,
+          "expected_damage_gain": 0.7560000000000002,
+          "extra_spiritus": 1,
+          "hart_prior": 0.4
+        },
+        {
+          "best_blind": "blind_duplieren",
+          "break_even_damage_per_extra_spiritus": 0.9449999999999998,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": false,
+          "expected_damage_gain": 0.9449999999999998,
+          "extra_spiritus": 1,
+          "hart_prior": 0.5
+        },
+        {
+          "best_blind": "blind_duplieren",
+          "break_even_damage_per_extra_spiritus": 0.7560000000000002,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": false,
+          "expected_damage_gain": 0.7560000000000002,
+          "extra_spiritus": 1,
+          "hart_prior": 0.6
+        },
+        {
+          "best_blind": "blind_duplieren",
+          "break_even_damage_per_extra_spiritus": 0.3780000000000001,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": false,
+          "expected_damage_gain": 0.3780000000000001,
+          "extra_spiritus": 1,
+          "hart_prior": 0.8
+        }
+      ],
+      "damage_maximizing_purchase_rate": 1.0,
+      "damage_per_spiritus_purchase_rate": 0.0,
+      "fuhlen_cost": 1,
+      "lambda_definition": "player's unassigned marginal damage-equivalent value of one Spiritus; no value is set here",
+      "model": "G",
+      "skill": 14,
+      "threshold_formula": "pay when min(q,1-q)*4.5*(Pboon-Pbane) > lambda*fuhlen_cost"
+    },
+    {
+      "controlled_priors": [
+        {
+          "best_blind": "blind_mutieren",
+          "break_even_damage_per_extra_spiritus": 0.18900000000000006,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": false,
+          "expected_damage_gain": 0.3780000000000001,
+          "extra_spiritus": 2,
+          "hart_prior": 0.2
+        },
+        {
+          "best_blind": "blind_mutieren",
+          "break_even_damage_per_extra_spiritus": 0.3780000000000001,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": false,
+          "expected_damage_gain": 0.7560000000000002,
+          "extra_spiritus": 2,
+          "hart_prior": 0.4
+        },
+        {
+          "best_blind": "blind_duplieren",
+          "break_even_damage_per_extra_spiritus": 0.4724999999999999,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": false,
+          "expected_damage_gain": 0.9449999999999998,
+          "extra_spiritus": 2,
+          "hart_prior": 0.5
+        },
+        {
+          "best_blind": "blind_duplieren",
+          "break_even_damage_per_extra_spiritus": 0.3780000000000001,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": false,
+          "expected_damage_gain": 0.7560000000000002,
+          "extra_spiritus": 2,
+          "hart_prior": 0.6
+        },
+        {
+          "best_blind": "blind_duplieren",
+          "break_even_damage_per_extra_spiritus": 0.18900000000000006,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": false,
+          "expected_damage_gain": 0.3780000000000001,
+          "extra_spiritus": 2,
+          "hart_prior": 0.8
+        }
+      ],
+      "damage_maximizing_purchase_rate": 1.0,
+      "damage_per_spiritus_purchase_rate": 0.0,
+      "fuhlen_cost": 2,
+      "lambda_definition": "player's unassigned marginal damage-equivalent value of one Spiritus; no value is set here",
+      "model": "G",
+      "skill": 14,
+      "threshold_formula": "pay when min(q,1-q)*4.5*(Pboon-Pbane) > lambda*fuhlen_cost"
+    },
+    {
+      "controlled_priors": [
+        {
+          "best_blind": "blind_mutieren",
+          "break_even_damage_per_extra_spiritus": null,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": true,
+          "expected_damage_gain": 0.16199999999999992,
+          "extra_spiritus": 0,
+          "hart_prior": 0.2
+        },
+        {
+          "best_blind": "blind_mutieren",
+          "break_even_damage_per_extra_spiritus": null,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": true,
+          "expected_damage_gain": 0.32399999999999984,
+          "extra_spiritus": 0,
+          "hart_prior": 0.4
+        },
+        {
+          "best_blind": "blind_duplieren",
+          "break_even_damage_per_extra_spiritus": null,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": true,
+          "expected_damage_gain": 0.40500000000000025,
+          "extra_spiritus": 0,
+          "hart_prior": 0.5
+        },
+        {
+          "best_blind": "blind_duplieren",
+          "break_even_damage_per_extra_spiritus": null,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": true,
+          "expected_damage_gain": 0.32399999999999984,
+          "extra_spiritus": 0,
+          "hart_prior": 0.6
+        },
+        {
+          "best_blind": "blind_duplieren",
+          "break_even_damage_per_extra_spiritus": null,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": true,
+          "expected_damage_gain": 0.16199999999999992,
+          "extra_spiritus": 0,
+          "hart_prior": 0.8
+        }
+      ],
+      "damage_maximizing_purchase_rate": 1.0,
+      "damage_per_spiritus_purchase_rate": 1.0,
+      "fuhlen_cost": 0,
+      "lambda_definition": "player's unassigned marginal damage-equivalent value of one Spiritus; no value is set here",
+      "model": "G",
+      "skill": 18,
+      "threshold_formula": "pay when min(q,1-q)*4.5*(Pboon-Pbane) > lambda*fuhlen_cost"
+    },
+    {
+      "controlled_priors": [
+        {
+          "best_blind": "blind_mutieren",
+          "break_even_damage_per_extra_spiritus": 0.16199999999999992,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": false,
+          "expected_damage_gain": 0.16199999999999992,
+          "extra_spiritus": 1,
+          "hart_prior": 0.2
+        },
+        {
+          "best_blind": "blind_mutieren",
+          "break_even_damage_per_extra_spiritus": 0.32399999999999984,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": false,
+          "expected_damage_gain": 0.32399999999999984,
+          "extra_spiritus": 1,
+          "hart_prior": 0.4
+        },
+        {
+          "best_blind": "blind_duplieren",
+          "break_even_damage_per_extra_spiritus": 0.40500000000000025,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": false,
+          "expected_damage_gain": 0.40500000000000025,
+          "extra_spiritus": 1,
+          "hart_prior": 0.5
+        },
+        {
+          "best_blind": "blind_duplieren",
+          "break_even_damage_per_extra_spiritus": 0.32399999999999984,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": false,
+          "expected_damage_gain": 0.32399999999999984,
+          "extra_spiritus": 1,
+          "hart_prior": 0.6
+        },
+        {
+          "best_blind": "blind_duplieren",
+          "break_even_damage_per_extra_spiritus": 0.16199999999999992,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": false,
+          "expected_damage_gain": 0.16199999999999992,
+          "extra_spiritus": 1,
+          "hart_prior": 0.8
+        }
+      ],
+      "damage_maximizing_purchase_rate": 1.0,
+      "damage_per_spiritus_purchase_rate": 0.0,
+      "fuhlen_cost": 1,
+      "lambda_definition": "player's unassigned marginal damage-equivalent value of one Spiritus; no value is set here",
+      "model": "G",
+      "skill": 18,
+      "threshold_formula": "pay when min(q,1-q)*4.5*(Pboon-Pbane) > lambda*fuhlen_cost"
+    },
+    {
+      "controlled_priors": [
+        {
+          "best_blind": "blind_mutieren",
+          "break_even_damage_per_extra_spiritus": 0.08099999999999996,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": false,
+          "expected_damage_gain": 0.16199999999999992,
+          "extra_spiritus": 2,
+          "hart_prior": 0.2
+        },
+        {
+          "best_blind": "blind_mutieren",
+          "break_even_damage_per_extra_spiritus": 0.16199999999999992,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": false,
+          "expected_damage_gain": 0.32399999999999984,
+          "extra_spiritus": 2,
+          "hart_prior": 0.4
+        },
+        {
+          "best_blind": "blind_duplieren",
+          "break_even_damage_per_extra_spiritus": 0.20250000000000012,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": false,
+          "expected_damage_gain": 0.40500000000000025,
+          "extra_spiritus": 2,
+          "hart_prior": 0.5
+        },
+        {
+          "best_blind": "blind_duplieren",
+          "break_even_damage_per_extra_spiritus": 0.16199999999999992,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": false,
+          "expected_damage_gain": 0.32399999999999984,
+          "extra_spiritus": 2,
+          "hart_prior": 0.6
+        },
+        {
+          "best_blind": "blind_duplieren",
+          "break_even_damage_per_extra_spiritus": 0.08099999999999996,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": false,
+          "expected_damage_gain": 0.16199999999999992,
+          "extra_spiritus": 2,
+          "hart_prior": 0.8
+        }
+      ],
+      "damage_maximizing_purchase_rate": 1.0,
+      "damage_per_spiritus_purchase_rate": 0.0,
+      "fuhlen_cost": 2,
+      "lambda_definition": "player's unassigned marginal damage-equivalent value of one Spiritus; no value is set here",
+      "model": "G",
+      "skill": 18,
+      "threshold_formula": "pay when min(q,1-q)*4.5*(Pboon-Pbane) > lambda*fuhlen_cost"
+    },
+    {
+      "controlled_priors": [
+        {
+          "best_blind": "blind_mutieren",
+          "break_even_damage_per_extra_spiritus": null,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": true,
+          "expected_damage_gain": 0.6749999999999998,
+          "extra_spiritus": 0,
+          "hart_prior": 0.2
+        },
+        {
+          "best_blind": "blind_mutieren",
+          "break_even_damage_per_extra_spiritus": null,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": true,
+          "expected_damage_gain": 1.35,
+          "extra_spiritus": 0,
+          "hart_prior": 0.4
+        },
+        {
+          "best_blind": "blind_duplieren",
+          "break_even_damage_per_extra_spiritus": null,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": true,
+          "expected_damage_gain": 1.6875,
+          "extra_spiritus": 0,
+          "hart_prior": 0.5
+        },
+        {
+          "best_blind": "blind_duplieren",
+          "break_even_damage_per_extra_spiritus": null,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": true,
+          "expected_damage_gain": 1.35,
+          "extra_spiritus": 0,
+          "hart_prior": 0.6
+        },
+        {
+          "best_blind": "blind_duplieren",
+          "break_even_damage_per_extra_spiritus": null,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": true,
+          "expected_damage_gain": 0.6749999999999998,
+          "extra_spiritus": 0,
+          "hart_prior": 0.8
+        }
+      ],
+      "damage_maximizing_purchase_rate": 1.0,
+      "damage_per_spiritus_purchase_rate": 1.0,
+      "fuhlen_cost": 0,
+      "lambda_definition": "player's unassigned marginal damage-equivalent value of one Spiritus; no value is set here",
+      "model": "F",
+      "skill": 10,
+      "threshold_formula": "pay when min(q,1-q)*4.5*Pboon > lambda*fuhlen_cost"
+    },
+    {
+      "controlled_priors": [
+        {
+          "best_blind": "blind_mutieren",
+          "break_even_damage_per_extra_spiritus": 0.6749999999999998,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": false,
+          "expected_damage_gain": 0.6749999999999998,
+          "extra_spiritus": 1,
+          "hart_prior": 0.2
+        },
+        {
+          "best_blind": "blind_mutieren",
+          "break_even_damage_per_extra_spiritus": 1.35,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": true,
+          "expected_damage_gain": 1.35,
+          "extra_spiritus": 1,
+          "hart_prior": 0.4
+        },
+        {
+          "best_blind": "blind_duplieren",
+          "break_even_damage_per_extra_spiritus": 1.6875,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": true,
+          "expected_damage_gain": 1.6875,
+          "extra_spiritus": 1,
+          "hart_prior": 0.5
+        },
+        {
+          "best_blind": "blind_duplieren",
+          "break_even_damage_per_extra_spiritus": 1.35,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": true,
+          "expected_damage_gain": 1.35,
+          "extra_spiritus": 1,
+          "hart_prior": 0.6
+        },
+        {
+          "best_blind": "blind_duplieren",
+          "break_even_damage_per_extra_spiritus": 0.6749999999999998,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": false,
+          "expected_damage_gain": 0.6749999999999998,
+          "extra_spiritus": 1,
+          "hart_prior": 0.8
+        }
+      ],
+      "damage_maximizing_purchase_rate": 1.0,
+      "damage_per_spiritus_purchase_rate": 0.6,
+      "fuhlen_cost": 1,
+      "lambda_definition": "player's unassigned marginal damage-equivalent value of one Spiritus; no value is set here",
+      "model": "F",
+      "skill": 10,
+      "threshold_formula": "pay when min(q,1-q)*4.5*Pboon > lambda*fuhlen_cost"
+    },
+    {
+      "controlled_priors": [
+        {
+          "best_blind": "blind_mutieren",
+          "break_even_damage_per_extra_spiritus": 0.3374999999999999,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": false,
+          "expected_damage_gain": 0.6749999999999998,
+          "extra_spiritus": 2,
+          "hart_prior": 0.2
+        },
+        {
+          "best_blind": "blind_mutieren",
+          "break_even_damage_per_extra_spiritus": 0.675,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": false,
+          "expected_damage_gain": 1.35,
+          "extra_spiritus": 2,
+          "hart_prior": 0.4
+        },
+        {
+          "best_blind": "blind_duplieren",
+          "break_even_damage_per_extra_spiritus": 0.84375,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": true,
+          "expected_damage_gain": 1.6875,
+          "extra_spiritus": 2,
+          "hart_prior": 0.5
+        },
+        {
+          "best_blind": "blind_duplieren",
+          "break_even_damage_per_extra_spiritus": 0.675,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": false,
+          "expected_damage_gain": 1.35,
+          "extra_spiritus": 2,
+          "hart_prior": 0.6
+        },
+        {
+          "best_blind": "blind_duplieren",
+          "break_even_damage_per_extra_spiritus": 0.3374999999999999,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": false,
+          "expected_damage_gain": 0.6749999999999998,
+          "extra_spiritus": 2,
+          "hart_prior": 0.8
+        }
+      ],
+      "damage_maximizing_purchase_rate": 1.0,
+      "damage_per_spiritus_purchase_rate": 0.2,
+      "fuhlen_cost": 2,
+      "lambda_definition": "player's unassigned marginal damage-equivalent value of one Spiritus; no value is set here",
+      "model": "F",
+      "skill": 10,
+      "threshold_formula": "pay when min(q,1-q)*4.5*Pboon > lambda*fuhlen_cost"
+    },
+    {
+      "controlled_priors": [
+        {
+          "best_blind": "blind_mutieren",
+          "break_even_damage_per_extra_spiritus": null,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": true,
+          "expected_damage_gain": 0.7559999999999998,
+          "extra_spiritus": 0,
+          "hart_prior": 0.2
+        },
+        {
+          "best_blind": "blind_mutieren",
+          "break_even_damage_per_extra_spiritus": null,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": true,
+          "expected_damage_gain": 1.512,
+          "extra_spiritus": 0,
+          "hart_prior": 0.4
+        },
+        {
+          "best_blind": "blind_duplieren",
+          "break_even_damage_per_extra_spiritus": null,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": true,
+          "expected_damage_gain": 1.89,
+          "extra_spiritus": 0,
+          "hart_prior": 0.5
+        },
+        {
+          "best_blind": "blind_duplieren",
+          "break_even_damage_per_extra_spiritus": null,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": true,
+          "expected_damage_gain": 1.512,
+          "extra_spiritus": 0,
+          "hart_prior": 0.6
+        },
+        {
+          "best_blind": "blind_duplieren",
+          "break_even_damage_per_extra_spiritus": null,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": true,
+          "expected_damage_gain": 0.7559999999999998,
+          "extra_spiritus": 0,
+          "hart_prior": 0.8
+        }
+      ],
+      "damage_maximizing_purchase_rate": 1.0,
+      "damage_per_spiritus_purchase_rate": 1.0,
+      "fuhlen_cost": 0,
+      "lambda_definition": "player's unassigned marginal damage-equivalent value of one Spiritus; no value is set here",
+      "model": "F",
+      "skill": 12,
+      "threshold_formula": "pay when min(q,1-q)*4.5*Pboon > lambda*fuhlen_cost"
+    },
+    {
+      "controlled_priors": [
+        {
+          "best_blind": "blind_mutieren",
+          "break_even_damage_per_extra_spiritus": 0.7559999999999998,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": false,
+          "expected_damage_gain": 0.7559999999999998,
+          "extra_spiritus": 1,
+          "hart_prior": 0.2
+        },
+        {
+          "best_blind": "blind_mutieren",
+          "break_even_damage_per_extra_spiritus": 1.512,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": true,
+          "expected_damage_gain": 1.512,
+          "extra_spiritus": 1,
+          "hart_prior": 0.4
+        },
+        {
+          "best_blind": "blind_duplieren",
+          "break_even_damage_per_extra_spiritus": 1.89,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": true,
+          "expected_damage_gain": 1.89,
+          "extra_spiritus": 1,
+          "hart_prior": 0.5
+        },
+        {
+          "best_blind": "blind_duplieren",
+          "break_even_damage_per_extra_spiritus": 1.512,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": true,
+          "expected_damage_gain": 1.512,
+          "extra_spiritus": 1,
+          "hart_prior": 0.6
+        },
+        {
+          "best_blind": "blind_duplieren",
+          "break_even_damage_per_extra_spiritus": 0.7559999999999998,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": false,
+          "expected_damage_gain": 0.7559999999999998,
+          "extra_spiritus": 1,
+          "hart_prior": 0.8
+        }
+      ],
+      "damage_maximizing_purchase_rate": 1.0,
+      "damage_per_spiritus_purchase_rate": 0.6,
+      "fuhlen_cost": 1,
+      "lambda_definition": "player's unassigned marginal damage-equivalent value of one Spiritus; no value is set here",
+      "model": "F",
+      "skill": 12,
+      "threshold_formula": "pay when min(q,1-q)*4.5*Pboon > lambda*fuhlen_cost"
+    },
+    {
+      "controlled_priors": [
+        {
+          "best_blind": "blind_mutieren",
+          "break_even_damage_per_extra_spiritus": 0.3779999999999999,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": false,
+          "expected_damage_gain": 0.7559999999999998,
+          "extra_spiritus": 2,
+          "hart_prior": 0.2
+        },
+        {
+          "best_blind": "blind_mutieren",
+          "break_even_damage_per_extra_spiritus": 0.756,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": false,
+          "expected_damage_gain": 1.512,
+          "extra_spiritus": 2,
+          "hart_prior": 0.4
+        },
+        {
+          "best_blind": "blind_duplieren",
+          "break_even_damage_per_extra_spiritus": 0.945,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": true,
+          "expected_damage_gain": 1.89,
+          "extra_spiritus": 2,
+          "hart_prior": 0.5
+        },
+        {
+          "best_blind": "blind_duplieren",
+          "break_even_damage_per_extra_spiritus": 0.756,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": false,
+          "expected_damage_gain": 1.512,
+          "extra_spiritus": 2,
+          "hart_prior": 0.6
+        },
+        {
+          "best_blind": "blind_duplieren",
+          "break_even_damage_per_extra_spiritus": 0.3779999999999999,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": false,
+          "expected_damage_gain": 0.7559999999999998,
+          "extra_spiritus": 2,
+          "hart_prior": 0.8
+        }
+      ],
+      "damage_maximizing_purchase_rate": 1.0,
+      "damage_per_spiritus_purchase_rate": 0.2,
+      "fuhlen_cost": 2,
+      "lambda_definition": "player's unassigned marginal damage-equivalent value of one Spiritus; no value is set here",
+      "model": "F",
+      "skill": 12,
+      "threshold_formula": "pay when min(q,1-q)*4.5*Pboon > lambda*fuhlen_cost"
+    },
+    {
+      "controlled_priors": [
+        {
+          "best_blind": "blind_mutieren",
+          "break_even_damage_per_extra_spiritus": null,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": true,
+          "expected_damage_gain": 0.819,
+          "extra_spiritus": 0,
+          "hart_prior": 0.2
+        },
+        {
+          "best_blind": "blind_mutieren",
+          "break_even_damage_per_extra_spiritus": null,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": true,
+          "expected_damage_gain": 1.638,
+          "extra_spiritus": 0,
+          "hart_prior": 0.4
+        },
+        {
+          "best_blind": "blind_duplieren",
+          "break_even_damage_per_extra_spiritus": null,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": true,
+          "expected_damage_gain": 2.0475,
+          "extra_spiritus": 0,
+          "hart_prior": 0.5
+        },
+        {
+          "best_blind": "blind_duplieren",
+          "break_even_damage_per_extra_spiritus": null,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": true,
+          "expected_damage_gain": 1.638,
+          "extra_spiritus": 0,
+          "hart_prior": 0.6
+        },
+        {
+          "best_blind": "blind_duplieren",
+          "break_even_damage_per_extra_spiritus": null,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": true,
+          "expected_damage_gain": 0.819,
+          "extra_spiritus": 0,
+          "hart_prior": 0.8
+        }
+      ],
+      "damage_maximizing_purchase_rate": 1.0,
+      "damage_per_spiritus_purchase_rate": 1.0,
+      "fuhlen_cost": 0,
+      "lambda_definition": "player's unassigned marginal damage-equivalent value of one Spiritus; no value is set here",
+      "model": "F",
+      "skill": 14,
+      "threshold_formula": "pay when min(q,1-q)*4.5*Pboon > lambda*fuhlen_cost"
+    },
+    {
+      "controlled_priors": [
+        {
+          "best_blind": "blind_mutieren",
+          "break_even_damage_per_extra_spiritus": 0.819,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": false,
+          "expected_damage_gain": 0.819,
+          "extra_spiritus": 1,
+          "hart_prior": 0.2
+        },
+        {
+          "best_blind": "blind_mutieren",
+          "break_even_damage_per_extra_spiritus": 1.638,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": true,
+          "expected_damage_gain": 1.638,
+          "extra_spiritus": 1,
+          "hart_prior": 0.4
+        },
+        {
+          "best_blind": "blind_duplieren",
+          "break_even_damage_per_extra_spiritus": 2.0475,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": true,
+          "expected_damage_gain": 2.0475,
+          "extra_spiritus": 1,
+          "hart_prior": 0.5
+        },
+        {
+          "best_blind": "blind_duplieren",
+          "break_even_damage_per_extra_spiritus": 1.638,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": true,
+          "expected_damage_gain": 1.638,
+          "extra_spiritus": 1,
+          "hart_prior": 0.6
+        },
+        {
+          "best_blind": "blind_duplieren",
+          "break_even_damage_per_extra_spiritus": 0.819,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": false,
+          "expected_damage_gain": 0.819,
+          "extra_spiritus": 1,
+          "hart_prior": 0.8
+        }
+      ],
+      "damage_maximizing_purchase_rate": 1.0,
+      "damage_per_spiritus_purchase_rate": 0.6,
+      "fuhlen_cost": 1,
+      "lambda_definition": "player's unassigned marginal damage-equivalent value of one Spiritus; no value is set here",
+      "model": "F",
+      "skill": 14,
+      "threshold_formula": "pay when min(q,1-q)*4.5*Pboon > lambda*fuhlen_cost"
+    },
+    {
+      "controlled_priors": [
+        {
+          "best_blind": "blind_mutieren",
+          "break_even_damage_per_extra_spiritus": 0.4095,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": false,
+          "expected_damage_gain": 0.819,
+          "extra_spiritus": 2,
+          "hart_prior": 0.2
+        },
+        {
+          "best_blind": "blind_mutieren",
+          "break_even_damage_per_extra_spiritus": 0.819,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": false,
+          "expected_damage_gain": 1.638,
+          "extra_spiritus": 2,
+          "hart_prior": 0.4
+        },
+        {
+          "best_blind": "blind_duplieren",
+          "break_even_damage_per_extra_spiritus": 1.02375,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": true,
+          "expected_damage_gain": 2.0475,
+          "extra_spiritus": 2,
+          "hart_prior": 0.5
+        },
+        {
+          "best_blind": "blind_duplieren",
+          "break_even_damage_per_extra_spiritus": 0.819,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": false,
+          "expected_damage_gain": 1.638,
+          "extra_spiritus": 2,
+          "hart_prior": 0.6
+        },
+        {
+          "best_blind": "blind_duplieren",
+          "break_even_damage_per_extra_spiritus": 0.4095,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": false,
+          "expected_damage_gain": 0.819,
+          "extra_spiritus": 2,
+          "hart_prior": 0.8
+        }
+      ],
+      "damage_maximizing_purchase_rate": 1.0,
+      "damage_per_spiritus_purchase_rate": 0.2,
+      "fuhlen_cost": 2,
+      "lambda_definition": "player's unassigned marginal damage-equivalent value of one Spiritus; no value is set here",
+      "model": "F",
+      "skill": 14,
+      "threshold_formula": "pay when min(q,1-q)*4.5*Pboon > lambda*fuhlen_cost"
+    },
+    {
+      "controlled_priors": [
+        {
+          "best_blind": "blind_mutieren",
+          "break_even_damage_per_extra_spiritus": null,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": true,
+          "expected_damage_gain": 0.891,
+          "extra_spiritus": 0,
+          "hart_prior": 0.2
+        },
+        {
+          "best_blind": "blind_mutieren",
+          "break_even_damage_per_extra_spiritus": null,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": true,
+          "expected_damage_gain": 1.782,
+          "extra_spiritus": 0,
+          "hart_prior": 0.4
+        },
+        {
+          "best_blind": "blind_duplieren",
+          "break_even_damage_per_extra_spiritus": null,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": true,
+          "expected_damage_gain": 2.2275,
+          "extra_spiritus": 0,
+          "hart_prior": 0.5
+        },
+        {
+          "best_blind": "blind_duplieren",
+          "break_even_damage_per_extra_spiritus": null,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": true,
+          "expected_damage_gain": 1.782,
+          "extra_spiritus": 0,
+          "hart_prior": 0.6
+        },
+        {
+          "best_blind": "blind_duplieren",
+          "break_even_damage_per_extra_spiritus": null,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": true,
+          "expected_damage_gain": 0.891,
+          "extra_spiritus": 0,
+          "hart_prior": 0.8
+        }
+      ],
+      "damage_maximizing_purchase_rate": 1.0,
+      "damage_per_spiritus_purchase_rate": 1.0,
+      "fuhlen_cost": 0,
+      "lambda_definition": "player's unassigned marginal damage-equivalent value of one Spiritus; no value is set here",
+      "model": "F",
+      "skill": 18,
+      "threshold_formula": "pay when min(q,1-q)*4.5*Pboon > lambda*fuhlen_cost"
+    },
+    {
+      "controlled_priors": [
+        {
+          "best_blind": "blind_mutieren",
+          "break_even_damage_per_extra_spiritus": 0.891,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": false,
+          "expected_damage_gain": 0.891,
+          "extra_spiritus": 1,
+          "hart_prior": 0.2
+        },
+        {
+          "best_blind": "blind_mutieren",
+          "break_even_damage_per_extra_spiritus": 1.782,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": true,
+          "expected_damage_gain": 1.782,
+          "extra_spiritus": 1,
+          "hart_prior": 0.4
+        },
+        {
+          "best_blind": "blind_duplieren",
+          "break_even_damage_per_extra_spiritus": 2.2275,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": true,
+          "expected_damage_gain": 2.2275,
+          "extra_spiritus": 1,
+          "hart_prior": 0.5
+        },
+        {
+          "best_blind": "blind_duplieren",
+          "break_even_damage_per_extra_spiritus": 1.782,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": true,
+          "expected_damage_gain": 1.782,
+          "extra_spiritus": 1,
+          "hart_prior": 0.6
+        },
+        {
+          "best_blind": "blind_duplieren",
+          "break_even_damage_per_extra_spiritus": 0.891,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": false,
+          "expected_damage_gain": 0.891,
+          "extra_spiritus": 1,
+          "hart_prior": 0.8
+        }
+      ],
+      "damage_maximizing_purchase_rate": 1.0,
+      "damage_per_spiritus_purchase_rate": 0.6,
+      "fuhlen_cost": 1,
+      "lambda_definition": "player's unassigned marginal damage-equivalent value of one Spiritus; no value is set here",
+      "model": "F",
+      "skill": 18,
+      "threshold_formula": "pay when min(q,1-q)*4.5*Pboon > lambda*fuhlen_cost"
+    },
+    {
+      "controlled_priors": [
+        {
+          "best_blind": "blind_mutieren",
+          "break_even_damage_per_extra_spiritus": 0.4455,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": false,
+          "expected_damage_gain": 0.891,
+          "extra_spiritus": 2,
+          "hart_prior": 0.2
+        },
+        {
+          "best_blind": "blind_mutieren",
+          "break_even_damage_per_extra_spiritus": 0.891,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": false,
+          "expected_damage_gain": 1.782,
+          "extra_spiritus": 2,
+          "hart_prior": 0.4
+        },
+        {
+          "best_blind": "blind_duplieren",
+          "break_even_damage_per_extra_spiritus": 1.11375,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": true,
+          "expected_damage_gain": 2.2275,
+          "extra_spiritus": 2,
+          "hart_prior": 0.5
+        },
+        {
+          "best_blind": "blind_duplieren",
+          "break_even_damage_per_extra_spiritus": 0.891,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": false,
+          "expected_damage_gain": 1.782,
+          "extra_spiritus": 2,
+          "hart_prior": 0.6
+        },
+        {
+          "best_blind": "blind_duplieren",
+          "break_even_damage_per_extra_spiritus": 0.4455,
+          "damage_maximizing_purchase": true,
+          "efficiency_purchase": false,
+          "expected_damage_gain": 0.891,
+          "extra_spiritus": 2,
+          "hart_prior": 0.8
+        }
+      ],
+      "damage_maximizing_purchase_rate": 1.0,
+      "damage_per_spiritus_purchase_rate": 0.2,
+      "fuhlen_cost": 2,
+      "lambda_definition": "player's unassigned marginal damage-equivalent value of one Spiritus; no value is set here",
+      "model": "F",
+      "skill": 18,
+      "threshold_formula": "pay when min(q,1-q)*4.5*Pboon > lambda*fuhlen_cost"
+    }
+  ],
+  "metadata": {
+    "hart_priors": [
+      0.2,
+      0.4,
+      0.5,
+      0.6,
+      0.8
+    ],
+    "mean_normal_longsword_damage": 4.5,
+    "method": "exact probability enumeration and deterministic branch forcing; no Monte Carlo",
+    "primary_costs": {
+      "counter_wind": 1,
+      "duplieren": 2,
+      "fuhlen": 1,
+      "mutieren": 2
+    },
+    "skills": [
+      10,
+      12,
+      14,
+      18
+    ],
+    "status": "PROVISIONAL BOUNDED CANDIDATE EXPERIMENT; NO AUTOMATIC PROMOTION",
+    "utility_constants": []
+  },
+  "pressure_read_matrix": [
+    {
+      "alternatives": {
+        "blind_duplieren": {
+          "damage_per_spiritus": 0.7875000000000001,
+          "expected_attack_success": 0.35000000000000003,
+          "expected_damage": 1.5750000000000002,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 1.6,
+          "wrong_read_probability": 0.8
+        },
+        "blind_mutieren": {
+          "damage_per_spiritus": 1.4625000000000004,
+          "expected_attack_success": 0.6500000000000001,
+          "expected_damage": 2.9250000000000007,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.4,
+          "wrong_read_probability": 0.2
+        },
+        "buy_fuhlen": {
+          "damage_per_spiritus": 1.125,
+          "expected_attack_success": 0.75,
+          "expected_damage": 3.375,
+          "spiritus_spent": 3,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        },
+        "decline": {
+          "damage_per_spiritus": null,
+          "expected_attack_success": 0.0,
+          "expected_damage": 0.0,
+          "spiritus_spent": 0,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        }
+      },
+      "best_damage_per_spiritus": [
+        "blind_mutieren"
+      ],
+      "best_expected_damage": [
+        "buy_fuhlen"
+      ],
+      "fuhlen_break_even_marginal_damage_per_added_spiritus": 0.4499999999999993,
+      "fuhlen_damage_gain_over_best_blind": 0.4499999999999993,
+      "hart_prior": 0.2,
+      "model": "G",
+      "pareto_frontier": [
+        "blind_mutieren",
+        "buy_fuhlen",
+        "decline"
+      ],
+      "pressure_frequency_instrumentation": {
+        "hart": 0.2,
+        "weich": 0.8
+      },
+      "skill": 10,
+      "utility_free_unique_best_response": null,
+      "utility_note": "Damage and Spiritus are separate outcome dimensions; no scalar best response exists without a reserve/opportunity value.",
+      "wrong_pressure_spiritus_exposure_avoided": 0.4
+    },
+    {
+      "alternatives": {
+        "blind_duplieren": {
+          "damage_per_spiritus": 1.0125000000000002,
+          "expected_attack_success": 0.45000000000000007,
+          "expected_damage": 2.0250000000000004,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 1.2,
+          "wrong_read_probability": 0.6
+        },
+        "blind_mutieren": {
+          "damage_per_spiritus": 1.2374999999999998,
+          "expected_attack_success": 0.5499999999999999,
+          "expected_damage": 2.4749999999999996,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.8,
+          "wrong_read_probability": 0.4
+        },
+        "buy_fuhlen": {
+          "damage_per_spiritus": 1.125,
+          "expected_attack_success": 0.75,
+          "expected_damage": 3.375,
+          "spiritus_spent": 3,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        },
+        "decline": {
+          "damage_per_spiritus": null,
+          "expected_attack_success": 0.0,
+          "expected_damage": 0.0,
+          "spiritus_spent": 0,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        }
+      },
+      "best_damage_per_spiritus": [
+        "blind_mutieren"
+      ],
+      "best_expected_damage": [
+        "buy_fuhlen"
+      ],
+      "fuhlen_break_even_marginal_damage_per_added_spiritus": 0.9000000000000004,
+      "fuhlen_damage_gain_over_best_blind": 0.9000000000000004,
+      "hart_prior": 0.4,
+      "model": "G",
+      "pareto_frontier": [
+        "blind_mutieren",
+        "buy_fuhlen",
+        "decline"
+      ],
+      "pressure_frequency_instrumentation": {
+        "hart": 0.4,
+        "weich": 0.6
+      },
+      "skill": 10,
+      "utility_free_unique_best_response": null,
+      "utility_note": "Damage and Spiritus are separate outcome dimensions; no scalar best response exists without a reserve/opportunity value.",
+      "wrong_pressure_spiritus_exposure_avoided": 0.8
+    },
+    {
+      "alternatives": {
+        "blind_duplieren": {
+          "damage_per_spiritus": 1.125,
+          "expected_attack_success": 0.5,
+          "expected_damage": 2.25,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 1.0,
+          "wrong_read_probability": 0.5
+        },
+        "blind_mutieren": {
+          "damage_per_spiritus": 1.125,
+          "expected_attack_success": 0.5,
+          "expected_damage": 2.25,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 1.0,
+          "wrong_read_probability": 0.5
+        },
+        "buy_fuhlen": {
+          "damage_per_spiritus": 1.125,
+          "expected_attack_success": 0.75,
+          "expected_damage": 3.375,
+          "spiritus_spent": 3,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        },
+        "decline": {
+          "damage_per_spiritus": null,
+          "expected_attack_success": 0.0,
+          "expected_damage": 0.0,
+          "spiritus_spent": 0,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        }
+      },
+      "best_damage_per_spiritus": [
+        "blind_duplieren",
+        "blind_mutieren",
+        "buy_fuhlen"
+      ],
+      "best_expected_damage": [
+        "buy_fuhlen"
+      ],
+      "fuhlen_break_even_marginal_damage_per_added_spiritus": 1.125,
+      "fuhlen_damage_gain_over_best_blind": 1.125,
+      "hart_prior": 0.5,
+      "model": "G",
+      "pareto_frontier": [
+        "blind_duplieren",
+        "blind_mutieren",
+        "buy_fuhlen",
+        "decline"
+      ],
+      "pressure_frequency_instrumentation": {
+        "hart": 0.5,
+        "weich": 0.5
+      },
+      "skill": 10,
+      "utility_free_unique_best_response": null,
+      "utility_note": "Damage and Spiritus are separate outcome dimensions; no scalar best response exists without a reserve/opportunity value.",
+      "wrong_pressure_spiritus_exposure_avoided": 1.0
+    },
+    {
+      "alternatives": {
+        "blind_duplieren": {
+          "damage_per_spiritus": 1.2374999999999998,
+          "expected_attack_success": 0.5499999999999999,
+          "expected_damage": 2.4749999999999996,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.8,
+          "wrong_read_probability": 0.4
+        },
+        "blind_mutieren": {
+          "damage_per_spiritus": 1.0125000000000002,
+          "expected_attack_success": 0.45000000000000007,
+          "expected_damage": 2.0250000000000004,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 1.2,
+          "wrong_read_probability": 0.6
+        },
+        "buy_fuhlen": {
+          "damage_per_spiritus": 1.125,
+          "expected_attack_success": 0.75,
+          "expected_damage": 3.375,
+          "spiritus_spent": 3,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        },
+        "decline": {
+          "damage_per_spiritus": null,
+          "expected_attack_success": 0.0,
+          "expected_damage": 0.0,
+          "spiritus_spent": 0,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        }
+      },
+      "best_damage_per_spiritus": [
+        "blind_duplieren"
+      ],
+      "best_expected_damage": [
+        "buy_fuhlen"
+      ],
+      "fuhlen_break_even_marginal_damage_per_added_spiritus": 0.9000000000000004,
+      "fuhlen_damage_gain_over_best_blind": 0.9000000000000004,
+      "hart_prior": 0.6,
+      "model": "G",
+      "pareto_frontier": [
+        "blind_duplieren",
+        "buy_fuhlen",
+        "decline"
+      ],
+      "pressure_frequency_instrumentation": {
+        "hart": 0.6,
+        "weich": 0.4
+      },
+      "skill": 10,
+      "utility_free_unique_best_response": null,
+      "utility_note": "Damage and Spiritus are separate outcome dimensions; no scalar best response exists without a reserve/opportunity value.",
+      "wrong_pressure_spiritus_exposure_avoided": 0.8
+    },
+    {
+      "alternatives": {
+        "blind_duplieren": {
+          "damage_per_spiritus": 1.4625000000000004,
+          "expected_attack_success": 0.6500000000000001,
+          "expected_damage": 2.9250000000000007,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.3999999999999999,
+          "wrong_read_probability": 0.19999999999999996
+        },
+        "blind_mutieren": {
+          "damage_per_spiritus": 0.7875,
+          "expected_attack_success": 0.35,
+          "expected_damage": 1.575,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 1.6,
+          "wrong_read_probability": 0.8
+        },
+        "buy_fuhlen": {
+          "damage_per_spiritus": 1.125,
+          "expected_attack_success": 0.75,
+          "expected_damage": 3.375,
+          "spiritus_spent": 3,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        },
+        "decline": {
+          "damage_per_spiritus": null,
+          "expected_attack_success": 0.0,
+          "expected_damage": 0.0,
+          "spiritus_spent": 0,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        }
+      },
+      "best_damage_per_spiritus": [
+        "blind_duplieren"
+      ],
+      "best_expected_damage": [
+        "buy_fuhlen"
+      ],
+      "fuhlen_break_even_marginal_damage_per_added_spiritus": 0.4499999999999993,
+      "fuhlen_damage_gain_over_best_blind": 0.4499999999999993,
+      "hart_prior": 0.8,
+      "model": "G",
+      "pareto_frontier": [
+        "blind_duplieren",
+        "buy_fuhlen",
+        "decline"
+      ],
+      "pressure_frequency_instrumentation": {
+        "hart": 0.8,
+        "weich": 0.19999999999999996
+      },
+      "skill": 10,
+      "utility_free_unique_best_response": null,
+      "utility_note": "Damage and Spiritus are separate outcome dimensions; no scalar best response exists without a reserve/opportunity value.",
+      "wrong_pressure_spiritus_exposure_avoided": 0.3999999999999999
+    },
+    {
+      "alternatives": {
+        "blind_duplieren": {
+          "damage_per_spiritus": 1.0259999999999998,
+          "expected_attack_success": 0.45599999999999996,
+          "expected_damage": 2.0519999999999996,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 1.6,
+          "wrong_read_probability": 0.8
+        },
+        "blind_mutieren": {
+          "damage_per_spiritus": 1.674,
+          "expected_attack_success": 0.744,
+          "expected_damage": 3.348,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.4,
+          "wrong_read_probability": 0.2
+        },
+        "buy_fuhlen": {
+          "damage_per_spiritus": 1.26,
+          "expected_attack_success": 0.84,
+          "expected_damage": 3.78,
+          "spiritus_spent": 3,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        },
+        "decline": {
+          "damage_per_spiritus": null,
+          "expected_attack_success": 0.0,
+          "expected_damage": 0.0,
+          "spiritus_spent": 0,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        }
+      },
+      "best_damage_per_spiritus": [
+        "blind_mutieren"
+      ],
+      "best_expected_damage": [
+        "buy_fuhlen"
+      ],
+      "fuhlen_break_even_marginal_damage_per_added_spiritus": 0.43199999999999994,
+      "fuhlen_damage_gain_over_best_blind": 0.43199999999999994,
+      "hart_prior": 0.2,
+      "model": "G",
+      "pareto_frontier": [
+        "blind_mutieren",
+        "buy_fuhlen",
+        "decline"
+      ],
+      "pressure_frequency_instrumentation": {
+        "hart": 0.2,
+        "weich": 0.8
+      },
+      "skill": 12,
+      "utility_free_unique_best_response": null,
+      "utility_note": "Damage and Spiritus are separate outcome dimensions; no scalar best response exists without a reserve/opportunity value.",
+      "wrong_pressure_spiritus_exposure_avoided": 0.4
+    },
+    {
+      "alternatives": {
+        "blind_duplieren": {
+          "damage_per_spiritus": 1.242,
+          "expected_attack_success": 0.552,
+          "expected_damage": 2.484,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 1.2,
+          "wrong_read_probability": 0.6
+        },
+        "blind_mutieren": {
+          "damage_per_spiritus": 1.458,
+          "expected_attack_success": 0.648,
+          "expected_damage": 2.916,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.8,
+          "wrong_read_probability": 0.4
+        },
+        "buy_fuhlen": {
+          "damage_per_spiritus": 1.26,
+          "expected_attack_success": 0.84,
+          "expected_damage": 3.78,
+          "spiritus_spent": 3,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        },
+        "decline": {
+          "damage_per_spiritus": null,
+          "expected_attack_success": 0.0,
+          "expected_damage": 0.0,
+          "spiritus_spent": 0,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        }
+      },
+      "best_damage_per_spiritus": [
+        "blind_mutieren"
+      ],
+      "best_expected_damage": [
+        "buy_fuhlen"
+      ],
+      "fuhlen_break_even_marginal_damage_per_added_spiritus": 0.8639999999999999,
+      "fuhlen_damage_gain_over_best_blind": 0.8639999999999999,
+      "hart_prior": 0.4,
+      "model": "G",
+      "pareto_frontier": [
+        "blind_mutieren",
+        "buy_fuhlen",
+        "decline"
+      ],
+      "pressure_frequency_instrumentation": {
+        "hart": 0.4,
+        "weich": 0.6
+      },
+      "skill": 12,
+      "utility_free_unique_best_response": null,
+      "utility_note": "Damage and Spiritus are separate outcome dimensions; no scalar best response exists without a reserve/opportunity value.",
+      "wrong_pressure_spiritus_exposure_avoided": 0.8
+    },
+    {
+      "alternatives": {
+        "blind_duplieren": {
+          "damage_per_spiritus": 1.3499999999999999,
+          "expected_attack_success": 0.6,
+          "expected_damage": 2.6999999999999997,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 1.0,
+          "wrong_read_probability": 0.5
+        },
+        "blind_mutieren": {
+          "damage_per_spiritus": 1.3499999999999999,
+          "expected_attack_success": 0.6,
+          "expected_damage": 2.6999999999999997,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 1.0,
+          "wrong_read_probability": 0.5
+        },
+        "buy_fuhlen": {
+          "damage_per_spiritus": 1.26,
+          "expected_attack_success": 0.84,
+          "expected_damage": 3.78,
+          "spiritus_spent": 3,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        },
+        "decline": {
+          "damage_per_spiritus": null,
+          "expected_attack_success": 0.0,
+          "expected_damage": 0.0,
+          "spiritus_spent": 0,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        }
+      },
+      "best_damage_per_spiritus": [
+        "blind_duplieren",
+        "blind_mutieren"
+      ],
+      "best_expected_damage": [
+        "buy_fuhlen"
+      ],
+      "fuhlen_break_even_marginal_damage_per_added_spiritus": 1.08,
+      "fuhlen_damage_gain_over_best_blind": 1.08,
+      "hart_prior": 0.5,
+      "model": "G",
+      "pareto_frontier": [
+        "blind_duplieren",
+        "blind_mutieren",
+        "buy_fuhlen",
+        "decline"
+      ],
+      "pressure_frequency_instrumentation": {
+        "hart": 0.5,
+        "weich": 0.5
+      },
+      "skill": 12,
+      "utility_free_unique_best_response": null,
+      "utility_note": "Damage and Spiritus are separate outcome dimensions; no scalar best response exists without a reserve/opportunity value.",
+      "wrong_pressure_spiritus_exposure_avoided": 1.0
+    },
+    {
+      "alternatives": {
+        "blind_duplieren": {
+          "damage_per_spiritus": 1.458,
+          "expected_attack_success": 0.648,
+          "expected_damage": 2.916,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.8,
+          "wrong_read_probability": 0.4
+        },
+        "blind_mutieren": {
+          "damage_per_spiritus": 1.242,
+          "expected_attack_success": 0.552,
+          "expected_damage": 2.484,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 1.2,
+          "wrong_read_probability": 0.6
+        },
+        "buy_fuhlen": {
+          "damage_per_spiritus": 1.26,
+          "expected_attack_success": 0.84,
+          "expected_damage": 3.78,
+          "spiritus_spent": 3,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        },
+        "decline": {
+          "damage_per_spiritus": null,
+          "expected_attack_success": 0.0,
+          "expected_damage": 0.0,
+          "spiritus_spent": 0,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        }
+      },
+      "best_damage_per_spiritus": [
+        "blind_duplieren"
+      ],
+      "best_expected_damage": [
+        "buy_fuhlen"
+      ],
+      "fuhlen_break_even_marginal_damage_per_added_spiritus": 0.8639999999999999,
+      "fuhlen_damage_gain_over_best_blind": 0.8639999999999999,
+      "hart_prior": 0.6,
+      "model": "G",
+      "pareto_frontier": [
+        "blind_duplieren",
+        "buy_fuhlen",
+        "decline"
+      ],
+      "pressure_frequency_instrumentation": {
+        "hart": 0.6,
+        "weich": 0.4
+      },
+      "skill": 12,
+      "utility_free_unique_best_response": null,
+      "utility_note": "Damage and Spiritus are separate outcome dimensions; no scalar best response exists without a reserve/opportunity value.",
+      "wrong_pressure_spiritus_exposure_avoided": 0.8
+    },
+    {
+      "alternatives": {
+        "blind_duplieren": {
+          "damage_per_spiritus": 1.674,
+          "expected_attack_success": 0.744,
+          "expected_damage": 3.348,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.3999999999999999,
+          "wrong_read_probability": 0.19999999999999996
+        },
+        "blind_mutieren": {
+          "damage_per_spiritus": 1.0259999999999998,
+          "expected_attack_success": 0.45599999999999996,
+          "expected_damage": 2.0519999999999996,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 1.6,
+          "wrong_read_probability": 0.8
+        },
+        "buy_fuhlen": {
+          "damage_per_spiritus": 1.26,
+          "expected_attack_success": 0.84,
+          "expected_damage": 3.78,
+          "spiritus_spent": 3,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        },
+        "decline": {
+          "damage_per_spiritus": null,
+          "expected_attack_success": 0.0,
+          "expected_damage": 0.0,
+          "spiritus_spent": 0,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        }
+      },
+      "best_damage_per_spiritus": [
+        "blind_duplieren"
+      ],
+      "best_expected_damage": [
+        "buy_fuhlen"
+      ],
+      "fuhlen_break_even_marginal_damage_per_added_spiritus": 0.43199999999999994,
+      "fuhlen_damage_gain_over_best_blind": 0.43199999999999994,
+      "hart_prior": 0.8,
+      "model": "G",
+      "pareto_frontier": [
+        "blind_duplieren",
+        "buy_fuhlen",
+        "decline"
+      ],
+      "pressure_frequency_instrumentation": {
+        "hart": 0.8,
+        "weich": 0.19999999999999996
+      },
+      "skill": 12,
+      "utility_free_unique_best_response": null,
+      "utility_note": "Damage and Spiritus are separate outcome dimensions; no scalar best response exists without a reserve/opportunity value.",
+      "wrong_pressure_spiritus_exposure_avoided": 0.3999999999999999
+    },
+    {
+      "alternatives": {
+        "blind_duplieren": {
+          "damage_per_spiritus": 1.2914999999999999,
+          "expected_attack_success": 0.574,
+          "expected_damage": 2.5829999999999997,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 1.6,
+          "wrong_read_probability": 0.8
+        },
+        "blind_mutieren": {
+          "damage_per_spiritus": 1.8584999999999998,
+          "expected_attack_success": 0.826,
+          "expected_damage": 3.7169999999999996,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.4,
+          "wrong_read_probability": 0.2
+        },
+        "buy_fuhlen": {
+          "damage_per_spiritus": 1.365,
+          "expected_attack_success": 0.9099999999999999,
+          "expected_damage": 4.095,
+          "spiritus_spent": 3,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        },
+        "decline": {
+          "damage_per_spiritus": null,
+          "expected_attack_success": 0.0,
+          "expected_damage": 0.0,
+          "spiritus_spent": 0,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        }
+      },
+      "best_damage_per_spiritus": [
+        "blind_mutieren"
+      ],
+      "best_expected_damage": [
+        "buy_fuhlen"
+      ],
+      "fuhlen_break_even_marginal_damage_per_added_spiritus": 0.3780000000000001,
+      "fuhlen_damage_gain_over_best_blind": 0.3780000000000001,
+      "hart_prior": 0.2,
+      "model": "G",
+      "pareto_frontier": [
+        "blind_mutieren",
+        "buy_fuhlen",
+        "decline"
+      ],
+      "pressure_frequency_instrumentation": {
+        "hart": 0.2,
+        "weich": 0.8
+      },
+      "skill": 14,
+      "utility_free_unique_best_response": null,
+      "utility_note": "Damage and Spiritus are separate outcome dimensions; no scalar best response exists without a reserve/opportunity value.",
+      "wrong_pressure_spiritus_exposure_avoided": 0.4
+    },
+    {
+      "alternatives": {
+        "blind_duplieren": {
+          "damage_per_spiritus": 1.4804999999999997,
+          "expected_attack_success": 0.6579999999999999,
+          "expected_damage": 2.9609999999999994,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 1.2,
+          "wrong_read_probability": 0.6
+        },
+        "blind_mutieren": {
+          "damage_per_spiritus": 1.6694999999999998,
+          "expected_attack_success": 0.7419999999999999,
+          "expected_damage": 3.3389999999999995,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.8,
+          "wrong_read_probability": 0.4
+        },
+        "buy_fuhlen": {
+          "damage_per_spiritus": 1.365,
+          "expected_attack_success": 0.9099999999999999,
+          "expected_damage": 4.095,
+          "spiritus_spent": 3,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        },
+        "decline": {
+          "damage_per_spiritus": null,
+          "expected_attack_success": 0.0,
+          "expected_damage": 0.0,
+          "spiritus_spent": 0,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        }
+      },
+      "best_damage_per_spiritus": [
+        "blind_mutieren"
+      ],
+      "best_expected_damage": [
+        "buy_fuhlen"
+      ],
+      "fuhlen_break_even_marginal_damage_per_added_spiritus": 0.7560000000000002,
+      "fuhlen_damage_gain_over_best_blind": 0.7560000000000002,
+      "hart_prior": 0.4,
+      "model": "G",
+      "pareto_frontier": [
+        "blind_mutieren",
+        "buy_fuhlen",
+        "decline"
+      ],
+      "pressure_frequency_instrumentation": {
+        "hart": 0.4,
+        "weich": 0.6
+      },
+      "skill": 14,
+      "utility_free_unique_best_response": null,
+      "utility_note": "Damage and Spiritus are separate outcome dimensions; no scalar best response exists without a reserve/opportunity value.",
+      "wrong_pressure_spiritus_exposure_avoided": 0.8
+    },
+    {
+      "alternatives": {
+        "blind_duplieren": {
+          "damage_per_spiritus": 1.575,
+          "expected_attack_success": 0.7,
+          "expected_damage": 3.15,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 1.0,
+          "wrong_read_probability": 0.5
+        },
+        "blind_mutieren": {
+          "damage_per_spiritus": 1.575,
+          "expected_attack_success": 0.7,
+          "expected_damage": 3.15,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 1.0,
+          "wrong_read_probability": 0.5
+        },
+        "buy_fuhlen": {
+          "damage_per_spiritus": 1.365,
+          "expected_attack_success": 0.9099999999999999,
+          "expected_damage": 4.095,
+          "spiritus_spent": 3,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        },
+        "decline": {
+          "damage_per_spiritus": null,
+          "expected_attack_success": 0.0,
+          "expected_damage": 0.0,
+          "spiritus_spent": 0,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        }
+      },
+      "best_damage_per_spiritus": [
+        "blind_duplieren",
+        "blind_mutieren"
+      ],
+      "best_expected_damage": [
+        "buy_fuhlen"
+      ],
+      "fuhlen_break_even_marginal_damage_per_added_spiritus": 0.9449999999999998,
+      "fuhlen_damage_gain_over_best_blind": 0.9449999999999998,
+      "hart_prior": 0.5,
+      "model": "G",
+      "pareto_frontier": [
+        "blind_duplieren",
+        "blind_mutieren",
+        "buy_fuhlen",
+        "decline"
+      ],
+      "pressure_frequency_instrumentation": {
+        "hart": 0.5,
+        "weich": 0.5
+      },
+      "skill": 14,
+      "utility_free_unique_best_response": null,
+      "utility_note": "Damage and Spiritus are separate outcome dimensions; no scalar best response exists without a reserve/opportunity value.",
+      "wrong_pressure_spiritus_exposure_avoided": 1.0
+    },
+    {
+      "alternatives": {
+        "blind_duplieren": {
+          "damage_per_spiritus": 1.6694999999999998,
+          "expected_attack_success": 0.7419999999999999,
+          "expected_damage": 3.3389999999999995,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.8,
+          "wrong_read_probability": 0.4
+        },
+        "blind_mutieren": {
+          "damage_per_spiritus": 1.4804999999999997,
+          "expected_attack_success": 0.6579999999999999,
+          "expected_damage": 2.9609999999999994,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 1.2,
+          "wrong_read_probability": 0.6
+        },
+        "buy_fuhlen": {
+          "damage_per_spiritus": 1.365,
+          "expected_attack_success": 0.9099999999999999,
+          "expected_damage": 4.095,
+          "spiritus_spent": 3,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        },
+        "decline": {
+          "damage_per_spiritus": null,
+          "expected_attack_success": 0.0,
+          "expected_damage": 0.0,
+          "spiritus_spent": 0,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        }
+      },
+      "best_damage_per_spiritus": [
+        "blind_duplieren"
+      ],
+      "best_expected_damage": [
+        "buy_fuhlen"
+      ],
+      "fuhlen_break_even_marginal_damage_per_added_spiritus": 0.7560000000000002,
+      "fuhlen_damage_gain_over_best_blind": 0.7560000000000002,
+      "hart_prior": 0.6,
+      "model": "G",
+      "pareto_frontier": [
+        "blind_duplieren",
+        "buy_fuhlen",
+        "decline"
+      ],
+      "pressure_frequency_instrumentation": {
+        "hart": 0.6,
+        "weich": 0.4
+      },
+      "skill": 14,
+      "utility_free_unique_best_response": null,
+      "utility_note": "Damage and Spiritus are separate outcome dimensions; no scalar best response exists without a reserve/opportunity value.",
+      "wrong_pressure_spiritus_exposure_avoided": 0.8
+    },
+    {
+      "alternatives": {
+        "blind_duplieren": {
+          "damage_per_spiritus": 1.8584999999999998,
+          "expected_attack_success": 0.826,
+          "expected_damage": 3.7169999999999996,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.3999999999999999,
+          "wrong_read_probability": 0.19999999999999996
+        },
+        "blind_mutieren": {
+          "damage_per_spiritus": 1.2914999999999996,
+          "expected_attack_success": 0.5739999999999998,
+          "expected_damage": 2.5829999999999993,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 1.6,
+          "wrong_read_probability": 0.8
+        },
+        "buy_fuhlen": {
+          "damage_per_spiritus": 1.365,
+          "expected_attack_success": 0.9099999999999999,
+          "expected_damage": 4.095,
+          "spiritus_spent": 3,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        },
+        "decline": {
+          "damage_per_spiritus": null,
+          "expected_attack_success": 0.0,
+          "expected_damage": 0.0,
+          "spiritus_spent": 0,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        }
+      },
+      "best_damage_per_spiritus": [
+        "blind_duplieren"
+      ],
+      "best_expected_damage": [
+        "buy_fuhlen"
+      ],
+      "fuhlen_break_even_marginal_damage_per_added_spiritus": 0.3780000000000001,
+      "fuhlen_damage_gain_over_best_blind": 0.3780000000000001,
+      "hart_prior": 0.8,
+      "model": "G",
+      "pareto_frontier": [
+        "blind_duplieren",
+        "buy_fuhlen",
+        "decline"
+      ],
+      "pressure_frequency_instrumentation": {
+        "hart": 0.8,
+        "weich": 0.19999999999999996
+      },
+      "skill": 14,
+      "utility_free_unique_best_response": null,
+      "utility_note": "Damage and Spiritus are separate outcome dimensions; no scalar best response exists without a reserve/opportunity value.",
+      "wrong_pressure_spiritus_exposure_avoided": 0.3999999999999999
+    },
+    {
+      "alternatives": {
+        "blind_duplieren": {
+          "damage_per_spiritus": 1.9035000000000002,
+          "expected_attack_success": 0.8460000000000001,
+          "expected_damage": 3.8070000000000004,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 1.6,
+          "wrong_read_probability": 0.8
+        },
+        "blind_mutieren": {
+          "damage_per_spiritus": 2.1465,
+          "expected_attack_success": 0.9540000000000001,
+          "expected_damage": 4.293,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.4,
+          "wrong_read_probability": 0.2
+        },
+        "buy_fuhlen": {
+          "damage_per_spiritus": 1.485,
+          "expected_attack_success": 0.99,
+          "expected_damage": 4.455,
+          "spiritus_spent": 3,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        },
+        "decline": {
+          "damage_per_spiritus": null,
+          "expected_attack_success": 0.0,
+          "expected_damage": 0.0,
+          "spiritus_spent": 0,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        }
+      },
+      "best_damage_per_spiritus": [
+        "blind_mutieren"
+      ],
+      "best_expected_damage": [
+        "buy_fuhlen"
+      ],
+      "fuhlen_break_even_marginal_damage_per_added_spiritus": 0.16199999999999992,
+      "fuhlen_damage_gain_over_best_blind": 0.16199999999999992,
+      "hart_prior": 0.2,
+      "model": "G",
+      "pareto_frontier": [
+        "blind_mutieren",
+        "buy_fuhlen",
+        "decline"
+      ],
+      "pressure_frequency_instrumentation": {
+        "hart": 0.2,
+        "weich": 0.8
+      },
+      "skill": 18,
+      "utility_free_unique_best_response": null,
+      "utility_note": "Damage and Spiritus are separate outcome dimensions; no scalar best response exists without a reserve/opportunity value.",
+      "wrong_pressure_spiritus_exposure_avoided": 0.4
+    },
+    {
+      "alternatives": {
+        "blind_duplieren": {
+          "damage_per_spiritus": 1.9845,
+          "expected_attack_success": 0.882,
+          "expected_damage": 3.969,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 1.2,
+          "wrong_read_probability": 0.6
+        },
+        "blind_mutieren": {
+          "damage_per_spiritus": 2.0655,
+          "expected_attack_success": 0.918,
+          "expected_damage": 4.131,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.8,
+          "wrong_read_probability": 0.4
+        },
+        "buy_fuhlen": {
+          "damage_per_spiritus": 1.485,
+          "expected_attack_success": 0.99,
+          "expected_damage": 4.455,
+          "spiritus_spent": 3,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        },
+        "decline": {
+          "damage_per_spiritus": null,
+          "expected_attack_success": 0.0,
+          "expected_damage": 0.0,
+          "spiritus_spent": 0,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        }
+      },
+      "best_damage_per_spiritus": [
+        "blind_mutieren"
+      ],
+      "best_expected_damage": [
+        "buy_fuhlen"
+      ],
+      "fuhlen_break_even_marginal_damage_per_added_spiritus": 0.32399999999999984,
+      "fuhlen_damage_gain_over_best_blind": 0.32399999999999984,
+      "hart_prior": 0.4,
+      "model": "G",
+      "pareto_frontier": [
+        "blind_mutieren",
+        "buy_fuhlen",
+        "decline"
+      ],
+      "pressure_frequency_instrumentation": {
+        "hart": 0.4,
+        "weich": 0.6
+      },
+      "skill": 18,
+      "utility_free_unique_best_response": null,
+      "utility_note": "Damage and Spiritus are separate outcome dimensions; no scalar best response exists without a reserve/opportunity value.",
+      "wrong_pressure_spiritus_exposure_avoided": 0.8
+    },
+    {
+      "alternatives": {
+        "blind_duplieren": {
+          "damage_per_spiritus": 2.025,
+          "expected_attack_success": 0.9,
+          "expected_damage": 4.05,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 1.0,
+          "wrong_read_probability": 0.5
+        },
+        "blind_mutieren": {
+          "damage_per_spiritus": 2.025,
+          "expected_attack_success": 0.9,
+          "expected_damage": 4.05,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 1.0,
+          "wrong_read_probability": 0.5
+        },
+        "buy_fuhlen": {
+          "damage_per_spiritus": 1.485,
+          "expected_attack_success": 0.99,
+          "expected_damage": 4.455,
+          "spiritus_spent": 3,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        },
+        "decline": {
+          "damage_per_spiritus": null,
+          "expected_attack_success": 0.0,
+          "expected_damage": 0.0,
+          "spiritus_spent": 0,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        }
+      },
+      "best_damage_per_spiritus": [
+        "blind_duplieren",
+        "blind_mutieren"
+      ],
+      "best_expected_damage": [
+        "buy_fuhlen"
+      ],
+      "fuhlen_break_even_marginal_damage_per_added_spiritus": 0.40500000000000025,
+      "fuhlen_damage_gain_over_best_blind": 0.40500000000000025,
+      "hart_prior": 0.5,
+      "model": "G",
+      "pareto_frontier": [
+        "blind_duplieren",
+        "blind_mutieren",
+        "buy_fuhlen",
+        "decline"
+      ],
+      "pressure_frequency_instrumentation": {
+        "hart": 0.5,
+        "weich": 0.5
+      },
+      "skill": 18,
+      "utility_free_unique_best_response": null,
+      "utility_note": "Damage and Spiritus are separate outcome dimensions; no scalar best response exists without a reserve/opportunity value.",
+      "wrong_pressure_spiritus_exposure_avoided": 1.0
+    },
+    {
+      "alternatives": {
+        "blind_duplieren": {
+          "damage_per_spiritus": 2.0655,
+          "expected_attack_success": 0.918,
+          "expected_damage": 4.131,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.8,
+          "wrong_read_probability": 0.4
+        },
+        "blind_mutieren": {
+          "damage_per_spiritus": 1.9845,
+          "expected_attack_success": 0.882,
+          "expected_damage": 3.969,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 1.2,
+          "wrong_read_probability": 0.6
+        },
+        "buy_fuhlen": {
+          "damage_per_spiritus": 1.485,
+          "expected_attack_success": 0.99,
+          "expected_damage": 4.455,
+          "spiritus_spent": 3,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        },
+        "decline": {
+          "damage_per_spiritus": null,
+          "expected_attack_success": 0.0,
+          "expected_damage": 0.0,
+          "spiritus_spent": 0,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        }
+      },
+      "best_damage_per_spiritus": [
+        "blind_duplieren"
+      ],
+      "best_expected_damage": [
+        "buy_fuhlen"
+      ],
+      "fuhlen_break_even_marginal_damage_per_added_spiritus": 0.32399999999999984,
+      "fuhlen_damage_gain_over_best_blind": 0.32399999999999984,
+      "hart_prior": 0.6,
+      "model": "G",
+      "pareto_frontier": [
+        "blind_duplieren",
+        "buy_fuhlen",
+        "decline"
+      ],
+      "pressure_frequency_instrumentation": {
+        "hart": 0.6,
+        "weich": 0.4
+      },
+      "skill": 18,
+      "utility_free_unique_best_response": null,
+      "utility_note": "Damage and Spiritus are separate outcome dimensions; no scalar best response exists without a reserve/opportunity value.",
+      "wrong_pressure_spiritus_exposure_avoided": 0.8
+    },
+    {
+      "alternatives": {
+        "blind_duplieren": {
+          "damage_per_spiritus": 2.1465,
+          "expected_attack_success": 0.954,
+          "expected_damage": 4.293,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.3999999999999999,
+          "wrong_read_probability": 0.19999999999999996
+        },
+        "blind_mutieren": {
+          "damage_per_spiritus": 1.9035000000000002,
+          "expected_attack_success": 0.8460000000000001,
+          "expected_damage": 3.8070000000000004,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 1.6,
+          "wrong_read_probability": 0.8
+        },
+        "buy_fuhlen": {
+          "damage_per_spiritus": 1.485,
+          "expected_attack_success": 0.99,
+          "expected_damage": 4.455,
+          "spiritus_spent": 3,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        },
+        "decline": {
+          "damage_per_spiritus": null,
+          "expected_attack_success": 0.0,
+          "expected_damage": 0.0,
+          "spiritus_spent": 0,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        }
+      },
+      "best_damage_per_spiritus": [
+        "blind_duplieren"
+      ],
+      "best_expected_damage": [
+        "buy_fuhlen"
+      ],
+      "fuhlen_break_even_marginal_damage_per_added_spiritus": 0.16199999999999992,
+      "fuhlen_damage_gain_over_best_blind": 0.16199999999999992,
+      "hart_prior": 0.8,
+      "model": "G",
+      "pareto_frontier": [
+        "blind_duplieren",
+        "buy_fuhlen",
+        "decline"
+      ],
+      "pressure_frequency_instrumentation": {
+        "hart": 0.8,
+        "weich": 0.19999999999999996
+      },
+      "skill": 18,
+      "utility_free_unique_best_response": null,
+      "utility_note": "Damage and Spiritus are separate outcome dimensions; no scalar best response exists without a reserve/opportunity value.",
+      "wrong_pressure_spiritus_exposure_avoided": 0.3999999999999999
+    },
+    {
+      "alternatives": {
+        "blind_duplieren": {
+          "damage_per_spiritus": 0.3375,
+          "expected_attack_success": 0.15000000000000002,
+          "expected_damage": 0.675,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 1.6,
+          "wrong_conditioned_spiritus": 1.6,
+          "wrong_read_probability": 0.8
+        },
+        "blind_mutieren": {
+          "damage_per_spiritus": 1.35,
+          "expected_attack_success": 0.6000000000000001,
+          "expected_damage": 2.7,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 0.4,
+          "wrong_conditioned_spiritus": 0.4,
+          "wrong_read_probability": 0.2
+        },
+        "buy_fuhlen": {
+          "damage_per_spiritus": 1.125,
+          "expected_attack_success": 0.75,
+          "expected_damage": 3.375,
+          "spiritus_spent": 3,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        },
+        "decline": {
+          "damage_per_spiritus": null,
+          "expected_attack_success": 0.0,
+          "expected_damage": 0.0,
+          "spiritus_spent": 0,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        }
+      },
+      "best_damage_per_spiritus": [
+        "blind_mutieren"
+      ],
+      "best_expected_damage": [
+        "buy_fuhlen"
+      ],
+      "fuhlen_break_even_marginal_damage_per_added_spiritus": 0.6749999999999998,
+      "fuhlen_damage_gain_over_best_blind": 0.6749999999999998,
+      "hart_prior": 0.2,
+      "model": "F",
+      "pareto_frontier": [
+        "blind_mutieren",
+        "buy_fuhlen",
+        "decline"
+      ],
+      "pressure_frequency_instrumentation": {
+        "hart": 0.2,
+        "weich": 0.8
+      },
+      "skill": 10,
+      "utility_free_unique_best_response": null,
+      "utility_note": "Damage and Spiritus are separate outcome dimensions; no scalar best response exists without a reserve/opportunity value.",
+      "wrong_pressure_spiritus_exposure_avoided": 0.4
+    },
+    {
+      "alternatives": {
+        "blind_duplieren": {
+          "damage_per_spiritus": 0.675,
+          "expected_attack_success": 0.30000000000000004,
+          "expected_damage": 1.35,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 1.2,
+          "wrong_conditioned_spiritus": 1.2,
+          "wrong_read_probability": 0.6
+        },
+        "blind_mutieren": {
+          "damage_per_spiritus": 1.0125,
+          "expected_attack_success": 0.44999999999999996,
+          "expected_damage": 2.025,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 0.8,
+          "wrong_conditioned_spiritus": 0.8,
+          "wrong_read_probability": 0.4
+        },
+        "buy_fuhlen": {
+          "damage_per_spiritus": 1.125,
+          "expected_attack_success": 0.75,
+          "expected_damage": 3.375,
+          "spiritus_spent": 3,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        },
+        "decline": {
+          "damage_per_spiritus": null,
+          "expected_attack_success": 0.0,
+          "expected_damage": 0.0,
+          "spiritus_spent": 0,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        }
+      },
+      "best_damage_per_spiritus": [
+        "buy_fuhlen"
+      ],
+      "best_expected_damage": [
+        "buy_fuhlen"
+      ],
+      "fuhlen_break_even_marginal_damage_per_added_spiritus": 1.35,
+      "fuhlen_damage_gain_over_best_blind": 1.35,
+      "hart_prior": 0.4,
+      "model": "F",
+      "pareto_frontier": [
+        "blind_mutieren",
+        "buy_fuhlen",
+        "decline"
+      ],
+      "pressure_frequency_instrumentation": {
+        "hart": 0.4,
+        "weich": 0.6
+      },
+      "skill": 10,
+      "utility_free_unique_best_response": null,
+      "utility_note": "Damage and Spiritus are separate outcome dimensions; no scalar best response exists without a reserve/opportunity value.",
+      "wrong_pressure_spiritus_exposure_avoided": 0.8
+    },
+    {
+      "alternatives": {
+        "blind_duplieren": {
+          "damage_per_spiritus": 0.84375,
+          "expected_attack_success": 0.375,
+          "expected_damage": 1.6875,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 1.0,
+          "wrong_conditioned_spiritus": 1.0,
+          "wrong_read_probability": 0.5
+        },
+        "blind_mutieren": {
+          "damage_per_spiritus": 0.84375,
+          "expected_attack_success": 0.375,
+          "expected_damage": 1.6875,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 1.0,
+          "wrong_conditioned_spiritus": 1.0,
+          "wrong_read_probability": 0.5
+        },
+        "buy_fuhlen": {
+          "damage_per_spiritus": 1.125,
+          "expected_attack_success": 0.75,
+          "expected_damage": 3.375,
+          "spiritus_spent": 3,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        },
+        "decline": {
+          "damage_per_spiritus": null,
+          "expected_attack_success": 0.0,
+          "expected_damage": 0.0,
+          "spiritus_spent": 0,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        }
+      },
+      "best_damage_per_spiritus": [
+        "buy_fuhlen"
+      ],
+      "best_expected_damage": [
+        "buy_fuhlen"
+      ],
+      "fuhlen_break_even_marginal_damage_per_added_spiritus": 1.6875,
+      "fuhlen_damage_gain_over_best_blind": 1.6875,
+      "hart_prior": 0.5,
+      "model": "F",
+      "pareto_frontier": [
+        "blind_duplieren",
+        "blind_mutieren",
+        "buy_fuhlen",
+        "decline"
+      ],
+      "pressure_frequency_instrumentation": {
+        "hart": 0.5,
+        "weich": 0.5
+      },
+      "skill": 10,
+      "utility_free_unique_best_response": null,
+      "utility_note": "Damage and Spiritus are separate outcome dimensions; no scalar best response exists without a reserve/opportunity value.",
+      "wrong_pressure_spiritus_exposure_avoided": 1.0
+    },
+    {
+      "alternatives": {
+        "blind_duplieren": {
+          "damage_per_spiritus": 1.0125,
+          "expected_attack_success": 0.44999999999999996,
+          "expected_damage": 2.025,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 0.8,
+          "wrong_conditioned_spiritus": 0.8,
+          "wrong_read_probability": 0.4
+        },
+        "blind_mutieren": {
+          "damage_per_spiritus": 0.675,
+          "expected_attack_success": 0.30000000000000004,
+          "expected_damage": 1.35,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 1.2,
+          "wrong_conditioned_spiritus": 1.2,
+          "wrong_read_probability": 0.6
+        },
+        "buy_fuhlen": {
+          "damage_per_spiritus": 1.125,
+          "expected_attack_success": 0.75,
+          "expected_damage": 3.375,
+          "spiritus_spent": 3,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        },
+        "decline": {
+          "damage_per_spiritus": null,
+          "expected_attack_success": 0.0,
+          "expected_damage": 0.0,
+          "spiritus_spent": 0,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        }
+      },
+      "best_damage_per_spiritus": [
+        "buy_fuhlen"
+      ],
+      "best_expected_damage": [
+        "buy_fuhlen"
+      ],
+      "fuhlen_break_even_marginal_damage_per_added_spiritus": 1.35,
+      "fuhlen_damage_gain_over_best_blind": 1.35,
+      "hart_prior": 0.6,
+      "model": "F",
+      "pareto_frontier": [
+        "blind_duplieren",
+        "buy_fuhlen",
+        "decline"
+      ],
+      "pressure_frequency_instrumentation": {
+        "hart": 0.6,
+        "weich": 0.4
+      },
+      "skill": 10,
+      "utility_free_unique_best_response": null,
+      "utility_note": "Damage and Spiritus are separate outcome dimensions; no scalar best response exists without a reserve/opportunity value.",
+      "wrong_pressure_spiritus_exposure_avoided": 0.8
+    },
+    {
+      "alternatives": {
+        "blind_duplieren": {
+          "damage_per_spiritus": 1.35,
+          "expected_attack_success": 0.6000000000000001,
+          "expected_damage": 2.7,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 0.3999999999999999,
+          "wrong_conditioned_spiritus": 0.3999999999999999,
+          "wrong_read_probability": 0.19999999999999996
+        },
+        "blind_mutieren": {
+          "damage_per_spiritus": 0.3374999999999999,
+          "expected_attack_success": 0.14999999999999997,
+          "expected_damage": 0.6749999999999998,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 1.6,
+          "wrong_conditioned_spiritus": 1.6,
+          "wrong_read_probability": 0.8
+        },
+        "buy_fuhlen": {
+          "damage_per_spiritus": 1.125,
+          "expected_attack_success": 0.75,
+          "expected_damage": 3.375,
+          "spiritus_spent": 3,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        },
+        "decline": {
+          "damage_per_spiritus": null,
+          "expected_attack_success": 0.0,
+          "expected_damage": 0.0,
+          "spiritus_spent": 0,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        }
+      },
+      "best_damage_per_spiritus": [
+        "blind_duplieren"
+      ],
+      "best_expected_damage": [
+        "buy_fuhlen"
+      ],
+      "fuhlen_break_even_marginal_damage_per_added_spiritus": 0.6749999999999998,
+      "fuhlen_damage_gain_over_best_blind": 0.6749999999999998,
+      "hart_prior": 0.8,
+      "model": "F",
+      "pareto_frontier": [
+        "blind_duplieren",
+        "buy_fuhlen",
+        "decline"
+      ],
+      "pressure_frequency_instrumentation": {
+        "hart": 0.8,
+        "weich": 0.19999999999999996
+      },
+      "skill": 10,
+      "utility_free_unique_best_response": null,
+      "utility_note": "Damage and Spiritus are separate outcome dimensions; no scalar best response exists without a reserve/opportunity value.",
+      "wrong_pressure_spiritus_exposure_avoided": 0.3999999999999999
+    },
+    {
+      "alternatives": {
+        "blind_duplieren": {
+          "damage_per_spiritus": 0.378,
+          "expected_attack_success": 0.168,
+          "expected_damage": 0.756,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 1.6,
+          "wrong_conditioned_spiritus": 1.6,
+          "wrong_read_probability": 0.8
+        },
+        "blind_mutieren": {
+          "damage_per_spiritus": 1.512,
+          "expected_attack_success": 0.672,
+          "expected_damage": 3.024,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 0.4,
+          "wrong_conditioned_spiritus": 0.4,
+          "wrong_read_probability": 0.2
+        },
+        "buy_fuhlen": {
+          "damage_per_spiritus": 1.26,
+          "expected_attack_success": 0.84,
+          "expected_damage": 3.78,
+          "spiritus_spent": 3,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        },
+        "decline": {
+          "damage_per_spiritus": null,
+          "expected_attack_success": 0.0,
+          "expected_damage": 0.0,
+          "spiritus_spent": 0,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        }
+      },
+      "best_damage_per_spiritus": [
+        "blind_mutieren"
+      ],
+      "best_expected_damage": [
+        "buy_fuhlen"
+      ],
+      "fuhlen_break_even_marginal_damage_per_added_spiritus": 0.7559999999999998,
+      "fuhlen_damage_gain_over_best_blind": 0.7559999999999998,
+      "hart_prior": 0.2,
+      "model": "F",
+      "pareto_frontier": [
+        "blind_mutieren",
+        "buy_fuhlen",
+        "decline"
+      ],
+      "pressure_frequency_instrumentation": {
+        "hart": 0.2,
+        "weich": 0.8
+      },
+      "skill": 12,
+      "utility_free_unique_best_response": null,
+      "utility_note": "Damage and Spiritus are separate outcome dimensions; no scalar best response exists without a reserve/opportunity value.",
+      "wrong_pressure_spiritus_exposure_avoided": 0.4
+    },
+    {
+      "alternatives": {
+        "blind_duplieren": {
+          "damage_per_spiritus": 0.756,
+          "expected_attack_success": 0.336,
+          "expected_damage": 1.512,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 1.2,
+          "wrong_conditioned_spiritus": 1.2,
+          "wrong_read_probability": 0.6
+        },
+        "blind_mutieren": {
+          "damage_per_spiritus": 1.134,
+          "expected_attack_success": 0.504,
+          "expected_damage": 2.268,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 0.8,
+          "wrong_conditioned_spiritus": 0.8,
+          "wrong_read_probability": 0.4
+        },
+        "buy_fuhlen": {
+          "damage_per_spiritus": 1.26,
+          "expected_attack_success": 0.84,
+          "expected_damage": 3.78,
+          "spiritus_spent": 3,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        },
+        "decline": {
+          "damage_per_spiritus": null,
+          "expected_attack_success": 0.0,
+          "expected_damage": 0.0,
+          "spiritus_spent": 0,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        }
+      },
+      "best_damage_per_spiritus": [
+        "buy_fuhlen"
+      ],
+      "best_expected_damage": [
+        "buy_fuhlen"
+      ],
+      "fuhlen_break_even_marginal_damage_per_added_spiritus": 1.512,
+      "fuhlen_damage_gain_over_best_blind": 1.512,
+      "hart_prior": 0.4,
+      "model": "F",
+      "pareto_frontier": [
+        "blind_mutieren",
+        "buy_fuhlen",
+        "decline"
+      ],
+      "pressure_frequency_instrumentation": {
+        "hart": 0.4,
+        "weich": 0.6
+      },
+      "skill": 12,
+      "utility_free_unique_best_response": null,
+      "utility_note": "Damage and Spiritus are separate outcome dimensions; no scalar best response exists without a reserve/opportunity value.",
+      "wrong_pressure_spiritus_exposure_avoided": 0.8
+    },
+    {
+      "alternatives": {
+        "blind_duplieren": {
+          "damage_per_spiritus": 0.945,
+          "expected_attack_success": 0.42,
+          "expected_damage": 1.89,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 1.0,
+          "wrong_conditioned_spiritus": 1.0,
+          "wrong_read_probability": 0.5
+        },
+        "blind_mutieren": {
+          "damage_per_spiritus": 0.945,
+          "expected_attack_success": 0.42,
+          "expected_damage": 1.89,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 1.0,
+          "wrong_conditioned_spiritus": 1.0,
+          "wrong_read_probability": 0.5
+        },
+        "buy_fuhlen": {
+          "damage_per_spiritus": 1.26,
+          "expected_attack_success": 0.84,
+          "expected_damage": 3.78,
+          "spiritus_spent": 3,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        },
+        "decline": {
+          "damage_per_spiritus": null,
+          "expected_attack_success": 0.0,
+          "expected_damage": 0.0,
+          "spiritus_spent": 0,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        }
+      },
+      "best_damage_per_spiritus": [
+        "buy_fuhlen"
+      ],
+      "best_expected_damage": [
+        "buy_fuhlen"
+      ],
+      "fuhlen_break_even_marginal_damage_per_added_spiritus": 1.89,
+      "fuhlen_damage_gain_over_best_blind": 1.89,
+      "hart_prior": 0.5,
+      "model": "F",
+      "pareto_frontier": [
+        "blind_duplieren",
+        "blind_mutieren",
+        "buy_fuhlen",
+        "decline"
+      ],
+      "pressure_frequency_instrumentation": {
+        "hart": 0.5,
+        "weich": 0.5
+      },
+      "skill": 12,
+      "utility_free_unique_best_response": null,
+      "utility_note": "Damage and Spiritus are separate outcome dimensions; no scalar best response exists without a reserve/opportunity value.",
+      "wrong_pressure_spiritus_exposure_avoided": 1.0
+    },
+    {
+      "alternatives": {
+        "blind_duplieren": {
+          "damage_per_spiritus": 1.134,
+          "expected_attack_success": 0.504,
+          "expected_damage": 2.268,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 0.8,
+          "wrong_conditioned_spiritus": 0.8,
+          "wrong_read_probability": 0.4
+        },
+        "blind_mutieren": {
+          "damage_per_spiritus": 0.756,
+          "expected_attack_success": 0.336,
+          "expected_damage": 1.512,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 1.2,
+          "wrong_conditioned_spiritus": 1.2,
+          "wrong_read_probability": 0.6
+        },
+        "buy_fuhlen": {
+          "damage_per_spiritus": 1.26,
+          "expected_attack_success": 0.84,
+          "expected_damage": 3.78,
+          "spiritus_spent": 3,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        },
+        "decline": {
+          "damage_per_spiritus": null,
+          "expected_attack_success": 0.0,
+          "expected_damage": 0.0,
+          "spiritus_spent": 0,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        }
+      },
+      "best_damage_per_spiritus": [
+        "buy_fuhlen"
+      ],
+      "best_expected_damage": [
+        "buy_fuhlen"
+      ],
+      "fuhlen_break_even_marginal_damage_per_added_spiritus": 1.512,
+      "fuhlen_damage_gain_over_best_blind": 1.512,
+      "hart_prior": 0.6,
+      "model": "F",
+      "pareto_frontier": [
+        "blind_duplieren",
+        "buy_fuhlen",
+        "decline"
+      ],
+      "pressure_frequency_instrumentation": {
+        "hart": 0.6,
+        "weich": 0.4
+      },
+      "skill": 12,
+      "utility_free_unique_best_response": null,
+      "utility_note": "Damage and Spiritus are separate outcome dimensions; no scalar best response exists without a reserve/opportunity value.",
+      "wrong_pressure_spiritus_exposure_avoided": 0.8
+    },
+    {
+      "alternatives": {
+        "blind_duplieren": {
+          "damage_per_spiritus": 1.512,
+          "expected_attack_success": 0.672,
+          "expected_damage": 3.024,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 0.3999999999999999,
+          "wrong_conditioned_spiritus": 0.3999999999999999,
+          "wrong_read_probability": 0.19999999999999996
+        },
+        "blind_mutieren": {
+          "damage_per_spiritus": 0.3779999999999999,
+          "expected_attack_success": 0.16799999999999995,
+          "expected_damage": 0.7559999999999998,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 1.6,
+          "wrong_conditioned_spiritus": 1.6,
+          "wrong_read_probability": 0.8
+        },
+        "buy_fuhlen": {
+          "damage_per_spiritus": 1.26,
+          "expected_attack_success": 0.84,
+          "expected_damage": 3.78,
+          "spiritus_spent": 3,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        },
+        "decline": {
+          "damage_per_spiritus": null,
+          "expected_attack_success": 0.0,
+          "expected_damage": 0.0,
+          "spiritus_spent": 0,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        }
+      },
+      "best_damage_per_spiritus": [
+        "blind_duplieren"
+      ],
+      "best_expected_damage": [
+        "buy_fuhlen"
+      ],
+      "fuhlen_break_even_marginal_damage_per_added_spiritus": 0.7559999999999998,
+      "fuhlen_damage_gain_over_best_blind": 0.7559999999999998,
+      "hart_prior": 0.8,
+      "model": "F",
+      "pareto_frontier": [
+        "blind_duplieren",
+        "buy_fuhlen",
+        "decline"
+      ],
+      "pressure_frequency_instrumentation": {
+        "hart": 0.8,
+        "weich": 0.19999999999999996
+      },
+      "skill": 12,
+      "utility_free_unique_best_response": null,
+      "utility_note": "Damage and Spiritus are separate outcome dimensions; no scalar best response exists without a reserve/opportunity value.",
+      "wrong_pressure_spiritus_exposure_avoided": 0.3999999999999999
+    },
+    {
+      "alternatives": {
+        "blind_duplieren": {
+          "damage_per_spiritus": 0.4095,
+          "expected_attack_success": 0.182,
+          "expected_damage": 0.819,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 1.6,
+          "wrong_conditioned_spiritus": 1.6,
+          "wrong_read_probability": 0.8
+        },
+        "blind_mutieren": {
+          "damage_per_spiritus": 1.638,
+          "expected_attack_success": 0.728,
+          "expected_damage": 3.276,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 0.4,
+          "wrong_conditioned_spiritus": 0.4,
+          "wrong_read_probability": 0.2
+        },
+        "buy_fuhlen": {
+          "damage_per_spiritus": 1.365,
+          "expected_attack_success": 0.9099999999999999,
+          "expected_damage": 4.095,
+          "spiritus_spent": 3,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        },
+        "decline": {
+          "damage_per_spiritus": null,
+          "expected_attack_success": 0.0,
+          "expected_damage": 0.0,
+          "spiritus_spent": 0,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        }
+      },
+      "best_damage_per_spiritus": [
+        "blind_mutieren"
+      ],
+      "best_expected_damage": [
+        "buy_fuhlen"
+      ],
+      "fuhlen_break_even_marginal_damage_per_added_spiritus": 0.819,
+      "fuhlen_damage_gain_over_best_blind": 0.819,
+      "hart_prior": 0.2,
+      "model": "F",
+      "pareto_frontier": [
+        "blind_mutieren",
+        "buy_fuhlen",
+        "decline"
+      ],
+      "pressure_frequency_instrumentation": {
+        "hart": 0.2,
+        "weich": 0.8
+      },
+      "skill": 14,
+      "utility_free_unique_best_response": null,
+      "utility_note": "Damage and Spiritus are separate outcome dimensions; no scalar best response exists without a reserve/opportunity value.",
+      "wrong_pressure_spiritus_exposure_avoided": 0.4
+    },
+    {
+      "alternatives": {
+        "blind_duplieren": {
+          "damage_per_spiritus": 0.819,
+          "expected_attack_success": 0.364,
+          "expected_damage": 1.638,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 1.2,
+          "wrong_conditioned_spiritus": 1.2,
+          "wrong_read_probability": 0.6
+        },
+        "blind_mutieren": {
+          "damage_per_spiritus": 1.2285,
+          "expected_attack_success": 0.5459999999999999,
+          "expected_damage": 2.457,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 0.8,
+          "wrong_conditioned_spiritus": 0.8,
+          "wrong_read_probability": 0.4
+        },
+        "buy_fuhlen": {
+          "damage_per_spiritus": 1.365,
+          "expected_attack_success": 0.9099999999999999,
+          "expected_damage": 4.095,
+          "spiritus_spent": 3,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        },
+        "decline": {
+          "damage_per_spiritus": null,
+          "expected_attack_success": 0.0,
+          "expected_damage": 0.0,
+          "spiritus_spent": 0,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        }
+      },
+      "best_damage_per_spiritus": [
+        "buy_fuhlen"
+      ],
+      "best_expected_damage": [
+        "buy_fuhlen"
+      ],
+      "fuhlen_break_even_marginal_damage_per_added_spiritus": 1.638,
+      "fuhlen_damage_gain_over_best_blind": 1.638,
+      "hart_prior": 0.4,
+      "model": "F",
+      "pareto_frontier": [
+        "blind_mutieren",
+        "buy_fuhlen",
+        "decline"
+      ],
+      "pressure_frequency_instrumentation": {
+        "hart": 0.4,
+        "weich": 0.6
+      },
+      "skill": 14,
+      "utility_free_unique_best_response": null,
+      "utility_note": "Damage and Spiritus are separate outcome dimensions; no scalar best response exists without a reserve/opportunity value.",
+      "wrong_pressure_spiritus_exposure_avoided": 0.8
+    },
+    {
+      "alternatives": {
+        "blind_duplieren": {
+          "damage_per_spiritus": 1.02375,
+          "expected_attack_success": 0.45499999999999996,
+          "expected_damage": 2.0475,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 1.0,
+          "wrong_conditioned_spiritus": 1.0,
+          "wrong_read_probability": 0.5
+        },
+        "blind_mutieren": {
+          "damage_per_spiritus": 1.02375,
+          "expected_attack_success": 0.45499999999999996,
+          "expected_damage": 2.0475,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 1.0,
+          "wrong_conditioned_spiritus": 1.0,
+          "wrong_read_probability": 0.5
+        },
+        "buy_fuhlen": {
+          "damage_per_spiritus": 1.365,
+          "expected_attack_success": 0.9099999999999999,
+          "expected_damage": 4.095,
+          "spiritus_spent": 3,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        },
+        "decline": {
+          "damage_per_spiritus": null,
+          "expected_attack_success": 0.0,
+          "expected_damage": 0.0,
+          "spiritus_spent": 0,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        }
+      },
+      "best_damage_per_spiritus": [
+        "buy_fuhlen"
+      ],
+      "best_expected_damage": [
+        "buy_fuhlen"
+      ],
+      "fuhlen_break_even_marginal_damage_per_added_spiritus": 2.0475,
+      "fuhlen_damage_gain_over_best_blind": 2.0475,
+      "hart_prior": 0.5,
+      "model": "F",
+      "pareto_frontier": [
+        "blind_duplieren",
+        "blind_mutieren",
+        "buy_fuhlen",
+        "decline"
+      ],
+      "pressure_frequency_instrumentation": {
+        "hart": 0.5,
+        "weich": 0.5
+      },
+      "skill": 14,
+      "utility_free_unique_best_response": null,
+      "utility_note": "Damage and Spiritus are separate outcome dimensions; no scalar best response exists without a reserve/opportunity value.",
+      "wrong_pressure_spiritus_exposure_avoided": 1.0
+    },
+    {
+      "alternatives": {
+        "blind_duplieren": {
+          "damage_per_spiritus": 1.2285,
+          "expected_attack_success": 0.5459999999999999,
+          "expected_damage": 2.457,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 0.8,
+          "wrong_conditioned_spiritus": 0.8,
+          "wrong_read_probability": 0.4
+        },
+        "blind_mutieren": {
+          "damage_per_spiritus": 0.819,
+          "expected_attack_success": 0.364,
+          "expected_damage": 1.638,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 1.2,
+          "wrong_conditioned_spiritus": 1.2,
+          "wrong_read_probability": 0.6
+        },
+        "buy_fuhlen": {
+          "damage_per_spiritus": 1.365,
+          "expected_attack_success": 0.9099999999999999,
+          "expected_damage": 4.095,
+          "spiritus_spent": 3,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        },
+        "decline": {
+          "damage_per_spiritus": null,
+          "expected_attack_success": 0.0,
+          "expected_damage": 0.0,
+          "spiritus_spent": 0,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        }
+      },
+      "best_damage_per_spiritus": [
+        "buy_fuhlen"
+      ],
+      "best_expected_damage": [
+        "buy_fuhlen"
+      ],
+      "fuhlen_break_even_marginal_damage_per_added_spiritus": 1.638,
+      "fuhlen_damage_gain_over_best_blind": 1.638,
+      "hart_prior": 0.6,
+      "model": "F",
+      "pareto_frontier": [
+        "blind_duplieren",
+        "buy_fuhlen",
+        "decline"
+      ],
+      "pressure_frequency_instrumentation": {
+        "hart": 0.6,
+        "weich": 0.4
+      },
+      "skill": 14,
+      "utility_free_unique_best_response": null,
+      "utility_note": "Damage and Spiritus are separate outcome dimensions; no scalar best response exists without a reserve/opportunity value.",
+      "wrong_pressure_spiritus_exposure_avoided": 0.8
+    },
+    {
+      "alternatives": {
+        "blind_duplieren": {
+          "damage_per_spiritus": 1.638,
+          "expected_attack_success": 0.728,
+          "expected_damage": 3.276,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 0.3999999999999999,
+          "wrong_conditioned_spiritus": 0.3999999999999999,
+          "wrong_read_probability": 0.19999999999999996
+        },
+        "blind_mutieren": {
+          "damage_per_spiritus": 0.40949999999999986,
+          "expected_attack_success": 0.18199999999999994,
+          "expected_damage": 0.8189999999999997,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 1.6,
+          "wrong_conditioned_spiritus": 1.6,
+          "wrong_read_probability": 0.8
+        },
+        "buy_fuhlen": {
+          "damage_per_spiritus": 1.365,
+          "expected_attack_success": 0.9099999999999999,
+          "expected_damage": 4.095,
+          "spiritus_spent": 3,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        },
+        "decline": {
+          "damage_per_spiritus": null,
+          "expected_attack_success": 0.0,
+          "expected_damage": 0.0,
+          "spiritus_spent": 0,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        }
+      },
+      "best_damage_per_spiritus": [
+        "blind_duplieren"
+      ],
+      "best_expected_damage": [
+        "buy_fuhlen"
+      ],
+      "fuhlen_break_even_marginal_damage_per_added_spiritus": 0.819,
+      "fuhlen_damage_gain_over_best_blind": 0.819,
+      "hart_prior": 0.8,
+      "model": "F",
+      "pareto_frontier": [
+        "blind_duplieren",
+        "buy_fuhlen",
+        "decline"
+      ],
+      "pressure_frequency_instrumentation": {
+        "hart": 0.8,
+        "weich": 0.19999999999999996
+      },
+      "skill": 14,
+      "utility_free_unique_best_response": null,
+      "utility_note": "Damage and Spiritus are separate outcome dimensions; no scalar best response exists without a reserve/opportunity value.",
+      "wrong_pressure_spiritus_exposure_avoided": 0.3999999999999999
+    },
+    {
+      "alternatives": {
+        "blind_duplieren": {
+          "damage_per_spiritus": 0.4455,
+          "expected_attack_success": 0.198,
+          "expected_damage": 0.891,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 1.6,
+          "wrong_conditioned_spiritus": 1.6,
+          "wrong_read_probability": 0.8
+        },
+        "blind_mutieren": {
+          "damage_per_spiritus": 1.782,
+          "expected_attack_success": 0.792,
+          "expected_damage": 3.564,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 0.4,
+          "wrong_conditioned_spiritus": 0.4,
+          "wrong_read_probability": 0.2
+        },
+        "buy_fuhlen": {
+          "damage_per_spiritus": 1.485,
+          "expected_attack_success": 0.99,
+          "expected_damage": 4.455,
+          "spiritus_spent": 3,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        },
+        "decline": {
+          "damage_per_spiritus": null,
+          "expected_attack_success": 0.0,
+          "expected_damage": 0.0,
+          "spiritus_spent": 0,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        }
+      },
+      "best_damage_per_spiritus": [
+        "blind_mutieren"
+      ],
+      "best_expected_damage": [
+        "buy_fuhlen"
+      ],
+      "fuhlen_break_even_marginal_damage_per_added_spiritus": 0.891,
+      "fuhlen_damage_gain_over_best_blind": 0.891,
+      "hart_prior": 0.2,
+      "model": "F",
+      "pareto_frontier": [
+        "blind_mutieren",
+        "buy_fuhlen",
+        "decline"
+      ],
+      "pressure_frequency_instrumentation": {
+        "hart": 0.2,
+        "weich": 0.8
+      },
+      "skill": 18,
+      "utility_free_unique_best_response": null,
+      "utility_note": "Damage and Spiritus are separate outcome dimensions; no scalar best response exists without a reserve/opportunity value.",
+      "wrong_pressure_spiritus_exposure_avoided": 0.4
+    },
+    {
+      "alternatives": {
+        "blind_duplieren": {
+          "damage_per_spiritus": 0.891,
+          "expected_attack_success": 0.396,
+          "expected_damage": 1.782,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 1.2,
+          "wrong_conditioned_spiritus": 1.2,
+          "wrong_read_probability": 0.6
+        },
+        "blind_mutieren": {
+          "damage_per_spiritus": 1.3365,
+          "expected_attack_success": 0.594,
+          "expected_damage": 2.673,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 0.8,
+          "wrong_conditioned_spiritus": 0.8,
+          "wrong_read_probability": 0.4
+        },
+        "buy_fuhlen": {
+          "damage_per_spiritus": 1.485,
+          "expected_attack_success": 0.99,
+          "expected_damage": 4.455,
+          "spiritus_spent": 3,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        },
+        "decline": {
+          "damage_per_spiritus": null,
+          "expected_attack_success": 0.0,
+          "expected_damage": 0.0,
+          "spiritus_spent": 0,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        }
+      },
+      "best_damage_per_spiritus": [
+        "buy_fuhlen"
+      ],
+      "best_expected_damage": [
+        "buy_fuhlen"
+      ],
+      "fuhlen_break_even_marginal_damage_per_added_spiritus": 1.782,
+      "fuhlen_damage_gain_over_best_blind": 1.782,
+      "hart_prior": 0.4,
+      "model": "F",
+      "pareto_frontier": [
+        "blind_mutieren",
+        "buy_fuhlen",
+        "decline"
+      ],
+      "pressure_frequency_instrumentation": {
+        "hart": 0.4,
+        "weich": 0.6
+      },
+      "skill": 18,
+      "utility_free_unique_best_response": null,
+      "utility_note": "Damage and Spiritus are separate outcome dimensions; no scalar best response exists without a reserve/opportunity value.",
+      "wrong_pressure_spiritus_exposure_avoided": 0.8
+    },
+    {
+      "alternatives": {
+        "blind_duplieren": {
+          "damage_per_spiritus": 1.11375,
+          "expected_attack_success": 0.495,
+          "expected_damage": 2.2275,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 1.0,
+          "wrong_conditioned_spiritus": 1.0,
+          "wrong_read_probability": 0.5
+        },
+        "blind_mutieren": {
+          "damage_per_spiritus": 1.11375,
+          "expected_attack_success": 0.495,
+          "expected_damage": 2.2275,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 1.0,
+          "wrong_conditioned_spiritus": 1.0,
+          "wrong_read_probability": 0.5
+        },
+        "buy_fuhlen": {
+          "damage_per_spiritus": 1.485,
+          "expected_attack_success": 0.99,
+          "expected_damage": 4.455,
+          "spiritus_spent": 3,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        },
+        "decline": {
+          "damage_per_spiritus": null,
+          "expected_attack_success": 0.0,
+          "expected_damage": 0.0,
+          "spiritus_spent": 0,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        }
+      },
+      "best_damage_per_spiritus": [
+        "buy_fuhlen"
+      ],
+      "best_expected_damage": [
+        "buy_fuhlen"
+      ],
+      "fuhlen_break_even_marginal_damage_per_added_spiritus": 2.2275,
+      "fuhlen_damage_gain_over_best_blind": 2.2275,
+      "hart_prior": 0.5,
+      "model": "F",
+      "pareto_frontier": [
+        "blind_duplieren",
+        "blind_mutieren",
+        "buy_fuhlen",
+        "decline"
+      ],
+      "pressure_frequency_instrumentation": {
+        "hart": 0.5,
+        "weich": 0.5
+      },
+      "skill": 18,
+      "utility_free_unique_best_response": null,
+      "utility_note": "Damage and Spiritus are separate outcome dimensions; no scalar best response exists without a reserve/opportunity value.",
+      "wrong_pressure_spiritus_exposure_avoided": 1.0
+    },
+    {
+      "alternatives": {
+        "blind_duplieren": {
+          "damage_per_spiritus": 1.3365,
+          "expected_attack_success": 0.594,
+          "expected_damage": 2.673,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 0.8,
+          "wrong_conditioned_spiritus": 0.8,
+          "wrong_read_probability": 0.4
+        },
+        "blind_mutieren": {
+          "damage_per_spiritus": 0.891,
+          "expected_attack_success": 0.396,
+          "expected_damage": 1.782,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 1.2,
+          "wrong_conditioned_spiritus": 1.2,
+          "wrong_read_probability": 0.6
+        },
+        "buy_fuhlen": {
+          "damage_per_spiritus": 1.485,
+          "expected_attack_success": 0.99,
+          "expected_damage": 4.455,
+          "spiritus_spent": 3,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        },
+        "decline": {
+          "damage_per_spiritus": null,
+          "expected_attack_success": 0.0,
+          "expected_damage": 0.0,
+          "spiritus_spent": 0,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        }
+      },
+      "best_damage_per_spiritus": [
+        "buy_fuhlen"
+      ],
+      "best_expected_damage": [
+        "buy_fuhlen"
+      ],
+      "fuhlen_break_even_marginal_damage_per_added_spiritus": 1.782,
+      "fuhlen_damage_gain_over_best_blind": 1.782,
+      "hart_prior": 0.6,
+      "model": "F",
+      "pareto_frontier": [
+        "blind_duplieren",
+        "buy_fuhlen",
+        "decline"
+      ],
+      "pressure_frequency_instrumentation": {
+        "hart": 0.6,
+        "weich": 0.4
+      },
+      "skill": 18,
+      "utility_free_unique_best_response": null,
+      "utility_note": "Damage and Spiritus are separate outcome dimensions; no scalar best response exists without a reserve/opportunity value.",
+      "wrong_pressure_spiritus_exposure_avoided": 0.8
+    },
+    {
+      "alternatives": {
+        "blind_duplieren": {
+          "damage_per_spiritus": 1.782,
+          "expected_attack_success": 0.792,
+          "expected_damage": 3.564,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 0.3999999999999999,
+          "wrong_conditioned_spiritus": 0.3999999999999999,
+          "wrong_read_probability": 0.19999999999999996
+        },
+        "blind_mutieren": {
+          "damage_per_spiritus": 0.4454999999999999,
+          "expected_attack_success": 0.19799999999999995,
+          "expected_damage": 0.8909999999999998,
+          "spiritus_spent": 2,
+          "wasted_spiritus_zero_output": 1.6,
+          "wrong_conditioned_spiritus": 1.6,
+          "wrong_read_probability": 0.8
+        },
+        "buy_fuhlen": {
+          "damage_per_spiritus": 1.485,
+          "expected_attack_success": 0.99,
+          "expected_damage": 4.455,
+          "spiritus_spent": 3,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        },
+        "decline": {
+          "damage_per_spiritus": null,
+          "expected_attack_success": 0.0,
+          "expected_damage": 0.0,
+          "spiritus_spent": 0,
+          "wasted_spiritus_zero_output": 0.0,
+          "wrong_conditioned_spiritus": 0.0,
+          "wrong_read_probability": 0.0
+        }
+      },
+      "best_damage_per_spiritus": [
+        "blind_duplieren"
+      ],
+      "best_expected_damage": [
+        "buy_fuhlen"
+      ],
+      "fuhlen_break_even_marginal_damage_per_added_spiritus": 0.891,
+      "fuhlen_damage_gain_over_best_blind": 0.891,
+      "hart_prior": 0.8,
+      "model": "F",
+      "pareto_frontier": [
+        "blind_duplieren",
+        "buy_fuhlen",
+        "decline"
+      ],
+      "pressure_frequency_instrumentation": {
+        "hart": 0.8,
+        "weich": 0.19999999999999996
+      },
+      "skill": 18,
+      "utility_free_unique_best_response": null,
+      "utility_note": "Damage and Spiritus are separate outcome dimensions; no scalar best response exists without a reserve/opportunity value.",
+      "wrong_pressure_spiritus_exposure_avoided": 0.3999999999999999
+    }
+  ],
+  "recommendations_not_promotions": {
+    "counter_wind": "mechanically clean with existing operators, but 1S suppresses 50-90% of eligible Duplieren branches and needs integrated resource testing",
+    "dm_cost": "retain 2S as review candidate because the Rejoinder compresses a second attack after the normal action is spent",
+    "fuhlen": "F1 is the healthiest tested price only with hard failure; G makes paid information weak at high Skill",
+    "next_milestone": "another bind-repertoire increment: item-level audit and one narrow defender-side Weich/Bind-Initiative consumer, likely Zucken only if evidence supports it",
+    "ordinary_bind_information": "do not replace R0 yet; H1 remains promising but Weich lacks measurable downstream value",
+    "wrong_read": "F hard failure is the stronger information-game candidate; retain as unpromoted pending integrated reserve testing"
+  },
+  "response_economy": {
+    "counter_wind_failure": {
+      "defender_chain_delta": 1,
+      "defender_spiritus_delta": -1,
+      "duplieren_modifier_unchanged": true,
+      "next": "resolve Duplieren; normal cleanup"
+    },
+    "counter_wind_success": {
+      "bind_initiative": "Counter-Wind user",
+      "contact": "crossing retained",
+      "damage": 0,
+      "defender_additional_action_spent": false,
+      "defender_chain_delta": 1,
+      "defender_spiritus_delta": -1,
+      "next": [
+        "legal authored bind continuation",
+        "Disengage",
+        "pass"
+      ]
+    },
+    "decline_hart": {
+      "bind_initiative": "original striker",
+      "next": [
+        "legal authored bind continuation",
+        "Disengage",
+        "pass"
+      ]
+    },
+    "decline_weich": {
+      "bind_initiative": "crossing defender",
+      "next": [
+        "legal authored bind continuation",
+        "Disengage",
+        "pass"
+      ]
+    },
+    "duplieren_or_mutieren": {
+      "attacker_additional_action_spent": false,
+      "attacker_chain_delta": 1,
+      "attacker_spiritus_delta": -2,
+      "normal_result": "ordinary cleanup ends contact",
+      "ordinary_cross_beat_counter_by_parrier": "unavailable because the parrier's action was spent creating the initial Cross; this is action economy, not response denial"
+    },
+    "initial": {
+      "attacker_action_spent": true,
+      "bind_initiative": null,
+      "contact": "crossing",
+      "defender_action_spent_on_cross": true,
+      "measure": "wide",
+      "next": [
+        "Duplieren",
+        "Mutieren",
+        "decline"
+      ],
+      "point_threat": "unchanged by Basic Cross",
+      "pressure": "authored Hart or Weich"
+    }
+  },
+  "skill_table": [
+    {
+      "bane_attack_success": 0.25,
+      "boon_attack_success": 0.75,
+      "booned_hart_parry_success": 0.75,
+      "correct_minus_wrong_absolute": 0.5,
+      "correct_over_wrong_ratio": 3.0,
+      "expected_duplieren_damage_correct": 3.375,
+      "expected_duplieren_damage_wrong_F": 0.0,
+      "expected_duplieren_damage_wrong_G": 1.125,
+      "expected_mutieren_damage_correct": 3.375,
+      "expected_mutieren_damage_wrong_F": 0.0,
+      "expected_mutieren_damage_wrong_G": 1.125,
+      "flat_attack_success": 0.5,
+      "flat_parry_success": 0.5,
+      "skill": 10,
+      "wrong_reduction_from_correct_relative": 0.6666666666666666
+    },
+    {
+      "bane_attack_success": 0.36,
+      "boon_attack_success": 0.84,
+      "booned_hart_parry_success": 0.84,
+      "correct_minus_wrong_absolute": 0.48,
+      "correct_over_wrong_ratio": 2.3333333333333335,
+      "expected_duplieren_damage_correct": 3.78,
+      "expected_duplieren_damage_wrong_F": 0.0,
+      "expected_duplieren_damage_wrong_G": 1.6199999999999999,
+      "expected_mutieren_damage_correct": 3.78,
+      "expected_mutieren_damage_wrong_F": 0.0,
+      "expected_mutieren_damage_wrong_G": 1.6199999999999999,
+      "flat_attack_success": 0.6,
+      "flat_parry_success": 0.6,
+      "skill": 12,
+      "wrong_reduction_from_correct_relative": 0.5714285714285714
+    },
+    {
+      "bane_attack_success": 0.48999999999999994,
+      "boon_attack_success": 0.9099999999999999,
+      "booned_hart_parry_success": 0.9099999999999999,
+      "correct_minus_wrong_absolute": 0.42,
+      "correct_over_wrong_ratio": 1.8571428571428572,
+      "expected_duplieren_damage_correct": 4.095,
+      "expected_duplieren_damage_wrong_F": 0.0,
+      "expected_duplieren_damage_wrong_G": 2.2049999999999996,
+      "expected_mutieren_damage_correct": 4.095,
+      "expected_mutieren_damage_wrong_F": 0.0,
+      "expected_mutieren_damage_wrong_G": 2.2049999999999996,
+      "flat_attack_success": 0.7,
+      "flat_parry_success": 0.7,
+      "skill": 14,
+      "wrong_reduction_from_correct_relative": 0.46153846153846156
+    },
+    {
+      "bane_attack_success": 0.81,
+      "boon_attack_success": 0.99,
+      "booned_hart_parry_success": 0.99,
+      "correct_minus_wrong_absolute": 0.17999999999999994,
+      "correct_over_wrong_ratio": 1.222222222222222,
+      "expected_duplieren_damage_correct": 4.455,
+      "expected_duplieren_damage_wrong_F": 0.0,
+      "expected_duplieren_damage_wrong_G": 3.6450000000000005,
+      "expected_mutieren_damage_correct": 4.455,
+      "expected_mutieren_damage_wrong_F": 0.0,
+      "expected_mutieren_damage_wrong_G": 3.6450000000000005,
+      "flat_attack_success": 0.9,
+      "flat_parry_success": 0.9,
+      "skill": 18,
+      "wrong_reduction_from_correct_relative": 0.18181818181818177
+    }
+  ]
+}
