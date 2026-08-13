@@ -193,7 +193,7 @@ class ProvisionalLongswordEngine:
         actor.activation_action_taken = False
 
     def change_guard(self, actor: Fighter, guard: str, timing: str = "before_action") -> bool:
-        if timing != "before_action" or actor.activation_action_taken:
+        if not actor.alive or timing != "before_action" or actor.activation_action_taken:
             return False
         if not actor.guard_change_available or guard == OPEN:
             return False
@@ -210,7 +210,7 @@ class ProvisionalLongswordEngine:
 
     @staticmethod
     def spend_action(actor: Fighter) -> bool:
-        if not actor.action_available:
+        if not actor.alive or not actor.action_available:
             return False
         actor.action_available = False
         actor.activation_action_taken = True
@@ -218,7 +218,7 @@ class ProvisionalLongswordEngine:
 
     @staticmethod
     def spend_spiritus(actor: Fighter, amount: int) -> bool:
-        if actor.spiritus < amount:
+        if not actor.alive or amount < 0 or actor.spiritus < amount:
             return False
         actor.spiritus -= amount
         return True
@@ -250,6 +250,18 @@ class ProvisionalLongswordEngine:
         self.basic_cross_declaration = None
         self._close_rejoinder()
         attacker.point_threat = "threatening"
+        attack.kind = "durchwechseln-thrust"
+        attack.committed = False
+        attack.descending = False
+        attack.power = False
+        attack.accuracy = "normal"
+        attack.damage_mode = "normal"
+        attack.allows_attacker_continuations = True
+        attack.phase = "declared"
+        attack.attack_roll = None
+        attack.hit = None
+        attack.damage = 0
+        attack.cancelled = False
         self.event_log.append("D1:replace-pending-attack")
         return True
 
@@ -266,8 +278,10 @@ class ProvisionalLongswordEngine:
         damage_mode: str = "normal",
         allows_attacker_continuations: bool = True,
     ) -> Attack | None:
-        if not self.spend_action(actor):
+        if not target.alive or not self.spend_action(actor):
             return None
+        if damage_mode == "normal" and kind in {"cut", "basic-cut"} and actor.loaded and not power:
+            damage_mode = "damage_boon"
         attack = Attack(
             actor,
             target,
@@ -323,8 +337,35 @@ class ProvisionalLongswordEngine:
             self.recovery_nachreisen_immediate = attack.committed
             self.event_log.append("window:recovery-nachreisen" if attack.committed else "miss:no-recovery-window")
             return Resolution(True, False, "attack missed", events=list(self.event_log), roll=result)
-        attack.damage = 7 if attack.damage_mode == "fixed-7" else self.damage(damage_rolls)
+        attack.damage = (
+            7
+            if attack.damage_mode == "fixed-7"
+            else self.damage(damage_rolls, attack.damage_mode)
+        )
         return Resolution(True, True, "attack roll succeeded", damage=attack.damage, events=list(self.event_log), roll=result)
+
+    def resolve_pending_attack(self) -> Resolution:
+        """Apply one already-rolled, unanswered attack exactly once."""
+        attack = self.pending_attack
+        if (
+            attack is None
+            or attack.cancelled
+            or attack.phase != "rolled"
+            or not attack.hit
+            or not attack.target.alive
+        ):
+            return Resolution(False, reason="no unresolved successful pending attack")
+        attack.target.hp -= attack.damage
+        attack.phase = "resolved"
+        self.event_log.append("pending-attack:resolved")
+        return Resolution(
+            True,
+            True,
+            "pending attack resolved",
+            attack.damage,
+            list(self.event_log),
+            attack.attack_roll,
+        )
 
     def immediate_counter(
         self,
@@ -506,6 +547,8 @@ class ProvisionalLongswordEngine:
             pressure_choice not in {HART, WEICH}
             or defence_geometry not in DEFENCE_GEOMETRIES
             or attack is None
+            or not attack.actor.alive
+            or not defender.alive
             or attack.phase != "rolled"
             or not attack.hit
             or defender is not attack.target
@@ -560,7 +603,13 @@ class ProvisionalLongswordEngine:
         defence_rolls: tuple[int, ...],
     ) -> Resolution:
         attack = self.pending_attack
-        if attack is None or form not in {"Cross", "Beat"} or defender is not attack.target:
+        if (
+            attack is None
+            or not attack.actor.alive
+            or not defender.alive
+            or form not in {"Cross", "Beat"}
+            or defender is not attack.target
+        ):
             return Resolution(False, reason="invalid Basic defence")
         declaration = self.basic_cross_declaration
         if form == "Cross" and (
@@ -631,7 +680,13 @@ class ProvisionalLongswordEngine:
         defence_rolls: tuple[int, ...],
     ) -> Resolution:
         attack = self.pending_attack
-        if attack is None or not attack.descending or defender is not attack.target:
+        if (
+            attack is None
+            or not attack.actor.alive
+            or not defender.alive
+            or not attack.descending
+            or defender is not attack.target
+        ):
             return Resolution(False, reason="requires qualifying descending Cut")
         if "Zornhau-Ort" not in defender.known_plays or not defender.action_available:
             return Resolution(False, reason="Zornhau-Ort or action unavailable")
@@ -700,7 +755,9 @@ class ProvisionalLongswordEngine:
         """F1: buy one ordinary-Rejoinder initial-pressure reveal for 1S."""
         key = (self.bind_serial, actor.name)
         if (
-            self.crossing.source != "ordinary-basic-cross"
+            not actor.alive
+            or not self.other(actor).alive
+            or self.crossing.source != "ordinary-basic-cross"
             or not self.rejoinder_open
             or self.rejoinder_actor != actor.name
             or not (FUHLEN_NAMES & actor.known_plays)
@@ -720,7 +777,9 @@ class ProvisionalLongswordEngine:
 
     def rejoinder_options(self, actor: Fighter) -> list[str]:
         if (
-            self.crossing.source != "ordinary-basic-cross"
+            not actor.alive
+            or not self.other(actor).alive
+            or self.crossing.source != "ordinary-basic-cross"
             or not self.rejoinder_open
             or self.rejoinder_actor != actor.name
             or self.crossing.contact != "crossing"
@@ -778,7 +837,14 @@ class ProvisionalLongswordEngine:
         damage_rolls: tuple[int, ...] = (3,),
     ) -> Resolution:
         bind_attack = self.pending_bind_attack
-        if bind_attack is None or bind_attack.phase != "declared":
+        if (
+            bind_attack is None
+            or bind_attack.phase != "declared"
+            or not bind_attack.actor.alive
+            or not bind_attack.target.alive
+        ):
+            if bind_attack is not None:
+                self._end_bind_sequence()
             return Resolution(False, reason="no pending Bind Rejoinder attack")
         result = self.test(bind_attack.actor.skill, attack_rolls, "boon")
         amount = self.damage(damage_rolls) if result.success else 0
@@ -799,7 +865,9 @@ class ProvisionalLongswordEngine:
 
     def decline_bind_rejoinder(self, actor: Fighter) -> bool:
         if (
-            self.crossing.source != "ordinary-basic-cross"
+            not actor.alive
+            or not self.other(actor).alive
+            or self.crossing.source != "ordinary-basic-cross"
             or not self.rejoinder_open
             or self.rejoinder_actor != actor.name
         ):
@@ -818,7 +886,12 @@ class ProvisionalLongswordEngine:
         return True
 
     def continuation_options(self, actor: Fighter, *, winden_variant: str) -> list[str]:
-        if self.crossing.contact != "crossing" or self.crossing.bind_initiative != actor.name:
+        if (
+            not actor.alive
+            or not self.other(actor).alive
+            or self.crossing.contact != "crossing"
+            or self.crossing.bind_initiative != actor.name
+        ):
             return []
         if self.crossing.source == "ordinary-basic-cross":
             options: list[str] = []
@@ -841,7 +914,9 @@ class ProvisionalLongswordEngine:
 
     def ort(self, actor: Fighter, damage_model: str, damage_rolls: tuple[int, ...]) -> Resolution:
         if (
-            self.crossing.source == "ordinary-basic-cross"
+            not actor.alive
+            or not self.other(actor).alive
+            or self.crossing.source == "ordinary-basic-cross"
             or self.crossing.contact != "crossing"
             or self.crossing.bind_initiative != actor.name
         ):
@@ -867,7 +942,9 @@ class ProvisionalLongswordEngine:
         damage_rolls: tuple[int, ...] = (3,),
     ) -> Resolution:
         if (
-            self.crossing.source == "ordinary-basic-cross"
+            not actor.alive
+            or not self.other(actor).alive
+            or self.crossing.source == "ordinary-basic-cross"
             or self.crossing.contact != "crossing"
             or self.crossing.bind_initiative != actor.name
         ):
@@ -892,7 +969,9 @@ class ProvisionalLongswordEngine:
 
     def _ordinary_winding_legal(self, actor: Fighter, bind_height: str) -> bool:
         return (
-            self.crossing.source == "ordinary-basic-cross"
+            actor.alive
+            and self.other(actor).alive
+            and self.crossing.source == "ordinary-basic-cross"
             and WINDEN_PLAY in actor.known_plays
             and self.crossing.contact == "crossing"
             and self.crossing.bind_height == bind_height
@@ -951,7 +1030,11 @@ class ProvisionalLongswordEngine:
             winding is None
             or winding.phase != "declared"
             or winding.bind_height != expected_height
+            or not winding.actor.alive
+            or not winding.target.alive
         ):
+            if winding is not None:
+                self._end_bind_sequence()
             label = "Upper" if expected_height == UPPER else "Lower"
             return Resolution(False, reason=f"no pending {label} Winding Thrust")
         result = self.test(winding.actor.skill, attack_rolls, "normal")
@@ -1002,7 +1085,9 @@ class ProvisionalLongswordEngine:
 
     def pass_bind_initiative(self, actor: Fighter) -> bool:
         if (
-            self.crossing.contact != "crossing"
+            not actor.alive
+            or not self.other(actor).alive
+            or self.crossing.contact != "crossing"
             or self.crossing.bind_initiative != actor.name
             or self.rejoinder_open
             or self.pending_bind_attack is not None
@@ -1025,7 +1110,9 @@ class ProvisionalLongswordEngine:
 
     def disengage(self, actor: Fighter) -> bool:
         if (
-            self.crossing.contact != "crossing"
+            not actor.alive
+            or not self.other(actor).alive
+            or self.crossing.contact != "crossing"
             or self.crossing.bind_initiative != actor.name
             or self.rejoinder_open
             or self.pending_bind_attack is not None
@@ -1038,7 +1125,9 @@ class ProvisionalLongswordEngine:
 
     def tutta_cover_to_stretto(self, actor: Fighter) -> bool:
         if (
-            actor.guard != "tutta-porta-di-ferro"
+            not actor.alive
+            or not self.other(actor).alive
+            or actor.guard != "tutta-porta-di-ferro"
             or "Tutta Cover-to-Stretto" not in actor.known_plays
             or self.crossing.contact != "crossing"
             or self.crossing.measure != "wide"
@@ -1062,7 +1151,14 @@ class ProvisionalLongswordEngine:
         if name not in {"Absetzen", "Scambiar di Punta", "Schielhau"}:
             return Resolution(False, reason="not a governing C2 compound")
         attack = self.pending_attack
-        if attack is None or defender is not attack.target or defender.spiritus < 2 or not defender.action_available:
+        if (
+            attack is None
+            or not attack.actor.alive
+            or not defender.alive
+            or defender is not attack.target
+            or defender.spiritus < 2
+            or not defender.action_available
+        ):
             return Resolution(False, reason="compound prerequisites fail")
         if name not in defender.known_plays or len(self.learned_chain) >= LEARNED_PLAY_CAP:
             return Resolution(False, reason="compound not learned or chain full")
@@ -1091,7 +1187,7 @@ class ProvisionalLongswordEngine:
         return Resolution(True, True, f"{name} C2 succeeded", amount, roll=result)
 
     def attempt_attacker_continuation(self, actor: Fighter, name: str) -> bool:
-        if self.rejoinder_open:
+        if not actor.alive or not self.other(actor).alive or self.rejoinder_open:
             return False
         attack = self.pending_attack
         if attack is not None and attack.actor is actor and not attack.allows_attacker_continuations:
@@ -1103,6 +1199,22 @@ class ProvisionalLongswordEngine:
             self.crossing.retained = False
             return
         self._end_bind_sequence()
+
+    def finish_exchange(self) -> None:
+        """Apply the governing exchange boundary without refreshing a round action."""
+        self.cleanup_crossing()
+        if self.crossing.contact == "crossing":
+            self._clear_initial_pressure()
+            self._close_rejoinder()
+            self.crossing.bind_initiative = None
+            self.crossing.initiative_passed = False
+            self.consecutive_bind_passes = 0
+        self.learned_chain.clear()
+        self.pending_attack = None
+        self.basic_cross_declaration = None
+        self.pending_bind_attack = None
+        self.pending_winding = None
+        self.expire_recovery_window()
 
     def _end_bind_sequence(self) -> None:
         measure = self.crossing.measure
