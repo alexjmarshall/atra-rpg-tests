@@ -1,0 +1,159 @@
+{
+  "id": "longsword-h3-ordinary-bind-v0.1",
+  "status": "GOVERNING PROVISIONAL",
+  "adjudicated_on": "2026-08-13",
+  "not_canonical_or_final": true,
+  "scope": "Ordinary, non-point-threatening Basic Cross bind formation only.",
+  "authority": "Project promotion of H3-L2 for ordinary Basic Cross",
+  "historical_mechanical_boundary": {
+    "source_backed_lessons": [
+      "Hart/Weich opposition can be felt in the bind",
+      "Duplieren answers strong opposition and Mutieren changes underneath weak opposition",
+      "Winden is a learned family using upper Ochs and lower Pflug hangings",
+      "Winden supports cut, thrust, or slice selections",
+      "the audited lower-hanging example stays on the sword, thrusts upward, and may rise to an upper hanging when displaced"
+    ],
+    "atra_abstractions": [
+      "secret pre-roll Hart/Weich declaration",
+      "Hart Cross Boon and Weich flat roll",
+      "Bind Rejoinder insertion timing",
+      "Fühlen F1 at 1 Spiritus",
+      "Duplieren/Mutieren and Winding at 2 Spiritus",
+      "hard wrong-read failure",
+      "Bind Initiative opportunity sequencing",
+      "three-value bind_height state and exact writers",
+      "L2 Lower-to-Upper miss transition"
+    ]
+  },
+  "ordinary_basic_cross": {
+    "player_facing_rule": "When declaring an ordinary Cross, the defender secretly chooses Hart or Weich before rolling. This is an Atra abstraction of initial bind pressure. Hart grants exactly one Boon on the Cross; Weich is flat. A successful Cross cancels the attack and forms a Crossing with hidden initial pressure and public authored bind height. The striker may immediately use an eligible Bind Rejoinder. If the striker declines, unresolved Hart gives the striker the first ordinary bind opportunity and unresolved Weich gives the parrier that opportunity.",
+    "declaration_values": ["hart", "weich"],
+    "failed_cross": ["incoming attack not cancelled by this defence", "no Crossing", "initial pressure unknown/cleared", "bind height unknown", "no Bind Rejoinder"],
+    "successful_cross": ["CANCEL pending attack", "SET contact=crossing", "SET private initial pressure", "SET public bind_height", "open attacker Bind Rejoinder"],
+    "forbidden_automatic_effects": ["point threat", "guard change", "Leverage", "generic bind Boon", "damage modifier", "Favored/Unfavored"]
+  },
+  "state": {
+    "initial_pressure": {
+      "values": ["hart", "weich", "unknown"],
+      "visibility": "owner-private; opponent hidden until Fühlen F1",
+      "duration": "immediate attacker Bind Rejoinder cycle",
+      "cleanup": ["after decline initiative assignment", "when Duplieren/Mutieren consumes the requirement"]
+    },
+    "bind_height": {
+      "values": ["upper", "lower", "unknown"],
+      "visibility": "public",
+      "duration": "contact-bound unless an authored transition changes it",
+      "generic_modifier": null,
+      "independent_axes": ["measure", "contact_zone", "initial_pressure", "point_threat", "guard", "Bind Initiative"]
+    },
+    "bind_initiative": {
+      "visibility": "public sequencing state",
+      "meaning": "current first declaration opportunity only",
+      "not": ["exclusive bind ownership", "mandatory attack", "numeric bonus", "Leverage"]
+    }
+  },
+  "height_writers": {
+    "upper": {
+      "defence_event_metadata": "upper-cross-against-descending-cut",
+      "incoming_requirement": "qualifying descending/Oberhau-like Cut",
+      "operator": "SET bind_height=upper"
+    },
+    "lower": {
+      "defence_event_metadata": "lower-setting-aside",
+      "incoming_requirements": ["low-line-thrust", "rising-low-line-cut"],
+      "operator": "SET bind_height=lower",
+      "guard_alone_is_insufficient": true
+    },
+    "unknown": {
+      "condition": "neither authored writer qualifies",
+      "operator": "SET bind_height=unknown",
+      "generic_winden": false
+    }
+  },
+  "bind_rejoinder": {
+    "actor": "original striker",
+    "additional_normal_action": false,
+    "legal_options": ["Fühlen if known/affordable/not already used", "Duplieren", "Mutieren", "decline"],
+    "arbitrary_play_access": false
+  },
+  "fuhlen": {
+    "status": "GOVERNING PROVISIONAL ORDINARY CONTEXT",
+    "knowledge_requirement": "Fühlen",
+    "spiritus_cost": 1,
+    "action_cost": 0,
+    "learned_chain_entries": 0,
+    "frequency": "once per live initial Rejoinder cycle",
+    "effect": "reveal opponent initial Hart/Weich/Unknown",
+    "no_modifiers": true,
+    "zornhau_local_compatibility": "The same learned knowledge passively reveals the preserved Zornhau-local Favored/Unfavored category at no cost under the predecessor local rule. This context split is explicit compatibility debt pending separate Zornhau adjudication."
+  },
+  "duplieren_mutieren": {
+    "status": "GOVERNING PROVISIONAL PAIRED LEARNED ITEM",
+    "historical_record": "data/plays/play-german-longsword-duplieren-mutieren.yaml",
+    "historical_evidence_warning": "The durable Play remains needs-item-level-audit; Project promotion adjudicates mechanics, not an exact locator.",
+    "common_requirements": ["attacker Bind Rejoinder", "Wide Crossing", "2 Spiritus", "learned-chain room"],
+    "spiritus_cost": 2,
+    "action_cost": 0,
+    "learned_chain_entries": 1,
+    "duplieren": {
+      "correct_pressure": "hart",
+      "attack": "high Longsword Cut",
+      "accuracy": "Attack Boon",
+      "damage": "normal weapon damage"
+    },
+    "mutieren": {
+      "correct_pressure": "weich",
+      "attack": "low-opening Longsword Thrust",
+      "accuracy": "Attack Boon",
+      "damage": "normal weapon damage",
+      "transition": "retain contact through the winding transition and establish/maintain threatening point"
+    },
+    "wrong_read": ["spend 2 Spiritus", "consume one chain entry", "no attack roll", "zero damage", "normal cleanup"]
+  },
+  "decline_and_pass": {
+    "decline_hart": "original striker receives first ordinary bind opportunity",
+    "decline_weich": "crossing defender/parrier receives first ordinary bind opportunity",
+    "after_assignment": "CLEAR initial pressure to unknown",
+    "pass_costs": {"action": 0, "spiritus": 0, "learned_chain_entries": 0},
+    "first_pass": "transfer one opportunity to opponent",
+    "second_consecutive_pass": "end Crossing under normal cleanup",
+    "infinite_pass_loop": false
+  },
+  "winden": {
+    "status": "GOVERNING PROVISIONAL LEARNED FAMILY",
+    "historical_record": "data/plays/play-german-longsword-winden.yaml",
+    "common_requirements": ["knows Winden", "current bind opportunity", "Crossing", "matching authored bind height", "2 Spiritus", "learned-chain room"],
+    "spiritus_cost": 2,
+    "action_cost": 0,
+    "learned_chain_entries_per_declaration": 1,
+    "upper_winding_thrust": {
+      "height": "upper",
+      "declaration": ["RETAIN Crossing", "SET guard=Ochs", "SET point_threat=threatening", "ATTACK flat Longsword Thrust"],
+      "hit": "normal damage; end immediate bind sequence; normal contact cleanup",
+      "miss": ["zero damage", "RETAIN Crossing", "RETAIN upper", "RETAIN Ochs", "RETAIN threatening point", "transfer bind opportunity"]
+    },
+    "lower_winding_thrust": {
+      "height": "lower",
+      "fiction": "upward thrust from the lower hanging; Lower describes bind geometry, not target height",
+      "declaration": ["RETAIN Crossing", "SET guard=Pflug", "SET point_threat=threatening", "ATTACK flat Longsword Thrust"],
+      "hit": "normal damage; end immediate bind sequence; normal contact cleanup",
+      "miss_l2": ["zero damage", "RETAIN Crossing", "SET bind_height lower->upper", "SET guard Pflug->Ochs", "RETAIN threatening point", "transfer bind opportunity"],
+      "l1_status": "NOT GOVERNING; archived candidate only"
+    }
+  },
+  "action_chain_accounting": {
+    "initial_attack": "normal action",
+    "basic_cross": "normal action",
+    "fuhlen": {"additional_action": 0, "chain": 0},
+    "duplieren_mutieren": {"additional_action": 0, "chain": 1},
+    "winding_declaration": {"additional_action": 0, "chain": 1},
+    "pass": {"additional_action": 0, "chain": 0},
+    "global_learned_chain_cap": 3
+  },
+  "supersession": {
+    "ordinary_basic_cross": ["roll-derived Favored/Unfavored writer", "ordinary passive Fühlen reading of that relation"],
+    "preserved_local": ["Zornhau Favored/Unfavored", "Zornhau Ort", "Zornhau-local W1/W2", "Zornhau-local passive Fühlen relation visibility"],
+    "historical_reports_rewritten": false
+  },
+  "not_implemented": ["Hybrid H3/R0", "generic Leverage", "U1 1S Winding", "L1 Lower aftermath", "generic Unknown Winden", "Counter-Wind", "generic Largo-to-Stretto purchase", "Zucken", "Schnitt", "Ligadura", "Durchlaufen", "full eight-Windings matrix", "left/right bind-side axis"]
+}

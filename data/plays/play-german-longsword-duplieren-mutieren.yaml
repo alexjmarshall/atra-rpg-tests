@@ -34,10 +34,10 @@
     "packet_source_note": "Best-supported package: fifteenth-century Liechtenauer witnesses including Pseudo-Danzig, Lew, Kal and late-century continuators."
   },
   "game_implementation": {
-    "character_sheet_test_skill": null,
+    "character_sheet_test_skill": "Longsword",
     "secondary_skill_prerequisites": null,
-    "weapon_requirements": null,
-    "off_hand_requirement": null,
+    "weapon_requirements": ["Two-handed longsword"],
+    "off_hand_requirement": "Two hands on weapon",
     "provisional_tier": "Master",
     "tactical_tags": [],
     "timing": {
@@ -50,18 +50,18 @@
       "play-german-sword-in-one-hand-duplieren-mutieren"
     ],
     "related_plays": [],
-    "mechanics_status": "unimplemented",
+    "mechanics_status": "prototype",
     "mechanics": {
-      "learn_requirements": null,
-      "use_conditions": null,
-      "action_relationship": null,
-      "spiritus_cost": null,
-      "test_resolution": null,
-      "defence": null,
-      "success": null,
-      "failure": null,
-      "aftermath": null,
-      "limits": null
+      "learn_requirements": {"learned_item": "Duplieren / Mutieren", "branches": ["Duplieren", "Mutieren"]},
+      "use_conditions": {"context": "attacker Bind Rejoinder after successful ordinary H3 Basic Cross", "contact": "crossing", "measure": "wide", "initial_pressure": "hidden Hart/Weich requirement", "chain_room": true},
+      "action_relationship": "No additional normal action; the initiating attack already spent the striker action.",
+      "spiritus_cost": 2,
+      "test_resolution": {"correct_duplieren": "Attack Boon high Longsword Cut", "correct_mutieren": "Attack Boon low-opening Longsword Thrust", "wrong_read": "no attack roll"},
+      "defence": {"response_restriction": false, "ordinary_action_state_unchanged": true},
+      "success": {"damage": "normal weapon damage", "duplieren_pressure": "hart", "mutieren_pressure": "weich"},
+      "failure": {"wrong_read": "spend 2 Spiritus and one chain entry; zero damage; no chip damage", "rolled_attack_miss": "zero damage; normal cleanup"},
+      "aftermath": {"duplieren": "normal cleanup", "mutieren": "retain Crossing through the winding transition, set/maintain threatening point, then normal cleanup after resolution"},
+      "limits": {"governing_status": "GOVERNING PROVISIONAL ordinary H3 context", "learned_chain_entries": 1, "once_per_rejoinder_declaration": true, "historical_evidence_debt": "Mechanics are Project-adjudicated; exact item-level locator remains unaudited and is not inferred."}
     }
   }
 }

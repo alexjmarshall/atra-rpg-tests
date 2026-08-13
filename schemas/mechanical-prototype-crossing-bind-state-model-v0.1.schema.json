@@ -9,6 +9,7 @@
     "id": {"const": "longsword-crossing-bind-state-model-v0.1"},
     "status": {"const": "PROVISIONAL"},
     "governing_packet": {"const": "atra-melee-design-packet-v0-4"},
+    "governing_supersession": {"type": "object"},
     "scope": {
       "type": "object",
       "additionalProperties": false,
@@ -28,6 +29,8 @@
         "measure": {"const": ["wide", "close"]},
         "per_fighter_contact_zone": {"const": ["hiltward", "middle", "pointward", "unknown"]},
         "per_fighter_pressure": {"const": ["hard", "soft", "unknown"]},
+        "per_fighter_initial_pressure": {"const": ["hart", "weich", "unknown"]},
+        "bind_height": {"const": ["upper", "lower", "unknown"]},
         "per_fighter_point_threat": {"const": ["threatening", "not_threatening"]},
         "displacement_event": {
           "type": "object",
@@ -75,6 +78,9 @@
               "opponent_contact_zone": {"enum": ["hiltward", "middle", "pointward", "unknown", "not_applicable"]},
               "actor_pressure": {"enum": ["hard", "soft", "unknown", "not_applicable"]},
               "opponent_pressure": {"enum": ["hard", "soft", "unknown", "not_applicable"]},
+              "actor_initial_pressure": {"enum": ["hart", "weich", "unknown", "hart-or-weich", "not_applicable"]},
+              "opponent_initial_pressure": {"enum": ["hart", "weich", "unknown", "not_applicable"]},
+              "bind_height": {"enum": ["upper", "lower", "unknown", "upper-lower-or-unknown", "not_applicable"]},
               "actor_point_threat": {"enum": ["threatening", "not_threatening"]},
               "displacement": {"type": "boolean"},
               "cleanup": {"enum": ["exchange_end", "immediate_separation", "explicit_retention", "none"]},

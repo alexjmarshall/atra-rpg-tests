@@ -19,6 +19,11 @@ SELECTED_PROTOTYPE_IDS = {
 }
 MIRRORED_PROTOTYPE_IDS = SELECTED_PROTOTYPE_IDS | {"play-german-longsword-schielhau"}
 EXACT_EVIDENCE_IDS = SELECTED_PROTOTYPE_IDS | {"play-german-longsword-zwerchhau"}
+H3_GOVERNING_PLAY_IDS = {
+    "play-german-longsword-duplieren-mutieren",
+    "play-german-longsword-winden",
+    "play-german-longsword-zornhau-ort",
+}
 
 
 class RepositoryValidationTests(unittest.TestCase):
@@ -42,8 +47,13 @@ class RepositoryValidationTests(unittest.TestCase):
             record = json.loads(path.read_text(encoding="utf-8"))
             implementation = record["game_implementation"]
             self.assertEqual(implementation["candidate_status"], "research-candidate")
-            self.assertEqual(implementation["mechanics_status"], "unimplemented")
-            self.assertTrue(all(value is None for value in implementation["mechanics"].values()))
+            if record["id"] in H3_GOVERNING_PLAY_IDS:
+                self.assertEqual(implementation["mechanics_status"], "prototype")
+                self.assertTrue(any(value is not None for value in implementation["mechanics"].values()))
+                self.assertIn("GOVERNING PROVISIONAL", implementation["mechanics"]["limits"]["governing_status"])
+            else:
+                self.assertEqual(implementation["mechanics_status"], "unimplemented")
+                self.assertTrue(all(value is None for value in implementation["mechanics"].values()))
 
     def test_four_requested_audits_exist(self) -> None:
         for name in (
@@ -77,9 +87,15 @@ class RepositoryValidationTests(unittest.TestCase):
             else:
                 self.assertIsNone(record["historical_identity"]["historical_confidence"])
                 self.assertEqual(record["historical_identity"]["source_status"], "needs-item-level-audit")
-            self.assertIsNone(record["game_implementation"]["character_sheet_test_skill"])
+            if record["id"] in H3_GOVERNING_PLAY_IDS:
+                self.assertEqual(record["game_implementation"]["character_sheet_test_skill"], "Longsword")
+            else:
+                self.assertIsNone(record["game_implementation"]["character_sheet_test_skill"])
             self.assertIsNone(record["game_implementation"]["secondary_skill_prerequisites"])
-            self.assertTrue(all(value is None for value in record["game_implementation"]["mechanics"].values()))
+            if record["id"] in H3_GOVERNING_PLAY_IDS:
+                self.assertTrue(any(value is not None for value in record["game_implementation"]["mechanics"].values()))
+            else:
+                self.assertTrue(all(value is None for value in record["game_implementation"]["mechanics"].values()))
         self.assertEqual(len(audited), 13)
         report = ROOT / "reports" / "prototype-longsword-evidence-audit.md"
         self.assertTrue(report.exists())

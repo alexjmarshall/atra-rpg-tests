@@ -4,10 +4,10 @@
 
 The repository does **not** yet confirm the requested implementation data for any Play. The fields exist in every record, but they are null because v0.4 did not specify them item by item.
 
-- Character-sheet test skill specified: **0 / 114**
+- Character-sheet test skill specified: **3 / 114**
 - Secondary skill prerequisites specified: **0 / 114**
-- Weapon requirements specified: **0 / 114**
-- Off-hand requirement specified: **0 / 114**
+- Weapon requirements specified: **3 / 114**
+- Off-hand requirement specified: **3 / 114**
 
 A curriculum heading, Play name, or tactical lesson is not accepted as a substitute for these fields. In particular, Sword & Buckler may roll One-Handed Sword or Shield; mixed-implement Plays may require secondary skills; and off-hand state is an adopted first-class gate.
 
@@ -19,7 +19,7 @@ A curriculum heading, Play name, or tactical lesson is not accepted as a substit
 | Italian — Axe & Mace | 8 | 8 | 8 | 8 | 8 |
 | German — Dagger | 8 | 8 | 8 | 8 | 8 |
 | Italian — Dagger | 8 | 8 | 8 | 8 | 8 |
-| German — Longsword | 12 | 12 | 12 | 12 | 12 |
+| German — Longsword | 12 | 9 | 12 | 9 | 9 |
 | Italian — Longsword | 13 | 13 | 13 | 13 | 13 |
 | German — Polearms / Poleaxe & Halberd | 8 | 8 | 8 | 8 | 8 |
 | Italian — Polearms / Poleaxe & Halberd | 8 | 8 | 8 | 8 | 8 |
@@ -130,7 +130,7 @@ These are keyword cues only. They identify likely research targets and do not po
 | `play-german-dagger-throw-dagger-and-rush` — Throw Dagger and Rush | **MISSING** | **MISSING** | **MISSING** | **MISSING** | dagger |
 | `play-german-dagger-upper-shield` — Upper Shield | **MISSING** | **MISSING** | **MISSING** | **MISSING** | shield, dagger |
 | `play-german-longsword-absetzen` — Absetzen | **MISSING** | **MISSING** | **MISSING** | **MISSING** | none detected |
-| `play-german-longsword-duplieren-mutieren` — Duplieren / Mutieren | **MISSING** | **MISSING** | **MISSING** | **MISSING** | none detected |
+| `play-german-longsword-duplieren-mutieren` — Duplieren / Mutieren | Longsword | **MISSING** | Two-handed longsword | Two hands on weapon | none detected |
 | `play-german-longsword-durchlaufen` — Durchlaufen | **MISSING** | **MISSING** | **MISSING** | **MISSING** | none detected |
 | `play-german-longsword-durchwechseln` — Durchwechseln | **MISSING** | **MISSING** | **MISSING** | **MISSING** | none detected |
 | `play-german-longsword-kron-crown-crossing` — Kron / Crown Crossing | **MISSING** | **MISSING** | **MISSING** | **MISSING** | none detected |
@@ -138,8 +138,8 @@ These are keyword cues only. They identify likely research targets and do not po
 | `play-german-longsword-nachreisen` — Nachreisen | **MISSING** | **MISSING** | **MISSING** | **MISSING** | none detected |
 | `play-german-longsword-scheitelhau` — Scheitelhau | **MISSING** | **MISSING** | **MISSING** | **MISSING** | none detected |
 | `play-german-longsword-schielhau` — Schielhau | **MISSING** | **MISSING** | **MISSING** | **MISSING** | none detected |
-| `play-german-longsword-winden` — Winden | **MISSING** | **MISSING** | **MISSING** | **MISSING** | none detected |
-| `play-german-longsword-zornhau-ort` — Zornhau-Ort | **MISSING** | **MISSING** | **MISSING** | **MISSING** | none detected |
+| `play-german-longsword-winden` — Winden | Longsword | **MISSING** | Two-handed longsword | Two hands on weapon | none detected |
+| `play-german-longsword-zornhau-ort` — Zornhau-Ort | Longsword | **MISSING** | Two-handed longsword | Two hands on weapon | none detected |
 | `play-german-longsword-zwerchhau` — Zwerchhau | **MISSING** | **MISSING** | **MISSING** | **MISSING** | none detected |
 | `play-german-polearms-poleaxe-and-halberd-beat-down-and-thrust` — Beat Down and Thrust | **MISSING** | **MISSING** | **MISSING** | **MISSING** | none detected |
 | `play-german-polearms-poleaxe-and-halberd-counter-thrust-to-the-heart` — Counter-Thrust to the Heart | **MISSING** | **MISSING** | **MISSING** | **MISSING** | none detected |

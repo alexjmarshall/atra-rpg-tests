@@ -53,6 +53,8 @@ CONTACT_VALUES = ("none", "crossing")
 MEASURE_VALUES = ("wide", "close")
 CONTACT_ZONE_VALUES = ("hiltward", "middle", "pointward", "unknown")
 PRESSURE_VALUES = ("hard", "soft", "unknown")
+INITIAL_PRESSURE_VALUES = ("hart", "weich", "unknown")
+BIND_HEIGHT_VALUES = ("upper", "lower", "unknown")
 POINT_THREAT_VALUES = ("threatening", "not_threatening")
 LEARNED_PLAY_CAP = 3
 
@@ -77,6 +79,8 @@ GOVERNING_BASELINE: dict[str, Any] = {
         "measure": MEASURE_VALUES,
         "contact_zone": CONTACT_ZONE_VALUES,
         "pressure": PRESSURE_VALUES,
+        "initial_pressure": INITIAL_PRESSURE_VALUES,
+        "bind_height": BIND_HEIGHT_VALUES,
         "point_threat": POINT_THREAT_VALUES,
         "displacement_is_event": True,
     },
@@ -85,7 +89,11 @@ GOVERNING_BASELINE: dict[str, Any] = {
         "variant": "STATE-BASED D1 + BEAT-OPEN",
         "cross_durchwechseln_immune": False,
         "d1_denial": "threatening opposing point only; Crossing/form does not deny",
-        "cross_success": "cancel; establish ordinary Crossing; no generic modifier",
+        "cross_success": (
+            "declare hidden Hart/Weich before roll; Hart has exactly one defence Boon; "
+            "Weich is flat; success cancels, establishes ordinary Crossing, authors public "
+            "Upper/Lower/Unknown height, and opens the narrow attacker Bind Rejoinder"
+        ),
         "beat_durchwechseln_window": True,
         "beat_success": "cancel; displacement event; end contact; set attacker guard to Open",
         "failed_or_interrupted_beat_creates_open": False,
@@ -125,11 +133,23 @@ GOVERNING_BASELINE: dict[str, Any] = {
         "persistent_recovery_state": False,
         "vom_tag_gate": False,
     },
-    "minimum_bind": {
+    "ordinary_h3_bind": {
+        "status": "GOVERNING PROVISIONAL",
+        "initial_pressure": INITIAL_PRESSURE_VALUES,
+        "pressure_visibility": "owner-private; opponent unknown until 1S Fühlen F1",
+        "height": BIND_HEIGHT_VALUES,
+        "rejoinder": ("Fühlen", "Duplieren", "Mutieren", "decline"),
+        "duplieren_mutieren_cost": 2,
+        "winden_cost": 2,
+        "lower_failure": "L2 lower->upper and Pflug->Ochs",
+        "bind_initiative": "first declaration opportunity only; pass transfers once",
+        "ordinary_favored_unfavored": "SUPERSEDED; never generated",
+    },
+    "zornhau_local_bind": {
         "position": ("favored", "unfavored", "unknown"),
         "initiative_separate": True,
         "tie_rule": "Bind Initiative holder Favored; provisional harness only",
-        "pressure_axis_preserved": True,
+        "scope": "preserved Zornhau-local relation pending separate adjudication",
     },
     "zornhau_ort": {
         "zornhau_cost": 0,
@@ -139,11 +159,18 @@ GOVERNING_BASELINE: dict[str, Any] = {
         "ort_intrinsic": True,
         "ort_models": ("O1", "O2"),
     },
-    "fuhlen": "passive categorical bind visibility; no action, Spiritus, or chain cost",
+    "fuhlen": {
+        "ordinary_h3": "1S/no action/no chain; once per Rejoinder; reveal initial Hart/Weich",
+        "zornhau_local": "preserved passive categorical Favored/Unfavored visibility",
+        "compatibility_debt": "context-specific semantics pending Zornhau adjudication",
+    },
     "winden": {
-        "cost": 1,
+        "ordinary_cost": 2,
         "chain_entries": 1,
-        "variants": ("W1", "W2"),
+        "ordinary_executions": ("Upper Winding Thrust", "Lower Winding Thrust"),
+        "lower_miss": "L2 lower->upper; Pflug->Ochs; transfer opportunity",
+        "zornhau_local_variants": ("W1", "W2"),
+        "zornhau_local_cost": 1,
         "starting_ochs_pflug_gate": False,
     },
     "tutta_cover_to_stretto": {
@@ -164,6 +191,8 @@ def validate_engine_alignment() -> None:
     """Fail loudly if the selected current engine stops matching the baseline."""
     assert ENGINE.MAX_HP == 8 and ENGINE.MAX_SPIRITUS == 8
     assert ENGINE.LEARNED_PLAY_CAP == 3
+    assert ENGINE.BIND_HEIGHTS == BIND_HEIGHT_VALUES
+    assert ENGINE.INITIAL_PRESSURES == INITIAL_PRESSURE_VALUES
     a = ENGINE.Fighter("A", known_plays={"Durchwechseln"})
     b = ENGINE.Fighter("B")
     current = ENGINE.ProvisionalLongswordEngine([a, b])
@@ -182,6 +211,11 @@ Attack = ENGINE.Attack
 Crossing = ENGINE.Crossing
 Resolution = ENGINE.Resolution
 CurrentEngine = ENGINE.ProvisionalLongswordEngine
+HART = ENGINE.HART
+WEICH = ENGINE.WEICH
+UNKNOWN = ENGINE.UNKNOWN
+UPPER = ENGINE.UPPER
+LOWER = ENGINE.LOWER
 
 # Compatibility only: old named-guard/bridge experiments subclass these archived
 # types.  New work must use CurrentEngine.

@@ -2,6 +2,7 @@
   "id": "upper-lower-winden-completion-v0.3",
   "status": "PROVISIONAL BOUNDED CANDIDATE; NOT GOVERNING OR CANONICAL",
   "automatic_promotion": false,
+  "current_governing_note": "Historical candidate/adjudication input. Project separately promoted H3-L2 on 2026-08-13 in data/prototypes/longsword-h3-ordinary-bind-v0.1.yaml; this experiment record remains unchanged in conclusion and is not the governing specification.",
   "control": {
     "id": "R0",
     "engine": "simulations/shared/provisional_longsword_engine.py",
@@ -46,4 +47,3 @@
   },
   "excluded": ["Leverage", "Counter-Wind", "generic Unknown Winden", "generic Wide-to-Close", "response denial", "action refresh", "random height", "new mechanical operator"]
 }
-

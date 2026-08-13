@@ -25,8 +25,10 @@ class MeleePlayGrammarV01Tests(unittest.TestCase):
         self.assertEqual(errors, [])
         codes = {(item.technique, item.code) for item in findings}
         self.assertIn(("nachreisen-current", "TRIGGER_NOT_PAYOFF"), codes)
-        self.assertIn(("zornhau-ort-current", "GHOST_UTILITY"), codes)
-        self.assertIn(("winden-current-material", "MISSING_PRIMARY_PAYLOAD"), codes)
+        self.assertNotIn(("zornhau-ort-current", "GHOST_UTILITY"), codes)
+        self.assertNotIn(("zornhau-ort-current", "MISSING_EFFECT_EXPOSED"), codes)
+        self.assertNotIn(("winden-current-material", "MISSING_PRIMARY_PAYLOAD"), codes)
+        self.assertNotIn(("winden-current-material", "MISSING_EFFECT_EXPOSED"), codes)
         self.assertIn(("frontale-current-sequence", "MISSING_PRIMARY_PAYLOAD"), codes)
 
     def test_vocabulary_closure_and_forbidden_control(self) -> None:

@@ -5,6 +5,7 @@
   "selected_on": "2026-08-11",
   "choice_architecture_adjudicated_on": "2026-08-12",
   "repertoire_integrity_repair_adjudicated_on": "2026-08-12",
+  "h3_ordinary_bind_adjudicated_on": "2026-08-13",
   "engine_entry_point": "simulations/shared/provisional_longsword.py",
   "archived_experiment_variants_remain_available": true,
   "durchwechseln": {
@@ -32,6 +33,8 @@
     "measure": ["wide", "close"],
     "per_fighter_contact_zone": ["hiltward", "middle", "pointward", "unknown"],
     "per_fighter_pressure": ["hard", "soft", "unknown"],
+    "per_fighter_initial_pressure": ["hart", "weich", "unknown"],
+    "bind_height": ["upper", "lower", "unknown"],
     "per_fighter_point_threat": ["threatening", "not_threatening"],
     "displacement_is_event_not_state": true,
     "random_bind_soft_close_or_zone_generation": false
@@ -39,10 +42,83 @@
   "basic_parry": {
     "declared_forms": ["Cross", "Beat"],
     "selected_variant": "STATE-BASED D1 + BEAT-OPEN (CB3 blanket Cross immunity retracted)",
-    "cross": "universal Basic defensive form; ordinary state-based D1 window; on success cancel and establish ordinary Crossing while preserving measure; point is not automatically threatening; no generic modifier or offensive benefit",
+    "cross": "universal Basic defensive form; secretly choose Hart or Weich before the roll; Hart grants exactly one defence Boon and Weich is flat; on success cancel, establish ordinary Crossing, author public Upper/Lower/Unknown height from explicit generating geometry, preserve measure, and open the narrow attacker Bind Rejoinder when the incoming attack permits attacker continuations; no automatic point threat or generic modifier",
     "beat": "universal Basic defensive form; ordinary state-based D1 window; on successful non-interrupted resolution cancel, record displacement, end contact/separate, and set the attacker guard to Open",
     "failed_or_d1_interrupted_beat_creates_open": false,
     "repertoire_dependent_cross_value_accepted": true
+  },
+  "ordinary_bind_h3": {
+    "status": "PROJECT-ADJUDICATED GOVERNING PROVISIONAL FOR ORDINARY NON-POINT-THREATENING BASIC CROSS",
+    "authority": "ATRA H3 ORDINARY BIND KERNEL — GOVERNING INTEGRATION v0.1",
+    "specification": "data/prototypes/longsword-h3-ordinary-bind-v0.1.yaml",
+    "scope": "ordinary Basic Cross only; Zornhau, Absetzen, other point-threatening or authored special crossings, T1, and Italian close mechanics retain their local rules",
+    "basic_cross": {
+      "pre_roll_private_choice": ["hart", "weich"],
+      "hart": "exactly one defence Boon",
+      "weich": "flat defence roll",
+      "failure": "no Crossing; clear initial pressure and bind height",
+      "success": "CANCEL incoming attack; SET Crossing; SET private initial pressure; SET public bind_height; open one attacker Bind Rejoinder",
+      "ordinary_favored_unfavored": "SUPERSEDED; never generated",
+      "automatic_point_threat": false,
+      "generic_modifier": null
+    },
+    "initial_pressure": {
+      "values": ["hart", "weich", "unknown"],
+      "visibility": "owner-private; opponent sees Unknown unless revealed by governing Fühlen F1",
+      "duration": "immediate Bind Rejoinder cycle only",
+      "clear_on": ["attacker declines after initiative assignment", "Duplieren or Mutieren declaration consumes the requirement"]
+    },
+    "bind_height": {
+      "values": ["upper", "lower", "unknown"],
+      "visibility": "public",
+      "generic_modifiers": [],
+      "upper_writer": "successful ordinary Cross with explicit upper-cross-against-descending-cut geometry against a qualifying descending/Oberhau-like Cut",
+      "lower_writer": "successful ordinary Cross with explicit lower-setting-aside defence-event metadata against low-line-thrust or rising-low-line-cut",
+      "unknown": "all other ordinary generating geometry; no generic Winden fallback",
+      "independent_of": ["measure", "contact_zone", "initial_pressure", "point_threat", "guard", "Bind Initiative"]
+    },
+    "bind_rejoinder": {
+      "actor": "original striker",
+      "timing": "one insertion immediately after successful eligible ordinary Cross",
+      "legal_options": ["Fühlen if known and affordable", "Duplieren", "Mutieren", "decline"],
+      "additional_normal_action": false,
+      "arbitrary_learned_play_access": false
+    },
+    "fuhlen": {
+      "ordinary_context": "once per live initial Rejoinder cycle, spend 1 Spiritus to reveal opponent initial Hart/Weich/Unknown",
+      "spiritus_cost": 1,
+      "additional_normal_action": false,
+      "learned_chain_entries": 0,
+      "zornhau_local_compatibility": "preserve passive categorical Favored/Unfavored reading pending separate Zornhau adjudication"
+    },
+    "duplieren_mutieren": {
+      "status": "one learned repertoire item with two intrinsic branches",
+      "spiritus_cost": 2,
+      "learned_chain_entries": 1,
+      "additional_normal_action": false,
+      "measure_gate": "wide Crossing",
+      "duplieren": "Hart -> high Longsword Cut with Attack Boon and normal damage",
+      "mutieren": "Weich -> retained winding transition and low-opening Longsword Thrust with Attack Boon and normal damage",
+      "wrong_read": "spend and chain entry are consumed; no attack roll; zero damage"
+    },
+    "bind_initiative": {
+      "meaning": "first declaration opportunity only; not exclusive ownership and no modifier",
+      "decline_hart": "original striker first",
+      "decline_weich": "crossing defender/parrier first",
+      "pass": "first pass costs nothing and transfers one opportunity; two consecutive passes end Crossing"
+    },
+    "winden": {
+      "status": "learned family",
+      "ordinary_executions": ["Upper Winding Thrust", "Lower Winding Thrust"],
+      "spiritus_cost": 2,
+      "learned_chain_entries_per_declaration": 1,
+      "additional_normal_action": false,
+      "upper": "requires Upper; SET Ochs and threatening point; flat normal Thrust; miss retains Upper/Ochs/threat and transfers opportunity",
+      "lower": "requires Lower; SET Pflug and threatening point; flat upward normal Thrust; L2 miss SET Lower->Upper and Pflug->Ochs, retains threat, and transfers opportunity",
+      "unknown_execution": "NOT IMPLEMENTED",
+      "zornhau_local_winding": "preserved under prior local trigger/behavior"
+    },
+    "explicit_nonfeatures": ["Hybrid H3/R0", "Leverage", "Counter-Wind", "generic Unknown-height Winden", "generic Wide-to-Close purchase", "left/right bind-side axis"]
   },
   "open_state": {
     "status": "GOVERNING PROVISIONAL FOR CURRENT LONGSWORD VERTICAL SLICE",
@@ -103,15 +179,15 @@
     },
     "bind_position": {
       "values": ["Favored Bind", "Unfavored Bind", "Unknown"],
-      "creation": "compare the two already-successful rolls that created contested Crossing; lower successful roll is better",
+      "creation": "preserved local/special writer: compare the two already-successful rolls that created a Zornhau-local or already-authored special contested Crossing; lower successful roll is better; ordinary Basic Cross no longer calls this writer",
       "tie": "Bind Initiative holder receives Favored Bind; provisional harness rule; record frequency",
       "generic_modifiers": [],
       "pressure_axis_separate": true
     },
-    "bind_initiative": "successful defensive Cross/Zornhau creator receives first immediate continuation declaration; decline passes one opportunity to opponent before cleanup; independent of bind position",
-    "fuhlen": "learned passive; reveal categorical bind position before first continuation; no action, Spiritus, or chain cost; never reveal raw rolls",
+    "bind_initiative": "sequencing only: first declaration opportunity, then one opponent opportunity after a pass; independent of bind position; H3 ordinary decline assigns it from initial Hart/Weich",
+    "fuhlen": "Zornhau-local compatibility only: learned passive reveals categorical local bind position with no action, Spiritus, or chain cost; ordinary H3 use is the contextual 1-Spiritus initial-pressure reveal recorded above",
     "winden": {
-      "status": "separate learned Play",
+      "status": "preserved Zornhau-local W1/W2 compatibility; ordinary governing Winden family recorded in ordinary_bind_h3",
       "spiritus_cost": 1,
       "learned_chain_entries": 1,
       "additional_normal_action": false,

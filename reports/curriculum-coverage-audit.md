@@ -16,7 +16,7 @@ Coverage is inferred from candidate names, provisional types, tactical lessons, 
 | Italian — Sword in One Hand | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
 | German — Axe & Mace | 8 | 3 | 0 | 1 | 2 | 1 | 1 | 0 |
 | Italian — Axe & Mace | 8 | 2 | 1 | 1 | 0 | 2 | 0 | 2 |
-| German — Longsword | 12 | 4 | 2 | 1 | 3 | 1 | 1 | 3 |
+| German — Longsword | 12 | 3 | 3 | 1 | 3 | 1 | 1 | 3 |
 | Italian — Longsword | 13 | 0 | 3 | 1 | 3 | 4 | 1 | 4 |
 | German — Spear & Staff | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
 | Italian — Spear & Staff | 8 | 1 | 4 | 0 | 0 | 1 | 1 | 4 |
@@ -141,8 +141,8 @@ Missing candidate evidence: Weapon control, Pursuit / recovery.
 
 Missing candidate evidence: none by these heuristics.
 
-- **Initiation (4):** Krumphau, Scheitelhau, Schielhau, Zwerchhau
-- **Defence (2):** Absetzen, Zornhau-Ort
+- **Initiation (3):** Krumphau, Scheitelhau, Zwerchhau
+- **Defence (3):** Absetzen, Schielhau, Zornhau-Ort
 - **Deception (1):** Durchwechseln
 - **Weapon control (3):** Duplieren / Mutieren, Kron / Crown Crossing, Winden
 - **Close play (1):** Durchlaufen

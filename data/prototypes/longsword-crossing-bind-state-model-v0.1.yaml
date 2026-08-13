@@ -1,6 +1,12 @@
 {
   "id": "longsword-crossing-bind-state-model-v0.1",
   "status": "PROVISIONAL",
+  "governing_supersession": {
+    "date": "2026-08-13",
+    "ordinary_basic_cross": "H3 initial Hart/Weich plus public bind_height supersedes ordinary Hard/Hard and any roll-derived Favored/Unfavored writer",
+    "specification": "data/prototypes/longsword-h3-ordinary-bind-v0.1.yaml",
+    "zornhau_local_relation": "preserved"
+  },
   "governing_packet": "atra-melee-design-packet-v0-4",
   "scope": {
     "mirrored_play_ids": [
@@ -20,6 +26,8 @@
     "measure": ["wide", "close"],
     "per_fighter_contact_zone": ["hiltward", "middle", "pointward", "unknown"],
     "per_fighter_pressure": ["hard", "soft", "unknown"],
+    "per_fighter_initial_pressure": ["hart", "weich", "unknown"],
+    "bind_height": ["upper", "lower", "unknown"],
     "per_fighter_point_threat": ["threatening", "not_threatening"],
     "displacement_event": {"persistent_state": false, "required_fields": ["weapon_owner", "source", "contact_after"]}
   },
@@ -27,7 +35,7 @@
     "crossing_definition": "Actionable weapon contact from which immediate blade-work can continue before separation; German Bind and Italian Crossing share one engine state.",
     "crossing_cleanup": "At exchange end contact becomes none unless a Play explicitly retains or transforms the Crossing.",
     "contact_zone_has_generic_modifier": false,
-    "pressure_source": "action-or-Play only; never random, margin-, skill-, Guard-, or zone-derived",
+    "pressure_source": "the legacy Hard/Soft axis remains action-or-Play only; ordinary H3 initial Hart/Weich uses a separate hidden phase-scoped axis; neither is random, margin-, skill-, Guard-, or zone-derived",
     "durchwechseln_timing": "after Cross/Beat declaration and before the Parry roll; D1 is paid with no refund; the Parry roll is skipped",
     "combined_variant": "A one-roll single-time defence/offence",
     "compound_cost": 2,
@@ -39,7 +47,7 @@
   "actions": [
     {
       "id": "basic-parry-cross", "status": "PROVISIONAL", "cost": 0,
-      "phases": [{"phase": "successful declared Cross against ordinary committed Strike", "contact": "crossing", "measure": "preserve", "actor_contact_zone": "unknown", "opponent_contact_zone": "unknown", "actor_pressure": "hard", "opponent_pressure": "hard", "actor_point_threat": "not_threatening", "displacement": false, "cleanup": "exchange_end", "basis": "provisional-atra-abstraction", "notes": "Declared before roll; blade-seeking and point-off-line in the pre-contact D1 window; success cancels the Strike and preserves measure."}]
+      "phases": [{"phase": "successful declared ordinary Cross", "contact": "crossing", "measure": "preserve", "actor_contact_zone": "unknown", "opponent_contact_zone": "unknown", "actor_pressure": "unknown", "opponent_pressure": "unknown", "actor_initial_pressure": "hart-or-weich", "opponent_initial_pressure": "unknown", "bind_height": "upper-lower-or-unknown", "actor_point_threat": "not_threatening", "displacement": false, "cleanup": "exchange_end", "basis": "provisional-atra-abstraction", "notes": "Hart applies exactly one Cross Boon; Weich is flat. Success cancels, preserves measure, creates no ordinary Favored/Unfavored, opens the narrow attacker Bind Rejoinder, and clears initial pressure after the Rejoinder phase."}]
     },
     {
       "id": "basic-parry-beat", "status": "PROVISIONAL", "cost": 0,
@@ -50,7 +58,7 @@
     {
       "id": "play-german-longsword-zornhau-ort", "status": "PROVISIONAL", "cost": 0,
       "phases": [
-        {"phase": "successful initial counter-cut", "contact": "crossing", "measure": "wide", "actor_contact_zone": "unknown", "opponent_contact_zone": "unknown", "actor_pressure": "unknown", "opponent_pressure": "unknown", "actor_point_threat": "not_threatening", "displacement": false, "cleanup": "exchange_end", "basis": "audited-play-evidence", "notes": "Creates Crossing without synthetic Soft pressure; blade portion and pressure remain separate."},
+        {"phase": "successful initial counter-cut", "contact": "crossing", "measure": "wide", "actor_contact_zone": "unknown", "opponent_contact_zone": "unknown", "actor_pressure": "unknown", "opponent_pressure": "unknown", "actor_point_threat": "threatening", "displacement": false, "cleanup": "exchange_end", "basis": "audited-play-evidence", "notes": "Creates Crossing and the preserved local Favored/Unfavored relation without synthetic Soft pressure; point threat is governing local behavior."},
         {"phase": "Ort continuation", "contact": "crossing", "measure": "preserve", "actor_contact_zone": "unknown", "opponent_contact_zone": "unknown", "actor_pressure": "unknown", "opponent_pressure": "soft", "actor_point_threat": "threatening", "displacement": false, "cleanup": "exchange_end", "basis": "audited-play-evidence", "notes": "Requires explicit opponent Soft pressure. No active action currently creates this trigger."}
       ]
     },

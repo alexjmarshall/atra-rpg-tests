@@ -2,7 +2,7 @@
   "id": "melee-mechanical-effect-vocabulary-v0.1",
   "status": "GOVERNING PROVISIONAL RULES-LANGUAGE SPECIFICATION FOR THE CURRENT LONGSWORD VERTICAL SLICE",
   "version": "0.1",
-  "adjudicated_on": "2026-08-12",
+  "adjudicated_on": "2026-08-13",
   "scope": "Finite mechanical grammar for current longsword Basics, governing provisional Plays, incomplete material, and one candidate-only diagnostic.",
   "not_a_balance_formula": true,
   "principles": [
@@ -117,7 +117,7 @@
     {"id": "ESTABLISH_NAMED_GUARD", "operator": "SET", "state": "guard", "value_kind": "named_guard_id", "note": "Action-produced and recovery transitions live here; this creates no voluntary adjacency graph."},
     {"id": "SET_RECOVERY", "operator": "SET", "state": "recovery", "value": "recovering"},
     {"id": "CLEAR_RECOVERY", "operator": "SET", "state": "recovery", "value": "ready"},
-    {"id": "SET_BIND_AXIS", "operator": "SET", "states": ["contact_zone", "pressure"], "note": "Values must be authored by an action/Play or exact fixture; never random or inferred from skill/margin."}
+    {"id": "SET_BIND_AXIS", "operator": "SET", "states": ["contact_zone", "pressure", "initial_pressure", "bind_height"], "note": "Values must be authored by an action/Play or exact fixture; never random or inferred from skill/margin. Initial pressure has its own private visibility and phase cleanup."}
   ],
   "trigger_vocabulary": [
     "activation_before_action",
@@ -128,6 +128,10 @@
     "incoming_thrust",
     "after_declared_beat_before_defence_roll",
     "after_successful_cross_before_cleanup",
+    "ordinary_bind_rejoinder",
+    "current_bind_opportunity",
+    "bind_height_upper",
+    "bind_height_lower",
     "while_crossing",
     "while_close_crossing",
     "opponent_pressure_hard",
@@ -243,9 +247,34 @@
       "owner": "per fighter",
       "normal_cleanup": "reset to unknown when contact ends",
       "legal_writers": ["explicit authored action/Play", "diagnostic fixtures only where identified"],
-      "legal_readers": ["Zornhau-Ort continuation", "future Winden decisions"],
+      "legal_readers": ["authored legacy/special bind contexts"],
       "derived": false,
-      "notes": "Ordinary successful Cross currently authors Hard/Hard; no active normal action creates Soft."
+      "notes": "Ordinary Basic Cross no longer writes Hard/Hard. H3 initial Hart/Weich is the separate private initial_pressure axis; preserved special/local contexts may retain this older public axis."
+    },
+    {
+      "id": "initial_pressure",
+      "values": ["hart", "weich", "unknown"],
+      "visibility": "fighter-private to the declaring parrier; hidden from the striker unless governing Fühlen F1 reveals it",
+      "duration": "one ordinary attacker Bind Rejoinder cycle",
+      "owner": "per fighter within ordinary Crossing",
+      "normal_cleanup": "clear to unknown after decline assigns initiative or after Duplieren/Mutieren consumes the requirement",
+      "legal_writers": ["pre-roll ordinary Basic Cross Hart/Weich declaration, persisted only on success", "cleanup to unknown"],
+      "legal_readers": ["Fühlen F1", "Duplieren/Mutieren pressure requirement", "decline initiative assignment"],
+      "derived": false,
+      "generic_modifier": null
+    },
+    {
+      "id": "bind_height",
+      "values": ["upper", "lower", "unknown"],
+      "visibility": "public",
+      "duration": "contact-bound unless an authored transition changes it",
+      "owner": "exchange Crossing",
+      "normal_cleanup": "reset to unknown when contact ends",
+      "legal_writers": ["qualifying descending-Cut Upper Cross metadata", "qualifying lower-setting-aside metadata", "L2 Lower Winding miss lower->upper", "unclassified ordinary Cross writes unknown"],
+      "legal_readers": ["Upper Winding Thrust", "Lower Winding Thrust"],
+      "derived": false,
+      "generic_modifier": null,
+      "notes": "Independent from measure, contact zone, pressure, point threat, guard, and Bind Initiative. Guard height alone is not a writer."
     },
     {
       "id": "point_threat",

@@ -4,12 +4,12 @@ This audit distinguishes packet locations from historical source locations. A Se
 
 ## Result
 
-- Exact historical locators: **7 / 114**
-- Broad historical source-family references only: **107 / 114**
+- Exact historical locators: **12 / 114**
+- Broad historical source-family references only: **102 / 114**
 - Packet-only, with no historical source-family reference: **0 / 114**
 - Confirmed transparent reconstructions/syntheses: **1**
 - Ambiguous asterisk marker (historical but unnamed/inconsistently named, or reconstruction): **65**
-- Historical confidence still unset: **107 / 114**
+- Historical confidence still unset: **102 / 114**
 
 All 114 records therefore still need item-level evidence work. None currently supports an exact-locator or confidence-grade claim.
 
@@ -17,9 +17,14 @@ All 114 records therefore still need item-level evidence work. None currently su
 
 - Absetzen — German Longsword (`play-german-longsword-absetzen`)
 - Durchwechseln — German Longsword (`play-german-longsword-durchwechseln`)
+- Kron / Crown Crossing — German Longsword (`play-german-longsword-kron-crown-crossing`)
+- Krumphau — German Longsword (`play-german-longsword-krumphau`)
 - Nachreisen — German Longsword (`play-german-longsword-nachreisen`)
+- Scheitelhau — German Longsword (`play-german-longsword-scheitelhau`)
 - Schielhau — German Longsword (`play-german-longsword-schielhau`)
 - Zornhau-Ort — German Longsword (`play-german-longsword-zornhau-ort`)
+- Zwerchhau — German Longsword (`play-german-longsword-zwerchhau`)
+- Frontale / Corona Crossing — Italian Longsword (`play-italian-longsword-frontale-corona-crossing`)
 - Pommel Strike — Italian Longsword (`play-italian-longsword-pommel-strike`)
 - Scambiar di Punta — Italian Longsword (`play-italian-longsword-scambiar-di-punta`)
 
@@ -92,7 +97,6 @@ Every candidate has at least one broad source-family reference. The following gr
 - Crossing Throw — Italian Longsword (`play-italian-longsword-crossing-throw`)
 - Elbow Push and Face Cut — Italian Longsword (`play-italian-longsword-elbow-push-and-face-cut`)
 - False Point — Italian Longsword (`play-italian-longsword-false-point`)
-- Frontale / Corona Crossing — Italian Longsword (`play-italian-longsword-frontale-corona-crossing`)
 - Half-Sword Thrust — Italian Longsword (`play-italian-longsword-half-sword-thrust`)
 - Rompere di Punta — Italian Longsword (`play-italian-longsword-rompere-di-punta`)
 - Strong Key with the Sword — Italian Longsword (`play-italian-longsword-strong-key-with-the-sword`)
@@ -203,11 +207,7 @@ Every candidate has at least one broad source-family reference. The following gr
 
 - Duplieren / Mutieren — German Longsword (`play-german-longsword-duplieren-mutieren`)
 - Durchlaufen — German Longsword (`play-german-longsword-durchlaufen`)
-- Kron / Crown Crossing — German Longsword (`play-german-longsword-kron-crown-crossing`)
-- Krumphau — German Longsword (`play-german-longsword-krumphau`)
-- Scheitelhau — German Longsword (`play-german-longsword-scheitelhau`)
 - Winden — German Longsword (`play-german-longsword-winden`)
-- Zwerchhau — German Longsword (`play-german-longsword-zwerchhau`)
 
 ## Still needs evidence
 

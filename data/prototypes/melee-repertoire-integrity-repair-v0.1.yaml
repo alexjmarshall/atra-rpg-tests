@@ -2,6 +2,7 @@
   "id": "melee-repertoire-integrity-repair-v0.1",
   "status": "GOVERNING PROVISIONAL IMPLEMENTATION MILESTONE; O1/O2 AND W1/W2 NOT PROMOTED",
   "adjudicated_on": "2026-08-12",
+  "ordinary_cross_superseded_on": "2026-08-13 by governing H3-L2; this predecessor record remains authoritative for Zornhau-local Favored/Unfavored and the unrelated repaired mechanics",
   "governing_packet_edited": false,
   "authoritative_engine": "simulations/shared/provisional_longsword_engine.py",
   "shared_entry_point": "simulations/shared/provisional_longsword.py",

@@ -1,0 +1,167 @@
+{
+  "milestone": "ATRA H3 ORDINARY BIND KERNEL — GOVERNING INTEGRATION v0.1",
+  "date": "2026-08-13",
+  "status": "PASS — GOVERNING PROVISIONAL INTEGRATION COMPLETE",
+  "authority": {
+    "decision": "Project-approved H3-L2 for ordinary, non-point-threatening Basic Cross binds",
+    "canonical_status": "GOVERNING PROVISIONAL",
+    "automatic_final_adoption": false,
+    "main_melee_packet_edited": false,
+    "baseline_branch": "main",
+    "baseline_commit": "7458d55e1c74d12a2f8a9d22e66b002071900d83"
+  },
+  "pre_integration_baseline": [
+    {"suite": "Melee Repertoire Integrity Repair v0.1", "requirements": 81, "result": "81/81 PASS"},
+    {"suite": "General Bind Information v0.1", "requirements": 75, "result": "75/75 PASS"},
+    {"suite": "Hart/Weich Upper Winden v0.2", "requirements": 82, "result": "82/82 PASS"},
+    {"suite": "Upper/Lower Winden v0.3", "requirements": 68, "result": "68/68 PASS"}
+  ],
+  "governing_changes": {
+    "ordinary_basic_cross": "Pre-roll owner-private Hart/Weich declaration; Hart exactly one defence Boon, Weich flat; success establishes ordinary Crossing, public authored height, phase-scoped pressure, and narrow attacker Rejoinder; failure writes none of those states.",
+    "ordinary_relation": "Roll-derived Favored/Unfavored writer retired for ordinary Basic Cross.",
+    "initial_pressure": {"values": ["hart", "weich", "unknown"], "visibility": "owner-private unless Fühlen reveals it", "lifetime": "immediate Bind Rejoinder cycle only"},
+    "bind_height": {"values": ["upper", "lower", "unknown"], "visibility": "public", "modifier": null},
+    "rejoinder": ["Fühlen", "Duplieren", "Mutieren", "decline"],
+    "fuhlen": {"ordinary_cost_spiritus": 1, "action": 0, "learned_chain": 0, "uses_per_cycle": 1},
+    "duplieren_mutieren": {"cost_spiritus": 2, "learned_chain": 1, "additional_action": 0, "correct_read_modifier": "Attack Boon", "wrong_read": "spend and chain consumed; no roll; zero damage"},
+    "bind_initiative": "First declaration opportunity only; first pass transfers one opportunity; two consecutive passes clean the bind.",
+    "upper_winding": {"cost_spiritus": 2, "learned_chain": 1, "additional_action": 0, "attack": "flat normal Longsword Thrust", "miss": "retain Upper/Ochs/threat/Crossing and transfer opportunity"},
+    "lower_winding": {"cost_spiritus": 2, "learned_chain": 1, "additional_action": 0, "attack": "flat normal upward Longsword Thrust", "miss": "L2 Lower→Upper, Pflug→Ochs, retain threat/Crossing and transfer opportunity"},
+    "chain_cap": 3
+  },
+  "information_model": {
+    "public": ["Crossing", "bind_height", "measure", "guard", "point_threat"],
+    "fighter_private": ["own initial Hart/Weich declaration"],
+    "hidden_from_opponent": ["unrevealed initial Hart/Weich"],
+    "fuhlen_reveal": "Only the opponent's current ordinary initial pressure during the live Rejoinder cycle",
+    "public_serialization_leaks_initial_pressure": false,
+    "player_policy_leaks_initial_pressure": false
+  },
+  "height_writers": {
+    "upper": "Explicit upper-cross-against-descending-cut defence geometry against a qualifying descending/Oberhau-like Cut",
+    "lower": "Explicit lower-setting-aside defence geometry against a qualifying low-line thrust or rising low-line cut",
+    "unknown": "Every ordinary successful Cross not matching an authored Upper or Lower case",
+    "guard_alone_is_a_writer": false,
+    "random_writer_exists": false
+  },
+  "protected_local_behavior": {
+    "zornhau_local_relation": "PRESERVED",
+    "zornhau_ort": "PRESERVED",
+    "zornhau_w1_w2": "PRESERVED",
+    "zornhau_fuhlen_relation_visibility": "PRESERVED",
+    "zornhau_point_threat_and_d1_denial": "PRESERVED"
+  },
+  "dependency_classification": {
+    "governing_dependencies_updated": [
+      "data/prototypes/longsword-governing-provisional-v0.1.yaml",
+      "reports/governing-open-provisional.md",
+      "simulations/shared/provisional_longsword.py",
+      "simulations/shared/provisional_longsword_engine.py"
+    ],
+    "governing_validation_dependencies_rewritten": [
+      "tests/test_general_bind_information_v01.py",
+      "tests/test_melee_repertoire_integrity_repair_v01.py"
+    ],
+    "zornhau_local_dependency_preserved": ["data/plays/play-german-longsword-zornhau-ort.yaml"],
+    "other_data_dependencies_reviewed_and_supersession_noted": [
+      "data/prototypes/general-bind-information-architecture-v0.1.yaml",
+      "data/prototypes/hart-weich-upper-winden-loop-v0.2.yaml",
+      "data/prototypes/melee-repertoire-integrity-repair-v0.1.yaml",
+      "data/prototypes/upper-lower-winden-completion-v0.3.yaml"
+    ],
+    "historical_dependencies_left_intact": [
+      "reports/general-bind-information-architecture-v01-results.md",
+      "reports/hart-weich-upper-winden-loop-v02-results.json",
+      "reports/hart-weich-upper-winden-loop-v02-results.md",
+      "reports/melee-repertoire-integrity-repair-v01-results.json",
+      "reports/melee-repertoire-integrity-repair-v01-results.md",
+      "reports/spiritus-parry-durchwechseln-results.md",
+      "simulations/general_bind_information_v0_1/simulate.py",
+      "simulations/hart_weich_upper_winden_v0_2/simulate.py",
+      "simulations/melee_repertoire_integrity_repair_v0_1/simulate.py",
+      "simulations/spiritus_parry_durchwechseln/simulate.py",
+      "simulations/upper_lower_winden_v0_3/simulate.py"
+    ]
+  },
+  "deterministic_coverage": {
+    "required_governing_assertions": "129/129 PASS",
+    "geometry_smoke_cases": ["descending Hart → Upper", "descending Weich → Upper", "lower-setting-aside low line → Lower", "lateral/unclassified → Unknown"],
+    "branches_per_geometry": ["blind D/M", "Fühlen", "decline", "eligible Winden or two-pass cleanup"],
+    "both_fighters_winden_miss_chain": "PASS through three learned declarations; fourth rejected",
+    "one_fighter_winden_pass_sequence": "PASS",
+    "spiritus_reserves": [0, 1, 2, 3, 4, 5, 8],
+    "chain_used_values": [0, 1, 2, 3],
+    "monte_carlo_run": false
+  },
+  "response_tree": [
+    {"phase": "Attack", "normal_action_delta": -1, "spiritus_delta": 0, "chain_delta": 0, "state": "pending attack"},
+    {"phase": "Cross declaration", "normal_action_delta": -1, "spiritus_delta": 0, "chain_delta": 0, "state": "owner-private Hart/Weich plus authored defence geometry"},
+    {"phase": "Successful Cross", "normal_action_delta": 0, "spiritus_delta": 0, "chain_delta": 0, "state": "Crossing; public height; private pressure; striker Rejoinder"},
+    {"phase": "Optional Fühlen", "normal_action_delta": 0, "spiritus_delta": -1, "chain_delta": 0, "state": "pressure revealed only to purchaser"},
+    {"phase": "D/M", "normal_action_delta": 0, "spiritus_delta": -2, "chain_delta": 1, "state": "pressure consumed; correct Booned attack or wrong-read no-roll cleanup"},
+    {"phase": "Decline", "normal_action_delta": 0, "spiritus_delta": 0, "chain_delta": 0, "state": "Hart→striker or Weich→parrier first opportunity; pressure clears"},
+    {"phase": "Upper/Lower Winding", "normal_action_delta": 0, "spiritus_delta": -2, "chain_delta": 1, "state": "Crossing retained for attack; Ochs/Pflug plus threatening point"},
+    {"phase": "Winding miss", "normal_action_delta": 0, "spiritus_delta": 0, "chain_delta": 0, "state": "authored height/guard aftermath retained; opportunity transfers"},
+    {"phase": "Pass", "normal_action_delta": 0, "spiritus_delta": 0, "chain_delta": 0, "state": "first transfers; second consecutive pass clears Crossing"},
+    {"phase": "Termination", "normal_action_delta": 0, "spiritus_delta": 0, "chain_delta": 0, "state": "hit, disengage, two passes, hard-fail cleanup, resource illegality, or chain cap ends/blocks continuation"}
+  ],
+  "decision_status": [
+    {"mechanic": "Ordinary Cross relation", "previous": "R0 Favored/Unfavored", "new": "SUPERSEDED"},
+    {"mechanic": "Initial Hart/Weich", "previous": "candidate", "new": "GOVERNING PROVISIONAL"},
+    {"mechanic": "Phase-scoped pressure", "previous": "candidate", "new": "GOVERNING PROVISIONAL"},
+    {"mechanic": "Bind Rejoinder", "previous": "candidate", "new": "GOVERNING PROVISIONAL"},
+    {"mechanic": "Fühlen F1 ordinary use", "previous": "candidate", "new": "GOVERNING PROVISIONAL"},
+    {"mechanic": "D/M paired repertoire", "previous": "candidate", "new": "GOVERNING PROVISIONAL"},
+    {"mechanic": "D/M 2S", "previous": "candidate", "new": "GOVERNING PROVISIONAL"},
+    {"mechanic": "Wrong-read hard failure", "previous": "candidate", "new": "GOVERNING PROVISIONAL"},
+    {"mechanic": "bind_height", "previous": "candidate", "new": "GOVERNING PROVISIONAL"},
+    {"mechanic": "Bind Initiative sequencing-only", "previous": "candidate/general", "new": "GOVERNING PROVISIONAL"},
+    {"mechanic": "Upper Winding 2S", "previous": "candidate", "new": "GOVERNING PROVISIONAL"},
+    {"mechanic": "Lower Winding 2S", "previous": "candidate", "new": "GOVERNING PROVISIONAL"},
+    {"mechanic": "L2 Lower→Upper", "previous": "candidate", "new": "GOVERNING PROVISIONAL"},
+    {"mechanic": "Unknown Winden", "previous": "rejected", "new": "NOT IMPLEMENTED"},
+    {"mechanic": "Leverage", "previous": "deferred/rejected", "new": "NOT IMPLEMENTED"},
+    {"mechanic": "Counter-Wind", "previous": "deferred", "new": "NOT IMPLEMENTED"},
+    {"mechanic": "Zornhau local relation", "previous": "governing local", "new": "PRESERVED"}
+  ],
+  "validation": {
+    "json_parse": "PASS for every changed JSON-as-YAML record and changed JSON schema",
+    "repository_validator": "PASS — 114 Play records, 0 errors, 39 preserved warnings",
+    "melee_grammar_validator": "PASS — 0 errors, 16 expected/informative findings",
+    "h3_suite": "PASS — 3 tests including 129/129 mapping, integrated geometry matrix, reserve/cap/parity matrix",
+    "full_unittest_discovery": "PASS — 142 tests",
+    "diff_check": "PASS after generated-artifact cleanup"
+  },
+  "regressions": {
+    "runtime_regressions": [],
+    "dependency_assertions_updated": [
+      "Repository Play validation now explicitly permits the three governing-provisional implemented records.",
+      "Prototype evidence audit validation permits Longsword/mechanics only for those explicit records.",
+      "Grammar audit no longer expects Zornhau/Winden ghost or missing-payload findings."
+    ]
+  },
+  "remaining_provisional_debt": [
+    "Zornhau-local Favored/Unfavored, Ort/W1/W2, and passive Fühlen compatibility require separate Project adjudication.",
+    "Duplieren/Mutieren and Winden retain item-level source-audit debt; no historical locator was inferred.",
+    "Final tiers, final card wording, and main Melee Design Packet synchronization remain outside this milestone.",
+    "Full-duel policy incentives, cleanup pressure, and reciprocal continuation frequency remain unaudited in the integrated duel loop."
+  ],
+  "review_answers": [
+    {"id": 1, "answer": "Yes."}, {"id": 2, "answer": "Yes."}, {"id": 3, "answer": "Yes."},
+    {"id": 4, "answer": "Yes."}, {"id": 5, "answer": "Yes."}, {"id": 6, "answer": "Yes, exactly one defence Boon."},
+    {"id": 7, "answer": "Yes."}, {"id": 8, "answer": "Yes."}, {"id": 9, "answer": "Yes, for the scoped ordinary non-point-threatening Cross path; authored attacks that prohibit attacker continuations remain protected."},
+    {"id": 10, "answer": "No."}, {"id": 11, "answer": "Yes."}, {"id": 12, "answer": "Yes."},
+    {"id": 13, "answer": "Yes."}, {"id": 14, "answer": "Yes."}, {"id": 15, "answer": "Yes."},
+    {"id": 16, "answer": "Yes."}, {"id": 17, "answer": "Yes."}, {"id": 18, "answer": "Yes."},
+    {"id": 19, "answer": "Yes."}, {"id": 20, "answer": "Yes."}, {"id": 21, "answer": "Yes."},
+    {"id": 22, "answer": "Yes."}, {"id": 23, "answer": "Yes."}, {"id": 24, "answer": "Yes."},
+    {"id": 25, "answer": "Yes."}, {"id": 26, "answer": "Yes."}, {"id": 27, "answer": "Yes."},
+    {"id": 28, "answer": "Yes."}, {"id": 29, "answer": "Yes."}, {"id": 30, "answer": "Yes."},
+    {"id": 31, "answer": "Yes."}, {"id": 32, "answer": "No remaining authoritative ordinary writer/reader dependency."},
+    {"id": 33, "answer": "No split-brain found after parity checks."}, {"id": 34, "answer": "Yes."},
+    {"id": 35, "answer": "The preserved local relation and passive Fühlen visibility remain context-specific compatibility debt until Zornhau adjudication."},
+    {"id": 36, "answer": "Yes, for proceeding to the bounded cleanup/incentive audit."},
+    {"id": 37, "answer": "INTEGRATED FULL-DUEL MELEE CLEANUP / INCENTIVE AUDIT."}
+  ],
+  "exact_next_milestone": "INTEGRATED FULL-DUEL MELEE CLEANUP / INCENTIVE AUDIT"
+}

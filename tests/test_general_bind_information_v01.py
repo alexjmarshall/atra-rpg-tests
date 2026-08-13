@@ -57,18 +57,20 @@ class GeneralBindInformationTests(unittest.TestCase):
         prior = json.loads((ROOT / "reports/melee-repertoire-integrity-repair-v01-results.json").read_text(encoding="utf-8"))
         self.assertEqual(prior["deterministic"]["passed"], 81)
         self.assertEqual(prior["deterministic"]["required_assertions"], 81)
-        # 2: governing Cross still authors hard + Favored/Unfavored from rolls.
+        # 2: the current governing Cross supersedes R0 while this isolated H1
+        # experiment remains reproducible below.
         a, b = Fighter("A"), Fighter("B")
         control = ProvisionalLongswordEngine([a, b])
         attack = control.declare_attack(a, b, "cut")
         self.assertIsNotNone(attack)
         rolled = control.roll_pending_attack((7,))
         b.action_available = True
+        self.assertTrue(control.declare_basic_cross(b, HART))
         crossed = control.basic_defence("Cross", b, rolled.roll, (5,))
         self.assertTrue(crossed.success)
-        self.assertEqual(set(control.crossing.bind_position.values()), {"favored", "unfavored"})
-        self.assertEqual(set(control.crossing.pressure.values()), {"hard"})
-        # 3: governing records contain no candidate promotion.
+        self.assertEqual(set(control.crossing.bind_position.values()), {UNKNOWN})
+        self.assertEqual(control.crossing.initial_pressure[b.name], HART)
+        # 3: the old H1 candidate record remains historical, not governing.
         governing = (ROOT / "data/prototypes/longsword-governing-provisional-v0.1.yaml").read_text(encoding="utf-8")
         self.assertNotIn("general-bind-information-architecture-v0.1", governing)
 

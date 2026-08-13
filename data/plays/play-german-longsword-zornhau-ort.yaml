@@ -30,10 +30,10 @@
     "historical_name_note": "The Atra compound preserves the historical verse's named cut and immediate point, but presents them as one game-facing label."
   },
   "game_implementation": {
-    "character_sheet_test_skill": null,
+    "character_sheet_test_skill": "Longsword",
     "secondary_skill_prerequisites": null,
-    "weapon_requirements": null,
-    "off_hand_requirement": null,
+    "weapon_requirements": ["Two-handed longsword"],
+    "off_hand_requirement": "Two hands on weapon",
     "provisional_tier": "Foundation",
     "tactical_tags": [
       "anti-number-candidate"
@@ -71,18 +71,18 @@
       "play-german-sword-in-one-hand-zornhau-ort"
     ],
     "related_plays": [],
-    "mechanics_status": "unimplemented",
+    "mechanics_status": "prototype",
     "mechanics": {
-      "learn_requirements": null,
-      "use_conditions": null,
-      "action_relationship": null,
-      "spiritus_cost": null,
-      "test_resolution": null,
-      "defence": null,
-      "success": null,
-      "failure": null,
-      "aftermath": null,
-      "limits": null
+      "learn_requirements": {"learned_play": "Zornhau-Ort"},
+      "use_conditions": {"incoming": "qualifying descending Cut", "action_ready": true, "chain_room": true},
+      "action_relationship": "Zornhau spends the defender action and one learned entry; intrinsic Ort spends no second action or learned entry.",
+      "spiritus_cost": 0,
+      "test_resolution": {"zornhau": "normal Longsword defensive/counter test", "ort": "no second attack roll; hidden local Favored requirement"},
+      "defence": {"zornhau": "on success CANCEL the incoming Cut", "durchwechseln": "threatening point denies ordinary D1 timing"},
+      "success": {"zornhau": "SET Crossing, threatening point, local Favored/Unfavored relation, and defender Bind Initiative", "ort": "spend 1 Spiritus and resolve current local O1/O2 damage rule from Favored"},
+      "failure": {"zornhau": "ordinary failed Play resolution", "ort_wrong_relation": "spend 1 Spiritus; zero damage"},
+      "aftermath": {"relation": "Favored/Unfavored remains Zornhau-local and independent of H3 ordinary initial pressure", "fuhlen": "preserved passive categorical local relation visibility"},
+      "limits": {"governing_status": "GOVERNING PROVISIONAL LOCAL COMPATIBILITY", "ordinary_h3_rejoinder": false, "ordinary_h3_pressure_writer": false, "compatibility_debt": "Project must later adjudicate whether Zornhau remains local or migrates to H3; this milestone preserves it."}
     }
   },
   "prototype_evidence_audit": {

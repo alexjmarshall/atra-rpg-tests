@@ -34,10 +34,10 @@
     "packet_source_note": "Best-supported package: fifteenth-century Liechtenauer witnesses including Pseudo-Danzig, Lew, Kal and late-century continuators."
   },
   "game_implementation": {
-    "character_sheet_test_skill": null,
+    "character_sheet_test_skill": "Longsword",
     "secondary_skill_prerequisites": null,
-    "weapon_requirements": null,
-    "off_hand_requirement": null,
+    "weapon_requirements": ["Two-handed longsword"],
+    "off_hand_requirement": "Two hands on weapon",
     "provisional_tier": "Master",
     "tactical_tags": [],
     "timing": {
@@ -48,18 +48,18 @@
     "candidate_status": "research-candidate",
     "suspected_duplicates": [],
     "related_plays": [],
-    "mechanics_status": "unimplemented",
+    "mechanics_status": "prototype",
     "mechanics": {
-      "learn_requirements": null,
-      "use_conditions": null,
-      "action_relationship": null,
-      "spiritus_cost": null,
-      "test_resolution": null,
-      "defence": null,
-      "success": null,
-      "failure": null,
-      "aftermath": null,
-      "limits": null
+      "learn_requirements": {"learned_family": "Winden", "governing_ordinary_executions": ["Upper Winding Thrust", "Lower Winding Thrust"]},
+      "use_conditions": {"ordinary_context": "current bind opportunity after the H3 Rejoinder phase", "contact": "crossing", "bind_height": ["upper", "lower"], "spiritus": 2, "chain_room": true},
+      "action_relationship": "Each actual Winding declaration uses no additional normal action and consumes one learned-chain entry.",
+      "spiritus_cost": 2,
+      "test_resolution": {"upper": "flat normal Longsword Thrust from Ochs", "lower": "flat normal upward Longsword Thrust from Pflug", "damage": "normal weapon damage"},
+      "defence": {"response_restriction": false, "new_durchwechseln_window": false},
+      "success": {"hit": "deal normal damage and end the bounded immediate bind sequence under normal contact cleanup"},
+      "failure": {"upper_miss": "retain Crossing, Upper, Ochs, and threatening point; transfer bind opportunity", "lower_miss_l2": "retain Crossing/threat; set Lower to Upper and Pflug to Ochs; transfer bind opportunity"},
+      "aftermath": {"upper_writer_guard": "Ochs upper hanging", "lower_writer_guard": "Pflug lower hanging before resolution", "l2_guard_transition": "Pflug to Ochs"},
+      "limits": {"governing_status": "GOVERNING PROVISIONAL ordinary H3 family", "unknown_height_execution": false, "l1_status": "NOT GOVERNING", "generic_bonus": false, "zornhau_local_compatibility": "Preserve prior local W1/W2 behavior and passive relation-reading Fühlen until separate adjudication.", "fuhlen_ordinary_context": "F1 costs 1 Spiritus, no action, no chain, once per live initial Rejoinder; reveals Hart/Weich/Unknown."}
     }
   },
   "prototype_evidence_audit": {

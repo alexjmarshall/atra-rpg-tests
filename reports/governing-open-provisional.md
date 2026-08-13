@@ -2,6 +2,38 @@
 
 Transcribed from Section 2 of Atra Melee Design Packet v0.4. These entries are constraints and unresolved questions; this repository does not decide them.
 
+## 2026-08-13 H3 Ordinary Bind Kernel v0.1 Project adjudication
+
+The Project promotes **H3-L2 to GOVERNING PROVISIONAL for ordinary, non-point-threatening Basic Cross binds**. This is a bounded synchronization of the current longsword vertical slice, not canonical/final adoption. It does not edit Atra Melee Design Packet v0.4 and does not rewrite historical candidate reports.
+
+### Ordinary Basic Cross
+
+When declaring an ordinary Cross, the defender secretly chooses **Hart** or **Weich** before rolling. This is an Atra abstraction of initial bind pressure, not a literal historical pre-roll signal. Hart grants exactly one defence Boon; Weich is flat. Failure creates no Crossing, persistent initial pressure, bind height, or Rejoinder. Success cancels the incoming attack, establishes ordinary Crossing, records owner-private initial pressure, writes public `bind_height` from authored geometry, and opens one narrow attacker Bind Rejoinder when the incoming attack permits attacker continuations. It creates no automatic point threat, guard change, Leverage, generic modifier, or Favored/Unfavored relation.
+
+The Upper writer requires explicit `upper-cross-against-descending-cut` defence metadata against a qualifying descending/Oberhau-like Cut. The Lower writer requires explicit `lower-setting-aside` defence metadata against `low-line-thrust` or `rising-low-line-cut`. Starting Ochs/Pflug, measure, contact zone, target height, or guard height alone never writes bind height. All other ordinary geometry writes legitimate public **Unknown**, with no generic Winden fallback.
+
+### Bind Rejoinder and initial pressure
+
+The original striker receives one insertion containing only Fühlen (if known and affordable), Duplieren, Mutieren, or decline. No action is refreshed or additionally spent. Initial Hart/Weich exists only for this cycle. A 1-Spiritus Fühlen purchase reveals it once with no action or chain entry. A D/M declaration consumes it. On decline, unresolved Hart gives the striker the first ordinary bind opportunity and unresolved Weich gives the parrier that opportunity; initial pressure then clears.
+
+Duplieren/Mutieren is one paired learned item. Each actual declaration costs 2 Spiritus, consumes one chain entry, and uses no additional normal action. Correct Duplieren/Hart makes a Booned high Cut for normal damage. Correct Mutieren/Weich makes a Booned low-opening Thrust for normal damage while retaining the winding transition and threatening point. A wrong read spends and consumes the entry, makes no attack roll, and deals zero damage.
+
+### Bind Initiative, pass, and Winden
+
+Bind Initiative is **first declaration opportunity only**: it grants no ownership, modifier, Leverage, or mandatory attack. A holder may pass for no action, Spiritus, or chain cost; the opponent then receives one opportunity. Two consecutive passes end Crossing. An actual continuation resets the pass count.
+
+Winden is a learned family. The ordinary governing executions are Upper Winding Thrust and Lower Winding Thrust; each costs 2 Spiritus, one chain entry, and no additional action. Upper requires Upper, produces Ochs and threatening point, retains Crossing, and makes a flat normal-damage Thrust. Its miss retains Upper/Ochs/threat and transfers opportunity. Lower requires Lower, produces Pflug and threatening point, and makes a flat upward normal-damage Thrust. Its governing **L2** miss retains Crossing/threat, sets Lower to Upper and Pflug to Ochs, and transfers opportunity. Hit cleanup is normal. Unknown permits other legal repertoire, pass, or disengage, but neither Winding execution.
+
+### Supersession and local compatibility
+
+- **SUPERSEDED FOR ORDINARY BASIC CROSS:** roll-derived Favored/Unfavored and the associated ordinary passive Fühlen reading.
+- **PRESERVED LOCALLY:** Zornhau's qualifying trigger, threatening point, Crossing, Bind Initiative, roll-derived Favored/Unfavored relation, Ort, local W1/W2 behavior, tie behavior, Fühlen relation visibility, and D1 denial.
+- Fühlen therefore has explicit context debt: ordinary H3 uses paid F1 initial-pressure visibility; Zornhau-local uses the preserved passive relation visibility until separate Project adjudication.
+- Absetzen, other point-threatening/special crossings, T1, Italian bind/close mechanics, Beat/Open, D1, Committed timing, Nachreisen, P1, C2, and S2 retain their authored rules.
+- Hybrid H3/R0, Leverage, Counter-Wind, generic Unknown Winden, generic Wide-to-Close purchase, U1, L1, and the other excluded bind expansions are not implemented.
+
+The synchronized behavior is in `simulations/shared/provisional_longsword_engine.py`; the durable specification is `data/prototypes/longsword-h3-ordinary-bind-v0.1.yaml` and the governing selector remains `simulations/shared/provisional_longsword.py`.
+
 ## 2026-08-12 Melee Repertoire Integrity Repair v0.1 Project adjudication
 
 The Project explicitly supersedes the conflicting provisional language below for the current longsword vertical slice. This is a **GOVERNING PROVISIONAL** synchronization, not a canonical/final promotion, and it does not edit Atra Melee Design Packet v0.4 or rewrite archived experiment reports.

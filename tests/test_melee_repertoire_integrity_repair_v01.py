@@ -6,6 +6,7 @@ from simulations.shared.provisional_longsword_engine import (
     Attack,
     Crossing,
     Fighter,
+    HART,
     OPEN,
     ProvisionalLongswordEngine,
     RollResult,
@@ -34,6 +35,7 @@ def set_bind(engine, a, b, relation="favored", initiative="A", pressure="unknown
         pressure={a.name: pressure, b.name: pressure},
         bind_position={a.name: relation, b.name: other},
         bind_initiative=initiative,
+        source="zornhau-local",
     )
 
 
@@ -162,23 +164,25 @@ def test_34_41_zornhau_and_nearest_basic():
     cross_engine, cross_attacker, cross_defender = arena(b_guard="vom-tag")
     cross_attack = declared_hit(cross_engine, cross_attacker, cross_defender)
     cross_defender.action_available = True
+    assert cross_engine.declare_basic_cross(cross_defender, HART)
     cross = cross_engine.basic_defence("Cross", cross_defender, cross_attack.attack_roll, (4,))
     assert cross.success and cross_engine.crossing.contact == "crossing"
     assert cross_defender.point_threat == "not_threatening" and cross_engine.learned_chain == []  # 41
 
 
 def test_42_47_contested_bind_relation_and_tie():
-    engine, attacker, defender = arena()
+    # The contested relation is now local to qualifying Zornhau/special binds.
+    engine, attacker, defender = arena(b_plays={"Zornhau-Ort"})
     attack = declared_hit(engine, attacker, defender)
     defender.action_available = True
-    engine.basic_defence("Cross", defender, attack.attack_roll, (3,))
+    engine.zornhau(defender, attack.attack_roll, (3,))
     assert engine.crossing.bind_position == {defender.name: "favored", attacker.name: "unfavored"}  # 42-44
     assert engine.crossing.tie_breaks == 0
 
-    engine, attacker, defender = arena()
+    engine, attacker, defender = arena(b_plays={"Zornhau-Ort"})
     attack = declared_hit(engine, attacker, defender)
     defender.action_available = True
-    engine.basic_defence("Cross", defender, attack.attack_roll, (7,))
+    engine.zornhau(defender, attack.attack_roll, (7,))
     assert engine.crossing.bind_position[defender.name] == "favored" and engine.crossing.tie_breaks == 1  # 45
     assert not hasattr(engine.crossing, "attack_modifier") and not hasattr(engine.crossing, "defence_modifier")  # 46
 
@@ -187,13 +191,14 @@ def test_42_47_contested_bind_relation_and_tie():
 
 
 def test_48_51_bind_initiative_is_separate_and_passes_once():
-    engine, attacker, defender = arena(b_plays={"Zornhau-Ort"})
+    engine, attacker, defender = arena()
     attack = declared_hit(engine, attacker, defender)
     defender.action_available = True
+    assert engine.declare_basic_cross(defender, HART)
     engine.basic_defence("Cross", defender, attack.attack_roll, (12,))
-    assert engine.crossing.bind_initiative == defender.name  # 48
-    assert engine.crossing.bind_position[defender.name] == "unfavored"  # 50
-    assert engine.decline_bind_continuations(defender)
+    assert engine.crossing.bind_initiative is None  # 48: Rejoinder precedes initiative
+    assert engine.crossing.bind_position[defender.name] == "unknown"  # 50
+    assert engine.decline_bind_rejoinder(attacker)
     assert engine.crossing.bind_initiative == attacker.name  # 51
 
     engine, attacker, defender = arena(b_plays={"Zornhau-Ort"})

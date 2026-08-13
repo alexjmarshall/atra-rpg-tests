@@ -122,11 +122,12 @@ Human throws and takedowns; ranged weapon casts are excluded unless the lesson a
 - Elbow-and-Shoulder Turn — Italian Wrestling (`play-italian-wrestling-elbow-and-shoulder-turn`) — Throw/lock
 - Throat-and-Knee Takedown — Italian Wrestling (`play-italian-wrestling-throat-and-knee-takedown`) — Throw
 
-### bind-and-winding-branches (16)
+### bind-and-winding-branches (17)
 
 Binds, windings, Crown/Corona crossings, and named bind branches.
 
 - Duplieren / Mutieren — German Longsword (`play-german-longsword-duplieren-mutieren`) — Bind branches
+- Durchwechseln — German Longsword (`play-german-longsword-durchwechseln`) — Deception
 - Kron / Crown Crossing — German Longsword (`play-german-longsword-kron-crown-crossing`) — Bind state
 - Winden — German Longsword (`play-german-longsword-winden`) — Bind system
 - Zornhau-Ort — German Longsword (`play-german-longsword-zornhau-ort`) — Counter-attack
@@ -225,7 +226,7 @@ These are not necessarily unique chassis; they need manual classification.
 - Free Stab from the Roof — German Dagger (`play-german-dagger-free-stab-from-the-roof`) — Attack
 - Krumphau — German Longsword (`play-german-longsword-krumphau`) — Master strike
 - Scheitelhau — German Longsword (`play-german-longsword-scheitelhau`) — Master strike
-- Schielhau — German Longsword (`play-german-longsword-schielhau`) — Master strike
+- Schielhau — German Longsword (`play-german-longsword-schielhau`) — Remedy
 - Zwerchhau — German Longsword (`play-german-longsword-zwerchhau`) — Master strike
 - Hanging Deflection — German Polearms / Poleaxe & Halberd (`play-german-polearms-poleaxe-and-halberd-hanging-deflection`) — Defence
 - Underthrust from the Buckler — German Sword & Buckler (`play-german-sword-and-buckler-underthrust-from-the-buckler`) — Attack

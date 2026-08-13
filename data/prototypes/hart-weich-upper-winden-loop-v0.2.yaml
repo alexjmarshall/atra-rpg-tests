@@ -4,6 +4,7 @@
   "automatic_promotion": false,
   "governing_packet_edited": false,
   "authoritative_engine_edited": false,
+  "current_governing_note": "Historical H2 experiment. H3-L2 was promoted for ordinary Basic Cross on 2026-08-13; this artifact and its R0 control description remain reproducibility records.",
   "control": {
     "id": "R0",
     "source": "data/prototypes/longsword-governing-provisional-v0.1.yaml",
