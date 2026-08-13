@@ -42,7 +42,7 @@
       "category": null,
       "type": "Counter-attack"
     },
-    "tactical_lesson": "Meet a committed descending cut with the counter-cut; only continue with the point when the resulting bind permits it.",
+    "tactical_lesson": "Meet a qualifying descending cut with the counter-cut, immediately threaten with the point, and choose Ort or later bind work from the sensed relationship.",
     "prototype_interaction": {
       "status": "PROVISIONAL",
       "vocabulary_status": "CROSSING/BIND STATE MODEL v0.1",
@@ -52,17 +52,17 @@
           "phase": "successful initial counter-cut", "contact": "crossing", "measure": "wide",
           "actor_contact_zone": "unknown", "opponent_contact_zone": "unknown",
           "actor_pressure": "unknown", "opponent_pressure": "unknown",
-          "actor_point_threat": "not_threatening", "displacement": false, "cleanup": "exchange_end",
+          "actor_point_threat": "threatening", "displacement": false, "cleanup": "exchange_end",
           "basis": "audited-play-evidence",
-          "notes": "Creates Crossing without synthetic Soft pressure; blade portion and pressure remain separate."
+          "notes": "Creates a contested Favored/Unfavored relation from the already successful attack/defence rolls; pressure remains unknown and separate."
         },
         {
           "phase": "Ort continuation", "contact": "crossing", "measure": "preserve",
           "actor_contact_zone": "unknown", "opponent_contact_zone": "unknown",
-          "actor_pressure": "unknown", "opponent_pressure": "soft",
+          "actor_pressure": "unknown", "opponent_pressure": "unknown",
           "actor_point_threat": "threatening", "displacement": false, "cleanup": "exchange_end",
-          "basis": "audited-play-evidence",
-          "notes": "Requires explicit opponent Soft pressure. No active action currently creates this trigger."
+          "basis": "provisional-atra-abstraction",
+          "notes": "Intrinsic 1-Spiritus continuation; succeeds only from Favored Bind; O1/O2 damage remains under Project review."
         }
       ]
     },

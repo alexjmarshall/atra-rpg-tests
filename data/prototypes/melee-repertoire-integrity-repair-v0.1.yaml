@@ -1,0 +1,126 @@
+{
+  "id": "melee-repertoire-integrity-repair-v0.1",
+  "status": "GOVERNING PROVISIONAL IMPLEMENTATION MILESTONE; O1/O2 AND W1/W2 NOT PROMOTED",
+  "adjudicated_on": "2026-08-12",
+  "governing_packet_edited": false,
+  "authoritative_engine": "simulations/shared/provisional_longsword_engine.py",
+  "shared_entry_point": "simulations/shared/provisional_longsword.py",
+  "supersessions": [
+    "CB3 blanket Cross immunity to Durchwechseln is retracted; D1 is state-based.",
+    "P1-only Counter-first is replaced by general Committed declaration timing; P1 inherits it.",
+    "Nachreisen's old persistent Recovery/Vom Tag chassis is replaced by target-only immediate Preparation/Recovery windows at 1 Spiritus.",
+    "Zornhau's initial nonthreatening-point chassis is replaced by a threatening-point contested Crossing.",
+    "Winden's Ochs/Pflug starting gate is removed; the appropriate hanging is aftermath/entry geometry."
+  ],
+  "cross_and_beat": {
+    "d1_gate": "the Basic-defence user's point must not be threatening; Crossing and form name do not deny D1",
+    "cross_success": ["CANCEL pending_attack", "SET contact=crossing"],
+    "cross_automatic_point_threat": false,
+    "beat_success": ["CANCEL pending_attack", "displacement metadata", "CLEAR contact=none", "SET attacker.guard=open"],
+    "failed_beat_sets_anyone_open": false
+  },
+  "gc1": {
+    "voluntary_change": "once on own activation before the action to any legal named guard",
+    "post_action_change": false,
+    "open_recovery_consumes_allowance": true
+  },
+  "committed": {
+    "pre_roll_target_window": ["Immediate Basic Counter", "technique explicitly authored for Preparation"],
+    "immediate_counter": {"cost": "action", "accuracy": "normal", "damage": "normal", "order": "first", "removal_cancels_pending_attack": true},
+    "waiting_counter": {"trigger": "successful Committed attack roll", "resolution": "simultaneous"},
+    "miss": {"ordinary_counter": false, "may_author_recovery_window": true}
+  },
+  "nachreisen": {
+    "classification": "separate learned Play; one chain entry",
+    "cost": {"action": 1, "spiritus": 1, "refund": false},
+    "guard_gate": null,
+    "persistent_recovery_state": false,
+    "preparation": {
+      "trigger": "original target after opponent declares Committed attack and before its roll",
+      "payload": ["ATTACK Longsword", "MODIFY_ATTACK accuracy=boon"],
+      "damage": "normal",
+      "removal_cancels_pending_attack": true
+    },
+    "recovery": {
+      "trigger": "original target immediately after qualifying Committed attack misses",
+      "duration": "immediate; disappears if declined",
+      "third_party_access": false,
+      "payload": ["ATTACK Longsword", "MODIFY_ATTACK accuracy=boon"],
+      "damage": "normal"
+    }
+  },
+  "zornhau_ort": {
+    "zornhau": {
+      "trigger": "qualifying descending Cut; Committed not required",
+      "cost": {"action": 1, "spiritus": 0, "learned_chain_entries": 1},
+      "test": "normal defensive/counter Longsword test",
+      "success": ["CANCEL pending_attack", "SET contact=crossing", "SET actor.point_threat=threatening"],
+      "damage": null,
+      "pressure_authored": false,
+      "bind_initiative": "Zornhau actor"
+    },
+    "ort": {
+      "classification": "intrinsic continuation; no second learned entry",
+      "cost": {"spiritus": 1, "refund": false},
+      "hidden_requirement": "Favored Bind",
+      "additional_attack_roll": false,
+      "O1": "normal Longsword damage",
+      "O2": "Longsword Damage Bane",
+      "promotion": "NONE; Project adjudication required"
+    }
+  },
+  "contested_bind": {
+    "values": ["favored", "unfavored", "unknown"],
+    "creation": "only when two comparable successful attack/defence rolls create Crossing",
+    "comparison": "lower successful roll is better",
+    "tie": "Bind Initiative holder favored; provisional harness only",
+    "generic_modifier": null,
+    "hard_soft_pressure_is_separate": true,
+    "unknown_when_not_comparable": true
+  },
+  "bind_initiative": {
+    "default_holder": "successful defensive Cross/Zornhau creator",
+    "independent_of_favored_unfavored": true,
+    "decline": "pass one immediate opportunity to opponent before cleanup",
+    "simultaneous_secret_declaration": false,
+    "new_roll": false
+  },
+  "fuhlen": {
+    "classification": "learned passive repertoire capability",
+    "source_basis": "existing audited Pseudo-Peter von Danzig Winden witness, ff. 37r.2-38v.1, which explicitly joins feeling hard/soft to selecting bind work",
+    "cost": {"action": 0, "spiritus": 0, "learned_chain_entries": 0},
+    "effect": "reveal actor's Favored/Unfavored category before first continuation; raw roll remains hidden"
+  },
+  "winden": {
+    "classification": "separate learned Play; thrusting branch only",
+    "cost": {"spiritus": 1, "learned_chain_entries": 1, "additional_action": 0},
+    "payload": ["RETAIN contact=crossing", "SET point_threat=threatening", "ATTACK normal Longsword thrust"],
+    "damage": "normal",
+    "pressure_authored": false,
+    "generic_modifier": null,
+    "hanging_aftermath": "appropriate upper/lower Ochs-or-Pflug hanging; exact side/height remains unresolved without authored context",
+    "starting_ochs_pflug_gate": false,
+    "W1": "legal only from Unfavored Bind; blind wrong declaration spends Spiritus and chain entry",
+    "W2": "legal from either relation",
+    "promotion": "NONE; Project adjudication required"
+  },
+  "frontale": {
+    "status": "CANDIDATE ONLY; NOT IMPLEMENTED",
+    "evidence": "Fiore Getty 24v-c / Morgan 12v-b / Pisani Dossi 18b-b: alternate retreat, fendente, Dente di Zenghiaro, thrust, return-fendente sequence",
+    "basic_mappings": {"high_thrust": "Basic Cross", "low_thrust": "Basic Beat"},
+    "candidate_decomposition": {
+      "trigger": "from Posta Frontale against an as-yet-unselected opponent action/timing",
+      "cost_commitment": "learned chain entry; action and Spiritus unresolved",
+      "test": "unresolved: which fendente/thrust is the principal test and whether more than one attack roll exists",
+      "primary_payload": "unresolved among fendente attack, thrust attack, or a compound sequence",
+      "state_aftermath": "source-facing Dente di Zenghiaro and return transition; exact guard-state writers unresolved",
+      "continuation": "thrust and return-fendente ordering is directly evidenced but mechanical branching is unresolved",
+      "opponent_counterplay": "unresolved until the attack/test count is selected",
+      "event_metadata": ["retreat", "fendente", "Dente di Zenghiaro", "thrust", "return fendente"]
+    },
+    "smallest_project_question": "Which one of the fendente, thrust, and return-fendente is the principal ATTACK/test (and are the others intrinsic aftermath/continuations), and may retreat remain event metadata until Force Movement exists?",
+    "vocabulary_gap": "No new operator is required if retreat is metadata; a mechanical retreat would require the deferred Force Movement procedure, so that branch is stopped."
+  },
+  "excluded": ["Named Guard v0.2", "full eight Winden", "Duplieren", "Mutieren", "generic guard bonus", "failed Beat self-Open", "generic Recovery state", "Force Movement"],
+  "automatic_promotion": false
+}

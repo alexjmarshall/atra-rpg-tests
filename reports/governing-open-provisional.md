@@ -2,13 +2,39 @@
 
 Transcribed from Section 2 of Atra Melee Design Packet v0.4. These entries are constraints and unresolved questions; this repository does not decide them.
 
-## 2026-08-12 Choice Architecture v0.1 Project adjudication
+## 2026-08-12 Melee Repertoire Integrity Repair v0.1 Project adjudication
 
-The Project explicitly selects the following as **GOVERNING PROVISIONAL FOR THE CURRENT LONGSWORD VERTICAL SLICE**. This is not a canonical/final promotion and does not edit Atra Melee Design Packet v0.4. It supersedes the older prototype harness where the entries conflict.
+The Project explicitly supersedes the conflicting provisional language below for the current longsword vertical slice. This is a **GOVERNING PROVISIONAL** synchronization, not a canonical/final promotion, and it does not edit Atra Melee Design Packet v0.4 or rewrite archived experiment reports.
 
-### Cross / Beat — CB3
+### State-based D1 replaces blanket Cross immunity
 
-- **Basic Cross** is a universal Basic defensive form declared in the normal Basic defence window. Durchwechseln is not legal against a declared Cross. Resolve the normal defence roll. On success, cancel the incoming attack and establish ordinary Crossing. Cross receives no generic Boon, Bane, damage, offensive benefit, or defensive modifier. Its additional tactical value is intentionally repertoire-sensitive through learned Crossing/bind continuations. Beat may therefore be the superior Basic when D1 is irrelevant and the fighter has no useful Crossing repertoire; this is not an unresolved architecture defect.
+The CB3 rule that a Cross declaration is automatically immune to Durchwechseln is **RETRACTED / SUPERSEDED**. Basic Cross and Basic Beat both expose the ordinary pre-roll D1 window when all normal prerequisites are satisfied. A threatening opposing point denies D1; Crossing or the name/declaration of Cross does not. Successful Cross remains Cancel Attack + establish ordinary Crossing with no generic modifier and no automatic point threat. Successful Beat remains Cancel Attack + displacement + End Contact + Strip Guard to Open. Failed Beat does not create Open, and failed-Beat self-Open remains unadopted.
+
+Open and GC1 otherwise remain exactly governing: Open is no named guard and has no generic numeric penalty; next-own-activation recovery consumes the voluntary allowance; voluntary guard change is once before the action with no post-action change or voluntary transition graph.
+
+### General Committed declaration timing
+
+The former P1-only Counter-first behavior is **SUPERSEDED** by a general Committed declaration window. Before any Committed attack roll, the original target may spend their action on an immediate normal Basic Counter or a technique explicitly authored for Preparation. It resolves first; removal cancels the pending attack and survival permits it to proceed. A target who waits may use ordinary simultaneous Counter only after a successful attack roll. A miss creates no retroactive Counter. P1 inherits this timing while retaining its existing Loaded gate, 1-Spiritus declaration cost, fixed 7 damage, attacker-insertion restrictions, and Basic/non-learned classification.
+
+### Scoped repertoire repairs
+
+- **Nachreisen:** learned Play, 1 Spiritus, one chain entry, no Vom Tag gate. Target-only Preparation occurs before a declared Committed attack; target-only Recovery occurs immediately after its miss. Both make a normal Longsword attack with Attack Boon and normal damage. Neither window persists or follows guard change.
+- **Zornhau-Ort:** Zornhau answers a qualifying descending Cut without requiring Committed, spends action plus one learned entry and 0 Spiritus, and on success cancels, establishes Crossing and a threatening point, and gives the defender Bind Initiative. It does not automatically damage or author pressure. Ort is intrinsic, costs 1 Spiritus, consumes no second learned entry or attack roll, and succeeds only from Favored Bind. O1/O2 remain comparison variants.
+- **Favored/Unfavored Bind:** compare the two successful rolls that created a contested Crossing using lower-is-better. Exact ties provisionally favor the Bind Initiative holder. This creates no generic modifier and is separate from Hard/Soft pressure.
+- **Bind Initiative:** the successful defensive Cross/Zornhau creator receives first immediate continuation declaration even when Unfavored. Declining passes one immediate opportunity to the opponent before cleanup.
+- **Fühlen:** learned passive categorical visibility only; no action, Spiritus, or chain cost and no raw-roll disclosure.
+- **Winden:** separate learned continuation at 1 Spiritus and one additional chain entry, with no additional normal action. It retains Crossing, keeps/sets point threat, establishes the least-specific supported Ochs/Pflug hanging aftermath, and makes a normal Thrust roll for normal damage. Ochs/Pflug are not exclusive starting gates. W1/W2 remain comparison variants.
+- **Frontale:** universal high-thrust Cross and low-thrust Beat mappings remain Basic. The longer audited sequence remains candidate-only pending Project resolution of its action/test decomposition and how retreat is represented without a current Force Movement operator.
+
+The synchronized behavioral implementation is `simulations/shared/provisional_longsword_engine.py`, selected by `simulations/shared/provisional_longsword.py`. Archived experiment engines remain unchanged and compatibility-labeled.
+
+## 2026-08-12 Choice Architecture v0.1 Project adjudication — historical selection, partially superseded above
+
+This section preserves the earlier same-day selection. The later Melee Repertoire Integrity Repair adjudication above retracts only CB3's blanket Cross immunity and supersedes the implementation-lag note; Beat->Open, Open, and GC1 remain governing.
+
+### Cross / Beat — CB3 historical record
+
+- **SUPERSEDED CLAUSE:** the former rule that Durchwechseln is not legal against a declared Cross is retracted above. The retained parts are that Basic Cross is universal and on success cancels the attack and establishes ordinary Crossing without a generic modifier.
 - **Basic Beat** is a universal Basic defensive form. It retains the normal Durchwechseln window and all D1 prerequisites. On a successful resolution, cancel the incoming attack, record displacement as appropriate, end contact/separate under the current Beat chassis, and leave the attacker Open. Failed or D1-interrupted Beat does not create Open.
 
 ### Open
@@ -27,7 +53,7 @@ A sparse voluntary transition graph is **REJECTED** for the current longsword ar
 
 Scheitelhau/Crown C1/B3 remains candidate-only, unresolved, and non-governing. Named Guard v0.2 remains blocked.
 
-Implementation note: the archived engine selected by `simulations/shared/provisional_longsword.py` still embodies the earlier experimental Cross/Beat timing and does not implement Open/GC1. This adjudication updates durable governing records only; simulator behavior was intentionally not changed in this milestone.
+Historical implementation note: this lag existed at the Choice Architecture milestone and is now **SUPERSEDED**. The shared entry point selects the synchronized authoritative exchange engine while exposing the archived engine only through compatibility exports.
 
 ## 2026-08-11 governing provisional prototype selection
 

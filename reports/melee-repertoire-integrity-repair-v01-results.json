@@ -1,0 +1,826 @@
+{
+  "bind_configuration_matrix_skill14": [
+    {
+      "expected_chain_entries_after_zorn": 1.0,
+      "expected_damage_per_controlled_opportunity": 2.25,
+      "favored_choice": "Ort",
+      "fuhlen": false,
+      "hanging_aftermath_rate": 0.0,
+      "ort": "O1",
+      "spiritus_per_opportunity": 1.0,
+      "unfavored_choice": "Ort",
+      "winden": "W1",
+      "winden_chosen_from_favored": false,
+      "winden_declaration_rate": 0.0,
+      "wrong_prerequisite_spiritus_waste": 0.5
+    },
+    {
+      "expected_chain_entries_after_zorn": 1.5,
+      "expected_damage_per_controlled_opportunity": 3.825,
+      "favored_choice": "Ort",
+      "fuhlen": true,
+      "hanging_aftermath_rate": 0.5,
+      "ort": "O1",
+      "spiritus_per_opportunity": 1.0,
+      "unfavored_choice": "Winden",
+      "winden": "W1",
+      "winden_chosen_from_favored": false,
+      "winden_declaration_rate": 0.5,
+      "wrong_prerequisite_spiritus_waste": 0.0
+    },
+    {
+      "expected_chain_entries_after_zorn": 2.0,
+      "expected_damage_per_controlled_opportunity": 3.15,
+      "favored_choice": "Winden",
+      "fuhlen": false,
+      "hanging_aftermath_rate": 1.0,
+      "ort": "O1",
+      "spiritus_per_opportunity": 1.0,
+      "unfavored_choice": "Winden",
+      "winden": "W2",
+      "winden_chosen_from_favored": false,
+      "winden_declaration_rate": 1.0,
+      "wrong_prerequisite_spiritus_waste": 0.0
+    },
+    {
+      "expected_chain_entries_after_zorn": 1.5,
+      "expected_damage_per_controlled_opportunity": 3.825,
+      "favored_choice": "Ort",
+      "fuhlen": true,
+      "hanging_aftermath_rate": 0.5,
+      "ort": "O1",
+      "spiritus_per_opportunity": 1.0,
+      "unfavored_choice": "Winden",
+      "winden": "W2",
+      "winden_chosen_from_favored": false,
+      "winden_declaration_rate": 0.5,
+      "wrong_prerequisite_spiritus_waste": 0.0
+    },
+    {
+      "expected_chain_entries_after_zorn": 1.0,
+      "expected_damage_per_controlled_opportunity": 1.7638888888888888,
+      "favored_choice": "Ort",
+      "fuhlen": false,
+      "hanging_aftermath_rate": 0.0,
+      "ort": "O2",
+      "spiritus_per_opportunity": 1.0,
+      "unfavored_choice": "Ort",
+      "winden": "W1",
+      "winden_chosen_from_favored": false,
+      "winden_declaration_rate": 0.0,
+      "wrong_prerequisite_spiritus_waste": 0.5
+    },
+    {
+      "expected_chain_entries_after_zorn": 1.5,
+      "expected_damage_per_controlled_opportunity": 3.3388888888888886,
+      "favored_choice": "Ort",
+      "fuhlen": true,
+      "hanging_aftermath_rate": 0.5,
+      "ort": "O2",
+      "spiritus_per_opportunity": 1.0,
+      "unfavored_choice": "Winden",
+      "winden": "W1",
+      "winden_chosen_from_favored": false,
+      "winden_declaration_rate": 0.5,
+      "wrong_prerequisite_spiritus_waste": 0.0
+    },
+    {
+      "expected_chain_entries_after_zorn": 2.0,
+      "expected_damage_per_controlled_opportunity": 3.15,
+      "favored_choice": "Winden",
+      "fuhlen": false,
+      "hanging_aftermath_rate": 1.0,
+      "ort": "O2",
+      "spiritus_per_opportunity": 1.0,
+      "unfavored_choice": "Winden",
+      "winden": "W2",
+      "winden_chosen_from_favored": false,
+      "winden_declaration_rate": 1.0,
+      "wrong_prerequisite_spiritus_waste": 0.0
+    },
+    {
+      "expected_chain_entries_after_zorn": 1.5,
+      "expected_damage_per_controlled_opportunity": 3.3388888888888886,
+      "favored_choice": "Ort",
+      "fuhlen": true,
+      "hanging_aftermath_rate": 0.5,
+      "ort": "O2",
+      "spiritus_per_opportunity": 1.0,
+      "unfavored_choice": "Winden",
+      "winden": "W2",
+      "winden_chosen_from_favored": false,
+      "winden_declaration_rate": 0.5,
+      "wrong_prerequisite_spiritus_waste": 0.0
+    }
+  ],
+  "bind_tie_rule": {
+    "10": {
+      "bind_initiative_holder_favored_frequency": 0.55,
+      "non_initiative_holder_favored_frequency": 0.45,
+      "tie_frequency_conditional_on_two_successes": 0.1
+    },
+    "14": {
+      "bind_initiative_holder_favored_frequency": 0.5357142857142857,
+      "non_initiative_holder_favored_frequency": 0.4642857142857143,
+      "tie_frequency_conditional_on_two_successes": 0.07142857142857142
+    },
+    "18": {
+      "bind_initiative_holder_favored_frequency": 0.5277777777777778,
+      "non_initiative_holder_favored_frequency": 0.4722222222222222,
+      "tie_frequency_conditional_on_two_successes": 0.05555555555555555
+    }
+  },
+  "counter_decisions": [
+    {
+      "basic_beat": {
+        "expected_incoming_damage": 1.125,
+        "successful_open_probability": 0.25
+      },
+      "basic_cross": {
+        "expected_incoming_damage": 1.125,
+        "successful_crossing_probability": 0.25
+      },
+      "immediate_basic_counter": {
+        "attack_success": 0.5,
+        "available": true,
+        "expected_outgoing_damage_per_declaration": 2.25,
+        "spiritus": 0,
+        "timing": "before committed attack"
+      },
+      "preparation_nachreisen": {
+        "attack_success": 0.75,
+        "available": true,
+        "expected_outgoing_damage_per_declaration": 3.375,
+        "spiritus": 1,
+        "timing": "before committed attack"
+      },
+      "skill": 10,
+      "spiritus": 8,
+      "wait_ordinary_counter": {
+        "available": true,
+        "conditional_counter_success": 0.5,
+        "expected_outgoing_damage_per_committed_declaration": 1.125,
+        "timing": "simultaneous only after hit",
+        "trigger_probability": 0.5
+      },
+      "wait_recovery_nachreisen": {
+        "available": true,
+        "conditional_attack_success": 0.75,
+        "expected_outgoing_damage_per_committed_declaration": 1.6875,
+        "timing": "immediate only after miss",
+        "trigger_probability": 0.5
+      }
+    },
+    {
+      "basic_beat": {
+        "expected_incoming_damage": 1.125,
+        "successful_open_probability": 0.25
+      },
+      "basic_cross": {
+        "expected_incoming_damage": 1.125,
+        "successful_crossing_probability": 0.25
+      },
+      "immediate_basic_counter": {
+        "attack_success": 0.5,
+        "available": true,
+        "expected_outgoing_damage_per_declaration": 2.25,
+        "spiritus": 0,
+        "timing": "before committed attack"
+      },
+      "preparation_nachreisen": {
+        "attack_success": 0.75,
+        "available": true,
+        "expected_outgoing_damage_per_declaration": 3.375,
+        "spiritus": 1,
+        "timing": "before committed attack"
+      },
+      "skill": 10,
+      "spiritus": 3,
+      "wait_ordinary_counter": {
+        "available": true,
+        "conditional_counter_success": 0.5,
+        "expected_outgoing_damage_per_committed_declaration": 1.125,
+        "timing": "simultaneous only after hit",
+        "trigger_probability": 0.5
+      },
+      "wait_recovery_nachreisen": {
+        "available": true,
+        "conditional_attack_success": 0.75,
+        "expected_outgoing_damage_per_committed_declaration": 1.6875,
+        "timing": "immediate only after miss",
+        "trigger_probability": 0.5
+      }
+    },
+    {
+      "basic_beat": {
+        "expected_incoming_damage": 1.125,
+        "successful_open_probability": 0.25
+      },
+      "basic_cross": {
+        "expected_incoming_damage": 1.125,
+        "successful_crossing_probability": 0.25
+      },
+      "immediate_basic_counter": {
+        "attack_success": 0.5,
+        "available": true,
+        "expected_outgoing_damage_per_declaration": 2.25,
+        "spiritus": 0,
+        "timing": "before committed attack"
+      },
+      "preparation_nachreisen": {
+        "attack_success": 0.75,
+        "available": true,
+        "expected_outgoing_damage_per_declaration": 3.375,
+        "spiritus": 1,
+        "timing": "before committed attack"
+      },
+      "skill": 10,
+      "spiritus": 1,
+      "wait_ordinary_counter": {
+        "available": true,
+        "conditional_counter_success": 0.5,
+        "expected_outgoing_damage_per_committed_declaration": 1.125,
+        "timing": "simultaneous only after hit",
+        "trigger_probability": 0.5
+      },
+      "wait_recovery_nachreisen": {
+        "available": true,
+        "conditional_attack_success": 0.75,
+        "expected_outgoing_damage_per_committed_declaration": 1.6875,
+        "timing": "immediate only after miss",
+        "trigger_probability": 0.5
+      }
+    },
+    {
+      "basic_beat": {
+        "expected_incoming_damage": 1.125,
+        "successful_open_probability": 0.25
+      },
+      "basic_cross": {
+        "expected_incoming_damage": 1.125,
+        "successful_crossing_probability": 0.25
+      },
+      "immediate_basic_counter": {
+        "attack_success": 0.5,
+        "available": true,
+        "expected_outgoing_damage_per_declaration": 2.25,
+        "spiritus": 0,
+        "timing": "before committed attack"
+      },
+      "preparation_nachreisen": {
+        "attack_success": 0,
+        "available": false,
+        "expected_outgoing_damage_per_declaration": 0,
+        "spiritus": 0,
+        "timing": "before committed attack"
+      },
+      "skill": 10,
+      "spiritus": 0,
+      "wait_ordinary_counter": {
+        "available": true,
+        "conditional_counter_success": 0.5,
+        "expected_outgoing_damage_per_committed_declaration": 1.125,
+        "timing": "simultaneous only after hit",
+        "trigger_probability": 0.5
+      },
+      "wait_recovery_nachreisen": {
+        "available": false,
+        "conditional_attack_success": 0,
+        "expected_outgoing_damage_per_committed_declaration": 0,
+        "timing": "immediate only after miss",
+        "trigger_probability": 0.5
+      }
+    },
+    {
+      "basic_beat": {
+        "expected_incoming_damage": 0.9450000000000001,
+        "successful_open_probability": 0.48999999999999994
+      },
+      "basic_cross": {
+        "expected_incoming_damage": 0.9450000000000001,
+        "successful_crossing_probability": 0.48999999999999994
+      },
+      "immediate_basic_counter": {
+        "attack_success": 0.7,
+        "available": true,
+        "expected_outgoing_damage_per_declaration": 3.15,
+        "spiritus": 0,
+        "timing": "before committed attack"
+      },
+      "preparation_nachreisen": {
+        "attack_success": 0.9099999999999999,
+        "available": true,
+        "expected_outgoing_damage_per_declaration": 4.095,
+        "spiritus": 1,
+        "timing": "before committed attack"
+      },
+      "skill": 14,
+      "spiritus": 8,
+      "wait_ordinary_counter": {
+        "available": true,
+        "conditional_counter_success": 0.7,
+        "expected_outgoing_damage_per_committed_declaration": 2.2049999999999996,
+        "timing": "simultaneous only after hit",
+        "trigger_probability": 0.7
+      },
+      "wait_recovery_nachreisen": {
+        "available": true,
+        "conditional_attack_success": 0.9099999999999999,
+        "expected_outgoing_damage_per_committed_declaration": 1.2285000000000001,
+        "timing": "immediate only after miss",
+        "trigger_probability": 0.30000000000000004
+      }
+    },
+    {
+      "basic_beat": {
+        "expected_incoming_damage": 0.9450000000000001,
+        "successful_open_probability": 0.48999999999999994
+      },
+      "basic_cross": {
+        "expected_incoming_damage": 0.9450000000000001,
+        "successful_crossing_probability": 0.48999999999999994
+      },
+      "immediate_basic_counter": {
+        "attack_success": 0.7,
+        "available": true,
+        "expected_outgoing_damage_per_declaration": 3.15,
+        "spiritus": 0,
+        "timing": "before committed attack"
+      },
+      "preparation_nachreisen": {
+        "attack_success": 0.9099999999999999,
+        "available": true,
+        "expected_outgoing_damage_per_declaration": 4.095,
+        "spiritus": 1,
+        "timing": "before committed attack"
+      },
+      "skill": 14,
+      "spiritus": 3,
+      "wait_ordinary_counter": {
+        "available": true,
+        "conditional_counter_success": 0.7,
+        "expected_outgoing_damage_per_committed_declaration": 2.2049999999999996,
+        "timing": "simultaneous only after hit",
+        "trigger_probability": 0.7
+      },
+      "wait_recovery_nachreisen": {
+        "available": true,
+        "conditional_attack_success": 0.9099999999999999,
+        "expected_outgoing_damage_per_committed_declaration": 1.2285000000000001,
+        "timing": "immediate only after miss",
+        "trigger_probability": 0.30000000000000004
+      }
+    },
+    {
+      "basic_beat": {
+        "expected_incoming_damage": 0.9450000000000001,
+        "successful_open_probability": 0.48999999999999994
+      },
+      "basic_cross": {
+        "expected_incoming_damage": 0.9450000000000001,
+        "successful_crossing_probability": 0.48999999999999994
+      },
+      "immediate_basic_counter": {
+        "attack_success": 0.7,
+        "available": true,
+        "expected_outgoing_damage_per_declaration": 3.15,
+        "spiritus": 0,
+        "timing": "before committed attack"
+      },
+      "preparation_nachreisen": {
+        "attack_success": 0.9099999999999999,
+        "available": true,
+        "expected_outgoing_damage_per_declaration": 4.095,
+        "spiritus": 1,
+        "timing": "before committed attack"
+      },
+      "skill": 14,
+      "spiritus": 1,
+      "wait_ordinary_counter": {
+        "available": true,
+        "conditional_counter_success": 0.7,
+        "expected_outgoing_damage_per_committed_declaration": 2.2049999999999996,
+        "timing": "simultaneous only after hit",
+        "trigger_probability": 0.7
+      },
+      "wait_recovery_nachreisen": {
+        "available": true,
+        "conditional_attack_success": 0.9099999999999999,
+        "expected_outgoing_damage_per_committed_declaration": 1.2285000000000001,
+        "timing": "immediate only after miss",
+        "trigger_probability": 0.30000000000000004
+      }
+    },
+    {
+      "basic_beat": {
+        "expected_incoming_damage": 0.9450000000000001,
+        "successful_open_probability": 0.48999999999999994
+      },
+      "basic_cross": {
+        "expected_incoming_damage": 0.9450000000000001,
+        "successful_crossing_probability": 0.48999999999999994
+      },
+      "immediate_basic_counter": {
+        "attack_success": 0.7,
+        "available": true,
+        "expected_outgoing_damage_per_declaration": 3.15,
+        "spiritus": 0,
+        "timing": "before committed attack"
+      },
+      "preparation_nachreisen": {
+        "attack_success": 0,
+        "available": false,
+        "expected_outgoing_damage_per_declaration": 0,
+        "spiritus": 0,
+        "timing": "before committed attack"
+      },
+      "skill": 14,
+      "spiritus": 0,
+      "wait_ordinary_counter": {
+        "available": true,
+        "conditional_counter_success": 0.7,
+        "expected_outgoing_damage_per_committed_declaration": 2.2049999999999996,
+        "timing": "simultaneous only after hit",
+        "trigger_probability": 0.7
+      },
+      "wait_recovery_nachreisen": {
+        "available": false,
+        "conditional_attack_success": 0,
+        "expected_outgoing_damage_per_committed_declaration": 0,
+        "timing": "immediate only after miss",
+        "trigger_probability": 0.30000000000000004
+      }
+    },
+    {
+      "basic_beat": {
+        "expected_incoming_damage": 0.4049999999999999,
+        "successful_open_probability": 0.81
+      },
+      "basic_cross": {
+        "expected_incoming_damage": 0.4049999999999999,
+        "successful_crossing_probability": 0.81
+      },
+      "immediate_basic_counter": {
+        "attack_success": 0.9,
+        "available": true,
+        "expected_outgoing_damage_per_declaration": 4.05,
+        "spiritus": 0,
+        "timing": "before committed attack"
+      },
+      "preparation_nachreisen": {
+        "attack_success": 0.99,
+        "available": true,
+        "expected_outgoing_damage_per_declaration": 4.455,
+        "spiritus": 1,
+        "timing": "before committed attack"
+      },
+      "skill": 18,
+      "spiritus": 8,
+      "wait_ordinary_counter": {
+        "available": true,
+        "conditional_counter_success": 0.9,
+        "expected_outgoing_damage_per_committed_declaration": 3.6450000000000005,
+        "timing": "simultaneous only after hit",
+        "trigger_probability": 0.9
+      },
+      "wait_recovery_nachreisen": {
+        "available": true,
+        "conditional_attack_success": 0.99,
+        "expected_outgoing_damage_per_committed_declaration": 0.4454999999999999,
+        "timing": "immediate only after miss",
+        "trigger_probability": 0.09999999999999998
+      }
+    },
+    {
+      "basic_beat": {
+        "expected_incoming_damage": 0.4049999999999999,
+        "successful_open_probability": 0.81
+      },
+      "basic_cross": {
+        "expected_incoming_damage": 0.4049999999999999,
+        "successful_crossing_probability": 0.81
+      },
+      "immediate_basic_counter": {
+        "attack_success": 0.9,
+        "available": true,
+        "expected_outgoing_damage_per_declaration": 4.05,
+        "spiritus": 0,
+        "timing": "before committed attack"
+      },
+      "preparation_nachreisen": {
+        "attack_success": 0.99,
+        "available": true,
+        "expected_outgoing_damage_per_declaration": 4.455,
+        "spiritus": 1,
+        "timing": "before committed attack"
+      },
+      "skill": 18,
+      "spiritus": 3,
+      "wait_ordinary_counter": {
+        "available": true,
+        "conditional_counter_success": 0.9,
+        "expected_outgoing_damage_per_committed_declaration": 3.6450000000000005,
+        "timing": "simultaneous only after hit",
+        "trigger_probability": 0.9
+      },
+      "wait_recovery_nachreisen": {
+        "available": true,
+        "conditional_attack_success": 0.99,
+        "expected_outgoing_damage_per_committed_declaration": 0.4454999999999999,
+        "timing": "immediate only after miss",
+        "trigger_probability": 0.09999999999999998
+      }
+    },
+    {
+      "basic_beat": {
+        "expected_incoming_damage": 0.4049999999999999,
+        "successful_open_probability": 0.81
+      },
+      "basic_cross": {
+        "expected_incoming_damage": 0.4049999999999999,
+        "successful_crossing_probability": 0.81
+      },
+      "immediate_basic_counter": {
+        "attack_success": 0.9,
+        "available": true,
+        "expected_outgoing_damage_per_declaration": 4.05,
+        "spiritus": 0,
+        "timing": "before committed attack"
+      },
+      "preparation_nachreisen": {
+        "attack_success": 0.99,
+        "available": true,
+        "expected_outgoing_damage_per_declaration": 4.455,
+        "spiritus": 1,
+        "timing": "before committed attack"
+      },
+      "skill": 18,
+      "spiritus": 1,
+      "wait_ordinary_counter": {
+        "available": true,
+        "conditional_counter_success": 0.9,
+        "expected_outgoing_damage_per_committed_declaration": 3.6450000000000005,
+        "timing": "simultaneous only after hit",
+        "trigger_probability": 0.9
+      },
+      "wait_recovery_nachreisen": {
+        "available": true,
+        "conditional_attack_success": 0.99,
+        "expected_outgoing_damage_per_committed_declaration": 0.4454999999999999,
+        "timing": "immediate only after miss",
+        "trigger_probability": 0.09999999999999998
+      }
+    },
+    {
+      "basic_beat": {
+        "expected_incoming_damage": 0.4049999999999999,
+        "successful_open_probability": 0.81
+      },
+      "basic_cross": {
+        "expected_incoming_damage": 0.4049999999999999,
+        "successful_crossing_probability": 0.81
+      },
+      "immediate_basic_counter": {
+        "attack_success": 0.9,
+        "available": true,
+        "expected_outgoing_damage_per_declaration": 4.05,
+        "spiritus": 0,
+        "timing": "before committed attack"
+      },
+      "preparation_nachreisen": {
+        "attack_success": 0,
+        "available": false,
+        "expected_outgoing_damage_per_declaration": 0,
+        "spiritus": 0,
+        "timing": "before committed attack"
+      },
+      "skill": 18,
+      "spiritus": 0,
+      "wait_ordinary_counter": {
+        "available": true,
+        "conditional_counter_success": 0.9,
+        "expected_outgoing_damage_per_committed_declaration": 3.6450000000000005,
+        "timing": "simultaneous only after hit",
+        "trigger_probability": 0.9
+      },
+      "wait_recovery_nachreisen": {
+        "available": false,
+        "conditional_attack_success": 0,
+        "expected_outgoing_damage_per_committed_declaration": 0,
+        "timing": "immediate only after miss",
+        "trigger_probability": 0.09999999999999998
+      }
+    }
+  ],
+  "deterministic": {
+    "baseline_sync": "PASS",
+    "groups": [
+      "1-8",
+      "9-11",
+      "12-18",
+      "19-24",
+      "25-33",
+      "34-41",
+      "42-47",
+      "48-51",
+      "52-54",
+      "55-63",
+      "64-76",
+      "77-81"
+    ],
+    "passed": 81,
+    "required_assertions": 81
+  },
+  "frontale": {
+    "basic_mappings": [
+      "high thrust -> Basic Cross",
+      "low thrust -> Basic Beat"
+    ],
+    "sequence": [
+      "retreat",
+      "fendente",
+      "Dente di Zenghiaro",
+      "thrust",
+      "return fendente"
+    ],
+    "smallest_project_question": "Which fendente/thrust is the principal ATTACK/test, are later blows intrinsic continuations, and may retreat remain metadata until Force Movement exists?",
+    "status": "CANDIDATE ONLY"
+  },
+  "fuhlen_information_value_skill14": [
+    {
+      "expected_damage_with_fuhlen": 3.825,
+      "expected_damage_without_fuhlen": 2.25,
+      "information_value_damage_delta": 1.5750000000000002,
+      "ort": "O1",
+      "winden": "W1",
+      "wrong_spiritus_waste_avoided": 0.5
+    },
+    {
+      "expected_damage_with_fuhlen": 3.825,
+      "expected_damage_without_fuhlen": 3.15,
+      "information_value_damage_delta": 0.6750000000000003,
+      "ort": "O1",
+      "winden": "W2",
+      "wrong_spiritus_waste_avoided": 0.0
+    },
+    {
+      "expected_damage_with_fuhlen": 3.3388888888888886,
+      "expected_damage_without_fuhlen": 1.7638888888888888,
+      "information_value_damage_delta": 1.5749999999999997,
+      "ort": "O2",
+      "winden": "W1",
+      "wrong_spiritus_waste_avoided": 0.5
+    },
+    {
+      "expected_damage_with_fuhlen": 3.3388888888888886,
+      "expected_damage_without_fuhlen": 3.15,
+      "information_value_damage_delta": 0.18888888888888866,
+      "ort": "O2",
+      "winden": "W2",
+      "wrong_spiritus_waste_avoided": 0.0
+    }
+  ],
+  "metadata": {
+    "controlled_bind_relation": "50/50 except separately reported tie-rule sensitivity",
+    "method": "exact enumeration and deterministic branch forcing; no Monte Carlo required",
+    "seed_recorded_for_reproducibility": 1208202601,
+    "skills": [
+      10,
+      14,
+      18
+    ],
+    "spiritus": [
+      8,
+      3,
+      1,
+      0
+    ],
+    "status": "PROVISIONAL BOUNDED REPAIR; CANDIDATE VARIANTS NOT PROMOTED"
+  },
+  "ort": {
+    "O1": {
+      "distribution": {
+        "2": 0.16666666666666666,
+        "3": 0.16666666666666666,
+        "4": 0.16666666666666666,
+        "5": 0.16666666666666666,
+        "6": 0.16666666666666666,
+        "7": 0.16666666666666666
+      },
+      "expected_damage_per_50_50_opportunity_blind": 2.25,
+      "kill_probability": {
+        "4": 0.6666666666666666,
+        "6": 0.3333333333333333,
+        "8": 0
+      },
+      "mean_damage_when_favored": 4.5,
+      "spiritus_per_expected_damage_blind": 0.4444444444444444,
+      "spiritus_per_expected_damage_with_fuhlen": 0.2222222222222222,
+      "wrong_guess_spiritus_per_opportunity_blind": 0.5,
+      "wrong_guess_spiritus_per_opportunity_with_fuhlen": 0
+    },
+    "O2": {
+      "distribution": {
+        "2": 0.3055555555555556,
+        "3": 0.25,
+        "4": 0.19444444444444445,
+        "5": 0.1388888888888889,
+        "6": 0.08333333333333333,
+        "7": 0.027777777777777776
+      },
+      "expected_damage_per_50_50_opportunity_blind": 1.7638888888888888,
+      "kill_probability": {
+        "4": 0.4444444444444444,
+        "6": 0.1111111111111111,
+        "8": 0
+      },
+      "mean_damage_when_favored": 3.5277777777777777,
+      "spiritus_per_expected_damage_blind": 0.5669291338582677,
+      "spiritus_per_expected_damage_with_fuhlen": 0.28346456692913385,
+      "wrong_guess_spiritus_per_opportunity_blind": 0.5,
+      "wrong_guess_spiritus_per_opportunity_with_fuhlen": 0
+    }
+  },
+  "policy_audit": [
+    {
+      "current_status": "QUARANTINED; authoritative engine has no utility constant",
+      "item": "old Nachreisen fixed 0.52",
+      "location": "archived loaded_power_attack_v0_1"
+    },
+    {
+      "current_status": "QUARANTINED; current continuation derives from actual Favored/Unfavored state",
+      "item": "old Zornhau unrealizable Soft continuation value",
+      "location": "archived crossing_bind_state_model_v0_1"
+    },
+    {
+      "current_status": "NOT USED by authoritative engine; no replacement bonus constant",
+      "item": "Winden placeholders/Ochs-Pflug start gates",
+      "location": "archived named_guard_rules_v0_1 and guard data"
+    },
+    {
+      "current_status": "SUPERSEDED by general Committed rule behavior",
+      "item": "P1-specific Counter-first utility",
+      "location": "archived loaded_power_attack_v0_1"
+    },
+    {
+      "current_status": "SUPERSEDED; authoritative gate reads point threat only",
+      "item": "Cross D1-immunity assumptions",
+      "location": "archived Choice Architecture harness"
+    },
+    {
+      "current_status": "QUARANTINED pending future integrated policy; no arbitrary replacement",
+      "item": "guard utility tied to obsolete Winden gate",
+      "location": "archived named-guard policy"
+    }
+  ],
+  "recommendations_not_promotions": {
+    "counter_timing": "retain general Committed declaration timing",
+    "frontale": "leave candidate-only pending one action/test adjudication",
+    "fuhlen": "retain passive categorical visibility model",
+    "nachreisen": "retain repaired 1S two-window model for integration",
+    "next_milestone": "integrated engine cleanup after Project adjudicates O1/O2 and W1/W2; not Named Guard v0.2",
+    "ort": "O1 normal damage is the stronger Project-review candidate",
+    "winden": "W2 either-relation is the stronger Project-review candidate"
+  },
+  "zornhau_vs_cross": {
+    "10": {
+      "basic_cross_automatic_point_threat": false,
+      "basic_cross_chain_entries": 0,
+      "basic_cross_d1_exposure_when_point_nonthreatening": true,
+      "basic_cross_spiritus": 0,
+      "both_establish_crossing": true,
+      "defence_success_probability_both": 0.5,
+      "zornhau_bind_continuation_access": true,
+      "zornhau_chain_entries": 1,
+      "zornhau_ordinary_d1_window": false,
+      "zornhau_point_threat": true,
+      "zornhau_spiritus": 0
+    },
+    "14": {
+      "basic_cross_automatic_point_threat": false,
+      "basic_cross_chain_entries": 0,
+      "basic_cross_d1_exposure_when_point_nonthreatening": true,
+      "basic_cross_spiritus": 0,
+      "both_establish_crossing": true,
+      "defence_success_probability_both": 0.7,
+      "zornhau_bind_continuation_access": true,
+      "zornhau_chain_entries": 1,
+      "zornhau_ordinary_d1_window": false,
+      "zornhau_point_threat": true,
+      "zornhau_spiritus": 0
+    },
+    "18": {
+      "basic_cross_automatic_point_threat": false,
+      "basic_cross_chain_entries": 0,
+      "basic_cross_d1_exposure_when_point_nonthreatening": true,
+      "basic_cross_spiritus": 0,
+      "both_establish_crossing": true,
+      "defence_success_probability_both": 0.9,
+      "zornhau_bind_continuation_access": true,
+      "zornhau_chain_entries": 1,
+      "zornhau_ordinary_d1_window": false,
+      "zornhau_point_threat": true,
+      "zornhau_spiritus": 0
+    }
+  }
+}

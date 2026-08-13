@@ -1,7 +1,8 @@
 """Shared entry point for the governing provisional longsword prototype.
 
-The archived experiment modules remain unchanged.  New simulations should import
-this module rather than selecting an experimental branch by inference.
+The current exchange engine is authoritative.  Archived duel modules are loaded
+only through the explicitly named compatibility exports at the bottom so that
+old experiment reports remain reproducible without governing new behavior.
 """
 
 from __future__ import annotations
@@ -13,14 +14,40 @@ from typing import Any
 
 
 ROOT = Path(__file__).resolve().parents[2]
-ENGINE_PATH = ROOT / "simulations" / "loaded_power_attack_v0_1" / "simulate.py"
+ENGINE_PATH = ROOT / "simulations" / "shared" / "provisional_longsword_engine.py"
+LEGACY_ENGINE_PATH = ROOT / "simulations" / "loaded_power_attack_v0_1" / "simulate.py"
 CONFIG_PATH = ROOT / "data" / "prototypes" / "longsword-governing-provisional-v0.1.yaml"
 
-SPEC = importlib.util.spec_from_file_location("atra_governing_loaded_power_engine", ENGINE_PATH)
+SPEC = importlib.util.spec_from_file_location("atra_governing_provisional_engine", ENGINE_PATH)
 ENGINE = importlib.util.module_from_spec(SPEC)
 assert SPEC.loader is not None
 sys.modules[SPEC.name] = ENGINE
 SPEC.loader.exec_module(ENGINE)
+
+LEGACY_SPEC = importlib.util.spec_from_file_location("atra_archived_loaded_power_engine", LEGACY_ENGINE_PATH)
+LEGACY_ENGINE = importlib.util.module_from_spec(LEGACY_SPEC)
+assert LEGACY_SPEC.loader is not None
+sys.modules[LEGACY_SPEC.name] = LEGACY_ENGINE
+LEGACY_SPEC.loader.exec_module(LEGACY_ENGINE)
+
+# Archived subclasses historically reached compatibility types through
+# ``SHARED.ENGINE``.  Preserve that import surface without making those types
+# authoritative for new behavior.
+ENGINE.BASE = LEGACY_ENGINE.BASE
+ENGINE.Cell = LEGACY_ENGINE.Cell
+ENGINE.LoadedPowerDuel = LEGACY_ENGINE.LoadedPowerDuel
+ENGINE.MODELS = LEGACY_ENGINE.MODELS
+for _compat_name in (
+    "POLICY_TEMPERATURE",
+    "expected",
+    "normal_damage_distribution",
+    "loaded_damage_distribution",
+    "probability_at_least",
+    "attack_success_probability",
+    "throughchange_probability",
+    "softmax_probabilities",
+):
+    setattr(ENGINE, _compat_name, getattr(LEGACY_ENGINE, _compat_name))
 
 CONTACT_VALUES = ("none", "crossing")
 MEASURE_VALUES = ("wide", "close")
@@ -55,8 +82,9 @@ GOVERNING_BASELINE: dict[str, Any] = {
     },
     "basic_parry_forms": ("Cross", "Beat"),
     "choice_architecture": {
-        "variant": "CB3",
-        "cross_durchwechseln_immune": True,
+        "variant": "STATE-BASED D1 + BEAT-OPEN",
+        "cross_durchwechseln_immune": False,
+        "d1_denial": "threatening opposing point only; Crossing/form does not deny",
         "cross_success": "cancel; establish ordinary Crossing; no generic modifier",
         "beat_durchwechseln_window": True,
         "beat_success": "cancel; displacement event; end contact; set attacker guard to Open",
@@ -71,9 +99,8 @@ GOVERNING_BASELINE: dict[str, Any] = {
         "authored_action_produced_transitions": True,
     },
     "engine_implementation_status": (
-        "METADATA UPDATED ONLY: the selected archived engine still implements the "
-        "pre-CB3/pre-GC1 harness; governing simulator behavior was not changed by the "
-        "Mechanical Effect Vocabulary v0.1 milestone"
+        "SYNCHRONIZED: authoritative shared exchange engine implements state-based D1, "
+        "Beat/Open, GC1, general Committed timing, P1/T1, cap 3, C2/S2, and explicit contact"
     ),
     "learned_play_cap": LEARNED_PLAY_CAP,
     "loaded": "proactive Basic Cut receives Damage Boon",
@@ -82,8 +109,42 @@ GOVERNING_BASELINE: dict[str, Any] = {
         "spiritus_cost": 1,
         "damage": 7,
         "committed": True,
-        "counter_first": True,
+        "counter_first": "inherited general Committed declaration-window Counter",
+        "attacker_continuations": False,
         "learned_play": False,
+    },
+    "committed_timing": {
+        "immediate_basic_counter": "target may spend action and resolve normal Counter first",
+        "waiting_counter": "after a successful attack roll, ordinary Counter is simultaneous",
+        "miss": "no ordinary Counter; target-only immediate Nachreisen Recovery may exist",
+    },
+    "nachreisen": {
+        "cost": 1,
+        "windows": ("Preparation", "Recovery"),
+        "accuracy": "Attack Boon",
+        "persistent_recovery_state": False,
+        "vom_tag_gate": False,
+    },
+    "minimum_bind": {
+        "position": ("favored", "unfavored", "unknown"),
+        "initiative_separate": True,
+        "tie_rule": "Bind Initiative holder Favored; provisional harness only",
+        "pressure_axis_preserved": True,
+    },
+    "zornhau_ort": {
+        "zornhau_cost": 0,
+        "zornhau_chain_entries": 1,
+        "zornhau_point": "threatening",
+        "ort_cost": 1,
+        "ort_intrinsic": True,
+        "ort_models": ("O1", "O2"),
+    },
+    "fuhlen": "passive categorical bind visibility; no action, Spiritus, or chain cost",
+    "winden": {
+        "cost": 1,
+        "chain_entries": 1,
+        "variants": ("W1", "W2"),
+        "starting_ochs_pflug_gate": False,
     },
     "tutta_cover_to_stretto": {
         "variant": "T1",
@@ -100,26 +161,32 @@ GOVERNING_BASELINE: dict[str, Any] = {
 
 
 def validate_engine_alignment() -> None:
-    """Fail loudly if the selected archived engine stops matching the baseline."""
-    assert ENGINE.BASE.DURCH_COST == 1
-    assert ENGINE.BASE.COMPOUND_COST == 2
-    assert ENGINE.MODELS["P1"] == {
-        "loaded": True,
-        "power": True,
-        "cost": 1,
-        "attack_bane": False,
-        "counter_first": True,
-    }
-    assert ENGINE.MAX_HP == 8
-    assert ENGINE.MAX_SPIRITUS == 8
-    assert ENGINE.BASE.ContactState.__dataclass_fields__["contact"].default == "none"
-    assert ENGINE.BASE.ContactState.__dataclass_fields__["measure"].default == "wide"
+    """Fail loudly if the selected current engine stops matching the baseline."""
+    assert ENGINE.MAX_HP == 8 and ENGINE.MAX_SPIRITUS == 8
+    assert ENGINE.LEARNED_PLAY_CAP == 3
+    a = ENGINE.Fighter("A", known_plays={"Durchwechseln"})
+    b = ENGINE.Fighter("B")
+    current = ENGINE.ProvisionalLongswordEngine([a, b])
+    ordinary = ENGINE.Attack(a, b, "cut")
+    assert current.d1_window(b, ordinary)
+    current.crossing.contact = "crossing"
+    assert current.d1_window(b, ordinary)
+    b.point_threat = "threatening"
+    assert not current.d1_window(b, ordinary)
 
 
 validate_engine_alignment()
 
-BaseCell = ENGINE.Cell
-BaseDuel = ENGINE.LoadedPowerDuel
-fresh_metrics = ENGINE.fresh_metrics
-finalize = ENGINE.finalize
-record_fight = ENGINE.BASE.record_fight
+Fighter = ENGINE.Fighter
+Attack = ENGINE.Attack
+Crossing = ENGINE.Crossing
+Resolution = ENGINE.Resolution
+CurrentEngine = ENGINE.ProvisionalLongswordEngine
+
+# Compatibility only: old named-guard/bridge experiments subclass these archived
+# types.  New work must use CurrentEngine.
+BaseCell = LEGACY_ENGINE.Cell
+BaseDuel = LEGACY_ENGINE.LoadedPowerDuel
+fresh_metrics = LEGACY_ENGINE.fresh_metrics
+finalize = LEGACY_ENGINE.finalize
+record_fight = LEGACY_ENGINE.BASE.record_fight

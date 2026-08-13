@@ -39,8 +39,9 @@ class MeleePlayGrammarV01Tests(unittest.TestCase):
 
     def test_phase_zero_adjudication_is_persisted(self) -> None:
         governing = json.loads((ROOT / "data" / "prototypes" / "longsword-governing-provisional-v0.1.yaml").read_text(encoding="utf-8"))
-        self.assertEqual(governing["basic_parry"]["selected_variant"], "CB3")
-        self.assertFalse(governing["durchwechseln"]["legal_against_declared_cross"])
+        self.assertIn("STATE-BASED D1", governing["basic_parry"]["selected_variant"])
+        self.assertIn("yes when", governing["durchwechseln"]["legal_against_declared_cross"])
+        self.assertIn("SUPERSEDED", governing["durchwechseln"]["blanket_cross_immunity"])
         self.assertEqual(governing["named_guard_architecture"]["guard_change"]["selected_variant"], "GC1")
         self.assertEqual(governing["choice_architecture_v0_1_adjudication"]["crown_c1_b3"], "CANDIDATE ONLY; UNRESOLVED; NOT GOVERNING")
 

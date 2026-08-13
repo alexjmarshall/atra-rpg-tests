@@ -4,6 +4,7 @@
   "not_canonical": true,
   "selected_on": "2026-08-11",
   "choice_architecture_adjudicated_on": "2026-08-12",
+  "repertoire_integrity_repair_adjudicated_on": "2026-08-12",
   "engine_entry_point": "simulations/shared/provisional_longsword.py",
   "archived_experiment_variants_remain_available": true,
   "durchwechseln": {
@@ -12,9 +13,12 @@
     "spend_at_declaration": true,
     "refund_on_failure": false,
     "state_based_trigger": true,
-    "window": "after a Beat declaration and before the Basic defence roll; Durchwechseln is not legal against a declared Cross under governing CB3",
-    "legal_against_declared_cross": false,
-    "legal_against_declared_beat": true
+    "window": "after a Basic Cross or Beat declaration and before the defence roll when the ordinary D1 prerequisites are satisfied",
+    "legal_against_declared_cross": "yes when the defender's point is not threatening and all other D1 prerequisites are satisfied",
+    "legal_against_declared_beat": "yes when the defender's point is not threatening and all other D1 prerequisites are satisfied",
+    "denied_by": "threatening opposing point",
+    "not_denied_by": ["Cross declaration", "Beat declaration", "Crossing itself"],
+    "blanket_cross_immunity": "SUPERSEDED AND RETRACTED by Project adjudication 2026-08-12"
   },
   "current_two_effect_compounds": {
     "variant": "C2",
@@ -34,9 +38,9 @@
   },
   "basic_parry": {
     "declared_forms": ["Cross", "Beat"],
-    "selected_variant": "CB3",
-    "cross": "universal Basic defensive form; D1-immune at declaration; normal defence roll; on success cancel and establish ordinary Crossing while preserving measure; no generic modifier or offensive benefit",
-    "beat": "universal Basic defensive form; retains the D1 window and prerequisites; on successful non-interrupted resolution cancel, record displacement, end contact/separate, and set the attacker guard to Open",
+    "selected_variant": "STATE-BASED D1 + BEAT-OPEN (CB3 blanket Cross immunity retracted)",
+    "cross": "universal Basic defensive form; ordinary state-based D1 window; on success cancel and establish ordinary Crossing while preserving measure; point is not automatically threatening; no generic modifier or offensive benefit",
+    "beat": "universal Basic defensive form; ordinary state-based D1 window; on successful non-interrupted resolution cancel, record displacement, end contact/separate, and set the attacker guard to Open",
     "failed_or_d1_interrupted_beat_creates_open": false,
     "repertoire_dependent_cross_value_accepted": true
   },
@@ -67,8 +71,56 @@
     "damage": 7,
     "loaded_boon_stacks": false,
     "committed": true,
-    "counter_first_only_against_power": true,
+    "counter_first_only_against_power": "SUPERSEDED: Counter-first is general Committed declaration-window timing; P1 inherits it",
+    "attacker_side_continuations": false,
     "learned_play": false
+  },
+  "committed_timing": {
+    "status": "GOVERNING PROVISIONAL FOR CURRENT LONGSWORD VERTICAL SLICE",
+    "declaration_window": "Target may immediately declare Basic Counter or a technique explicitly authored for Preparation before the attack roll.",
+    "immediate_basic_counter": "spend target action; normal Counter roll/damage resolves first; removal cancels pending Committed attack; survivor proceeds; no later action-funded defence",
+    "waiting_counter": "decline immediate window; after a successful attack roll and with action remaining, ordinary Counter resolves simultaneously",
+    "miss": "ordinary Counter does not occur; only an explicitly authored immediate Recovery opportunity may follow",
+    "power_p1": "inherits general Committed timing; all other P1 cost, damage, Loaded, and insertion restrictions remain"
+  },
+  "repertoire_integrity_repair_v0_1": {
+    "status": "PROJECT-ADJUDICATED GOVERNING PROVISIONAL REPAIR; O1/O2 AND W1/W2 REMAIN CANDIDATE VARIANTS",
+    "specification": "data/prototypes/melee-repertoire-integrity-repair-v0.1.yaml",
+    "authoritative_engine": "simulations/shared/provisional_longsword_engine.py",
+    "nachreisen": {
+      "status": "learned Play",
+      "spiritus_cost": 1,
+      "learned_chain_entries": 1,
+      "windows": ["target-only Committed Preparation", "target-only immediate Recovery after Committed miss"],
+      "attack": "normal appropriate Longsword attack with Attack Boon and normal damage",
+      "persistent_recovery_state": false,
+      "vom_tag_gate": false,
+      "guard_change_trigger": false
+    },
+    "zornhau_ort": {
+      "zornhau": "against qualifying descending Cut; spend action and one learned entry, 0 Spiritus; normal defensive/counter test; success cancels, establishes Crossing and threatening point, and gives defender Bind Initiative; no automatic damage or pressure",
+      "ort": "intrinsic continuation; no second learned entry; 1 Spiritus at declaration; succeeds only from Favored Bind; no second attack roll; compare O1 normal damage and O2 Damage Bane without automatic promotion"
+    },
+    "bind_position": {
+      "values": ["Favored Bind", "Unfavored Bind", "Unknown"],
+      "creation": "compare the two already-successful rolls that created contested Crossing; lower successful roll is better",
+      "tie": "Bind Initiative holder receives Favored Bind; provisional harness rule; record frequency",
+      "generic_modifiers": [],
+      "pressure_axis_separate": true
+    },
+    "bind_initiative": "successful defensive Cross/Zornhau creator receives first immediate continuation declaration; decline passes one opportunity to opponent before cleanup; independent of bind position",
+    "fuhlen": "learned passive; reveal categorical bind position before first continuation; no action, Spiritus, or chain cost; never reveal raw rolls",
+    "winden": {
+      "status": "separate learned Play",
+      "spiritus_cost": 1,
+      "learned_chain_entries": 1,
+      "additional_normal_action": false,
+      "payload": "retain Crossing; appropriate sourced Ochs/Pflug hanging aftermath where context supports; threatening point; normal Longsword Thrust roll and normal damage",
+      "starting_ochs_or_pflug_required": false,
+      "candidate_variants": ["W1 Unfavored-only", "W2 either relation"],
+      "automatic_selection": false
+    },
+    "frontale": "Basic Cross/Beat mappings preserved; longer sequence remains candidate-only pending the action/test decomposition and representation of retreat under the current no-FORCE_MOVEMENT vocabulary"
   },
   "guard_direction": "source-specific named guards; mirrored Threat/Power/Cover is superseded for current prototype work",
   "named_guard_architecture": {
@@ -98,7 +150,7 @@
     "status": "PROJECT-ADJUDICATED; GOVERNING PROVISIONAL FOR CURRENT LONGSWORD VERTICAL SLICE",
     "report": "reports/melee-choice-architecture-v01-results.md",
     "results": "reports/melee-choice-architecture-v01-results.json",
-    "cross_beat": "CB3",
+    "cross_beat": "CB3's Beat->Open retained; blanket Cross D1 immunity SUPERSEDED/RETRACTED by Repertoire Integrity Repair v0.1",
     "open": "adopted provisionally exactly as recorded in open_state; no numeric penalty",
     "guard_commitment": "GC1",
     "restrictive_voluntary_transition_graph": "REJECTED",
