@@ -1,0 +1,49 @@
+{
+  "id": "upper-lower-winden-completion-v0.3",
+  "status": "PROVISIONAL BOUNDED CANDIDATE; NOT GOVERNING OR CANONICAL",
+  "automatic_promotion": false,
+  "control": {
+    "id": "R0",
+    "engine": "simulations/shared/provisional_longsword_engine.py",
+    "ordinary_cross_relation": "roll-derived Favored/Unfavored remains governing during experiment",
+    "preserve": ["D1", "threatening-point D1 denial", "Cross/Beat", "GC1", "Committed timing", "Nachreisen", "P1", "C2", "S2", "T1", "cap 3", "Zornhau-local relation"]
+  },
+  "candidate": {
+    "id": "H3-L2",
+    "implementation": "simulations/upper_lower_winden_v0_3/candidate_engine.py",
+    "ordinary_cross": "phase-scoped Hart/Weich + attacker Rejoinder",
+    "pressure_expiry": "after D/M declaration or Rejoinder decline",
+    "bind_height": ["upper", "lower", "unknown"],
+    "height_modifier": null,
+    "bind_initiative_modifier": null
+  },
+  "writers": {
+    "upper": "successful qualifying Cross against explicit descending/Oberhau-like Cut",
+    "lower": "successful Cross with authored lower-setting-aside event against qualifying low-line thrust or rising low-line Cut",
+    "unknown": "all other/unclassified geometry",
+    "not_writers": ["starting guard", "Pflug", "Ochs", "measure", "contact zone", "generic low label"]
+  },
+  "winden_family": {
+    "knowledge": "learn Winden once; each concrete execution costs one chain entry",
+    "cost_each": {"spiritus": 2, "additional_action": 0, "learned_chain_entries": 1},
+    "upper_winding_thrust": {
+      "requires": ["Winden", "Bind Initiative", "Crossing", "upper", "2S", "chain room"],
+      "declaration": ["RETAIN Crossing", "SET Ochs", "SET point threatening", "ATTACK flat Longsword Thrust"],
+      "hit": "normal damage; bounded bind ends",
+      "miss": ["zero damage", "RETAIN Crossing/Ochs/threat/upper", "SET initiative opponent"]
+    },
+    "lower_winding_thrust": {
+      "requires": ["Winden", "Bind Initiative", "Crossing", "lower", "2S", "chain room"],
+      "declaration": ["RETAIN Crossing", "SET Pflug", "SET point threatening", "ATTACK flat upward Longsword Thrust"],
+      "hit": "normal damage; bounded bind ends",
+      "L1_miss": ["zero damage", "RETAIN Crossing/Pflug/threat/lower", "SET initiative opponent"],
+      "L2_miss": ["zero damage", "RETAIN Crossing/threat", "SET lower->upper", "SET Pflug->Ochs", "SET initiative opponent"]
+    }
+  },
+  "initial_information": {
+    "fuhlen": {"cost_spiritus": 1, "action": 0, "chain": 0, "effect": "reveal initial pressure once"},
+    "duplieren_mutieren": {"cost_spiritus": 2, "action": 0, "chain": 1, "correct": "Booned normal-damage attack", "wrong": "hard failure after spend"}
+  },
+  "excluded": ["Leverage", "Counter-Wind", "generic Unknown Winden", "generic Wide-to-Close", "response denial", "action refresh", "random height", "new mechanical operator"]
+}
+
