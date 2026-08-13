@@ -1,0 +1,133 @@
+{
+  "id": "hart-weich-upper-winden-loop-v0.2",
+  "status": "PROVISIONAL BOUNDED CANDIDATE EXPERIMENT; NOT GOVERNING OR CANONICAL",
+  "automatic_promotion": false,
+  "governing_packet_edited": false,
+  "authoritative_engine_edited": false,
+  "control": {
+    "id": "R0",
+    "source": "data/prototypes/longsword-governing-provisional-v0.1.yaml",
+    "engine": "simulations/shared/provisional_longsword_engine.py",
+    "ordinary_basic_cross": "roll-derived Favored/Unfavored with current Bind Initiative",
+    "preserved_local_structures": ["Zornhau-Ort", "Zornhau W1/W2", "T1", "D1", "C2", "S2", "P1"]
+  },
+  "candidate_layer": {
+    "id": "H2",
+    "implementation": "simulations/hart_weich_upper_winden_v0_2/candidate_engine.py",
+    "inherits_candidate": "general-bind-information-architecture-v0.1",
+    "ordinary_non_point_threatening_basic_cross_only": true,
+    "primary_winding_cost": 2,
+    "sensitivity_winding_cost": 1,
+    "wrong_read_model": "hard failure after 2 Spiritus and one chain entry",
+    "generic_leverage": null,
+    "counter_wind": "DEFERRED / NOT IMPLEMENTED",
+    "generic_close_purchase": null
+  },
+  "historical_mechanical_boundary": {
+    "historically_supported": [
+      "Hart/Weich describes opposition sensed at blade contact",
+      "Winden is a broader learned bind-work family",
+      "Ochs and Pflug are upper and lower hangings used by Winden",
+      "Winden may select cut, thrust, or slice after sensing the bind",
+      "Duplieren and Mutieren teach distinct strong/weak bind branches"
+    ],
+    "atra_candidate_abstractions": [
+      "secret pre-roll Hart/Weich declaration",
+      "Hart gives exactly one Basic-Cross Boon",
+      "Weich assigns post-Rejoinder Bind Initiative to the parrier",
+      "phase-scoped initial pressure",
+      "qualifying descending-Cut Cross writes Upper bind height",
+      "Upper Winding Thrust costs 1S or 2S and has the specified miss loop",
+      "hard wrong-read failure and all Spiritus prices"
+    ],
+    "source_locator": "Pseudo-Peter von Danzig, Cod.44.A.8, ff. 37r.2-38v.1; related action menu ff. 14r.2-15r.1",
+    "evidence_limit": "The bounded Upper writer is candidate geometry, not a universal historical claim."
+  },
+  "state": {
+    "bind_height": {
+      "visibility": "public",
+      "values": ["upper", "lower", "unknown"],
+      "generic_modifier": null,
+      "independent_of": ["measure", "contact_zone", "pressure", "point_threat", "guard", "bind_initiative"],
+      "writers": [{"trigger": "successful H1 Basic Cross against qualifying descending/Oberhau-like Cut", "value": "upper"}],
+      "nonqualifying_value": "unknown"
+    },
+    "initial_pressure": {
+      "visibility": "hidden except to author and F1 purchaser",
+      "values": ["hart", "weich", "unknown"],
+      "scope": "initial attacker Bind Rejoinder cycle only",
+      "expiry": "CLEAR after decline or D/M declaration/resolution"
+    }
+  },
+  "candidate_records": [
+    {
+      "id": "h2-h1-initial-hart-weich",
+      "status": "PROVISIONAL CANDIDATE OVERLAY",
+      "trigger": "ordinary non-point-threatening Basic Cross before roll",
+      "hart": {"cross_modifier": "boon", "decline_initiative": "striker"},
+      "weich": {"cross_modifier": "normal", "decline_initiative": "parrier"},
+      "success": ["CANCEL attack", "SET Crossing", "SET initial pressure", "SET bounded bind height", "open one attacker Bind Rejoinder"],
+      "failure": ["CLEAR pressure", "CLEAR bind height", "no Crossing"],
+      "favored_unfavored": "not generated",
+      "leverage": null
+    },
+    {
+      "id": "h2-attacker-bind-rejoinder",
+      "status": "PROVISIONAL CANDIDATE OVERLAY",
+      "actor": "original striker",
+      "legal_declarations": ["Duplieren", "Mutieren", "decline"],
+      "optional_information": "F1 before declaration",
+      "normal_action_refresh": false,
+      "additional_normal_action_spent": false
+    },
+    {
+      "id": "h2-f1-initial-pressure-fuhlen",
+      "status": "PROVISIONAL CANDIDATE OVERLAY",
+      "requirements": ["knows Fühlen", "initial Rejoinder open", "once in pressure cycle", "1 Spiritus"],
+      "cost": {"spiritus": 1, "action": 0, "learned_chain_entries": 0},
+      "effect": "reveal current initial pressure only",
+      "future_pressure_visibility": false
+    },
+    {
+      "id": "h2-duplieren-mutieren-hard-failure",
+      "status": "PROVISIONAL CANDIDATE OVERLAY",
+      "learned_structure": "one paired repertoire item; each declared branch consumes one chain entry",
+      "common_cost": {"spiritus": 2, "additional_action": 0, "learned_chain_entries": 1},
+      "duplieren": {"correct_pressure": "hart", "attack": "Booned high Longsword Cut", "damage": "normal"},
+      "mutieren": {"correct_pressure": "weich", "attack": "Booned low Longsword Thrust", "damage": "normal", "transition": ["RETAIN Crossing", "SET actor point threatening"]},
+      "wrong_pressure": "failure after spend; no attack roll; no damage",
+      "excluded": ["Damage Boon", "chip damage", "Open", "response denial", "Leverage"]
+    },
+    {
+      "id": "h2-winden-learned-family",
+      "status": "PROVISIONAL CANDIDATE REPRESENTATION",
+      "knowledge": "Winden learned once unlocks separately authored executions",
+      "concrete_executions": ["existing Zornhau-local W1/W2 control", "Upper Winding Thrust candidate"],
+      "chain_rule": "each actual execution declaration consumes one learned-chain entry",
+      "universal_winden_action": false
+    },
+    {
+      "id": "h2-upper-winding-thrust",
+      "status": "PROVISIONAL CANDIDATE OVERLAY",
+      "classification": ["concrete Winden execution", "learned bind continuation"],
+      "requirements": ["knows Winden", "holds Bind Initiative", "Crossing", "bind_height upper", "chain room", "sufficient Spiritus"],
+      "not_required": ["Hart", "Weich", "Favored", "Unfavored", "starting Ochs", "starting Pflug", "original exchange role"],
+      "costs": {"U1_sensitivity": 1, "U2_primary": 2, "additional_action": 0, "learned_chain_entries": 1},
+      "declaration": ["RETAIN Crossing", "SET guard/aftermath Ochs upper hanging", "SET point threatening", "ATTACK normal Longsword Thrust"],
+      "hit": ["normal damage", "end bounded bind sequence"],
+      "miss": ["zero damage", "RETAIN Crossing", "RETAIN Ochs", "RETAIN point threat", "SET Bind Initiative opponent", "pressure remains unknown"],
+      "excluded": ["Attack Boon", "Damage Boon", "automatic hit", "Open", "Leverage", "response denial"]
+    }
+  ],
+  "sequencing": {
+    "bind_initiative": "sequencing only",
+    "two_consecutive_passes": "CLEAR Crossing",
+    "disengage": "CLEAR Crossing; no attack, damage, or automatic Nachreisen",
+    "learned_play_cap": 3,
+    "normal_actions_refreshed_in_loop": false
+  },
+  "deferred": [
+    "generic Leverage", "Counter-Wind", "Zucken", "Schnitt", "lower Winding execution",
+    "left/right bind side", "generic Largo-to-Stretto purchase", "full dynamic pressure rewriting"
+  ]
+}
