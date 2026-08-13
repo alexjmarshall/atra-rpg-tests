@@ -1,0 +1,161 @@
+{
+  "milestone": "ATRA MELEE VERTICAL-SLICE STABILIZATION / GOVERNING PACKET SYNC v0.1",
+  "date": "2026-08-13",
+  "status": "STOPPED — GOVERNING DATA / AUTHORITATIVE RUNTIME CONTRADICTION",
+  "packet_sync_complete": false,
+  "packet_before": {
+    "version": "0.4",
+    "markdown": "docs/melee-design-packet-v0.4.md",
+    "docx": "Atra_Melee_Design_Packet_v0.4.docx",
+    "source_record": "data/sources/atra-melee-design-packet-v0-4.yaml",
+    "preserved": true
+  },
+  "packet_after": null,
+  "repository_start": {
+    "branch": "main",
+    "head": "9928a636e78b7825dd34cd16770ebafa19e86d70",
+    "worktree_clean": true,
+    "tracking": "main...origin/main"
+  },
+  "pre_sync_validation": {
+    "full_unittest_discovery": {
+      "status": "PASS",
+      "tests": 161
+    },
+    "h3_governing_suite": {
+      "status": "PASS",
+      "tests": 3,
+      "numbered_contract_assertions": 129
+    },
+    "t1_close_pommel_governing_suite": {
+      "status": "PASS",
+      "tests": 4,
+      "numbered_contract_assertions": 140
+    },
+    "repository_validator": {
+      "status": "PASS",
+      "play_records": 114,
+      "errors": 0,
+      "preserved_warnings": 39
+    },
+    "melee_grammar_validator": {
+      "status": "PASS",
+      "errors": 0,
+      "informative_findings": 14
+    }
+  },
+  "contradictions": [
+    {
+      "id": "S2-RUNTIME-PARITY",
+      "severity": "BLOCKING UNDER PACKET-SYNC CONTRADICTION RULE",
+      "mechanic": "Schielhau / Durchwechseln S2",
+      "governing_data": {
+        "file": "data/prototypes/longsword-governing-provisional-v0.1.yaml",
+        "claim": "schielhau_durchwechseln.variant = S2"
+      },
+      "selector": {
+        "file": "simulations/shared/provisional_longsword.py",
+        "claims": [
+          "GOVERNING_BASELINE.schielhau_durchwechseln = S2",
+          "authoritative shared exchange engine implements C2/S2"
+        ]
+      },
+      "grammar": {
+        "file": "data/audits/longsword-vertical-slice-mechanical-mapping-v0.1.yaml",
+        "claim": "Reuse the successful established Schielhau d20 result against a fresh D1 roll under the selected S2 comparison."
+      },
+      "selected_procedure": {
+        "file": "data/prototypes/longsword-durchwechseln-schielhau-state-model-v0.3.yaml",
+        "rule": "Lower successful roll wins; ties favor established Schielhau; one success beats failure; defined failure outcome applies."
+      },
+      "authoritative_runtime": {
+        "file": "simulations/shared/provisional_longsword_engine.py",
+        "actual_behavior": [
+          "No S2-specific declaration window, state, method, or stored established Schielhau roll.",
+          "declare_durchwechseln immediately replaces the pending attack.",
+          "compound_response('Schielhau') later resolves an atomic generic C2 response with no S2 comparison."
+        ]
+      },
+      "coverage_gap": {
+        "file": "tests/test_h3_ordinary_bind_governing_v01.py",
+        "actual_check": "Only generic compound_response('Schielhau').legal is asserted; the S2 ordering/comparison contract is not tested."
+      },
+      "read_only_probe": {
+        "s2_specific_methods": [],
+        "d1_replacement_legal": true,
+        "pending_attack_kind_after_d1": "durchwechseln-thrust",
+        "schielhau_after_d1": "legal and successful as generic Schielhau C2",
+        "s2_comparison_event_present": false
+      },
+      "last_project_adjudication": "2026-08-11 governing-provisional baseline selected S2; 2026-08-13 H3 integration explicitly preserved S2 and claimed synchronized shared-engine behavior.",
+      "later_supersession_found": false
+    }
+  ],
+  "non_blocking_documentation_debt": [
+    {
+      "item": "Nachreisen grammar mapping",
+      "file": "data/audits/longsword-vertical-slice-mechanical-mapping-v0.1.yaml",
+      "stale_claim": "0S, flat/incomplete current chassis",
+      "governing_behavior": "1S + one chain + action; Booned normal-damage target-only Preparation/Recovery attack",
+      "classification": "DOCUMENTATION DEBT — governing data and runtime agree"
+    },
+    {
+      "item": "Committed/Counter grammar wording",
+      "file": "data/audits/longsword-vertical-slice-mechanical-mapping-v0.1.yaml",
+      "stale_claim": "Power-centric Counter-first wording",
+      "governing_behavior": "general Committed declaration window; P1 inherits it",
+      "classification": "DOCUMENTATION DEBT — governing data and runtime agree"
+    }
+  ],
+  "verified_current_integrations": {
+    "h3_l2": "GOVERNING PROVISIONAL — data/runtime/tests aligned",
+    "t1_e1": "GOVERNING PROVISIONAL — data/runtime/tests aligned",
+    "pommel_p2": "GOVERNING PROVISIONAL — data/runtime/tests aligned",
+    "t1_close_severe_blocker": "CLOSED",
+    "max_spiritus_8": "PROVISIONAL TEST BASELINE",
+    "learned_chain_cap_3": "GOVERNING PROVISIONAL"
+  },
+  "files_created": [
+    "reports/melee-vertical-slice-stabilization-packet-sync-v01-results.md",
+    "reports/melee-vertical-slice-stabilization-packet-sync-v01-results.json"
+  ],
+  "runtime_files_changed": [],
+  "governing_mechanics_data_changed": [],
+  "historical_candidate_results_changed": [],
+  "simulations_run": [],
+  "read_only_runtime_probe_run": true,
+  "recommended_next_milestone": "S2 AUTHORITATIVE RUNTIME PARITY v0.1",
+  "named_guard_v0_2_next": false,
+  "stop_for_project_review": true,
+  "post_report_validation": {
+    "status": "PASS FOR EXISTING COVERAGE; S2 SEMANTIC GAP REMAINS UNCOVERED",
+    "full_unittest_discovery": {
+      "status": "PASS",
+      "tests": 161
+    },
+    "h3_governing_suite": {
+      "status": "PASS",
+      "tests": 3,
+      "numbered_contract_assertions": 129
+    },
+    "t1_close_pommel_governing_suite": {
+      "status": "PASS",
+      "tests": 4,
+      "numbered_contract_assertions": 140
+    },
+    "repository_validator": {
+      "status": "PASS",
+      "play_records": 114,
+      "errors": 0,
+      "preserved_warnings": 39
+    },
+    "melee_grammar_validator": {
+      "status": "PASS",
+      "errors": 0,
+      "informative_findings": 14
+    },
+    "json_parse": "PASS",
+    "git_diff_check": "PASS",
+    "generated_cache_cleanup": "PASS — worktree contains only the two new report artifacts"
+  }
+}
