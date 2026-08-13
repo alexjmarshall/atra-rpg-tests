@@ -293,7 +293,11 @@ def test_authoritative_baseline_p1_t1_c2_and_no_archived_behavior_dependency():
     assert not engine.attempt_attacker_continuation(a, "Durchwechseln")
 
     engine, a, b = arena(a_plays={"Tutta Cover-to-Stretto"}, a_guard="tutta-porta-di-ferro")
-    set_bind(engine, a, b, "favored")
+    attack = engine.declare_attack(b, a, "cut", descending=True)
+    assert attack is not None
+    rolled = engine.roll_pending_attack((7,), (3,))
+    assert engine.declare_basic_cross(a, HART, "upper-cross-against-descending-cut")
+    assert engine.basic_defence("Cross", a, rolled.roll, (4, 20)).success
     assert engine.tutta_cover_to_stretto(a)
     assert engine.crossing.measure == "close" and engine.crossing.retained
 

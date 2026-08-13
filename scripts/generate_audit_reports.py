@@ -308,7 +308,7 @@ def write_skill_equipment_audit(plays: list[dict]) -> None:
     lines = [
         "# Skill and equipment audit", "",
         "## Verdict", "",
-        "The repository does **not** yet confirm the requested implementation data for any Play. The fields exist in every record, but they are null because v0.4 did not specify them item by item.", "",
+        "Most Plays still lack confirmed implementation data. Fields are populated only where a governing provisional promotion supplies them; unsupported records remain null rather than being filled by inference.", "",
         f"- Character-sheet test skill specified: **{specified['character_sheet_test_skill']} / {len(plays)}**",
         f"- Secondary skill prerequisites specified: **{specified['secondary_skill_prerequisites']} / {len(plays)}**",
         f"- Weapon requirements specified: **{specified['weapon_requirements']} / {len(plays)}**",

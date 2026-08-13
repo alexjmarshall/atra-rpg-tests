@@ -29,6 +29,10 @@ BIND_HEIGHTS = (UPPER, LOWER, UNKNOWN)
 DEFENCE_GEOMETRIES = (UPPER_CROSS, LOWER_SETTING_ASIDE, UNCLASSIFIED)
 PAIRED_PLAY = "Duplieren / Mutieren"
 WINDEN_PLAY = "Winden"
+T1_PLAY = "Tutta Cover-to-Stretto"
+POMMEL_PLAY = "Pommel Strike"
+TUTTA_GUARD = "tutta-porta-di-ferro"
+POMMEL_COST = 2
 FUHLEN_NAMES = {"Fühlen", "FÃ¼hlen"}
 
 
@@ -115,6 +119,15 @@ class WindingAttack:
 
 
 @dataclass
+class PommelAttack:
+    actor: Fighter
+    target: Fighter
+    kind: str = "pommel"
+    accuracy: str = "normal"
+    phase: str = "declared"
+
+
+@dataclass
 class Crossing:
     contact: str = "none"
     measure: str = "wide"
@@ -146,8 +159,16 @@ class Resolution:
 class ProvisionalLongswordEngine:
     """Deterministic-friendly implementation of the current shared baseline."""
 
-    def __init__(self, fighters: Iterable[Fighter]) -> None:
+    def __init__(
+        self,
+        fighters: Iterable[Fighter],
+        *,
+        enable_governing_t1: bool = True,
+    ) -> None:
         self.fighters = {fighter.name: fighter for fighter in fighters}
+        # Historical candidate overlays can explicitly disable the promoted
+        # insertion so their archived E1/L1 comparisons remain reproducible.
+        self.enable_governing_t1 = enable_governing_t1
         self.crossing = Crossing()
         self.learned_chain: list[str] = []
         self.pending_attack: Attack | None = None
@@ -159,11 +180,15 @@ class ProvisionalLongswordEngine:
         self.fuhlen_reveals: dict[tuple[int, str], str] = {}
         self.pending_bind_attack: BindAttack | None = None
         self.pending_winding: WindingAttack | None = None
+        self.pending_pommel: PommelAttack | None = None
+        self.t1_window_actor: str | None = None
+        self.t1_original_striker: str | None = None
         self.consecutive_bind_passes = 0
         self.recovery_nachreisen_target: str | None = None
         self.recovery_nachreisen_immediate = False
         self.displacement_events: list[dict[str, str]] = []
         self.event_log: list[str] = []
+        self.point_threat_events = 0
 
     @staticmethod
     def test(skill: int, rolls: tuple[int, ...], modifier: str = "normal") -> RollResult:
@@ -199,7 +224,11 @@ class ProvisionalLongswordEngine:
             return False
         actor.guard = guard
         actor.guard_change_available = False
-        actor.point_threat = "threatening" if guard in {"ochs", "pflug", "mezza-porta-di-ferro"} else "not_threatening"
+        self._set_point_threat(
+            actor,
+            "threatening" if guard in {"ochs", "pflug", "mezza-porta-di-ferro"} else "not_threatening",
+            "guard-change",
+        )
         self.event_log.append(f"{actor.name}:guard->{guard}")
         return True
 
@@ -229,6 +258,13 @@ class ProvisionalLongswordEngine:
         self.learned_chain.append(name)
         return True
 
+    def _set_point_threat(self, actor: Fighter, value: str, source: str) -> None:
+        """Write point state and count actual nonthreatening-to-threatening events."""
+        if actor.point_threat != "threatening" and value == "threatening":
+            self.point_threat_events += 1
+            self.event_log.append(f"point-threat-event:{source}:{actor.name}")
+        actor.point_threat = value
+
     def d1_window(self, defender: Fighter, attack: Attack | None = None) -> bool:
         """D1 is denied by a threatening opposing point, never contact or form."""
         return (
@@ -249,7 +285,7 @@ class ProvisionalLongswordEngine:
         self.crossing = Crossing(measure=self.crossing.measure)
         self.basic_cross_declaration = None
         self._close_rejoinder()
-        attacker.point_threat = "threatening"
+        self._set_point_threat(attacker, "threatening", "D1")
         attack.kind = "durchwechseln-thrust"
         attack.committed = False
         attack.descending = False
@@ -586,6 +622,7 @@ class ProvisionalLongswordEngine:
         )
         self.pending_bind_attack = None
         self.pending_winding = None
+        self.pending_pommel = None
         self.consecutive_bind_passes = 0
 
     def _clear_initial_pressure(self) -> None:
@@ -594,6 +631,88 @@ class ProvisionalLongswordEngine:
     def _close_rejoinder(self) -> None:
         self.rejoinder_open = False
         self.rejoinder_actor = None
+
+    def _open_rejoinder(self, striker: Fighter) -> None:
+        self.rejoinder_actor = striker.name
+        self.rejoinder_open = True
+
+    def _close_t1_window(self) -> None:
+        self.t1_window_actor = None
+        self.t1_original_striker = None
+
+    def _governing_t1_cross_legal(self, defender: Fighter) -> bool:
+        attack = self.pending_attack
+        normalized = attack.kind.lower().replace("_", "-") if attack else ""
+        return bool(
+            self.enable_governing_t1
+            and defender.alive
+            and self.other(defender).alive
+            and defender.guard == TUTTA_GUARD
+            and T1_PLAY in defender.known_plays
+            and attack is not None
+            and attack.target is defender
+            and attack.cancelled
+            and normalized in {"cut", "basic-cut"}
+            and not attack.power
+            and not attack.committed
+            and attack.allows_attacker_continuations
+            and self.crossing.source == "ordinary-basic-cross"
+            and self.crossing.contact == "crossing"
+            and self.crossing.measure == "wide"
+            and self.crossing.initial_pressure.get(defender.name, UNKNOWN) in {HART, WEICH}
+            and defender.spiritus >= 1
+            and len(self.learned_chain) < LEARNED_PLAY_CAP
+        )
+
+    def t1_legal(self, actor: Fighter) -> bool:
+        return bool(
+            self.t1_window_actor == actor.name
+            and self.t1_original_striker == self.other(actor).name
+            and not self.rejoinder_open
+            and self._governing_t1_cross_legal(actor)
+        )
+
+    def t1_options(self, actor: Fighter) -> list[str]:
+        if self.t1_window_actor != actor.name:
+            return []
+        return [T1_PLAY, "decline"]
+
+    def decline_t1(self, actor: Fighter) -> bool:
+        """Close E1 first, then create the otherwise-ordinary H3 Rejoinder."""
+        if self.t1_window_actor != actor.name or not actor.alive or not self.other(actor).alive:
+            return False
+        striker = self.other(actor)
+        self._close_t1_window()
+        self._open_rejoinder(striker)
+        self.event_log.append("E1:T1-decline:open-ordinary-H3-Rejoinder")
+        return True
+
+    def declare_t1(self, actor: Fighter) -> bool:
+        """Promoted E1 cover-integrated Wide-to-Close state transformation."""
+        if not self.t1_legal(actor):
+            return False
+        pressure = self.crossing.initial_pressure.get(actor.name, UNKNOWN)
+        striker_name = self.t1_original_striker
+        if pressure not in {HART, WEICH} or striker_name is None:
+            return False
+        if not self.spend_spiritus(actor, 1):
+            return False
+        if not self.add_learned_play(T1_PLAY):
+            actor.spiritus += 1
+            return False
+        self.crossing.retained = True
+        self.crossing.measure = "close"
+        self.crossing.bind_height = UNKNOWN
+        self.crossing.bind_initiative = striker_name if pressure == HART else actor.name
+        self.crossing.initiative_passed = False
+        self.consecutive_bind_passes = 0
+        self._clear_initial_pressure()
+        self._close_t1_window()
+        self.event_log.append(
+            f"E1:T1:1S+chain:no-action:RETAIN crossing:SET close+height=unknown:"
+            f"opportunity->{self.crossing.bind_initiative}:CLEAR pressure:no-H3-created"
+        )
+        return True
 
     def basic_defence(
         self,
@@ -630,6 +749,7 @@ class ProvisionalLongswordEngine:
             if form == "Cross":
                 measure = self.crossing.measure
                 self.crossing = Crossing(measure=measure)
+                self._close_t1_window()
                 self._close_rejoinder()
                 self.pending_bind_attack = None
                 self.pending_winding = None
@@ -650,9 +770,13 @@ class ProvisionalLongswordEngine:
                 defender, attack.actor, declaration.pressure_choice, bind_height
             )
             if attack.allows_attacker_continuations:
-                self.rejoinder_actor = attack.actor.name
-                self.rejoinder_open = True
-                rejoinder = "open attacker Bind Rejoinder"
+                if self._governing_t1_cross_legal(defender):
+                    self.t1_window_actor = defender.name
+                    self.t1_original_striker = attack.actor.name
+                    rejoinder = "open E1 T1 decision before creating attacker Bind Rejoinder"
+                else:
+                    self._open_rejoinder(attack.actor)
+                    rejoinder = "open attacker Bind Rejoinder"
             else:
                 # Preserve authored attacks (including P1) that prohibit
                 # attacker insertions; do not leave phase-scoped pressure live.
@@ -666,10 +790,11 @@ class ProvisionalLongswordEngine:
         else:
             self.crossing = Crossing(measure=self.crossing.measure)
             self.basic_cross_declaration = None
+            self._close_t1_window()
             self._close_rejoinder()
             self.displacement_events.append({"weapon_owner": attack.actor.name, "source": "Basic Beat", "contact_after": "none"})
             attack.actor.guard = OPEN
-            attack.actor.point_threat = "not_threatening"
+            self._set_point_threat(attack.actor, "not_threatening", "Beat-Open")
             self.event_log.append("Beat:CANCEL+displace+CLEAR contact+SET guard=open")
         return Resolution(True, True, f"successful Basic {form}", events=list(self.event_log), roll=result)
 
@@ -699,7 +824,7 @@ class ProvisionalLongswordEngine:
             return Resolution(True, False, "Zornhau failed", roll=result)
         attack.cancelled = True
         attack.phase = "cancelled"
-        defender.point_threat = "threatening"
+        self._set_point_threat(defender, "threatening", "Zornhau")
         self._set_contested_crossing(
             defender,
             attack.actor,
@@ -757,6 +882,7 @@ class ProvisionalLongswordEngine:
         if (
             not actor.alive
             or not self.other(actor).alive
+            or self.t1_window_actor is not None
             or self.crossing.source != "ordinary-basic-cross"
             or not self.rejoinder_open
             or self.rejoinder_actor != actor.name
@@ -779,6 +905,7 @@ class ProvisionalLongswordEngine:
         if (
             not actor.alive
             or not self.other(actor).alive
+            or self.t1_window_actor is not None
             or self.crossing.source != "ordinary-basic-cross"
             or not self.rejoinder_open
             or self.rejoinder_actor != actor.name
@@ -826,7 +953,7 @@ class ProvisionalLongswordEngine:
         self.pending_bind_attack = BindAttack(actor, defender, branch, kind, height)
         if branch == "Mutieren":
             self.crossing.retained = True
-            actor.point_threat = "threatening"
+            self._set_point_threat(actor, "threatening", "Mutieren")
             self.event_log.append("H3:Mutieren:RETAIN transition+SET point=threatening")
         self.event_log.append(f"H3:{branch}:booned-{kind}:2S+chain:no-additional-action")
         return Resolution(True, True, f"{branch} declared", events=list(self.event_log))
@@ -867,6 +994,7 @@ class ProvisionalLongswordEngine:
         if (
             not actor.alive
             or not self.other(actor).alive
+            or self.t1_window_actor is not None
             or self.crossing.source != "ordinary-basic-cross"
             or not self.rejoinder_open
             or self.rejoinder_actor != actor.name
@@ -895,6 +1023,8 @@ class ProvisionalLongswordEngine:
             return []
         if self.crossing.source == "ordinary-basic-cross":
             options: list[str] = []
+            if self.pommel_legal(actor):
+                options.append(POMMEL_PLAY)
             if self.upper_winding_legal(actor):
                 options.append("Upper Winding Thrust")
             if self.lower_winding_legal(actor):
@@ -904,6 +1034,8 @@ class ProvisionalLongswordEngine:
         actual = self.crossing.bind_position.get(actor.name, "unknown")
         view = self.bind_view(actor)
         options: list[str] = []
+        if self.pommel_legal(actor):
+            options.append(POMMEL_PLAY)
         if "Zornhau-Ort" in actor.known_plays and actor.spiritus >= 1:
             if view in {"unknown", "favored"}:
                 options.append("Ort")
@@ -959,7 +1091,7 @@ class ProvisionalLongswordEngine:
             return Resolution(True, False, "W1 requires Unfavored Bind; Spiritus lost", events=list(self.event_log))
         self.crossing.retained = True
         self.crossing.hanging_aftermath = "appropriate upper/lower Ochs-or-Pflug hanging (side unresolved)"
-        actor.point_threat = "threatening"
+        self._set_point_threat(actor, "threatening", "Zornhau-local-Winden")
         result = self.test(actor.skill, attack_rolls)
         amount = self.damage(damage_rolls) if result.success else 0
         if result.success:
@@ -979,8 +1111,10 @@ class ProvisionalLongswordEngine:
             and actor.spiritus >= 2
             and len(self.learned_chain) < LEARNED_PLAY_CAP
             and not self.rejoinder_open
+            and self.t1_window_actor is None
             and self.pending_bind_attack is None
             and self.pending_winding is None
+            and self.pending_pommel is None
         )
 
     def upper_winding_legal(self, actor: Fighter) -> bool:
@@ -1001,7 +1135,7 @@ class ProvisionalLongswordEngine:
         self.crossing.pressure = {name: UNKNOWN for name in self.fighters}
         self._clear_initial_pressure()
         actor.guard = "ochs" if bind_height == UPPER else "pflug"
-        actor.point_threat = "threatening"
+        self._set_point_threat(actor, "threatening", label)
         self.crossing.hanging_aftermath = (
             "ochs-upper-hanging" if bind_height == UPPER else "pflug-lower-hanging"
         )
@@ -1053,7 +1187,7 @@ class ProvisionalLongswordEngine:
         self.crossing.bind_initiative = winding.target.name
         self.crossing.initiative_passed = False
         self.consecutive_bind_passes = 0
-        winding.actor.point_threat = "threatening"
+        self._set_point_threat(winding.actor, "threatening", f"{label}-miss")
         if expected_height == LOWER:
             self.crossing.bind_height = UPPER
             self.crossing.hanging_aftermath = "ochs-upper-hanging"
@@ -1090,8 +1224,10 @@ class ProvisionalLongswordEngine:
             or self.crossing.contact != "crossing"
             or self.crossing.bind_initiative != actor.name
             or self.rejoinder_open
+            or self.t1_window_actor is not None
             or self.pending_bind_attack is not None
             or self.pending_winding is not None
+            or self.pending_pommel is not None
         ):
             return False
         self.consecutive_bind_passes += 1
@@ -1115,8 +1251,10 @@ class ProvisionalLongswordEngine:
             or self.crossing.contact != "crossing"
             or self.crossing.bind_initiative != actor.name
             or self.rejoinder_open
+            or self.t1_window_actor is not None
             or self.pending_bind_attack is not None
             or self.pending_winding is not None
+            or self.pending_pommel is not None
         ):
             return False
         self.event_log.append(f"Disengage:{actor.name}:CLEAR crossing")
@@ -1124,22 +1262,94 @@ class ProvisionalLongswordEngine:
         return True
 
     def tutta_cover_to_stretto(self, actor: Fighter) -> bool:
-        if (
-            not actor.alive
-            or not self.other(actor).alive
-            or actor.guard != "tutta-porta-di-ferro"
-            or "Tutta Cover-to-Stretto" not in actor.known_plays
-            or self.crossing.contact != "crossing"
-            or self.crossing.measure != "wide"
-            or actor.spiritus < 1
-            or len(self.learned_chain) >= LEARNED_PLAY_CAP
-        ):
-            return False
-        self.spend_spiritus(actor, 1)
-        self.add_learned_play("Tutta Cover-to-Stretto")
+        """Compatibility spelling for the governing E1-only declaration."""
+        return self.declare_t1(actor)
+
+    def pommel_legal(self, actor: Fighter) -> bool:
+        return bool(
+            actor.alive
+            and self.other(actor).alive
+            and POMMEL_PLAY in actor.known_plays
+            and self.crossing.contact == "crossing"
+            and self.crossing.measure == "close"
+            and self.crossing.bind_initiative == actor.name
+            and actor.spiritus >= POMMEL_COST
+            and len(self.learned_chain) < LEARNED_PLAY_CAP
+            and not self.rejoinder_open
+            and self.t1_window_actor is None
+            and self.pending_bind_attack is None
+            and self.pending_winding is None
+            and self.pending_pommel is None
+        )
+
+    def declare_pommel(self, actor: Fighter) -> Resolution:
+        if not self.pommel_legal(actor):
+            return Resolution(False, reason="Pommel prerequisites fail")
+        self.spend_spiritus(actor, POMMEL_COST)
+        self.add_learned_play(POMMEL_PLAY)
         self.crossing.retained = True
+        self.crossing.bind_height = UNKNOWN
+        self.crossing.initiative_passed = False
+        self.consecutive_bind_passes = 0
+        self.pending_pommel = PommelAttack(actor, self.other(actor))
+        self.event_log.append(
+            "Pommel:declare:2S+chain:no-action:ATTACK flat-normal:ordinary-response-tree-unchanged"
+        )
+        return Resolution(True, True, "Pommel declared", events=list(self.event_log))
+
+    def pommel_response_options(self, target: Fighter) -> list[str]:
+        """Expose the unchanged ordinary menu when an action is actually ready.
+
+        The governing E1 route normally reaches Close after both ordinary
+        actions are spent, so this list is usually empty from action economy,
+        never from a Pommel-authored restriction.
+        """
+        pending = self.pending_pommel
+        if (
+            pending is None
+            or pending.target is not target
+            or not pending.actor.alive
+            or not target.alive
+            or not target.action_available
+        ):
+            return []
+        return ["Cross", "Beat", "Counter", "Ignore"]
+
+    def resolve_pommel(
+        self,
+        attack_rolls: tuple[int, ...],
+        damage_rolls: tuple[int, ...] = (3,),
+    ) -> Resolution:
+        pending = self.pending_pommel
+        if (
+            pending is None
+            or pending.phase != "declared"
+            or not pending.actor.alive
+            or not pending.target.alive
+        ):
+            if pending is not None:
+                self._end_bind_sequence()
+            return Resolution(False, reason="no live pending Pommel")
+        result = self.test(pending.actor.skill, attack_rolls, "normal")
+        pending.phase = "resolved"
+        self.pending_pommel = None
+        if result.success:
+            amount = self.damage(damage_rolls, "normal")
+            pending.target.hp -= amount
+            self.event_log.append("Pommel:hit:normal-damage:CLEAR bounded-bind")
+            self._end_bind_sequence()
+            return Resolution(True, True, "Pommel hit", amount, list(self.event_log), result)
+        self.crossing.contact = "crossing"
         self.crossing.measure = "close"
-        return True
+        self.crossing.bind_height = UNKNOWN
+        self.crossing.retained = True
+        self.crossing.bind_initiative = pending.target.name
+        self.crossing.initiative_passed = False
+        self.consecutive_bind_passes = 0
+        self.event_log.append(
+            f"Pommel:miss:zero-damage:RETAIN close:opportunity->{pending.target.name}"
+        )
+        return Resolution(True, False, "Pommel missed", 0, list(self.event_log), result)
 
     def compound_response(
         self,
@@ -1170,7 +1380,7 @@ class ProvisionalLongswordEngine:
             return Resolution(True, False, f"{name} failed", roll=result)
         attack.cancelled = True
         attack.phase = "cancelled"
-        defender.point_threat = "threatening"
+        self._set_point_threat(defender, "threatening", name)
         amount = self.damage(damage_rolls)
         attack.actor.hp -= amount
         if name in {"Absetzen", "Scambiar di Punta"}:
@@ -1214,15 +1424,19 @@ class ProvisionalLongswordEngine:
         self.basic_cross_declaration = None
         self.pending_bind_attack = None
         self.pending_winding = None
+        self.pending_pommel = None
+        self._close_t1_window()
         self.expire_recovery_window()
 
     def _end_bind_sequence(self) -> None:
         measure = self.crossing.measure
         self.crossing = Crossing(measure=measure)
         self.basic_cross_declaration = None
+        self._close_t1_window()
         self._close_rejoinder()
         self.pending_bind_attack = None
         self.pending_winding = None
+        self.pending_pommel = None
         self.consecutive_bind_passes = 0
 
 

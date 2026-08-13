@@ -2,12 +2,12 @@
 
 ## Verdict
 
-The repository does **not** yet confirm the requested implementation data for any Play. The fields exist in every record, but they are null because v0.4 did not specify them item by item.
+Most Plays still lack confirmed implementation data. Fields are populated only where a governing provisional promotion supplies them; unsupported records remain null rather than being filled by inference.
 
-- Character-sheet test skill specified: **3 / 114**
+- Character-sheet test skill specified: **4 / 114**
 - Secondary skill prerequisites specified: **0 / 114**
-- Weapon requirements specified: **3 / 114**
-- Off-hand requirement specified: **3 / 114**
+- Weapon requirements specified: **4 / 114**
+- Off-hand requirement specified: **4 / 114**
 
 A curriculum heading, Play name, or tactical lesson is not accepted as a substitute for these fields. In particular, Sword & Buckler may roll One-Handed Sword or Shield; mixed-implement Plays may require secondary skills; and off-hand state is an adopted first-class gate.
 
@@ -20,7 +20,7 @@ A curriculum heading, Play name, or tactical lesson is not accepted as a substit
 | German — Dagger | 8 | 8 | 8 | 8 | 8 |
 | Italian — Dagger | 8 | 8 | 8 | 8 | 8 |
 | German — Longsword | 12 | 9 | 12 | 9 | 9 |
-| Italian — Longsword | 13 | 13 | 13 | 13 | 13 |
+| Italian — Longsword | 13 | 12 | 13 | 12 | 12 |
 | German — Polearms / Poleaxe & Halberd | 8 | 8 | 8 | 8 | 8 |
 | Italian — Polearms / Poleaxe & Halberd | 8 | 8 | 8 | 8 | 8 |
 | Italian — Spear & Staff | 8 | 8 | 8 | 8 | 8 |
@@ -196,7 +196,7 @@ These are keyword cues only. They identify likely research targets and do not po
 | `play-italian-longsword-false-point` — False Point | **MISSING** | **MISSING** | **MISSING** | **MISSING** | none detected |
 | `play-italian-longsword-frontale-corona-crossing` — Frontale / Corona Crossing | **MISSING** | **MISSING** | **MISSING** | **MISSING** | none detected |
 | `play-italian-longsword-half-sword-thrust` — Half-Sword Thrust | **MISSING** | **MISSING** | **MISSING** | **MISSING** | armour-gap affordance |
-| `play-italian-longsword-pommel-strike` — Pommel Strike | **MISSING** | **MISSING** | **MISSING** | **MISSING** | none detected |
+| `play-italian-longsword-pommel-strike` — Pommel Strike | Longsword | **MISSING** | Two-handed longsword | Source variants differ: both hands begin on the sword; one may release the left hand to seize the opponent's elbow. | none detected |
 | `play-italian-longsword-rompere-di-punta` — Rompere di Punta | **MISSING** | **MISSING** | **MISSING** | **MISSING** | none detected |
 | `play-italian-longsword-scambiar-di-punta` — Scambiar di Punta | **MISSING** | **MISSING** | **MISSING** | **MISSING** | none detected |
 | `play-italian-longsword-strong-key-with-the-sword` — Strong Key with the Sword | **MISSING** | **MISSING** | **MISSING** | **MISSING** | none detected |

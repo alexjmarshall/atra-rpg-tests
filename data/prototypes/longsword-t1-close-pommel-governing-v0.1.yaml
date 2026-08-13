@@ -1,0 +1,87 @@
+{
+  "id": "longsword-t1-close-pommel-governing-v0.1",
+  "status": "GOVERNING PROVISIONAL",
+  "adjudicated_on": "2026-08-13",
+  "not_canonical_or_final": true,
+  "authority": "ATRA T1 / CLOSE / POMMEL — GOVERNING INTEGRATION v0.1",
+  "scope": "Bounded E1 T1 insertion, generic Close opportunity consumption by Pommel Strike, and related instrumentation/record synchronization.",
+  "historical_mechanical_boundary": {
+    "source_backed": [
+      "Tutta Porta di Ferro can cover with a pass and enter stretto",
+      "Fiore's narrow-play witnesses describe pommel strikes from an established close crossing"
+    ],
+    "atra_abstractions": [
+      "E1 placement before H3 Rejoinder creation",
+      "Hart/Weich assignment of first Close opportunity",
+      "1-Spiritus T1 price and 2-Spiritus Pommel price",
+      "three-Play exchange cap",
+      "flat Longsword test and d6+1 Pommel damage",
+      "Pommel miss opportunity transfer"
+    ]
+  },
+  "t1": {
+    "name": "Tutta Cover-to-Stretto",
+    "player_facing_rule": "After your successful Tutta Basic Cross stops an ordinary proactive Basic Cut at Wide, before the striker's Bind Rejoinder is created, you may spend 1 Spiritus and one learned-Play chain entry to retain the Crossing and enter Close. Make no extra test and spend no additional action. Clear bind height to Unknown. If you chose Hart, the original striker has the first Close opportunity; if you chose Weich, you do. Initial pressure then clears.",
+    "window": "after successful qualifying Cross and D1 timing; before H3 Rejoinder creation",
+    "requirements": [
+      "actor knows Tutta Cover-to-Stretto",
+      "actor began and remains in Tutta Porta di Ferro",
+      "successful Tutta Basic Cross",
+      "ordinary proactive Basic Cut",
+      "incoming attack is not Power or Committed",
+      "attack permits attacker continuations",
+      "contact=crossing",
+      "measure=wide",
+      "initial pressure is Hart or Weich",
+      "both fighters alive",
+      "at least 1 Spiritus",
+      "learned-chain room"
+    ],
+    "cost": {"spiritus": 1, "learned_chain_entries": 1, "additional_action": 0, "additional_test": 0},
+    "effects": [
+      "RETAIN contact=crossing",
+      "SET measure=close",
+      "SET bind_height=unknown",
+      "SET bind opportunity to original striker on Hart or Tutta defender on Weich",
+      "CLEAR initial pressure"
+    ],
+    "decline_or_failed_gate": "Do not create or use T1; create the otherwise-ordinary H3 Rejoinder when its own gate applies.",
+    "ordering_rule": "If T1 is declared, H3 is never created; it is not created and then cancelled.",
+    "forbidden_additions": ["attack", "damage", "point threat", "guard change", "generic modifier", "Leverage", "control", "automatic Pommel"]
+  },
+  "pommel_strike": {
+    "version": "0.2",
+    "selected_variant": "P2",
+    "historical_record": "data/plays/play-italian-longsword-pommel-strike.yaml",
+    "player_facing_rule": "When you know Pommel Strike and hold the current opportunity in a Close Crossing, you may spend 2 Spiritus and one learned-Play chain entry to make a flat Longsword attack with the pommel. This spends no additional action. On a hit, deal normal provisional longsword damage and apply normal bounded bind cleanup. On a miss, deal no damage, retain the Close Crossing, set bind height to Unknown, and transfer the opportunity to your opponent.",
+    "requirements": ["actor knows Pommel Strike", "both fighters alive", "contact=crossing", "measure=close", "actor has current bind opportunity", "at least 2 Spiritus", "learned-chain room"],
+    "cost": {"spiritus": 2, "learned_chain_entries": 1, "additional_action": 0},
+    "attack": {"skill": "Longsword", "accuracy": "flat", "damage": "normal provisional longsword d6+1"},
+    "hit": ["normal damage", "normal bounded bind cleanup"],
+    "miss": ["zero damage", "RETAIN contact=crossing", "RETAIN measure=close", "SET bind_height=unknown", "transfer bind opportunity", "reset consecutive-pass count"],
+    "intrinsic_response_restrictions": [],
+    "does_not_grant": ["Boon", "Bane", "auto-hit", "fixed damage", "Open", "disarm", "control", "grapple", "extra action", "free follow-up", "new initiative subsystem"]
+  },
+  "shared_constraints": {
+    "global_learned_play_cap": 3,
+    "close_generic_modifier": null,
+    "close_initiative_subsystem": false,
+    "new_effect_operators": [],
+    "unknown_height_blocks": ["Upper Winding Thrust", "Lower Winding Thrust"],
+    "pass_and_disengage": "Existing governing Close opportunity transfer and cleanup rules remain unchanged."
+  },
+  "supersession": {
+    "t0": "ARCHIVED COMPARISON ONLY",
+    "c0": "NONCURRENT HISTORICAL CONTROL; raw hand-authored Crossing invocation is illegal",
+    "l1": "NONCURRENT HISTORICAL CONTROL",
+    "pommel_p1": "REJECTED FOR GOVERNING INTEGRATION; P2 selected",
+    "historical_candidate_reports_rewritten": false
+  },
+  "implementation": {
+    "engine": "simulations/shared/provisional_longsword_engine.py",
+    "selector": "simulations/shared/provisional_longsword.py",
+    "tests": "tests/test_t1_close_pommel_governing_v01.py",
+    "smoke": "simulations/t1_close_pommel_governing_v0_1/simulate.py"
+  },
+  "explicitly_deferred": ["generic closing action", "Close modifier", "Leverage", "generic control", "Close Initiative", "grapple subsystem", "full Italian narrow-play chain", "final tier", "final card wording"]
+}

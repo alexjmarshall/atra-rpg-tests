@@ -1,0 +1,396 @@
+{
+  "milestone": "ATRA T1 / CLOSE / POMMEL — GOVERNING INTEGRATION v0.1",
+  "status": "GOVERNING PROVISIONAL; NOT CANONICAL",
+  "seed": 1308202602,
+  "trials_per_scenario": 1000,
+  "scenario_count": 10,
+  "governing_decisions": {
+    "t1_timing": "E1 after qualifying successful Cross/D1 timing and before H3 creation",
+    "t1_cost": "1 Spiritus + one chain entry; no action/test",
+    "t1_pressure_assignment": "Hart original striker; Weich Tutta defender",
+    "pommel_variant": "P2",
+    "pommel_cost": "2 Spiritus + one chain entry; no additional action",
+    "pommel_resolution": "flat Longsword, normal d6+1; hit cleanup; miss retains Close and transfers opportunity",
+    "global_chain_cap": 3,
+    "new_generic_close_systems": []
+  },
+  "artifact_sanity": {
+    "loaded_cut_skill14_exact": 3.830555555556,
+    "historical_prose_value": 4.394,
+    "classification": "historical prose-only discrepancy; old report/JSON not rewritten",
+    "point_threat_events": "instrumentation repaired in authoritative engine and integrated full-duel collector; mechanics unchanged"
+  },
+  "status_table": {
+    "T1 E1": "GOVERNING PROVISIONAL",
+    "Pommel P2": "GOVERNING PROVISIONAL",
+    "T0/C0/L1/P1": "ARCHIVED OR REJECTED COMPARISON CONTROLS",
+    "H3/Winden/D1/Beat/Open/cap": "PRESERVED GOVERNING PROVISIONAL",
+    "generic Close modifier/Leverage/Close Initiative/grapple": "NOT IMPLEMENTED",
+    "Named Guard v0.2": "NOT STARTED"
+  },
+  "scenarios": [
+    {
+      "scenario": {
+        "id": "S1",
+        "name": "T1 versus Basics; neither knows Pommel",
+        "striker_plays": [],
+        "defender_plays": [
+          "Tutta Cover-to-Stretto"
+        ],
+        "defender_guard": "tutta-porta-di-ferro",
+        "defender_spiritus": 4,
+        "defence": "Cross",
+        "decline_t1": false
+      },
+      "seed": 1308302605,
+      "trials": 1000,
+      "metrics": {
+        "action_accounting_failures": 0,
+        "attack_failures": 316,
+        "bind_passes": 1108,
+        "chain_cap_failures": 0,
+        "close_entries": 554,
+        "cross_successes": 554,
+        "dead_actor_safety_failures": 0,
+        "defence_failures": 130,
+        "max_chain": 1,
+        "pass_cleanup": 554,
+        "point_threat_events": 0,
+        "spiritus_spent_t1": 554,
+        "stale_state_failures": 0,
+        "t1_declarations": 554,
+        "t1_opportunities": 554
+      }
+    },
+    {
+      "scenario": {
+        "id": "S2",
+        "name": "T1 plus defender Pommel versus Basics",
+        "striker_plays": [],
+        "defender_plays": [
+          "Tutta Cover-to-Stretto",
+          "Pommel Strike"
+        ],
+        "defender_guard": "tutta-porta-di-ferro",
+        "defender_spiritus": 4,
+        "defence": "Cross",
+        "decline_t1": false
+      },
+      "seed": 1308402608,
+      "trials": 1000,
+      "metrics": {
+        "action_accounting_failures": 0,
+        "attack_failures": 297,
+        "bind_passes": 563,
+        "chain_cap_failures": 0,
+        "close_entries": 556,
+        "cross_successes": 556,
+        "dead_actor_safety_failures": 0,
+        "defence_failures": 147,
+        "max_chain": 2,
+        "pass_cleanup": 70,
+        "point_threat_events": 0,
+        "pommel_declarations": 556,
+        "pommel_hits": 387,
+        "pommel_misses": 169,
+        "pommel_opportunities": 556,
+        "spiritus_spent_pommel": 1112,
+        "spiritus_spent_t1": 556,
+        "stale_state_failures": 0,
+        "t1_declarations": 556,
+        "t1_opportunities": 556
+      }
+    },
+    {
+      "scenario": {
+        "id": "S3",
+        "name": "T1 versus striker Pommel",
+        "striker_plays": [
+          "Pommel Strike"
+        ],
+        "defender_plays": [
+          "Tutta Cover-to-Stretto"
+        ],
+        "defender_guard": "tutta-porta-di-ferro",
+        "defender_spiritus": 4,
+        "defence": "Cross",
+        "decline_t1": false
+      },
+      "seed": 1308502611,
+      "trials": 1000,
+      "metrics": {
+        "action_accounting_failures": 0,
+        "attack_failures": 288,
+        "bind_passes": 397,
+        "chain_cap_failures": 0,
+        "close_entries": 575,
+        "cross_successes": 575,
+        "dead_actor_safety_failures": 0,
+        "defence_failures": 137,
+        "max_chain": 3,
+        "point_threat_events": 0,
+        "pommel_declarations": 662,
+        "pommel_hits": 483,
+        "pommel_misses": 179,
+        "pommel_opportunities": 662,
+        "spiritus_spent_pommel": 1324,
+        "spiritus_spent_t1": 575,
+        "stale_state_failures": 0,
+        "t1_declarations": 575,
+        "t1_opportunities": 575
+      }
+    },
+    {
+      "scenario": {
+        "id": "S4",
+        "name": "T1 with both knowing Pommel",
+        "striker_plays": [
+          "Pommel Strike"
+        ],
+        "defender_plays": [
+          "Tutta Cover-to-Stretto",
+          "Pommel Strike"
+        ],
+        "defender_guard": "tutta-porta-di-ferro",
+        "defender_spiritus": 4,
+        "defence": "Cross",
+        "decline_t1": false
+      },
+      "seed": 1308602614,
+      "trials": 1000,
+      "metrics": {
+        "action_accounting_failures": 0,
+        "attack_failures": 302,
+        "bind_passes": 54,
+        "chain_cap_failures": 0,
+        "close_entries": 549,
+        "cross_successes": 549,
+        "dead_actor_safety_failures": 0,
+        "defence_failures": 149,
+        "max_chain": 3,
+        "point_threat_events": 0,
+        "pommel_declarations": 717,
+        "pommel_hits": 495,
+        "pommel_misses": 222,
+        "pommel_opportunities": 717,
+        "spiritus_spent_pommel": 1434,
+        "spiritus_spent_t1": 549,
+        "stale_state_failures": 0,
+        "t1_declarations": 549,
+        "t1_opportunities": 549
+      }
+    },
+    {
+      "scenario": {
+        "id": "S5",
+        "name": "T1 versus D/M plus Fuhlen",
+        "striker_plays": [
+          "Duplieren / Mutieren",
+          "Fühlen"
+        ],
+        "defender_plays": [
+          "Tutta Cover-to-Stretto"
+        ],
+        "defender_guard": "tutta-porta-di-ferro",
+        "defender_spiritus": 4,
+        "defence": "Cross",
+        "decline_t1": false
+      },
+      "seed": 1308702617,
+      "trials": 1000,
+      "metrics": {
+        "action_accounting_failures": 0,
+        "attack_failures": 327,
+        "bind_passes": 1120,
+        "chain_cap_failures": 0,
+        "close_entries": 560,
+        "cross_successes": 560,
+        "dead_actor_safety_failures": 0,
+        "defence_failures": 113,
+        "max_chain": 1,
+        "pass_cleanup": 560,
+        "point_threat_events": 0,
+        "spiritus_spent_t1": 560,
+        "stale_state_failures": 0,
+        "t1_declarations": 560,
+        "t1_opportunities": 560
+      }
+    },
+    {
+      "scenario": {
+        "id": "S6",
+        "name": "T1 plus Pommel versus Winden",
+        "striker_plays": [
+          "Winden"
+        ],
+        "defender_plays": [
+          "Tutta Cover-to-Stretto",
+          "Pommel Strike"
+        ],
+        "defender_guard": "tutta-porta-di-ferro",
+        "defender_spiritus": 4,
+        "defence": "Cross",
+        "decline_t1": false
+      },
+      "seed": 1308802620,
+      "trials": 1000,
+      "metrics": {
+        "action_accounting_failures": 0,
+        "attack_failures": 298,
+        "bind_passes": 563,
+        "chain_cap_failures": 0,
+        "close_entries": 565,
+        "cross_successes": 565,
+        "dead_actor_safety_failures": 0,
+        "defence_failures": 137,
+        "max_chain": 2,
+        "pass_cleanup": 64,
+        "point_threat_events": 0,
+        "pommel_declarations": 565,
+        "pommel_hits": 398,
+        "pommel_misses": 167,
+        "pommel_opportunities": 565,
+        "spiritus_spent_pommel": 1130,
+        "spiritus_spent_t1": 565,
+        "stale_state_failures": 0,
+        "t1_declarations": 565,
+        "t1_opportunities": 565
+      }
+    },
+    {
+      "scenario": {
+        "id": "S7",
+        "name": "low-Spiritus Tutta",
+        "striker_plays": [],
+        "defender_plays": [
+          "Tutta Cover-to-Stretto",
+          "Pommel Strike"
+        ],
+        "defender_guard": "tutta-porta-di-ferro",
+        "defender_spiritus": 1,
+        "defence": "Cross",
+        "decline_t1": false
+      },
+      "seed": 1308902623,
+      "trials": 1000,
+      "metrics": {
+        "action_accounting_failures": 0,
+        "attack_failures": 305,
+        "bind_passes": 1092,
+        "chain_cap_failures": 0,
+        "close_entries": 546,
+        "cross_successes": 546,
+        "dead_actor_safety_failures": 0,
+        "defence_failures": 149,
+        "max_chain": 1,
+        "pass_cleanup": 546,
+        "point_threat_events": 0,
+        "spiritus_spent_t1": 546,
+        "stale_state_failures": 0,
+        "t1_declarations": 546,
+        "t1_opportunities": 546
+      }
+    },
+    {
+      "scenario": {
+        "id": "S8",
+        "name": "Beat control",
+        "striker_plays": [],
+        "defender_plays": [
+          "Tutta Cover-to-Stretto",
+          "Pommel Strike"
+        ],
+        "defender_guard": "tutta-porta-di-ferro",
+        "defender_spiritus": 4,
+        "defence": "Beat",
+        "decline_t1": false
+      },
+      "seed": 1309002626,
+      "trials": 1000,
+      "metrics": {
+        "attack_failures": 299,
+        "beat_successes": 491,
+        "close_entries": 0,
+        "defence_failures": 210
+      }
+    },
+    {
+      "scenario": {
+        "id": "S9",
+        "name": "H3 control with T1 declined",
+        "striker_plays": [
+          "Duplieren / Mutieren",
+          "Fühlen"
+        ],
+        "defender_plays": [
+          "Tutta Cover-to-Stretto"
+        ],
+        "defender_guard": "tutta-porta-di-ferro",
+        "defender_spiritus": 4,
+        "defence": "Cross",
+        "decline_t1": true
+      },
+      "seed": 1309102629,
+      "trials": 1000,
+      "metrics": {
+        "action_accounting_failures": 0,
+        "attack_failures": 301,
+        "chain_cap_failures": 0,
+        "cross_successes": 558,
+        "dead_actor_safety_failures": 0,
+        "defence_failures": 141,
+        "dm": 558,
+        "fuhlen": 558,
+        "h3_rejoinders": 558,
+        "point_threat_events": 242,
+        "spiritus_spent_dm": 1116,
+        "spiritus_spent_fuhlen": 558,
+        "stale_state_failures": 0,
+        "t1_declines": 558,
+        "t1_opportunities": 558
+      }
+    },
+    {
+      "scenario": {
+        "id": "S10",
+        "name": "non-Tutta H3 mirror",
+        "striker_plays": [
+          "Duplieren / Mutieren"
+        ],
+        "defender_plays": [
+          "Tutta Cover-to-Stretto"
+        ],
+        "defender_guard": "posta-di-donna",
+        "defender_spiritus": 4,
+        "defence": "Cross",
+        "decline_t1": false
+      },
+      "seed": 1309202632,
+      "trials": 1000,
+      "metrics": {
+        "action_accounting_failures": 0,
+        "attack_failures": 291,
+        "chain_cap_failures": 0,
+        "cross_successes": 592,
+        "dead_actor_safety_failures": 0,
+        "defence_failures": 117,
+        "dm": 592,
+        "h3_rejoinders": 592,
+        "point_threat_events": 247,
+        "spiritus_spent_dm": 1184,
+        "stale_state_failures": 0
+      }
+    }
+  ],
+  "safety": {
+    "action_accounting_failures": 0,
+    "chain_cap_failures": 0,
+    "dead_actor_safety_failures": 0,
+    "stale_state_failures": 0
+  },
+  "instrumentation": {
+    "point_threat_events": 489,
+    "repair_scope": "counts runtime nonthreatening-to-threatening writes; mechanics unchanged"
+  },
+  "recommended_next_milestone": "A — vertical-slice stabilization and governing-packet synchronization; do not begin Named Guard v0.2 yet"
+}

@@ -29,10 +29,10 @@
     "historical_name_note": "Atra supplies a normalized English game-facing title for an explicitly described pommel action rather than preserving a formal play title."
   },
   "game_implementation": {
-    "character_sheet_test_skill": null,
+    "character_sheet_test_skill": "Longsword",
     "secondary_skill_prerequisites": null,
-    "weapon_requirements": null,
-    "off_hand_requirement": null,
+    "weapon_requirements": ["Two-handed longsword"],
+    "off_hand_requirement": "Source variants differ: both hands begin on the sword; one may release the left hand to seize the opponent's elbow.",
     "provisional_tier": "Intermediate",
     "tactical_tags": [],
     "timing": {
@@ -50,24 +50,24 @@
         "actor_pressure": "unknown", "opponent_pressure": "unknown",
         "actor_point_threat": "not_threatening", "displacement": false, "cleanup": "none",
         "basis": "audited-play-evidence",
-        "notes": "Does not create Crossing; requires one. Main-run opportunities are absent until an explicit close-measure creator exists."
+      "notes": "Does not create Crossing; requires an already-valid Close Crossing and current opportunity. The governing P2 implementation is an Atra mechanical abstraction distinct from the exact historical support."
       }]
     },
     "candidate_status": "research-candidate",
     "suspected_duplicates": [],
     "related_plays": [],
-    "mechanics_status": "unimplemented",
+    "mechanics_status": "prototype",
     "mechanics": {
-      "learn_requirements": null,
-      "use_conditions": null,
-      "action_relationship": null,
-      "spiritus_cost": null,
-      "test_resolution": null,
-      "defence": null,
-      "success": null,
-      "failure": null,
-      "aftermath": null,
-      "limits": null
+      "learn_requirements": {"learned_play": "Pommel Strike"},
+      "use_conditions": {"both_fighters_alive": true, "contact": "crossing", "measure": "close", "current_bind_opportunity": "actor", "spiritus_minimum": 2, "chain_room": true},
+      "action_relationship": "No additional normal action; declaration consumes one learned-chain entry.",
+      "spiritus_cost": 2,
+      "test_resolution": {"skill": "Longsword", "accuracy": "flat normal", "damage": "normal provisional longsword d6+1"},
+      "defence": {"intrinsic_response_restriction": false, "target_action_state_unchanged": true},
+      "success": {"hit": "deal normal damage and apply normal bounded bind cleanup"},
+      "failure": {"miss": "zero damage; retain Close Crossing; set bind height to Unknown; transfer current opportunity; reset consecutive-pass count"},
+      "aftermath": {"hit": "normal bounded bind cleanup", "miss": "Close Crossing retained with Unknown height and opponent opportunity"},
+      "limits": {"governing_status": "GOVERNING PROVISIONAL P2; NOT CANONICAL", "learned_chain_entries": 1, "global_chain_cap": 3, "does_not_create_close": true, "generic_close_modifier": false, "automatic_open_control_disarm_or_grapple": false}
     }
   },
   "prototype_evidence_audit": {

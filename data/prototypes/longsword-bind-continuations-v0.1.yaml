@@ -89,10 +89,10 @@
       "historical_confidence": "A",
       "exact_locator": "Fiore dei Liberi, Getty MS Ludwig XV 13, 28r-c and 28r-d; concordant Morgan 16r-c/d and Pisani Dossi 22a-c/d",
       "mechanics_status": "PROVISIONAL",
-      "classification": "existing Close-Crossing consumer used only in the forced integration sequence",
-      "before": {"contact": "crossing", "measure": "close"},
-      "after": {"consumer": "Pommel Strike legal"},
-      "notes": "The fixture does not rebalance Pommel Strike or add Rompere to normal mirrored combat."
+      "classification": "governing generic Close-Crossing consumer; this older fixture is synchronized to P2",
+      "before": {"contact": "crossing", "measure": "close", "bind_opportunity": "actor", "spiritus_minimum": 2, "learned_chain_room": true},
+      "after": {"consumer": "Pommel Strike legal", "spiritus_cost": 2, "learned_chain_entries": 1, "additional_action": 0, "accuracy": "flat Longsword", "damage": "normal d6+1", "miss": "retain Close Crossing and transfer opportunity"},
+      "notes": "Does not create Close, add Rompere to normal mirrored combat, deny responses, or introduce a generic Close modifier."
     }
   ],
   "open_questions": [

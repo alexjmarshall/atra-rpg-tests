@@ -6,6 +6,7 @@
   "choice_architecture_adjudicated_on": "2026-08-12",
   "repertoire_integrity_repair_adjudicated_on": "2026-08-12",
   "h3_ordinary_bind_adjudicated_on": "2026-08-13",
+  "t1_close_pommel_adjudicated_on": "2026-08-13",
   "engine_entry_point": "simulations/shared/provisional_longsword.py",
   "archived_experiment_variants_remain_available": true,
   "durchwechseln": {
@@ -51,7 +52,7 @@
     "status": "PROJECT-ADJUDICATED GOVERNING PROVISIONAL FOR ORDINARY NON-POINT-THREATENING BASIC CROSS",
     "authority": "ATRA H3 ORDINARY BIND KERNEL — GOVERNING INTEGRATION v0.1",
     "specification": "data/prototypes/longsword-h3-ordinary-bind-v0.1.yaml",
-    "scope": "ordinary Basic Cross only; Zornhau, Absetzen, other point-threatening or authored special crossings, T1, and Italian close mechanics retain their local rules",
+    "scope": "ordinary Basic Cross only; Zornhau, Absetzen, and other point-threatening or authored special crossings retain local rules; the later E1 T1 insertion occurs before H3 creation",
     "basic_cross": {
       "pre_roll_private_choice": ["hart", "weich"],
       "hart": "exactly one defence Boon",
@@ -119,6 +120,26 @@
       "zornhau_local_winding": "preserved under prior local trigger/behavior"
     },
     "explicit_nonfeatures": ["Hybrid H3/R0", "Leverage", "Counter-Wind", "generic Unknown-height Winden", "generic Wide-to-Close purchase", "left/right bind-side axis"]
+  },
+  "t1_close_pommel_v0_1": {
+    "status": "PROJECT-ADJUDICATED GOVERNING PROVISIONAL; NOT CANONICAL",
+    "specification": "data/prototypes/longsword-t1-close-pommel-governing-v0.1.yaml",
+    "t1": {
+      "window": "after successful qualifying Tutta Basic Cross and D1 timing; before H3 Rejoinder creation",
+      "cost": {"spiritus": 1, "learned_chain_entries": 1, "additional_action": 0, "additional_test": 0},
+      "result": "RETAIN Crossing; SET Wide->Close; SET bind_height=Unknown; Hart gives original striker first Close opportunity; Weich gives Tutta defender first Close opportunity; CLEAR initial pressure",
+      "h3_ordering": "T1 declaration means H3 is never created; decline or failed gate leaves ordinary H3 unchanged"
+    },
+    "pommel_strike": {
+      "role": "generic consumer of any already-valid Close Crossing with current opportunity",
+      "cost": {"spiritus": 2, "learned_chain_entries": 1, "additional_action": 0},
+      "attack": "flat Longsword; normal provisional d6+1 damage",
+      "hit": "normal damage and bounded bind cleanup",
+      "miss": "zero damage; retain Close Crossing; SET bind_height=Unknown; transfer opportunity; reset pass count",
+      "intrinsic_response_restriction": false
+    },
+    "global_learned_play_cap": 3,
+    "new_generic_close_systems": []
   },
   "open_state": {
     "status": "GOVERNING PROVISIONAL FOR CURRENT LONGSWORD VERTICAL SLICE",
@@ -253,11 +274,11 @@
     "alber": ["low", "point not threatening", "Scheitelhau breaker relationship", "no passive invitation bonus"]
   },
   "guard_play_bridge_v0_1": {
-    "status": "GOVERNING PROVISIONAL T1 SELECTION; NOT CANONICAL",
+    "status": "HISTORICAL T1 SELECTION; RUNTIME DETAILS SUPERSEDED BY T1 / CLOSE / POMMEL v0.1",
     "report": "reports/guard-play-bridge-v01-results.md",
     "specification": "data/prototypes/longsword-guard-play-bridge-v0.1.yaml",
     "scheitelhau_alber": "S-C; DEFER UNTIL CROWN CONTINUATION; no Spiritus price; Alber remains partially mechanically inert",
-    "tutta_cover_to_stretto": "learned continuation; successful source-compatible Basic Cross at Wide retains Crossing and enters Close; no second roll or additional action",
+    "tutta_cover_to_stretto": "learned E1 continuation; successful source-compatible Basic Cross at Wide receives a pre-H3 decision, retains Crossing and enters Close; no second roll or additional action",
     "promoted_technical_boundaries": ["no universal Close action", "no automatic breaker modifier", "Crown distinct from generic Basic Cross", "Tutta cover-to-stretto remains learned"],
     "candidate_costs": {"T0": 0, "T1": 1},
     "governing_cost_selection": "T1",
@@ -265,7 +286,7 @@
     "spend_at_declaration": true,
     "t0_status": "ARCHIVED COMPARISON VARIANT ONLY",
     "named_guard_v0_2_ready": false,
-    "remaining_blocker": "Project review of the scoped C1/B3 Crown-continuation recommendation"
+    "remaining_blocker": "C1/B3 Crown-continuation remains unresolved; it is outside this bounded promotion"
   },
   "scheitelhau_crown_v0_1": {
     "status": "PROVISIONAL EXPERIMENT; RECOMMENDED FOR PROJECT REVIEW; NOT GOVERNING",

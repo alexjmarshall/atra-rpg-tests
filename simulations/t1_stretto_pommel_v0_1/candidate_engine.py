@@ -41,7 +41,9 @@ class CandidateEngine(CurrentEngine):
             raise ValueError("timing must be E1 or L1")
         if pommel_cost not in {1, 2}:
             raise ValueError("Pommel cost must be P1=1 or P2=2")
-        super().__init__(fighters)
+        # Keep this archived candidate's own E1/L1 comparison isolated from
+        # the later governing E1 promotion in the shared engine.
+        super().__init__(fighters, enable_governing_t1=False)
         self.timing = timing
         self.pommel_cost = pommel_cost
         self.early_t1_window_actor: str | None = None

@@ -128,7 +128,9 @@
     "incoming_thrust",
     "after_declared_beat_before_defence_roll",
     "after_successful_cross_before_cleanup",
+    "after_successful_qualifying_cross_before_h3_creation",
     "ordinary_bind_rejoinder",
+    "pre_h3_t1_decision",
     "current_bind_opportunity",
     "bind_height_upper",
     "bind_height_lower",
@@ -213,7 +215,7 @@
       "owner": "exchange",
       "normal_cleanup": "crossing -> none at exchange end unless explicitly retained or transformed",
       "legal_writers": ["successful Cross", "joined opposition/counter Plays", "authored bind entries", "Beat/End Contact", "retention-aware continuations"],
-      "legal_readers": ["T1", "Pommel", "Winden candidates", "bind continuations"],
+      "legal_readers": ["E1 T1", "governing Pommel", "Winden", "bind continuations"],
       "derived": false
     },
     {
@@ -223,8 +225,8 @@
       "duration": "persistent until explicitly changed",
       "owner": "exchange/fighter pair",
       "normal_cleanup": "none defined; contact cleanup does not change measure",
-      "legal_writers": ["explicit measure-changing action/Play such as T1", "scenario/setup"],
-      "legal_readers": ["T1", "Pommel", "future measure-gated Plays"],
+      "legal_writers": ["governing E1 T1", "other explicit authored measure-changing action/Play", "scenario/setup"],
+      "legal_readers": ["E1 T1 Wide gate", "governing Pommel Close gate", "future measure-gated Plays"],
       "derived": false
     },
     {
@@ -257,9 +259,9 @@
       "visibility": "fighter-private to the declaring parrier; hidden from the striker unless governing Fühlen F1 reveals it",
       "duration": "one ordinary attacker Bind Rejoinder cycle",
       "owner": "per fighter within ordinary Crossing",
-      "normal_cleanup": "clear to unknown after decline assigns initiative or after Duplieren/Mutieren consumes the requirement",
-      "legal_writers": ["pre-roll ordinary Basic Cross Hart/Weich declaration, persisted only on success", "cleanup to unknown"],
-      "legal_readers": ["Fühlen F1", "Duplieren/Mutieren pressure requirement", "decline initiative assignment"],
+      "normal_cleanup": "clear to unknown after E1 T1 assigns Close opportunity, after H3 decline assigns ordinary initiative, or after Duplieren/Mutieren consumes the requirement",
+      "legal_writers": ["pre-roll ordinary Basic Cross Hart/Weich declaration, persisted only on success", "governing E1 T1 cleanup", "ordinary cleanup to unknown"],
+      "legal_readers": ["E1 T1 first-Close-opportunity assignment", "Fühlen F1", "Duplieren/Mutieren pressure requirement", "H3 decline initiative assignment"],
       "derived": false,
       "generic_modifier": null
     },
@@ -270,11 +272,35 @@
       "duration": "contact-bound unless an authored transition changes it",
       "owner": "exchange Crossing",
       "normal_cleanup": "reset to unknown when contact ends",
-      "legal_writers": ["qualifying descending-Cut Upper Cross metadata", "qualifying lower-setting-aside metadata", "L2 Lower Winding miss lower->upper", "unclassified ordinary Cross writes unknown"],
-      "legal_readers": ["Upper Winding Thrust", "Lower Winding Thrust"],
+      "legal_writers": ["qualifying descending-Cut Upper Cross metadata", "qualifying lower-setting-aside metadata", "governing E1 T1 writes unknown", "governing Pommel declaration/miss writes unknown", "L2 Lower Winding miss lower->upper", "unclassified ordinary Cross writes unknown"],
+      "legal_readers": ["Upper Winding Thrust", "Lower Winding Thrust", "governing E1/Pommel cleanup"],
       "derived": false,
       "generic_modifier": null,
       "notes": "Independent from measure, contact zone, pressure, point threat, guard, and Bind Initiative. Guard height alone is not a writer."
+    },
+    {
+      "id": "bind_opportunity",
+      "values": ["fighter_id", "none"],
+      "visibility": "public sequencing state",
+      "duration": "bounded bind/Close continuation sequence",
+      "owner": "exchange Crossing",
+      "normal_cleanup": "clear when contact ends or the bounded sequence closes",
+      "legal_writers": ["H3 decline from Hart/Weich", "governing E1 T1 from Hart/Weich", "continuation miss transfer", "pass transfer", "bind cleanup"],
+      "legal_readers": ["governing Pommel", "Winden", "pass", "disengage", "other authored bind continuations"],
+      "derived": false,
+      "generic_modifier": null,
+      "notes": "First declaration opportunity only; not ownership, Leverage, a numeric bonus, or a new Close Initiative subsystem."
+    },
+    {
+      "id": "pre_h3_t1_window",
+      "values": ["fighter_id", "none"],
+      "visibility": "public decision timing",
+      "duration": "after a qualifying successful Cross and before H3 creation",
+      "owner": "exchange",
+      "normal_cleanup": "clear on T1 declaration, T1 decline, failed gate, or exchange cleanup",
+      "legal_writers": ["successful qualifying Tutta Basic Cross", "T1 declaration/decline", "exchange cleanup"],
+      "legal_readers": ["E1 T1 declaration", "H3 Rejoinder creation gate"],
+      "derived": false
     },
     {
       "id": "point_threat",
@@ -399,7 +425,8 @@
     "D1": 1,
     "C2": {"Absetzen": 2, "Scambiar di Punta": 2, "Schielhau": 2},
     "T1": 1,
-    "P1": 1
+    "P1": 1,
+    "Pommel Strike P2": 2
   },
   "deferred_from_v0.1": [
     "generic fighter FORCE_MOVEMENT procedure",

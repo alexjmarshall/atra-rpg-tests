@@ -108,7 +108,8 @@ GOVERNING_BASELINE: dict[str, Any] = {
     },
     "engine_implementation_status": (
         "SYNCHRONIZED: authoritative shared exchange engine implements state-based D1, "
-        "Beat/Open, GC1, general Committed timing, P1/T1, cap 3, C2/S2, and explicit contact"
+        "Beat/Open, GC1, general Committed timing, governing E1 T1/Pommel v0.1, "
+        "cap 3, C2/S2, and explicit contact"
     ),
     "learned_play_cap": LEARNED_PLAY_CAP,
     "loaded": "proactive Basic Cut receives Damage Boon",
@@ -180,9 +181,21 @@ GOVERNING_BASELINE: dict[str, Any] = {
         "spend_timing": "declaration",
         "extra_roll": False,
         "additional_action": False,
-        "effect": "retain Crossing; Wide to Close",
+        "window": "after successful qualifying Cross and D1 timing; before H3 Rejoinder creation",
+        "effect": "retain Crossing; Wide to Close; clear bind height; Hart striker/Weich defender first Close opportunity; clear pressure",
         "learned_play": True,
-        "archived_comparison": "T0",
+        "archived_comparison": "T0; C0 and L1 are noncurrent historical controls",
+    },
+    "pommel_strike": {
+        "status": "GOVERNING PROVISIONAL; NOT CANONICAL",
+        "trigger": "generic Close Crossing plus current bind opportunity",
+        "spiritus_cost": 2,
+        "learned_chain_entries": 1,
+        "additional_action": False,
+        "attack": "flat normal Longsword; normal provisional d6+1 damage",
+        "hit": "normal bounded bind cleanup",
+        "miss": "retain Close Crossing, clear height to Unknown, transfer opportunity",
+        "intrinsic_response_restriction": False,
     },
 }
 

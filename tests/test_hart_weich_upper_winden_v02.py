@@ -298,15 +298,17 @@ class HartWeichUpperWindenTests(unittest.TestCase):
         h1a.point_threat = "threatening"
         self.assertFalse(h1.d1_window(h1a, Attack(h1.other(h1a), h1a, "cut")))
 
-    def test_81_t1_remains_inherited_and_distinct(self):
+    def test_81_t1_inherits_governing_e1_gate(self):
         a = Fighter("A", guard="tutta-porta-di-ferro", known_plays={"Tutta Cover-to-Stretto"})
         b = Fighter("B")
         engine = HartWeichUpperWindenEngine([a, b])
         engine.crossing = CandidateCrossing(contact="crossing", measure="wide")
         before = (a.spiritus, len(engine.learned_chain))
-        self.assertTrue(engine.tutta_cover_to_stretto(a))
-        self.assertEqual(engine.crossing.measure, "close")
-        self.assertEqual((a.spiritus, len(engine.learned_chain)), (before[0] - 1, before[1] + 1))
+        # Governing integration supersedes the old raw-Crossing shortcut: T1
+        # now exists only in its post-Cross, pre-H3 E1 decision window.
+        self.assertFalse(engine.tutta_cover_to_stretto(a))
+        self.assertEqual(engine.crossing.measure, "wide")
+        self.assertEqual((a.spiritus, len(engine.learned_chain)), before)
         self.assertIs(
             HartWeichUpperWindenEngine.tutta_cover_to_stretto,
             ProvisionalLongswordEngine.tutta_cover_to_stretto,

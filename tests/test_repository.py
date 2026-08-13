@@ -19,10 +19,11 @@ SELECTED_PROTOTYPE_IDS = {
 }
 MIRRORED_PROTOTYPE_IDS = SELECTED_PROTOTYPE_IDS | {"play-german-longsword-schielhau"}
 EXACT_EVIDENCE_IDS = SELECTED_PROTOTYPE_IDS | {"play-german-longsword-zwerchhau"}
-H3_GOVERNING_PLAY_IDS = {
+GOVERNING_PROVISIONAL_PLAY_IDS = {
     "play-german-longsword-duplieren-mutieren",
     "play-german-longsword-winden",
     "play-german-longsword-zornhau-ort",
+    "play-italian-longsword-pommel-strike",
 }
 
 
@@ -47,7 +48,7 @@ class RepositoryValidationTests(unittest.TestCase):
             record = json.loads(path.read_text(encoding="utf-8"))
             implementation = record["game_implementation"]
             self.assertEqual(implementation["candidate_status"], "research-candidate")
-            if record["id"] in H3_GOVERNING_PLAY_IDS:
+            if record["id"] in GOVERNING_PROVISIONAL_PLAY_IDS:
                 self.assertEqual(implementation["mechanics_status"], "prototype")
                 self.assertTrue(any(value is not None for value in implementation["mechanics"].values()))
                 self.assertIn("GOVERNING PROVISIONAL", implementation["mechanics"]["limits"]["governing_status"])
@@ -87,12 +88,12 @@ class RepositoryValidationTests(unittest.TestCase):
             else:
                 self.assertIsNone(record["historical_identity"]["historical_confidence"])
                 self.assertEqual(record["historical_identity"]["source_status"], "needs-item-level-audit")
-            if record["id"] in H3_GOVERNING_PLAY_IDS:
+            if record["id"] in GOVERNING_PROVISIONAL_PLAY_IDS:
                 self.assertEqual(record["game_implementation"]["character_sheet_test_skill"], "Longsword")
             else:
                 self.assertIsNone(record["game_implementation"]["character_sheet_test_skill"])
             self.assertIsNone(record["game_implementation"]["secondary_skill_prerequisites"])
-            if record["id"] in H3_GOVERNING_PLAY_IDS:
+            if record["id"] in GOVERNING_PROVISIONAL_PLAY_IDS:
                 self.assertTrue(any(value is not None for value in record["game_implementation"]["mechanics"].values()))
             else:
                 self.assertTrue(all(value is None for value in record["game_implementation"]["mechanics"].values()))

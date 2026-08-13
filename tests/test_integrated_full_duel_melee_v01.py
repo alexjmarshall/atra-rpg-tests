@@ -205,12 +205,25 @@ class IntegratedFullDuelCleanupTests(unittest.TestCase):
         engine.finish_exchange()
         self.assertEqual(engine.crossing.contact, "none")
 
-    def test_19_t1_h3_ordering_is_exposed_not_silently_resolved(self) -> None:
-        engine, a, b = successful_cross(HART, plays_b={"Tutta Cover-to-Stretto"}, spiritus_b=1)
-        b.guard = "tutta-porta-di-ferro"
-        self.assertTrue(engine.rejoinder_open)
-        self.assertTrue(engine.tutta_cover_to_stretto(b))
-        self.assertEqual(engine.crossing.measure, "close")
+    def test_19_t1_e1_precedes_h3_creation_and_decline_preserves_it(self) -> None:
+        a = Fighter("A")
+        b = Fighter(
+            "B",
+            spiritus=1,
+            guard="tutta-porta-di-ferro",
+            known_plays={"Tutta Cover-to-Stretto"},
+        )
+        engine = CurrentEngine([a, b])
+        attack = engine.declare_attack(a, b, "cut")
+        assert attack is not None
+        rolled = engine.roll_pending_attack((1,), (3,))
+        self.assertTrue(engine.declare_basic_cross(b, HART, ENGINE.UPPER_CROSS))
+        self.assertTrue(engine.basic_defence("Cross", b, rolled.roll, (1, 20)).success)
+        self.assertEqual(engine.t1_window_actor, b.name)
+        self.assertFalse(engine.rejoinder_open)
+        self.assertEqual(engine.rejoinder_options(a), [])
+        self.assertIsNone(engine.buy_fuhlen(a))
+        self.assertTrue(engine.decline_t1(b))
         self.assertTrue(engine.rejoinder_open)
         self.assertEqual(engine.rejoinder_options(a), ["decline"])
 

@@ -1350,21 +1350,8 @@ play-italian-longsword-half-sword-thrust,Half-Sword Thrust,game_implementation.m
 play-italian-longsword-half-sword-thrust,Half-Sword Thrust,game_implementation.mechanics.failure
 play-italian-longsword-half-sword-thrust,Half-Sword Thrust,game_implementation.mechanics.aftermath
 play-italian-longsword-half-sword-thrust,Half-Sword Thrust,game_implementation.mechanics.limits
-play-italian-longsword-pommel-strike,Pommel Strike,game_implementation.character_sheet_test_skill
 play-italian-longsword-pommel-strike,Pommel Strike,game_implementation.secondary_skill_prerequisites
-play-italian-longsword-pommel-strike,Pommel Strike,game_implementation.weapon_requirements
-play-italian-longsword-pommel-strike,Pommel Strike,game_implementation.off_hand_requirement
 play-italian-longsword-pommel-strike,Pommel Strike,game_implementation.timing.category
-play-italian-longsword-pommel-strike,Pommel Strike,game_implementation.mechanics.learn_requirements
-play-italian-longsword-pommel-strike,Pommel Strike,game_implementation.mechanics.use_conditions
-play-italian-longsword-pommel-strike,Pommel Strike,game_implementation.mechanics.action_relationship
-play-italian-longsword-pommel-strike,Pommel Strike,game_implementation.mechanics.spiritus_cost
-play-italian-longsword-pommel-strike,Pommel Strike,game_implementation.mechanics.test_resolution
-play-italian-longsword-pommel-strike,Pommel Strike,game_implementation.mechanics.defence
-play-italian-longsword-pommel-strike,Pommel Strike,game_implementation.mechanics.success
-play-italian-longsword-pommel-strike,Pommel Strike,game_implementation.mechanics.failure
-play-italian-longsword-pommel-strike,Pommel Strike,game_implementation.mechanics.aftermath
-play-italian-longsword-pommel-strike,Pommel Strike,game_implementation.mechanics.limits
 play-italian-longsword-rompere-di-punta,Rompere di Punta,historical_identity.historical_confidence
 play-italian-longsword-rompere-di-punta,Rompere di Punta,historical_identity.source_citations.exact_historical_location
 play-italian-longsword-rompere-di-punta,Rompere di Punta,game_implementation.character_sheet_test_skill

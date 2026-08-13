@@ -41,6 +41,7 @@ NORMAL_DAMAGE = tuple(range(2, 8))
 FUHLEN = next(iter(ENGINE.FUHLEN_NAMES))
 DM = ENGINE.PAIRED_PLAY
 WINDEN = ENGINE.WINDEN_PLAY
+POMMEL = ENGINE.POMMEL_PLAY
 
 L0 = frozenset()
 L1 = frozenset({"Nachreisen"})
@@ -167,6 +168,8 @@ class Policy:
     def continuation(self, view: PolicyView) -> str:
         options = set(view.legal_options)
         if view.actor.spiritus > self.preserve_spiritus_below:
+            if POMMEL in options:
+                return POMMEL
             for option in ("Lower Winding Thrust", "Upper Winding Thrust"):
                 if option in options:
                     return option
@@ -419,6 +422,12 @@ class IntegratedDuel:
         self.history: list[str] = []
         self.exchanges = 0
         self.last_named_guard = {"A": self.a.guard, "B": self.b.guard}
+        self._point_threat_cursor = 0
+
+    def _record_point_threat_events(self) -> None:
+        current = self.engine.point_threat_events
+        self.metrics["point_threat_events"] += current - self._point_threat_cursor
+        self._point_threat_cursor = current
 
     def roll20(self, modifier: str = "normal") -> tuple[int, ...]:
         return tuple(self.rng.randint(1, 20) for _ in range(2 if modifier in {"boon", "bane"} else 1))
@@ -434,6 +443,58 @@ class IntegratedDuel:
             delta = before[fighter.name] - fighter.spiritus
             if delta > 0:
                 self.metrics["spiritus_spent"][fighter.name] += delta
+
+    def _resolve_current_bind_opportunities(self) -> None:
+        while self.engine.crossing.contact == "crossing" and self.a.alive and self.b.alive:
+            name = self.engine.crossing.bind_initiative
+            if name is None:
+                break
+            actor = self.engine.fighters[name]
+            options = self.engine.continuation_options(actor, winden_variant="W2")
+            if (
+                len(self.engine.learned_chain) >= ENGINE.LEARNED_PLAY_CAP
+                and ({WINDEN, POMMEL} & actor.known_plays)
+            ):
+                self.metrics["chain_cap_blocks"] += 1
+            for option in options:
+                self.metrics["legal_opportunities"][option] += 1
+            choice = self.policies[name].continuation(self.view(actor, options))
+            if choice == POMMEL:
+                before = actor.spiritus
+                declaration = self.engine.declare_pommel(actor)
+                if not declaration.legal:
+                    self.metrics["chain_cap_blocks"] += 1
+                    choice = "pass"
+                else:
+                    self.metrics["declarations"][POMMEL] += 1
+                    self.metrics["spiritus_spent"][POMMEL] += before - actor.spiritus
+                    result = self.engine.resolve_pommel(self.roll20(), self.roll_damage())
+                    if result.damage:
+                        self.metrics["damage"][actor.name] += result.damage
+                    continue
+            if choice.endswith("Winding Thrust"):
+                before = actor.spiritus
+                declaration = self.engine.declare_lower_winding(actor) if choice.startswith("Lower") else self.engine.declare_upper_winding(actor)
+                if not declaration.legal:
+                    self.metrics["chain_cap_blocks"] += 1
+                    choice = "pass"
+                else:
+                    self.metrics["winding"] += 1
+                    self.metrics["declarations"][choice] += 1
+                    self.metrics["spiritus_spent"][choice] += before - actor.spiritus
+                    result = self.engine.resolve_lower_winding(self.roll20(), self.roll_damage()) if choice.startswith("Lower") else self.engine.resolve_upper_winding(self.roll20(), self.roll_damage())
+                    if result.damage:
+                        self.metrics["damage"][actor.name] += result.damage
+                    elif not result.success:
+                        self.metrics["winding_miss_transfer"] += 1
+                    continue
+            if choice == "Disengage":
+                if self.engine.disengage(actor):
+                    self.metrics["disengage_termination"] += 1
+                break
+            if self.engine.pass_bind_initiative(actor) and self.engine.crossing.contact == "none":
+                self.metrics["bind_pass_termination"] += 1
+                break
 
     def _resolve_bind(self, striker: Fighter) -> None:
         policy = self.policies[striker.name]
@@ -467,45 +528,7 @@ class IntegratedDuel:
         self.metrics["declarations"]["decline"] += 1
         if not self.engine.decline_bind_rejoinder(striker):
             return
-        while self.engine.crossing.contact == "crossing" and self.a.alive and self.b.alive:
-            name = self.engine.crossing.bind_initiative
-            if name is None:
-                break
-            actor = self.engine.fighters[name]
-            options = self.engine.continuation_options(actor, winden_variant="W2")
-            if (
-                len(self.engine.learned_chain) >= ENGINE.LEARNED_PLAY_CAP
-                and WINDEN in actor.known_plays
-                and actor.spiritus >= 2
-                and self.engine.crossing.bind_height in {UPPER, LOWER}
-            ):
-                self.metrics["chain_cap_blocks"] += 1
-            for option in options:
-                self.metrics["legal_opportunities"][option] += 1
-            choice = self.policies[name].continuation(self.view(actor, options))
-            if choice.endswith("Winding Thrust"):
-                before = actor.spiritus
-                declaration = self.engine.declare_lower_winding(actor) if choice.startswith("Lower") else self.engine.declare_upper_winding(actor)
-                if not declaration.legal:
-                    self.metrics["chain_cap_blocks"] += 1
-                    choice = "pass"
-                else:
-                    self.metrics["winding"] += 1
-                    self.metrics["declarations"][choice] += 1
-                    self.metrics["spiritus_spent"][choice] += before - actor.spiritus
-                    result = self.engine.resolve_lower_winding(self.roll20(), self.roll_damage()) if choice.startswith("Lower") else self.engine.resolve_upper_winding(self.roll20(), self.roll_damage())
-                    if result.damage:
-                        self.metrics["damage"][actor.name] += result.damage
-                    elif not result.success:
-                        self.metrics["winding_miss_transfer"] += 1
-                    continue
-            if choice == "Disengage":
-                if self.engine.disengage(actor):
-                    self.metrics["disengage_termination"] += 1
-                break
-            if self.engine.pass_bind_initiative(actor) and self.engine.crossing.contact == "none":
-                self.metrics["bind_pass_termination"] += 1
-                break
+        self._resolve_current_bind_opportunities()
 
     def exchange(self, actor: Fighter, target: Fighter) -> None:
         hp_before = self.a.hp + self.b.hp
@@ -613,6 +636,7 @@ class IntegratedDuel:
                         if self.engine.tutta_cover_to_stretto(target):
                             self.metrics["declarations"]["T1"] += 1
                             self.metrics["spiritus_spent"]["T1"] += before - target.spiritus
+                            self._resolve_current_bind_opportunities()
             else:
                 resolved = self.engine.resolve_pending_attack()
                 if resolved.damage:
@@ -627,6 +651,7 @@ class IntegratedDuel:
         self.metrics["chain_lengths"][len(self.engine.learned_chain)] += 1
         self.metrics["second_action_leaks"] += int(actor.action_available or (defence != "Ignore" and target.action_available))
         self.engine.finish_exchange()
+        self._record_point_threat_events()
         if self.engine.crossing.contact != "none" and not self.engine.crossing.retained:
             self.metrics["stale_cleanup_failures"] += 1
         self.exchanges += 1
@@ -643,6 +668,7 @@ class IntegratedDuel:
                 opponent = self.engine.other(fighter)
                 if fighter.alive and opponent.alive and fighter.action_available:
                     self.exchange(fighter, opponent)
+                    self._record_point_threat_events()
                 if not self.a.alive or not self.b.alive:
                     break
             if not self.a.alive and not self.b.alive:

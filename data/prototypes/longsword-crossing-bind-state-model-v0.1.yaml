@@ -5,7 +5,8 @@
     "date": "2026-08-13",
     "ordinary_basic_cross": "H3 initial Hart/Weich plus public bind_height supersedes ordinary Hard/Hard and any roll-derived Favored/Unfavored writer",
     "specification": "data/prototypes/longsword-h3-ordinary-bind-v0.1.yaml",
-    "zornhau_local_relation": "preserved"
+    "zornhau_local_relation": "preserved",
+    "t1_close_pommel": "data/prototypes/longsword-t1-close-pommel-governing-v0.1.yaml supersedes the old dormant/zero-cost Pommel fixture and raw T1 invocation"
   },
   "governing_packet": "atra-melee-design-packet-v0-4",
   "scope": {
@@ -79,8 +80,8 @@
       "phases": [{"phase": "current recovery-pursuit form", "contact": "none", "measure": "wide", "actor_contact_zone": "not_applicable", "opponent_contact_zone": "not_applicable", "actor_pressure": "not_applicable", "opponent_pressure": "not_applicable", "actor_point_threat": "threatening", "displacement": false, "cleanup": "none", "basis": "audited-play-evidence", "notes": "The target weapon has gone away. This annotation does not generalize to every Nachreisen branch."}]
     },
     {
-      "id": "play-italian-longsword-pommel-strike", "status": "PROVISIONAL", "cost": 0,
-      "phases": [{"phase": "pommel strike from established Close Crossing", "contact": "crossing", "measure": "close", "actor_contact_zone": "unknown", "opponent_contact_zone": "unknown", "actor_pressure": "unknown", "opponent_pressure": "unknown", "actor_point_threat": "not_threatening", "displacement": false, "cleanup": "none", "basis": "audited-play-evidence", "notes": "Does not create Crossing; requires one. Main-run opportunities are absent until an explicit close-measure creator exists."}]
+      "id": "play-italian-longsword-pommel-strike", "status": "GOVERNING PROVISIONAL", "cost": 2,
+      "phases": [{"phase": "pommel strike from established Close Crossing and current bind opportunity", "contact": "crossing", "measure": "close", "actor_contact_zone": "unknown", "opponent_contact_zone": "unknown", "actor_pressure": "unknown", "opponent_pressure": "unknown", "actor_point_threat": "preserve", "displacement": false, "cleanup": "hit: bounded bind cleanup; miss: retain Close Crossing, Unknown height, transfer opportunity", "basis": "audited-play-evidence plus governing Atra P2 abstraction", "notes": "Does not create Crossing. Costs 2 Spiritus and one chain entry, uses no additional action, makes a flat Longsword attack for normal damage, and has no intrinsic response restriction."}]
     },
     {
       "id": "play-german-longsword-schielhau", "status": "PROVISIONAL", "cost": 2,
@@ -102,6 +103,6 @@
     "primary_random_contact_generation": false
   },
   "open_questions": [
-    "universal contact-zone mechanics", "generic leverage rewards", "full Hard/Soft action system", "explicit Soft-producing action", "closing mechanics", "all Guard effects", "final bind persistence", "final terminology", "final Play interactions beyond audited prototype set"
+    "universal contact-zone mechanics", "generic leverage rewards", "full Hard/Soft action system", "explicit Soft-producing action", "generic closing mechanics beyond authored T1", "all Guard effects", "final bind persistence", "final terminology", "final Play interactions beyond audited prototype set"
   ]
 }

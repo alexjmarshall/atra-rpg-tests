@@ -3,7 +3,7 @@
   "status": "GOVERNING PROVISIONAL",
   "adjudicated_on": "2026-08-13",
   "not_canonical_or_final": true,
-  "scope": "Ordinary, non-point-threatening Basic Cross bind formation only.",
+  "scope": "Ordinary, non-point-threatening Basic Cross bind formation only, subject to the later governing E1 T1 insertion before Rejoinder creation.",
   "authority": "Project promotion of H3-L2 for ordinary Basic Cross",
   "historical_mechanical_boundary": {
     "source_backed_lessons": [
@@ -26,7 +26,7 @@
     ]
   },
   "ordinary_basic_cross": {
-    "player_facing_rule": "When declaring an ordinary Cross, the defender secretly chooses Hart or Weich before rolling. This is an Atra abstraction of initial bind pressure. Hart grants exactly one Boon on the Cross; Weich is flat. A successful Cross cancels the attack and forms a Crossing with hidden initial pressure and public authored bind height. The striker may immediately use an eligible Bind Rejoinder. If the striker declines, unresolved Hart gives the striker the first ordinary bind opportunity and unresolved Weich gives the parrier that opportunity.",
+    "player_facing_rule": "When declaring an ordinary Cross, the defender secretly chooses Hart or Weich before rolling. This is an Atra abstraction of initial bind pressure. Hart grants exactly one Boon on the Cross; Weich is flat. A successful Cross cancels the attack and forms a Crossing with hidden initial pressure and public authored bind height. If the E1 Tutta gate applies, resolve that decision before creating the striker's Bind Rejoinder. Otherwise the striker may immediately use an eligible Bind Rejoinder. If the striker declines, unresolved Hart gives the striker the first ordinary bind opportunity and unresolved Weich gives the parrier that opportunity.",
     "declaration_values": ["hart", "weich"],
     "failed_cross": ["incoming attack not cancelled by this defence", "no Crossing", "initial pressure unknown/cleared", "bind height unknown", "no Bind Rejoinder"],
     "successful_cross": ["CANCEL pending attack", "SET contact=crossing", "SET private initial pressure", "SET public bind_height", "open attacker Bind Rejoinder"],
@@ -74,7 +74,8 @@
     "actor": "original striker",
     "additional_normal_action": false,
     "legal_options": ["Fühlen if known/affordable/not already used", "Duplieren", "Mutieren", "decline"],
-    "arbitrary_play_access": false
+    "arbitrary_play_access": false,
+    "pre_creation_insertion": "A qualifying Tutta defender receives the governing E1 T1 decision first. T1 use means this Rejoinder is never created; T1 decline creates it normally."
   },
   "fuhlen": {
     "status": "GOVERNING PROVISIONAL ORDINARY CONTEXT",

@@ -450,7 +450,11 @@ class H3OrdinaryBindGoverningTests(unittest.TestCase):
             Fighter("A", guard="tutta-porta-di-ferro", known_plays={"Tutta Cover-to-Stretto"}),
             Fighter("B"),
         ])
-        t1.crossing = Crossing(contact="crossing", measure="wide", bind_initiative="A")
+        t1_attack = t1.declare_attack(t1.fighters["B"], t1.fighters["A"], "cut")
+        assert t1_attack is not None
+        t1_roll = t1.roll_pending_attack((4,))
+        t1.declare_basic_cross(t1.fighters["A"], WEICH, UPPER_CROSS)
+        t1.basic_defence("Cross", t1.fighters["A"], t1_roll.roll, (4,))
         check(126, t1.tutta_cover_to_stretto(t1.fighters["A"]) and t1.crossing.measure == "close")
         check(127, not hasattr(ProvisionalLongswordEngine, "generic_close_purchase"))
         check(128, not hasattr(ProvisionalLongswordEngine, "counter_wind"))

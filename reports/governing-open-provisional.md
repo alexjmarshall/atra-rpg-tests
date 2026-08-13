@@ -2,6 +2,16 @@
 
 Transcribed from Section 2 of Atra Melee Design Packet v0.4. These entries are constraints and unresolved questions; this repository does not decide them.
 
+## 2026-08-13 T1 / Close / Pommel v0.1 Project adjudication
+
+The Project promotes **E1 + P2 to GOVERNING PROVISIONAL** for the current longsword vertical slice. This is a bounded integration, not canonical/final adoption. It does not edit Atra Melee Design Packet v0.4, rewrite candidate reports, create a generic closing action, or begin Named Guard v0.2.
+
+After a successful qualifying Tutta Basic Cross and the ordinary D1 timing, but **before H3 Rejoinder creation**, the Tutta defender receives one E1 decision. T1 costs 1 Spiritus and one learned-chain entry, spends no additional action, makes no additional test, retains Crossing, changes Wide to Close, clears bind height to Unknown, assigns the first Close opportunity to the original striker on Hart or the Tutta defender on Weich, and then clears initial pressure. If T1 is used, H3 is never created. If T1 is declined or its gate fails, ordinary H3 proceeds unchanged.
+
+Pommel Strike is a generic consumer of an already-valid Close Crossing; it does not itself create Close. The actor must know the Play, be alive with a living opponent, hold the current bind opportunity, have 2 Spiritus, and have learned-chain room. Declaration costs 2 Spiritus and one chain entry with no additional action. Resolve a flat Longsword attack for normal provisional d6+1 damage. A hit applies normal bounded bind cleanup. A miss deals zero damage, retains Close Crossing, clears bind height to Unknown, transfers the opportunity, and resets the consecutive-pass count. Pommel has no intrinsic response denial, modifier, auto-hit, fixed damage, Open, control, disarm, grapple, extra action, or free follow-up.
+
+The global learned-Play cap remains 3. Close has no generic modifier, Leverage, separate initiative subsystem, or new effect operator. The durable specification is `data/prototypes/longsword-t1-close-pommel-governing-v0.1.yaml`; runtime synchronization is in the shared authoritative engine.
+
 ## 2026-08-13 H3 Ordinary Bind Kernel v0.1 Project adjudication
 
 The Project promotes **H3-L2 to GOVERNING PROVISIONAL for ordinary, non-point-threatening Basic Cross binds**. This is a bounded synchronization of the current longsword vertical slice, not canonical/final adoption. It does not edit Atra Melee Design Packet v0.4 and does not rewrite historical candidate reports.
@@ -29,7 +39,7 @@ Winden is a learned family. The ordinary governing executions are Upper Winding 
 - **SUPERSEDED FOR ORDINARY BASIC CROSS:** roll-derived Favored/Unfavored and the associated ordinary passive Fühlen reading.
 - **PRESERVED LOCALLY:** Zornhau's qualifying trigger, threatening point, Crossing, Bind Initiative, roll-derived Favored/Unfavored relation, Ort, local W1/W2 behavior, tie behavior, Fühlen relation visibility, and D1 denial.
 - Fühlen therefore has explicit context debt: ordinary H3 uses paid F1 initial-pressure visibility; Zornhau-local uses the preserved passive relation visibility until separate Project adjudication.
-- Absetzen, other point-threatening/special crossings, T1, Italian bind/close mechanics, Beat/Open, D1, Committed timing, Nachreisen, P1, C2, and S2 retain their authored rules.
+- Absetzen, other point-threatening/special crossings, Beat/Open, D1, Committed timing, Nachreisen, P1, C2, and S2 retain their authored rules. T1 and Pommel are superseded only by the later dated T1 / Close / Pommel adjudication above.
 - Hybrid H3/R0, Leverage, Counter-Wind, generic Unknown Winden, generic Wide-to-Close purchase, U1, L1, and the other excluded bind expansions are not implemented.
 
 The synchronized behavior is in `simulations/shared/provisional_longsword_engine.py`; the durable specification is `data/prototypes/longsword-h3-ordinary-bind-v0.1.yaml` and the governing selector remains `simulations/shared/provisional_longsword.py`.

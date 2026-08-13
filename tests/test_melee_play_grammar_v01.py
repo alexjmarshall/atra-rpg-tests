@@ -29,6 +29,9 @@ class MeleePlayGrammarV01Tests(unittest.TestCase):
         self.assertNotIn(("zornhau-ort-current", "MISSING_EFFECT_EXPOSED"), codes)
         self.assertNotIn(("winden-current-material", "MISSING_PRIMARY_PAYLOAD"), codes)
         self.assertNotIn(("winden-current-material", "MISSING_EFFECT_EXPOSED"), codes)
+        self.assertNotIn(("tutta-cover-to-stretto-t1", "GHOST_UTILITY"), codes)
+        self.assertNotIn(("pommel-strike", "GHOST_UTILITY"), codes)
+        self.assertNotIn(("pommel-strike", "EXCEPTIONAL_RESPONSE_MODIFIER"), codes)
         self.assertIn(("frontale-current-sequence", "MISSING_PRIMARY_PAYLOAD"), codes)
 
     def test_vocabulary_closure_and_forbidden_control(self) -> None:
