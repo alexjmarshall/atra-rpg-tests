@@ -1,0 +1,128 @@
+{
+  "id": "t1-stretto-pommel-integration-v0.1",
+  "status": "PROVISIONAL BOUNDED CANDIDATE; NOT GOVERNING OR CANONICAL",
+  "automatic_promotion": false,
+  "scope": {
+    "authoritative_base": "simulations/shared/provisional_longsword.py::CurrentEngine",
+    "isolated_overlay": "simulations/t1_stretto_pommel_v0_1/candidate_engine.py::CandidateEngine",
+    "governing_h3_modified": false,
+    "melee_design_packet_modified": false,
+    "excluded": [
+      "Named Guard v0.2",
+      "generic Close bonus",
+      "Leverage",
+      "generic grapple subsystem",
+      "generic stretto attack",
+      "universal response denial",
+      "new mechanical effect operator"
+    ]
+  },
+  "historical_mechanical_boundary": {
+    "source_supported_tutta": [
+      "Tutta Porta di Ferro covers attacks",
+      "the cover may be made with a pass",
+      "the pass may enter zogo stretto / narrow play"
+    ],
+    "source_supported_pommel": [
+      "Pommel Strike begins from an established Close Crossing",
+      "Fiore Narrow Play permits reciprocal work from the close crossing"
+    ],
+    "atra_candidate_inferences": [
+      "E1 occurs after D1/Cross success and before H3 Rejoinder use",
+      "T1 clears bind_height to unknown",
+      "Hart assigns striker-first and Weich defender-first Close opportunity",
+      "Pommel price, roll, damage placeholder, and hit/miss aftermath"
+    ],
+    "unsupported_and_not_adopted": [
+      "T1 is an intrinsic Pommel combo",
+      "T1 owner always acts first",
+      "Pommel universally forbids Cross, Beat, Counter, or Ignore",
+      "Pommel is universally undefendable"
+    ]
+  },
+  "timing_candidates": {
+    "C0": {
+      "status": "BROKEN REFERENCE ONLY",
+      "rule": "T1 raw-legal while H3 Rejoinder remains open; ordering undefined"
+    },
+    "E1": {
+      "status": "PRIMARY CANDIDATE",
+      "window": "after qualifying successful Tutta Basic Cross and D1 timing; before any ordinary H3 Rejoinder use",
+      "declaration": {"spiritus": 1, "action": 0, "rolls": 0, "learned_chain_entries": 1},
+      "effects": [
+        "RETAIN contact=crossing",
+        "SET measure=close",
+        "SET bind_height=unknown",
+        "SET Bind Initiative from initial pressure: Hart=striker; Weich=parrier",
+        "CLEAR initial_pressure",
+        "close the unused Wide-gated Rejoinder"
+      ],
+      "not_effects": ["CANCEL Duplieren", "CANCEL Mutieren", "damage", "point threat", "generic modifier"]
+    },
+    "L1": {
+      "status": "CONTROL CANDIDATE",
+      "window": "after governing H3 Rejoinder and only when the Tutta defender receives a legal ordinary bind opportunity",
+      "declaration": {"spiritus": 1, "action": 0, "rolls": 0, "learned_chain_entries": 1},
+      "effects": ["RETAIN contact=crossing", "SET measure=close", "SET bind_height=unknown"]
+    }
+  },
+  "close_opportunity": {
+    "state": "existing bind_initiative/current opportunity",
+    "new_statistic": false,
+    "first_pass": "transfer one opportunity",
+    "second_consecutive_pass": "normal Crossing cleanup",
+    "continuation": "reset consecutive pass count",
+    "disengage": "current governing behavior"
+  },
+  "pommel_v0_2": {
+    "status": "CANDIDATE GENERIC CLOSE CONSUMER",
+    "requires": [
+      "knows Pommel Strike",
+      "contact=crossing",
+      "measure=close",
+      "current bind opportunity",
+      "chain room",
+      "tested Spiritus price"
+    ],
+    "does_not_require": ["Tutta", "T1", "Hart", "Weich", "bind height", "named guard", "action ready"],
+    "cost_variants": {
+      "P1": {"spiritus": 1, "learned_chain_entries": 1, "additional_action": 0},
+      "P2": {"spiritus": 2, "learned_chain_entries": 1, "additional_action": 0, "primary": true}
+    },
+    "attack": {
+      "operator": "ATTACK",
+      "skill": "Longsword",
+      "accuracy": "flat normal",
+      "damage": "normal d6+1 test baseline placeholder",
+      "attack_boon": false,
+      "damage_boon": false
+    },
+    "response": {
+      "intrinsic_restrictions": [],
+      "note": "Practical immediacy in the tested sequence follows from both normal Actions already being spent, not from Pommel-specific denial."
+    },
+    "hit": ["normal test damage", "end bounded Close sequence", "normal contact cleanup"],
+    "miss": [
+      "zero damage",
+      "RETAIN contact=crossing",
+      "RETAIN measure=close",
+      "SET bind_height=unknown",
+      "SET current opportunity=opponent",
+      "no Open, counterattack, or forced separation"
+    ]
+  },
+  "global_protections": {
+    "learned_chain_cap": 3,
+    "T1_plus_two_Pommels_fills_cap": true,
+    "fourth_learned_continuation_legal": false,
+    "normal_action_refresh": false,
+    "scambiar_or_rompere_absorbed_by_T1": false,
+    "ordinary_H3_outside_overlay": "UNCHANGED"
+  },
+  "artifacts": {
+    "report": "reports/t1-stretto-pommel-integration-v01-results.md",
+    "results": "reports/t1-stretto-pommel-integration-v01-results.json",
+    "tests": "tests/test_t1_stretto_pommel_v01.py"
+  }
+}
+
