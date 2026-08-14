@@ -215,6 +215,13 @@ def validate_engine_alignment() -> None:
     assert current.d1_window(b, ordinary)
     b.point_threat = "threatening"
     assert not current.d1_window(b, ordinary)
+    assert hasattr(current, "establish_schielhau_s2")
+    assert hasattr(current, "resolve_s2_durchwechseln")
+    established = ENGINE.RollResult(True, 5, (5,))
+    fresh_tie = ENGINE.RollResult(True, 5, (5,))
+    fresh_lower = ENGINE.RollResult(True, 4, (4,))
+    assert current.compare_s2_rolls(established, fresh_tie) == "schielhau"
+    assert current.compare_s2_rolls(established, fresh_lower) == "durchwechseln"
 
 
 validate_engine_alignment()
@@ -223,6 +230,7 @@ Fighter = ENGINE.Fighter
 Attack = ENGINE.Attack
 Crossing = ENGINE.Crossing
 Resolution = ENGINE.Resolution
+S2SchielhauWindow = ENGINE.S2SchielhauWindow
 CurrentEngine = ENGINE.ProvisionalLongswordEngine
 HART = ENGINE.HART
 WEICH = ENGINE.WEICH

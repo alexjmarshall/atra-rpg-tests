@@ -1,0 +1,103 @@
+{
+  "result": "PASS — STOP FOR PROJECT REVIEW",
+  "packet_before": {
+    "version": "0.4",
+    "markdown": "docs/melee-design-packet-v0.4.md",
+    "docx": "Atra_Melee_Design_Packet_v0.4.docx",
+    "source_record": "data/sources/atra-melee-design-packet-v0-4.yaml",
+    "preserved_sha256": "ADD1295F0FFC118F720899D715888BFE4FCD4FAFBB77A9143C63AD787E31F56A"
+  },
+  "packet_after": {
+    "version": "0.5",
+    "status": "CURRENT GOVERNING-PROVISIONAL VERTICAL SLICE",
+    "markdown": "docs/melee-design-packet-v0.5.md",
+    "docx": "Atra_Melee_Design_Packet_v0.5.docx",
+    "source_record": "data/sources/atra-melee-design-packet-v0-5.yaml",
+    "docx_sha256": "2C44BE1FC2178CFBA5FDBFF869996EF85EFDDDB70BB3319D971ABBB3E0984027"
+  },
+  "packet_published": true,
+  "mechanics_changed": false,
+  "runtime_files_changed": [],
+  "governing_data_files_changed": [],
+  "documentation_files_changed": [
+    "README.md",
+    "docs/melee-design-packet-v0.5.md",
+    "Atra_Melee_Design_Packet_v0.5.docx",
+    "data/sources/atra-melee-design-packet-v0-5.yaml",
+    "data/audits/longsword-vertical-slice-mechanical-mapping-v0.1.yaml",
+    "data/prototypes/longsword-crossing-bind-state-model-v0.1.yaml",
+    "data/rules/melee-mechanical-effect-vocabulary-v0.1.yaml",
+    "tests/test_melee_play_grammar_v01.py",
+    "reports/melee-vertical-slice-stabilization-packet-sync-resume-v02-results.md",
+    "reports/melee-vertical-slice-stabilization-packet-sync-resume-v02-results.json"
+  ],
+  "inherited_resume_baseline_files_preserved": [
+    "simulations/shared/provisional_longsword.py",
+    "simulations/shared/provisional_longsword_engine.py",
+    "tests/test_s2_schielhau_durchwechseln_governing_v01.py",
+    "reports/s2-authoritative-runtime-parity-v01-results.md",
+    "reports/s2-authoritative-runtime-parity-v01-results.json"
+  ],
+  "S2_blocker_closed": true,
+  "t1_close_blocker_closed": true,
+  "pre_validation": {
+    "full_unittest": {"passed": true, "tests": 165},
+    "h3": {"passed": true, "tests": 3, "assertions": 129},
+    "t1_close_pommel": {"passed": true, "tests": 4, "assertions": 140},
+    "s2": {"passed": true, "tests": 4, "assertions": 86},
+    "adjacent": {"passed": true, "tests": 36},
+    "repository_validator": {"passed": true, "records": 114, "errors": 0, "warnings": 39},
+    "grammar_validator": {"passed": true, "errors": 0, "informative_findings": 14}
+  },
+  "post_validation": {
+    "full_unittest": {"passed": true, "tests": 165},
+    "h3": {"passed": true, "tests": 3, "assertions": 129},
+    "t1_close_pommel": {"passed": true, "tests": 4, "assertions": 140},
+    "s2": {"passed": true, "tests": 4, "assertions": 86},
+    "adjacent": {"passed": true, "tests": 36},
+    "repository_validator": {"passed": true, "records": 114, "errors": 0, "warnings": 39},
+    "grammar_validator": {"passed": true, "errors": 0, "informative_findings": 9},
+    "markdown_docx_parity": {"passed": true, "normalized_characters_each": 25075},
+    "docx_structural_audit": {"passed": true, "accessibility_findings": 0},
+    "docx_visual_pagination": {"passed": null, "skipped": true, "reason": "Bundled renderer lacks LibreOffice; hidden Word rendering was not authorized."}
+  },
+  "contradictions_found": [],
+  "documentation_debts_fixed": [
+    {"id": "nachreisen-current-facing", "classification": "DOCUMENTATION / PARITY REPAIR"},
+    {"id": "committed-counter-power-centric", "classification": "DOCUMENTATION / PARITY REPAIR"}
+  ],
+  "documentation_debts_remaining": [
+    {"id": "basic-ignore-valuation", "classification": "EXPECTED PROVISIONAL DEBT", "grammar_findings": 1},
+    {"id": "s2-scoped-exception", "classification": "LOCAL EXCEPTION", "grammar_findings": 1},
+    {"id": "schielhau-proactive-pflug", "classification": "OPEN DESIGN QUESTION", "grammar_findings": 1},
+    {"id": "frontale-longer-sequence", "classification": "DEFERRED CONTENT", "grammar_findings": 4},
+    {"id": "crown-scheitel", "classification": "HISTORICAL ARTIFACT / DEFERRED CONTENT", "grammar_findings": 2}
+  ],
+  "governing_status_matrix": {
+    "basics": "GOVERNING PROVISIONAL",
+    "d1": "GOVERNING PROVISIONAL",
+    "c2": "GOVERNING PROVISIONAL",
+    "s2": "GOVERNING PROVISIONAL / LOCAL EXCEPTION",
+    "ordinary_h3_l2": "GOVERNING PROVISIONAL",
+    "ordinary_r0": "SUPERSEDED",
+    "zornhau_relation": "LOCAL EXCEPTION / COMPATIBILITY DEBT",
+    "t1_e1": "GOVERNING PROVISIONAL",
+    "pommel_p2": "GOVERNING PROVISIONAL",
+    "committed_timing": "GOVERNING PROVISIONAL",
+    "nachreisen": "GOVERNING PROVISIONAL",
+    "eight_guard_roster": "GOVERNING PROVISIONAL",
+    "maximum_spiritus_8": "PROVISIONAL TEST BASELINE"
+  },
+  "open_debt_matrix": {
+    "schielhau_pflug_payload": "OPEN",
+    "final_spiritus_economy": "OPEN",
+    "broader_stretto": "DEFERRED",
+    "frontale_sequence": "DEFERRED",
+    "crown_scheitel": "DEFERRED",
+    "zornhau_local_relation": "COMPATIBILITY DEBT",
+    "generic_close_modifiers": "ABSENT / DEFERRED",
+    "generic_leverage_grapple": "ABSENT / DEFERRED"
+  },
+  "vertical_slice_stability": "STABLE FOR CURRENT REPERTOIRE/GUARD EXPANSION",
+  "next_milestone": "ATRA NAMED GUARD v0.2 — after Project review; not started"
+}

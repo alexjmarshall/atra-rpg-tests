@@ -3,7 +3,7 @@
   "status": "PROVISIONAL MECHANICAL GRAMMAR AUDIT; INCOMPLETE AND CANDIDATE RECORDS ARE INTENTIONAL",
   "vocabulary": "data/rules/melee-mechanical-effect-vocabulary-v0.1.yaml",
   "state_registry": "data/rules/melee-mechanical-effect-vocabulary-v0.1.yaml#state_registry",
-  "current_supersession_note": "2026-08-13 H3-L2 governs ordinary Basic Cross; the entries updated below distinguish it from preserved Zornhau-local relation behavior. Other diagnosis-era incomplete/candidate entries remain historical audit findings.",
+  "current_supersession_note": "2026-08-13 H3-L2 governs ordinary Basic Cross; E1/P2 govern the bounded Tutta-to-Close route; S2 governs Schielhau/Durchwechseln; the current Committed and Nachreisen entries below were synchronized during packet v0.5 publication. Other diagnosis-era incomplete/candidate entries remain historical audit findings.",
   "techniques": [
     {
       "id": "basic-cut", "name": "Basic Cut", "status": "Basic",
@@ -72,15 +72,15 @@
     {
       "id": "basic-counter", "name": "Basic Counter", "status": "Basic",
       "historical_source": {"record_ids": ["docs/melee-design-packet-v0.4.md"], "evidence_status": "PROJECT_RULE", "locators": ["Section 3.5"]},
-      "trigger": [{"id": "incoming_successful_attack", "text": "After an incoming Strike succeeds, while the defender has an action."}],
-      "cost_commitment": [{"id": "reaction_action", "text": "Spend the action and accept that the incoming attack is not cancelled."}],
+      "trigger": [{"id": "incoming_attack", "text": "Against an ordinary attack, after its roll succeeds; against any publicly Committed attack, the target may instead declare Counter in the pre-roll declaration window."}],
+      "cost_commitment": [{"id": "reaction_action", "text": "Spend the target's action. An ordinary post-success Counter accepts the incoming hit; a pre-roll Committed Counter resolves first and cancels the pending attack only if it removes the attacker."}],
       "test": [{"id": "normal_weapon_attack_roll", "text": "Normal attack roll with the Counter weapon."}],
-      "primary_payload": [{"op": "ATTACK", "label": "MAKE_ATTACK", "target": "attacker", "parameters": {"timing": "simultaneous with ordinary incoming damage unless Power says Counter-first", "damage_mode": "normal"}}],
-      "state_aftermath": [], "continuation": [], "opponent_counterplay": ["Survive or remove the countering defender", "Power Counter-first may cancel the Power attack only by removing its attacker first"], "event_metadata": [],
-      "nearest_basic_alternative": "Basic Cross or Basic Beat", "distinct_reason": "Trades instead of cancelling and can remove a vulnerable attacker; the preferred response changes with both fighters' HP and Power timing.",
-      "reason_types": ["state-dependent"], "simulator_representation": {"level": "full", "notes": "Ordinary simultaneous Counter and Power Counter-first are represented."},
+      "primary_payload": [{"op": "ATTACK", "label": "MAKE_ATTACK", "target": "attacker", "parameters": {"timing": "simultaneous after an ordinary successful attack, or first in the target-only declaration window of any Committed attack", "damage_mode": "normal"}}],
+      "state_aftermath": [], "continuation": [], "opponent_counterplay": ["Survive or remove the countering defender", "A Committed attacker that survives the pre-roll Counter proceeds with the authored attack"], "event_metadata": [],
+      "nearest_basic_alternative": "Basic Cross or Basic Beat", "distinct_reason": "Trades instead of cancelling after ordinary success, while public Committed timing creates a pre-roll removal gamble for the target; the preferred response changes with both fighters' HP and attack state.",
+      "reason_types": ["state-dependent"], "simulator_representation": {"level": "full", "notes": "Ordinary simultaneous Counter and general target-only pre-roll Committed Counter are represented."},
       "ghost_utility": {"present": false, "notes": "Damage trade is concrete."}, "missing_effect_exposed": {"present": false, "notes": "No missing payload."},
-      "completeness_classification": ["COMPLETE — RESOURCE/STATE-DEPENDENT"], "exceptional_rule": {"present": false, "notes": "Power's Counter-first modifier is recorded on P1, not on ordinary Counter."}
+      "completeness_classification": ["COMPLETE — RESOURCE/STATE-DEPENDENT"], "exceptional_rule": {"present": false, "notes": "Pre-roll timing is the general public Committed procedure, not a Power-only exception."}
     },
     {
       "id": "basic-ignore", "name": "Ignore", "status": "Basic",
@@ -126,14 +126,14 @@
       "id": "power-attack-p1", "name": "P1 Power Attack", "status": "governing provisional",
       "historical_source": {"record_ids": ["data/prototypes/longsword-governing-provisional-v0.1.yaml"], "evidence_status": "PROJECT_RULE", "locators": ["power_attack"], "notes": "P1 is a Basic option, not a learned Play."},
       "trigger": [{"id": "proactive_loaded_cut", "text": "Before the attack roll for a proactive Cut while Loaded."}],
-      "cost_commitment": [{"id": "action", "text": "Spend the action."}, {"id": "spiritus", "text": "Spend 1 Spiritus at declaration."}, {"id": "committed", "text": "Committed: no attacker-side D1 or other insertion; Counter-first applies against Power."}],
+      "cost_commitment": [{"id": "action", "text": "Spend the action."}, {"id": "spiritus", "text": "Spend 1 Spiritus at declaration."}, {"id": "committed", "text": "Publicly Committed: no attacker-side D1 or other insertion; the target receives the general pre-roll Counter/Preparation choice."}],
       "test": [{"id": "normal_weapon_attack_roll", "text": "Normal Longsword attack roll; no attack Bane."}],
-      "primary_payload": [{"op": "ATTACK", "label": "MAKE_ATTACK", "target": "opponent", "parameters": {"attack_kind": "power_cut", "accuracy": "normal", "damage_mode": "fixed_normal_max", "damage": 7, "loaded_boon_stacks": false}}, {"op": "MODIFY_ATTACK", "label": "COMMITTED_AND_COUNTER_FIRST", "target": "pending_attack", "parameters": {"committed": true, "counter_timing": "counter_first"}}],
-      "state_aftermath": [], "continuation": [], "opponent_counterplay": ["Cross or Beat can cancel on success", "Counter resolves first and cancels Power only if it removes the attacker", "Ignore or eligible defender Play"], "event_metadata": [],
-      "nearest_basic_alternative": "Loaded proactive Basic Cut", "distinct_reason": "Buys fixed maximum normal damage/lethal certainty; Loaded Cut preserves Spiritus, flexible attacker continuations, and safer ordinary Counter timing.",
-      "reason_types": ["resource-dependent", "state-dependent"], "simulator_representation": {"level": "full", "notes": "P1 cost, fixed 7, no stacking, Committed, and Counter-first are represented."},
+      "primary_payload": [{"op": "ATTACK", "label": "MAKE_ATTACK", "target": "opponent", "parameters": {"attack_kind": "power_cut", "accuracy": "normal", "damage_mode": "fixed_normal_max", "damage": 7, "loaded_boon_stacks": false}}, {"op": "MODIFY_ATTACK", "label": "SET_COMMITTED", "target": "pending_attack", "parameters": {"committed": true, "declaration_window": "target-only Counter or authored Preparation"}}],
+      "state_aftermath": [], "continuation": [], "opponent_counterplay": ["Use the general Committed declaration window for Counter or authored Preparation", "If waiting and the attack succeeds, use an ordinary simultaneous Counter or another legal response", "Ignore or eligible defender Play"], "event_metadata": [],
+      "nearest_basic_alternative": "Loaded proactive Basic Cut", "distinct_reason": "Buys fixed maximum normal damage/lethal certainty; Loaded Cut preserves Spiritus and flexible attacker continuations, while P1 inherits the same public Committed timing as any other Committed attack.",
+      "reason_types": ["resource-dependent", "state-dependent"], "simulator_representation": {"level": "full", "notes": "P1 cost, fixed 7, no stacking, Committed status, and the general Committed declaration window are represented."},
       "ghost_utility": {"present": false, "notes": "Broad observed frequency can be policy-sensitive, but the rules choice is real."}, "missing_effect_exposed": {"present": false, "notes": "Fixed damage and commitment are ATTACK parameters, not added atomic effects."},
-      "completeness_classification": ["COMPLETE — RESOURCE/STATE-DEPENDENT", "EXCEPTIONAL RESPONSE MODIFIER"], "exceptional_rule": {"present": true, "notes": "Counter-first exceptionally changes resolution order and is explicitly limited to Power."}
+      "completeness_classification": ["COMPLETE — RESOURCE/STATE-DEPENDENT"], "exceptional_rule": {"present": false, "notes": "P1 inherits the general Committed procedure; it does not author a Power-only response restriction."}
     },
     {
       "id": "durchwechseln-d1", "name": "Durchwechseln (D1)", "status": "governing provisional",
@@ -221,18 +221,18 @@
       "completeness_classification": ["COMPLETE — REPERTOIRE-DEPENDENT"], "exceptional_rule": {"present": false, "notes": "Pommel has no intrinsic response restriction or new effect operator."}
     },
     {
-      "id": "nachreisen-current", "name": "Nachreisen (current)", "status": "incomplete",
+      "id": "nachreisen-current", "name": "Nachreisen (current)", "status": "governing provisional",
       "historical_source": {"record_ids": ["play-german-longsword-nachreisen"], "evidence_status": "EXACT_LOCATOR_VERIFIED", "locators": ["Pseudo-Peter von Danzig, Cod.44.A.8, ff. 27v.2-28r.1; related continuations ff. 28r.2-28v.2"]},
-      "trigger": [{"id": "opponent_recovering", "text": "Target is Recovering from a missed committed descending cut; the audited play also begins from Vom Tag, but the active engine does not enforce that gate."}],
-      "cost_commitment": [{"id": "action", "text": "Spend the action."}, {"id": "learned_chain_entry", "text": "Consume one learned-Play entry; 0 Spiritus in the current chassis."}],
-      "test": [{"id": "normal_weapon_attack_roll", "text": "Normal Longsword attack roll."}],
-      "primary_payload": [{"op": "ATTACK", "label": "MAKE_ATTACK", "target": "recovering opponent", "parameters": {"attack_kind": "current fixed learned cut", "accuracy": "normal", "damage_mode": "normal"}}],
-      "state_aftermath": [{"op": "SET", "label": "CLEAR_RECOVERY", "target": "opponent", "state": "recovery", "value": "ready"}],
-      "continuation": ["No accuracy, damage, tempo, response, or continuation benefit is implemented."], "opponent_counterplay": ["Ordinary response menu"], "event_metadata": [{"event": "historical_timing_label", "note": "Pursuit before recovery is historically meaningful timing, but timing alone is not a gameplay payload."}],
-      "nearest_basic_alternative": "Ordinary proactive Basic Cut or other legal normal attack", "distinct_reason": "None currently: it pays learned-chain cost for a normal attack, and legal ordinary alternatives can be equal or stronger.",
-      "reason_types": ["none"], "simulator_representation": {"level": "partial", "notes": "Recovery trigger and normal attack exist; Vom Tag gate and any distinct recovery-window consequence do not."},
-      "ghost_utility": {"present": true, "notes": "Fixed 0.52 policy value always favors Nachreisen over an ordinary option scored 0 despite no rules advantage."}, "missing_effect_exposed": {"present": true, "notes": "Historical trigger is present; distinct payload and enforced guard gate are absent."},
-      "completeness_classification": ["REDUNDANT WITH BASIC", "INCOMPLETE PAYLOAD", "GHOST VALUE"], "exceptional_rule": {"present": false, "notes": "Current response menu is ordinary."}
+      "trigger": [{"id": "target_only_preparation", "text": "In the target-only declaration window of a publicly Committed attack, before its roll."}, {"id": "target_only_recovery", "text": "Immediately after that Committed attack misses, for its original target only."}],
+      "cost_commitment": [{"id": "action", "text": "Spend the target's action."}, {"id": "spiritus", "text": "Spend 1 Spiritus at declaration."}, {"id": "learned_chain_entry", "text": "Consume one learned-Play entry."}],
+      "test": [{"id": "booned_weapon_attack_roll", "text": "Longsword attack roll with exactly one attack Boon; normal damage on success."}],
+      "primary_payload": [{"op": "ATTACK", "label": "MAKE_ATTACK", "target": "committed attacker", "parameters": {"attack_kind": "Nachreisen pursuit", "accuracy": "boon", "damage_mode": "normal", "timing": "Preparation before roll or immediate Recovery after miss"}}],
+      "state_aftermath": [],
+      "continuation": ["Preparation resolves first; if it removes the attacker, the pending Committed attack is cancelled. Otherwise the attack proceeds. Recovery is immediate and expires if not used."], "opponent_counterplay": ["Survive Preparation and resolve the Committed attack", "Avoid offering the target-specific Recovery miss window", "Pressure the target's action, Spiritus, or chain capacity"], "event_metadata": [{"event": "historical_timing_label", "note": "The source-supported pursuit lesson motivates the two target-only timing windows; the one-Boon payload and costs are Atra abstractions."}],
+      "nearest_basic_alternative": "General pre-roll Committed Counter in Preparation, or no special attack after a miss", "distinct_reason": "Pays 1 Spiritus and one chain entry to gain a Booned normal-damage pursuit in either of two target-only Committed windows; the ordinary Counter is flat and has no Recovery branch.",
+      "reason_types": ["intrinsic", "resource-dependent", "state-dependent"], "simulator_representation": {"level": "full", "notes": "Authoritative engine implements target-only Preparation and immediate Recovery, 1 Spiritus, one chain entry, action cost, Booned roll, normal damage, removal cancellation, and expiry."},
+      "ghost_utility": {"present": false, "notes": "The Booned roll and second authored timing window are concrete rules value."}, "missing_effect_exposed": {"present": false, "notes": "Current governing payload is complete. Vom Tag is source context, not a governing hard gate."},
+      "completeness_classification": ["COMPLETE — RESOURCE/STATE-DEPENDENT"], "exceptional_rule": {"present": false, "notes": "Preparation and Recovery are authored target-only windows; they do not deny the ordinary response tree of any resolved attack."}
     },
     {
       "id": "zornhau-ort-current", "name": "Zornhau-Ort (current)", "status": "governing provisional local compatibility",

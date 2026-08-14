@@ -1,6 +1,6 @@
 # Atra melee research repository
 
-This repository treats `Atra_Melee_Design_Packet_v0.4.docx` and its Markdown transcription as the governing design record. It preserves all 114 current Play candidates as research records, not finished mechanics.
+This repository treats `Atra_Melee_Design_Packet_v0.5.docx` and `docs/melee-design-packet-v0.5.md` as the current governing-provisional vertical-slice record. Version 0.4 remains preserved as its historical predecessor. The repository preserves all 114 current Play candidates as research records, not finished mechanics.
 
 Key rules for contributors:
 
@@ -12,7 +12,9 @@ Key rules for contributors:
 
 The `.yaml` files use JSON-compatible YAML 1.2 syntax. This keeps validation dependency-free while remaining valid YAML.
 
-Rebuild source-derived files:
+Legacy repository bootstrap and validation:
+
+`build_research_repository.py` transcribes the preserved v0.4 source and is not the v0.5 packet generator. Do not use it to overwrite the current v0.5 snapshot.
 
 ```powershell
 python scripts/build_research_repository.py

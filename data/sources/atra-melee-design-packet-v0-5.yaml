@@ -1,0 +1,9 @@
+{
+  "id": "atra-melee-design-packet-v0-5",
+  "name": "Atra Melee Design Packet v0.5",
+  "kind": "governing-design-document",
+  "citation": "Atra RPG, Atra Melee Design Packet, Version 0.5, updated 2026-08-13.",
+  "date": "2026-08-13",
+  "exact_location": null,
+  "notes": "Current governing-provisional vertical-slice synthesis. Not final or canonical-complete. Version 0.4 is preserved and superseded only where v0.5 explicitly records a later Project decision."
+}

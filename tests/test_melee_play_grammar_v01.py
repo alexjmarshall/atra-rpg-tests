@@ -24,7 +24,10 @@ class MeleePlayGrammarV01Tests(unittest.TestCase):
         errors, findings = self.validator.validate()
         self.assertEqual(errors, [])
         codes = {(item.technique, item.code) for item in findings}
-        self.assertIn(("nachreisen-current", "TRIGGER_NOT_PAYOFF"), codes)
+        self.assertNotIn(("nachreisen-current", "TRIGGER_NOT_PAYOFF"), codes)
+        self.assertNotIn(("nachreisen-current", "GHOST_UTILITY"), codes)
+        self.assertNotIn(("nachreisen-current", "MISSING_EFFECT_EXPOSED"), codes)
+        self.assertNotIn(("power-attack-p1", "EXCEPTIONAL_NON_RESTRICTION"), codes)
         self.assertNotIn(("zornhau-ort-current", "GHOST_UTILITY"), codes)
         self.assertNotIn(("zornhau-ort-current", "MISSING_EFFECT_EXPOSED"), codes)
         self.assertNotIn(("winden-current-material", "MISSING_PRIMARY_PAYLOAD"), codes)
@@ -33,6 +36,7 @@ class MeleePlayGrammarV01Tests(unittest.TestCase):
         self.assertNotIn(("pommel-strike", "GHOST_UTILITY"), codes)
         self.assertNotIn(("pommel-strike", "EXCEPTIONAL_RESPONSE_MODIFIER"), codes)
         self.assertIn(("frontale-current-sequence", "MISSING_PRIMARY_PAYLOAD"), codes)
+        self.assertEqual(len(findings), 9)
 
     def test_vocabulary_closure_and_forbidden_control(self) -> None:
         vocabulary = json.loads((ROOT / "data" / "rules" / "melee-mechanical-effect-vocabulary-v0.1.yaml").read_text(encoding="utf-8"))

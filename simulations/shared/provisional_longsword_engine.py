@@ -33,6 +33,8 @@ T1_PLAY = "Tutta Cover-to-Stretto"
 POMMEL_PLAY = "Pommel Strike"
 TUTTA_GUARD = "tutta-porta-di-ferro"
 POMMEL_COST = 2
+SCHIELHAU_COST = 2
+DURCHWECHSELN_COST = 1
 FUHLEN_NAMES = {"Fühlen", "FÃ¼hlen"}
 
 
@@ -128,6 +130,16 @@ class PommelAttack:
 
 
 @dataclass
+class S2SchielhauWindow:
+    schielhau_actor: Fighter
+    durchwechseln_actor: Fighter
+    attack: Attack
+    established_roll: RollResult
+    schielhau_damage_rolls: tuple[int, ...]
+    phase: str = "d1-window"
+
+
+@dataclass
 class Crossing:
     contact: str = "none"
     measure: str = "wide"
@@ -181,6 +193,7 @@ class ProvisionalLongswordEngine:
         self.pending_bind_attack: BindAttack | None = None
         self.pending_winding: WindingAttack | None = None
         self.pending_pommel: PommelAttack | None = None
+        self.s2_schielhau_window: S2SchielhauWindow | None = None
         self.t1_window_actor: str | None = None
         self.t1_original_striker: str | None = None
         self.consecutive_bind_passes = 0
@@ -272,20 +285,65 @@ class ProvisionalLongswordEngine:
             and (attack is None or attack.allows_attacker_continuations)
         )
 
-    def declare_durchwechseln(self, attacker: Fighter, defender: Fighter, attack: Attack) -> bool:
-        if not self.d1_window(defender, attack):
+    @staticmethod
+    def compare_s2_rolls(
+        schielhau: RollResult,
+        durchwechseln: RollResult,
+    ) -> str:
+        """Return the selected S2 result without applying unrelated combat rules."""
+        if schielhau.success and durchwechseln.success:
+            return "schielhau" if schielhau.value <= durchwechseln.value else "durchwechseln"
+        if schielhau.success:
+            return "schielhau"
+        if durchwechseln.success:
+            return "durchwechseln"
+        return "original-strike"
+
+    def _clear_s2_window(self, reason: str) -> None:
+        if self.s2_schielhau_window is not None:
+            self.event_log.append(f"S2:cleanup:{reason}")
+        self.s2_schielhau_window = None
+
+    def _s2_window_live(self) -> bool:
+        window = self.s2_schielhau_window
+        if window is None:
             return False
-        if "Durchwechseln" not in attacker.known_plays:
+        if not window.schielhau_actor.alive or not window.durchwechseln_actor.alive:
+            window.attack.cancelled = True
+            window.attack.phase = "cancelled"
+            self._clear_s2_window("actor-removed")
             return False
-        if not self.spend_spiritus(attacker, 1):
+        if (
+            self.pending_attack is not window.attack
+            or window.attack.cancelled
+            or window.attack.phase != "rolled"
+            or not window.attack.hit
+        ):
+            self._clear_s2_window("invalidated")
             return False
-        if not self.add_learned_play("Durchwechseln"):
-            attacker.spiritus += 1
+        return True
+
+    def s2_window_open_for(self, actor: Fighter) -> bool:
+        if not self._s2_window_live():
             return False
-        self.crossing = Crossing(measure=self.crossing.measure)
-        self.basic_cross_declaration = None
-        self._close_rejoinder()
-        self._set_point_threat(attacker, "threatening", "D1")
+        window = self.s2_schielhau_window
+        assert window is not None
+        return window.phase == "d1-window" and window.durchwechseln_actor is actor
+
+    def _pay_durchwechseln(self, attacker: Fighter) -> bool:
+        if (
+            not attacker.alive
+            or "Durchwechseln" not in attacker.known_plays
+            or attacker.spiritus < DURCHWECHSELN_COST
+            or len(self.learned_chain) >= LEARNED_PLAY_CAP
+        ):
+            return False
+        self.spend_spiritus(attacker, DURCHWECHSELN_COST)
+        self.add_learned_play("Durchwechseln")
+        return True
+
+    @staticmethod
+    def _replace_pending_with_durchwechseln(attack: Attack) -> None:
         attack.kind = "durchwechseln-thrust"
         attack.committed = False
         attack.descending = False
@@ -298,8 +356,206 @@ class ProvisionalLongswordEngine:
         attack.hit = None
         attack.damage = 0
         attack.cancelled = False
+
+    def _clear_s2_response_state(self) -> None:
+        self.crossing = Crossing(measure=self.crossing.measure)
+        self.basic_cross_declaration = None
+        self._close_t1_window()
+        self._close_rejoinder()
+        self.pending_bind_attack = None
+        self.pending_winding = None
+        self.pending_pommel = None
+        self.consecutive_bind_passes = 0
+
+    def establish_schielhau_s2(
+        self,
+        defender: Fighter,
+        defence_rolls: tuple[int, ...],
+        damage_rolls: tuple[int, ...] = (3,),
+    ) -> Resolution:
+        """Establish the selected successful-Schielhau/fresh-D1 window."""
+        attack = self.pending_attack
+        normalized = attack.kind.lower().replace("_", "-") if attack else ""
+        if (
+            attack is None
+            or self.s2_schielhau_window is not None
+            or not attack.actor.alive
+            or not defender.alive
+            or defender is not attack.target
+            or attack.phase != "rolled"
+            or not attack.hit
+            or attack.cancelled
+            or not attack.descending
+            or "cut" not in normalized
+            or self.crossing.contact != "none"
+            or not self.d1_window(defender, attack)
+            or "Durchwechseln" not in attack.actor.known_plays
+            or "Schielhau" not in defender.known_plays
+            or not defender.action_available
+            or defender.spiritus < SCHIELHAU_COST
+            or len(self.learned_chain) >= LEARNED_PLAY_CAP
+        ):
+            return Resolution(False, reason="S2 Schielhau prerequisites fail")
+
+        self.spend_action(defender)
+        self.spend_spiritus(defender, SCHIELHAU_COST)
+        self.add_learned_play("Schielhau")
+        self.event_log.append("S2:Schielhau-declared:2S+chain+action")
+        established = self.test(defender.skill, defence_rolls)
+        if not established.success:
+            self.event_log.append(
+                f"S2:Schielhau-failed:roll={established.value}:"
+                "no-window:original-strike-unresolved"
+            )
+            return Resolution(
+                True,
+                False,
+                "Schielhau failed; original Strike remains unresolved",
+                events=list(self.event_log),
+                roll=established,
+            )
+
+        self.s2_schielhau_window = S2SchielhauWindow(
+            defender,
+            attack.actor,
+            attack,
+            established,
+            tuple(damage_rolls),
+        )
+        self.event_log.append(f"S2:Schielhau-established:retain-roll={established.value}")
+        self.event_log.append("S2:D1-window-open:pre-contact:delayed-consequences")
+        return Resolution(
+            True,
+            True,
+            "Schielhau established; S2 D1 window open",
+            events=list(self.event_log),
+            roll=established,
+        )
+
+    def _resolve_s2_schielhau(
+        self,
+        window: S2SchielhauWindow,
+        source: str,
+    ) -> Resolution:
+        attack = window.attack
+        attack.cancelled = True
+        attack.phase = "cancelled"
+        amount = self.damage(window.schielhau_damage_rolls)
+        attack.actor.hp -= amount
+        self._clear_s2_response_state()
+        self._set_point_threat(window.schielhau_actor, "threatening", "Schielhau-S2")
+        self.event_log.append(f"S2:outcome:Schielhau-wins:{source}:normal-damage={amount}")
+        established = window.established_roll
+        self._clear_s2_window("resolved-Schielhau")
+        return Resolution(
+            True,
+            True,
+            "S2 Schielhau wins",
+            amount,
+            list(self.event_log),
+            established,
+        )
+
+    def decline_s2_durchwechseln(self, actor: Fighter) -> Resolution:
+        if not self.s2_window_open_for(actor):
+            return Resolution(False, reason="no live S2 D1 decision for actor")
+        window = self.s2_schielhau_window
+        assert window is not None
+        self.event_log.append("S2:D1-declined")
+        return self._resolve_s2_schielhau(window, "D1-declined")
+
+    def declare_durchwechseln(self, attacker: Fighter, defender: Fighter, attack: Attack) -> bool:
+        if self.s2_schielhau_window is not None:
+            if not self._s2_window_live():
+                return False
+            window = self.s2_schielhau_window
+            assert window is not None
+            if (
+                window.phase != "d1-window"
+                or window.attack is not attack
+                or window.durchwechseln_actor is not attacker
+                or window.schielhau_actor is not defender
+                or not self.d1_window(defender, attack)
+                or not self._pay_durchwechseln(attacker)
+            ):
+                return False
+            window.phase = "d1-declared"
+            self.event_log.append("S2:D1-declared:1S+chain:no-action:fresh-roll-pending")
+            return True
+        if not self.d1_window(defender, attack):
+            return False
+        if not self._pay_durchwechseln(attacker):
+            return False
+        self.crossing = Crossing(measure=self.crossing.measure)
+        self.basic_cross_declaration = None
+        self._close_rejoinder()
+        self._set_point_threat(attacker, "threatening", "D1")
+        self._replace_pending_with_durchwechseln(attack)
         self.event_log.append("D1:replace-pending-attack")
         return True
+
+    def resolve_s2_durchwechseln(
+        self,
+        actor: Fighter,
+        attack_rolls: tuple[int, ...],
+        damage_rolls: tuple[int, ...] = (3,),
+    ) -> Resolution:
+        if not self._s2_window_live():
+            return Resolution(False, reason="no live S2 interaction")
+        window = self.s2_schielhau_window
+        assert window is not None
+        if window.phase != "d1-declared" or window.durchwechseln_actor is not actor:
+            return Resolution(False, reason="fresh S2 D1 roll is not pending for actor")
+
+        fresh = self.test(actor.skill, attack_rolls)
+        self.event_log.append(
+            f"S2:D1-fresh-roll:value={fresh.value}:success={str(fresh.success).lower()}"
+        )
+        winner = self.compare_s2_rolls(window.established_roll, fresh)
+        self.event_log.append(
+            f"S2:comparison:established={window.established_roll.value}:"
+            f"fresh={fresh.value}:winner={winner}"
+        )
+        if winner == "schielhau":
+            return self._resolve_s2_schielhau(window, "S2-comparison")
+
+        attack = window.attack
+        if winner == "durchwechseln":
+            self._clear_s2_response_state()
+            self._replace_pending_with_durchwechseln(attack)
+            attack.attack_roll = fresh
+            attack.hit = True
+            attack.damage = self.damage(damage_rolls)
+            attack.phase = "resolved"
+            attack.target.hp -= attack.damage
+            self._set_point_threat(actor, "threatening", "D1-S2")
+            self.event_log.append(
+                f"S2:outcome:D1-wins:replace+resolve:normal-damage={attack.damage}"
+            )
+            self._clear_s2_window("resolved-D1")
+            return Resolution(
+                True,
+                True,
+                "S2 Durchwechseln wins",
+                attack.damage,
+                list(self.event_log),
+                fresh,
+            )
+
+        # This selected history cell is unreachable through the live gate,
+        # which opens only after a successful established Schielhau.
+        attack.target.hp -= attack.damage
+        attack.phase = "resolved"
+        self.event_log.append("S2:outcome:both-fail:original-strike-resolves")
+        self._clear_s2_window("resolved-original-strike")
+        return Resolution(
+            True,
+            False,
+            "S2 both fail; original Strike resolves",
+            attack.damage,
+            list(self.event_log),
+            fresh,
+        )
 
     def declare_attack(
         self,
@@ -314,6 +570,14 @@ class ProvisionalLongswordEngine:
         damage_mode: str = "normal",
         allows_attacker_continuations: bool = True,
     ) -> Attack | None:
+        if self.s2_schielhau_window is not None:
+            if self._s2_window_live():
+                window = self.s2_schielhau_window
+                assert window is not None
+                if window.phase == "d1-window":
+                    self._resolve_s2_schielhau(window, "window-expired-before-new-attack")
+                else:
+                    self._clear_s2_window("incomplete-D1-before-new-attack")
         if not target.alive or not self.spend_action(actor):
             return None
         if damage_mode == "normal" and kind in {"cut", "basic-cut"} and actor.loaded and not power:
@@ -382,6 +646,8 @@ class ProvisionalLongswordEngine:
 
     def resolve_pending_attack(self) -> Resolution:
         """Apply one already-rolled, unanswered attack exactly once."""
+        if self._s2_window_live():
+            return Resolution(False, reason="S2 D1 decision must close before attack resolution")
         attack = self.pending_attack
         if (
             attack is None
@@ -1412,6 +1678,14 @@ class ProvisionalLongswordEngine:
 
     def finish_exchange(self) -> None:
         """Apply the governing exchange boundary without refreshing a round action."""
+        if self.s2_schielhau_window is not None:
+            if self._s2_window_live():
+                window = self.s2_schielhau_window
+                assert window is not None
+                if window.phase == "d1-window":
+                    self._resolve_s2_schielhau(window, "window-expired-at-exchange-end")
+                else:
+                    self._clear_s2_window("incomplete-D1-at-exchange-end")
         self.cleanup_crossing()
         if self.crossing.contact == "crossing":
             self._clear_initial_pressure()
@@ -1425,6 +1699,7 @@ class ProvisionalLongswordEngine:
         self.pending_bind_attack = None
         self.pending_winding = None
         self.pending_pommel = None
+        self.s2_schielhau_window = None
         self._close_t1_window()
         self.expire_recovery_window()
 

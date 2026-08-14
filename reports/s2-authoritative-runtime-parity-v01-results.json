@@ -1,0 +1,185 @@
+{
+  "milestone": "ATRA S2 AUTHORITATIVE RUNTIME PARITY v0.1",
+  "date": "2026-08-13",
+  "status": "PASS",
+  "repository_start": {
+    "branch": "main",
+    "head": "c151b12cfee0276f1a303c9b17cdd6495448e3ba",
+    "worktree": "clean",
+    "tracking": "main...origin/main"
+  },
+  "authority": {
+    "selected_variant": "S2",
+    "governing_selection": "data/prototypes/longsword-governing-provisional-v0.1.yaml",
+    "selected_state_model": "data/prototypes/longsword-durchwechseln-schielhau-state-model-v0.3.yaml",
+    "mechanical_mapping": "data/audits/longsword-vertical-slice-mechanical-mapping-v0.1.yaml",
+    "governing_register": "reports/governing-open-provisional.md",
+    "later_explicit_supersession_found": false
+  },
+  "contract": {
+    "window": "successful retained Schielhau Remedy against the live successful descending Cut, before contact",
+    "schielhau_roll": "reuse exactly once",
+    "durchwechseln_roll": "one fresh normal Longsword d20",
+    "comparison": "lower successful roll wins; ties favor Schielhau; one success beats failure; both failures select original Strike",
+    "schielhau_cost": {
+      "action": 1,
+      "spiritus": 2,
+      "learned_chain_entries": 1
+    },
+    "durchwechseln_cost": {
+      "additional_action": 0,
+      "spiritus": 1,
+      "learned_chain_entries": 1
+    },
+    "refunds": false,
+    "contact_after_resolution": "none",
+    "measure_change": false,
+    "both_fail_live_reachable": false
+  },
+  "implementation": {
+    "window_state": "S2SchielhauWindow",
+    "operations": [
+      "establish_schielhau_s2",
+      "s2_window_open_for",
+      "declare_durchwechseln S2 branch",
+      "resolve_s2_durchwechseln",
+      "decline_s2_durchwechseln",
+      "compare_s2_rolls",
+      "terminal cleanup and expiry"
+    ],
+    "generic_c2_separate": true,
+    "ordinary_d1_preserved": true
+  },
+  "runtime_bugs": {
+    "root_defects": 1,
+    "concrete_bugs_fixed": 6,
+    "items": [
+      "missing authored S2 declaration window",
+      "missing retained successful Schielhau roll",
+      "incorrect D1-before-generic-C2 roll ordering",
+      "missing selected comparison and tie behavior",
+      "missing distinct S2 results and events",
+      "missing S2 expiry and stale-state cleanup"
+    ]
+  },
+  "design_contradictions_found": [],
+  "files_changed": [
+    "simulations/shared/provisional_longsword_engine.py",
+    "simulations/shared/provisional_longsword.py",
+    "tests/test_s2_schielhau_durchwechseln_governing_v01.py",
+    "reports/s2-authoritative-runtime-parity-v01-results.md",
+    "reports/s2-authoritative-runtime-parity-v01-results.json"
+  ],
+  "governing_data_files_changed": [],
+  "historical_play_records_changed": [],
+  "main_melee_packet_changed": false,
+  "named_guard_v02_started": false,
+  "pre_repair_validation": {
+    "full_unittest_discovery": {
+      "status": "PASS",
+      "tests": 161
+    },
+    "h3_governing_suite": {
+      "status": "PASS",
+      "test_methods": 3,
+      "numbered_assertions": "129/129"
+    },
+    "t1_close_pommel_suite": {
+      "status": "PASS",
+      "test_methods": 4,
+      "numbered_assertions": "140/140"
+    },
+    "repository_validator": {
+      "status": "PASS",
+      "play_records": 114,
+      "errors": 0,
+      "warnings": 39
+    },
+    "grammar_validator": {
+      "status": "PASS",
+      "errors": 0,
+      "findings": 14
+    },
+    "adjacent_suites": {
+      "status": "PASS",
+      "tests": 36
+    }
+  },
+  "post_repair_validation": {
+    "full_unittest_discovery": {
+      "status": "PASS",
+      "tests": 165
+    },
+    "h3_governing_suite": {
+      "status": "PASS",
+      "test_methods": 3,
+      "numbered_assertions": "129/129"
+    },
+    "t1_close_pommel_suite": {
+      "status": "PASS",
+      "test_methods": 4,
+      "numbered_assertions": "140/140"
+    },
+    "repository_validator": {
+      "status": "PASS",
+      "play_records": 114,
+      "errors": 0,
+      "warnings": 39
+    },
+    "grammar_validator": {
+      "status": "PASS",
+      "errors": 0,
+      "findings": 14
+    },
+    "adjacent_suites": {
+      "status": "PASS",
+      "tests": 36
+    },
+    "dedicated_s2_suite": {
+      "status": "PASS",
+      "test_methods": 4,
+      "numbered_assertions": "86/86",
+      "forced_sequences": "A-L plus terminal cancellation and expiry controls"
+    },
+    "integrated_smoke": {
+      "status": "PASS",
+      "routes": "S1-S7"
+    }
+  },
+  "protected_mechanics": {
+    "ordinary_d1": "unchanged",
+    "generic_c2": "unchanged",
+    "absetzen": "unchanged",
+    "scambiar_di_punta": "unchanged",
+    "h3": "unchanged",
+    "hart_weich": "unchanged",
+    "fuhlen": "unchanged",
+    "duplieren_mutieren": "unchanged",
+    "winden": "unchanged",
+    "zornhau": "unchanged",
+    "ort": "unchanged",
+    "t1": "unchanged",
+    "pommel": "unchanged",
+    "beat_open": "unchanged",
+    "committed": "unchanged",
+    "power": "unchanged",
+    "nachreisen": "unchanged",
+    "learned_chain_cap": 3,
+    "maximum_baseline": 8
+  },
+  "simulations": {
+    "monte_carlo_runs": 0,
+    "note": "No tuning or stochastic simulation was needed; deterministic integrated smoke passed."
+  },
+  "remaining_documentation_debt": [
+    "14 pre-existing informative grammar-validator findings remain",
+    "older Nachreisen grammar cost/effect wording remains outside S2 scope",
+    "older Power-centric Committed/Counter grammar wording remains outside S2 scope",
+    "proactive Pflug-breaker payload remains open/unimplemented as previously documented",
+    "Play records remain evidence-disciplined and were not populated from prototype mechanics"
+  ],
+  "packet_sync_readiness": true,
+  "exact_next_milestone": "ATRA MELEE VERTICAL-SLICE STABILIZATION / GOVERNING PACKET SYNC - RESUME v0.2",
+  "named_guard_v02_should_wait": true,
+  "stop_for_project_review": true
+}

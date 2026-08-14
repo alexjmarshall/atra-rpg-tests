@@ -376,7 +376,7 @@
       "owner": "attack object",
       "normal_cleanup": "when the attack/exchange resolves",
       "legal_writers": ["P1 Power declaration", "existing committed descending-cut chassis"],
-      "legal_readers": ["attacker-continuation legality", "Counter-first for Power", "recovery-on-miss", "Zornhau-Ort trigger"],
+      "legal_readers": ["attacker-continuation legality", "target-only pre-roll Counter or authored Preparation", "target-only immediate Recovery after miss", "Zornhau-Ort trigger"],
       "derived": false
     },
     {
