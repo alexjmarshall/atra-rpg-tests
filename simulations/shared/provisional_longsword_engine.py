@@ -31,10 +31,24 @@ PAIRED_PLAY = "Duplieren / Mutieren"
 WINDEN_PLAY = "Winden"
 T1_PLAY = "Tutta Cover-to-Stretto"
 POMMEL_PLAY = "Pommel Strike"
+FRONTALE_FENDENTE_PLAY = "Frontale Retreating Fendente"
 TUTTA_GUARD = "tutta-porta-di-ferro"
+FRONTALE_GUARD = "posta-frontale"
 POMMEL_COST = 2
+FRONTALE_FENDENTE_COST = 2
 SCHIELHAU_COST = 2
 DURCHWECHSELN_COST = 1
+NAMED_GUARDS = (
+    "vom-tag",
+    "ochs",
+    "pflug",
+    "alber",
+    "posta-di-donna",
+    "posta-frontale",
+    "tutta-porta-di-ferro",
+    "mezza-porta-di-ferro",
+)
+THREATENING_GUARDS = frozenset({"ochs", "pflug", "mezza-porta-di-ferro"})
 FUHLEN_NAMES = {"Fühlen", "FÃ¼hlen"}
 
 
@@ -54,10 +68,25 @@ class Fighter:
     spiritus: int = MAX_SPIRITUS
     action_available: bool = True
     guard: str = "vom-tag"
-    point_threat: str = "not_threatening"
+    point_threat: str | None = None
     known_plays: set[str] = field(default_factory=set)
     guard_change_available: bool = True
     activation_action_taken: bool = False
+
+    def __post_init__(self) -> None:
+        if self.guard != OPEN and self.guard not in NAMED_GUARDS:
+            raise ValueError(f"unknown governing named guard: {self.guard}")
+        # With no explicit authored point state, a fighter entering the engine
+        # in a named guard receives the same intrinsic point state that GC1
+        # writes on voluntary entry.  Tests/special authored setups may still
+        # supply an explicit point state because point threat is an independent
+        # combat axis after initialization.
+        if self.point_threat is None:
+            self.point_threat = (
+                "threatening" if self.guard in THREATENING_GUARDS else "not_threatening"
+            )
+        elif self.point_threat not in {"threatening", "not_threatening"}:
+            raise ValueError(f"invalid point-threat state: {self.point_threat}")
 
     @property
     def alive(self) -> bool:
@@ -233,13 +262,13 @@ class ProvisionalLongswordEngine:
     def change_guard(self, actor: Fighter, guard: str, timing: str = "before_action") -> bool:
         if not actor.alive or timing != "before_action" or actor.activation_action_taken:
             return False
-        if not actor.guard_change_available or guard == OPEN:
+        if not actor.guard_change_available or guard not in NAMED_GUARDS:
             return False
         actor.guard = guard
         actor.guard_change_available = False
         self._set_point_threat(
             actor,
-            "threatening" if guard in {"ochs", "pflug", "mezza-porta-di-ferro"} else "not_threatening",
+            "threatening" if guard in THREATENING_GUARDS else "not_threatening",
             "guard-change",
         )
         self.event_log.append(f"{actor.name}:guard->{guard}")
@@ -1616,6 +1645,81 @@ class ProvisionalLongswordEngine:
             f"Pommel:miss:zero-damage:RETAIN close:opportunity->{pending.target.name}"
         )
         return Resolution(True, False, "Pommel missed", 0, list(self.event_log), result)
+
+    def frontale_retreating_fendente(
+        self,
+        defender: Fighter,
+        defence_rolls: tuple[int, ...],
+        damage_rolls: tuple[int, ...] = (3,),
+    ) -> Resolution:
+        """Governing Frontale v0.1 joined thrust defence / counter-cut.
+
+        The historical lesson continues beyond the initial retreating fendente;
+        this bounded implementation intentionally stops after the first joined
+        cancellation/counter-cut and authors no movement, Dente state, or free
+        follow-up.
+        """
+        attack = self.pending_attack
+        normalized = attack.kind.lower().replace("_", "-") if attack else ""
+        if (
+            attack is None
+            or not attack.actor.alive
+            or not defender.alive
+            or defender is not attack.target
+            or defender.guard != FRONTALE_GUARD
+            or "thrust" not in normalized
+            or FRONTALE_FENDENTE_PLAY not in defender.known_plays
+            or not defender.action_available
+            or defender.spiritus < FRONTALE_FENDENTE_COST
+            or len(self.learned_chain) >= LEARNED_PLAY_CAP
+            or attack.phase != "rolled"
+            or not attack.hit
+            or attack.cancelled
+            or self.crossing.contact != "none"
+        ):
+            return Resolution(False, reason="Frontale Retreating Fendente prerequisites fail")
+
+        self.spend_action(defender)
+        self.spend_spiritus(defender, FRONTALE_FENDENTE_COST)
+        self.add_learned_play(FRONTALE_FENDENTE_PLAY)
+        result = self.test(defender.skill, defence_rolls, "normal")
+        self.event_log.append(
+            "Frontale:Fendente:declare:2S+chain+action:flat:pre-contact"
+        )
+        if not result.success:
+            self.event_log.append(
+                "Frontale:Fendente:fail:no-cancel:no-damage:original-thrust-live"
+            )
+            return Resolution(
+                True,
+                False,
+                "Frontale Retreating Fendente failed",
+                0,
+                list(self.event_log),
+                result,
+            )
+
+        attack.cancelled = True
+        attack.phase = "cancelled"
+        amount = self.damage(damage_rolls, "normal")
+        attack.actor.hp -= amount
+        # The bounded v0.1 play is deliberately state-light: no Crossing, Open,
+        # point threat, Dente guard, movement state, or automatic continuation.
+        self.crossing = Crossing(measure=self.crossing.measure)
+        self.basic_cross_declaration = None
+        self._close_t1_window()
+        self._close_rejoinder()
+        self.event_log.append(
+            f"Frontale:Fendente:success:CANCEL+ATTACK normal-cut={amount}:no-contact:no-extra-state"
+        )
+        return Resolution(
+            True,
+            True,
+            "Frontale Retreating Fendente succeeded",
+            amount,
+            list(self.event_log),
+            result,
+        )
 
     def compound_response(
         self,

@@ -6,293 +6,1983 @@
   "current_supersession_note": "2026-08-13 H3-L2 governs ordinary Basic Cross; E1/P2 govern the bounded Tutta-to-Close route; S2 governs Schielhau/Durchwechseln; the current Committed and Nachreisen entries below were synchronized during packet v0.5 publication. Other diagnosis-era incomplete/candidate entries remain historical audit findings.",
   "techniques": [
     {
-      "id": "basic-cut", "name": "Basic Cut", "status": "Basic",
-      "historical_source": {"record_ids": ["docs/melee-design-packet-v0.4.md"], "evidence_status": "PROJECT_RULE", "locators": ["Section 3.5; guard mappings in data/guards/longsword-named-v0.1.yaml"], "notes": "Universal game action; individual guard/source descriptions may map to it."},
-      "trigger": [{"id": "proactive_action", "text": "On the actor's activation with an action ready and a legal longsword target."}],
-      "cost_commitment": [{"id": "action", "text": "Spend the action; ordinary committed descending-cut recovery liability applies where the current chassis says so."}],
-      "test": [{"id": "normal_weapon_attack_roll", "text": "Normal Longsword attack roll."}],
-      "primary_payload": [{"op": "ATTACK", "label": "MAKE_ATTACK", "target": "opponent", "parameters": {"attack_kind": "cut", "accuracy": "normal", "damage_mode": "normal"}}],
-      "state_aftermath": [], "continuation": ["Ordinary cut may expose the shared state-based D1 window after a declared Basic Cross or Beat when all D1 prerequisites hold; Loaded/P1 are separate options."],
-      "opponent_counterplay": ["Cross", "Beat", "Counter", "Ignore", "eligible learned Remedies"], "event_metadata": [],
-      "nearest_basic_alternative": "Basic Thrust", "distinct_reason": "Uses the cut response/repertoire tree and can receive Loaded or P1 treatment when their prerequisites hold; a missed committed descending cut may create Recovering.",
-      "reason_types": ["intrinsic", "state-dependent", "repertoire-dependent"],
-      "simulator_representation": {"level": "full", "notes": "Current engine represents ordinary cuts, response menu, Loaded/P1 eligibility, and committed-miss recovery."},
-      "ghost_utility": {"present": false, "notes": "Policy affects frequency but the mechanical distinctions exist."},
-      "missing_effect_exposed": {"present": false, "notes": "No missing payload."},
-      "completeness_classification": ["COMPLETE — RESOURCE/STATE-DEPENDENT"], "exceptional_rule": {"present": false, "notes": "Normal response tree."}
-    },
-    {
-      "id": "basic-thrust", "name": "Basic Thrust", "status": "Basic",
-      "historical_source": {"record_ids": ["docs/melee-design-packet-v0.4.md"], "evidence_status": "PROJECT_RULE", "locators": ["Section 3.5; guard mappings in data/guards/longsword-named-v0.1.yaml"]},
-      "trigger": [{"id": "proactive_action", "text": "On the actor's activation with an action ready and a legal longsword target."}],
-      "cost_commitment": [{"id": "action", "text": "Spend the action."}],
-      "test": [{"id": "normal_weapon_attack_roll", "text": "Normal Longsword attack roll."}],
-      "primary_payload": [{"op": "ATTACK", "label": "MAKE_ATTACK", "target": "opponent", "parameters": {"attack_kind": "thrust", "accuracy": "normal", "damage_mode": "normal"}}],
-      "state_aftermath": [], "continuation": [],
-      "opponent_counterplay": ["Cross", "Beat", "Counter", "Ignore", "Absetzen or Scambiar di Punta where legal"], "event_metadata": [],
-      "nearest_basic_alternative": "Basic Cut", "distinct_reason": "Uses the thrust response/repertoire tree and avoids cut-specific committed-miss recovery and cut-only responses, while foregoing Loaded/P1.",
-      "reason_types": ["intrinsic", "state-dependent", "repertoire-dependent"],
-      "simulator_representation": {"level": "full", "notes": "Current engine distinguishes thrust response access from cut response access."},
-      "ghost_utility": {"present": false, "notes": "No ghost consequence required."}, "missing_effect_exposed": {"present": false, "notes": "No missing payload."},
-      "completeness_classification": ["COMPLETE — RESOURCE/STATE-DEPENDENT"], "exceptional_rule": {"present": false, "notes": "Normal response tree."}
-    },
-    {
-      "id": "basic-cross-cb3", "name": "Basic Cross (CB3)", "status": "Basic",
-      "historical_source": {"record_ids": ["data/prototypes/longsword-governing-provisional-v0.1.yaml", "reports/governing-open-provisional.md"], "evidence_status": "PROJECT_RULE", "locators": ["2026-08-12 Choice Architecture v0.1 adjudication"], "notes": "Universal Basic; source-specific guards may map simple covers to it."},
-      "trigger": [{"id": "incoming_attack", "text": "Declare in the normal Basic defence window; secretly choose Hart or Weich and authored defence geometry before the roll. The ordinary state-based D1 window remains when its prerequisites hold."}],
-      "cost_commitment": [{"id": "reaction_action", "text": "Spend the defender's action; no Spiritus or learned slot."}],
-      "test": [{"id": "normal_defence_roll", "text": "Hart rolls with exactly one defence Boon; Weich rolls flat."}],
-      "primary_payload": [{"op": "CANCEL", "label": "CANCEL_ATTACK", "target": "pending_attack"}],
-      "state_aftermath": [{"op": "SET", "label": "ESTABLISH_CROSSING", "state": "contact", "value": "crossing", "parameters": {"measure": "preserve", "initial_pressure": "owner-private Hart/Weich", "bind_height": "public Upper/Lower/Unknown from authored geometry", "zones": "unknown/unknown", "ordinary_favored_unfavored": "not generated"}}],
-      "continuation": ["One narrow attacker Bind Rejoinder: Fühlen, Duplieren, Mutieren, or decline; then sequencing-only Bind Initiative and authored ordinary continuations/pass."],
-      "opponent_counterplay": ["Choose attack/repertoire lines that do not reward Crossing", "Exploit ordinary Crossing cleanup or reciprocal continuation risk"], "event_metadata": [],
-      "nearest_basic_alternative": "Basic Beat (CB3)", "distinct_reason": "Authored Hart/Weich information and bind-height repertoire access versus Beat displacement/separation/Open; neither form name grants D1 immunity.",
-      "reason_types": ["intrinsic", "repertoire-dependent", "state-dependent"],
-      "simulator_representation": {"level": "full", "notes": "Authoritative shared engine implements state-based D1 plus H3 ordinary Cross, hidden/private views, height writers, Rejoinder, and pass sequencing."},
-      "ghost_utility": {"present": false, "notes": "Repertoire dependence is explicit rather than a generic policy value."}, "missing_effect_exposed": {"present": false, "notes": "Approved architecture is intentionally repertoire-dependent."},
-      "completeness_classification": ["COMPLETE — REPERTOIRE-DEPENDENT"], "exceptional_rule": {"present": false, "notes": "The narrow Rejoinder is authored timing and creates no action refresh or response restriction."}
-    },
-    {
-      "id": "basic-beat-cb3", "name": "Basic Beat (CB3)", "status": "Basic",
-      "historical_source": {"record_ids": ["data/prototypes/longsword-governing-provisional-v0.1.yaml", "reports/governing-open-provisional.md"], "evidence_status": "PROJECT_RULE", "locators": ["2026-08-12 Choice Architecture v0.1 adjudication"]},
-      "trigger": [{"id": "incoming_attack", "text": "Declare in the normal Basic defence window; the normal D1 window and prerequisites remain."}],
-      "cost_commitment": [{"id": "reaction_action", "text": "Spend the defender's action; no Spiritus or learned slot."}],
-      "test": [{"id": "normal_defence_roll", "text": "Normal defence roll if not D1-interrupted."}],
-      "primary_payload": [{"op": "CANCEL", "label": "CANCEL_ATTACK", "target": "pending_attack"}, {"op": "SET", "label": "STRIP_GUARD", "target": "attacker", "state": "guard", "value": "open", "requires": "successful resolved Beat only"}],
-      "state_aftermath": [{"op": "CLEAR", "label": "END_CONTACT", "state": "contact", "value": "none", "parameters": {"measure": "unchanged"}}],
-      "continuation": ["No contact continuation; attacker may recover a named guard at their next activation by consuming the GC1 allowance."],
-      "opponent_counterplay": ["D1 before the Beat roll where legal", "Avoid carrying a valuable named guard into the exchange", "Recover guard on next own activation"],
-      "event_metadata": [{"event": "displacement", "note": "Successful Beat records the weapon being displaced; the event itself has no additional standalone value."}],
-      "nearest_basic_alternative": "Basic Cross (CB3)", "distinct_reason": "On success separates and strips a valuable named guard to Open; it trades D1 exposure and all Crossing continuation value for that state consequence.",
-      "reason_types": ["intrinsic", "state-dependent"],
-      "simulator_representation": {"level": "partial", "notes": "Archived engine represents cancellation/displacement/separation and D1 but does not apply governing Open."},
-      "ghost_utility": {"present": false, "notes": "Open is a real state/gate loss, not a numeric proxy."}, "missing_effect_exposed": {"present": false, "notes": "No redundant operation: displacement is metadata; End Contact and Strip Guard are independent consequences."},
-      "completeness_classification": ["COMPLETE — RESOURCE/STATE-DEPENDENT"], "exceptional_rule": {"present": false, "notes": "D1 vulnerability is response timing, not payload."}
-    },
-    {
-      "id": "basic-counter", "name": "Basic Counter", "status": "Basic",
-      "historical_source": {"record_ids": ["docs/melee-design-packet-v0.4.md"], "evidence_status": "PROJECT_RULE", "locators": ["Section 3.5"]},
-      "trigger": [{"id": "incoming_attack", "text": "Against an ordinary attack, after its roll succeeds; against any publicly Committed attack, the target may instead declare Counter in the pre-roll declaration window."}],
-      "cost_commitment": [{"id": "reaction_action", "text": "Spend the target's action. An ordinary post-success Counter accepts the incoming hit; a pre-roll Committed Counter resolves first and cancels the pending attack only if it removes the attacker."}],
-      "test": [{"id": "normal_weapon_attack_roll", "text": "Normal attack roll with the Counter weapon."}],
-      "primary_payload": [{"op": "ATTACK", "label": "MAKE_ATTACK", "target": "attacker", "parameters": {"timing": "simultaneous after an ordinary successful attack, or first in the target-only declaration window of any Committed attack", "damage_mode": "normal"}}],
-      "state_aftermath": [], "continuation": [], "opponent_counterplay": ["Survive or remove the countering defender", "A Committed attacker that survives the pre-roll Counter proceeds with the authored attack"], "event_metadata": [],
-      "nearest_basic_alternative": "Basic Cross or Basic Beat", "distinct_reason": "Trades instead of cancelling after ordinary success, while public Committed timing creates a pre-roll removal gamble for the target; the preferred response changes with both fighters' HP and attack state.",
-      "reason_types": ["state-dependent"], "simulator_representation": {"level": "full", "notes": "Ordinary simultaneous Counter and general target-only pre-roll Committed Counter are represented."},
-      "ghost_utility": {"present": false, "notes": "Damage trade is concrete."}, "missing_effect_exposed": {"present": false, "notes": "No missing payload."},
-      "completeness_classification": ["COMPLETE — RESOURCE/STATE-DEPENDENT"], "exceptional_rule": {"present": false, "notes": "Pre-roll timing is the general public Committed procedure, not a Power-only exception."}
-    },
-    {
-      "id": "basic-ignore", "name": "Ignore", "status": "Basic",
-      "historical_source": {"record_ids": ["docs/melee-design-packet-v0.4.md"], "evidence_status": "PROJECT_RULE", "locators": ["Section 3.5"]},
-      "trigger": [{"id": "incoming_successful_attack", "text": "After an incoming Strike succeeds."}],
-      "cost_commitment": [{"id": "accept_damage", "text": "Take the hit; spend no defensive action."}],
-      "test": [{"id": "no_test", "text": "No defence test."}],
-      "primary_payload": [{"op": "RETAIN", "label": "RETAIN_ACTION_AVAILABILITY", "state": "action_available", "value": true, "parameters": {"window": "current round"}}],
-      "state_aftermath": [], "continuation": ["Use the preserved action later if the fighter survives."], "opponent_counterplay": ["Resolve ordinary damage; lethal or disabling damage removes the retained tempo's value"], "event_metadata": [],
-      "nearest_basic_alternative": "Spend action on Cross, Beat, or Counter", "distinct_reason": "Preserves the action when expected incoming damage is survivable and future tempo is more valuable than the defence attempt.",
-      "reason_types": ["state-dependent"], "simulator_representation": {"level": "partial", "notes": "Damage and non-expenditure are represented; current AI score does not value future action explicitly."},
-      "ghost_utility": {"present": true, "notes": "The rules reason exists, but current policy uses a bare zero rather than future action value."}, "missing_effect_exposed": {"present": false, "notes": "The payoff is retained tempo, not an attack/state fiction."},
-      "completeness_classification": ["COMPLETE — RESOURCE/STATE-DEPENDENT", "GHOST VALUE"], "exceptional_rule": {"present": false, "notes": "Declining a response does not modify the opponent's tree."}
-    },
-    {
-      "id": "voluntary-guard-change-gc1", "name": "Voluntary Guard Change (GC1)", "status": "governing provisional",
-      "historical_source": {"record_ids": ["data/prototypes/longsword-governing-provisional-v0.1.yaml", "reports/governing-open-provisional.md"], "evidence_status": "PROJECT_RULE", "locators": ["2026-08-12 GC1 adjudication"], "notes": "No sparse adjacency claim."},
-      "trigger": [{"id": "activation_before_action", "text": "Once on the fighter's activation, before taking the action."}],
-      "cost_commitment": [{"id": "guard_change_allowance", "text": "Consume the activation's one voluntary guard-change allowance and retain the posture through the following opponent opportunity."}],
-      "test": [{"id": "no_test", "text": "No roll."}],
-      "primary_payload": [{"op": "SET", "label": "ESTABLISH_NAMED_GUARD", "target": "actor", "state": "guard", "value": "chosen otherwise legal named guard"}],
-      "state_aftermath": [], "continuation": ["The chosen guard's public intrinsic and learned gates apply; authored action-produced transitions remain separate."],
-      "opponent_counterplay": ["Read and exploit the public retained posture during the next opportunity"], "event_metadata": [{"event": "source_facing_transition", "note": "The voluntary all-to-all abstraction makes no pairwise historical adjacency claim."}],
-      "nearest_basic_alternative": "Remain in current guard or remain Open", "distinct_reason": "Access a desired intrinsic/gate now while accepting its posture and opportunity costs until a later activation.",
-      "reason_types": ["state-dependent", "repertoire-dependent"], "simulator_representation": {"level": "none", "notes": "Current archived guard engine uses the superseded before-or-after harness."},
-      "ghost_utility": {"present": false, "notes": "The governing commitment is explicit."}, "missing_effect_exposed": {"present": false, "notes": "No voluntary graph is required."},
-      "completeness_classification": ["COMPLETE — RESOURCE/STATE-DEPENDENT"], "exceptional_rule": {"present": false, "notes": "Normal posture assignment."}
-    },
-    {
-      "id": "loaded-proactive-cut", "name": "Loaded Proactive Cut", "status": "governing provisional",
-      "historical_source": {"record_ids": ["data/prototypes/longsword-governing-provisional-v0.1.yaml", "data/guards/longsword-named-v0.1.yaml"], "evidence_status": "PROJECT_RULE", "locators": ["loaded; Posta di Donna physical_state"], "notes": "Loaded/Damage Boon is an Atra abstraction, not a manuscript rule."},
-      "trigger": [{"id": "proactive_loaded_cut", "text": "Declare an ordinary proactive Basic Cut while Loaded by the current guard."}],
-      "cost_commitment": [{"id": "action", "text": "Same action as Basic Cut; no Spiritus or learned slot; retain the Loaded guard under GC1."}],
-      "test": [{"id": "normal_weapon_attack_roll", "text": "Normal Longsword attack roll."}],
-      "primary_payload": [{"op": "ATTACK", "label": "MAKE_ATTACK", "target": "opponent", "parameters": {"attack_kind": "cut", "accuracy": "normal", "damage_mode": "normal", "damage_modifier": "damage_boon"}}],
-      "state_aftermath": [], "continuation": ["Ordinary cut continuation/response architecture remains available."], "opponent_counterplay": ["Ordinary defence menu", "State-based D1 after a declared Basic Cross or Beat when legal", "Exploit the actor's retained nonthreatening Loaded posture"], "event_metadata": [],
-      "nearest_basic_alternative": "Ordinary proactive Basic Cut", "distinct_reason": "Receives Damage Boon at no Spiritus cost but requires/retains the Loaded posture.",
-      "reason_types": ["state-dependent"], "simulator_representation": {"level": "full", "notes": "Damage Boon is correctly limited to proactive Basic Cuts."},
-      "ghost_utility": {"present": false, "notes": "On-hit damage change is concrete."}, "missing_effect_exposed": {"present": false, "notes": "Damage Boon is an ATTACK parameter."},
-      "completeness_classification": ["COMPLETE — RESOURCE/STATE-DEPENDENT"], "exceptional_rule": {"present": false, "notes": "Normal response tree."}
-    },
-    {
-      "id": "power-attack-p1", "name": "P1 Power Attack", "status": "governing provisional",
-      "historical_source": {"record_ids": ["data/prototypes/longsword-governing-provisional-v0.1.yaml"], "evidence_status": "PROJECT_RULE", "locators": ["power_attack"], "notes": "P1 is a Basic option, not a learned Play."},
-      "trigger": [{"id": "proactive_loaded_cut", "text": "Before the attack roll for a proactive Cut while Loaded."}],
-      "cost_commitment": [{"id": "action", "text": "Spend the action."}, {"id": "spiritus", "text": "Spend 1 Spiritus at declaration."}, {"id": "committed", "text": "Publicly Committed: no attacker-side D1 or other insertion; the target receives the general pre-roll Counter/Preparation choice."}],
-      "test": [{"id": "normal_weapon_attack_roll", "text": "Normal Longsword attack roll; no attack Bane."}],
-      "primary_payload": [{"op": "ATTACK", "label": "MAKE_ATTACK", "target": "opponent", "parameters": {"attack_kind": "power_cut", "accuracy": "normal", "damage_mode": "fixed_normal_max", "damage": 7, "loaded_boon_stacks": false}}, {"op": "MODIFY_ATTACK", "label": "SET_COMMITTED", "target": "pending_attack", "parameters": {"committed": true, "declaration_window": "target-only Counter or authored Preparation"}}],
-      "state_aftermath": [], "continuation": [], "opponent_counterplay": ["Use the general Committed declaration window for Counter or authored Preparation", "If waiting and the attack succeeds, use an ordinary simultaneous Counter or another legal response", "Ignore or eligible defender Play"], "event_metadata": [],
-      "nearest_basic_alternative": "Loaded proactive Basic Cut", "distinct_reason": "Buys fixed maximum normal damage/lethal certainty; Loaded Cut preserves Spiritus and flexible attacker continuations, while P1 inherits the same public Committed timing as any other Committed attack.",
-      "reason_types": ["resource-dependent", "state-dependent"], "simulator_representation": {"level": "full", "notes": "P1 cost, fixed 7, no stacking, Committed status, and the general Committed declaration window are represented."},
-      "ghost_utility": {"present": false, "notes": "Broad observed frequency can be policy-sensitive, but the rules choice is real."}, "missing_effect_exposed": {"present": false, "notes": "Fixed damage and commitment are ATTACK parameters, not added atomic effects."},
-      "completeness_classification": ["COMPLETE — RESOURCE/STATE-DEPENDENT"], "exceptional_rule": {"present": false, "notes": "P1 inherits the general Committed procedure; it does not author a Power-only response restriction."}
-    },
-    {
-      "id": "durchwechseln-d1", "name": "Durchwechseln (D1)", "status": "governing provisional",
-      "historical_source": {"record_ids": ["play-german-longsword-durchwechseln", "data/prototypes/longsword-governing-provisional-v0.1.yaml"], "evidence_status": "EXACT_LOCATOR_VERIFIED", "locators": ["Pseudo-Peter von Danzig, Cod.44.A.8, ff. 30v.3-31r.2"]},
-      "trigger": [{"id": "after_declared_basic_parry_before_defence_roll", "text": "After a declared Basic Cross or Beat and before its defence roll, while contact is none, the defender commits toward the actor's weapon, the defender's point is not threatening, D1 reserve and chain capacity exist, and the attack is not Committed."}],
-      "cost_commitment": [{"id": "spiritus", "text": "1 Spiritus at declaration, no refund."}, {"id": "learned_chain_entry", "text": "Consumes one learned-Play chain entry; the original action remains the initiating action."}],
-      "test": [{"id": "normal_weapon_attack_roll", "text": "A fresh normal Longsword attack roll replaces the pending attack resolution."}],
-      "primary_payload": [{"op": "REPLACE_PENDING_ATTACK", "label": "REPLACE_PENDING_ATTACK", "target": "pending_attack", "parameters": {"replacement": "fresh normal Longsword attack on the changed line", "declared_defence_roll": "skipped"}, "exceptional_justification": "D1 substitutes a newly rolled attack for the pending resolution; it is not an extra attack."}],
-      "state_aftermath": [{"op": "CLEAR", "label": "END_CONTACT", "state": "contact", "value": "none"}, {"op": "SET", "label": "SET_POINT_THREAT", "target": "actor", "state": "point_threat", "value": "threatening"}],
-      "continuation": ["Reduced Spiritus and chain capacity; current S2 Schielhau can contest the change-through in its sourced branch."],
-      "opponent_counterplay": ["Maintain threatening point", "Use a legal compound defence", "Exploit D1 failure/resource depletion", "S2 Schielhau contest where triggered"], "event_metadata": [{"event": "historical_action_label", "note": "Change beneath the attempted engagement before firm bind."}],
-      "nearest_basic_alternative": "Allow the declared Basic Beat roll against the original attack", "distinct_reason": "Replaces a likely successful defence roll with the attacker's fresh attack probability while avoiding firm contact, at real Spiritus/chain/failure cost.",
-      "reason_types": ["resource-dependent", "state-dependent"], "simulator_representation": {"level": "full", "notes": "The authoritative shared engine implements the state-based pre-roll D1 window for both declared Basic Cross and Beat, subject to its normal prerequisites."},
-      "ghost_utility": {"present": false, "notes": "The replacement probability/resource trade is concrete."}, "missing_effect_exposed": {"present": false, "notes": "A distinct REPLACE_PENDING_ATTACK operator is required for semantic closure; generic REDIRECT is unnecessary."},
-      "completeness_classification": ["COMPLETE — RESOURCE/STATE-DEPENDENT", "EXCEPTIONAL RESPONSE MODIFIER"], "exceptional_rule": {"present": true, "notes": "Skips/replaces the declared Basic defence resolution; explicitly justified and D1-specific."}
-    },
-    {
-      "id": "absetzen-c2", "name": "Absetzen (C2)", "status": "governing provisional",
-      "historical_source": {"record_ids": ["play-german-longsword-absetzen"], "evidence_status": "EXACT_LOCATOR_VERIFIED", "locators": ["Pseudo-Peter von Danzig, Cod.44.A.8, ff. 30r.2-30v.1"]},
-      "trigger": [{"id": "incoming_thrust", "text": "Remedy against an incoming center/high thrust from the currently authored Pflug access."}],
-      "cost_commitment": [{"id": "reaction_action", "text": "Spend the defender's action."}, {"id": "spiritus", "text": "Spend 2 Spiritus at declaration."}, {"id": "learned_chain_entry", "text": "Consume one learned-Play chain entry."}],
-      "test": [{"id": "normal_defence_roll", "text": "One Longsword roll is the existing joined defence/offence test."}],
-      "primary_payload": [{"op": "CANCEL", "label": "CANCEL_ATTACK", "target": "pending_attack"}, {"op": "ATTACK", "label": "MAKE_ATTACK", "target": "attacker", "parameters": {"attack_kind": "counter_thrust", "damage_mode": "normal", "action_compression": true}}],
-      "state_aftermath": [{"op": "SET", "label": "ESTABLISH_CROSSING", "state": "contact", "value": "crossing", "parameters": {"measure": "wide", "pressure": "unknown/unknown", "zones": "unknown/unknown"}}, {"op": "SET", "label": "SET_POINT_THREAT", "target": "actor", "state": "point_threat", "value": "threatening"}],
-      "continuation": ["Ordinary unretained Crossing cleans; maintained point threat denies ordinary D1."], "opponent_counterplay": ["Avoid or vary the thrust trigger", "Exploit defender failure", "Pressure Spiritus/chain reserve"], "event_metadata": [],
-      "nearest_basic_alternative": "Basic Cross or Basic Beat", "distinct_reason": "Compresses cancellation and a normal attack into one Remedy; Basics conserve 2 Spiritus and chain space.",
-      "reason_types": ["intrinsic", "resource-dependent", "state-dependent"], "simulator_representation": {"level": "full", "notes": "Current C2 one-roll cancellation/counter-damage and aftermath are represented."},
-      "ghost_utility": {"present": false, "notes": "Joined defence/offence is concrete."}, "missing_effect_exposed": {"present": false, "notes": "Crossing/point/guard geometry is aftermath, not equal-price payload count."},
-      "completeness_classification": ["COMPLETE — RESOURCE/STATE-DEPENDENT"], "exceptional_rule": {"present": false, "notes": "Uses an existing one-roll compound Remedy, not response denial."}
-    },
-    {
-      "id": "scambiar-di-punta-c2", "name": "Scambiar di Punta (C2)", "status": "governing provisional",
-      "historical_source": {"record_ids": ["play-italian-longsword-scambiar-di-punta"], "evidence_status": "EXACT_LOCATOR_VERIFIED", "locators": ["Fiore, Getty 26v-a; Morgan 14v-c; Pisani Dossi 20b-c"]},
-      "trigger": [{"id": "incoming_thrust", "text": "Remedy against an incoming center/high thrust from the current source-described Donna/Tutta access."}],
-      "cost_commitment": [{"id": "reaction_action", "text": "Spend the defender's action."}, {"id": "spiritus", "text": "Spend 2 Spiritus at declaration."}, {"id": "learned_chain_entry", "text": "Consume one learned-Play chain entry."}],
-      "test": [{"id": "normal_defence_roll", "text": "One Longsword roll is the existing joined defence/offence test."}],
-      "primary_payload": [{"op": "CANCEL", "label": "CANCEL_ATTACK", "target": "pending_attack"}, {"op": "ATTACK", "label": "MAKE_ATTACK", "target": "attacker", "parameters": {"attack_kind": "counter_thrust", "damage_mode": "normal", "action_compression": true}}],
-      "state_aftermath": [{"op": "SET", "label": "ESTABLISH_CROSSING", "state": "contact", "value": "crossing", "parameters": {"measure": "wide", "pressure": "unknown/unknown", "zones": "unknown/unknown"}}, {"op": "SET", "label": "SET_POINT_THREAT", "target": "actor", "state": "point_threat", "value": "threatening"}],
-      "continuation": ["Ordinary unretained Crossing cleans."], "opponent_counterplay": ["Avoid or vary the thrust trigger", "Exploit failure", "Pressure Spiritus/chain reserve"], "event_metadata": [],
-      "nearest_basic_alternative": "Basic Cross or Basic Beat", "distinct_reason": "Compresses cancellation and a normal counter-thrust into one Remedy; access/source geometry distinguishes it from Absetzen, not a new payload type.",
-      "reason_types": ["intrinsic", "resource-dependent", "state-dependent"], "simulator_representation": {"level": "full", "notes": "Shares the current C2 chassis with Absetzen."},
-      "ghost_utility": {"present": false, "notes": "Healthy versus Basic; chassis duplication is an explicit watch item."}, "missing_effect_exposed": {"present": false, "notes": "No additional effect needed for source naming."},
-      "completeness_classification": ["COMPLETE — RESOURCE/STATE-DEPENDENT"], "exceptional_rule": {"present": false, "notes": "No response denial."}
-    },
-    {
-      "id": "schielhau-s2", "name": "Schielhau (current S2)", "status": "governing provisional",
-      "historical_source": {"record_ids": ["play-german-longsword-schielhau"], "evidence_status": "EXACT_LOCATOR_VERIFIED", "locators": ["Pseudo-Peter von Danzig, Cod.44.A.8, ff. 23v.1-23v.2 for reactive/change-through; ff. 23r.3-23v.1 for proactive Pflug breaker"]},
-      "trigger": [{"id": "incoming_descending_cut", "text": "Reactive Remedy against the historically appropriate descending high-line attack; if the same opponent attempts D1 below this successful Schielhau before contact, apply S2."}],
-      "cost_commitment": [{"id": "reaction_action", "text": "Spend the defender's action."}, {"id": "spiritus", "text": "Spend 2 Spiritus at declaration."}, {"id": "learned_chain_entry", "text": "Consume one learned-Play entry; intrinsic long point is not another Play."}],
-      "test": [{"id": "normal_defence_roll", "text": "Normal Longsword Remedy roll."}, {"id": "existing_s2_roll_comparison", "text": "If D1 is attempted, reuse the successful Schielhau d20 result against a fresh D1 roll under the governing S2 comparison."}],
-      "primary_payload": [{"op": "CANCEL", "label": "CANCEL_ATTACK", "target": "pending_attack"}, {"op": "ATTACK", "label": "MAKE_ATTACK", "target": "attacker", "parameters": {"attack_kind": "reactive_schielhau_long_point", "damage_mode": "normal", "action_compression": true}}],
-      "state_aftermath": [{"op": "CLEAR", "label": "END_CONTACT", "state": "contact", "value": "none"}, {"op": "SET", "label": "SET_POINT_THREAT", "target": "actor", "state": "point_threat", "value": "threatening"}],
-      "continuation": ["S2 resolves the sourced D1 rejoinder inside the same reactive mechanic."], "opponent_counterplay": ["Avoid the descending-cut trigger", "Attempt D1 and contest under S2", "Exploit failure or resource depletion"], "event_metadata": [{"event": "historical_timing_label", "note": "Current S2 models the reactive anti-change-through passage, not the proactive Pflug-breaking relationship."}],
-      "nearest_basic_alternative": "Basic Cross or Basic Beat", "distinct_reason": "Buys joined cancellation/counter-damage and a threatening-point separated result, with a specific S2 answer to D1; Basics conserve reserve/chain.",
-      "reason_types": ["intrinsic", "resource-dependent", "state-dependent"], "simulator_representation": {"level": "full", "notes": "Current reactive S2 is represented; the sourced proactive Pflug breaker remains unimplemented and gains no modifier."},
-      "ghost_utility": {"present": false, "notes": "S2 branch is real; no proactive breaker utility is claimed."}, "missing_effect_exposed": {"present": true, "notes": "The separate proactive Pflug-breaking relationship has no implemented payload and is not smuggled into S2."},
-      "completeness_classification": ["COMPLETE — RESOURCE/STATE-DEPENDENT", "EXCEPTIONAL RESPONSE MODIFIER"], "exceptional_rule": {"present": true, "notes": "S2 exceptionally compares an established Remedy roll with a D1 replacement roll; this is explicitly scoped, not a universal opposed-roll architecture."}
-    },
-    {
-      "id": "tutta-cover-to-stretto-t1", "name": "Tutta Cover to Stretto (T1)", "status": "governing provisional",
-      "historical_source": {"record_ids": ["data/prototypes/longsword-guard-play-bridge-v0.1.yaml"], "evidence_status": "EXACT_LOCATOR_VERIFIED", "locators": ["Fiore, Getty 23v-a; Morgan 12r-a; Pisani Dossi 18a-a"]},
-      "trigger": [{"id": "after_successful_qualifying_cross_before_h3_creation", "text": "After a successful Tutta Basic Cross against an ordinary proactive non-Power, non-Committed Basic Cut at Wide and after D1 timing, before H3 Rejoinder creation."}],
-      "cost_commitment": [{"id": "spiritus", "text": "Spend 1 Spiritus at declaration, no refund."}, {"id": "learned_chain_entry", "text": "Consume one learned-Play entry; no additional action."}],
-      "test": [{"id": "no_additional_roll", "text": "No second roll; the Basic Cross test already resolved."}],
-      "primary_payload": [{"op": "RETAIN", "label": "RETAIN_CROSSING", "state": "contact", "value": "crossing", "requires": "Crossing already exists"}, {"op": "SET", "label": "CHANGE_MEASURE", "state": "measure", "value": "close", "requires": "measure=wide"}],
-      "state_aftermath": [{"op": "SET", "label": "SET_BIND_AXIS", "state": "bind_height", "value": "unknown"}, {"op": "SET", "label": "SET_BIND_AXIS", "state": "bind_opportunity", "value": "Hart: original striker; Weich: Tutta defender"}, {"op": "CLEAR", "label": "SET_BIND_AXIS", "state": "initial_pressure", "value": "unknown"}], "continuation": ["Pommel or another authored Close consumer may be declared only by the current opportunity holder and only if its own prerequisites are met. H3 is never created when T1 is used."],
-      "opponent_counterplay": ["Choose a non-triggering attack/response line", "Exploit the first Close opportunity on Hart", "Possess reciprocal Close repertoire", "Pass or disengage under the existing bounded bind rules"], "event_metadata": [{"event": "source_facing_transition", "note": "Cover and pass into stretto; the Play does not buy the original Cross."}],
-      "nearest_basic_alternative": "Decline E1 and allow the otherwise-ordinary H3 Rejoinder", "distinct_reason": "Retains existing Crossing, changes Wide to Close, and assigns an immediate repertoire-dependent opportunity while giving up the ordinary H3 route.",
-      "reason_types": ["repertoire-dependent", "resource-dependent", "state-dependent"], "simulator_representation": {"level": "full", "notes": "Authoritative shared engine exposes E1 before H3 and implements Hart/Weich Close opportunity assignment."},
-      "ghost_utility": {"present": false, "notes": "Runtime exposes actual Close opportunities and legal consumers rather than a hand-authored policy proxy."}, "missing_effect_exposed": {"present": false, "notes": "The bounded E1 state transformation is complete; broader Close mechanics remain explicitly deferred."},
-      "completeness_classification": ["COMPLETE — REPERTOIRE-DEPENDENT"], "exceptional_rule": {"present": false, "notes": "No response denial, action restoration, or new operator."}
-    },
-    {
-      "id": "pommel-strike", "name": "Pommel Strike", "status": "governing provisional",
-      "historical_source": {"record_ids": ["play-italian-longsword-pommel-strike"], "evidence_status": "EXACT_LOCATOR_VERIFIED", "locators": ["Fiore, Getty 28r-c/d; Morgan 16r-c/d; Pisani Dossi 22a-c/d"]},
-      "trigger": [{"id": "while_close_crossing", "text": "While both fighters live, from an established Close Crossing when the knowledgeable actor holds the current bind opportunity and has chain room."}],
-      "cost_commitment": [{"id": "spiritus", "text": "Spend 2 Spiritus at declaration."}, {"id": "learned_chain_entry", "text": "Consume one learned-Play entry; spend no additional normal action."}],
-      "test": [{"id": "normal_weapon_attack_roll", "text": "Normal Longsword roll for the pommel attack."}],
-      "primary_payload": [{"op": "ATTACK", "label": "MAKE_ATTACK", "target": "opponent", "parameters": {"attack_kind": "pommel", "test_skill": "Longsword", "accuracy_modifier": "normal", "damage_mode": "normal"}}],
-      "state_aftermath": [{"op": "CLEAR", "label": "END_CONTACT", "state": "contact", "value": "none", "condition": "hit; normal bounded bind cleanup"}, {"op": "RETAIN", "label": "RETAIN_CROSSING", "state": "contact", "value": "crossing", "condition": "miss"}, {"op": "SET", "label": "SET_BIND_AXIS", "state": "bind_height", "value": "unknown", "condition": "miss"}, {"op": "SET", "label": "SET_BIND_AXIS", "state": "bind_opportunity", "value": "opponent", "condition": "miss"}],
-      "continuation": ["On a miss the opponent receives the next Close opportunity; existing pass/disengage and authored continuation rules apply."], "opponent_counterplay": ["Ordinary response structure is not intrinsically restricted", "Prevent or escape the Close-Crossing trigger", "Use the current opportunity first", "Exploit a transferred opportunity after a miss"], "event_metadata": [],
-      "nearest_basic_alternative": "Pass, disengage, or use another authored continuation from the current opportunity", "distinct_reason": "A narrow Close-only attack purchases normal damage without an additional action, but costs 2 Spiritus and one chain entry and exposes reciprocal opportunity on a miss.",
-      "reason_types": ["repertoire-dependent", "resource-dependent", "state-dependent"], "simulator_representation": {"level": "full", "notes": "Authoritative engine implements the P2 gate, flat Longsword roll, normal damage, hit cleanup, and miss transfer."},
-      "ghost_utility": {"present": false, "notes": "Actual legal opportunities, declarations, results, costs, and transfers are instrumented."}, "missing_effect_exposed": {"present": false, "notes": "The bounded governing continuation is complete; broader narrow-play chains remain deferred."},
-      "completeness_classification": ["COMPLETE — REPERTOIRE-DEPENDENT"], "exceptional_rule": {"present": false, "notes": "Pommel has no intrinsic response restriction or new effect operator."}
-    },
-    {
-      "id": "nachreisen-current", "name": "Nachreisen (current)", "status": "governing provisional",
-      "historical_source": {"record_ids": ["play-german-longsword-nachreisen"], "evidence_status": "EXACT_LOCATOR_VERIFIED", "locators": ["Pseudo-Peter von Danzig, Cod.44.A.8, ff. 27v.2-28r.1; related continuations ff. 28r.2-28v.2"]},
-      "trigger": [{"id": "target_only_preparation", "text": "In the target-only declaration window of a publicly Committed attack, before its roll."}, {"id": "target_only_recovery", "text": "Immediately after that Committed attack misses, for its original target only."}],
-      "cost_commitment": [{"id": "action", "text": "Spend the target's action."}, {"id": "spiritus", "text": "Spend 1 Spiritus at declaration."}, {"id": "learned_chain_entry", "text": "Consume one learned-Play entry."}],
-      "test": [{"id": "booned_weapon_attack_roll", "text": "Longsword attack roll with exactly one attack Boon; normal damage on success."}],
-      "primary_payload": [{"op": "ATTACK", "label": "MAKE_ATTACK", "target": "committed attacker", "parameters": {"attack_kind": "Nachreisen pursuit", "accuracy": "boon", "damage_mode": "normal", "timing": "Preparation before roll or immediate Recovery after miss"}}],
+      "id": "basic-cut",
+      "name": "Basic Cut",
+      "status": "Basic",
+      "historical_source": {
+        "record_ids": [
+          "docs/melee-design-packet-v0.4.md"
+        ],
+        "evidence_status": "PROJECT_RULE",
+        "locators": [
+          "Section 3.5; guard mappings in data/guards/longsword-named-v0.1.yaml"
+        ],
+        "notes": "Universal game action; individual guard/source descriptions may map to it."
+      },
+      "trigger": [
+        {
+          "id": "proactive_action",
+          "text": "On the actor's activation with an action ready and a legal longsword target."
+        }
+      ],
+      "cost_commitment": [
+        {
+          "id": "action",
+          "text": "Spend the action; ordinary committed descending-cut recovery liability applies where the current chassis says so."
+        }
+      ],
+      "test": [
+        {
+          "id": "normal_weapon_attack_roll",
+          "text": "Normal Longsword attack roll."
+        }
+      ],
+      "primary_payload": [
+        {
+          "op": "ATTACK",
+          "label": "MAKE_ATTACK",
+          "target": "opponent",
+          "parameters": {
+            "attack_kind": "cut",
+            "accuracy": "normal",
+            "damage_mode": "normal"
+          }
+        }
+      ],
       "state_aftermath": [],
-      "continuation": ["Preparation resolves first; if it removes the attacker, the pending Committed attack is cancelled. Otherwise the attack proceeds. Recovery is immediate and expires if not used."], "opponent_counterplay": ["Survive Preparation and resolve the Committed attack", "Avoid offering the target-specific Recovery miss window", "Pressure the target's action, Spiritus, or chain capacity"], "event_metadata": [{"event": "historical_timing_label", "note": "The source-supported pursuit lesson motivates the two target-only timing windows; the one-Boon payload and costs are Atra abstractions."}],
-      "nearest_basic_alternative": "General pre-roll Committed Counter in Preparation, or no special attack after a miss", "distinct_reason": "Pays 1 Spiritus and one chain entry to gain a Booned normal-damage pursuit in either of two target-only Committed windows; the ordinary Counter is flat and has no Recovery branch.",
-      "reason_types": ["intrinsic", "resource-dependent", "state-dependent"], "simulator_representation": {"level": "full", "notes": "Authoritative engine implements target-only Preparation and immediate Recovery, 1 Spiritus, one chain entry, action cost, Booned roll, normal damage, removal cancellation, and expiry."},
-      "ghost_utility": {"present": false, "notes": "The Booned roll and second authored timing window are concrete rules value."}, "missing_effect_exposed": {"present": false, "notes": "Current governing payload is complete. Vom Tag is source context, not a governing hard gate."},
-      "completeness_classification": ["COMPLETE — RESOURCE/STATE-DEPENDENT"], "exceptional_rule": {"present": false, "notes": "Preparation and Recovery are authored target-only windows; they do not deny the ordinary response tree of any resolved attack."}
+      "continuation": [
+        "Ordinary cut may expose the shared state-based D1 window after a declared Basic Cross or Beat when all D1 prerequisites hold; Loaded/P1 are separate options."
+      ],
+      "opponent_counterplay": [
+        "Cross",
+        "Beat",
+        "Counter",
+        "Ignore",
+        "eligible learned Remedies"
+      ],
+      "event_metadata": [],
+      "nearest_basic_alternative": "Basic Thrust",
+      "distinct_reason": "Uses the cut response/repertoire tree and can receive Loaded or P1 treatment when their prerequisites hold; a missed committed descending cut may create Recovering.",
+      "reason_types": [
+        "intrinsic",
+        "state-dependent",
+        "repertoire-dependent"
+      ],
+      "simulator_representation": {
+        "level": "full",
+        "notes": "Current engine represents ordinary cuts, response menu, Loaded/P1 eligibility, and committed-miss recovery."
+      },
+      "ghost_utility": {
+        "present": false,
+        "notes": "Policy affects frequency but the mechanical distinctions exist."
+      },
+      "missing_effect_exposed": {
+        "present": false,
+        "notes": "No missing payload."
+      },
+      "completeness_classification": [
+        "COMPLETE — RESOURCE/STATE-DEPENDENT"
+      ],
+      "exceptional_rule": {
+        "present": false,
+        "notes": "Normal response tree."
+      }
     },
     {
-      "id": "zornhau-ort-current", "name": "Zornhau-Ort (current)", "status": "governing provisional local compatibility",
-      "historical_source": {"record_ids": ["play-german-longsword-zornhau-ort"], "evidence_status": "EXACT_LOCATOR_VERIFIED", "locators": ["Pseudo-Peter von Danzig, Cod.44.A.8, ff. 13r.3-13v.1"]},
-      "trigger": [{"id": "incoming_descending_cut", "text": "Initial learned Remedy against a qualifying descending cut; Committed is not required."}, {"id": "zornhau_local_favored", "text": "Intrinsic Ort continuation only from the preserved local Favored relation."}],
-      "cost_commitment": [{"id": "reaction_action", "text": "Spend the defender's action."}, {"id": "learned_chain_entry", "text": "Consume one learned-Play entry; current initial phase is 0 Spiritus."}],
-      "test": [{"id": "normal_defence_roll", "text": "Normal Longsword defence roll for the initial counter-cut."}, {"id": "no_additional_roll", "text": "Intrinsic Ort uses the local Favored requirement and no second attack roll."}],
-      "primary_payload": [{"op": "CANCEL", "label": "CANCEL_ATTACK", "target": "pending_attack"}],
-      "state_aftermath": [{"op": "SET", "label": "ESTABLISH_CROSSING", "state": "contact", "value": "crossing", "parameters": {"measure": "wide", "pressure": "unknown/unknown", "point_threat": "threatening", "local_relation": "Favored/Unfavored"}}],
-      "continuation": ["Intrinsic 1-Spiritus Ort from local Favored; preserved Zornhau-local W1/W2 and passive Fühlen relation view remain pending separate adjudication."],
-      "opponent_counterplay": ["Basic attack/defence alternatives remain", "Do not supply a nonexistent voluntary Soft/Yield branch"], "event_metadata": [{"event": "historical_action_label", "note": "Counter-cut and conditional point are historically supported; current engine cannot motivate the point branch in normal combat."}],
-      "nearest_basic_alternative": "Basic Cross", "distinct_reason": "Zornhau is learned, point-threatening, and creates the preserved local relation/Ort path; ordinary Cross is chain-free and creates H3 initial pressure/height instead.",
-      "reason_types": ["intrinsic", "resource-dependent", "repertoire-dependent", "state-dependent"], "simulator_representation": {"level": "full", "notes": "The authoritative shared engine preserves the qualifying Zornhau writer, local roll-derived relation, intrinsic Ort, local W1/W2, threatening point, initiative, and D1 denial."},
-      "ghost_utility": {"present": false, "notes": "The preserved local relation is produced by qualifying successful Zornhau rolls and consumed by authored local continuations."}, "missing_effect_exposed": {"present": false, "notes": "The local Zornhau grammar is mechanically closed for the preserved current branches; its compatibility architecture remains provisional debt."},
-      "completeness_classification": ["COMPLETE — RESOURCE/STATE/REPERTOIRE-DEPENDENT"], "exceptional_rule": {"present": false, "notes": "No generic ordinary-bind exception is introduced; this is an explicitly preserved local source-specific system."}
+      "id": "basic-thrust",
+      "name": "Basic Thrust",
+      "status": "Basic",
+      "historical_source": {
+        "record_ids": [
+          "docs/melee-design-packet-v0.4.md"
+        ],
+        "evidence_status": "PROJECT_RULE",
+        "locators": [
+          "Section 3.5; guard mappings in data/guards/longsword-named-v0.1.yaml"
+        ]
+      },
+      "trigger": [
+        {
+          "id": "proactive_action",
+          "text": "On the actor's activation with an action ready and a legal longsword target."
+        }
+      ],
+      "cost_commitment": [
+        {
+          "id": "action",
+          "text": "Spend the action."
+        }
+      ],
+      "test": [
+        {
+          "id": "normal_weapon_attack_roll",
+          "text": "Normal Longsword attack roll."
+        }
+      ],
+      "primary_payload": [
+        {
+          "op": "ATTACK",
+          "label": "MAKE_ATTACK",
+          "target": "opponent",
+          "parameters": {
+            "attack_kind": "thrust",
+            "accuracy": "normal",
+            "damage_mode": "normal"
+          }
+        }
+      ],
+      "state_aftermath": [],
+      "continuation": [],
+      "opponent_counterplay": [
+        "Cross",
+        "Beat",
+        "Counter",
+        "Ignore",
+        "Absetzen or Scambiar di Punta where legal"
+      ],
+      "event_metadata": [],
+      "nearest_basic_alternative": "Basic Cut",
+      "distinct_reason": "Uses the thrust response/repertoire tree and avoids cut-specific committed-miss recovery and cut-only responses, while foregoing Loaded/P1.",
+      "reason_types": [
+        "intrinsic",
+        "state-dependent",
+        "repertoire-dependent"
+      ],
+      "simulator_representation": {
+        "level": "full",
+        "notes": "Current engine distinguishes thrust response access from cut response access."
+      },
+      "ghost_utility": {
+        "present": false,
+        "notes": "No ghost consequence required."
+      },
+      "missing_effect_exposed": {
+        "present": false,
+        "notes": "No missing payload."
+      },
+      "completeness_classification": [
+        "COMPLETE — RESOURCE/STATE-DEPENDENT"
+      ],
+      "exceptional_rule": {
+        "present": false,
+        "notes": "Normal response tree."
+      }
     },
     {
-      "id": "winden-current-material", "name": "Winden (current material)", "status": "governing provisional ordinary family; local compatibility preserved",
-      "historical_source": {"record_ids": ["play-german-longsword-winden", "data/guards/longsword-named-v0.1.yaml"], "evidence_status": "EVIDENCE INCOMPLETE", "locators": ["Proposed audit: Pseudo-Peter von Danzig, Cod.44.A.8, ff. 37r.2-38v.1; related menu ff. 14r.2-15r.1"], "notes": "Main Play record remains needs-item-level-audit despite a proposed exact witness audit."},
-      "trigger": [{"id": "current_bind_opportunity", "text": "Actor knows Winden, holds the current ordinary bind opportunity, Crossing exists, authored bind_height is Upper or Lower, 2 Spiritus and chain room exist."}],
-      "cost_commitment": [{"id": "spiritus", "text": "Spend 2 Spiritus."}, {"id": "learned_chain_entry", "text": "Consume one learned entry per actual Winding declaration; no additional action."}],
-      "test": [{"id": "normal_weapon_attack_roll", "text": "Flat Longsword Thrust roll for normal damage."}],
-      "primary_payload": [{"op": "ATTACK", "label": "MAKE_ATTACK", "target": "opponent", "parameters": {"attack_kind": "thrust", "accuracy": "normal", "damage_mode": "normal"}}], "state_aftermath": [{"op": "RETAIN", "state": "contact", "value": "crossing"}, {"op": "SET", "state": "guard", "value": "Ochs for Upper or Pflug for Lower"}, {"op": "SET", "state": "point_threat", "value": "threatening"}],
-      "continuation": ["Hit ends the bounded bind sequence. Upper miss retains Upper/Ochs/threat and transfers opportunity. Governing L2 Lower miss sets Lower to Upper and Pflug to Ochs, retains threat, and transfers opportunity."],
-      "opponent_counterplay": ["Receive the opportunity after a miss", "Use legal Winden or other authored repertoire", "Pass or disengage", "Exploit Spiritus or chain exhaustion"], "event_metadata": [{"event": "historical_action_label", "note": "Upper/lower hangings and selection among cut, thrust, or slice are historical; exact 2S thrust/L2 procedure is an Atra abstraction."}],
-      "nearest_basic_alternative": "Pass/disengage and let ordinary Crossing clean up", "distinct_reason": "Winden converts authored public height and current opportunity into a no-additional-action learned thrust with sourced hanging/threat aftermath and reciprocal miss transfer.",
-      "reason_types": ["resource-dependent", "repertoire-dependent", "state-dependent"], "simulator_representation": {"level": "full", "notes": "Authoritative shared engine implements Upper and Lower ordinary executions; Zornhau-local W1/W2 remains separate."},
-      "ghost_utility": {"present": false, "notes": "Legality and consequences derive from public height, repertoire, resources, chain, attack result, and pass sequencing."}, "missing_effect_exposed": {"present": false, "notes": "The bounded thrust executions are complete; other Winden branches remain explicitly outside scope."},
-      "completeness_classification": ["COMPLETE — RESOURCE/STATE/REPERTOIRE-DEPENDENT"], "exceptional_rule": {"present": false, "notes": "Uses existing ATTACK/SET/RETAIN and timing machinery."}
+      "id": "basic-cross-cb3",
+      "name": "Basic Cross (CB3)",
+      "status": "Basic",
+      "historical_source": {
+        "record_ids": [
+          "data/prototypes/longsword-governing-provisional-v0.1.yaml",
+          "reports/governing-open-provisional.md"
+        ],
+        "evidence_status": "PROJECT_RULE",
+        "locators": [
+          "2026-08-12 Choice Architecture v0.1 adjudication"
+        ],
+        "notes": "Universal Basic; source-specific guards may map simple covers to it."
+      },
+      "trigger": [
+        {
+          "id": "incoming_attack",
+          "text": "Declare in the normal Basic defence window; secretly choose Hart or Weich and authored defence geometry before the roll. The ordinary state-based D1 window remains when its prerequisites hold."
+        }
+      ],
+      "cost_commitment": [
+        {
+          "id": "reaction_action",
+          "text": "Spend the defender's action; no Spiritus or learned slot."
+        }
+      ],
+      "test": [
+        {
+          "id": "normal_defence_roll",
+          "text": "Hart rolls with exactly one defence Boon; Weich rolls flat."
+        }
+      ],
+      "primary_payload": [
+        {
+          "op": "CANCEL",
+          "label": "CANCEL_ATTACK",
+          "target": "pending_attack"
+        }
+      ],
+      "state_aftermath": [
+        {
+          "op": "SET",
+          "label": "ESTABLISH_CROSSING",
+          "state": "contact",
+          "value": "crossing",
+          "parameters": {
+            "measure": "preserve",
+            "initial_pressure": "owner-private Hart/Weich",
+            "bind_height": "public Upper/Lower/Unknown from authored geometry",
+            "zones": "unknown/unknown",
+            "ordinary_favored_unfavored": "not generated"
+          }
+        }
+      ],
+      "continuation": [
+        "One narrow attacker Bind Rejoinder: Fühlen, Duplieren, Mutieren, or decline; then sequencing-only Bind Initiative and authored ordinary continuations/pass."
+      ],
+      "opponent_counterplay": [
+        "Choose attack/repertoire lines that do not reward Crossing",
+        "Exploit ordinary Crossing cleanup or reciprocal continuation risk"
+      ],
+      "event_metadata": [],
+      "nearest_basic_alternative": "Basic Beat (CB3)",
+      "distinct_reason": "Authored Hart/Weich information and bind-height repertoire access versus Beat displacement/separation/Open; neither form name grants D1 immunity.",
+      "reason_types": [
+        "intrinsic",
+        "repertoire-dependent",
+        "state-dependent"
+      ],
+      "simulator_representation": {
+        "level": "full",
+        "notes": "Authoritative shared engine implements state-based D1 plus H3 ordinary Cross, hidden/private views, height writers, Rejoinder, and pass sequencing."
+      },
+      "ghost_utility": {
+        "present": false,
+        "notes": "Repertoire dependence is explicit rather than a generic policy value."
+      },
+      "missing_effect_exposed": {
+        "present": false,
+        "notes": "Approved architecture is intentionally repertoire-dependent."
+      },
+      "completeness_classification": [
+        "COMPLETE — REPERTOIRE-DEPENDENT"
+      ],
+      "exceptional_rule": {
+        "present": false,
+        "notes": "The narrow Rejoinder is authored timing and creates no action refresh or response restriction."
+      }
     },
     {
-      "id": "frontale-current-sequence", "name": "Frontale Basic Mappings / Learned Sequence Candidate", "status": "candidate",
-      "historical_source": {"record_ids": ["play-italian-longsword-frontale-corona-crossing", "data/guards/longsword-named-v0.1.yaml"], "evidence_status": "EXACT_LOCATOR_VERIFIED", "locators": ["Fiore Getty 24v-c; Morgan 12v-b; Pisani Dossi 18b-b", "Vadi 17r-b and 17v-a for separate Corona/Frontale context"]},
-      "trigger": [{"id": "incoming_thrust_frontale", "text": "From Posta Frontale: high thrust maps to universal Basic Cross; low thrust maps to universal Basic Beat. The longer candidate begins against the thrust and includes retreat/cut/thrust/return phases."}],
-      "cost_commitment": [{"id": "undefined", "text": "Basic mappings have normal Basic costs; the learned sequence's action, Spiritus, and chain costs are unimplemented."}],
-      "test": [{"id": "no_test", "text": "Basic branches use their normal tests; the learned sequence has no specified test."}],
-      "primary_payload": [], "state_aftermath": [],
-      "continuation": ["Source record describes retreat from thrust, fendente to head/arms into Dente di Zenghiaro, renewed thrust, and return fendente; no mechanical sequence is activated."],
-      "opponent_counterplay": ["Basic Cross/Beat branches retain their ordinary counterplay", "Learned-sequence counterplay is EVIDENCE/MECHANICS INCOMPLETE"],
-      "event_metadata": [{"event": "source_facing_transition", "note": "Frontale-to-Dente action-produced transition is source-supported material, not a voluntary adjacency edge."}],
-      "nearest_basic_alternative": "Universal Basic Cross or Basic Beat for the corresponding simple thrust response", "distinct_reason": "The Basic mappings add no owner-side reason to choose Frontale; the only potentially distinct learned sequence is unimplemented.",
-      "reason_types": ["none"], "simulator_representation": {"level": "none", "notes": "Named guard record stores mappings/candidate, but no learned sequence is active."},
-      "ghost_utility": {"present": true, "notes": "Forced starts/softmax can produce Frontale occupancy despite no active unique owner value."}, "missing_effect_exposed": {"present": true, "notes": "The candidate needs explicit attack/state/measure/guard/tempo consequences; Basic source mappings must not be counted as learned payload."},
-      "completeness_classification": ["CANDIDATE ONLY", "INCOMPLETE PAYLOAD", "REDUNDANT WITH BASIC", "GHOST VALUE"], "exceptional_rule": {"present": false, "notes": "No learned rule exists."}
+      "id": "basic-beat-cb3",
+      "name": "Basic Beat (CB3)",
+      "status": "Basic",
+      "historical_source": {
+        "record_ids": [
+          "data/prototypes/longsword-governing-provisional-v0.1.yaml",
+          "reports/governing-open-provisional.md"
+        ],
+        "evidence_status": "PROJECT_RULE",
+        "locators": [
+          "2026-08-12 Choice Architecture v0.1 adjudication"
+        ]
+      },
+      "trigger": [
+        {
+          "id": "incoming_attack",
+          "text": "Declare in the normal Basic defence window; the normal D1 window and prerequisites remain."
+        }
+      ],
+      "cost_commitment": [
+        {
+          "id": "reaction_action",
+          "text": "Spend the defender's action; no Spiritus or learned slot."
+        }
+      ],
+      "test": [
+        {
+          "id": "normal_defence_roll",
+          "text": "Normal defence roll if not D1-interrupted."
+        }
+      ],
+      "primary_payload": [
+        {
+          "op": "CANCEL",
+          "label": "CANCEL_ATTACK",
+          "target": "pending_attack"
+        },
+        {
+          "op": "SET",
+          "label": "STRIP_GUARD",
+          "target": "attacker",
+          "state": "guard",
+          "value": "open",
+          "requires": "successful resolved Beat only"
+        }
+      ],
+      "state_aftermath": [
+        {
+          "op": "CLEAR",
+          "label": "END_CONTACT",
+          "state": "contact",
+          "value": "none",
+          "parameters": {
+            "measure": "unchanged"
+          }
+        }
+      ],
+      "continuation": [
+        "No contact continuation; attacker may recover a named guard at their next activation by consuming the GC1 allowance."
+      ],
+      "opponent_counterplay": [
+        "D1 before the Beat roll where legal",
+        "Avoid carrying a valuable named guard into the exchange",
+        "Recover guard on next own activation"
+      ],
+      "event_metadata": [
+        {
+          "event": "displacement",
+          "note": "Successful Beat records the weapon being displaced; the event itself has no additional standalone value."
+        }
+      ],
+      "nearest_basic_alternative": "Basic Cross (CB3)",
+      "distinct_reason": "On success separates and strips a valuable named guard to Open; it trades D1 exposure and all Crossing continuation value for that state consequence.",
+      "reason_types": [
+        "intrinsic",
+        "state-dependent"
+      ],
+      "simulator_representation": {
+        "level": "partial",
+        "notes": "Archived engine represents cancellation/displacement/separation and D1 but does not apply governing Open."
+      },
+      "ghost_utility": {
+        "present": false,
+        "notes": "Open is a real state/gate loss, not a numeric proxy."
+      },
+      "missing_effect_exposed": {
+        "present": false,
+        "notes": "No redundant operation: displacement is metadata; End Contact and Strip Guard are independent consequences."
+      },
+      "completeness_classification": [
+        "COMPLETE — RESOURCE/STATE-DEPENDENT"
+      ],
+      "exceptional_rule": {
+        "present": false,
+        "notes": "D1 vulnerability is response timing, not payload."
+      }
     },
     {
-      "id": "scheitelhau-crown-c1-b3", "name": "Scheitelhau / Crown C1/B3", "status": "candidate",
-      "historical_source": {"record_ids": ["play-german-longsword-scheitelhau", "play-german-longsword-kron-crown-crossing", "data/prototypes/scheitelhau-crown-v0.1.yaml"], "evidence_status": "EXACT_LOCATOR_VERIFIED", "locators": ["Pseudo-Peter von Danzig, Cod.44.A.8, ff. 24v.3-25r.2; four-guard list f. 26v.3"]},
-      "trigger": [{"id": "opponent_in_alber", "text": "Candidate B3 automatically tags a qualifying ordinary descending Basic Cut against Alber as the scoped Scheitelhau entry; a successful attack lets the defender select the authored Crown response."}],
-      "cost_commitment": [{"id": "basic_entry", "text": "Initial entry has the same action, accuracy, damage, commitment, slot, Spiritus, and information cost as an untagged Basic Cut."}, {"id": "crown_response", "text": "Defender spends the same action and normal defence roll as generic Cross; no Spiritus or learned slot."}, {"id": "sink", "text": "Candidate Sink Point costs 1 Spiritus and one learned-Play entry, no additional action."}],
-      "test": [{"id": "normal_weapon_attack_roll", "text": "Normal Basic Cut entry."}, {"id": "normal_defence_roll", "text": "Normal Crown defence roll."}, {"id": "normal_weapon_attack_roll", "text": "Normal Sink Point attack roll."}],
-      "primary_payload": [{"op": "ATTACK", "label": "MAKE_ATTACK", "target": "alber defender", "parameters": {"phase": "free/automatic Basic entry tag"}}, {"op": "CANCEL", "label": "CANCEL_ATTACK", "target": "pending_attack", "parameters": {"phase": "defender Crown success"}}, {"op": "RESTRICT_RESPONSE", "label": "MODIFY_RESPONSE_TREE", "target": "defender", "parameters": {"phase": "candidate Sink Point", "normal_response_call": "absent in current candidate implementation"}, "exceptional_justification": "Recorded candidate behavior only; not approved or normalized."}],
-      "state_aftermath": [{"op": "SET", "label": "ESTABLISH_CROSSING", "state": "contact", "value": "crossing", "parameters": {"phase": "successful Crown", "measure": "preserve", "zones": "unknown/unknown", "pressure": "unknown/unknown"}}, {"op": "SET", "label": "SET_CROWN_CONTEXT", "state": "crown_context", "value": true, "parameters": {"status": "candidate only"}}],
-      "continuation": ["Candidate Sink Point Under Crown: spend 1 Spiritus, make a normal attack, set attacker point threatening, then clean context; locally rational after Crown exists."],
-      "opponent_counterplay": ["Defender can choose generic Cross, Beat, Counter, or other legal response instead of Crown", "Decline to create the Crown context", "Candidate Sink implementation currently lacks another defence call and therefore requires scrutiny"],
-      "event_metadata": [{"event": "historical_action_label", "note": "Scheitelhau against Alber, Crown reception, and later point-sink/wind/press/slice phases are historically separated."}],
-      "nearest_basic_alternative": "Untagged Basic Cut for the attacker; generic Basic Cross or Beat for the defender", "distinct_reason": "The initial tag is free upside for the attacker, while the defender's Crown choice grants the opponent a continuation without a defender-side benefit; only the continuation is locally motivated once the globally unmotivated context exists.",
-      "reason_types": ["state-dependent", "repertoire-dependent"], "simulator_representation": {"level": "full", "notes": "Candidate harness represents C1/B3, including auto-tag and context; it is not governing."},
-      "ghost_utility": {"present": true, "notes": "Policy supplies Crown response motivation not present in the rules and auto-tags qualifying entries."}, "missing_effect_exposed": {"present": true, "notes": "Grammar exposes free context creation, reciprocal defender motivation failure, and locally valid continuation inside a globally invalid setup."},
-      "completeness_classification": ["CANDIDATE ONLY", "GHOST VALUE", "EXCEPTIONAL RESPONSE MODIFIER"], "exceptional_rule": {"present": true, "notes": "Candidate Sink currently bypasses a normal response call; no promotion or fix is made."}
+      "id": "basic-counter",
+      "name": "Basic Counter",
+      "status": "Basic",
+      "historical_source": {
+        "record_ids": [
+          "docs/melee-design-packet-v0.4.md"
+        ],
+        "evidence_status": "PROJECT_RULE",
+        "locators": [
+          "Section 3.5"
+        ]
+      },
+      "trigger": [
+        {
+          "id": "incoming_attack",
+          "text": "Against an ordinary attack, after its roll succeeds; against any publicly Committed attack, the target may instead declare Counter in the pre-roll declaration window."
+        }
+      ],
+      "cost_commitment": [
+        {
+          "id": "reaction_action",
+          "text": "Spend the target's action. An ordinary post-success Counter accepts the incoming hit; a pre-roll Committed Counter resolves first and cancels the pending attack only if it removes the attacker."
+        }
+      ],
+      "test": [
+        {
+          "id": "normal_weapon_attack_roll",
+          "text": "Normal attack roll with the Counter weapon."
+        }
+      ],
+      "primary_payload": [
+        {
+          "op": "ATTACK",
+          "label": "MAKE_ATTACK",
+          "target": "attacker",
+          "parameters": {
+            "timing": "simultaneous after an ordinary successful attack, or first in the target-only declaration window of any Committed attack",
+            "damage_mode": "normal"
+          }
+        }
+      ],
+      "state_aftermath": [],
+      "continuation": [],
+      "opponent_counterplay": [
+        "Survive or remove the countering defender",
+        "A Committed attacker that survives the pre-roll Counter proceeds with the authored attack"
+      ],
+      "event_metadata": [],
+      "nearest_basic_alternative": "Basic Cross or Basic Beat",
+      "distinct_reason": "Trades instead of cancelling after ordinary success, while public Committed timing creates a pre-roll removal gamble for the target; the preferred response changes with both fighters' HP and attack state.",
+      "reason_types": [
+        "state-dependent"
+      ],
+      "simulator_representation": {
+        "level": "full",
+        "notes": "Ordinary simultaneous Counter and general target-only pre-roll Committed Counter are represented."
+      },
+      "ghost_utility": {
+        "present": false,
+        "notes": "Damage trade is concrete."
+      },
+      "missing_effect_exposed": {
+        "present": false,
+        "notes": "No missing payload."
+      },
+      "completeness_classification": [
+        "COMPLETE — RESOURCE/STATE-DEPENDENT"
+      ],
+      "exceptional_rule": {
+        "present": false,
+        "notes": "Pre-roll timing is the general public Committed procedure, not a Power-only exception."
+      }
+    },
+    {
+      "id": "basic-ignore",
+      "name": "Ignore",
+      "status": "Basic",
+      "historical_source": {
+        "record_ids": [
+          "docs/melee-design-packet-v0.4.md"
+        ],
+        "evidence_status": "PROJECT_RULE",
+        "locators": [
+          "Section 3.5"
+        ]
+      },
+      "trigger": [
+        {
+          "id": "incoming_successful_attack",
+          "text": "After an incoming Strike succeeds."
+        }
+      ],
+      "cost_commitment": [
+        {
+          "id": "accept_damage",
+          "text": "Take the hit; spend no defensive action."
+        }
+      ],
+      "test": [
+        {
+          "id": "no_test",
+          "text": "No defence test."
+        }
+      ],
+      "primary_payload": [
+        {
+          "op": "RETAIN",
+          "label": "RETAIN_ACTION_AVAILABILITY",
+          "state": "action_available",
+          "value": true,
+          "parameters": {
+            "window": "current round"
+          }
+        }
+      ],
+      "state_aftermath": [],
+      "continuation": [
+        "Use the preserved action later if the fighter survives."
+      ],
+      "opponent_counterplay": [
+        "Resolve ordinary damage; lethal or disabling damage removes the retained tempo's value"
+      ],
+      "event_metadata": [],
+      "nearest_basic_alternative": "Spend action on Cross, Beat, or Counter",
+      "distinct_reason": "Preserves the action when expected incoming damage is survivable and future tempo is more valuable than the defence attempt.",
+      "reason_types": [
+        "state-dependent"
+      ],
+      "simulator_representation": {
+        "level": "partial",
+        "notes": "Damage and non-expenditure are represented; current AI score does not value future action explicitly."
+      },
+      "ghost_utility": {
+        "present": true,
+        "notes": "The rules reason exists, but current policy uses a bare zero rather than future action value."
+      },
+      "missing_effect_exposed": {
+        "present": false,
+        "notes": "The payoff is retained tempo, not an attack/state fiction."
+      },
+      "completeness_classification": [
+        "COMPLETE — RESOURCE/STATE-DEPENDENT",
+        "GHOST VALUE"
+      ],
+      "exceptional_rule": {
+        "present": false,
+        "notes": "Declining a response does not modify the opponent's tree."
+      }
+    },
+    {
+      "id": "voluntary-guard-change-gc1",
+      "name": "Voluntary Guard Change (GC1)",
+      "status": "governing provisional",
+      "historical_source": {
+        "record_ids": [
+          "data/prototypes/longsword-governing-provisional-v0.1.yaml",
+          "reports/governing-open-provisional.md"
+        ],
+        "evidence_status": "PROJECT_RULE",
+        "locators": [
+          "2026-08-12 GC1 adjudication"
+        ],
+        "notes": "No sparse adjacency claim."
+      },
+      "trigger": [
+        {
+          "id": "activation_before_action",
+          "text": "Once on the fighter's activation, before taking the action."
+        }
+      ],
+      "cost_commitment": [
+        {
+          "id": "guard_change_allowance",
+          "text": "Consume the activation's one voluntary guard-change allowance and retain the posture through the following opponent opportunity."
+        }
+      ],
+      "test": [
+        {
+          "id": "no_test",
+          "text": "No roll."
+        }
+      ],
+      "primary_payload": [
+        {
+          "op": "SET",
+          "label": "ESTABLISH_NAMED_GUARD",
+          "target": "actor",
+          "state": "guard",
+          "value": "chosen otherwise legal named guard"
+        }
+      ],
+      "state_aftermath": [],
+      "continuation": [
+        "The chosen guard's public intrinsic and learned gates apply; authored action-produced transitions remain separate."
+      ],
+      "opponent_counterplay": [
+        "Read and exploit the public retained posture during the next opportunity"
+      ],
+      "event_metadata": [
+        {
+          "event": "source_facing_transition",
+          "note": "The voluntary all-to-all abstraction makes no pairwise historical adjacency claim."
+        }
+      ],
+      "nearest_basic_alternative": "Remain in current guard or remain Open",
+      "distinct_reason": "Access a desired intrinsic/gate now while accepting its posture and opportunity costs until a later activation.",
+      "reason_types": [
+        "state-dependent",
+        "repertoire-dependent"
+      ],
+      "simulator_representation": {
+        "level": "none",
+        "notes": "Current archived guard engine uses the superseded before-or-after harness."
+      },
+      "ghost_utility": {
+        "present": false,
+        "notes": "The governing commitment is explicit."
+      },
+      "missing_effect_exposed": {
+        "present": false,
+        "notes": "No voluntary graph is required."
+      },
+      "completeness_classification": [
+        "COMPLETE — RESOURCE/STATE-DEPENDENT"
+      ],
+      "exceptional_rule": {
+        "present": false,
+        "notes": "Normal posture assignment."
+      }
+    },
+    {
+      "id": "loaded-proactive-cut",
+      "name": "Loaded Proactive Cut",
+      "status": "governing provisional",
+      "historical_source": {
+        "record_ids": [
+          "data/prototypes/longsword-governing-provisional-v0.1.yaml",
+          "data/guards/longsword-named-v0.1.yaml"
+        ],
+        "evidence_status": "PROJECT_RULE",
+        "locators": [
+          "loaded; Posta di Donna physical_state"
+        ],
+        "notes": "Loaded/Damage Boon is an Atra abstraction, not a manuscript rule."
+      },
+      "trigger": [
+        {
+          "id": "proactive_loaded_cut",
+          "text": "Declare an ordinary proactive Basic Cut while Loaded by the current guard."
+        }
+      ],
+      "cost_commitment": [
+        {
+          "id": "action",
+          "text": "Same action as Basic Cut; no Spiritus or learned slot; retain the Loaded guard under GC1."
+        }
+      ],
+      "test": [
+        {
+          "id": "normal_weapon_attack_roll",
+          "text": "Normal Longsword attack roll."
+        }
+      ],
+      "primary_payload": [
+        {
+          "op": "ATTACK",
+          "label": "MAKE_ATTACK",
+          "target": "opponent",
+          "parameters": {
+            "attack_kind": "cut",
+            "accuracy": "normal",
+            "damage_mode": "normal",
+            "damage_modifier": "damage_boon"
+          }
+        }
+      ],
+      "state_aftermath": [],
+      "continuation": [
+        "Ordinary cut continuation/response architecture remains available."
+      ],
+      "opponent_counterplay": [
+        "Ordinary defence menu",
+        "State-based D1 after a declared Basic Cross or Beat when legal",
+        "Exploit the actor's retained nonthreatening Loaded posture"
+      ],
+      "event_metadata": [],
+      "nearest_basic_alternative": "Ordinary proactive Basic Cut",
+      "distinct_reason": "Receives Damage Boon at no Spiritus cost but requires/retains the Loaded posture.",
+      "reason_types": [
+        "state-dependent"
+      ],
+      "simulator_representation": {
+        "level": "full",
+        "notes": "Damage Boon is correctly limited to proactive Basic Cuts."
+      },
+      "ghost_utility": {
+        "present": false,
+        "notes": "On-hit damage change is concrete."
+      },
+      "missing_effect_exposed": {
+        "present": false,
+        "notes": "Damage Boon is an ATTACK parameter."
+      },
+      "completeness_classification": [
+        "COMPLETE — RESOURCE/STATE-DEPENDENT"
+      ],
+      "exceptional_rule": {
+        "present": false,
+        "notes": "Normal response tree."
+      }
+    },
+    {
+      "id": "power-attack-p1",
+      "name": "P1 Power Attack",
+      "status": "governing provisional",
+      "historical_source": {
+        "record_ids": [
+          "data/prototypes/longsword-governing-provisional-v0.1.yaml"
+        ],
+        "evidence_status": "PROJECT_RULE",
+        "locators": [
+          "power_attack"
+        ],
+        "notes": "P1 is a Basic option, not a learned Play."
+      },
+      "trigger": [
+        {
+          "id": "proactive_loaded_cut",
+          "text": "Before the attack roll for a proactive Cut while Loaded."
+        }
+      ],
+      "cost_commitment": [
+        {
+          "id": "action",
+          "text": "Spend the action."
+        },
+        {
+          "id": "spiritus",
+          "text": "Spend 1 Spiritus at declaration."
+        },
+        {
+          "id": "committed",
+          "text": "Publicly Committed: no attacker-side D1 or other insertion; the target receives the general pre-roll Counter/Preparation choice."
+        }
+      ],
+      "test": [
+        {
+          "id": "normal_weapon_attack_roll",
+          "text": "Normal Longsword attack roll; no attack Bane."
+        }
+      ],
+      "primary_payload": [
+        {
+          "op": "ATTACK",
+          "label": "MAKE_ATTACK",
+          "target": "opponent",
+          "parameters": {
+            "attack_kind": "power_cut",
+            "accuracy": "normal",
+            "damage_mode": "fixed_normal_max",
+            "damage": 7,
+            "loaded_boon_stacks": false
+          }
+        },
+        {
+          "op": "MODIFY_ATTACK",
+          "label": "SET_COMMITTED",
+          "target": "pending_attack",
+          "parameters": {
+            "committed": true,
+            "declaration_window": "target-only Counter or authored Preparation"
+          }
+        }
+      ],
+      "state_aftermath": [],
+      "continuation": [],
+      "opponent_counterplay": [
+        "Use the general Committed declaration window for Counter or authored Preparation",
+        "If waiting and the attack succeeds, use an ordinary simultaneous Counter or another legal response",
+        "Ignore or eligible defender Play"
+      ],
+      "event_metadata": [],
+      "nearest_basic_alternative": "Loaded proactive Basic Cut",
+      "distinct_reason": "Buys fixed maximum normal damage/lethal certainty; Loaded Cut preserves Spiritus and flexible attacker continuations, while P1 inherits the same public Committed timing as any other Committed attack.",
+      "reason_types": [
+        "resource-dependent",
+        "state-dependent"
+      ],
+      "simulator_representation": {
+        "level": "full",
+        "notes": "P1 cost, fixed 7, no stacking, Committed status, and the general Committed declaration window are represented."
+      },
+      "ghost_utility": {
+        "present": false,
+        "notes": "Broad observed frequency can be policy-sensitive, but the rules choice is real."
+      },
+      "missing_effect_exposed": {
+        "present": false,
+        "notes": "Fixed damage and commitment are ATTACK parameters, not added atomic effects."
+      },
+      "completeness_classification": [
+        "COMPLETE — RESOURCE/STATE-DEPENDENT"
+      ],
+      "exceptional_rule": {
+        "present": false,
+        "notes": "P1 inherits the general Committed procedure; it does not author a Power-only response restriction."
+      }
+    },
+    {
+      "id": "durchwechseln-d1",
+      "name": "Durchwechseln (D1)",
+      "status": "governing provisional",
+      "historical_source": {
+        "record_ids": [
+          "play-german-longsword-durchwechseln",
+          "data/prototypes/longsword-governing-provisional-v0.1.yaml"
+        ],
+        "evidence_status": "EXACT_LOCATOR_VERIFIED",
+        "locators": [
+          "Pseudo-Peter von Danzig, Cod.44.A.8, ff. 30v.3-31r.2"
+        ]
+      },
+      "trigger": [
+        {
+          "id": "after_declared_basic_parry_before_defence_roll",
+          "text": "After a declared Basic Cross or Beat and before its defence roll, while contact is none, the defender commits toward the actor's weapon, the defender's point is not threatening, D1 reserve and chain capacity exist, and the attack is not Committed."
+        }
+      ],
+      "cost_commitment": [
+        {
+          "id": "spiritus",
+          "text": "1 Spiritus at declaration, no refund."
+        },
+        {
+          "id": "learned_chain_entry",
+          "text": "Consumes one learned-Play chain entry; the original action remains the initiating action."
+        }
+      ],
+      "test": [
+        {
+          "id": "normal_weapon_attack_roll",
+          "text": "A fresh normal Longsword attack roll replaces the pending attack resolution."
+        }
+      ],
+      "primary_payload": [
+        {
+          "op": "REPLACE_PENDING_ATTACK",
+          "label": "REPLACE_PENDING_ATTACK",
+          "target": "pending_attack",
+          "parameters": {
+            "replacement": "fresh normal Longsword attack on the changed line",
+            "declared_defence_roll": "skipped"
+          },
+          "exceptional_justification": "D1 substitutes a newly rolled attack for the pending resolution; it is not an extra attack."
+        }
+      ],
+      "state_aftermath": [
+        {
+          "op": "CLEAR",
+          "label": "END_CONTACT",
+          "state": "contact",
+          "value": "none"
+        },
+        {
+          "op": "SET",
+          "label": "SET_POINT_THREAT",
+          "target": "actor",
+          "state": "point_threat",
+          "value": "threatening"
+        }
+      ],
+      "continuation": [
+        "Reduced Spiritus and chain capacity; current S2 Schielhau can contest the change-through in its sourced branch."
+      ],
+      "opponent_counterplay": [
+        "Maintain threatening point",
+        "Use a legal compound defence",
+        "Exploit D1 failure/resource depletion",
+        "S2 Schielhau contest where triggered"
+      ],
+      "event_metadata": [
+        {
+          "event": "historical_action_label",
+          "note": "Change beneath the attempted engagement before firm bind."
+        }
+      ],
+      "nearest_basic_alternative": "Allow the declared Basic Beat roll against the original attack",
+      "distinct_reason": "Replaces a likely successful defence roll with the attacker's fresh attack probability while avoiding firm contact, at real Spiritus/chain/failure cost.",
+      "reason_types": [
+        "resource-dependent",
+        "state-dependent"
+      ],
+      "simulator_representation": {
+        "level": "full",
+        "notes": "The authoritative shared engine implements the state-based pre-roll D1 window for both declared Basic Cross and Beat, subject to its normal prerequisites."
+      },
+      "ghost_utility": {
+        "present": false,
+        "notes": "The replacement probability/resource trade is concrete."
+      },
+      "missing_effect_exposed": {
+        "present": false,
+        "notes": "A distinct REPLACE_PENDING_ATTACK operator is required for semantic closure; generic REDIRECT is unnecessary."
+      },
+      "completeness_classification": [
+        "COMPLETE — RESOURCE/STATE-DEPENDENT",
+        "EXCEPTIONAL RESPONSE MODIFIER"
+      ],
+      "exceptional_rule": {
+        "present": true,
+        "notes": "Skips/replaces the declared Basic defence resolution; explicitly justified and D1-specific."
+      }
+    },
+    {
+      "id": "absetzen-c2",
+      "name": "Absetzen (C2)",
+      "status": "governing provisional",
+      "historical_source": {
+        "record_ids": [
+          "play-german-longsword-absetzen"
+        ],
+        "evidence_status": "EXACT_LOCATOR_VERIFIED",
+        "locators": [
+          "Pseudo-Peter von Danzig, Cod.44.A.8, ff. 30r.2-30v.1"
+        ]
+      },
+      "trigger": [
+        {
+          "id": "incoming_thrust",
+          "text": "Remedy against an incoming center/high thrust from the currently authored Pflug access."
+        }
+      ],
+      "cost_commitment": [
+        {
+          "id": "reaction_action",
+          "text": "Spend the defender's action."
+        },
+        {
+          "id": "spiritus",
+          "text": "Spend 2 Spiritus at declaration."
+        },
+        {
+          "id": "learned_chain_entry",
+          "text": "Consume one learned-Play chain entry."
+        }
+      ],
+      "test": [
+        {
+          "id": "normal_defence_roll",
+          "text": "One Longsword roll is the existing joined defence/offence test."
+        }
+      ],
+      "primary_payload": [
+        {
+          "op": "CANCEL",
+          "label": "CANCEL_ATTACK",
+          "target": "pending_attack"
+        },
+        {
+          "op": "ATTACK",
+          "label": "MAKE_ATTACK",
+          "target": "attacker",
+          "parameters": {
+            "attack_kind": "counter_thrust",
+            "damage_mode": "normal",
+            "action_compression": true
+          }
+        }
+      ],
+      "state_aftermath": [
+        {
+          "op": "SET",
+          "label": "ESTABLISH_CROSSING",
+          "state": "contact",
+          "value": "crossing",
+          "parameters": {
+            "measure": "wide",
+            "pressure": "unknown/unknown",
+            "zones": "unknown/unknown"
+          }
+        },
+        {
+          "op": "SET",
+          "label": "SET_POINT_THREAT",
+          "target": "actor",
+          "state": "point_threat",
+          "value": "threatening"
+        }
+      ],
+      "continuation": [
+        "Ordinary unretained Crossing cleans; maintained point threat denies ordinary D1."
+      ],
+      "opponent_counterplay": [
+        "Avoid or vary the thrust trigger",
+        "Exploit defender failure",
+        "Pressure Spiritus/chain reserve"
+      ],
+      "event_metadata": [],
+      "nearest_basic_alternative": "Basic Cross or Basic Beat",
+      "distinct_reason": "Compresses cancellation and a normal attack into one Remedy; Basics conserve 2 Spiritus and chain space.",
+      "reason_types": [
+        "intrinsic",
+        "resource-dependent",
+        "state-dependent"
+      ],
+      "simulator_representation": {
+        "level": "full",
+        "notes": "Current C2 one-roll cancellation/counter-damage and aftermath are represented."
+      },
+      "ghost_utility": {
+        "present": false,
+        "notes": "Joined defence/offence is concrete."
+      },
+      "missing_effect_exposed": {
+        "present": false,
+        "notes": "Crossing/point/guard geometry is aftermath, not equal-price payload count."
+      },
+      "completeness_classification": [
+        "COMPLETE — RESOURCE/STATE-DEPENDENT"
+      ],
+      "exceptional_rule": {
+        "present": false,
+        "notes": "Uses an existing one-roll compound Remedy, not response denial."
+      }
+    },
+    {
+      "id": "scambiar-di-punta-c2",
+      "name": "Scambiar di Punta (C2)",
+      "status": "governing provisional",
+      "historical_source": {
+        "record_ids": [
+          "play-italian-longsword-scambiar-di-punta"
+        ],
+        "evidence_status": "EXACT_LOCATOR_VERIFIED",
+        "locators": [
+          "Fiore, Getty 26v-a; Morgan 14v-c; Pisani Dossi 20b-c"
+        ]
+      },
+      "trigger": [
+        {
+          "id": "incoming_thrust",
+          "text": "Remedy against an incoming center/high thrust from the current source-described Donna/Tutta access."
+        }
+      ],
+      "cost_commitment": [
+        {
+          "id": "reaction_action",
+          "text": "Spend the defender's action."
+        },
+        {
+          "id": "spiritus",
+          "text": "Spend 2 Spiritus at declaration."
+        },
+        {
+          "id": "learned_chain_entry",
+          "text": "Consume one learned-Play chain entry."
+        }
+      ],
+      "test": [
+        {
+          "id": "normal_defence_roll",
+          "text": "One Longsword roll is the existing joined defence/offence test."
+        }
+      ],
+      "primary_payload": [
+        {
+          "op": "CANCEL",
+          "label": "CANCEL_ATTACK",
+          "target": "pending_attack"
+        },
+        {
+          "op": "ATTACK",
+          "label": "MAKE_ATTACK",
+          "target": "attacker",
+          "parameters": {
+            "attack_kind": "counter_thrust",
+            "damage_mode": "normal",
+            "action_compression": true
+          }
+        }
+      ],
+      "state_aftermath": [
+        {
+          "op": "SET",
+          "label": "ESTABLISH_CROSSING",
+          "state": "contact",
+          "value": "crossing",
+          "parameters": {
+            "measure": "wide",
+            "pressure": "unknown/unknown",
+            "zones": "unknown/unknown"
+          }
+        },
+        {
+          "op": "SET",
+          "label": "SET_POINT_THREAT",
+          "target": "actor",
+          "state": "point_threat",
+          "value": "threatening"
+        }
+      ],
+      "continuation": [
+        "Ordinary unretained Crossing cleans."
+      ],
+      "opponent_counterplay": [
+        "Avoid or vary the thrust trigger",
+        "Exploit failure",
+        "Pressure Spiritus/chain reserve"
+      ],
+      "event_metadata": [],
+      "nearest_basic_alternative": "Basic Cross or Basic Beat",
+      "distinct_reason": "Compresses cancellation and a normal counter-thrust into one Remedy; access/source geometry distinguishes it from Absetzen, not a new payload type.",
+      "reason_types": [
+        "intrinsic",
+        "resource-dependent",
+        "state-dependent"
+      ],
+      "simulator_representation": {
+        "level": "full",
+        "notes": "Shares the current C2 chassis with Absetzen."
+      },
+      "ghost_utility": {
+        "present": false,
+        "notes": "Healthy versus Basic; chassis duplication is an explicit watch item."
+      },
+      "missing_effect_exposed": {
+        "present": false,
+        "notes": "No additional effect needed for source naming."
+      },
+      "completeness_classification": [
+        "COMPLETE — RESOURCE/STATE-DEPENDENT"
+      ],
+      "exceptional_rule": {
+        "present": false,
+        "notes": "No response denial."
+      }
+    },
+    {
+      "id": "schielhau-s2",
+      "name": "Schielhau (current S2)",
+      "status": "governing provisional",
+      "historical_source": {
+        "record_ids": [
+          "play-german-longsword-schielhau"
+        ],
+        "evidence_status": "EXACT_LOCATOR_VERIFIED",
+        "locators": [
+          "Pseudo-Peter von Danzig, Cod.44.A.8, ff. 23v.1-23v.2 for reactive/change-through; ff. 23r.3-23v.1 for proactive Pflug breaker"
+        ]
+      },
+      "trigger": [
+        {
+          "id": "incoming_descending_cut",
+          "text": "Reactive Remedy against the historically appropriate descending high-line attack; if the same opponent attempts D1 below this successful Schielhau before contact, apply S2."
+        }
+      ],
+      "cost_commitment": [
+        {
+          "id": "reaction_action",
+          "text": "Spend the defender's action."
+        },
+        {
+          "id": "spiritus",
+          "text": "Spend 2 Spiritus at declaration."
+        },
+        {
+          "id": "learned_chain_entry",
+          "text": "Consume one learned-Play entry; intrinsic long point is not another Play."
+        }
+      ],
+      "test": [
+        {
+          "id": "normal_defence_roll",
+          "text": "Normal Longsword Remedy roll."
+        },
+        {
+          "id": "existing_s2_roll_comparison",
+          "text": "If D1 is attempted, reuse the successful Schielhau d20 result against a fresh D1 roll under the governing S2 comparison."
+        }
+      ],
+      "primary_payload": [
+        {
+          "op": "CANCEL",
+          "label": "CANCEL_ATTACK",
+          "target": "pending_attack"
+        },
+        {
+          "op": "ATTACK",
+          "label": "MAKE_ATTACK",
+          "target": "attacker",
+          "parameters": {
+            "attack_kind": "reactive_schielhau_long_point",
+            "damage_mode": "normal",
+            "action_compression": true
+          }
+        }
+      ],
+      "state_aftermath": [
+        {
+          "op": "CLEAR",
+          "label": "END_CONTACT",
+          "state": "contact",
+          "value": "none"
+        },
+        {
+          "op": "SET",
+          "label": "SET_POINT_THREAT",
+          "target": "actor",
+          "state": "point_threat",
+          "value": "threatening"
+        }
+      ],
+      "continuation": [
+        "S2 resolves the sourced D1 rejoinder inside the same reactive mechanic."
+      ],
+      "opponent_counterplay": [
+        "Avoid the descending-cut trigger",
+        "Attempt D1 and contest under S2",
+        "Exploit failure or resource depletion"
+      ],
+      "event_metadata": [
+        {
+          "event": "historical_timing_label",
+          "note": "Current S2 models the reactive anti-change-through passage, not the proactive Pflug-breaking relationship."
+        }
+      ],
+      "nearest_basic_alternative": "Basic Cross or Basic Beat",
+      "distinct_reason": "Buys joined cancellation/counter-damage and a threatening-point separated result, with a specific S2 answer to D1; Basics conserve reserve/chain.",
+      "reason_types": [
+        "intrinsic",
+        "resource-dependent",
+        "state-dependent"
+      ],
+      "simulator_representation": {
+        "level": "full",
+        "notes": "Current reactive S2 is represented; the sourced proactive Pflug breaker remains unimplemented and gains no modifier."
+      },
+      "ghost_utility": {
+        "present": false,
+        "notes": "S2 branch is real; no proactive breaker utility is claimed."
+      },
+      "missing_effect_exposed": {
+        "present": true,
+        "notes": "The separate proactive Pflug-breaking relationship has no implemented payload and is not smuggled into S2."
+      },
+      "completeness_classification": [
+        "COMPLETE — RESOURCE/STATE-DEPENDENT",
+        "EXCEPTIONAL RESPONSE MODIFIER"
+      ],
+      "exceptional_rule": {
+        "present": true,
+        "notes": "S2 exceptionally compares an established Remedy roll with a D1 replacement roll; this is explicitly scoped, not a universal opposed-roll architecture."
+      }
+    },
+    {
+      "id": "tutta-cover-to-stretto-t1",
+      "name": "Tutta Cover to Stretto (T1)",
+      "status": "governing provisional",
+      "historical_source": {
+        "record_ids": [
+          "data/prototypes/longsword-guard-play-bridge-v0.1.yaml"
+        ],
+        "evidence_status": "EXACT_LOCATOR_VERIFIED",
+        "locators": [
+          "Fiore, Getty 23v-a; Morgan 12r-a; Pisani Dossi 18a-a"
+        ]
+      },
+      "trigger": [
+        {
+          "id": "after_successful_qualifying_cross_before_h3_creation",
+          "text": "After a successful Tutta Basic Cross against an ordinary proactive non-Power, non-Committed Basic Cut at Wide and after D1 timing, before H3 Rejoinder creation."
+        }
+      ],
+      "cost_commitment": [
+        {
+          "id": "spiritus",
+          "text": "Spend 1 Spiritus at declaration, no refund."
+        },
+        {
+          "id": "learned_chain_entry",
+          "text": "Consume one learned-Play entry; no additional action."
+        }
+      ],
+      "test": [
+        {
+          "id": "no_additional_roll",
+          "text": "No second roll; the Basic Cross test already resolved."
+        }
+      ],
+      "primary_payload": [
+        {
+          "op": "RETAIN",
+          "label": "RETAIN_CROSSING",
+          "state": "contact",
+          "value": "crossing",
+          "requires": "Crossing already exists"
+        },
+        {
+          "op": "SET",
+          "label": "CHANGE_MEASURE",
+          "state": "measure",
+          "value": "close",
+          "requires": "measure=wide"
+        }
+      ],
+      "state_aftermath": [
+        {
+          "op": "SET",
+          "label": "SET_BIND_AXIS",
+          "state": "bind_height",
+          "value": "unknown"
+        },
+        {
+          "op": "SET",
+          "label": "SET_BIND_AXIS",
+          "state": "bind_opportunity",
+          "value": "Hart: original striker; Weich: Tutta defender"
+        },
+        {
+          "op": "CLEAR",
+          "label": "SET_BIND_AXIS",
+          "state": "initial_pressure",
+          "value": "unknown"
+        }
+      ],
+      "continuation": [
+        "Pommel or another authored Close consumer may be declared only by the current opportunity holder and only if its own prerequisites are met. H3 is never created when T1 is used."
+      ],
+      "opponent_counterplay": [
+        "Choose a non-triggering attack/response line",
+        "Exploit the first Close opportunity on Hart",
+        "Possess reciprocal Close repertoire",
+        "Pass or disengage under the existing bounded bind rules"
+      ],
+      "event_metadata": [
+        {
+          "event": "source_facing_transition",
+          "note": "Cover and pass into stretto; the Play does not buy the original Cross."
+        }
+      ],
+      "nearest_basic_alternative": "Decline E1 and allow the otherwise-ordinary H3 Rejoinder",
+      "distinct_reason": "Retains existing Crossing, changes Wide to Close, and assigns an immediate repertoire-dependent opportunity while giving up the ordinary H3 route.",
+      "reason_types": [
+        "repertoire-dependent",
+        "resource-dependent",
+        "state-dependent"
+      ],
+      "simulator_representation": {
+        "level": "full",
+        "notes": "Authoritative shared engine exposes E1 before H3 and implements Hart/Weich Close opportunity assignment."
+      },
+      "ghost_utility": {
+        "present": false,
+        "notes": "Runtime exposes actual Close opportunities and legal consumers rather than a hand-authored policy proxy."
+      },
+      "missing_effect_exposed": {
+        "present": false,
+        "notes": "The bounded E1 state transformation is complete; broader Close mechanics remain explicitly deferred."
+      },
+      "completeness_classification": [
+        "COMPLETE — REPERTOIRE-DEPENDENT"
+      ],
+      "exceptional_rule": {
+        "present": false,
+        "notes": "No response denial, action restoration, or new operator."
+      }
+    },
+    {
+      "id": "pommel-strike",
+      "name": "Pommel Strike",
+      "status": "governing provisional",
+      "historical_source": {
+        "record_ids": [
+          "play-italian-longsword-pommel-strike"
+        ],
+        "evidence_status": "EXACT_LOCATOR_VERIFIED",
+        "locators": [
+          "Fiore, Getty 28r-c/d; Morgan 16r-c/d; Pisani Dossi 22a-c/d"
+        ]
+      },
+      "trigger": [
+        {
+          "id": "while_close_crossing",
+          "text": "While both fighters live, from an established Close Crossing when the knowledgeable actor holds the current bind opportunity and has chain room."
+        }
+      ],
+      "cost_commitment": [
+        {
+          "id": "spiritus",
+          "text": "Spend 2 Spiritus at declaration."
+        },
+        {
+          "id": "learned_chain_entry",
+          "text": "Consume one learned-Play entry; spend no additional normal action."
+        }
+      ],
+      "test": [
+        {
+          "id": "normal_weapon_attack_roll",
+          "text": "Normal Longsword roll for the pommel attack."
+        }
+      ],
+      "primary_payload": [
+        {
+          "op": "ATTACK",
+          "label": "MAKE_ATTACK",
+          "target": "opponent",
+          "parameters": {
+            "attack_kind": "pommel",
+            "test_skill": "Longsword",
+            "accuracy_modifier": "normal",
+            "damage_mode": "normal"
+          }
+        }
+      ],
+      "state_aftermath": [
+        {
+          "op": "CLEAR",
+          "label": "END_CONTACT",
+          "state": "contact",
+          "value": "none",
+          "condition": "hit; normal bounded bind cleanup"
+        },
+        {
+          "op": "RETAIN",
+          "label": "RETAIN_CROSSING",
+          "state": "contact",
+          "value": "crossing",
+          "condition": "miss"
+        },
+        {
+          "op": "SET",
+          "label": "SET_BIND_AXIS",
+          "state": "bind_height",
+          "value": "unknown",
+          "condition": "miss"
+        },
+        {
+          "op": "SET",
+          "label": "SET_BIND_AXIS",
+          "state": "bind_opportunity",
+          "value": "opponent",
+          "condition": "miss"
+        }
+      ],
+      "continuation": [
+        "On a miss the opponent receives the next Close opportunity; existing pass/disengage and authored continuation rules apply."
+      ],
+      "opponent_counterplay": [
+        "Ordinary response structure is not intrinsically restricted",
+        "Prevent or escape the Close-Crossing trigger",
+        "Use the current opportunity first",
+        "Exploit a transferred opportunity after a miss"
+      ],
+      "event_metadata": [],
+      "nearest_basic_alternative": "Pass, disengage, or use another authored continuation from the current opportunity",
+      "distinct_reason": "A narrow Close-only attack purchases normal damage without an additional action, but costs 2 Spiritus and one chain entry and exposes reciprocal opportunity on a miss.",
+      "reason_types": [
+        "repertoire-dependent",
+        "resource-dependent",
+        "state-dependent"
+      ],
+      "simulator_representation": {
+        "level": "full",
+        "notes": "Authoritative engine implements the P2 gate, flat Longsword roll, normal damage, hit cleanup, and miss transfer."
+      },
+      "ghost_utility": {
+        "present": false,
+        "notes": "Actual legal opportunities, declarations, results, costs, and transfers are instrumented."
+      },
+      "missing_effect_exposed": {
+        "present": false,
+        "notes": "The bounded governing continuation is complete; broader narrow-play chains remain deferred."
+      },
+      "completeness_classification": [
+        "COMPLETE — REPERTOIRE-DEPENDENT"
+      ],
+      "exceptional_rule": {
+        "present": false,
+        "notes": "Pommel has no intrinsic response restriction or new effect operator."
+      }
+    },
+    {
+      "id": "nachreisen-current",
+      "name": "Nachreisen (current)",
+      "status": "governing provisional",
+      "historical_source": {
+        "record_ids": [
+          "play-german-longsword-nachreisen"
+        ],
+        "evidence_status": "EXACT_LOCATOR_VERIFIED",
+        "locators": [
+          "Pseudo-Peter von Danzig, Cod.44.A.8, ff. 27v.2-28r.1; related continuations ff. 28r.2-28v.2"
+        ]
+      },
+      "trigger": [
+        {
+          "id": "target_only_preparation",
+          "text": "In the target-only declaration window of a publicly Committed attack, before its roll."
+        },
+        {
+          "id": "target_only_recovery",
+          "text": "Immediately after that Committed attack misses, for its original target only."
+        }
+      ],
+      "cost_commitment": [
+        {
+          "id": "action",
+          "text": "Spend the target's action."
+        },
+        {
+          "id": "spiritus",
+          "text": "Spend 1 Spiritus at declaration."
+        },
+        {
+          "id": "learned_chain_entry",
+          "text": "Consume one learned-Play entry."
+        }
+      ],
+      "test": [
+        {
+          "id": "booned_weapon_attack_roll",
+          "text": "Longsword attack roll with exactly one attack Boon; normal damage on success."
+        }
+      ],
+      "primary_payload": [
+        {
+          "op": "ATTACK",
+          "label": "MAKE_ATTACK",
+          "target": "committed attacker",
+          "parameters": {
+            "attack_kind": "Nachreisen pursuit",
+            "accuracy": "boon",
+            "damage_mode": "normal",
+            "timing": "Preparation before roll or immediate Recovery after miss"
+          }
+        }
+      ],
+      "state_aftermath": [],
+      "continuation": [
+        "Preparation resolves first; if it removes the attacker, the pending Committed attack is cancelled. Otherwise the attack proceeds. Recovery is immediate and expires if not used."
+      ],
+      "opponent_counterplay": [
+        "Survive Preparation and resolve the Committed attack",
+        "Avoid offering the target-specific Recovery miss window",
+        "Pressure the target's action, Spiritus, or chain capacity"
+      ],
+      "event_metadata": [
+        {
+          "event": "historical_timing_label",
+          "note": "The source-supported pursuit lesson motivates the two target-only timing windows; the one-Boon payload and costs are Atra abstractions."
+        }
+      ],
+      "nearest_basic_alternative": "General pre-roll Committed Counter in Preparation, or no special attack after a miss",
+      "distinct_reason": "Pays 1 Spiritus and one chain entry to gain a Booned normal-damage pursuit in either of two target-only Committed windows; the ordinary Counter is flat and has no Recovery branch.",
+      "reason_types": [
+        "intrinsic",
+        "resource-dependent",
+        "state-dependent"
+      ],
+      "simulator_representation": {
+        "level": "full",
+        "notes": "Authoritative engine implements target-only Preparation and immediate Recovery, 1 Spiritus, one chain entry, action cost, Booned roll, normal damage, removal cancellation, and expiry."
+      },
+      "ghost_utility": {
+        "present": false,
+        "notes": "The Booned roll and second authored timing window are concrete rules value."
+      },
+      "missing_effect_exposed": {
+        "present": false,
+        "notes": "Current governing payload is complete. Vom Tag is source context, not a governing hard gate."
+      },
+      "completeness_classification": [
+        "COMPLETE — RESOURCE/STATE-DEPENDENT"
+      ],
+      "exceptional_rule": {
+        "present": false,
+        "notes": "Preparation and Recovery are authored target-only windows; they do not deny the ordinary response tree of any resolved attack."
+      }
+    },
+    {
+      "id": "zornhau-ort-current",
+      "name": "Zornhau-Ort (current)",
+      "status": "governing provisional local compatibility",
+      "historical_source": {
+        "record_ids": [
+          "play-german-longsword-zornhau-ort"
+        ],
+        "evidence_status": "EXACT_LOCATOR_VERIFIED",
+        "locators": [
+          "Pseudo-Peter von Danzig, Cod.44.A.8, ff. 13r.3-13v.1"
+        ]
+      },
+      "trigger": [
+        {
+          "id": "incoming_descending_cut",
+          "text": "Initial learned Remedy against a qualifying descending cut; Committed is not required."
+        },
+        {
+          "id": "zornhau_local_favored",
+          "text": "Intrinsic Ort continuation only from the preserved local Favored relation."
+        }
+      ],
+      "cost_commitment": [
+        {
+          "id": "reaction_action",
+          "text": "Spend the defender's action."
+        },
+        {
+          "id": "learned_chain_entry",
+          "text": "Consume one learned-Play entry; current initial phase is 0 Spiritus."
+        }
+      ],
+      "test": [
+        {
+          "id": "normal_defence_roll",
+          "text": "Normal Longsword defence roll for the initial counter-cut."
+        },
+        {
+          "id": "no_additional_roll",
+          "text": "Intrinsic Ort uses the local Favored requirement and no second attack roll."
+        }
+      ],
+      "primary_payload": [
+        {
+          "op": "CANCEL",
+          "label": "CANCEL_ATTACK",
+          "target": "pending_attack"
+        }
+      ],
+      "state_aftermath": [
+        {
+          "op": "SET",
+          "label": "ESTABLISH_CROSSING",
+          "state": "contact",
+          "value": "crossing",
+          "parameters": {
+            "measure": "wide",
+            "pressure": "unknown/unknown",
+            "point_threat": "threatening",
+            "local_relation": "Favored/Unfavored"
+          }
+        }
+      ],
+      "continuation": [
+        "Intrinsic 1-Spiritus Ort from local Favored; preserved Zornhau-local W1/W2 and passive Fühlen relation view remain pending separate adjudication."
+      ],
+      "opponent_counterplay": [
+        "Basic attack/defence alternatives remain",
+        "Do not supply a nonexistent voluntary Soft/Yield branch"
+      ],
+      "event_metadata": [
+        {
+          "event": "historical_action_label",
+          "note": "Counter-cut and conditional point are historically supported; current engine cannot motivate the point branch in normal combat."
+        }
+      ],
+      "nearest_basic_alternative": "Basic Cross",
+      "distinct_reason": "Zornhau is learned, point-threatening, and creates the preserved local relation/Ort path; ordinary Cross is chain-free and creates H3 initial pressure/height instead.",
+      "reason_types": [
+        "intrinsic",
+        "resource-dependent",
+        "repertoire-dependent",
+        "state-dependent"
+      ],
+      "simulator_representation": {
+        "level": "full",
+        "notes": "The authoritative shared engine preserves the qualifying Zornhau writer, local roll-derived relation, intrinsic Ort, local W1/W2, threatening point, initiative, and D1 denial."
+      },
+      "ghost_utility": {
+        "present": false,
+        "notes": "The preserved local relation is produced by qualifying successful Zornhau rolls and consumed by authored local continuations."
+      },
+      "missing_effect_exposed": {
+        "present": false,
+        "notes": "The local Zornhau grammar is mechanically closed for the preserved current branches; its compatibility architecture remains provisional debt."
+      },
+      "completeness_classification": [
+        "COMPLETE — RESOURCE/STATE/REPERTOIRE-DEPENDENT"
+      ],
+      "exceptional_rule": {
+        "present": false,
+        "notes": "No generic ordinary-bind exception is introduced; this is an explicitly preserved local source-specific system."
+      }
+    },
+    {
+      "id": "winden-current-material",
+      "name": "Winden (current material)",
+      "status": "governing provisional ordinary family; local compatibility preserved",
+      "historical_source": {
+        "record_ids": [
+          "play-german-longsword-winden",
+          "data/guards/longsword-named-v0.1.yaml"
+        ],
+        "evidence_status": "EVIDENCE INCOMPLETE",
+        "locators": [
+          "Proposed audit: Pseudo-Peter von Danzig, Cod.44.A.8, ff. 37r.2-38v.1; related menu ff. 14r.2-15r.1"
+        ],
+        "notes": "Main Play record remains needs-item-level-audit despite a proposed exact witness audit."
+      },
+      "trigger": [
+        {
+          "id": "current_bind_opportunity",
+          "text": "Actor knows Winden, holds the current ordinary bind opportunity, Crossing exists, authored bind_height is Upper or Lower, 2 Spiritus and chain room exist."
+        }
+      ],
+      "cost_commitment": [
+        {
+          "id": "spiritus",
+          "text": "Spend 2 Spiritus."
+        },
+        {
+          "id": "learned_chain_entry",
+          "text": "Consume one learned entry per actual Winding declaration; no additional action."
+        }
+      ],
+      "test": [
+        {
+          "id": "normal_weapon_attack_roll",
+          "text": "Flat Longsword Thrust roll for normal damage."
+        }
+      ],
+      "primary_payload": [
+        {
+          "op": "ATTACK",
+          "label": "MAKE_ATTACK",
+          "target": "opponent",
+          "parameters": {
+            "attack_kind": "thrust",
+            "accuracy": "normal",
+            "damage_mode": "normal"
+          }
+        }
+      ],
+      "state_aftermath": [
+        {
+          "op": "RETAIN",
+          "state": "contact",
+          "value": "crossing"
+        },
+        {
+          "op": "SET",
+          "state": "guard",
+          "value": "Ochs for Upper or Pflug for Lower"
+        },
+        {
+          "op": "SET",
+          "state": "point_threat",
+          "value": "threatening"
+        }
+      ],
+      "continuation": [
+        "Hit ends the bounded bind sequence. Upper miss retains Upper/Ochs/threat and transfers opportunity. Governing L2 Lower miss sets Lower to Upper and Pflug to Ochs, retains threat, and transfers opportunity."
+      ],
+      "opponent_counterplay": [
+        "Receive the opportunity after a miss",
+        "Use legal Winden or other authored repertoire",
+        "Pass or disengage",
+        "Exploit Spiritus or chain exhaustion"
+      ],
+      "event_metadata": [
+        {
+          "event": "historical_action_label",
+          "note": "Upper/lower hangings and selection among cut, thrust, or slice are historical; exact 2S thrust/L2 procedure is an Atra abstraction."
+        }
+      ],
+      "nearest_basic_alternative": "Pass/disengage and let ordinary Crossing clean up",
+      "distinct_reason": "Winden converts authored public height and current opportunity into a no-additional-action learned thrust with sourced hanging/threat aftermath and reciprocal miss transfer.",
+      "reason_types": [
+        "resource-dependent",
+        "repertoire-dependent",
+        "state-dependent"
+      ],
+      "simulator_representation": {
+        "level": "full",
+        "notes": "Authoritative shared engine implements Upper and Lower ordinary executions; Zornhau-local W1/W2 remains separate."
+      },
+      "ghost_utility": {
+        "present": false,
+        "notes": "Legality and consequences derive from public height, repertoire, resources, chain, attack result, and pass sequencing."
+      },
+      "missing_effect_exposed": {
+        "present": false,
+        "notes": "The bounded thrust executions are complete; other Winden branches remain explicitly outside scope."
+      },
+      "completeness_classification": [
+        "COMPLETE — RESOURCE/STATE/REPERTOIRE-DEPENDENT"
+      ],
+      "exceptional_rule": {
+        "present": false,
+        "notes": "Uses existing ATTACK/SET/RETAIN and timing machinery."
+      }
+    },
+    {
+      "id": "frontale-current-sequence",
+      "name": "Frontale Basic Mappings / Retreating Fendente v0.1",
+      "status": "provisional",
+      "historical_source": {
+        "record_ids": [
+          "play-italian-longsword-frontale-corona-crossing",
+          "data/guards/longsword-named-v0.1.yaml"
+        ],
+        "evidence_status": "EXACT_LOCATOR_VERIFIED",
+        "locators": [
+          "Fiore Getty 24v-c; Morgan 12v-b; Pisani Dossi 18b-b",
+          "Vadi 17r-b and 17v-a for separate Corona/Frontale context"
+        ]
+      },
+      "trigger": [
+        {
+          "id": "incoming_thrust_frontale",
+          "text": "From Posta Frontale against a live successful incoming Thrust before contact; actor knows the Play, has defensive Action, 2 Spiritus, and chain room."
+        }
+      ],
+      "cost_commitment": [
+        {
+          "id": "frontale_fendente_cost",
+          "text": "Spend the defensive Action, 2 Spiritus, and +1 learned-chain entry at declaration; no refund."
+        }
+      ],
+      "test": [
+        {
+          "id": "normal_longsword_test",
+          "text": "One flat normal Longsword test; the same successful result supplies the joined defence/counter-cut resolution."
+        }
+      ],
+      "primary_payload": [
+        {
+          "op": "CANCEL",
+          "label": "On success cancel the incoming Thrust"
+        },
+        {
+          "op": "ATTACK",
+          "label": "On the same success deal one normal Cut damage instance to the original attacker; no second attack roll"
+        }
+      ],
+      "state_aftermath": [
+        {
+          "op": "SET",
+          "state": "contact",
+          "value": "none",
+          "label": "No Crossing is created; successful bounded response remains pre-contact"
+        }
+      ],
+      "continuation": [
+        "None in v0.1. The later Dente di Zenghiaro, renewed thrust, and return-fendente phases remain DEFERRED CONTENT."
+      ],
+      "opponent_counterplay": [
+        "Ordinary global timing only; no bespoke response denial and no S2-style comparison",
+        "On failure the original Thrust remains unresolved and may resolve normally."
+      ],
+      "event_metadata": [
+        {
+          "event": "historical_action_label",
+          "note": "retreating fendente is the bounded source-facing label; retreat itself is not a Force Movement operator"
+        }
+      ],
+      "nearest_basic_alternative": "Universal Basic Cross or Basic Beat against the same Thrust",
+      "distinct_reason": "Spend 2 Spiritus and one chain entry for immediate normal Cut damage on a successful defence, while giving up Cross bind topology and Beat Open/separation.",
+      "reason_types": [
+        "joined_defence_offence",
+        "resource_tradeoff",
+        "guard_specific_repertoire"
+      ],
+      "simulator_representation": {
+        "level": "authoritative",
+        "notes": "CurrentEngine.frontale_retreating_fendente implements the bounded v0.1 governing path."
+      },
+      "ghost_utility": {
+        "present": false,
+        "notes": "Frontale now has a concrete learned guard-specific thrust-response reason."
+      },
+      "missing_effect_exposed": {
+        "present": false,
+        "notes": "The bounded first response is mechanically complete; later source phases are explicitly deferred rather than ghost payload."
+      },
+      "completeness_classification": [
+        "COMPLETE—repertoire-dependent",
+        "GOVERNING PROVISIONAL"
+      ],
+      "exceptional_rule": {
+        "present": false,
+        "notes": "No response-tree restriction is authored."
+      }
+    },
+    {
+      "id": "scheitelhau-crown-c1-b3",
+      "name": "Scheitelhau / Crown C1/B3",
+      "status": "candidate",
+      "historical_source": {
+        "record_ids": [
+          "play-german-longsword-scheitelhau",
+          "play-german-longsword-kron-crown-crossing",
+          "data/prototypes/scheitelhau-crown-v0.1.yaml"
+        ],
+        "evidence_status": "EXACT_LOCATOR_VERIFIED",
+        "locators": [
+          "Pseudo-Peter von Danzig, Cod.44.A.8, ff. 24v.3-25r.2; four-guard list f. 26v.3"
+        ]
+      },
+      "trigger": [
+        {
+          "id": "opponent_in_alber",
+          "text": "Candidate B3 automatically tags a qualifying ordinary descending Basic Cut against Alber as the scoped Scheitelhau entry; a successful attack lets the defender select the authored Crown response."
+        }
+      ],
+      "cost_commitment": [
+        {
+          "id": "basic_entry",
+          "text": "Initial entry has the same action, accuracy, damage, commitment, slot, Spiritus, and information cost as an untagged Basic Cut."
+        },
+        {
+          "id": "crown_response",
+          "text": "Defender spends the same action and normal defence roll as generic Cross; no Spiritus or learned slot."
+        },
+        {
+          "id": "sink",
+          "text": "Candidate Sink Point costs 1 Spiritus and one learned-Play entry, no additional action."
+        }
+      ],
+      "test": [
+        {
+          "id": "normal_weapon_attack_roll",
+          "text": "Normal Basic Cut entry."
+        },
+        {
+          "id": "normal_defence_roll",
+          "text": "Normal Crown defence roll."
+        },
+        {
+          "id": "normal_weapon_attack_roll",
+          "text": "Normal Sink Point attack roll."
+        }
+      ],
+      "primary_payload": [
+        {
+          "op": "ATTACK",
+          "label": "MAKE_ATTACK",
+          "target": "alber defender",
+          "parameters": {
+            "phase": "free/automatic Basic entry tag"
+          }
+        },
+        {
+          "op": "CANCEL",
+          "label": "CANCEL_ATTACK",
+          "target": "pending_attack",
+          "parameters": {
+            "phase": "defender Crown success"
+          }
+        },
+        {
+          "op": "RESTRICT_RESPONSE",
+          "label": "MODIFY_RESPONSE_TREE",
+          "target": "defender",
+          "parameters": {
+            "phase": "candidate Sink Point",
+            "normal_response_call": "absent in current candidate implementation"
+          },
+          "exceptional_justification": "Recorded candidate behavior only; not approved or normalized."
+        }
+      ],
+      "state_aftermath": [
+        {
+          "op": "SET",
+          "label": "ESTABLISH_CROSSING",
+          "state": "contact",
+          "value": "crossing",
+          "parameters": {
+            "phase": "successful Crown",
+            "measure": "preserve",
+            "zones": "unknown/unknown",
+            "pressure": "unknown/unknown"
+          }
+        },
+        {
+          "op": "SET",
+          "label": "SET_CROWN_CONTEXT",
+          "state": "crown_context",
+          "value": true,
+          "parameters": {
+            "status": "candidate only"
+          }
+        }
+      ],
+      "continuation": [
+        "Candidate Sink Point Under Crown: spend 1 Spiritus, make a normal attack, set attacker point threatening, then clean context; locally rational after Crown exists."
+      ],
+      "opponent_counterplay": [
+        "Defender can choose generic Cross, Beat, Counter, or other legal response instead of Crown",
+        "Decline to create the Crown context",
+        "Candidate Sink implementation currently lacks another defence call and therefore requires scrutiny"
+      ],
+      "event_metadata": [
+        {
+          "event": "historical_action_label",
+          "note": "Scheitelhau against Alber, Crown reception, and later point-sink/wind/press/slice phases are historically separated."
+        }
+      ],
+      "nearest_basic_alternative": "Untagged Basic Cut for the attacker; generic Basic Cross or Beat for the defender",
+      "distinct_reason": "The initial tag is free upside for the attacker, while the defender's Crown choice grants the opponent a continuation without a defender-side benefit; only the continuation is locally motivated once the globally unmotivated context exists.",
+      "reason_types": [
+        "state-dependent",
+        "repertoire-dependent"
+      ],
+      "simulator_representation": {
+        "level": "full",
+        "notes": "Candidate harness represents C1/B3, including auto-tag and context; it is not governing."
+      },
+      "ghost_utility": {
+        "present": true,
+        "notes": "Policy supplies Crown response motivation not present in the rules and auto-tags qualifying entries."
+      },
+      "missing_effect_exposed": {
+        "present": true,
+        "notes": "Grammar exposes free context creation, reciprocal defender motivation failure, and locally valid continuation inside a globally invalid setup."
+      },
+      "completeness_classification": [
+        "CANDIDATE ONLY",
+        "GHOST VALUE",
+        "EXCEPTIONAL RESPONSE MODIFIER"
+      ],
+      "exceptional_rule": {
+        "present": true,
+        "notes": "Candidate Sink currently bypasses a normal response call; no promotion or fix is made."
+      }
     }
   ]
 }

@@ -19,29 +19,68 @@
     "legal_against_declared_cross": "yes when the defender's point is not threatening and all other D1 prerequisites are satisfied",
     "legal_against_declared_beat": "yes when the defender's point is not threatening and all other D1 prerequisites are satisfied",
     "denied_by": "threatening opposing point",
-    "not_denied_by": ["Cross declaration", "Beat declaration", "Crossing itself"],
+    "not_denied_by": [
+      "Cross declaration",
+      "Beat declaration",
+      "Crossing itself"
+    ],
     "blanket_cross_immunity": "SUPERSEDED AND RETRACTED by Project adjudication 2026-08-12"
   },
   "current_two_effect_compounds": {
     "variant": "C2",
     "spiritus_cost": 2,
-    "plays": ["Absetzen", "Scambiar di Punta", "Schielhau"],
+    "plays": [
+      "Absetzen",
+      "Scambiar di Punta",
+      "Schielhau"
+    ],
     "does_not_price_future_compounds": true
   },
-  "schielhau_durchwechseln": {"variant": "S2"},
+  "schielhau_durchwechseln": {
+    "variant": "S2"
+  },
   "contact_model": {
-    "contact": ["none", "crossing"],
-    "measure": ["wide", "close"],
-    "per_fighter_contact_zone": ["hiltward", "middle", "pointward", "unknown"],
-    "per_fighter_pressure": ["hard", "soft", "unknown"],
-    "per_fighter_initial_pressure": ["hart", "weich", "unknown"],
-    "bind_height": ["upper", "lower", "unknown"],
-    "per_fighter_point_threat": ["threatening", "not_threatening"],
+    "contact": [
+      "none",
+      "crossing"
+    ],
+    "measure": [
+      "wide",
+      "close"
+    ],
+    "per_fighter_contact_zone": [
+      "hiltward",
+      "middle",
+      "pointward",
+      "unknown"
+    ],
+    "per_fighter_pressure": [
+      "hard",
+      "soft",
+      "unknown"
+    ],
+    "per_fighter_initial_pressure": [
+      "hart",
+      "weich",
+      "unknown"
+    ],
+    "bind_height": [
+      "upper",
+      "lower",
+      "unknown"
+    ],
+    "per_fighter_point_threat": [
+      "threatening",
+      "not_threatening"
+    ],
     "displacement_is_event_not_state": true,
     "random_bind_soft_close_or_zone_generation": false
   },
   "basic_parry": {
-    "declared_forms": ["Cross", "Beat"],
+    "declared_forms": [
+      "Cross",
+      "Beat"
+    ],
     "selected_variant": "STATE-BASED D1 + BEAT-OPEN (CB3 blanket Cross immunity retracted)",
     "cross": "universal Basic defensive form; secretly choose Hart or Weich before the roll; Hart grants exactly one defence Boon and Weich is flat; on success cancel, establish ordinary Crossing, author public Upper/Lower/Unknown height from explicit generating geometry, preserve measure, and open the narrow attacker Bind Rejoinder when the incoming attack permits attacker continuations; no automatic point threat or generic modifier",
     "beat": "universal Basic defensive form; ordinary state-based D1 window; on successful non-interrupted resolution cancel, record displacement, end contact/separate, and set the attacker guard to Open",
@@ -54,7 +93,10 @@
     "specification": "data/prototypes/longsword-h3-ordinary-bind-v0.1.yaml",
     "scope": "ordinary Basic Cross only; Zornhau, Absetzen, and other point-threatening or authored special crossings retain local rules; the later E1 T1 insertion occurs before H3 creation",
     "basic_cross": {
-      "pre_roll_private_choice": ["hart", "weich"],
+      "pre_roll_private_choice": [
+        "hart",
+        "weich"
+      ],
       "hart": "exactly one defence Boon",
       "weich": "flat defence roll",
       "failure": "no Crossing; clear initial pressure and bind height",
@@ -64,24 +106,47 @@
       "generic_modifier": null
     },
     "initial_pressure": {
-      "values": ["hart", "weich", "unknown"],
+      "values": [
+        "hart",
+        "weich",
+        "unknown"
+      ],
       "visibility": "owner-private; opponent sees Unknown unless revealed by governing Fühlen F1",
       "duration": "immediate Bind Rejoinder cycle only",
-      "clear_on": ["attacker declines after initiative assignment", "Duplieren or Mutieren declaration consumes the requirement"]
+      "clear_on": [
+        "attacker declines after initiative assignment",
+        "Duplieren or Mutieren declaration consumes the requirement"
+      ]
     },
     "bind_height": {
-      "values": ["upper", "lower", "unknown"],
+      "values": [
+        "upper",
+        "lower",
+        "unknown"
+      ],
       "visibility": "public",
       "generic_modifiers": [],
       "upper_writer": "successful ordinary Cross with explicit upper-cross-against-descending-cut geometry against a qualifying descending/Oberhau-like Cut",
       "lower_writer": "successful ordinary Cross with explicit lower-setting-aside defence-event metadata against low-line-thrust or rising-low-line-cut",
       "unknown": "all other ordinary generating geometry; no generic Winden fallback",
-      "independent_of": ["measure", "contact_zone", "initial_pressure", "point_threat", "guard", "Bind Initiative"]
+      "independent_of": [
+        "measure",
+        "contact_zone",
+        "initial_pressure",
+        "point_threat",
+        "guard",
+        "Bind Initiative"
+      ]
     },
     "bind_rejoinder": {
       "actor": "original striker",
       "timing": "one insertion immediately after successful eligible ordinary Cross",
-      "legal_options": ["Fühlen if known and affordable", "Duplieren", "Mutieren", "decline"],
+      "legal_options": [
+        "Fühlen if known and affordable",
+        "Duplieren",
+        "Mutieren",
+        "decline"
+      ],
       "additional_normal_action": false,
       "arbitrary_learned_play_access": false
     },
@@ -110,7 +175,10 @@
     },
     "winden": {
       "status": "learned family",
-      "ordinary_executions": ["Upper Winding Thrust", "Lower Winding Thrust"],
+      "ordinary_executions": [
+        "Upper Winding Thrust",
+        "Lower Winding Thrust"
+      ],
       "spiritus_cost": 2,
       "learned_chain_entries_per_declaration": 1,
       "additional_normal_action": false,
@@ -119,20 +187,36 @@
       "unknown_execution": "NOT IMPLEMENTED",
       "zornhau_local_winding": "preserved under prior local trigger/behavior"
     },
-    "explicit_nonfeatures": ["Hybrid H3/R0", "Leverage", "Counter-Wind", "generic Unknown-height Winden", "generic Wide-to-Close purchase", "left/right bind-side axis"]
+    "explicit_nonfeatures": [
+      "Hybrid H3/R0",
+      "Leverage",
+      "Counter-Wind",
+      "generic Unknown-height Winden",
+      "generic Wide-to-Close purchase",
+      "left/right bind-side axis"
+    ]
   },
   "t1_close_pommel_v0_1": {
     "status": "PROJECT-ADJUDICATED GOVERNING PROVISIONAL; NOT CANONICAL",
     "specification": "data/prototypes/longsword-t1-close-pommel-governing-v0.1.yaml",
     "t1": {
       "window": "after successful qualifying Tutta Basic Cross and D1 timing; before H3 Rejoinder creation",
-      "cost": {"spiritus": 1, "learned_chain_entries": 1, "additional_action": 0, "additional_test": 0},
+      "cost": {
+        "spiritus": 1,
+        "learned_chain_entries": 1,
+        "additional_action": 0,
+        "additional_test": 0
+      },
       "result": "RETAIN Crossing; SET Wide->Close; SET bind_height=Unknown; Hart gives original striker first Close opportunity; Weich gives Tutta defender first Close opportunity; CLEAR initial pressure",
       "h3_ordering": "T1 declaration means H3 is never created; decline or failed gate leaves ordinary H3 unchanged"
     },
     "pommel_strike": {
       "role": "generic consumer of any already-valid Close Crossing with current opportunity",
-      "cost": {"spiritus": 2, "learned_chain_entries": 1, "additional_action": 0},
+      "cost": {
+        "spiritus": 2,
+        "learned_chain_entries": 1,
+        "additional_action": 0
+      },
       "attack": "flat Longsword; normal provisional d6+1 damage",
       "hit": "normal damage and bounded bind cleanup",
       "miss": "zero damage; retain Close Crossing; SET bind_height=Unknown; transfer opportunity; reset pass count",
@@ -162,7 +246,10 @@
   "loaded": "proactive Basic Cut from a Loaded guard receives Damage Boon only",
   "power_attack": {
     "variant": "P1",
-    "requirements": ["Loaded", "proactive Cut"],
+    "requirements": [
+      "Loaded",
+      "proactive Cut"
+    ],
     "declaration": "before attack roll",
     "spiritus_cost": 1,
     "damage": 7,
@@ -188,7 +275,10 @@
       "status": "learned Play",
       "spiritus_cost": 1,
       "learned_chain_entries": 1,
-      "windows": ["target-only Committed Preparation", "target-only immediate Recovery after Committed miss"],
+      "windows": [
+        "target-only Committed Preparation",
+        "target-only immediate Recovery after Committed miss"
+      ],
       "attack": "normal appropriate Longsword attack with Attack Boon and normal damage",
       "persistent_recovery_state": false,
       "vom_tag_gate": false,
@@ -199,7 +289,11 @@
       "ort": "intrinsic continuation; no second learned entry; 1 Spiritus at declaration; succeeds only from Favored Bind; no second attack roll; compare O1 normal damage and O2 Damage Bane without automatic promotion"
     },
     "bind_position": {
-      "values": ["Favored Bind", "Unfavored Bind", "Unknown"],
+      "values": [
+        "Favored Bind",
+        "Unfavored Bind",
+        "Unknown"
+      ],
       "creation": "preserved local/special writer: compare the two already-successful rolls that created a Zornhau-local or already-authored special contested Crossing; lower successful roll is better; ordinary Basic Cross no longer calls this writer",
       "tie": "Bind Initiative holder receives Favored Bind; provisional harness rule; record frequency",
       "generic_modifiers": [],
@@ -214,22 +308,56 @@
       "additional_normal_action": false,
       "payload": "retain Crossing; appropriate sourced Ochs/Pflug hanging aftermath where context supports; threatening point; normal Longsword Thrust roll and normal damage",
       "starting_ochs_or_pflug_required": false,
-      "candidate_variants": ["W1 Unfavored-only", "W2 either relation"],
+      "candidate_variants": [
+        "W1 Unfavored-only",
+        "W2 either relation"
+      ],
       "automatic_selection": false
     },
-    "frontale": "Basic Cross/Beat mappings preserved; longer sequence remains candidate-only pending the action/test decomposition and representation of retreat under the current no-FORCE_MOVEMENT vocabulary"
+    "frontale": "Basic Cross/Beat mappings preserved; Frontale Retreating Fendente v0.1 is now governing provisional as a 2S/+1-chain defensive-action joined thrust defence/counter-cut. The later Dente/thrust/return-fendente sequence remains deferred."
   },
   "guard_direction": "source-specific named guards; mirrored Threat/Power/Cover is superseded for current prototype work",
   "named_guard_architecture": {
     "status": "PROVISIONAL",
     "selected_variant": "G1 / ACTION-LIGHT",
-    "value_sources": ["intrinsic physical/public state", "existing universal Basic-action mappings", "learned Play access", "sourced breaker relationships", "source-specific continuations"],
+    "value_sources": [
+      "intrinsic physical/public state",
+      "existing universal Basic-action mappings",
+      "learned Play access",
+      "sourced breaker relationships",
+      "source-specific continuations"
+    ],
     "basic_vs_learned_rule": {
-      "basic_only_if": ["simple direct posture use", "one principal test", "no distinctive timing or bind-reading lesson", "no substantial combined defence and offence", "does not duplicate a learned Play niche"],
-      "existing_basic_mapping_preferred_for": ["Basic Cut", "Basic Thrust", "Basic Cross", "Basic Beat"],
-      "learned_play_preferred_for": ["distinctive timing", "tactical trigger", "pressure or measure reading", "simultaneous defence and offence", "displacement plus attack", "cover plus close", "redirection or deception", "specialized continuation", "multiple substantial effects"]
+      "basic_only_if": [
+        "simple direct posture use",
+        "one principal test",
+        "no distinctive timing or bind-reading lesson",
+        "no substantial combined defence and offence",
+        "does not duplicate a learned Play niche"
+      ],
+      "existing_basic_mapping_preferred_for": [
+        "Basic Cut",
+        "Basic Thrust",
+        "Basic Cross",
+        "Basic Beat"
+      ],
+      "learned_play_preferred_for": [
+        "distinctive timing",
+        "tactical trigger",
+        "pressure or measure reading",
+        "simultaneous defence and offence",
+        "displacement plus attack",
+        "cover plus close",
+        "redirection or deception",
+        "specialized continuation",
+        "multiple substantial effects"
+      ]
     },
-    "learned_classifications": ["Absetzen", "upper/lower Winden", "Nachreisen"],
+    "learned_classifications": [
+      "Absetzen",
+      "upper/lower Winden",
+      "Nachreisen"
+    ],
     "g2_free_absetzen": "REJECTED AS GOVERNING BEHAVIOR; archived stress-test material only",
     "guard_change": {
       "selected_variant": "GC1",
@@ -253,7 +381,7 @@
     "restrictive_voluntary_transition_graph": "REJECTED",
     "action_produced_transitions": "PERMITTED WHEN AUTHORED",
     "crown_c1_b3": "CANDIDATE ONLY; UNRESOLVED; NOT GOVERNING",
-    "named_guard_v0_2": "BLOCKED"
+    "named_guard_v0_2": "AUDITED; reduced first-playtest roster selected; Frontale Retreating Fendente promoted later by Project adjudication"
   },
   "guard_evidence_repertoire_acceptance": {
     "selected_on": "2026-08-11",
@@ -261,17 +389,61 @@
     "historical_mechanics_separation": true,
     "g1_action_light_preserved": true,
     "distinct_basic_guard_actions": [],
-    "existing_basic_action_mappings": ["Basic Cut", "Basic Thrust", "Basic Cross", "Basic Beat"],
-    "learned_actions_preserved": ["Absetzen", "upper/lower Winden", "Nachreisen", "joined exchange-thrust techniques", "cover plus close/stretto", "displacement plus return attack", "timing-rich guard breaker entries"],
+    "existing_basic_action_mappings": [
+      "Basic Cut",
+      "Basic Thrust",
+      "Basic Cross",
+      "Basic Beat"
+    ],
+    "learned_actions_preserved": [
+      "Absetzen",
+      "upper/lower Winden",
+      "Nachreisen",
+      "joined exchange-thrust techniques",
+      "cover plus close/stretto",
+      "displacement plus return attack",
+      "timing-rich guard breaker entries"
+    ],
     "g2_free_pflug_absetzen": "REJECTED AS GOVERNING BEHAVIOR",
-    "item_level_guard_evidence_preserved": ["Posta di Donna", "Posta Frontale", "Tutta Porta di Ferro", "Mezza Porta di Ferro", "Alber"],
-    "exact_breaker_relationships_preserved": ["Zwerchhau -> Vom Tag", "Krumphau -> Ochs", "Schielhau -> Pflug", "Scheitelhau -> Alber"],
+    "item_level_guard_evidence_preserved": [
+      "Posta di Donna",
+      "Posta Frontale",
+      "Tutta Porta di Ferro",
+      "Mezza Porta di Ferro",
+      "Alber"
+    ],
+    "exact_breaker_relationships_preserved": [
+      "Zwerchhau -> Vom Tag",
+      "Krumphau -> Ochs",
+      "Schielhau -> Pflug",
+      "Scheitelhau -> Alber"
+    ],
     "automatic_breaker_effects": "NONE; no Boon, Bane, success, damage increase, or defence cancellation follows from the relationship alone",
     "donna": "STRONG CONCEPT SUPPORT for powerful/loaded-blow identity; Loaded/P1 remain PROVISIONAL ATRA mechanics; do not infer Loaded for Vom Tag",
-    "frontale": ["high-thrust response maps to Basic Cross", "low-thrust response maps to Basic Beat", "longer retreat/cut/thrust sequence remains learned candidate"],
-    "tutta": ["simple cover maps to Basic Cross", "downward displacement maps to Basic Beat", "Scambiar access remains bounded learned gate", "cover-to-stretto is learned"],
-    "mezza": ["threatening point intrinsic", "Basic Thrust mapping", "minimal upward displacement maps to Basic Beat", "beat plus return fendente remains learned candidate"],
-    "alber": ["low", "point not threatening", "Scheitelhau breaker relationship", "no passive invitation bonus"]
+    "frontale": [
+      "high-thrust response maps to Basic Cross",
+      "low-thrust response maps to Basic Beat",
+      "Frontale Retreating Fendente v0.1 governing provisional: 2S/+1 chain defensive-action joined cancel+normal Cut against a live successful incoming Thrust before contact",
+      "later Dente/thrust/return-fendente sequence remains deferred"
+    ],
+    "tutta": [
+      "simple cover maps to Basic Cross",
+      "downward displacement maps to Basic Beat",
+      "Scambiar access remains bounded learned gate",
+      "cover-to-stretto is learned"
+    ],
+    "mezza": [
+      "threatening point intrinsic",
+      "Basic Thrust mapping",
+      "minimal upward displacement maps to Basic Beat",
+      "beat plus return fendente remains learned candidate"
+    ],
+    "alber": [
+      "low",
+      "point not threatening",
+      "Scheitelhau breaker relationship",
+      "no passive invitation bonus"
+    ]
   },
   "guard_play_bridge_v0_1": {
     "status": "HISTORICAL T1 SELECTION; RUNTIME DETAILS SUPERSEDED BY T1 / CLOSE / POMMEL v0.1",
@@ -279,8 +451,16 @@
     "specification": "data/prototypes/longsword-guard-play-bridge-v0.1.yaml",
     "scheitelhau_alber": "S-C; DEFER UNTIL CROWN CONTINUATION; no Spiritus price; Alber remains partially mechanically inert",
     "tutta_cover_to_stretto": "learned E1 continuation; successful source-compatible Basic Cross at Wide receives a pre-H3 decision, retains Crossing and enters Close; no second roll or additional action",
-    "promoted_technical_boundaries": ["no universal Close action", "no automatic breaker modifier", "Crown distinct from generic Basic Cross", "Tutta cover-to-stretto remains learned"],
-    "candidate_costs": {"T0": 0, "T1": 1},
+    "promoted_technical_boundaries": [
+      "no universal Close action",
+      "no automatic breaker modifier",
+      "Crown distinct from generic Basic Cross",
+      "Tutta cover-to-stretto remains learned"
+    ],
+    "candidate_costs": {
+      "T0": 0,
+      "T1": 1
+    },
     "governing_cost_selection": "T1",
     "spiritus_cost": 1,
     "spend_at_declaration": true,
@@ -292,11 +472,33 @@
     "status": "PROVISIONAL EXPERIMENT; RECOMMENDED FOR PROJECT REVIEW; NOT GOVERNING",
     "report": "reports/scheitelhau-crown-v01-results.md",
     "specification": "data/prototypes/scheitelhau-crown-v0.1.yaml",
-    "authorized_boundaries": ["Crown is not generic Basic Cross", "no generic breaker modifier"],
+    "authorized_boundaries": [
+      "Crown is not generic Basic Cross",
+      "no generic breaker modifier"
+    ],
     "standalone_scheitelhau_entry": "DEFERRED; no separate chassis, Spiritus price, or modifier",
     "recommended_exchange_chassis": "C1 Crossing plus transient Crown context; B3 Basic-chassis entry plus learned Sink Point Under Crown",
     "recommended_continuation_cost": 1,
     "automatic_promotion": false,
     "named_guard_v0_2_ready": "CONDITIONAL ON PROJECT ACCEPTANCE"
+  },
+  "frontale_retreating_fendente_adjudicated_on": "2026-08-13",
+  "frontale_retreating_fendente_v0_1": {
+    "status": "PROJECT-ADJUDICATED GOVERNING PROVISIONAL; NOT CANONICAL",
+    "specification": "data/prototypes/frontale-retreating-fendente-v0.1.yaml",
+    "guard": "posta-frontale",
+    "trigger": "live successful incoming Thrust before contact; defender in Frontale with Action, 2S, chain room, and learned Play",
+    "cost": {
+      "action": "defensive Action",
+      "spiritus": 2,
+      "learned_chain_entries": 1,
+      "additional_action": false,
+      "refund": false
+    },
+    "test": "one flat normal Longsword test",
+    "success": "cancel incoming Thrust; deal one normal d6+1 Cut damage instance using same successful test",
+    "failure": "do not cancel; zero counter-cut damage; incoming Thrust remains unresolved",
+    "aftermath": "no Crossing, Open, point threat, forced movement, Dente guard, guard transition, or automatic follow-up; Frontale retained",
+    "later_sequence": "DEFERRED: Dente/thrust/return-fendente"
   }
 }

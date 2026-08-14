@@ -1,0 +1,69 @@
+{
+  "milestone": "ATRA TABLE PLAYTEST PACKET v0.1",
+  "date": "2026-08-13",
+  "result": "PASS - FIRST TABLE HARNESS PUBLISHED",
+  "status": "PLAYTEST HARNESS; GOVERNING KERNEL REMAINS PROVISIONAL",
+  "packet": {
+    "markdown": "docs/table-playtest-packet-v0.1.md",
+    "docx": "Atra_Table_Playtest_Packet_v0.1.docx",
+    "pdf": "Atra_Table_Playtest_Packet_v0.1.pdf",
+    "source_record": "data/sources/atra-table-playtest-packet-v0-1.yaml",
+    "pages": 20,
+    "pdf_sha256": "f43a49be8f043a9553b040ef604d1c3762163d77558a6f58d1fa12b264a2a9a8"
+  },
+  "governing_base": "Atra Melee Design Packet v0.5 plus later Frontale Retreating Fendente v0.1 adjudication",
+  "mechanics_changed_by_packet_publication": false,
+  "first_table_roster": [
+    "Ochs",
+    "Pflug",
+    "Posta di Donna",
+    "Posta Frontale",
+    "Tutta Porta di Ferro"
+  ],
+  "withheld_first_table_roster": {
+    "Vom Tag": "no current unique runtime payoff",
+    "Alber": "no current unique payoff; Crown deferred",
+    "Mezza Porta di Ferro": "threatening-point role currently duplicates Ochs/Pflug without unique learned continuation"
+  },
+  "frontale": {
+    "status": "GOVERNING PROVISIONAL; NOT CANONICAL",
+    "cost": "defensive Action + 2 Spiritus +1 learned chain",
+    "trigger": "live successful pre-contact Thrust while defender is in Posta Frontale",
+    "test": "one flat normal Longsword test",
+    "success": "cancel Thrust and apply one normal d6+1 Cut damage instance with same successful test",
+    "failure": "original Thrust remains live; zero counter-cut damage",
+    "forbidden_extra_state": ["Crossing", "Open", "point threat", "forced movement", "Dente guard state", "automatic continuation", "bespoke response denial"]
+  },
+  "harness_only_round_scaffolding": {
+    "canonical": false,
+    "starting_guards": "secret choice then reveal",
+    "first_activation": "A Round 1, B Round 2, alternate thereafter",
+    "action_refresh": "one normal Action each at round start",
+    "gc1": "on fighter activation before Action; still available if Action was already spent defensively",
+    "health_spiritus_refresh": "none during duel",
+    "chain_clear": "only when current exchange fully ends"
+  },
+  "scenarios": [
+    "Guard-choice tutorial",
+    "Bind and Close drill",
+    "Frontale A/B drill",
+    "Free duel"
+  ],
+  "pre_publication_validation": {
+    "full_unittest": "173/173 PASS",
+    "repository_validator": "114 Play records; 0 errors; 39 warnings",
+    "grammar_validator": "0 errors; 5 informative findings",
+    "h3": "PASS",
+    "t1_close_pommel": "PASS",
+    "s2": "PASS",
+    "named_guard_runtime_parity": "PASS",
+    "frontale": "PASS"
+  },
+  "layout_qa": {
+    "docx_rendered_pages": 20,
+    "docx_page_by_page_visual_review": "PASS",
+    "pdf_rendered_pages": 20,
+    "pdf_same_bytes_as_docx_emitted_pdf": true
+  },
+  "exact_next_action": "Run Table Playtest Packet v0.1 at a physical table and return the session log/notes; prioritize procedural friction before balance tuning."
+}

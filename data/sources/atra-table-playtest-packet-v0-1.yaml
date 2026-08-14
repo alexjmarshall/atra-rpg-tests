@@ -1,0 +1,9 @@
+{
+  "id": "atra-table-playtest-packet-v0-1",
+  "name": "Atra Melee Table Playtest Packet v0.1",
+  "kind": "playtest-harness-document",
+  "citation": "Atra RPG, Atra Melee Table Playtest Packet, Version 0.1, 2026-08-13.",
+  "date": "2026-08-13",
+  "exact_location": null,
+  "notes": "First-table reduced-roster harness. Uses Atra Melee Design Packet v0.5 plus the later governing Frontale Retreating Fendente v0.1 adjudication. Round/opening scaffolding is explicitly playtest-harness-only rather than canonical procedure."
+}

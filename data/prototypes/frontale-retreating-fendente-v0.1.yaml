@@ -1,0 +1,60 @@
+{
+  "id": "frontale-retreating-fendente-v0.1",
+  "status": "GOVERNING PROVISIONAL; NOT CANONICAL",
+  "selected_on": "2026-08-13",
+  "name": "Frontale Retreating Fendente",
+  "tradition": "Italian",
+  "curriculum": "Longsword",
+  "guard_gate": "posta-frontale",
+  "historical_boundary": {
+    "source_support": "Fiore's Frontale thrust-response paragraph supports retreating from the thrust and answering with a fendente before a longer Dente/thrust/return-fendente sequence.",
+    "locators": [
+      "Fiore Getty MS Ludwig XV 13, 24v-c",
+      "Morgan MS M.383, 12v-b",
+      "Pisani Dossi, 18b-b"
+    ],
+    "atra_abstraction": "The governing v0.1 mechanic isolates only the first joined defence/counter-cut. Cost, one-roll resolution, no-contact aftermath, and omission of Dente/retreat movement are Atra abstractions.",
+    "not_claimed": [
+      "The historical retreat is not represented as generic Force Movement.",
+      "Dente di Zenghiaro is not added as a selectable named guard.",
+      "The later thrust and return-fendente are not free continuations."
+    ]
+  },
+  "trigger": {
+    "actor": "living defender in Posta Frontale who knows the Play",
+    "incoming": "live successful incoming Thrust before contact",
+    "resources": "normal defensive Action available, at least 2 Spiritus, learned-chain room"
+  },
+  "cost_commitment": {
+    "action": "defensive Action",
+    "spiritus": 2,
+    "learned_chain_entries": 1,
+    "refund": false
+  },
+  "test": "one flat normal Longsword test",
+  "primary_payload": {
+    "success": "CANCEL incoming Thrust and ATTACK original attacker for one normal d6+1 Cut damage instance using the same successful test",
+    "failure": "incoming Thrust remains unresolved; zero counter-cut damage"
+  },
+  "state_aftermath": {
+    "contact": "none",
+    "measure": "preserved",
+    "guard": "Posta Frontale retained",
+    "point_threat": "unchanged / not authored",
+    "open": false,
+    "bind_height": "no writer",
+    "movement": "no Force Movement state",
+    "continuation": "none in v0.1"
+  },
+  "opponent_counterplay": "ordinary global timing only; no bespoke response denial and no S2-style opposed comparison",
+  "nearest_alternatives": {
+    "Basic Cross": "free; Hart can be safer and success enters Crossing/H3",
+    "Basic Beat": "free; success separates and sets hostile attacker Open",
+    "distinct_reason": "pay 2 Spiritus and one chain entry to turn a thrust defence into immediate normal Cut damage without entering the bind or producing Open"
+  },
+  "deferred_source_sequence": [
+    "Dente di Zenghiaro transition",
+    "renewed thrust",
+    "return fendente"
+  ]
+}

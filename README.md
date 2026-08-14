@@ -2,6 +2,8 @@
 
 This repository treats `Atra_Melee_Design_Packet_v0.5.docx` and `docs/melee-design-packet-v0.5.md` as the current governing-provisional vertical-slice record. Version 0.4 remains preserved as its historical predecessor. The repository preserves all 114 current Play candidates as research records, not finished mechanics.
 
+For the first physical-table test, use `Atra_Table_Playtest_Packet_v0.1.pdf` (or its DOCX/Markdown companions). It is a reduced-roster playtest harness based on v0.5 plus the later governing-provisional Frontale Retreating Fendente v0.1 adjudication. Its alternating-first-activation round procedure is test scaffolding, not a canonical initiative rule.
+
 Key rules for contributors:
 
 - Do not silently resolve `OPEN` or `PROVISIONAL` questions.

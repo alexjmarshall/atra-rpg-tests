@@ -56,6 +56,16 @@ PRESSURE_VALUES = ("hard", "soft", "unknown")
 INITIAL_PRESSURE_VALUES = ("hart", "weich", "unknown")
 BIND_HEIGHT_VALUES = ("upper", "lower", "unknown")
 POINT_THREAT_VALUES = ("threatening", "not_threatening")
+NAMED_GUARD_IDS = (
+    "vom-tag",
+    "ochs",
+    "pflug",
+    "alber",
+    "posta-di-donna",
+    "posta-frontale",
+    "tutta-porta-di-ferro",
+    "mezza-porta-di-ferro",
+)
 LEARNED_PLAY_CAP = 3
 
 GOVERNING_BASELINE: dict[str, Any] = {
@@ -101,6 +111,7 @@ GOVERNING_BASELINE: dict[str, Any] = {
     },
     "guard_commitment": {
         "variant": "GC1",
+        "named_guards": NAMED_GUARD_IDS,
         "voluntary_change": "once on activation, before action",
         "post_action_change": False,
         "restrictive_voluntary_transition_graph": "REJECTED",
@@ -109,7 +120,7 @@ GOVERNING_BASELINE: dict[str, Any] = {
     "engine_implementation_status": (
         "SYNCHRONIZED: authoritative shared exchange engine implements state-based D1, "
         "Beat/Open, GC1, general Committed timing, governing E1 T1/Pommel v0.1, "
-        "cap 3, C2/S2, and explicit contact"
+        "cap 3, C2/S2, Frontale Fendente, and explicit contact"
     ),
     "learned_play_cap": LEARNED_PLAY_CAP,
     "loaded": "proactive Basic Cut receives Damage Boon",
@@ -186,6 +197,19 @@ GOVERNING_BASELINE: dict[str, Any] = {
         "learned_play": True,
         "archived_comparison": "T0; C0 and L1 are noncurrent historical controls",
     },
+    "frontale_retreating_fendente": {
+        "status": "GOVERNING PROVISIONAL; NOT CANONICAL",
+        "guard": "posta-frontale",
+        "trigger": "live successful incoming Thrust before contact",
+        "spiritus_cost": 2,
+        "learned_chain_entries": 1,
+        "additional_action": False,
+        "defensive_action": True,
+        "test": "one flat normal Longsword test",
+        "success": "cancel incoming Thrust and deal one normal d6+1 Cut damage instance using the same successful test",
+        "failure": "do not cancel; zero counter-cut damage; original Thrust remains unresolved",
+        "aftermath": "no Crossing, Open, point threat, forced movement, Dente state, guard transition, or automatic follow-up",
+    },
     "pommel_strike": {
         "status": "GOVERNING PROVISIONAL; NOT CANONICAL",
         "trigger": "generic Close Crossing plus current bind opportunity",
@@ -204,6 +228,10 @@ def validate_engine_alignment() -> None:
     """Fail loudly if the selected current engine stops matching the baseline."""
     assert ENGINE.MAX_HP == 8 and ENGINE.MAX_SPIRITUS == 8
     assert ENGINE.LEARNED_PLAY_CAP == 3
+    assert ENGINE.NAMED_GUARDS == NAMED_GUARD_IDS
+    assert ENGINE.THREATENING_GUARDS == frozenset(
+        {"ochs", "pflug", "mezza-porta-di-ferro"}
+    )
     assert ENGINE.BIND_HEIGHTS == BIND_HEIGHT_VALUES
     assert ENGINE.INITIAL_PRESSURES == INITIAL_PRESSURE_VALUES
     a = ENGINE.Fighter("A", known_plays={"Durchwechseln"})
@@ -222,6 +250,10 @@ def validate_engine_alignment() -> None:
     fresh_lower = ENGINE.RollResult(True, 4, (4,))
     assert current.compare_s2_rolls(established, fresh_tie) == "schielhau"
     assert current.compare_s2_rolls(established, fresh_lower) == "durchwechseln"
+    assert ENGINE.FRONTALE_FENDENTE_PLAY == "Frontale Retreating Fendente"
+    assert ENGINE.FRONTALE_GUARD == "posta-frontale"
+    assert ENGINE.FRONTALE_FENDENTE_COST == 2
+    assert hasattr(current, "frontale_retreating_fendente")
 
 
 validate_engine_alignment()

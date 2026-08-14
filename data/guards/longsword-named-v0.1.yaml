@@ -10,23 +10,79 @@
       "curriculum": "Longsword",
       "source_status": "scoped-exact-locator",
       "source_locator": [
-        {"source_id": "pseudo-peter-von-danzig", "location": "Cod.44.A.8, ff. 18v.2-19r.1", "inclusion_basis": "EARLIER", "evidence_scope": "opponent in high Vom Tag with arms raised; Zwerchhau relationship"},
-        {"source_id": "pseudo-peter-von-danzig", "location": "Cod.44.A.8, ff. 27v.2-28r.1", "inclusion_basis": "EARLIER", "evidence_scope": "Nachreisen begins left foot forward in Vom Tag"}
+        {
+          "source_id": "pseudo-peter-von-danzig",
+          "location": "Cod.44.A.8, ff. 18v.2-19r.1",
+          "inclusion_basis": "EARLIER",
+          "evidence_scope": "opponent in high Vom Tag with arms raised; Zwerchhau relationship"
+        },
+        {
+          "source_id": "pseudo-peter-von-danzig",
+          "location": "Cod.44.A.8, ff. 27v.2-28r.1",
+          "inclusion_basis": "EARLIER",
+          "evidence_scope": "Nachreisen begins left foot forward in Vom Tag"
+        }
       ],
       "historical_confidence": "A",
       "mechanics_status": "PROVISIONAL",
-      "physical_state": {"height": "high", "point_threat": "not_threatening", "preparation_tags": ["chambered", "cut-ready"], "hanging_tags": [], "posture_tags": ["arms-raised"], "loaded": false},
+      "physical_state": {
+        "height": "high",
+        "point_threat": "not_threatening",
+        "preparation_tags": [
+          "chambered",
+          "cut-ready"
+        ],
+        "hanging_tags": [],
+        "posture_tags": [
+          "arms-raised"
+        ],
+        "loaded": false
+      },
       "mechanical_access": {
         "existing_basic_action_mappings": [],
         "basic_guard_actions": [],
-        "learned_play_gates": ["Nachreisen"],
-        "sourced_breakers": [{"play": "Zwerchhau", "evidence_status": "scoped-exact-locator", "mechanical_effect": "needs-redesign"}],
-        "unresolved_source_behaviors": ["Whether an ordinary proactive cut is merely a Basic mapping outside the audited Nachreisen timing"]
+        "learned_play_gates": [
+          "Nachreisen"
+        ],
+        "sourced_breakers": [
+          {
+            "play": "Zwerchhau",
+            "evidence_status": "scoped-exact-locator",
+            "mechanical_effect": "needs-redesign"
+          }
+        ],
+        "unresolved_source_behaviors": [
+          "Whether an ordinary proactive cut is merely a Basic mapping outside the audited Nachreisen timing"
+        ]
       },
       "behaviors": [
-        {"source_description": "High posture with arms raised and sword prepared for a descending cut", "locator": "Cod.44.A.8, ff. 18v.2-19r.1", "historical_confidence": "A", "classification": "INTRINSIC", "implementation_status": "G1/G2 physical public state; cut-ready has no numeric bonus", "rationale": "Height and chambering are physically visible; point-off-line is a documented geometric inference, not a generic attack bonus.", "compresses_historical_lesson": false},
-        {"source_description": "Nachreisen from Vom Tag against recovery", "locator": "Cod.44.A.8, ff. 27v.2-28r.1", "historical_confidence": "A", "classification": "LEARNED PLAY", "implementation_status": "Gate recorded; existing prototype Play remains learned", "rationale": "The recovery trigger and pursuit timing are the lesson; giving it away as an ordinary cut would erase that timing.", "compresses_historical_lesson": true},
-        {"source_description": "Zwerchhau breaks/preempts high Vom Tag", "locator": "Cod.44.A.8, ff. 18v.2-19r.1", "historical_confidence": "A", "classification": "BREAKER", "implementation_status": "Annotation only; active prototype lacks Zwerchhau mechanics", "rationale": "The relationship is sourced, but no automatic Boon, Bane, or success follows.", "compresses_historical_lesson": true}
+        {
+          "source_description": "High posture with arms raised and sword prepared for a descending cut",
+          "locator": "Cod.44.A.8, ff. 18v.2-19r.1",
+          "historical_confidence": "A",
+          "classification": "INTRINSIC",
+          "implementation_status": "G1/G2 physical public state; cut-ready has no numeric bonus",
+          "rationale": "Height and chambering are physically visible; point-off-line is a documented geometric inference, not a generic attack bonus.",
+          "compresses_historical_lesson": false
+        },
+        {
+          "source_description": "Nachreisen from Vom Tag against recovery",
+          "locator": "Cod.44.A.8, ff. 27v.2-28r.1",
+          "historical_confidence": "A",
+          "classification": "LEARNED PLAY",
+          "implementation_status": "Gate recorded; existing prototype Play remains learned",
+          "rationale": "The recovery trigger and pursuit timing are the lesson; giving it away as an ordinary cut would erase that timing.",
+          "compresses_historical_lesson": true
+        },
+        {
+          "source_description": "Zwerchhau breaks/preempts high Vom Tag",
+          "locator": "Cod.44.A.8, ff. 18v.2-19r.1",
+          "historical_confidence": "A",
+          "classification": "BREAKER",
+          "implementation_status": "Annotation only; active prototype lacks Zwerchhau mechanics",
+          "rationale": "The relationship is sourced, but no automatic Boon, Bane, or success follows.",
+          "compresses_historical_lesson": true
+        }
       ]
     },
     {
@@ -36,23 +92,79 @@
       "curriculum": "Longsword",
       "source_status": "scoped-exact-locator",
       "source_locator": [
-        {"source_id": "pseudo-peter-von-danzig", "location": "Cod.44.A.8, ff. 37r.2-38v.1; related menu ff. 14r.2-15r.1", "inclusion_basis": "EARLIER", "evidence_scope": "Ochs positions are upper hangings used by Winden"},
-        {"source_id": "pseudo-peter-von-danzig", "location": "Cod.44.A.8, ff. 16v.4-17r.1; confirming list at f. 26r.5", "inclusion_basis": "EARLIER", "evidence_scope": "Krumphau breaks left Ochs by an offline spring and crossed-arm long-edge strike over the hands"}
+        {
+          "source_id": "pseudo-peter-von-danzig",
+          "location": "Cod.44.A.8, ff. 37r.2-38v.1; related menu ff. 14r.2-15r.1",
+          "inclusion_basis": "EARLIER",
+          "evidence_scope": "Ochs positions are upper hangings used by Winden"
+        },
+        {
+          "source_id": "pseudo-peter-von-danzig",
+          "location": "Cod.44.A.8, ff. 16v.4-17r.1; confirming list at f. 26r.5",
+          "inclusion_basis": "EARLIER",
+          "evidence_scope": "Krumphau breaks left Ochs by an offline spring and crossed-arm long-edge strike over the hands"
+        }
       ],
       "historical_confidence": "A",
       "mechanics_status": "PROVISIONAL",
-      "physical_state": {"height": "high", "point_threat": "threatening", "preparation_tags": [], "hanging_tags": ["upper-hanging"], "posture_tags": ["point-ready"], "loaded": false},
+      "physical_state": {
+        "height": "high",
+        "point_threat": "threatening",
+        "preparation_tags": [],
+        "hanging_tags": [
+          "upper-hanging"
+        ],
+        "posture_tags": [
+          "point-ready"
+        ],
+        "loaded": false
+      },
       "mechanical_access": {
         "existing_basic_action_mappings": [],
         "basic_guard_actions": [],
-        "learned_play_gates": ["Winden (upper family)"],
-        "sourced_breakers": [{"play": "Krumphau", "evidence_status": "scoped-exact-locator", "mechanical_effect": "needs-redesign"}],
-        "unresolved_source_behaviors": ["Winden executions beyond the governing-provisional Upper Thrust", "Atra resolution for the sourced Krumphau entry without an automatic modifier"]
+        "learned_play_gates": [
+          "Winden (upper family)"
+        ],
+        "sourced_breakers": [
+          {
+            "play": "Krumphau",
+            "evidence_status": "scoped-exact-locator",
+            "mechanical_effect": "needs-redesign"
+          }
+        ],
+        "unresolved_source_behaviors": [
+          "Winden executions beyond the governing-provisional Upper Thrust",
+          "Atra resolution for the sourced Krumphau entry without an automatic modifier"
+        ]
       },
       "behaviors": [
-        {"source_description": "Upper hanging / point-ready Ochs posture", "locator": "Cod.44.A.8, ff. 37r.2-38v.1", "historical_confidence": "A", "classification": "INTRINSIC", "implementation_status": "G1/G2 high, upper-hanging, threatening point", "rationale": "The upper hanging is direct; the immediate point threat is a declared geometric inference from the hanging, kept separate from any Counter bonus.", "compresses_historical_lesson": false},
-        {"source_description": "Upper Winden family through Ochs", "locator": "Cod.44.A.8, ff. 37r.2-38v.1", "historical_confidence": "A", "classification": "LEARNED PLAY", "implementation_status": "GOVERNING PROVISIONAL ordinary Upper Winding Thrust produces Ochs; other upper executions remain outside scope", "rationale": "Pressure reading and selection among cut, thrust, and slice are a learned decision system, not a free guard action.", "compresses_historical_lesson": true},
-        {"source_description": "Krumphau breaks left Ochs by springing offline and striking over the hands with crossed arms", "locator": "Cod.44.A.8, ff. 16v.4-17r.1; relationship restated at f. 26r.5", "historical_confidence": "A", "classification": "BREAKER", "implementation_status": "Exact annotation; active prototype has no Krumphau resolution and gains no modifier", "rationale": "The gloss defines the entry rather than an abstract bonus. 'Breaks' is not automatic success, Boon, Bane, damage, or defence cancellation.", "compresses_historical_lesson": true}
+        {
+          "source_description": "Upper hanging / point-ready Ochs posture",
+          "locator": "Cod.44.A.8, ff. 37r.2-38v.1",
+          "historical_confidence": "A",
+          "classification": "INTRINSIC",
+          "implementation_status": "G1/G2 high, upper-hanging, threatening point",
+          "rationale": "The upper hanging is direct; the immediate point threat is a declared geometric inference from the hanging, kept separate from any Counter bonus.",
+          "compresses_historical_lesson": false
+        },
+        {
+          "source_description": "Upper Winden family through Ochs",
+          "locator": "Cod.44.A.8, ff. 37r.2-38v.1",
+          "historical_confidence": "A",
+          "classification": "LEARNED PLAY",
+          "implementation_status": "GOVERNING PROVISIONAL ordinary Upper Winding Thrust produces Ochs; other upper executions remain outside scope",
+          "rationale": "Pressure reading and selection among cut, thrust, and slice are a learned decision system, not a free guard action.",
+          "compresses_historical_lesson": true
+        },
+        {
+          "source_description": "Krumphau breaks left Ochs by springing offline and striking over the hands with crossed arms",
+          "locator": "Cod.44.A.8, ff. 16v.4-17r.1; relationship restated at f. 26r.5",
+          "historical_confidence": "A",
+          "classification": "BREAKER",
+          "implementation_status": "Exact annotation; active prototype has no Krumphau resolution and gains no modifier",
+          "rationale": "The gloss defines the entry rather than an abstract bonus. 'Breaks' is not automatic success, Boon, Bane, damage, or defence cancellation.",
+          "compresses_historical_lesson": true
+        }
       ]
     },
     {
@@ -62,24 +174,97 @@
       "curriculum": "Longsword",
       "source_status": "scoped-exact-locator",
       "source_locator": [
-        {"source_id": "pseudo-peter-von-danzig", "location": "Cod.44.A.8, ff. 37r.2-38v.1", "inclusion_basis": "EARLIER", "evidence_scope": "Pflug positions are lower hangings used by Winden"},
-        {"source_id": "pseudo-peter-von-danzig", "location": "Cod.44.A.8, ff. 30r.2-30v.1", "inclusion_basis": "EARLIER", "evidence_scope": "right Pflug start for Absetzen"}
+        {
+          "source_id": "pseudo-peter-von-danzig",
+          "location": "Cod.44.A.8, ff. 37r.2-38v.1",
+          "inclusion_basis": "EARLIER",
+          "evidence_scope": "Pflug positions are lower hangings used by Winden"
+        },
+        {
+          "source_id": "pseudo-peter-von-danzig",
+          "location": "Cod.44.A.8, ff. 30r.2-30v.1",
+          "inclusion_basis": "EARLIER",
+          "evidence_scope": "right Pflug start for Absetzen"
+        }
       ],
       "historical_confidence": "A",
       "mechanics_status": "PROVISIONAL",
-      "physical_state": {"height": "low", "point_threat": "threatening", "preparation_tags": [], "hanging_tags": ["lower-hanging"], "posture_tags": ["point-ready"], "loaded": false},
+      "physical_state": {
+        "height": "low",
+        "point_threat": "threatening",
+        "preparation_tags": [],
+        "hanging_tags": [
+          "lower-hanging"
+        ],
+        "posture_tags": [
+          "point-ready"
+        ],
+        "loaded": false
+      },
       "mechanical_access": {
         "existing_basic_action_mappings": [],
-        "basic_guard_actions": [{"id": "pflug-free-absetzen", "models": ["G2"], "spiritus_cost": 0, "learned_play_chain_count": 0}],
-        "learned_play_gates": ["Absetzen", "Winden (lower family)"],
-        "sourced_breakers": [{"play": "Schielhau", "evidence_status": "scoped-exact-locator", "mechanical_effect": "needs-redesign"}],
-        "unresolved_source_behaviors": ["How the proactive Pflug-breaking entry relates to the current reactive Schielhau implementation"]
+        "basic_guard_actions": [
+          {
+            "id": "pflug-free-absetzen",
+            "models": [
+              "G2"
+            ],
+            "spiritus_cost": 0,
+            "learned_play_chain_count": 0
+          }
+        ],
+        "learned_play_gates": [
+          "Absetzen",
+          "Winden (lower family)"
+        ],
+        "sourced_breakers": [
+          {
+            "play": "Schielhau",
+            "evidence_status": "scoped-exact-locator",
+            "mechanical_effect": "needs-redesign"
+          }
+        ],
+        "unresolved_source_behaviors": [
+          "How the proactive Pflug-breaking entry relates to the current reactive Schielhau implementation"
+        ]
       },
       "behaviors": [
-        {"source_description": "Lower hanging / point-ready Pflug posture", "locator": "Cod.44.A.8, ff. 37r.2-38v.1", "historical_confidence": "A", "classification": "INTRINSIC", "implementation_status": "G1/G2 low, lower-hanging, threatening point", "rationale": "The lower hanging is direct; point threat is an explicit geometric inference and supplies state, not a modifier.", "compresses_historical_lesson": false},
-        {"source_description": "Absetzen from right Pflug: set aside an incoming thrust and thrust at once", "locator": "Cod.44.A.8, ff. 30r.2-30v.1", "historical_confidence": "A", "classification": "LEARNED PLAY", "implementation_status": "G1 learned and guard-gated; G2 exposes one 0-Spiritus stress action", "rationale": "It combines displacement/cover, timing, footwork, and offence. Free access compresses a historical lesson that normally belongs to advancement.", "compresses_historical_lesson": true},
-        {"source_description": "Lower Winden family through Pflug", "locator": "Cod.44.A.8, ff. 37r.2-38v.1", "historical_confidence": "A", "classification": "LEARNED PLAY", "implementation_status": "GOVERNING PROVISIONAL ordinary Lower Winding Thrust produces Pflug; L2 miss rises to Ochs; other lower executions remain outside scope", "rationale": "Bind reading plus selected continuation is not one simple posture use.", "compresses_historical_lesson": true},
-        {"source_description": "Schielhau breaks Pflug and breaks forcefully into cuts or thrusts with an inverted sword", "locator": "Cod.44.A.8, ff. 23r.3-23v.1; relationship restated at f. 26v.2", "historical_confidence": "A", "classification": "BREAKER", "implementation_status": "Exact annotation; current S2 reaction does not model the proactive Pflug entry", "rationale": "The source relationship is direct, but a guard gate alone would not supply the missing proactive entry.", "compresses_historical_lesson": true}
+        {
+          "source_description": "Lower hanging / point-ready Pflug posture",
+          "locator": "Cod.44.A.8, ff. 37r.2-38v.1",
+          "historical_confidence": "A",
+          "classification": "INTRINSIC",
+          "implementation_status": "G1/G2 low, lower-hanging, threatening point",
+          "rationale": "The lower hanging is direct; point threat is an explicit geometric inference and supplies state, not a modifier.",
+          "compresses_historical_lesson": false
+        },
+        {
+          "source_description": "Absetzen from right Pflug: set aside an incoming thrust and thrust at once",
+          "locator": "Cod.44.A.8, ff. 30r.2-30v.1",
+          "historical_confidence": "A",
+          "classification": "LEARNED PLAY",
+          "implementation_status": "G1 learned and guard-gated; G2 exposes one 0-Spiritus stress action",
+          "rationale": "It combines displacement/cover, timing, footwork, and offence. Free access compresses a historical lesson that normally belongs to advancement.",
+          "compresses_historical_lesson": true
+        },
+        {
+          "source_description": "Lower Winden family through Pflug",
+          "locator": "Cod.44.A.8, ff. 37r.2-38v.1",
+          "historical_confidence": "A",
+          "classification": "LEARNED PLAY",
+          "implementation_status": "GOVERNING PROVISIONAL ordinary Lower Winding Thrust produces Pflug; L2 miss rises to Ochs; other lower executions remain outside scope",
+          "rationale": "Bind reading plus selected continuation is not one simple posture use.",
+          "compresses_historical_lesson": true
+        },
+        {
+          "source_description": "Schielhau breaks Pflug and breaks forcefully into cuts or thrusts with an inverted sword",
+          "locator": "Cod.44.A.8, ff. 23r.3-23v.1; relationship restated at f. 26v.2",
+          "historical_confidence": "A",
+          "classification": "BREAKER",
+          "implementation_status": "Exact annotation; current S2 reaction does not model the proactive Pflug entry",
+          "rationale": "The source relationship is direct, but a guard gate alone would not supply the missing proactive entry.",
+          "compresses_historical_lesson": true
+        }
       ]
     },
     {
@@ -89,22 +274,67 @@
       "curriculum": "Longsword",
       "source_status": "scoped-exact-locator",
       "source_locator": [
-        {"source_id": "pseudo-peter-von-danzig", "location": "Cod.44.A.8, f. 26r.2", "inclusion_basis": "EARLIER", "evidence_scope": "Alber posture: right foot forward, arms extended, point on the ground, short edge upward"},
-        {"source_id": "pseudo-peter-von-danzig", "location": "Cod.44.A.8, ff. 24v.3-25r.2; confirming list at f. 26v.3", "inclusion_basis": "EARLIER", "evidence_scope": "Scheitelhau breaks Alber by a strong descending long-edge cut to the head; Crown and slicing continuations follow"}
+        {
+          "source_id": "pseudo-peter-von-danzig",
+          "location": "Cod.44.A.8, f. 26r.2",
+          "inclusion_basis": "EARLIER",
+          "evidence_scope": "Alber posture: right foot forward, arms extended, point on the ground, short edge upward"
+        },
+        {
+          "source_id": "pseudo-peter-von-danzig",
+          "location": "Cod.44.A.8, ff. 24v.3-25r.2; confirming list at f. 26v.3",
+          "inclusion_basis": "EARLIER",
+          "evidence_scope": "Scheitelhau breaks Alber by a strong descending long-edge cut to the head; Crown and slicing continuations follow"
+        }
       ],
       "historical_confidence": "A",
       "mechanics_status": "PROVISIONAL",
-      "physical_state": {"height": "low", "point_threat": "not_threatening", "preparation_tags": [], "hanging_tags": [], "posture_tags": ["arms-extended", "point-on-ground"], "loaded": false},
+      "physical_state": {
+        "height": "low",
+        "point_threat": "not_threatening",
+        "preparation_tags": [],
+        "hanging_tags": [],
+        "posture_tags": [
+          "arms-extended",
+          "point-on-ground"
+        ],
+        "loaded": false
+      },
       "mechanical_access": {
         "existing_basic_action_mappings": [],
         "basic_guard_actions": [],
         "learned_play_gates": [],
-        "sourced_breakers": [{"play": "Scheitelhau", "evidence_status": "scoped-exact-locator", "mechanical_effect": "needs-redesign"}],
-        "unresolved_source_behaviors": ["No item-level invitation or deception reward was found", "Atra resolution for Scheitelhau and its Crown continuation"]
+        "sourced_breakers": [
+          {
+            "play": "Scheitelhau",
+            "evidence_status": "scoped-exact-locator",
+            "mechanical_effect": "needs-redesign"
+          }
+        ],
+        "unresolved_source_behaviors": [
+          "No item-level invitation or deception reward was found",
+          "Atra resolution for Scheitelhau and its Crown continuation"
+        ]
       },
       "behaviors": [
-        {"source_description": "Right foot forward, arms extended, point on the ground, short edge upward", "locator": "Cod.44.A.8, f. 26r.2", "historical_confidence": "A", "classification": "INTRINSIC", "implementation_status": "Low and not-threatening public point state; no invitation bonus", "rationale": "The posture is directly described. Atra's not-threatening state follows transparently from the point resting on the ground.", "compresses_historical_lesson": false},
-        {"source_description": "Scheitelhau breaks Alber with a strong descending long-edge cut to the head", "locator": "Cod.44.A.8, ff. 24v.3-25r.2; relationship restated at f. 26v.3", "historical_confidence": "A", "classification": "BREAKER", "implementation_status": "Guard Play Bridge v0.1 classifies the initial entry S-C and defers mechanics until a narrow Crown continuation; no price or modifier", "rationale": "The initial attack is already represented by Basic Cut. The gloss's distinct mechanical substance lies in the defended Crown/point-sinking/winding/pressing/slicing continuation, and generic Basic Cross is not Crown.", "compresses_historical_lesson": true}
+        {
+          "source_description": "Right foot forward, arms extended, point on the ground, short edge upward",
+          "locator": "Cod.44.A.8, f. 26r.2",
+          "historical_confidence": "A",
+          "classification": "INTRINSIC",
+          "implementation_status": "Low and not-threatening public point state; no invitation bonus",
+          "rationale": "The posture is directly described. Atra's not-threatening state follows transparently from the point resting on the ground.",
+          "compresses_historical_lesson": false
+        },
+        {
+          "source_description": "Scheitelhau breaks Alber with a strong descending long-edge cut to the head",
+          "locator": "Cod.44.A.8, ff. 24v.3-25r.2; relationship restated at f. 26v.3",
+          "historical_confidence": "A",
+          "classification": "BREAKER",
+          "implementation_status": "Guard Play Bridge v0.1 classifies the initial entry S-C and defers mechanics until a narrow Crown continuation; no price or modifier",
+          "rationale": "The initial attack is already represented by Basic Cut. The gloss's distinct mechanical substance lies in the defended Crown/point-sinking/winding/pressing/slicing continuation, and generic Basic Cross is not Crown.",
+          "compresses_historical_lesson": true
+        }
       ]
     },
     {
@@ -114,26 +344,98 @@
       "curriculum": "Longsword",
       "source_status": "scoped-exact-locator",
       "source_locator": [
-        {"source_id": "fiore-dei-liberi", "location": "Getty MS Ludwig XV 13, 23v-b; Morgan MS M.383, 12r-b; Pisani Dossi, 18a-b", "inclusion_basis": "EARLIER", "evidence_scope": "right Posta di Donna: high guard, all seven blows, covers, great blows, breaking guards, and exchange of thrusts"},
-        {"source_id": "fiore-dei-liberi", "location": "Getty MS Ludwig XV 13, 23v-d; Morgan MS M.383, 13r-b", "inclusion_basis": "EARLIER", "evidence_scope": "left Posta di Donna: ready to cover and strike, great blows, thrust-breaking beat, and close entry"},
-        {"source_id": "philippo-di-vadi", "location": "MS Vitt.Em.1324, f. 16r-d", "inclusion_basis": "DIRECT", "evidence_scope": "direct-horizon continuity witness naming Posta di Donna and its deceptive concealment of sword length"},
-        {"source_id": "atra-melee-design-packet-v0-4", "location": "Section 4.3, Vom Tag / Posta di Donna proposed Committed Power row", "inclusion_basis": "DESIGN", "evidence_scope": "Loaded/P1 remain provisional Atra mechanics, not source prescriptions"}
+        {
+          "source_id": "fiore-dei-liberi",
+          "location": "Getty MS Ludwig XV 13, 23v-b; Morgan MS M.383, 12r-b; Pisani Dossi, 18a-b",
+          "inclusion_basis": "EARLIER",
+          "evidence_scope": "right Posta di Donna: high guard, all seven blows, covers, great blows, breaking guards, and exchange of thrusts"
+        },
+        {
+          "source_id": "fiore-dei-liberi",
+          "location": "Getty MS Ludwig XV 13, 23v-d; Morgan MS M.383, 13r-b",
+          "inclusion_basis": "EARLIER",
+          "evidence_scope": "left Posta di Donna: ready to cover and strike, great blows, thrust-breaking beat, and close entry"
+        },
+        {
+          "source_id": "philippo-di-vadi",
+          "location": "MS Vitt.Em.1324, f. 16r-d",
+          "inclusion_basis": "DIRECT",
+          "evidence_scope": "direct-horizon continuity witness naming Posta di Donna and its deceptive concealment of sword length"
+        },
+        {
+          "source_id": "atra-melee-design-packet-v0-4",
+          "location": "Section 4.3, Vom Tag / Posta di Donna proposed Committed Power row",
+          "inclusion_basis": "DESIGN",
+          "evidence_scope": "Loaded/P1 remain provisional Atra mechanics, not source prescriptions"
+        }
       ],
       "historical_confidence": "A",
       "mechanics_status": "PROVISIONAL",
-      "physical_state": {"height": "high", "point_threat": "not_threatening", "preparation_tags": ["chambered", "loaded"], "hanging_tags": [], "posture_tags": ["right-shoulder-chamber"], "loaded": true},
+      "physical_state": {
+        "height": "high",
+        "point_threat": "not_threatening",
+        "preparation_tags": [
+          "chambered",
+          "loaded"
+        ],
+        "hanging_tags": [],
+        "posture_tags": [
+          "right-shoulder-chamber"
+        ],
+        "loaded": true
+      },
       "mechanical_access": {
-        "existing_basic_action_mappings": ["Basic Cut"],
+        "existing_basic_action_mappings": [
+          "Basic Cut"
+        ],
         "basic_guard_actions": [],
-        "learned_play_gates": ["Scambiar di Punta (source-described option; not exclusive)", "Donna left thrust-break/close sequence (candidate)"],
+        "learned_play_gates": [
+          "Scambiar di Punta (source-described option; not exclusive)",
+          "Donna left thrust-break/close sequence (candidate)"
+        ],
         "sourced_breakers": [],
-        "unresolved_source_behaviors": ["Exact mechanical form for the left-Donna thrust-break and close entry", "Loaded remains an Atra interpretation despite strong concept support"]
+        "unresolved_source_behaviors": [
+          "Exact mechanical form for the left-Donna thrust-break and close entry",
+          "Loaded remains an Atra interpretation despite strong concept support"
+        ]
       },
       "behaviors": [
-        {"source_description": "High right-side chamber from which all seven blows may be made", "locator": "Getty 23v-b; Morgan 12r-b; Pisani Dossi 18a-b", "historical_confidence": "A", "classification": "INTRINSIC", "implementation_status": "High/chambered/cut-ready public posture; point-off-line is image-based geometry", "rationale": "High status and broad striking capability are directly stated; shoulder chamber and point orientation are witness-image geometric inference.", "compresses_historical_lesson": false},
-        {"source_description": "Ordinary cuts, including great blows, from Donna", "locator": "Getty 23v-b; Morgan 12r-b", "historical_confidence": "A", "classification": "EXISTING BASIC MAPPING", "implementation_status": "Basic Cut; no accuracy bonus or renamed action", "rationale": "Fiore directly associates Donna with great blows, but ordinary cutting is already a universal Basic action.", "compresses_historical_lesson": false},
-        {"source_description": "Cover all blows and exchange thrusts with offline footwork", "locator": "Getty 23v-b; Morgan 12r-b", "historical_confidence": "A", "classification": "LEARNED PLAY", "implementation_status": "Existing Scambiar di Punta is active from source-described Donna/Tutta access in the named-guard harness", "rationale": "The joined cover/counterthrust and specified footwork are a timing-rich compound, not a passive defence benefit. The gate is prototype access, not a claim that other Fiore guards can never exchange thrusts.", "compresses_historical_lesson": true},
-        {"source_description": "Loaded/P1 access from Donna", "locator": "Historical concept: Getty 23v-b / Morgan 12r-b; mechanic: Atra packet v0.4 Section 4.3 and governing provisional baseline", "historical_confidence": "A", "classification": "INTRINSIC", "implementation_status": "STRONG CONCEPT SUPPORT; Loaded/P1 remain PROVISIONAL ATRA only", "rationale": "Fiore's repeated great-blow and pulsativa language grounds a powerful-blow identity. Damage Boon, Spiritus cost, fixed damage, Committed, and Counter-first are not manuscript-prescribed.", "compresses_historical_lesson": false}
+        {
+          "source_description": "High right-side chamber from which all seven blows may be made",
+          "locator": "Getty 23v-b; Morgan 12r-b; Pisani Dossi 18a-b",
+          "historical_confidence": "A",
+          "classification": "INTRINSIC",
+          "implementation_status": "High/chambered/cut-ready public posture; point-off-line is image-based geometry",
+          "rationale": "High status and broad striking capability are directly stated; shoulder chamber and point orientation are witness-image geometric inference.",
+          "compresses_historical_lesson": false
+        },
+        {
+          "source_description": "Ordinary cuts, including great blows, from Donna",
+          "locator": "Getty 23v-b; Morgan 12r-b",
+          "historical_confidence": "A",
+          "classification": "EXISTING BASIC MAPPING",
+          "implementation_status": "Basic Cut; no accuracy bonus or renamed action",
+          "rationale": "Fiore directly associates Donna with great blows, but ordinary cutting is already a universal Basic action.",
+          "compresses_historical_lesson": false
+        },
+        {
+          "source_description": "Cover all blows and exchange thrusts with offline footwork",
+          "locator": "Getty 23v-b; Morgan 12r-b",
+          "historical_confidence": "A",
+          "classification": "LEARNED PLAY",
+          "implementation_status": "Existing Scambiar di Punta is active from source-described Donna/Tutta access in the named-guard harness",
+          "rationale": "The joined cover/counterthrust and specified footwork are a timing-rich compound, not a passive defence benefit. The gate is prototype access, not a claim that other Fiore guards can never exchange thrusts.",
+          "compresses_historical_lesson": true
+        },
+        {
+          "source_description": "Loaded/P1 access from Donna",
+          "locator": "Historical concept: Getty 23v-b / Morgan 12r-b; mechanic: Atra packet v0.4 Section 4.3 and governing provisional baseline",
+          "historical_confidence": "A",
+          "classification": "INTRINSIC",
+          "implementation_status": "STRONG CONCEPT SUPPORT; Loaded/P1 remain PROVISIONAL ATRA only",
+          "rationale": "Fiore's repeated great-blow and pulsativa language grounds a powerful-blow identity. Damage Boon, Spiritus cost, fixed damage, Committed, and Counter-first are not manuscript-prescribed.",
+          "compresses_historical_lesson": false
+        }
       ]
     },
     {
@@ -143,18 +445,84 @@
       "curriculum": "Longsword",
       "source_status": "scoped-exact-locator",
       "source_locator": [
-        {"source_id": "fiore-dei-liberi", "location": "Getty MS Ludwig XV 13, 24v-c; Morgan MS M.383, 12v-b; Pisani Dossi, 18b-b", "inclusion_basis": "EARLIER", "evidence_scope": "Frontale, called Corona by some Fiore masters: high-thrust cross, low-thrust beat, and alternate retreat/cut/thrust sequence"},
-        {"source_id": "philippo-di-vadi", "location": "MS Vitt.Em.1324, ff. 17r-b and 17v-a", "inclusion_basis": "DIRECT", "evidence_scope": "Vadi depicts and names Corona and Frontale separately; Corona is adept at binds while Frontale is secure against cuts and thrusts"}
+        {
+          "source_id": "fiore-dei-liberi",
+          "location": "Getty MS Ludwig XV 13, 24v-c; Morgan MS M.383, 12v-b; Pisani Dossi, 18b-b",
+          "inclusion_basis": "EARLIER",
+          "evidence_scope": "Frontale, called Corona by some Fiore masters: high-thrust cross, low-thrust beat, and alternate retreat/cut/thrust sequence"
+        },
+        {
+          "source_id": "philippo-di-vadi",
+          "location": "MS Vitt.Em.1324, ff. 17r-b and 17v-a",
+          "inclusion_basis": "DIRECT",
+          "evidence_scope": "Vadi depicts and names Corona and Frontale separately; Corona is adept at binds while Frontale is secure against cuts and thrusts"
+        }
       ],
       "historical_confidence": "A",
       "mechanics_status": "PROVISIONAL",
-      "physical_state": {"height": "high", "point_threat": "not_threatening", "preparation_tags": [], "hanging_tags": [], "posture_tags": ["front-centered", "cross-ready"], "loaded": false},
-      "mechanical_access": {"existing_basic_action_mappings": ["Basic Cross (against high thrust)", "Basic Beat (against low thrust)"], "basic_guard_actions": [], "learned_play_gates": ["Frontale retreat-fendente-thrust sequence (candidate)"], "sourced_breakers": [], "unresolved_source_behaviors": ["Mechanical specification for Fiore's alternate retreat-fendente-thrust sequence", "Whether the combined packet Play should be split or renamed after review"]},
+      "physical_state": {
+        "height": "high",
+        "point_threat": "not_threatening",
+        "preparation_tags": [],
+        "hanging_tags": [],
+        "posture_tags": [
+          "front-centered",
+          "cross-ready"
+        ],
+        "loaded": false
+      },
+      "mechanical_access": {
+        "existing_basic_action_mappings": [
+          "Basic Cross (against high thrust)",
+          "Basic Beat (against low thrust)"
+        ],
+        "basic_guard_actions": [],
+        "learned_play_gates": [
+          "Frontale Retreating Fendente"
+        ],
+        "sourced_breakers": [],
+        "unresolved_source_behaviors": [
+          "Mechanical representation of the later Dente di Zenghiaro, renewed thrust, and return-fendente phases",
+          "Whether those later phases should be split into separate learned continuations after table review"
+        ]
+      },
       "behaviors": [
-        {"source_description": "Against a high thrust, cross while passing offline", "locator": "Getty 24v-c; Morgan 12v-b", "historical_confidence": "A", "classification": "EXISTING BASIC MAPPING", "implementation_status": "Basic Cross mapping; no special Frontale action or modifier", "rationale": "One principal defensive test and an ordinary crossing effect are already expressed by Basic Cross.", "compresses_historical_lesson": false},
-        {"source_description": "Against a low thrust, pass offline and beat the point to the ground", "locator": "Getty 24v-c; Morgan 12v-b", "historical_confidence": "A", "classification": "EXISTING BASIC MAPPING", "implementation_status": "Basic Beat mapping; no special Frontale action or modifier", "rationale": "The simple displacement is already expressed by Basic Beat.", "compresses_historical_lesson": false},
-        {"source_description": "Retreat from the thrust, cut to head/arms into Dente di Zenghiaro, then thrust and return with fendente", "locator": "Morgan 12v-b; Getty 24v-c continues the same paragraph", "historical_confidence": "A", "classification": "LEARNED PLAY", "implementation_status": "Candidate requires mechanical specification; not activated", "rationale": "The sequence combines timing, retreat, cut, guard transition, renewed thrusts, and return cut.", "compresses_historical_lesson": true},
-        {"source_description": "Frontale and Corona naming relationship", "locator": "Fiore Getty 24v-c / Morgan 12v-b; Vadi 17r-b and 17v-a", "historical_confidence": "A", "classification": "NO MECHANIC / OPEN", "implementation_status": "Evidence correction only", "rationale": "Fiore says some masters call Frontale Corona; Vadi separately names and depicts Corona and Frontale. They must not be silently equated across traditions.", "compresses_historical_lesson": false}
+        {
+          "source_description": "Against a high thrust, cross while passing offline",
+          "locator": "Getty 24v-c; Morgan 12v-b",
+          "historical_confidence": "A",
+          "classification": "EXISTING BASIC MAPPING",
+          "implementation_status": "Basic Cross mapping; no special Frontale action or modifier",
+          "rationale": "One principal defensive test and an ordinary crossing effect are already expressed by Basic Cross.",
+          "compresses_historical_lesson": false
+        },
+        {
+          "source_description": "Against a low thrust, pass offline and beat the point to the ground",
+          "locator": "Getty 24v-c; Morgan 12v-b",
+          "historical_confidence": "A",
+          "classification": "EXISTING BASIC MAPPING",
+          "implementation_status": "Basic Beat mapping; no special Frontale action or modifier",
+          "rationale": "The simple displacement is already expressed by Basic Beat.",
+          "compresses_historical_lesson": false
+        },
+        {
+          "source_description": "Retreat from the thrust, cut to head/arms into Dente di Zenghiaro, then thrust and return with fendente",
+          "locator": "Morgan 12v-b; Getty 24v-c continues the same paragraph",
+          "historical_confidence": "A",
+          "classification": "LEARNED PLAY",
+          "implementation_status": "Frontale Retreating Fendente v0.1 GOVERNING PROVISIONAL isolates retreating fendente as 2S/+1-chain joined defence/counter-cut; later Dente/thrust/return phases deferred",
+          "rationale": "The first joined defence/counter-cut now supplies a concrete Frontale repertoire reason without granting the longer source sequence for free.",
+          "compresses_historical_lesson": true
+        },
+        {
+          "source_description": "Frontale and Corona naming relationship",
+          "locator": "Fiore Getty 24v-c / Morgan 12v-b; Vadi 17r-b and 17v-a",
+          "historical_confidence": "A",
+          "classification": "NO MECHANIC / OPEN",
+          "implementation_status": "Evidence correction only",
+          "rationale": "Fiore says some masters call Frontale Corona; Vadi separately names and depicts Corona and Frontale. They must not be silently equated across traditions.",
+          "compresses_historical_lesson": false
+        }
       ]
     },
     {
@@ -164,19 +532,95 @@
       "curriculum": "Longsword",
       "source_status": "scoped-exact-locator",
       "source_locator": [
-        {"source_id": "fiore-dei-liberi", "location": "Getty MS Ludwig XV 13, 23v-a; Morgan MS M.383, 12r-a; Pisani Dossi, 18a-a", "inclusion_basis": "EARLIER", "evidence_scope": "low/grounded strong waiting guard; cover, close entry, exchange of thrusts, downward beat, and broad cover claims"},
-        {"source_id": "philippo-di-vadi", "location": "MS Vitt.Em.1324, f. 16v-a", "inclusion_basis": "DIRECT", "evidence_scope": "Vadi's separately named flat-ground Iron Gate restrains cuts and thrusts; continuity only, not silently equated with Fiore's exact guard"}
+        {
+          "source_id": "fiore-dei-liberi",
+          "location": "Getty MS Ludwig XV 13, 23v-a; Morgan MS M.383, 12r-a; Pisani Dossi, 18a-a",
+          "inclusion_basis": "EARLIER",
+          "evidence_scope": "low/grounded strong waiting guard; cover, close entry, exchange of thrusts, downward beat, and broad cover claims"
+        },
+        {
+          "source_id": "philippo-di-vadi",
+          "location": "MS Vitt.Em.1324, f. 16v-a",
+          "inclusion_basis": "DIRECT",
+          "evidence_scope": "Vadi's separately named flat-ground Iron Gate restrains cuts and thrusts; continuity only, not silently equated with Fiore's exact guard"
+        }
       ],
       "historical_confidence": "A",
       "mechanics_status": "PROVISIONAL",
-      "physical_state": {"height": "low", "point_threat": "not_threatening", "preparation_tags": ["waiting"], "hanging_tags": [], "posture_tags": ["grounded", "point-off-line"], "loaded": false},
-      "mechanical_access": {"existing_basic_action_mappings": ["Basic Cross (simple cover)", "Basic Beat (downward thrust displacement)"], "basic_guard_actions": [], "learned_play_gates": ["Scambiar di Punta (source-described option; not exclusive)", "Tutta cover-to-stretto (governing provisional E1 continuation before H3 creation)"], "sourced_breakers": [], "unresolved_source_behaviors": ["Whether to express Scambiar access as a nonexclusive guard affinity or hard gate"]},
+      "physical_state": {
+        "height": "low",
+        "point_threat": "not_threatening",
+        "preparation_tags": [
+          "waiting"
+        ],
+        "hanging_tags": [],
+        "posture_tags": [
+          "grounded",
+          "point-off-line"
+        ],
+        "loaded": false
+      },
+      "mechanical_access": {
+        "existing_basic_action_mappings": [
+          "Basic Cross (simple cover)",
+          "Basic Beat (downward thrust displacement)"
+        ],
+        "basic_guard_actions": [],
+        "learned_play_gates": [
+          "Scambiar di Punta (source-described option; not exclusive)",
+          "Tutta cover-to-stretto (governing provisional E1 continuation before H3 creation)"
+        ],
+        "sourced_breakers": [],
+        "unresolved_source_behaviors": [
+          "Whether to express Scambiar access as a nonexclusive guard affinity or hard gate"
+        ]
+      },
       "behaviors": [
-        {"source_description": "Low/grounded strong guard suitable for waiting", "locator": "Getty 23v-a; Morgan 12r-a; Pisani Dossi 18a-a", "historical_confidence": "A", "classification": "INTRINSIC", "implementation_status": "Low, waiting, point-off-line public state; no Strong Cover bonus", "rationale": "Low/grounded and waiting language are direct or witness-image geometry; they do not prescribe a numeric defence benefit.", "compresses_historical_lesson": false},
-        {"source_description": "Make a cover against blows", "locator": "Getty 23v-a; Morgan 12r-a", "historical_confidence": "A", "classification": "EXISTING BASIC MAPPING", "implementation_status": "Basic Cross where a simple crossing cover suffices", "rationale": "A simple cover is already represented by the universal Cross; the broad all-angle claim does not justify a generic bonus.", "compresses_historical_lesson": false},
-        {"source_description": "Beat an incoming thrust to the ground while stepping", "locator": "Getty 23v-a; Morgan 12r-a", "historical_confidence": "A", "classification": "EXISTING BASIC MAPPING", "implementation_status": "Basic Beat for the minimal displacement; Rompere continuation remains learned", "rationale": "The minimal beat is simple, but retained contact, closing, or follow-up attacks belong to the learned Rompere family.", "compresses_historical_lesson": false},
-        {"source_description": "Exchange thrusts and strike with one's own", "locator": "Getty 23v-a; Morgan 12r-a", "historical_confidence": "A", "classification": "LEARNED PLAY", "implementation_status": "Existing Scambiar di Punta is active from source-described Donna/Tutta access in the named-guard harness", "rationale": "Offline cover plus counterthrust is a joined defensive/offensive lesson. The gate is scoped prototype access, not a universal exclusivity claim.", "compresses_historical_lesson": true},
-        {"source_description": "Cover with a pass and enter stretto", "locator": "Getty 23v-a; Morgan 12r-a", "historical_confidence": "A", "classification": "LEARNED PLAY", "implementation_status": "GOVERNING PROVISIONAL E1 T1: after a successful qualifying Tutta Basic Cross and D1 timing, but before H3 is created, spend 1 Spiritus and one chain entry with no additional action/test; retain Crossing, enter Close, clear height, assign first Close opportunity from Hart/Weich, then clear pressure; T0/C0/L1 are noncurrent controls", "rationale": "The source supports cover plus entry to stretto. E1 timing, Spiritus/chain price, Unknown height, Hart/Weich opportunity assignment, and H3 ordering are explicit Atra abstractions. The continuation adds no damage, attack, point threat, guard change, modifier, grapple, disarm, control, or automatic Pommel.", "compresses_historical_lesson": true}
+        {
+          "source_description": "Low/grounded strong guard suitable for waiting",
+          "locator": "Getty 23v-a; Morgan 12r-a; Pisani Dossi 18a-a",
+          "historical_confidence": "A",
+          "classification": "INTRINSIC",
+          "implementation_status": "Low, waiting, point-off-line public state; no Strong Cover bonus",
+          "rationale": "Low/grounded and waiting language are direct or witness-image geometry; they do not prescribe a numeric defence benefit.",
+          "compresses_historical_lesson": false
+        },
+        {
+          "source_description": "Make a cover against blows",
+          "locator": "Getty 23v-a; Morgan 12r-a",
+          "historical_confidence": "A",
+          "classification": "EXISTING BASIC MAPPING",
+          "implementation_status": "Basic Cross where a simple crossing cover suffices",
+          "rationale": "A simple cover is already represented by the universal Cross; the broad all-angle claim does not justify a generic bonus.",
+          "compresses_historical_lesson": false
+        },
+        {
+          "source_description": "Beat an incoming thrust to the ground while stepping",
+          "locator": "Getty 23v-a; Morgan 12r-a",
+          "historical_confidence": "A",
+          "classification": "EXISTING BASIC MAPPING",
+          "implementation_status": "Basic Beat for the minimal displacement; Rompere continuation remains learned",
+          "rationale": "The minimal beat is simple, but retained contact, closing, or follow-up attacks belong to the learned Rompere family.",
+          "compresses_historical_lesson": false
+        },
+        {
+          "source_description": "Exchange thrusts and strike with one's own",
+          "locator": "Getty 23v-a; Morgan 12r-a",
+          "historical_confidence": "A",
+          "classification": "LEARNED PLAY",
+          "implementation_status": "Existing Scambiar di Punta is active from source-described Donna/Tutta access in the named-guard harness",
+          "rationale": "Offline cover plus counterthrust is a joined defensive/offensive lesson. The gate is scoped prototype access, not a universal exclusivity claim.",
+          "compresses_historical_lesson": true
+        },
+        {
+          "source_description": "Cover with a pass and enter stretto",
+          "locator": "Getty 23v-a; Morgan 12r-a",
+          "historical_confidence": "A",
+          "classification": "LEARNED PLAY",
+          "implementation_status": "GOVERNING PROVISIONAL E1 T1: after a successful qualifying Tutta Basic Cross and D1 timing, but before H3 is created, spend 1 Spiritus and one chain entry with no additional action/test; retain Crossing, enter Close, clear height, assign first Close opportunity from Hart/Weich, then clear pressure; T0/C0/L1 are noncurrent controls",
+          "rationale": "The source supports cover plus entry to stretto. E1 timing, Spiritus/chain price, Unknown height, Hart/Weich opportunity assignment, and H3 ordering are explicit Atra abstractions. The continuation adds no damage, attack, point threat, guard change, modifier, grapple, disarm, control, or automatic Pommel.",
+          "compresses_historical_lesson": true
+        }
       ]
     },
     {
@@ -186,19 +630,95 @@
       "curriculum": "Longsword",
       "source_status": "scoped-exact-locator",
       "source_locator": [
-        {"source_id": "fiore-dei-liberi", "location": "Getty MS Ludwig XV 13, 24r-b; Morgan MS M.383, 12r-d; guard-in-point statement at Getty 22r-a", "inclusion_basis": "EARLIER", "evidence_scope": "middle strong guard; stands ready to thrust, strong thrusts, forceful upward displacement, return fendente, and difficult close entry"},
-        {"source_id": "philippo-di-vadi", "location": "MS Vitt.Em.1324, f. 16r-c", "inclusion_basis": "DIRECT", "evidence_scope": "direct-horizon continuity: strong Middle Iron Gate gives death with thrust and fendente"}
+        {
+          "source_id": "fiore-dei-liberi",
+          "location": "Getty MS Ludwig XV 13, 24r-b; Morgan MS M.383, 12r-d; guard-in-point statement at Getty 22r-a",
+          "inclusion_basis": "EARLIER",
+          "evidence_scope": "middle strong guard; stands ready to thrust, strong thrusts, forceful upward displacement, return fendente, and difficult close entry"
+        },
+        {
+          "source_id": "philippo-di-vadi",
+          "location": "MS Vitt.Em.1324, f. 16r-c",
+          "inclusion_basis": "DIRECT",
+          "evidence_scope": "direct-horizon continuity: strong Middle Iron Gate gives death with thrust and fendente"
+        }
       ],
       "historical_confidence": "A",
       "mechanics_status": "PROVISIONAL",
-      "physical_state": {"height": "low", "point_threat": "threatening", "preparation_tags": ["thrust-ready"], "hanging_tags": [], "posture_tags": ["stands-in-point", "middle-guard"], "loaded": false},
-      "mechanical_access": {"existing_basic_action_mappings": ["Basic Thrust", "Basic Beat (minimal upward displacement)"], "basic_guard_actions": [], "learned_play_gates": ["Mezza upward beat plus return fendente (candidate)"], "sourced_breakers": [], "unresolved_source_behaviors": ["Mechanical specification for upward beat plus return fendente", "How to represent difficult close entry without a generic bonus"]},
+      "physical_state": {
+        "height": "low",
+        "point_threat": "threatening",
+        "preparation_tags": [
+          "thrust-ready"
+        ],
+        "hanging_tags": [],
+        "posture_tags": [
+          "stands-in-point",
+          "middle-guard"
+        ],
+        "loaded": false
+      },
+      "mechanical_access": {
+        "existing_basic_action_mappings": [
+          "Basic Thrust",
+          "Basic Beat (minimal upward displacement)"
+        ],
+        "basic_guard_actions": [],
+        "learned_play_gates": [
+          "Mezza upward beat plus return fendente (candidate)"
+        ],
+        "sourced_breakers": [],
+        "unresolved_source_behaviors": [
+          "Mechanical specification for upward beat plus return fendente",
+          "How to represent difficult close entry without a generic bonus"
+        ]
+      },
       "behaviors": [
-        {"source_description": "One of Fiore's guards that stands ready to thrust; it throws strong thrusts", "locator": "Getty 22r-a and 24r-b; Morgan 12r-d", "historical_confidence": "A", "classification": "INTRINSIC", "implementation_status": "Threatening point state now active", "rationale": "The point-ready statement and thrust capability are direct. Atra's threatening state is a concept-level mapping, not an attack modifier.", "compresses_historical_lesson": false},
-        {"source_description": "Throw a strong thrust", "locator": "Getty 24r-b; Morgan 12r-d; Vadi 16r-c", "historical_confidence": "A", "classification": "EXISTING BASIC MAPPING", "implementation_status": "Basic Thrust; no renamed action or bonus", "rationale": "The universal thrust expresses the simple action.", "compresses_historical_lesson": false},
-        {"source_description": "Forcefully beat swords upward", "locator": "Getty 24r-b; Morgan 12r-d", "historical_confidence": "A", "classification": "EXISTING BASIC MAPPING", "implementation_status": "Basic Beat only when resolving the minimal displacement", "rationale": "A one-test displacement fits Basic Beat; its specified return cut is kept separate.", "compresses_historical_lesson": false},
-        {"source_description": "Beat upward and return with fendente to head or arms, then return to guard", "locator": "Getty 24r-b; Morgan 12r-d", "historical_confidence": "A", "classification": "LEARNED PLAY", "implementation_status": "Candidate specification only; not activated", "rationale": "Beat plus immediate return cut and recovery is a two-effect sequence that would compress progression if free.", "compresses_historical_lesson": true},
-        {"source_description": "Strong guard difficult to break without danger and coming to stretto", "locator": "Getty 24r-b; Morgan 12r-d", "historical_confidence": "A", "classification": "NO MECHANIC / OPEN", "implementation_status": "Evidence recorded; no generic safety or defence modifier", "rationale": "The qualitative safety claim is direct, but no bounded existing mechanic cleanly represents it.", "compresses_historical_lesson": false}
+        {
+          "source_description": "One of Fiore's guards that stands ready to thrust; it throws strong thrusts",
+          "locator": "Getty 22r-a and 24r-b; Morgan 12r-d",
+          "historical_confidence": "A",
+          "classification": "INTRINSIC",
+          "implementation_status": "Threatening point state now active",
+          "rationale": "The point-ready statement and thrust capability are direct. Atra's threatening state is a concept-level mapping, not an attack modifier.",
+          "compresses_historical_lesson": false
+        },
+        {
+          "source_description": "Throw a strong thrust",
+          "locator": "Getty 24r-b; Morgan 12r-d; Vadi 16r-c",
+          "historical_confidence": "A",
+          "classification": "EXISTING BASIC MAPPING",
+          "implementation_status": "Basic Thrust; no renamed action or bonus",
+          "rationale": "The universal thrust expresses the simple action.",
+          "compresses_historical_lesson": false
+        },
+        {
+          "source_description": "Forcefully beat swords upward",
+          "locator": "Getty 24r-b; Morgan 12r-d",
+          "historical_confidence": "A",
+          "classification": "EXISTING BASIC MAPPING",
+          "implementation_status": "Basic Beat only when resolving the minimal displacement",
+          "rationale": "A one-test displacement fits Basic Beat; its specified return cut is kept separate.",
+          "compresses_historical_lesson": false
+        },
+        {
+          "source_description": "Beat upward and return with fendente to head or arms, then return to guard",
+          "locator": "Getty 24r-b; Morgan 12r-d",
+          "historical_confidence": "A",
+          "classification": "LEARNED PLAY",
+          "implementation_status": "Candidate specification only; not activated",
+          "rationale": "Beat plus immediate return cut and recovery is a two-effect sequence that would compress progression if free.",
+          "compresses_historical_lesson": true
+        },
+        {
+          "source_description": "Strong guard difficult to break without danger and coming to stretto",
+          "locator": "Getty 24r-b; Morgan 12r-d",
+          "historical_confidence": "A",
+          "classification": "NO MECHANIC / OPEN",
+          "implementation_status": "Evidence recorded; no generic safety or defence modifier",
+          "rationale": "The qualitative safety claim is direct, but no bounded existing mechanic cleanly represents it.",
+          "compresses_historical_lesson": false
+        }
       ]
     }
   ]

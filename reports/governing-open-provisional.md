@@ -2,6 +2,18 @@
 
 Transcribed from Section 2 of Atra Melee Design Packet v0.4. These entries are constraints and unresolved questions; this repository does not decide them.
 
+## 2026-08-13 Frontale Retreating Fendente v0.1 Project adjudication
+
+The Project promotes **Frontale Retreating Fendente v0.1 to GOVERNING PROVISIONAL** for the current longsword vertical slice and first table-playtest roster. This is a bounded learned Frontale response, not a promotion of Fiore's entire longer sequence and not a generic compound-price rule.
+
+From **Posta Frontale**, against a live successful incoming **Thrust before contact**, a living defender who knows the Play may spend the defensive Action, **2 Spiritus**, and **+1 learned-chain entry** to make one flat normal Longsword test. On success, cancel the incoming Thrust and deal one normal `d6+1` Cut damage instance to the original attacker using that same successful test; there is no second attack roll. On failure, the incoming Thrust remains unresolved and the counter-cut deals zero damage. Legal declaration costs are not refunded.
+
+The bounded v0.1 aftermath deliberately authors **no Crossing, Open, point threat, forced movement, Dente di Zenghiaro guard state, guard transition, or automatic continuation**. Frontale remains the modeled guard. The later source-described Dente, renewed thrust, and return-fendente phases remain **DEFERRED CONTENT**. Basic Cross and Basic Beat remain free alternatives: Cross can be safer and enters the bind tree; Beat separates and opens the hostile attacker; Frontale Fendente pays Spiritus and chain for immediate counter-cut damage.
+
+The source boundary remains the audited Frontale thrust-response material at Fiore Getty 24v-c, Morgan 12v-b, and Pisani Dossi 18b-b. The 2-Spiritus price, one-roll joined resolution, and omitted movement/guard transition are Atra abstractions. The durable bounded specification is `data/prototypes/frontale-retreating-fendente-v0.1.yaml`; authoritative runtime is `CurrentEngine.frontale_retreating_fendente`.
+
+Named Guard v0.2's first-table recommendation is a reduced five-guard roster: **Ochs, Pflug, Posta di Donna, Posta Frontale, and Tutta Porta di Ferro**. Vom Tag, Alber, and Mezza Porta di Ferro remain outside the first player-facing roster because their current distinct value is absent or duplicated; this does not delete them from the governing eight-guard roster.
+
 ## 2026-08-13 T1 / Close / Pommel v0.1 Project adjudication
 
 The Project promotes **E1 + P2 to GOVERNING PROVISIONAL** for the current longsword vertical slice. This is a bounded integration, not canonical/final adoption. It does not edit Atra Melee Design Packet v0.4, rewrite candidate reports, create a generic closing action, or begin Named Guard v0.2.

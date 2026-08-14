@@ -35,8 +35,10 @@ class MeleePlayGrammarV01Tests(unittest.TestCase):
         self.assertNotIn(("tutta-cover-to-stretto-t1", "GHOST_UTILITY"), codes)
         self.assertNotIn(("pommel-strike", "GHOST_UTILITY"), codes)
         self.assertNotIn(("pommel-strike", "EXCEPTIONAL_RESPONSE_MODIFIER"), codes)
-        self.assertIn(("frontale-current-sequence", "MISSING_PRIMARY_PAYLOAD"), codes)
-        self.assertEqual(len(findings), 9)
+        self.assertNotIn(("frontale-current-sequence", "MISSING_PRIMARY_PAYLOAD"), codes)
+        self.assertNotIn(("frontale-current-sequence", "GHOST_UTILITY"), codes)
+        self.assertNotIn(("frontale-current-sequence", "MISSING_EFFECT_EXPOSED"), codes)
+        self.assertEqual(len(findings), 5)
 
     def test_vocabulary_closure_and_forbidden_control(self) -> None:
         vocabulary = json.loads((ROOT / "data" / "rules" / "melee-mechanical-effect-vocabulary-v0.1.yaml").read_text(encoding="utf-8"))
